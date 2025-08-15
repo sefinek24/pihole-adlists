@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025081301 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025081501 43200 3600 259200 300
   NS  localhost.
 0.myikas.com CNAME .
 *.0.myikas.com CNAME .
@@ -11009,6 +11009,8 @@ analytics.virginmobileusa.com CNAME .
 *.analytics.virginmobileusa.com CNAME .
 analytics.visible.com CNAME .
 *.analytics.visible.com CNAME .
+analytics.vitalsignstracker.com CNAME .
+*.analytics.vitalsignstracker.com CNAME .
 analytics.viture.dev CNAME .
 *.analytics.viture.dev CNAME .
 analytics.vixcloud.co CNAME .
@@ -44471,6 +44473,8 @@ monitor-api.blackcrow.ai CNAME .
 *.monitor-api.blackcrow.ai CNAME .
 monitor-frontend-collector.a.bybit-aws.com CNAME .
 *.monitor-frontend-collector.a.bybit-aws.com CNAME .
+monitor.agenedia.com CNAME .
+*.monitor.agenedia.com CNAME .
 monitor.channel4.com CNAME .
 *.monitor.channel4.com CNAME .
 monitor.fraudblocker.com CNAME .

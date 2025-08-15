@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025081301 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025081501 43200 3600 259200 300
   NS  localhost.
 adeventtracker.spotify.com CNAME .
 *.adeventtracker.spotify.com CNAME .
@@ -201,6 +201,14 @@ int.vlancaa.fun CNAME .
 *.int.vlancaa.fun CNAME .
 tok.vaicore.xyz CNAME .
 *.tok.vaicore.xyz CNAME .
+s3-ca-liveops.easybrain.com CNAME .
+*.s3-ca-liveops.easybrain.com CNAME .
+trackers.fubo.tv CNAME .
+*.trackers.fubo.tv CNAME .
+beacons-prod.fubo.tv CNAME .
+*.beacons-prod.fubo.tv CNAME .
+events.fubo.tv CNAME .
+*.events.fubo.tv CNAME .
 adash-emas.cn-hangzhou.aliyuncs.com CNAME .
 *.adash-emas.cn-hangzhou.aliyuncs.com CNAME .
 dfe.mic.mob.com CNAME .
