@@ -1,5 +1,5 @@
 <div align="center"><h1>The best Blocklist Collection ✋<br>made by Sefinek</h1></div>
-<img width="37%" align="right" src="images/kitten.png" alt="Orange kitten">
+<img width="37%" align="right" src="images/kitten.png" alt="Orange cat">
 <div align="center">
     <br><br>
     <img src="https://api.sefinek.net/api/v2/moecounter/@Sefinek-Blocklist-Collection" alt="README.md views" title="Repository views">
