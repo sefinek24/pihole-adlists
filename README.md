@@ -109,7 +109,7 @@ Join our [Discord server](https://discord.gg/53DBjTuzgZ) or open a new [Issue](h
 
 
 ## 🌠 Other Useful Repositories
-[Cloudflare-WAF-Rules](https://github.com/sefinek/Cloudflare-WAF-Rules) | [Malicious-IP-Addresses](https://github.com/sefinek/Malicious-IP-Addresses) | [Blacklisted-Emails](https://github.com/sefinek/Blacklisted-Emails)
+[Cloudflare-WAF-Expressions](https://github.com/sefinek/Cloudflare-WAF-Expressions) | [Malicious-IP-Addresses](https://github.com/sefinek/Malicious-IP-Addresses) | [Blacklisted-Emails](https://github.com/sefinek/Blacklisted-Emails)
 
 
 ## 🐈 Sources of Images Used
