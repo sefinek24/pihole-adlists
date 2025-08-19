@@ -1,4 +1,4 @@
-require('env-native').config();
+require('node:process').loadEnvFile();
 
 const cluster = require('node:cluster');
 const numCPUs = require('node:os').availableParallelism();
