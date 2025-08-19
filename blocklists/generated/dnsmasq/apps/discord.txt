@@ -9,13 +9,13 @@
 # Title: Block all Discord domains
 # Description: This file is designed to block access to the Valorant game, including related servers and services.
 # Expires: 1 day
-# Count: 67
+# Count: 98
 # Author: Sefinek (https://sefinek.net) <contact@sefinek.net>
 # Modified by: N/A
 # Source: N/A
 # License: CC BY-NC-ND 4.0
 # Release: Dnsmasq
-# Last update: April 23, 2025 at 7:09 PM UTC | 2025-04-23T19:09:19.858+00:00
+# Last update: August 19, 2025 at 1:35 AM UTC | 2025-08-19T01:35:50.939+00:00
 #
 # This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 # If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
@@ -27,7 +27,21 @@ server=/canary.discord.com/
 server=/canary.discordapp.com/
 server=/cdn.discordapp.com/
 server=/creator-support.discord.com/
+server=/dis.gd/
+server=/discord.co/
+server=/discord.com/
+server=/discord.dev/
 server=/discord.gg/
+server=/discord.gift/
+server=/discord.gifts/
+server=/discord.media/
+server=/discord.new/
+server=/discord.store/
+server=/discordactivities.com/
+server=/discordapp.com/
+server=/discordapp.net/
+server=/discordcdn.com/
+server=/discordmerch.com/
 server=/discordsays.com/
 server=/discordstatus.com/
 server=/dl-canary.discordapp.net/
@@ -82,7 +96,24 @@ server=/support-dev.discord.com/
 server=/support.discord.com/
 server=/updates.discord.com/
 server=/watchanimeattheoffice.com/
+server=/www.dis.gd/
+server=/www.discord.co/
 server=/www.discord.com/
+server=/www.discord.dev/
+server=/www.discord.gg/
+server=/www.discord.gift/
+server=/www.discord.gifts/
+server=/www.discord.media/
+server=/www.discord.new/
+server=/www.discord.store/
+server=/www.discordactivities.com/
+server=/www.discordapp.com/
+server=/www.discordapp.net/
+server=/www.discordcdn.com/
+server=/www.discordmerch.com/
+server=/www.discordsays.com/
+server=/www.discordstatus.com/
+server=/www.watchanimeattheoffice.com/
 server=/zendesk1.discord.com/
 server=/zendesk2.discord.com/
 server=/zendesk3.discord.com/
