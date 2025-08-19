@@ -1,7 +1,7 @@
 # Title: hostsVN
-# Last modified: 13 Aug 2025 10:20 UTC+7
-# Version: 2508131020
-# Blocked: 18.952 domains
+# Last modified: 19 Aug 2025 14:16 UTC+7
+# Version: 2508191416
+# Blocked: 18.967 domains
 # Please report any ads or problems on GitHub
 # Homepage: https://bigdargon.github.io/hostsVN/
 # GitHub: https://github.com/bigdargon/hostsVN
@@ -228,6 +228,12 @@
 127.0.0.1 ep1.adtrafficquality.google
 127.0.0.1 ep2.adtrafficquality.google
 127.0.0.1 ep3.adtrafficquality.google
+#[app-ads-services.com]
+127.0.0.1 app-ads-services.com
+127.0.0.1 odm.app-ads-services.com
+127.0.0.1 www.app-ads-services.com
+#[app-analytics-services.com]
+127.0.0.1 app-analytics-services.com
 #[microsoft.com]
 127.0.0.1 target.microsoft.com
 #[telemetry.microsoft.com]
@@ -466,6 +472,7 @@
 127.0.0.1 us-west-2.prod.pr.analytics.console.aws.a2z.com
 127.0.0.1 us-east-1.prod.pw.analytics.console.aws.a2z.com
 #[telemetry.insights.video.a2z.com]
+127.0.0.1 telemetry.insights.video.a2z.com
 127.0.0.1 global.telemetry.insights.video.a2z.com
 127.0.0.1 us-east-1.telemetry.insights.video.a2z.com
 #[metrics.imdb.a2z.com]
@@ -473,6 +480,7 @@
 127.0.0.1 cdn.prod.metrics.imdb.a2z.com
 #[a2z.com]
 127.0.0.1 clientlogger.marketplace.aws.a2z.com
+127.0.0.1 minerva.devices.a2z.com
 #[tumblr]
 127.0.0.1 platform.tumblr.com
 127.0.0.1 ls.srvcs.tumblr.com
@@ -487,10 +495,12 @@
 127.0.0.1 geo.query.yahoo.com
 127.0.0.1 geo.yahoo.com
 127.0.0.1 marketingsolutions.yahoo.com
+127.0.0.1 noa.yahoo.com
 127.0.0.1 nol.yahoo.com
 127.0.0.1 partnerads.ysm.yahoo.com
 127.0.0.1 pr-bh.ybp.yahoo.com
 127.0.0.1 pr.comet.yahoo.com
+127.0.0.1 udc.yahoo.com
 127.0.0.1 visit.webhosting.yahoo.com
 #[ads.*.yahoo.com]
 127.0.0.1 ads.auctions.yahoo.com
@@ -11811,6 +11821,13 @@
 127.0.0.1 cvt.finallygotthexds.site
 127.0.0.1 finallygotthexds.site
 127.0.0.1 i.finallygotthexds.site
+#[agoda.com]
+127.0.0.1 analytics.agoda.com
+127.0.0.1 bento.agoda.com
+127.0.0.1 partners.agoda.com
+#[emb-api.com]
+127.0.0.1 data.emb-api.com
+127.0.0.1 config.emb-api.com
 # --- GroupVN block ---
 #[adtimaserver]
 127.0.0.1 adtimaserver.vn
@@ -14817,7 +14834,6 @@
 127.0.0.1 api.unthem.com
 127.0.0.1 apis.appnxt.net
 127.0.0.1 apoilpnwr.com
-127.0.0.1 app-ads-services.com
 127.0.0.1 app-promo.com
 127.0.0.1 appads.com
 127.0.0.1 appboy-images.com
@@ -16487,6 +16503,7 @@
 127.0.0.1 guhalxqa.com
 127.0.0.1 guhomnfuzq.com
 127.0.0.1 guidecent.com
+127.0.0.1 gukrelrock.net
 127.0.0.1 gullyending.com
 127.0.0.1 gunggo.com
 127.0.0.1 guppymedia.com
@@ -18099,6 +18116,7 @@
 127.0.0.1 proximic.com
 127.0.0.1 psaltauw.net
 127.0.0.1 psausuck.net
+127.0.0.1 pscbrveha.com
 127.0.0.1 psipausaix.net
 127.0.0.1 psootchu.net
 127.0.0.1 psoroumukr.com
@@ -19507,6 +19525,7 @@
 127.0.0.1 wikia-ads.wikia.com
 127.0.0.1 wildedbarley.com
 127.0.0.1 wilslide.com
+127.0.0.1 wiltiqkc.com
 127.0.0.1 wimswuppoxan.com
 127.0.0.1 window.nixnet.cz
 127.0.0.1 windsattributeron.com
@@ -19554,6 +19573,7 @@
 127.0.0.1 wpush.org
 127.0.0.1 wqjbldnnceroue.com
 127.0.0.1 wqzyxxrrep.com
+127.0.0.1 wr.amigojimbang.com
 127.0.0.1 wrapper.lemde.fr
 127.0.0.1 wreaksyolkier.com
 127.0.0.1 wrestcut.com
@@ -19577,7 +19597,6 @@
 127.0.0.1 www.anrdoezrs.net
 127.0.0.1 www.antiadblocksystems.com
 127.0.0.1 www.anymedia.lv
-127.0.0.1 www.app-ads-services.com
 127.0.0.1 www.asiacpx.com
 127.0.0.1 www.axdsz.pro
 127.0.0.1 www.blockadsnot.com
@@ -19670,6 +19689,7 @@
 127.0.0.1 xius.com
 127.0.0.1 xjrwxfdphc.com
 127.0.0.1 xkesalwueyz.com
+127.0.0.1 xkfvceil.com
 127.0.0.1 xldncyivwazvfy.com
 127.0.0.1 xlviiirdr.com
 127.0.0.1 xlwaluyw.com
@@ -19813,6 +19833,7 @@
 127.0.0.1 zuqalzajno.com
 127.0.0.1 zvetokr2hr8pcng09.com
 127.0.0.1 zwnoeqzsuz.com
+127.0.0.1 zwnsuuaoqfab.com
 127.0.0.1 zxc.world
 127.0.0.1 zy.eilaeliza.top
 # --- Block other trackingVN ---
@@ -19847,7 +19868,6 @@
 127.0.0.1 analytics-s4.com
 127.0.0.1 analytics-static.ugc.bazaarvoice.com
 127.0.0.1 analytics-track.machbird.com
-127.0.0.1 analytics.agoda.com
 127.0.0.1 analytics.ahrefs.com
 127.0.0.1 analytics.alright.network
 127.0.0.1 analytics.amazing-media.com
@@ -19917,7 +19937,6 @@
 127.0.0.1 api.wipmania.com
 127.0.0.1 api2.poperblocker.com
 127.0.0.1 apolloprogram.io
-127.0.0.1 app-analytics-services.com
 127.0.0.1 app.posthog.com
 127.0.0.1 applog.camera360.com
 127.0.0.1 appres.camera360.com
@@ -19936,7 +19955,6 @@
 127.0.0.1 beacon.walmart.ca
 127.0.0.1 beacon.wikia-services.com
 127.0.0.1 beampulse.com
-127.0.0.1 bento.agoda.com
 127.0.0.1 beyondsecurity.com
 127.0.0.1 bi.yeshen.com
 127.0.0.1 bjdxhs.com
@@ -20598,6 +20616,7 @@
 127.0.0.1 cdn-settings.appsflyersdk.com
 127.0.0.1 conversions.appsflyersdk.com
 127.0.0.1 dlsdk.appsflyersdk.com
+127.0.0.1 dynamic-report-api.appsflyersdk.com
 127.0.0.1 gcdsdk.appsflyersdk.com
 127.0.0.1 inapps.appsflyersdk.com
 127.0.0.1 launches.appsflyersdk.com

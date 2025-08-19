@@ -1,7 +1,7 @@
 # Title: hostsVN
-# Last modified: 13 Aug 2025 10:20 UTC+7
-# Version: 2508131020
-# Blocked: 18.952 domains
+# Last modified: 19 Aug 2025 14:16 UTC+7
+# Version: 2508191416
+# Blocked: 18.967 domains
 # Please report any ads or problems on GitHub
 # Homepage: https://bigdargon.github.io/hostsVN/
 # GitHub: https://github.com/bigdargon/hostsVN
@@ -228,6 +228,12 @@
 0.0.0.0 ep1.adtrafficquality.google
 0.0.0.0 ep2.adtrafficquality.google
 0.0.0.0 ep3.adtrafficquality.google
+#[app-ads-services.com]
+0.0.0.0 app-ads-services.com
+0.0.0.0 odm.app-ads-services.com
+0.0.0.0 www.app-ads-services.com
+#[app-analytics-services.com]
+0.0.0.0 app-analytics-services.com
 #[microsoft.com]
 0.0.0.0 target.microsoft.com
 #[telemetry.microsoft.com]
@@ -466,6 +472,7 @@
 0.0.0.0 us-west-2.prod.pr.analytics.console.aws.a2z.com
 0.0.0.0 us-east-1.prod.pw.analytics.console.aws.a2z.com
 #[telemetry.insights.video.a2z.com]
+0.0.0.0 telemetry.insights.video.a2z.com
 0.0.0.0 global.telemetry.insights.video.a2z.com
 0.0.0.0 us-east-1.telemetry.insights.video.a2z.com
 #[metrics.imdb.a2z.com]
@@ -473,6 +480,7 @@
 0.0.0.0 cdn.prod.metrics.imdb.a2z.com
 #[a2z.com]
 0.0.0.0 clientlogger.marketplace.aws.a2z.com
+0.0.0.0 minerva.devices.a2z.com
 #[tumblr]
 0.0.0.0 platform.tumblr.com
 0.0.0.0 ls.srvcs.tumblr.com
@@ -487,10 +495,12 @@
 0.0.0.0 geo.query.yahoo.com
 0.0.0.0 geo.yahoo.com
 0.0.0.0 marketingsolutions.yahoo.com
+0.0.0.0 noa.yahoo.com
 0.0.0.0 nol.yahoo.com
 0.0.0.0 partnerads.ysm.yahoo.com
 0.0.0.0 pr-bh.ybp.yahoo.com
 0.0.0.0 pr.comet.yahoo.com
+0.0.0.0 udc.yahoo.com
 0.0.0.0 visit.webhosting.yahoo.com
 #[ads.*.yahoo.com]
 0.0.0.0 ads.auctions.yahoo.com
@@ -11811,6 +11821,13 @@
 0.0.0.0 cvt.finallygotthexds.site
 0.0.0.0 finallygotthexds.site
 0.0.0.0 i.finallygotthexds.site
+#[agoda.com]
+0.0.0.0 analytics.agoda.com
+0.0.0.0 bento.agoda.com
+0.0.0.0 partners.agoda.com
+#[emb-api.com]
+0.0.0.0 data.emb-api.com
+0.0.0.0 config.emb-api.com
 # --- GroupVN block ---
 #[adtimaserver]
 0.0.0.0 adtimaserver.vn
@@ -14817,7 +14834,6 @@
 0.0.0.0 api.unthem.com
 0.0.0.0 apis.appnxt.net
 0.0.0.0 apoilpnwr.com
-0.0.0.0 app-ads-services.com
 0.0.0.0 app-promo.com
 0.0.0.0 appads.com
 0.0.0.0 appboy-images.com
@@ -16487,6 +16503,7 @@
 0.0.0.0 guhalxqa.com
 0.0.0.0 guhomnfuzq.com
 0.0.0.0 guidecent.com
+0.0.0.0 gukrelrock.net
 0.0.0.0 gullyending.com
 0.0.0.0 gunggo.com
 0.0.0.0 guppymedia.com
@@ -18099,6 +18116,7 @@
 0.0.0.0 proximic.com
 0.0.0.0 psaltauw.net
 0.0.0.0 psausuck.net
+0.0.0.0 pscbrveha.com
 0.0.0.0 psipausaix.net
 0.0.0.0 psootchu.net
 0.0.0.0 psoroumukr.com
@@ -19507,6 +19525,7 @@
 0.0.0.0 wikia-ads.wikia.com
 0.0.0.0 wildedbarley.com
 0.0.0.0 wilslide.com
+0.0.0.0 wiltiqkc.com
 0.0.0.0 wimswuppoxan.com
 0.0.0.0 window.nixnet.cz
 0.0.0.0 windsattributeron.com
@@ -19554,6 +19573,7 @@
 0.0.0.0 wpush.org
 0.0.0.0 wqjbldnnceroue.com
 0.0.0.0 wqzyxxrrep.com
+0.0.0.0 wr.amigojimbang.com
 0.0.0.0 wrapper.lemde.fr
 0.0.0.0 wreaksyolkier.com
 0.0.0.0 wrestcut.com
@@ -19577,7 +19597,6 @@
 0.0.0.0 www.anrdoezrs.net
 0.0.0.0 www.antiadblocksystems.com
 0.0.0.0 www.anymedia.lv
-0.0.0.0 www.app-ads-services.com
 0.0.0.0 www.asiacpx.com
 0.0.0.0 www.axdsz.pro
 0.0.0.0 www.blockadsnot.com
@@ -19670,6 +19689,7 @@
 0.0.0.0 xius.com
 0.0.0.0 xjrwxfdphc.com
 0.0.0.0 xkesalwueyz.com
+0.0.0.0 xkfvceil.com
 0.0.0.0 xldncyivwazvfy.com
 0.0.0.0 xlviiirdr.com
 0.0.0.0 xlwaluyw.com
@@ -19813,6 +19833,7 @@
 0.0.0.0 zuqalzajno.com
 0.0.0.0 zvetokr2hr8pcng09.com
 0.0.0.0 zwnoeqzsuz.com
+0.0.0.0 zwnsuuaoqfab.com
 0.0.0.0 zxc.world
 0.0.0.0 zy.eilaeliza.top
 # --- Block other trackingVN ---
@@ -19847,7 +19868,6 @@
 0.0.0.0 analytics-s4.com
 0.0.0.0 analytics-static.ugc.bazaarvoice.com
 0.0.0.0 analytics-track.machbird.com
-0.0.0.0 analytics.agoda.com
 0.0.0.0 analytics.ahrefs.com
 0.0.0.0 analytics.alright.network
 0.0.0.0 analytics.amazing-media.com
@@ -19917,7 +19937,6 @@
 0.0.0.0 api.wipmania.com
 0.0.0.0 api2.poperblocker.com
 0.0.0.0 apolloprogram.io
-0.0.0.0 app-analytics-services.com
 0.0.0.0 app.posthog.com
 0.0.0.0 applog.camera360.com
 0.0.0.0 appres.camera360.com
@@ -19936,7 +19955,6 @@
 0.0.0.0 beacon.walmart.ca
 0.0.0.0 beacon.wikia-services.com
 0.0.0.0 beampulse.com
-0.0.0.0 bento.agoda.com
 0.0.0.0 beyondsecurity.com
 0.0.0.0 bi.yeshen.com
 0.0.0.0 bjdxhs.com
@@ -20598,6 +20616,7 @@
 0.0.0.0 cdn-settings.appsflyersdk.com
 0.0.0.0 conversions.appsflyersdk.com
 0.0.0.0 dlsdk.appsflyersdk.com
+0.0.0.0 dynamic-report-api.appsflyersdk.com
 0.0.0.0 gcdsdk.appsflyersdk.com
 0.0.0.0 inapps.appsflyersdk.com
 0.0.0.0 launches.appsflyersdk.com

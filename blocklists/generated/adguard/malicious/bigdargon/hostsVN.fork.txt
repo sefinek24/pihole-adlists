@@ -1,7 +1,7 @@
 ! Title: hostsVN
-! Last modified: 13 Aug 2025 10:20 UTC+7
-! Version: 2508131020
-! Blocked: 18.952 domains
+! Last modified: 19 Aug 2025 14:16 UTC+7
+! Version: 2508191416
+! Blocked: 18.967 domains
 ! Please report any ads or problems on GitHub
 ! Homepage: https://bigdargon.github.io/hostsVN/
 ! GitHub: https://github.com/bigdargon/hostsVN
@@ -228,6 +228,12 @@
 ||ep1.adtrafficquality.google^
 ||ep2.adtrafficquality.google^
 ||ep3.adtrafficquality.google^
+![app-ads-services.com]
+||app-ads-services.com^
+||odm.app-ads-services.com^
+||www.app-ads-services.com^
+![app-analytics-services.com]
+||app-analytics-services.com^
 ![microsoft.com]
 ||target.microsoft.com^
 ![telemetry.microsoft.com]
@@ -466,6 +472,7 @@
 ||us-west-2.prod.pr.analytics.console.aws.a2z.com^
 ||us-east-1.prod.pw.analytics.console.aws.a2z.com^
 ![telemetry.insights.video.a2z.com]
+||telemetry.insights.video.a2z.com^
 ||global.telemetry.insights.video.a2z.com^
 ||us-east-1.telemetry.insights.video.a2z.com^
 ![metrics.imdb.a2z.com]
@@ -473,6 +480,7 @@
 ||cdn.prod.metrics.imdb.a2z.com^
 ![a2z.com]
 ||clientlogger.marketplace.aws.a2z.com^
+||minerva.devices.a2z.com^
 ![tumblr]
 ||platform.tumblr.com^
 ||ls.srvcs.tumblr.com^
@@ -487,10 +495,12 @@
 ||geo.query.yahoo.com^
 ||geo.yahoo.com^
 ||marketingsolutions.yahoo.com^
+||noa.yahoo.com^
 ||nol.yahoo.com^
 ||partnerads.ysm.yahoo.com^
 ||pr-bh.ybp.yahoo.com^
 ||pr.comet.yahoo.com^
+||udc.yahoo.com^
 ||visit.webhosting.yahoo.com^
 ![ads.*.yahoo.com]
 ||ads.auctions.yahoo.com^
@@ -11811,6 +11821,13 @@
 ||cvt.finallygotthexds.site^
 ||finallygotthexds.site^
 ||i.finallygotthexds.site^
+![agoda.com]
+||analytics.agoda.com^
+||bento.agoda.com^
+||partners.agoda.com^
+![emb-api.com]
+||data.emb-api.com^
+||config.emb-api.com^
 ! --- GroupVN block ---
 ![adtimaserver]
 ||adtimaserver.vn^
@@ -14817,7 +14834,6 @@
 ||api.unthem.com^
 ||apis.appnxt.net^
 ||apoilpnwr.com^
-||app-ads-services.com^
 ||app-promo.com^
 ||appads.com^
 ||appboy-images.com^
@@ -16487,6 +16503,7 @@
 ||guhalxqa.com^
 ||guhomnfuzq.com^
 ||guidecent.com^
+||gukrelrock.net^
 ||gullyending.com^
 ||gunggo.com^
 ||guppymedia.com^
@@ -18099,6 +18116,7 @@
 ||proximic.com^
 ||psaltauw.net^
 ||psausuck.net^
+||pscbrveha.com^
 ||psipausaix.net^
 ||psootchu.net^
 ||psoroumukr.com^
@@ -19507,6 +19525,7 @@
 ||wikia-ads.wikia.com^
 ||wildedbarley.com^
 ||wilslide.com^
+||wiltiqkc.com^
 ||wimswuppoxan.com^
 ||window.nixnet.cz^
 ||windsattributeron.com^
@@ -19554,6 +19573,7 @@
 ||wpush.org^
 ||wqjbldnnceroue.com^
 ||wqzyxxrrep.com^
+||wr.amigojimbang.com^
 ||wrapper.lemde.fr^
 ||wreaksyolkier.com^
 ||wrestcut.com^
@@ -19577,7 +19597,6 @@
 ||www.anrdoezrs.net^
 ||www.antiadblocksystems.com^
 ||www.anymedia.lv^
-||www.app-ads-services.com^
 ||www.asiacpx.com^
 ||www.axdsz.pro^
 ||www.blockadsnot.com^
@@ -19670,6 +19689,7 @@
 ||xius.com^
 ||xjrwxfdphc.com^
 ||xkesalwueyz.com^
+||xkfvceil.com^
 ||xldncyivwazvfy.com^
 ||xlviiirdr.com^
 ||xlwaluyw.com^
@@ -19813,6 +19833,7 @@
 ||zuqalzajno.com^
 ||zvetokr2hr8pcng09.com^
 ||zwnoeqzsuz.com^
+||zwnsuuaoqfab.com^
 ||zxc.world^
 ||zy.eilaeliza.top^
 ! --- Block other trackingVN ---
@@ -19847,7 +19868,6 @@
 ||analytics-s4.com^
 ||analytics-static.ugc.bazaarvoice.com^
 ||analytics-track.machbird.com^
-||analytics.agoda.com^
 ||analytics.ahrefs.com^
 ||analytics.alright.network^
 ||analytics.amazing-media.com^
@@ -19917,7 +19937,6 @@
 ||api.wipmania.com^
 ||api2.poperblocker.com^
 ||apolloprogram.io^
-||app-analytics-services.com^
 ||app.posthog.com^
 ||applog.camera360.com^
 ||appres.camera360.com^
@@ -19936,7 +19955,6 @@
 ||beacon.walmart.ca^
 ||beacon.wikia-services.com^
 ||beampulse.com^
-||bento.agoda.com^
 ||beyondsecurity.com^
 ||bi.yeshen.com^
 ||bjdxhs.com^
@@ -20598,6 +20616,7 @@
 ||cdn-settings.appsflyersdk.com^
 ||conversions.appsflyersdk.com^
 ||dlsdk.appsflyersdk.com^
+||dynamic-report-api.appsflyersdk.com^
 ||gcdsdk.appsflyersdk.com^
 ||inapps.appsflyersdk.com^
 ||launches.appsflyersdk.com^

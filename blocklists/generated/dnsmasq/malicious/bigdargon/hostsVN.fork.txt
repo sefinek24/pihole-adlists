@@ -1,7 +1,7 @@
 # Title: hostsVN
-# Last modified: 13 Aug 2025 10:20 UTC+7
-# Version: 2508131020
-# Blocked: 18.952 domains
+# Last modified: 19 Aug 2025 14:16 UTC+7
+# Version: 2508191416
+# Blocked: 18.967 domains
 # Please report any ads or problems on GitHub
 # Homepage: https://bigdargon.github.io/hostsVN/
 # GitHub: https://github.com/bigdargon/hostsVN
@@ -228,6 +228,12 @@ server=/adtrafficquality.google/
 server=/ep1.adtrafficquality.google/
 server=/ep2.adtrafficquality.google/
 server=/ep3.adtrafficquality.google/
+#[app-ads-services.com]
+server=/app-ads-services.com/
+server=/odm.app-ads-services.com/
+server=/www.app-ads-services.com/
+#[app-analytics-services.com]
+server=/app-analytics-services.com/
 #[microsoft.com]
 server=/target.microsoft.com/
 #[telemetry.microsoft.com]
@@ -466,6 +472,7 @@ server=/us-east-2.prod.pr.analytics.console.aws.a2z.com/
 server=/us-west-2.prod.pr.analytics.console.aws.a2z.com/
 server=/us-east-1.prod.pw.analytics.console.aws.a2z.com/
 #[telemetry.insights.video.a2z.com]
+server=/telemetry.insights.video.a2z.com/
 server=/global.telemetry.insights.video.a2z.com/
 server=/us-east-1.telemetry.insights.video.a2z.com/
 #[metrics.imdb.a2z.com]
@@ -473,6 +480,7 @@ server=/metrics.imdb.a2z.com/
 server=/cdn.prod.metrics.imdb.a2z.com/
 #[a2z.com]
 server=/clientlogger.marketplace.aws.a2z.com/
+server=/minerva.devices.a2z.com/
 #[tumblr]
 server=/platform.tumblr.com/
 server=/ls.srvcs.tumblr.com/
@@ -487,10 +495,12 @@ server=/beap-bc.yahoo.com/
 server=/geo.query.yahoo.com/
 server=/geo.yahoo.com/
 server=/marketingsolutions.yahoo.com/
+server=/noa.yahoo.com/
 server=/nol.yahoo.com/
 server=/partnerads.ysm.yahoo.com/
 server=/pr-bh.ybp.yahoo.com/
 server=/pr.comet.yahoo.com/
+server=/udc.yahoo.com/
 server=/visit.webhosting.yahoo.com/
 #[ads.*.yahoo.com]
 server=/ads.auctions.yahoo.com/
@@ -11811,6 +11821,13 @@ server=/xml.acertb.com/
 server=/cvt.finallygotthexds.site/
 server=/finallygotthexds.site/
 server=/i.finallygotthexds.site/
+#[agoda.com]
+server=/analytics.agoda.com/
+server=/bento.agoda.com/
+server=/partners.agoda.com/
+#[emb-api.com]
+server=/data.emb-api.com/
+server=/config.emb-api.com/
 # --- GroupVN block ---
 #[adtimaserver]
 server=/adtimaserver.vn/
@@ -14817,7 +14834,6 @@ server=/api.parse.com/
 server=/api.unthem.com/
 server=/apis.appnxt.net/
 server=/apoilpnwr.com/
-server=/app-ads-services.com/
 server=/app-promo.com/
 server=/appads.com/
 server=/appboy-images.com/
@@ -16487,6 +16503,7 @@ server=/gueqiwsbxp.com/
 server=/guhalxqa.com/
 server=/guhomnfuzq.com/
 server=/guidecent.com/
+server=/gukrelrock.net/
 server=/gullyending.com/
 server=/gunggo.com/
 server=/guppymedia.com/
@@ -18099,6 +18116,7 @@ server=/providingcrechepartnership.com/
 server=/proximic.com/
 server=/psaltauw.net/
 server=/psausuck.net/
+server=/pscbrveha.com/
 server=/psipausaix.net/
 server=/psootchu.net/
 server=/psoroumukr.com/
@@ -19507,6 +19525,7 @@ server=/wikfuttupw.com/
 server=/wikia-ads.wikia.com/
 server=/wildedbarley.com/
 server=/wilslide.com/
+server=/wiltiqkc.com/
 server=/wimswuppoxan.com/
 server=/window.nixnet.cz/
 server=/windsattributeron.com/
@@ -19554,6 +19573,7 @@ server=/wpnrtnmrewunrtok.xyz/
 server=/wpush.org/
 server=/wqjbldnnceroue.com/
 server=/wqzyxxrrep.com/
+server=/wr.amigojimbang.com/
 server=/wrapper.lemde.fr/
 server=/wreaksyolkier.com/
 server=/wrestcut.com/
@@ -19577,7 +19597,6 @@ server=/www.ambleads.com/
 server=/www.anrdoezrs.net/
 server=/www.antiadblocksystems.com/
 server=/www.anymedia.lv/
-server=/www.app-ads-services.com/
 server=/www.asiacpx.com/
 server=/www.axdsz.pro/
 server=/www.blockadsnot.com/
@@ -19670,6 +19689,7 @@ server=/xiti.com/
 server=/xius.com/
 server=/xjrwxfdphc.com/
 server=/xkesalwueyz.com/
+server=/xkfvceil.com/
 server=/xldncyivwazvfy.com/
 server=/xlviiirdr.com/
 server=/xlwaluyw.com/
@@ -19813,6 +19833,7 @@ server=/zunsoach.com/
 server=/zuqalzajno.com/
 server=/zvetokr2hr8pcng09.com/
 server=/zwnoeqzsuz.com/
+server=/zwnsuuaoqfab.com/
 server=/zxc.world/
 server=/zy.eilaeliza.top/
 # --- Block other trackingVN ---
@@ -19847,7 +19868,6 @@ server=/analytics-production.hapyak.com/
 server=/analytics-s4.com/
 server=/analytics-static.ugc.bazaarvoice.com/
 server=/analytics-track.machbird.com/
-server=/analytics.agoda.com/
 server=/analytics.ahrefs.com/
 server=/analytics.alright.network/
 server=/analytics.amazing-media.com/
@@ -19917,7 +19937,6 @@ server=/api.usebutton.com/
 server=/api.wipmania.com/
 server=/api2.poperblocker.com/
 server=/apolloprogram.io/
-server=/app-analytics-services.com/
 server=/app.posthog.com/
 server=/applog.camera360.com/
 server=/appres.camera360.com/
@@ -19936,7 +19955,6 @@ server=/beacon.shazam.com/
 server=/beacon.walmart.ca/
 server=/beacon.wikia-services.com/
 server=/beampulse.com/
-server=/bento.agoda.com/
 server=/beyondsecurity.com/
 server=/bi.yeshen.com/
 server=/bjdxhs.com/
@@ -20598,6 +20616,7 @@ server=/websdk.appsflyer.com/
 server=/cdn-settings.appsflyersdk.com/
 server=/conversions.appsflyersdk.com/
 server=/dlsdk.appsflyersdk.com/
+server=/dynamic-report-api.appsflyersdk.com/
 server=/gcdsdk.appsflyersdk.com/
 server=/inapps.appsflyersdk.com/
 server=/launches.appsflyersdk.com/
