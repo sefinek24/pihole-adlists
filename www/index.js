@@ -1,4 +1,4 @@
-require('node:process').loadEnvFile();
+process.loadEnvFile();
 
 const cluster = require('node:cluster');
 const numCPUs = require('node:os').availableParallelism();
