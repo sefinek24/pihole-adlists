@@ -181,7 +181,7 @@ class DomainGenerator:
             return []
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate random domains for blocklists with duplicate checking')
+    parser = argparse.ArgumentParser(description='Generate random domains for blocklists with duplicate checking and validation')
     parser.add_argument('-k', '--keywords', nargs='+', help='Keywords to use for generation')
     parser.add_argument('-f', '--keyword-file', help='File containing keywords (one per line)')
     parser.add_argument('-c', '--count', type=int, default=100, help='Number of domains to generate (default: 100)')
@@ -192,9 +192,55 @@ def main():
     parser.add_argument('--existing', help='Path to existing blocklist file to avoid duplicates')
     parser.add_argument('--check-memory', action='store_true', help='Show memory usage during processing')
     
+    # Domain validation options
+    parser.add_argument('--validate', choices=['none', 'dns', 'ping', 'both'], 
+                       default='none', help='Domain validation method (default: none)')
+    parser.add_argument('--timeout', type=int, default=3, 
+                       help='Timeout in seconds for domain validation (default: 3)')
+    parser.add_argument('--batch-size', type=int, default=100,
+                       help='Batch size for domain validation (default: 100)')
+    parser.add_argument('--max-workers', type=int, default=50,
+                       help='Maximum number of worker threads for validation (default: 50)')
+    parser.add_argument('--validate-only', help='Validate domains from existing file instead of generating')
+    
     args = parser.parse_args()
     
     generator = DomainGenerator()
+    
+    # Validate existing file mode
+    if args.validate_only:
+        if not os.path.exists(args.validate_only):
+            print(f"Error: File {args.validate_only} not found!")
+            sys.exit(1)
+        
+        print(f"Loading domains from {args.validate_only}...")
+        domains = []
+        for domain in generator.read_existing_domains(args.validate_only):
+            domains.append(domain)
+        
+        print(f"Loaded {len(domains)} domains for validation")
+        
+        if args.validate != 'none':
+            valid_domains = generator.validate_domains_batch(
+                domains, args.validate, args.timeout, args.max_workers
+            )
+        else:
+            valid_domains = domains
+            print("Skipping validation (--validate none)")
+        
+        # Save or display results
+        if args.output:
+            generator.save_to_file(valid_domains, args.output, args.format)
+        else:
+            print(f"\nValid domains ({len(valid_domains)}):")
+            for domain in valid_domains[:20]:  # Show first 20
+                print(f"  {domain}")
+            if len(valid_domains) > 20:
+                print(f"  ... and {len(valid_domains) - 20} more")
+        
+        sys.exit(0)
+    
+    # Normal generation mode
     keywords = []
     
     # Load keywords from file or command line
@@ -207,31 +253,56 @@ def main():
     if not keywords:
         print("Error: No keywords provided. Use -k for command line keywords or -f for keyword file.")
         print("\nExample usage:")
+        print("  # Basic generation")
         print("  python domain_generator.py -k suspicious keywords -c 50 -o blocklist.txt")
-        print("  python domain_generator.py -f keywords.txt -c 200 --format pihole -o pihole_blocklist.txt")
-        print("  python domain_generator.py -f adult_keywords.txt -c 100 --format dnsmasq -o output.conf")
-        print("  python domain_generator.py -k keywords -c 500 --existing current_blocklist.txt -o new_domains.txt")
+        print("  ")
+        print("  # With duplicate checking")
+        print("  python domain_generator.py -k keywords -c 500 --existing current_blocklist.txt")
+        print("  ")
+        print("  # With DNS validation")
+        print("  python domain_generator.py -k keywords -c 100 --validate dns --timeout 5")
+        print("  ")
+        print("  # With ping validation and custom settings")
+        print("  python domain_generator.py -k keywords -c 50 --validate ping --batch-size 50 --max-workers 20")
+        print("  ")
+        print("  # Validate existing file")
+        print("  python domain_generator.py --validate-only existing_domains.txt --validate dns -o valid_domains.txt")
         sys.exit(1)
     
     # Show memory usage if requested
     if args.check_memory:
-        import psutil
-        process = psutil.Process()
-        print(f"Initial memory usage: {process.memory_info().rss / 1024 / 1024:.1f} MB")
+        try:
+            import psutil
+            process = psutil.Process()
+            print(f"Initial memory usage: {process.memory_info().rss / 1024 / 1024:.1f} MB")
+        except ImportError:
+            print("psutil not available for memory monitoring")
+            args.check_memory = False
     
-    # Generate domains with deduplication
-    if args.existing:
-        domains = generator.generate_domain_variations_with_dedup(keywords, args.count, args.existing)
+    # Generate and validate domains
+    if args.validate != 'none':
+        domains = generator.generate_and_validate_domains(
+            keywords=keywords,
+            count=args.count,
+            existing_file=args.existing,
+            validation_method=args.validate,
+            timeout=args.timeout,
+            batch_size=args.batch_size,
+            max_workers=args.max_workers
+        )
     else:
-        # Use original method if no existing file
-        domains = []
-        existing_domains = set()
-        domain_gen = generator.generate_unique_domains_generator(keywords, existing_domains)
-        
-        for i, domain in enumerate(domain_gen):
-            domains.append(domain)
-            if len(domains) >= args.count:
-                break
+        # Use original method without validation
+        if args.existing:
+            domains = generator.generate_domain_variations_with_dedup(keywords, args.count, args.existing)
+        else:
+            domains = []
+            existing_domains = set()
+            domain_gen = generator.generate_unique_domains_generator(keywords, existing_domains)
+            
+            for i, domain in enumerate(domain_gen):
+                domains.append(domain)
+                if len(domains) >= args.count:
+                    break
     
     if args.check_memory:
         print(f"Memory after generation: {process.memory_info().rss / 1024 / 1024:.1f} MB")
@@ -244,7 +315,8 @@ def main():
     if args.preview:
         print(f"\nPreview (first 10 of {len(domains)} generated domains):")
         for domain in domains[:10]:
-            print(f"  {domain}")
+            status = "✓ reachable" if args.validate != 'none' else ""
+            print(f"  {domain} {status}")
         if len(domains) > 10:
             print("...")
     
