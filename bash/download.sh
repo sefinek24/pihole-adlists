@@ -103,7 +103,7 @@ urls=(
   "https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/Lists/Scam scam/ShadowWhisperer/scam.fork.txt"
 
   # Polish filters
-  "https://hole.cert.pl/domains/v2/domains_hosts.txt other/polish-blocklists/cert.pl/domains-hosts.fork.txt"
+  "https://hole.cert.pl/domains/v2/domains.txt other/polish-blocklists/cert.pl/domains-hosts.fork.txt"
   "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/hostfile.txt other/polish-blocklists/MajkiIT/hostfile.fork.txt"
   "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt other/polish-blocklists/PolishFiltersTeam/KADhosts.fork.txt"
 
