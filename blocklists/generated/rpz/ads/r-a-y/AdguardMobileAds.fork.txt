@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025100101 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025100201 43200 3600 259200 300
   NS  localhost.
 adx-open-service.youku.com CNAME .
 *.adx-open-service.youku.com CNAME .
@@ -169,6 +169,10 @@ startup.mobile.webvisor.com CNAME .
 *.startup.mobile.webvisor.com CNAME .
 startup-mobile.ap.yandex-net.ru CNAME .
 *.startup-mobile.ap.yandex-net.ru CNAME .
+robin-flow.com CNAME .
+*.robin-flow.com CNAME .
+adsmoloco.com CNAME .
+*.adsmoloco.com CNAME .
 app-ads-services.com CNAME .
 *.app-ads-services.com CNAME .
 adtmonetize.com CNAME .
@@ -349,8 +353,12 @@ ads-router-noneu.truecaller.com CNAME .
 *.ads-router-noneu.truecaller.com CNAME .
 umphek.com CNAME .
 *.umphek.com CNAME .
+playgap.b-cdn.net CNAME .
+*.playgap.b-cdn.net CNAME .
 ahoy-internal-ads-hv.b-cdn.net CNAME .
 *.ahoy-internal-ads-hv.b-cdn.net CNAME .
+downloadshi.b-cdn.net CNAME .
+*.downloadshi.b-cdn.net CNAME .
 ad.iwhop.cn CNAME .
 *.ad.iwhop.cn CNAME .
 s-odx.oleads.com CNAME .
@@ -375,8 +383,6 @@ static.timetreeads.com CNAME .
 *.static.timetreeads.com CNAME .
 zgzxs.weathercn.com CNAME .
 *.zgzxs.weathercn.com CNAME .
-downloadshi.b-cdn.net CNAME .
-*.downloadshi.b-cdn.net CNAME .
 ads.rmbl.ws CNAME .
 *.ads.rmbl.ws CNAME .
 adsassets-ipv6.waze.com CNAME .
@@ -1205,8 +1211,6 @@ adshost2.com CNAME .
 *.adshost2.com CNAME .
 adsmo.ru CNAME .
 *.adsmo.ru CNAME .
-adsmoloco.com CNAME .
-*.adsmoloco.com CNAME .
 adsniper.ru CNAME .
 *.adsniper.ru CNAME .
 adsrvr.org CNAME .
