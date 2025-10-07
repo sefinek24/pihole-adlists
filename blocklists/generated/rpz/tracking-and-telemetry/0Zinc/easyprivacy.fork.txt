@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025100401 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025100701 43200 3600 259200 300
   NS  localhost.
 00px.net CNAME .
 *.00px.net CNAME .
@@ -1081,6 +1081,8 @@ ams-pageview-public.s3.amazonaws.com CNAME .
 *.ams-pageview-public.s3.amazonaws.com CNAME .
 analyse.bcovery.com CNAME .
 *.analyse.bcovery.com CNAME .
+analytic-client.adult-chess.com CNAME .
+*.analytic-client.adult-chess.com CNAME .
 analytic-client.blitzmightyparty.com CNAME .
 *.analytic-client.blitzmightyparty.com CNAME .
 analytic-client.chickgoddess.com CNAME .
@@ -2013,6 +2015,8 @@ ga-beacon.appspot.com CNAME .
 *.ga-beacon.appspot.com CNAME .
 ga.webdigi.co.uk CNAME .
 *.ga.webdigi.co.uk CNAME .
+galileotelemetry.tencent.com CNAME .
+*.galileotelemetry.tencent.com CNAME .
 ganon.yahoo.com CNAME .
 *.ganon.yahoo.com CNAME .
 gateway.foresee.com CNAME .
