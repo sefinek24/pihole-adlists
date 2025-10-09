@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025100801 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025100901 43200 3600 259200 300
   NS  localhost.
 adx-open-service.youku.com CNAME .
 *.adx-open-service.youku.com CNAME .
@@ -153,6 +153,10 @@ startup.mobile.webvisor.com CNAME .
 *.startup.mobile.webvisor.com CNAME .
 startup-mobile.ap.yandex-net.ru CNAME .
 *.startup-mobile.ap.yandex-net.ru CNAME .
+datafinder-beacon.starii-rover.com CNAME .
+*.datafinder-beacon.starii-rover.com CNAME .
+ads-bridge.pixocial.com CNAME .
+*.ads-bridge.pixocial.com CNAME .
 freewheel-jitt.sanoma.fi CNAME .
 *.freewheel-jitt.sanoma.fi CNAME .
 parrot-flow.com CNAME .
