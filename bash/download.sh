@@ -60,7 +60,6 @@ readonly urls=(
   "https://blocklistproject.github.io/Lists/malware.txt malicious/blocklistproject/malware.fork.txt"
   "https://gitlab.com/quidsup/notrack-blocklists/raw/master/malware.list malicious/quidsup/notrack-malware.fork.txt"
   "https://malware-filter.gitlab.io/malware-filter/urlhaus-filter-hosts-online.txt malicious/malware-filter/urlhaus-filter-hosts-online.fork.txt"
-  "https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt malicious/digitalside/latestdomains.fork.txt"
   "https://raw.githubusercontent.com/AssoEchap/stalkerware-indicators/master/generated/hosts malicious/AssoEchap/stalkerware-indicators.fork.txt"
   "https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts malicious/bigdargon/hostsVN.fork.txt"
   "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt malicious/DandelionSprout-AntiMalwareHosts.fork.txt"
