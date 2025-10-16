@@ -4,7 +4,7 @@
     <h1>📝 Default blocklist collection (Dnsmasq)</h1>
     <p>
         📄 » <b>Format: server=/domain.tld/</b><br>
-        📥 » <b>Last update: 11.03.2025 / DD.MM.YYYY</b><br>
+        📥 » <b>Last update: 16.10.2025 / DD.MM.YYYY</b><br>
         ⭐ » <b>Mark this repository with a star if you find it useful.</b>
     </p>
 </div>
@@ -69,7 +69,6 @@ https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/AssoEchap/stalkerwa
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/bigdargon/hostsVN.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/blocklistproject/malware.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/DandelionSprout-AntiMalwareHosts.fork.txt
-https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/digitalside/latestdomains.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/disconnectme/simple-malvertising.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/malware-filter/urlhaus-filter-hosts-online.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/phishing.txt

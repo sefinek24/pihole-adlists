@@ -4,7 +4,7 @@
     <h1>📝 Default blocklist collection for Unbound</h1>
     <p>
         📄 » <b>Format: local-zone: "domain.tld." always_nxdomain</b><br>
-        📥 » <b>Last update: 11.03.2025 / DD.MM.YYYY</b><br>
+        📥 » <b>Last update: 16.10.2025 / DD.MM.YYYY</b><br>
         ⭐ » <b>Mark this repository with a star if you find it useful.</b>
     </p>
 </div>
@@ -71,7 +71,6 @@ https://blocklist.sefinek.net/generated/v1/unbound/malicious/AssoEchap/stalkerwa
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/bigdargon/hostsVN.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/blocklistproject/malware.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/DandelionSprout-AntiMalwareHosts.fork.conf
-https://blocklist.sefinek.net/generated/v1/unbound/malicious/digitalside/latestdomains.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/disconnectme/simple-malvertising.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/malware-filter/urlhaus-filter-hosts-online.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/phishing.conf
