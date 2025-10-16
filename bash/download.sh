@@ -1,9 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Each blocklist is stored in a directory named after its author.
-# The downloaded file is saved with the suffix "fork" to indicate that it is a modified copy.
-# Below is a list of blocklist URLs along with their respective destination paths.
-urls=(
+readonly urls=(
   # Abuse
   "https://blocklistproject.github.io/Lists/abuse.txt abuse/blocklistproject/hosts.fork.txt"
   "https://urlhaus.abuse.ch/downloads/hostfile abuse/urlhaus.abuse.ch/hostfile.fork.txt"
@@ -152,75 +150,160 @@ urls=(
   "https://raw.githubusercontent.com/jarelllama/Scam-Blocklist/main/data/dead_domains.txt dead-domains/jarelllama/dead-domains.fork.txt"
 )
 
-# Verify required dependencies are installed
-for cmd in curl node; do
-  if ! command -v "$cmd" &>/dev/null; then
-    echo "❌ '$cmd' is not installed."
+readonly REQUIRED_COMMANDS=("curl" "node")
+readonly BASE_OUTPUT_DIR="blocklists/templates"
+readonly MAX_JOBS=4
+readonly CURL_TIMEOUT=32
+readonly CURL_RETRY=2
+readonly CURL_RETRY_DELAY=3
+
+check_dependencies() {
+  local missing_deps=()
+
+  for cmd in "${REQUIRED_COMMANDS[@]}"; do
+    if ! command -v "$cmd" >/dev/null 2>&1; then
+      missing_deps+=("$cmd")
+    fi
+  done
+
+  if [[ ${#missing_deps[@]} -gt 0 ]]; then
+    echo "Missing required dependencies: ${missing_deps[*]}" >&2
     exit 1
-  fi
-done
-
-# Set base directory for downloads
-base_output_dir="blocklists/templates"
-if [ ! -d "$base_output_dir" ]; then
-  mkdir -p "$base_output_dir"
-  echo "🔵 Created directory: $base_output_dir"
-fi
-
-# Read version from package.json to build User-Agent
-if [ -f "./package.json" ]; then
-  version=$(node -p "require('./package.json').version")
-  user_agent="Mozilla/5.0 (compatible; SefinekBlocklists/${version}; +https://blocklist.sefinek.net)"
-else
-  echo "🔴 package.json not found."
-  exit 1
-fi
-
-# Function: format file size
-format_size() {
-  local bytes=$1
-  if ((bytes >= 1048576)); then
-    printf "%.2f MB" "$(awk "BEGIN {print $bytes/1048576}")"
-  elif ((bytes >= 1024)); then
-    printf "%.2f KB" "$(awk "BEGIN {print $bytes/1024}")"
-  else
-    printf "%d B" "$bytes"
   fi
 }
 
-# Function to download a single file
+format_size() {
+  awk -v bytes="$1" 'BEGIN {
+    if (bytes >= 1048576) printf "%.2f MB", bytes/1048576
+    else if (bytes >= 1024) printf "%.2f KB", bytes/1024
+    else printf "%d B", bytes
+  }'
+}
+
 download_file() {
-  local entry="$1"
-  local download_url="${entry%% *}"
-  local relative_path="${entry#* }"
-  local full_path="$base_output_dir/$relative_path"
+  local -r entry="$1"
+  local -r download_url="${entry%% *}"
+  local -r relative_path="${entry#* }"
+  local -r full_path="${BASE_OUTPUT_DIR}/${relative_path}"
   local file_dir
+  local file_size
+  local formatted_size
+  local error_file
+  local error_msg
+
   file_dir=$(dirname "$full_path")
+  error_file=$(mktemp -p /dev/shm)
 
   mkdir -p "$file_dir"
 
-  local file_size
-  if file_size=$(curl --silent --show-error --location --user-agent "$user_agent" --retry 3 --retry-delay 2 --retry-max-time 30 --output "$full_path" --write-out "%{size_download}" "$download_url"); then
-    local formatted_size
+  if file_size=$(curl \
+    --silent \
+    --show-error \
+    --location \
+    --user-agent "$user_agent" \
+    --retry "$CURL_RETRY" \
+    --retry-delay "$CURL_RETRY_DELAY" \
+    --max-time "$CURL_TIMEOUT" \
+    --output "$full_path" \
+    --write-out "%{size_download}" \
+    "$download_url" 2>"$error_file"); then
+
     formatted_size=$(format_size "$file_size")
-    echo "✔️ Downloaded: $download_url [$formatted_size]"
+    rm -f "$error_file"
+    echo "SUCCESS|$download_url|$formatted_size|$file_size"
   else
-    echo "❌ Failed to download: $download_url"
+    error_msg=$(head -n 1 "$error_file" 2>/dev/null || echo "Unknown error")
+    rm -f "$error_file"
+    echo "FAILED|$download_url|$error_msg"
   fi
 }
 
-echo "🔵 Starting to download ${#urls[@]} files..."
-max_jobs=4
-current_jobs=0
+process_result() {
+  local -r result="$1"
+  local status
+  local url
+  local info
 
-for entry in "${urls[@]}"; do
-  download_file "$entry" &
-  ((current_jobs++))
+  IFS='|' read -r status url info _ <<< "$result"
 
-  if (( current_jobs >= max_jobs )); then
-    wait -n
-    ((current_jobs--))
+  if [[ "$status" == "SUCCESS" ]]; then
+    echo "✔️ $url [$info]"
+  elif [[ "$status" == "FAILED" ]]; then
+    echo "❌ $url - $info"
   fi
-done
+}
 
-wait
+calculate_statistics() {
+  local -r temp_file="$1"
+  local success_count=0
+  local total_bytes=0
+  local status
+  local url
+  local info
+  local size_bytes
+
+  while IFS='|' read -r status url info size_bytes; do
+    if [[ "$status" == "SUCCESS" ]]; then
+      ((success_count++))
+      [[ -n "${size_bytes:-}" ]] && total_bytes=$((total_bytes + size_bytes))
+    fi
+  done < "$temp_file"
+
+  echo "$success_count|$total_bytes"
+}
+
+cleanup() {
+  [[ -n "${TEMP_RESULTS:-}" ]] && rm -f "$TEMP_RESULTS"
+}
+
+main() {
+  check_dependencies
+
+  if [[ ! -d "$BASE_OUTPUT_DIR" ]]; then
+    mkdir -p "$BASE_OUTPUT_DIR"
+  fi
+
+  if [[ ! -f "./package.json" ]]; then
+    echo "package.json not found." >&2
+    exit 1
+  fi
+
+  local version
+  local stats
+  local success_count
+  local total_bytes
+  local total_size
+
+  version=$(node -p "require('./package.json').version")
+  readonly user_agent="Mozilla/5.0 (compatible; SefinekBlocklists/${version}; +https://blocklist.sefinek.net)"
+
+  TEMP_RESULTS=$(mktemp -p /dev/shm)
+  readonly TEMP_RESULTS
+
+  trap cleanup EXIT INT TERM
+
+  echo "Starting to download ${#urls[@]} files..."
+
+  for entry in "${urls[@]}"; do
+    while [[ $(jobs -r -p | wc -l) -ge $MAX_JOBS ]]; do
+      wait -n 2>/dev/null
+    done
+
+    {
+      result=$(download_file "$entry")
+      echo "$result" >> "$TEMP_RESULTS"
+      process_result "$result"
+    } &
+  done
+
+  wait
+
+  stats=$(calculate_statistics "$TEMP_RESULTS")
+  IFS='|' read -r success_count total_bytes <<< "$stats"
+  total_size=$(format_size "$total_bytes")
+
+  echo "Downloaded: $success_count/${#urls[@]}"
+  echo "Total size: $total_size"
+}
+
+main "$@"
