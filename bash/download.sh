@@ -301,8 +301,7 @@ main() {
   IFS='|' read -r success_count total_bytes <<< "$stats"
   total_size=$(format_size "$total_bytes")
 
-  echo "Downloaded: $success_count/${#urls[@]}"
-  echo "Total size: $total_size"
+  echo "Downloaded: $success_count/${#urls[@]} | Size: $total_size"
 }
 
 main "$@"
