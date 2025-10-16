@@ -1,6 +1,6 @@
 {
   "name": "sefinek-blocklist-collection",
-  "version": "0.18.0+20250911",
+  "version": "0.18.0+20251016",
   "description": "The best blocklist collection and list generator — your first and most trusted source with minimal false positives.",
   "homepage": "https://blocklist.sefinek.net",
   "bugs": {
@@ -20,21 +20,21 @@
     "up": "ncu -u && npm i && npm update && npm audit fix"
   },
   "dependencies": {
-    "axios": "^1.12.0",
-    "cron-parser": "^5.3.1",
+    "axios": "^1.12.2",
+    "cron-parser": "^5.4.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "express-rate-limit": "^8.1.0",
     "express-timeout-handler": "^2.2.2",
     "helmet": "^8.1.0",
     "lzma-native": "^8.0.6",
-    "marked": "^16.2.1",
-    "mongoose": "^8.18.1",
+    "marked": "^16.4.0",
+    "mongoose": "^8.19.1",
     "morgan": "^1.10.1",
     "ws": "^8.18.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.35.0",
+    "@eslint/js": "^9.37.0",
     "globals": "^16.4.0",
     "ipaddr.js": "^2.2.0",
     "kleur": "^4.1.5",
