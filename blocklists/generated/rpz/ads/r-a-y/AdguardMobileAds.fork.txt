@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025101401 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025101601 43200 3600 259200 300
   NS  localhost.
 adx-open-service.youku.com CNAME .
 *.adx-open-service.youku.com CNAME .
@@ -153,6 +153,8 @@ startup.mobile.webvisor.com CNAME .
 *.startup.mobile.webvisor.com CNAME .
 startup-mobile.ap.yandex-net.ru CNAME .
 *.startup-mobile.ap.yandex-net.ru CNAME .
+reward-api.csjplatform.com CNAME .
+*.reward-api.csjplatform.com CNAME .
 tbiwtech.com CNAME .
 *.tbiwtech.com CNAME .
 impbid.com CNAME .
