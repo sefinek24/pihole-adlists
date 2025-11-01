@@ -4,7 +4,7 @@
     <h1>📝 Default blocklist collection (hosts)</h1>
     <p>
         📄 » <b>Format: domain.tld</b><br>
-        📥 » <b>Last update: 16.10.2025 / DD.MM.YYYY</b><br>
+        📥 » <b>Last update: 1.11.2025 / DD.MM.YYYY</b><br>
         ⭐ » <b>Mark this repository with a star if you find it useful.</b>
     </p>
 </div>
@@ -19,7 +19,6 @@ https://blocklist.sefinek.net/generated/v1/noip/abuse/urlhaus.abuse.ch/hostfile.
 https://blocklist.sefinek.net/generated/v1/noip/ads/0Zinc/easylist.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/ads/adaway/hosts.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/ads/blocklistproject/hosts.fork.txt
-https://blocklist.sefinek.net/generated/v1/noip/ads/blocklistproject/youtube.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/ads/craiu/mobiletrackers.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/ads/crazy-max/spy.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/ads/DandelionSprout.GameConsoleAdblockList.txt

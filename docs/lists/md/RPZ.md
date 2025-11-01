@@ -4,7 +4,7 @@
     <h1>📝 Default blocklist collection (RPZ)</h1>
     <p>
         📄 » <b>Format: domain.tld CNAME .</b><br>
-        📥 » <b>Last update: 16.10.2025 / DD.MM.YYYY</b><br>
+        📥 » <b>Last update: 1.11.2025 / DD.MM.YYYY</b><br>
         ⭐ » <b>Mark this repository with a star if you find it useful.</b>
     </p>
 </div>
@@ -19,7 +19,6 @@ https://blocklist.sefinek.net/generated/v1/rpz/abuse/urlhaus.abuse.ch/hostfile.f
 https://blocklist.sefinek.net/generated/v1/rpz/ads/0Zinc/easylist.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/ads/adaway/hosts.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/ads/blocklistproject/hosts.fork.txt
-https://blocklist.sefinek.net/generated/v1/rpz/ads/blocklistproject/youtube.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/ads/craiu/mobiletrackers.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/ads/crazy-max/spy.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/ads/DandelionSprout.GameConsoleAdblockList.txt

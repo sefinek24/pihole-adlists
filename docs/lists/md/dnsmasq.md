@@ -4,7 +4,7 @@
     <h1>📝 Default blocklist collection (Dnsmasq)</h1>
     <p>
         📄 » <b>Format: server=/domain.tld/</b><br>
-        📥 » <b>Last update: 16.10.2025 / DD.MM.YYYY</b><br>
+        📥 » <b>Last update: 1.11.2025 / DD.MM.YYYY</b><br>
         ⭐ » <b>Mark this repository with a star if you find it useful.</b>
     </p>
 </div>
@@ -19,7 +19,6 @@ https://blocklist.sefinek.net/generated/v1/dnsmasq/abuse/urlhaus.abuse.ch/hostfi
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/0Zinc/easylist.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/adaway/hosts.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/blocklistproject/hosts.fork.txt
-https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/blocklistproject/youtube.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/craiu/mobiletrackers.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/crazy-max/spy.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/DandelionSprout.GameConsoleAdblockList.txt
