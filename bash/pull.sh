@@ -10,7 +10,7 @@ utc_now() {
 }
 
 # Paths
-repo_path="/home/sefinek/node/Sefinek-Blocklist-Collection" # Path to the repository
+repo_path="/home/sefinek/node/blocklist" # Path to the repository
 logs_dir="$repo_path/www/public/logs" # Directory to store logs
 log_file="$logs_dir/pull_$(utc_now date).log" # Path to the log file
 
