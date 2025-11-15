@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025111401 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025111501 43200 3600 259200 300
   NS  localhost.
 adeventtracker.spotify.com CNAME .
 *.adeventtracker.spotify.com CNAME .
@@ -203,6 +203,8 @@ int.vlancaa.fun CNAME .
 *.int.vlancaa.fun CNAME .
 tok.vaicore.xyz CNAME .
 *.tok.vaicore.xyz CNAME .
+federatedcompute-pa.googleapis.com CNAME .
+*.federatedcompute-pa.googleapis.com CNAME .
 fcm-collect-api.alyac.com CNAME .
 *.fcm-collect-api.alyac.com CNAME .
 service-api.flarelane.com CNAME .
@@ -369,18 +371,6 @@ statistic-overseas.yunxinfw.com CNAME .
 *.statistic-overseas.yunxinfw.com CNAME .
 perfsight.wetest.net CNAME .
 *.perfsight.wetest.net CNAME .
-gamedot.afafb.com CNAME .
-*.gamedot.afafb.com CNAME .
-tadata.afafb.com CNAME .
-*.tadata.afafb.com CNAME .
-ecpm.afafb.com CNAME .
-*.ecpm.afafb.com CNAME .
-mediation-receiver.afafb.com CNAME .
-*.mediation-receiver.afafb.com CNAME .
-df.afafb.com CNAME .
-*.df.afafb.com CNAME .
-middle-defend.afafb.com CNAME .
-*.middle-defend.afafb.com CNAME .
 pangolin-sdk-toutiao.com CNAME .
 *.pangolin-sdk-toutiao.com CNAME .
 stat.tpns.sgp.tencent.com CNAME .
