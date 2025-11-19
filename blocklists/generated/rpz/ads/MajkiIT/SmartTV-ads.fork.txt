@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025111701 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025111901 43200 3600 259200 300
   NS  localhost.
 0077777700140002.myhomescreen.tv CNAME .
 *.0077777700140002.myhomescreen.tv CNAME .
@@ -257,8 +257,8 @@ prov.samsungcloudsolution.com CNAME .
 *.prov.samsungcloudsolution.com CNAME .
 rd.samsungadhub.com CNAME .
 *.rd.samsungadhub.com CNAME .
-rwww.samsungotn.net CNAME .
-*.rwww.samsungotn.net CNAME .
+samsungotn.net CNAME .
+*.samsungotn.net CNAME .
 samsungacr.com CNAME .
 *.samsungacr.com CNAME .
 samsungadhub.com CNAME .
@@ -369,6 +369,8 @@ p-hbbtv.superrtl.de CNAME .
 *.p-hbbtv.superrtl.de CNAME .
 hbbtv.3sat.de CNAME .
 *.hbbtv.3sat.de CNAME .
+app.hbbtv.hse24.com CNAME .
+*.app.hbbtv.hse24.com CNAME .
 2mdn.net CNAME .
 *.2mdn.net CNAME .
 ad.71i.de CNAME .
@@ -421,6 +423,10 @@ alphonso.tv CNAME .
 *.alphonso.tv CNAME .
 tv.ads.spotx.tv CNAME .
 *.tv.ads.spotx.tv CNAME .
+hse24.tvtelemetrie.de CNAME .
+*.hse24.tvtelemetrie.de CNAME .
+hse-ctv.com CNAME .
+*.hse-ctv.com CNAME .
 ichnaea.netflix.com CNAME .
 *.ichnaea.netflix.com CNAME .
 customerevents.netflix.com CNAME .
