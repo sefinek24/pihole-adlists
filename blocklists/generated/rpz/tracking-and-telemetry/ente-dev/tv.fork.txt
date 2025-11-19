@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025111801 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025111901 43200 3600 259200 300
   NS  localhost.
 0077777700140002.myhomescreen.tv CNAME .
 *.0077777700140002.myhomescreen.tv CNAME .
@@ -69,6 +69,8 @@ api.thetake.com CNAME .
 *.api.thetake.com CNAME .
 api.us.hismarttv.com CNAME .
 *.api.us.hismarttv.com CNAME .
+app.hbbtv.hse24.com CNAME .
+*.app.hbbtv.hse24.com CNAME .
 apu.samsungelectronics.com CNAME .
 *.apu.samsungelectronics.com CNAME .
 austin.logs.roku.com CNAME .
@@ -243,6 +245,10 @@ hbbtv01p.anixe.net CNAME .
 *.hbbtv01p.anixe.net CNAME .
 hbbtvapp.sonnenklar.tv CNAME .
 *.hbbtvapp.sonnenklar.tv CNAME .
+hse-ctv.com CNAME .
+*.hse-ctv.com CNAME .
+hse24.tvtelemetrie.de CNAME .
+*.hse24.tvtelemetrie.de CNAME .
 i-stream.pl CNAME .
 *.i-stream.pl CNAME .
 ibis.lgappstv.com CNAME .
@@ -355,8 +361,6 @@ redbutton-lb-prod.redbutton.de CNAME .
 *.redbutton-lb-prod.redbutton.de CNAME .
 redbutton.sim-technik.de CNAME .
 *.redbutton.sim-technik.de CNAME .
-rwww.samsungotn.net CNAME .
-*.rwww.samsungotn.net CNAME .
 samsungacr.com CNAME .
 *.samsungacr.com CNAME .
 samsungadhub.com CNAME .
@@ -499,6 +503,8 @@ vd.emp.prd.s3.amazonaws.com CNAME .
 *.vd.emp.prd.s3.amazonaws.com CNAME .
 vdterms.samsungcloudsolution.com CNAME .
 *.vdterms.samsungcloudsolution.com CNAME .
+samsungotn.net CNAME .
+*.samsungotn.net CNAME .
 samsungrm.net CNAME .
 *.samsungrm.net CNAME .
 x2.vindicosuite.com CNAME .
