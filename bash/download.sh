@@ -52,6 +52,7 @@ readonly urls=(
   "https://blocklistproject.github.io/Lists/gambling.txt gambling/blocklistproject/hosts.fork.txt"
   "https://raw.githubusercontent.com/alsyundawy/TrustPositif/main/gambling_indonesia.txt gambling/TrustPositif/gambling-indonesia.fork.txt"
   "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/gambling-hosts.txt gambling/MajkiIT/gambling-hosts.fork.txt"
+  "https://raw.githubusercontent.com/BrigsLabs/judol/main/judol_domains.txt gambling/judol/hosts.fork.txt"
 
   # Hate and junk
   "https://www.github.developerdan.com/hosts/lists/hate-and-junk-extended.txt hate-and-junk/developerdan/extended.fork.txt"
