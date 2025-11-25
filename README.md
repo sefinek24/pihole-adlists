@@ -117,5 +117,5 @@ Join our [Discord server](https://discord.gg/53DBjTuzgZ) or open a new [Issue](h
 |---------------|-------------|
 
 
-## 📝 [CC BY-NC-ND 4.0 License](LICENSE)
+## 📝 CC BY-NC-ND 4.0 License
 Copyright © 2023–2025 [Sefinek](https://sefinek.net)
