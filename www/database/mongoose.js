@@ -11,7 +11,7 @@ const connectToDatabase = async () => {
 
 connection.on('connected', async () => {
 	try {
-		const data = await RequestStats.findOne({}).limit(1);
+		const data = await RequestStats.findOne({}).lean();
 		if (data) return;
 
 		await RequestStats.create({});

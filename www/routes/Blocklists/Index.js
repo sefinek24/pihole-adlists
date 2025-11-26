@@ -1,5 +1,4 @@
-const { Router } = require('express');
-const router = Router();
+const router = require('express').Router();
 const Marked = require('marked');
 const fs = require('node:fs/promises');
 const path = require('node:path');
