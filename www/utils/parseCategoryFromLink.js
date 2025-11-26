@@ -1,6 +1,6 @@
 const types = {
-	'0.0.0.0': '0000',
-	'127.0.0.1': '127001',
+	'0.0.0.0': 'hosts',
+	'127.0.0.1': 'localhost',
 };
 
 module.exports = url => {

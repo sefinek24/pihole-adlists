@@ -9,8 +9,8 @@ const MinuteStatsSchema = new Schema({
 	blocklists: { type: Number, default: 0 },
 
 	categories: {
-		'0000': { type: Number, default: 0 },
-		'127001': { type: Number, default: 0 },
+		hosts: { type: Number, default: 0 },
+		localhost: { type: Number, default: 0 },
 		adguard: { type: Number, default: 0 },
 		dnsmasq: { type: Number, default: 0 },
 		noip: { type: Number, default: 0 },

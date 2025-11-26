@@ -179,11 +179,11 @@
         <div class="container-stats">
             <div>
                 <div class="category-small">0.0.0.0</div>
-                <div class="stats-content" id="stats-content-0000"><%= db.categories['0000']?.toLocaleString() %></div>
+                <div class="stats-content" id="stats-content-hosts"><%= db.categories.hosts?.toLocaleString() %></div>
             </div>
             <div>
                 <div class="category-small">127.0.0.1</div>
-                <div class="stats-content" id="stats-content-127001"><%= db.categories['127001']?.toLocaleString() %></div>
+                <div class="stats-content" id="stats-content-localhost"><%= db.categories.localhost?.toLocaleString() %></div>
             </div>
             <div>
                 <div class="category-small">No IP</div>
@@ -260,8 +260,8 @@
             updateStats('total-requests', parsedData.stats.total);
             updateStats('blocklist-requests', parsedData.stats.blocklists);
 
-            updateStats('0000', parsedData.stats.categories['0000']);
-            updateStats('127001', parsedData.stats.categories['127001']);
+            updateStats('hosts', parsedData.stats.categories.hosts);
+            updateStats('localhost', parsedData.stats.categories.localhost);
             updateStats('noip', parsedData.stats.categories.noip);
             updateStats('adguard', parsedData.stats.categories.adguard);
             updateStats('unbound', parsedData.stats.categories.unbound);

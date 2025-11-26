@@ -16,9 +16,6 @@ const aggregateRedisToMongo = async () => {
 		// Aggregate data
 		const aggregated = {
 			inc: {},
-			perDay: {},
-			perMonth: {},
-			perYear: {},
 		};
 
 		const minuteDocuments = [];
@@ -79,8 +76,8 @@ const aggregateRedisToMongo = async () => {
 					total: parseInt(data.total || 0),
 					blocklists: parseInt(data.blocklists || 0),
 					categories: {
-						'0000': 0,
-						'127001': 0,
+						hosts: 0,
+						localhost: 0,
 						adguard: 0,
 						dnsmasq: 0,
 						noip: 0,
@@ -114,17 +111,6 @@ const aggregateRedisToMongo = async () => {
 					aggregated.inc.blocklists = (aggregated.inc.blocklists || 0) + parseInt(data.blocklists);
 				}
 
-				// Aggregate per day/month/year
-				const dayKey = date;
-				const monthKey = `${month}-${year}`;
-				const yearKey = year;
-
-				if (data.blocklists) {
-					aggregated.perDay[dayKey] = (aggregated.perDay[dayKey] || 0) + parseInt(data.blocklists);
-					aggregated.perMonth[monthKey] = (aggregated.perMonth[monthKey] || 0) + parseInt(data.blocklists);
-					aggregated.perYear[yearKey] = (aggregated.perYear[yearKey] || 0) + parseInt(data.blocklists);
-				}
-
 				// Aggregate categories and responses
 				for (const [field, value] of Object.entries(data)) {
 					if (field.startsWith('categories:')) {
@@ -153,7 +139,27 @@ const aggregateRedisToMongo = async () => {
 					minuteDocuments.map(doc => ({
 						updateOne: {
 							filter: { date: doc.date, time: doc.time },
-							update: { $set: doc },
+							update: {
+								$setOnInsert: {
+									timestamp: doc.timestamp,
+									date: doc.date,
+									time: doc.time,
+								},
+								$inc: {
+									total: doc.total,
+									blocklists: doc.blocklists,
+									'categories.hosts': doc.categories.hosts,
+									'categories.localhost': doc.categories.localhost,
+									'categories.adguard': doc.categories.adguard,
+									'categories.dnsmasq': doc.categories.dnsmasq,
+									'categories.noip': doc.categories.noip,
+									'categories.rpz': doc.categories.rpz,
+									'categories.unbound': doc.categories.unbound,
+									...Object.fromEntries(
+										Object.entries(doc.responses).map(([k, v]) => [`responses.${k}`, v])
+									),
+								},
+							},
 							upsert: true,
 						},
 					}))
@@ -165,26 +171,16 @@ const aggregateRedisToMongo = async () => {
 		}
 
 		// Update aggregated request-stats (only if we have data)
-		if (Object.keys(aggregated.inc).length > 0 || Object.keys(aggregated.perDay).length > 0) {
+		if (Object.keys(aggregated.inc).length > 0) {
 			try {
-				const updateQuery = { $inc: aggregated.inc };
-
-				// Update perDay/perMonth/perYear maps
-				for (const [day, count] of Object.entries(aggregated.perDay)) {
-					updateQuery.$inc[`perDay.${day}`] = count;
-				}
-
-				for (const [month, count] of Object.entries(aggregated.perMonth)) {
-					updateQuery.$inc[`perMonth.${month}`] = count;
-				}
-
-				for (const [year, count] of Object.entries(aggregated.perYear)) {
-					updateQuery.$inc[`perYear.${year}`] = count;
-				}
-
-				updateQuery.$set = { updatedAt: new Date() };
-
-				await RequestStats.findOneAndUpdate({}, updateQuery, { upsert: true });
+				await RequestStats.findOneAndUpdate(
+					{},
+					{
+						$inc: aggregated.inc,
+						$set: { updatedAt: new Date() },
+					},
+					{ upsert: true }
+				);
 				if (isDev) console.log(`Updated request-stats: +${aggregated.inc.total || 0} requests, +${aggregated.inc.blocklists || 0} blocklists`);
 			} catch (err) {
 				console.error('Failed to update request-stats:', err.message);

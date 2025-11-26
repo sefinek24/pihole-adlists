@@ -3,8 +3,15 @@ const RequestStats = require('./models/request-stats.model.js');
 
 const connectToDatabase = async () => {
 	try {
-		await connect(process.env.MONGODB_URL);
-	} catch {
+		await connect(process.env.MONGODB_URL, {
+			maxPoolSize: 10,
+			minPoolSize: 2,
+			serverSelectionTimeoutMS: 5000,
+			socketTimeoutMS: 45000,
+		});
+		console.log('MongoDB connected successfully');
+	} catch (err) {
+		console.error('Failed to connect to MongoDB:', err);
 		process.exit(1);
 	}
 };

@@ -1,5 +1,29 @@
 const router = require('express').Router();
 const MinuteStats = require('../database/models/minute-stats.model.js');
+const RequestStats = require('../database/models/request-stats.model.js');
+
+// Get all-time statistics
+router.get('/api/stats/alltime', async (req, res) => {
+	try {
+		const stats = await RequestStats.findOne({}).lean();
+		if (!stats) {
+			return res.json({ success: true, data: { total: 0, blocklists: 0, categories: {}, responses: {} } });
+		}
+
+		res.json({
+			success: true,
+			data: {
+				total: stats.total || 0,
+				blocklists: stats.blocklists || 0,
+				categories: stats.categories || {},
+				responses: stats.responses || {},
+			},
+		});
+	} catch (err) {
+		console.error('Error fetching all-time stats:', err);
+		res.status(500).json({ success: false, status: 500, message: 'Internal server error' });
+	}
+});
 
 // Get minute stats for a specific date range
 // Example: GET /api/stats/minute?from=2024-11-26&to=2024-11-27

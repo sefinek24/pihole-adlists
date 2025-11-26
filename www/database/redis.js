@@ -1,14 +1,17 @@
 const { createClient } = require('redis');
 
+const { REDIS_HOST, REDIS_PASSWD } = process.env;
+if (!REDIS_HOST) throw new Error('Missing REDIS_HOST environment variable');
+
 const RedisClient = createClient({
 	socket: {
-		host: process.env.REDIS_HOST,
+		host: REDIS_HOST,
 		port: 6379,
 		connectTimeout: 20 * 1000,
 		reconnectStrategy: times => Math.min(times * 5000, 15000),
 	},
 	database: 8,
-	password: process.env.REDIS_PASSWD,
+	password: REDIS_PASSWD,
 });
 
 let error = false;
