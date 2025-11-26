@@ -1,0 +1,528 @@
+body {
+    background: #070606 url('/images/bg.jpg') no-repeat fixed center;
+}
+
+.metrics-container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 100px 4rem 2rem;
+    min-height: 100vh;
+}
+
+.metrics-container h1 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #fff;
+    font-size: 3.2rem;
+    text-shadow: 0 0 12px rgba(0, 168, 252, 0.5), 0 0 20px rgba(0, 0, 0, 0.8);
+    font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.metrics-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #00a8fc, transparent);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 168, 252, 0.6);
+}
+
+.all-time-section,
+.time-range-section {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.all-time-section h2,
+.time-range-section h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-left: 5px solid #00a8fc;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.all-time-section h2::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #00a8fc, rgba(0, 168, 252, 0.3));
+    box-shadow: 0 0 15px rgba(0, 168, 252, 0.6);
+}
+
+.time-range-section h2::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #84fafc, rgba(132, 250, 252, 0.3));
+    box-shadow: 0 0 15px rgba(132, 250, 252, 0.6);
+}
+
+.date-controls {
+    backdrop-filter: blur(25px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 168, 252, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.date-controls::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00a8fc, transparent);
+}
+
+.date-range {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.date-range label {
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 0 0 4px #000;
+}
+
+.date-range input[type="date"] {
+    padding: 0.6rem 1rem;
+    border: 1px solid rgba(232, 232, 232, 0.3);
+    border-radius: 12px;
+    background: rgba(0, 10, 24, 0.5);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.date-range input[type="date"]:hover {
+    background: rgba(0, 10, 24, 0.6);
+    border-color: rgba(232, 232, 232, 0.5);
+}
+
+.date-range input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.btn-primary {
+    padding: 0.8rem 2rem;
+    font-size: 17px;
+    background: linear-gradient(135deg, rgba(0, 168, 252, 0.4) 0%, rgba(0, 168, 252, 0.6) 100%);
+    border: 1px solid rgba(0, 168, 252, 0.5);
+    border-radius: 17px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 168, 252, 0.3);
+    backdrop-filter: blur(5px);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, rgba(0, 168, 252, 0.6) 0%, rgba(0, 168, 252, 0.8) 100%);
+    box-shadow: 0 6px 25px rgba(0, 168, 252, 0.5), 0 0 30px rgba(0, 168, 252, 0.3);
+    transform: translateY(-3px);
+    border-color: rgba(0, 168, 252, 0.8);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 15px rgba(0, 168, 252, 0.4);
+}
+
+.quick-select {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-quick {
+    padding: 0.7rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    font-size: 15px;
+    font-weight: 500;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.btn-quick:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 168, 252, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 168, 252, 0.3);
+}
+
+.btn-quick.active {
+    background: linear-gradient(135deg, rgba(0, 168, 252, 0.3) 0%, rgba(0, 168, 252, 0.5) 100%);
+    border-color: rgba(0, 168, 252, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 168, 252, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.stats-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.peak-minute-banner {
+    backdrop-filter: blur(25px);
+    background: linear-gradient(135deg, rgba(237, 100, 166, 0.15) 0%, rgba(237, 100, 166, 0.08) 100%);
+    border: 1px solid rgba(237, 100, 166, 0.3);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.peak-minute-banner:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(237, 100, 166, 0.25);
+    border-color: rgba(237, 100, 166, 0.5);
+}
+
+.peak-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+}
+
+.peak-value {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(237, 100, 166, 0.8);
+    font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.stat-card {
+    backdrop-filter: blur(25px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-card.all-time {
+    border-color: rgba(0, 168, 252, 0.3);
+    color: #00a8fc;
+}
+
+.stat-card.all-time:hover {
+    border-color: rgba(0, 168, 252, 0.8);
+    box-shadow: 0 12px 40px rgba(0, 168, 252, 0.25), 0 0 30px rgba(0, 168, 252, 0.15);
+    background: linear-gradient(135deg, rgba(0, 168, 252, 0.12) 0%, rgba(0, 168, 252, 0.08) 100%);
+}
+
+.stat-card.filtered {
+    border-color: rgba(132, 250, 252, 0.3);
+    color: #84fafc;
+}
+
+.stat-card.filtered:hover {
+    border-color: rgba(132, 250, 252, 0.8);
+    box-shadow: 0 12px 40px rgba(132, 250, 252, 0.25), 0 0 30px rgba(132, 250, 252, 0.15);
+    background: linear-gradient(135deg, rgba(132, 250, 252, 0.12) 0%, rgba(132, 250, 252, 0.08) 100%);
+}
+
+.stat-card h3 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+}
+
+.stat-card p {
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 0.8rem 0 0.5rem 0;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.8), 0 0 20px currentColor;
+    font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+    letter-spacing: -1px;
+    transition: transform 0.4s;
+}
+
+.stat-card:hover p {
+    transform: scale(1.05);
+}
+
+.stat-card .stat-label {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.5px;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.chart-container {
+    backdrop-filter: blur(25px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00a8fc, transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.chart-container:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 168, 252, 0.15);
+    border-color: rgba(0, 168, 252, 0.4);
+}
+
+.chart-container:hover::before {
+    opacity: 1;
+}
+
+.chart-container h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.chart-container canvas {
+    max-height: 400px;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(7, 6, 6, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #00a8fc;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #fff;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    text-shadow: 0 0 8px #000;
+    font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+}
+
+@media (max-width: 1400px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .metrics-container {
+        padding: 90px 2rem 2rem;
+    }
+
+    .metrics-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .stats-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-card p {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .metrics-container {
+        padding: 80px 1.5rem 1.5rem;
+    }
+
+    .metrics-container h1 {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .all-time-section h2,
+    .time-range-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .date-range {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stats-summary {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .stat-card p {
+        font-size: 2rem;
+    }
+
+    .peak-minute-banner {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1.2rem 1.5rem;
+    }
+
+    .peak-label {
+        font-size: 1rem;
+    }
+
+    .peak-value {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .charts-grid {
+        gap: 1.5rem;
+    }
+
+    .date-controls {
+        padding: 1.5rem;
+    }
+}
