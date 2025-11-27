@@ -2,6 +2,7 @@ const charts = {};
 const START_DATE = new Date('2024-10-28');
 const SUCCESS_CODES = ['200', '201', '204', '304'];
 const ERROR_CODES = ['400', '401', '403', '404', '429', '500', '502', '503', '504'];
+let currentInterval = 10; // Default 10 minutes
 
 const showLoading = () => document.getElementById('loading').style.display = 'flex';
 const hideLoading = () => document.getElementById('loading').style.display = 'none';
@@ -17,6 +18,16 @@ const updateElement = (id, value) => {
 	const element = document.getElementById(id);
 	if (element) element.textContent = value;
 };
+
+const addUTCFooter = callbacks => ({
+	...callbacks,
+	footer: callbacks.footer
+		? ctx => {
+			const customFooter = callbacks.footer(ctx);
+			return customFooter ? `${customFooter}\nTime: UTC` : 'Time: UTC';
+		}
+		: () => 'Time: UTC',
+});
 
 const getCommonChartOptions = (showLegend = true) => ({
 	responsive: true,
@@ -62,6 +73,11 @@ const getCommonChartOptions = (showLegend = true) => ({
 				family: "'Cascadia Mono', 'Calibri', sans-serif",
 				size: 13,
 			},
+			footerFont: {
+				family: "'Cascadia Mono', 'Calibri', sans-serif",
+				size: 11,
+			},
+			footerColor: 'rgba(255, 255, 255, 0.6)',
 			cornerRadius: 8,
 			caretSize: 6,
 		},
@@ -107,6 +123,62 @@ const destroyChart = name => {
 	}
 };
 
+const aggregateByInterval = (data, intervalMinutes) => {
+	if (intervalMinutes === 1) return data;
+
+	const aggregated = {};
+	const intervalMs = intervalMinutes * 60 * 1000;
+
+	for (const item of data) {
+		const timestamp = new Date(item.timestamp);
+		const timestampMs = timestamp.getTime();
+		const roundedMs = Math.floor(timestampMs / intervalMs) * intervalMs;
+		const roundedTimestamp = new Date(roundedMs);
+
+		const key = roundedTimestamp.toISOString();
+
+		if (!aggregated[key]) {
+			const dateStr = formatDate(roundedTimestamp);
+			const timeStr = `${String(roundedTimestamp.getHours()).padStart(2, '0')}:${String(roundedTimestamp.getMinutes()).padStart(2, '0')}`;
+
+			aggregated[key] = {
+				timestamp: roundedTimestamp.toISOString(),
+				date: dateStr,
+				time: timeStr,
+				total: 0,
+				blocklists: 0,
+				categories: {
+					hosts: 0,
+					localhost: 0,
+					adguard: 0,
+					dnsmasq: 0,
+					noip: 0,
+					rpz: 0,
+					unbound: 0,
+				},
+				responses: {},
+			};
+		}
+
+		aggregated[key].total += item.total || 0;
+		aggregated[key].blocklists += item.blocklists || 0;
+
+		if (item.categories) {
+			for (const [cat, val] of Object.entries(item.categories)) {
+				aggregated[key].categories[cat] = (aggregated[key].categories[cat] || 0) + (val || 0);
+			}
+		}
+
+		if (item.responses) {
+			for (const [code, count] of Object.entries(item.responses)) {
+				aggregated[key].responses[code] = (aggregated[key].responses[code] || 0) + (count || 0);
+			}
+		}
+	}
+
+	return Object.values(aggregated).sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+};
+
 const calculateSuccessRate = (responses, total) => {
 	if (!total) return '0.00';
 	const successCount = SUCCESS_CODES.reduce((sum, code) => sum + (responses[code] || 0), 0);
@@ -140,10 +212,10 @@ const loadAllTimeStats = async () => {
 
 const setDefaultDates = () => {
 	const today = new Date();
-	const monthAgo = new Date(today);
-	monthAgo.setDate(today.getDate() - 30);
+	const twoWeeksAgo = new Date(today);
+	twoWeeksAgo.setDate(today.getDate() - 14);
 
-	document.getElementById('date-from').value = formatDate(monthAgo);
+	document.getElementById('date-from').value = formatDate(twoWeeksAgo);
 	document.getElementById('date-to').value = formatDate(today);
 };
 
@@ -172,16 +244,17 @@ const aggregateData = data => {
 	const categories = {};
 	const hourlyData = {};
 	const uniqueDates = new Set();
-	let peakMinute = { time: null, count: 0 };
+	const allIntervals = [];
 
 	data.forEach(item => {
 		totalRequests += item.total || 0;
 		totalBlocklists += item.blocklists || 0;
 		uniqueDates.add(item.date);
 
-		if (item.total > peakMinute.count) {
-			peakMinute = { time: `${item.date} ${item.time}`, count: item.total };
-		}
+		allIntervals.push({
+			time: `${item.date} ${item.time}`,
+			count: item.total || 0,
+		});
 
 		for (const [code, count] of Object.entries(item.responses || {})) {
 			responses[code] = (responses[code] || 0) + count;
@@ -197,6 +270,10 @@ const aggregateData = data => {
 		hourlyData[hour] = (hourlyData[hour] || 0) + item.total;
 	});
 
+	const top3Peaks = allIntervals
+		.sort((a, b) => b.count - a.count)
+		.slice(0, 3);
+
 	const successCount = SUCCESS_CODES.reduce((sum, code) => sum + (responses[code] || 0), 0);
 	const errorCount = ERROR_CODES.reduce((sum, code) => sum + (responses[code] || 0), 0);
 	const successRate = totalRequests > 0 ? ((successCount / totalRequests) * 100).toFixed(2) : '0.00';
@@ -210,7 +287,7 @@ const aggregateData = data => {
 		totalBlocklists,
 		successRate,
 		errorRate,
-		peakMinute,
+		top3Peaks,
 		responses,
 		categories,
 		hourlyData,
@@ -229,10 +306,19 @@ const updateSummary = aggregated => {
 	updateElement('unique-days', aggregated.uniqueDays);
 	updateElement('period-top-category', aggregated.topCategory.toUpperCase());
 
-	const peakText = aggregated.peakMinute.time
-		? `${aggregated.peakMinute.time} (${aggregated.peakMinute.count.toLocaleString()} requests)`
-		: 'N/A';
-	updateElement('peak-time', peakText);
+	const peakTimesContainer = document.getElementById('peak-times');
+	if (peakTimesContainer) {
+		if (aggregated.top3Peaks.length > 0) {
+			peakTimesContainer.innerHTML = aggregated.top3Peaks
+				.map((peak, index) => {
+					const medal = ['🥇', '🥈', '🥉'][index];
+					return `<span class="peak-item">${medal} ${peak.time} — ${peak.count.toLocaleString()} requests</span>`;
+				})
+				.join('');
+		} else {
+			peakTimesContainer.innerHTML = '<span class="peak-item">N/A</span>';
+		}
+	}
 };
 
 const createRequestsChart = data => {
@@ -247,10 +333,10 @@ const createRequestsChart = data => {
 	options.scales.x.ticks.maxTicksLimit = 20;
 	options.scales.x.ticks.autoSkip = true;
 	options.interaction = { mode: 'index', intersect: false };
-	options.plugins.tooltip.callbacks = {
+	options.plugins.tooltip.callbacks = addUTCFooter({
 		title: ctx => ctx[0].label,
 		label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()} requests`,
-	};
+	});
 
 	charts.requests = new Chart(ctx, {
 		type: 'line',
@@ -399,10 +485,10 @@ const createCategoriesChart = categories => {
 	if (!ctx) return;
 
 	const options = getCommonChartOptions(false);
-	options.plugins.tooltip.callbacks = {
+	options.plugins.tooltip.callbacks = addUTCFooter({
 		title: ctx => ctx[0].label.toUpperCase(),
 		label: ctx => `Downloads: ${ctx.parsed.y.toLocaleString()}`,
-	};
+	});
 	options.scales.x.title = {
 		display: true,
 		text: 'Format',
@@ -447,11 +533,11 @@ const createHourlyChart = (hourlyData, dateRange) => {
 	const hours = Array.from({ length: 24 }, (_, i) => String(i).padStart(2, '0'));
 
 	const options = getCommonChartOptions(false);
-	options.plugins.tooltip.callbacks = {
+	options.plugins.tooltip.callbacks = addUTCFooter({
 		title: ctx => ctx[0].label,
 		label: ctx => `Requests: ${ctx.parsed.y.toLocaleString()}`,
 		afterLabel: () => `Range: ${dateRange.from} → ${dateRange.to}`,
-	};
+	});
 	options.scales.x.title = {
 		display: true,
 		text: 'Hour of Day',
@@ -505,10 +591,10 @@ const createDailyChart = data => {
 	const dates = Object.keys(dailyData).sort();
 
 	const options = getCommonChartOptions();
-	options.plugins.tooltip.callbacks = {
+	options.plugins.tooltip.callbacks = addUTCFooter({
 		title: ctx => ctx[0].label,
 		label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}`,
-	};
+	});
 
 	charts.daily = new Chart(ctx, {
 		type: 'bar',
@@ -570,10 +656,10 @@ const createPeakHoursChart = data => {
 
 	const options = getCommonChartOptions(false);
 	options.indexAxis = 'y';
-	options.plugins.tooltip.callbacks = {
+	options.plugins.tooltip.callbacks = addUTCFooter({
 		title: ctx => ctx[0].label,
 		label: ctx => `Peak: ${ctx.parsed.x.toLocaleString()} requests`,
-	};
+	});
 	options.scales.x.title = {
 		display: true,
 		text: 'Number of Requests',
@@ -660,14 +746,14 @@ const createFormatDistributionChart = data => {
 		intersect: false,
 	};
 	options.plugins.legend.position = 'bottom';
-	options.plugins.tooltip.callbacks = {
+	options.plugins.tooltip.callbacks = addUTCFooter({
 		title: ctx => ctx[0].label,
 		label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()} downloads`,
 		afterBody: ctx => {
 			const total = ctx.reduce((sum, item) => sum + item.parsed.y, 0);
 			return `\nTotal: ${total.toLocaleString()} downloads`;
 		},
-	};
+	});
 	options.scales.x.ticks.maxTicksLimit = 20;
 	options.scales.x.ticks.autoSkip = true;
 
@@ -687,12 +773,13 @@ const loadData = async () => {
 		return;
 	}
 
-	const data = await fetchMetrics(from, to);
-	if (!data.length) {
+	const rawData = await fetchMetrics(from, to);
+	if (!rawData.length) {
 		alert('No data available for selected date range');
 		return;
 	}
 
+	const data = aggregateByInterval(rawData, currentInterval);
 	const aggregated = aggregateData(data);
 	updateSummary(aggregated);
 
@@ -705,11 +792,11 @@ const loadData = async () => {
 	createFormatDistributionChart(data);
 };
 
-const loadQuickData = async hours => {
+const loadQuickData = async days => {
 	const to = new Date();
 	const from = new Date(to);
 
-	hours ? from.setHours(to.getHours() - hours) : from.setDate(to.getDate() - 30);
+	from.setDate(to.getDate() - days);
 
 	const dateFrom = document.getElementById('date-from');
 	const dateTo = document.getElementById('date-to');
@@ -726,11 +813,21 @@ document.querySelectorAll('.btn-quick').forEach(btn => {
 		document.querySelectorAll('.btn-quick').forEach(b => b.classList.remove('active'));
 		e.target.classList.add('active');
 
-		const hours = e.target.dataset.hours ? parseInt(e.target.dataset.hours) : null;
-		await loadQuickData(hours);
+		const days = parseInt(e.target.dataset.days) || 7;
+		await loadQuickData(days);
+	});
+});
+
+document.querySelectorAll('.btn-interval').forEach(btn => {
+	btn.addEventListener('click', async e => {
+		document.querySelectorAll('.btn-interval').forEach(b => b.classList.remove('active'));
+		e.target.classList.add('active');
+
+		currentInterval = parseInt(e.target.dataset.interval) || 1;
+		await loadData();
 	});
 });
 
 setDefaultDates();
 loadAllTimeStats();
-loadData();
+loadQuickData(14);

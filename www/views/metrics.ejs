@@ -44,23 +44,45 @@
     </section>
 
     <section class="time-range-section">
-        <h2>📅 Time Range Analytics</h2>
+        <h2>📅 Time Range Analytics <span class="utc-badge">UTC</span></h2>
 
         <div class="date-controls">
-            <div class="date-range">
-                <label for="date-from">From:</label>
-                <input type="date" id="date-from" />
-
-                <label for="date-to">To:</label>
-                <input type="date" id="date-to" />
-
-                <button id="load-data" class="btn-primary">Load Data</button>
+            <div class="quick-select">
+                <button class="btn-quick" data-days="7">Last 7 Days</button>
+                <button class="btn-quick active" data-days="14">Last 14 Days</button>
+                <button class="btn-quick" data-days="30">Last 30 Days</button>
+                <button class="btn-quick" data-days="90">Last 90 Days</button>
             </div>
 
-            <div class="quick-select">
-                <button class="btn-quick" data-hours="24">Last 24 hours</button>
-                <button class="btn-quick" data-hours="168">Last 7 days</button>
-                <button class="btn-quick" data-days="30">Last 30 days</button>
+            <div class="date-divider">
+                <span>or</span>
+            </div>
+
+            <div class="date-range">
+                <div class="date-input-group">
+                    <label for="date-from">From</label>
+                    <input type="date" id="date-from" />
+                </div>
+
+                <div class="date-input-group">
+                    <label for="date-to">To</label>
+                    <input type="date" id="date-to" />
+                </div>
+
+                <button id="load-data" class="btn-primary">Apply Custom Range</button>
+            </div>
+        </div>
+
+        <div class="interval-controls">
+            <label>Time Interval:</label>
+            <div class="interval-select">
+                <button class="btn-interval" data-interval="1">1 min</button>
+                <button class="btn-interval active" data-interval="10">10 min</button>
+                <button class="btn-interval" data-interval="30">30 min</button>
+                <button class="btn-interval" data-interval="120">2h</button>
+                <button class="btn-interval" data-interval="360">6h</button>
+                <button class="btn-interval" data-interval="720">12h</button>
+                <button class="btn-interval" data-interval="1440">24h</button>
             </div>
         </div>
 
@@ -103,8 +125,10 @@
         </div>
 
         <div class="peak-minute-banner">
-            <span class="peak-label">🔥 Busiest Minute:</span>
-            <span class="peak-value" id="peak-time">-</span>
+            <span class="peak-label">🔥 Top 3 Busiest Intervals:</span>
+            <div class="peak-list" id="peak-times">
+                <span class="peak-item">-</span>
+            </div>
         </div>
     </section>
 
