@@ -1,4 +1,7 @@
 const charts = {};
+const START_DATE = new Date('2024-10-28');
+const SUCCESS_CODES = ['200', '201', '204', '304'];
+const ERROR_CODES = ['400', '401', '403', '404', '429', '500', '502', '503', '504'];
 
 const showLoading = () => document.getElementById('loading').style.display = 'flex';
 const hideLoading = () => document.getElementById('loading').style.display = 'none';
@@ -10,36 +13,126 @@ const formatDate = date => {
 	return `${year}-${month}-${day}`;
 };
 
+const updateElement = (id, value) => {
+	const element = document.getElementById(id);
+	if (element) element.textContent = value;
+};
+
+const getCommonChartOptions = (showLegend = true) => ({
+	responsive: true,
+	maintainAspectRatio: true,
+	interaction: {
+		mode: 'nearest',
+		intersect: false,
+	},
+	animation: {
+		duration: 750,
+		easing: 'easeInOutQuart',
+	},
+	plugins: {
+		legend: {
+			display: showLegend,
+			labels: {
+				color: '#fff',
+				font: {
+					family: "'Cascadia Mono', 'Calibri', sans-serif",
+					size: 13,
+					weight: '500',
+				},
+				padding: 15,
+				usePointStyle: true,
+				pointStyle: 'circle',
+			},
+		},
+		tooltip: {
+			enabled: true,
+			backgroundColor: 'rgba(0, 0, 0, 0.9)',
+			titleColor: '#00a8fc',
+			bodyColor: '#fff',
+			borderColor: 'rgba(0, 168, 252, 0.5)',
+			borderWidth: 1,
+			padding: 12,
+			displayColors: true,
+			titleFont: {
+				family: "'Cascadia Mono', 'Calibri', sans-serif",
+				size: 14,
+				weight: '600',
+			},
+			bodyFont: {
+				family: "'Cascadia Mono', 'Calibri', sans-serif",
+				size: 13,
+			},
+			cornerRadius: 8,
+			caretSize: 6,
+		},
+	},
+	scales: {
+		x: {
+			ticks: {
+				color: 'rgba(255, 255, 255, 0.8)',
+				font: {
+					family: "'Cascadia Mono', 'Calibri', sans-serif",
+					size: 12,
+				},
+			},
+			grid: {
+				color: 'rgba(255, 255, 255, 0.08)',
+				lineWidth: 1,
+				drawBorder: false,
+			},
+		},
+		y: {
+			beginAtZero: true,
+			ticks: {
+				color: 'rgba(255, 255, 255, 0.8)',
+				font: {
+					family: "'Cascadia Mono', 'Calibri', sans-serif",
+					size: 12,
+				},
+				callback: value => value.toLocaleString(),
+			},
+			grid: {
+				color: 'rgba(255, 255, 255, 0.08)',
+				lineWidth: 1,
+				drawBorder: false,
+			},
+		},
+	},
+});
+
+const destroyChart = name => {
+	if (charts[name]) {
+		charts[name].destroy();
+		charts[name] = null;
+	}
+};
+
+const calculateSuccessRate = (responses, total) => {
+	if (!total) return '0.00';
+	const successCount = SUCCESS_CODES.reduce((sum, code) => sum + (responses[code] || 0), 0);
+	return ((successCount / total) * 100).toFixed(2);
+};
+
 const loadAllTimeStats = async () => {
 	try {
 		const response = await fetch('/api/stats/alltime');
 		if (!response.ok) throw new Error('Failed to fetch all-time stats');
 
-		const data = await response.json();
-		const stats = data.data;
+		const { data: stats } = await response.json();
 
-		document.getElementById('alltime-total').textContent = (stats.total || 0).toLocaleString();
-		document.getElementById('alltime-blocklists').textContent = (stats.blocklists || 0).toLocaleString();
+		updateElement('alltime-total', (stats.total || 0).toLocaleString());
+		updateElement('alltime-blocklists', (stats.blocklists || 0).toLocaleString());
 
 		const categories = stats.categories || {};
 		const topCategory = Object.entries(categories).sort((a, b) => b[1] - a[1])[0];
-		document.getElementById('alltime-top-category').textContent = topCategory
-			? `${topCategory[0]}`
-			: 'N/A';
+		updateElement('alltime-top-category', topCategory ? topCategory[0].toUpperCase() : 'N/A');
 
-		const startDate = new Date('2024-10-28');
-		const today = new Date();
-		const daysSinceStart = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+		const daysSinceStart = Math.floor((new Date() - START_DATE) / (1000 * 60 * 60 * 24));
 		const avgPerDay = daysSinceStart > 0 ? Math.floor(stats.total / daysSinceStart) : 0;
-		document.getElementById('alltime-avg').textContent = avgPerDay.toLocaleString();
+		updateElement('alltime-avg', avgPerDay.toLocaleString());
 
-		document.getElementById('alltime-days').textContent = daysSinceStart;
-
-		const responses = stats.responses || {};
-		const successCodes = ['200', '201', '204', '304'];
-		const successCount = successCodes.reduce((sum, code) => sum + (responses[code] || 0), 0);
-		const successRate = stats.total > 0 ? ((successCount / stats.total) * 100).toFixed(2) : 0;
-		document.getElementById('alltime-success-rate').textContent = `${successRate}%`;
+		const successRate = calculateSuccessRate(stats.responses || {}, stats.total);
+		updateElement('alltime-success-rate', `${successRate}%`);
 	} catch (err) {
 		console.error('Error loading all-time stats:', err);
 	}
@@ -104,17 +197,12 @@ const aggregateData = data => {
 		hourlyData[hour] = (hourlyData[hour] || 0) + item.total;
 	});
 
-	const successCodes = ['200', '201', '204', '304'];
-	const errorCodes = ['400', '401', '403', '404', '429', '500', '502', '503', '504'];
-	const successCount = successCodes.reduce((sum, code) => sum + (responses[code] || 0), 0);
-	const errorCount = errorCodes.reduce((sum, code) => sum + (responses[code] || 0), 0);
-	const successRate = totalRequests > 0 ? ((successCount / totalRequests) * 100).toFixed(2) : 0;
-	const errorRate = totalRequests > 0 ? ((errorCount / totalRequests) * 100).toFixed(2) : 0;
+	const successCount = SUCCESS_CODES.reduce((sum, code) => sum + (responses[code] || 0), 0);
+	const errorCount = ERROR_CODES.reduce((sum, code) => sum + (responses[code] || 0), 0);
+	const successRate = totalRequests > 0 ? ((successCount / totalRequests) * 100).toFixed(2) : '0.00';
+	const errorRate = totalRequests > 0 ? ((errorCount / totalRequests) * 100).toFixed(2) : '0.00';
 
-	const totalMinutes = data.length;
-	const totalHours = totalMinutes / 60;
-	const avgPerHour = totalHours > 0 ? Math.floor(totalRequests / totalHours) : 0;
-
+	const avgPerHour = data.length > 0 ? Math.floor(totalRequests / (data.length / 60)) : 0;
 	const topCategory = Object.entries(categories).sort((a, b) => b[1] - a[1])[0];
 
 	return {
@@ -133,30 +221,36 @@ const aggregateData = data => {
 };
 
 const updateSummary = aggregated => {
-	document.getElementById('total-requests').textContent = aggregated.totalRequests.toLocaleString();
-	document.getElementById('blocklist-requests').textContent = aggregated.totalBlocklists.toLocaleString();
-	document.getElementById('success-rate').textContent = `${aggregated.successRate}%`;
-	document.getElementById('error-rate').textContent = `${aggregated.errorRate}%`;
-	document.getElementById('avg-per-hour').textContent = aggregated.avgPerHour.toLocaleString();
-	document.getElementById('unique-days').textContent = aggregated.uniqueDays;
-	document.getElementById('period-top-category').textContent = aggregated.topCategory.toUpperCase();
+	updateElement('total-requests', aggregated.totalRequests.toLocaleString());
+	updateElement('blocklist-requests', aggregated.totalBlocklists.toLocaleString());
+	updateElement('success-rate', `${aggregated.successRate}%`);
+	updateElement('error-rate', `${aggregated.errorRate}%`);
+	updateElement('avg-per-hour', aggregated.avgPerHour.toLocaleString());
+	updateElement('unique-days', aggregated.uniqueDays);
+	updateElement('period-top-category', aggregated.topCategory.toUpperCase());
 
-	const peakTimeEl = document.getElementById('peak-time');
-	if (aggregated.peakMinute.time) {
-		peakTimeEl.textContent = `${aggregated.peakMinute.time} (${aggregated.peakMinute.count.toLocaleString()} requests)`;
-	} else {
-		peakTimeEl.textContent = 'N/A';
-	}
+	const peakText = aggregated.peakMinute.time
+		? `${aggregated.peakMinute.time} (${aggregated.peakMinute.count.toLocaleString()} requests)`
+		: 'N/A';
+	updateElement('peak-time', peakText);
 };
 
 const createRequestsChart = data => {
-	const ctx = document.getElementById('requests-chart').getContext('2d');
+	destroyChart('requests');
 
-	if (charts.requests) charts.requests.destroy();
+	const ctx = document.getElementById('requests-chart')?.getContext('2d');
+	if (!ctx) return;
 
 	const labels = data.map(d => `${d.date} ${d.time}`);
-	const totalData = data.map(d => d.total || 0);
-	const blocklistData = data.map(d => d.blocklists || 0);
+
+	const options = getCommonChartOptions();
+	options.scales.x.ticks.maxTicksLimit = 20;
+	options.scales.x.ticks.autoSkip = true;
+	options.interaction = { mode: 'index', intersect: false };
+	options.plugins.tooltip.callbacks = {
+		title: ctx => ctx[0].label,
+		label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()} requests`,
+	};
 
 	charts.requests = new Chart(ctx, {
 		type: 'line',
@@ -165,211 +259,256 @@ const createRequestsChart = data => {
 			datasets: [
 				{
 					label: 'Total Requests',
-					data: totalData,
-					borderColor: 'rgba(102, 126, 234, 1)',
-					backgroundColor: 'rgba(102, 126, 234, 0.1)',
+					data: data.map(d => d.total || 0),
+					borderColor: '#667eea',
+					backgroundColor: '#667eea26',
+					borderWidth: 2,
 					fill: true,
 					tension: 0.4,
+					pointRadius: 0,
+					pointBackgroundColor: '#667eea',
+					pointBorderColor: '#667eea',
+					pointHoverRadius: 5,
+					pointHoverBackgroundColor: '#667eea',
+					pointHoverBorderColor: '#fff',
+					pointHoverBorderWidth: 2,
+					pointBorderWidth: 1,
 				},
 				{
 					label: 'Blocklist Requests',
-					data: blocklistData,
-					borderColor: 'rgba(118, 75, 162, 1)',
-					backgroundColor: 'rgba(118, 75, 162, 0.1)',
+					data: data.map(d => d.blocklists || 0),
+					borderColor: '#764ba2',
+					backgroundColor: '#764ba226',
+					borderWidth: 2,
 					fill: true,
 					tension: 0.4,
+					pointRadius: 0,
+					pointBackgroundColor: '#764ba2',
+					pointBorderColor: '#764ba2',
+					pointHoverRadius: 5,
+					pointHoverBackgroundColor: '#764ba2',
+					pointHoverBorderColor: '#fff',
+					pointHoverBorderWidth: 2,
+					pointBorderWidth: 1,
 				},
 			],
 		},
-		options: {
-			responsive: true,
-			maintainAspectRatio: true,
-			plugins: {
-				legend: { labels: { color: '#fff' } },
-			},
-			scales: {
-				x: {
-					ticks: {
-						color: '#fff',
-						maxTicksLimit: 20,
-						autoSkip: true,
-					},
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-				},
-				y: {
-					ticks: { color: '#fff' },
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-				},
-			},
-		},
+		options,
 	});
 };
 
 const createResponsesChart = responses => {
-	const ctx = document.getElementById('responses-chart').getContext('2d');
+	destroyChart('responses');
 
-	if (charts.responses) charts.responses.destroy();
-
-	const labels = Object.keys(responses);
-	const data = Object.values(responses);
+	const ctx = document.getElementById('responses-chart')?.getContext('2d');
+	if (!ctx) return;
 
 	const colors = [
-		'rgba(102, 126, 234, 0.8)',
-		'rgba(118, 75, 162, 0.8)',
-		'rgba(237, 100, 166, 0.8)',
-		'rgba(255, 154, 158, 0.8)',
-		'rgba(250, 208, 196, 0.8)',
+		'#667eea',
+		'#764ba2',
+		'#ed64a6',
+		'#ff9a9e',
+		'#fad0c4',
 	];
+
+	const hoverColors = [
+		'#5568d3',
+		'#6a4292',
+		'#dc5395',
+		'#ff8a8e',
+		'#f9c0b4',
+	];
+
+	const total = Object.values(responses).reduce((sum, val) => sum + val, 0);
 
 	charts.responses = new Chart(ctx, {
 		type: 'doughnut',
 		data: {
-			labels,
-			datasets: [
-				{
-					data,
-					backgroundColor: colors,
-					borderWidth: 2,
-					borderColor: '#fff',
-				},
-			],
+			labels: Object.keys(responses),
+			datasets: [{
+				data: Object.values(responses),
+				backgroundColor: colors,
+				hoverBackgroundColor: hoverColors,
+				borderWidth: 1,
+				borderColor: 'rgba(0, 0, 0, 0.5)',
+				hoverBorderColor: '#fff',
+				hoverBorderWidth: 1,
+			}],
 		},
 		options: {
 			responsive: true,
 			maintainAspectRatio: true,
+			animation: {
+				animateRotate: true,
+				animateScale: true,
+				duration: 1000,
+				easing: 'easeInOutQuart',
+			},
 			plugins: {
-				legend: { labels: { color: '#fff' } },
+				legend: {
+					display: true,
+					position: 'right',
+					labels: {
+						color: '#fff',
+						font: {
+							family: "'Cascadia Mono', 'Calibri', sans-serif",
+							size: 13,
+							weight: '500',
+						},
+						padding: 15,
+						usePointStyle: true,
+						pointStyle: 'circle',
+					},
+				},
+				tooltip: {
+					enabled: true,
+					backgroundColor: 'rgba(0, 0, 0, 0.9)',
+					titleColor: '#00a8fc',
+					bodyColor: '#fff',
+					borderColor: 'rgba(0, 168, 252, 0.5)',
+					borderWidth: 1,
+					padding: 12,
+					displayColors: true,
+					titleFont: {
+						family: "'Cascadia Mono', 'Calibri', sans-serif",
+						size: 14,
+						weight: '600',
+					},
+					bodyFont: {
+						family: "'Cascadia Mono', 'Calibri', sans-serif",
+						size: 13,
+					},
+					cornerRadius: 8,
+					callbacks: {
+						label: ctx => {
+							const value = ctx.parsed;
+							const percentage = ((value / total) * 100).toFixed(2);
+							return `HTTP ${ctx.label}: ${value.toLocaleString()} (${percentage}%)`;
+						},
+					},
+				},
 			},
 		},
 	});
 };
 
 const createCategoriesChart = categories => {
-	const ctx = document.getElementById('categories-chart').getContext('2d');
+	destroyChart('categories');
 
-	if (charts.categories) charts.categories.destroy();
+	const ctx = document.getElementById('categories-chart')?.getContext('2d');
+	if (!ctx) return;
 
-	const labels = Object.keys(categories);
-	const data = Object.values(categories);
+	const options = getCommonChartOptions(false);
+	options.plugins.tooltip.callbacks = {
+		title: ctx => ctx[0].label.toUpperCase(),
+		label: ctx => `Downloads: ${ctx.parsed.y.toLocaleString()}`,
+	};
+	options.scales.x.title = {
+		display: true,
+		text: 'Format',
+		color: 'rgba(255, 255, 255, 0.9)',
+		font: {
+			family: "'Cascadia Mono', 'Calibri', sans-serif",
+			size: 13,
+			weight: '600',
+		},
+	};
 
 	charts.categories = new Chart(ctx, {
 		type: 'bar',
 		data: {
-			labels,
-			datasets: [
-				{
-					label: 'Downloads',
-					data,
-					backgroundColor: 'rgba(102, 126, 234, 0.8)',
-					borderColor: 'rgba(102, 126, 234, 1)',
-					borderWidth: 2,
+			labels: Object.keys(categories),
+			datasets: [{
+				label: 'Downloads',
+				data: Object.values(categories),
+				backgroundColor: '#667eea',
+				hoverBackgroundColor: '#5568d3',
+				borderColor: '#5568d3',
+				borderWidth: 1,
+				borderRadius: {
+					topLeft: 6,
+					topRight: 6,
+					bottomLeft: 0,
+					bottomRight: 0,
 				},
-			],
+				borderSkipped: 'bottom',
+			}],
 		},
-		options: {
-			responsive: true,
-			maintainAspectRatio: true,
-			plugins: {
-				legend: { display: false },
-				tooltip: {
-					callbacks: {
-						title: ctx => ctx[0].label,
-						label: ctx => `${ctx.parsed.y.toLocaleString()} downloads`,
-					},
-				},
-			},
-			scales: {
-				x: {
-					ticks: { color: '#fff' },
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-					title: {
-						display: true,
-						text: 'Format',
-						color: '#fff',
-					},
-				},
-				y: {
-					ticks: { color: '#fff' },
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-				},
-			},
-		},
+		options,
 	});
 };
 
 const createHourlyChart = (hourlyData, dateRange) => {
-	const ctx = document.getElementById('hourly-chart').getContext('2d');
+	destroyChart('hourly');
 
-	if (charts.hourly) charts.hourly.destroy();
+	const ctx = document.getElementById('hourly-chart')?.getContext('2d');
+	if (!ctx) return;
 
 	const hours = Array.from({ length: 24 }, (_, i) => String(i).padStart(2, '0'));
-	const data = hours.map(h => hourlyData[h] || 0);
+
+	const options = getCommonChartOptions(false);
+	options.plugins.tooltip.callbacks = {
+		title: ctx => ctx[0].label,
+		label: ctx => `Requests: ${ctx.parsed.y.toLocaleString()}`,
+		afterLabel: () => `Range: ${dateRange.from} → ${dateRange.to}`,
+	};
+	options.scales.x.title = {
+		display: true,
+		text: 'Hour of Day',
+		color: 'rgba(255, 255, 255, 0.9)',
+		font: {
+			family: "'Cascadia Mono', 'Calibri', sans-serif",
+			size: 13,
+			weight: '600',
+		},
+	};
 
 	charts.hourly = new Chart(ctx, {
 		type: 'bar',
 		data: {
 			labels: hours.map(h => `${h}:00`),
-			datasets: [
-				{
-					label: 'Requests',
-					data,
-					backgroundColor: 'rgba(118, 75, 162, 0.8)',
-					borderColor: 'rgba(118, 75, 162, 1)',
-					borderWidth: 2,
+			datasets: [{
+				label: 'Requests',
+				data: hours.map(h => hourlyData[h] || 0),
+				backgroundColor: '#764ba2',
+				hoverBackgroundColor: '#6a4292',
+				borderColor: '#6a4292',
+				borderWidth: 1,
+				borderRadius: {
+					topLeft: 6,
+					topRight: 6,
+					bottomLeft: 0,
+					bottomRight: 0,
 				},
-			],
+				borderSkipped: 'bottom',
+			}],
 		},
-		options: {
-			responsive: true,
-			maintainAspectRatio: true,
-			plugins: {
-				legend: { display: false },
-				tooltip: {
-					callbacks: {
-						title: ctx => `${ctx[0].label}`,
-						label: ctx => `${ctx.parsed.y.toLocaleString()} requests`,
-						afterLabel: () => `Date range: ${dateRange.from} to ${dateRange.to}`,
-					},
-				},
-			},
-			scales: {
-				x: {
-					ticks: { color: '#fff' },
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-					title: {
-						display: true,
-						text: 'Hour of Day',
-						color: '#fff',
-					},
-				},
-				y: {
-					ticks: { color: '#fff' },
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-				},
-			},
-		},
+		options,
 	});
 };
 
 const createDailyChart = data => {
-	const ctx = document.getElementById('daily-chart').getContext('2d');
+	destroyChart('daily');
 
-	if (charts.daily) charts.daily.destroy();
+	const ctx = document.getElementById('daily-chart')?.getContext('2d');
+	if (!ctx) return;
 
-	// Aggregate by date
 	const dailyData = {};
 	data.forEach(item => {
-		const date = item.date;
-		if (!dailyData[date]) {
-			dailyData[date] = { total: 0, blocklists: 0 };
+		if (!dailyData[item.date]) {
+			dailyData[item.date] = { total: 0, blocklists: 0 };
 		}
-		dailyData[date].total += item.total || 0;
-		dailyData[date].blocklists += item.blocklists || 0;
+		dailyData[item.date].total += item.total || 0;
+		dailyData[item.date].blocklists += item.blocklists || 0;
 	});
 
 	const dates = Object.keys(dailyData).sort();
-	const totals = dates.map(d => dailyData[d].total);
-	const blocklists = dates.map(d => dailyData[d].blocklists);
+
+	const options = getCommonChartOptions();
+	options.plugins.tooltip.callbacks = {
+		title: ctx => ctx[0].label,
+		label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}`,
+	};
 
 	charts.daily = new Chart(ctx, {
 		type: 'bar',
@@ -378,52 +517,46 @@ const createDailyChart = data => {
 			datasets: [
 				{
 					label: 'Total Requests',
-					data: totals,
-					backgroundColor: 'rgba(102, 126, 234, 0.8)',
-					borderColor: 'rgba(102, 126, 234, 1)',
-					borderWidth: 2,
+					data: dates.map(d => dailyData[d].total),
+					backgroundColor: '#667eea',
+					hoverBackgroundColor: '#5568d3',
+					borderColor: '#5568d3',
+					borderWidth: 1,
+					borderRadius: {
+						topLeft: 6,
+						topRight: 6,
+						bottomLeft: 0,
+						bottomRight: 0,
+					},
+					borderSkipped: 'bottom',
 				},
 				{
 					label: 'Blocklist Downloads',
-					data: blocklists,
-					backgroundColor: 'rgba(118, 75, 162, 0.8)',
-					borderColor: 'rgba(118, 75, 162, 1)',
-					borderWidth: 2,
+					data: dates.map(d => dailyData[d].blocklists),
+					backgroundColor: '#764ba2',
+					hoverBackgroundColor: '#6a4292',
+					borderColor: '#6a4292',
+					borderWidth: 1,
+					borderRadius: {
+						topLeft: 6,
+						topRight: 6,
+						bottomLeft: 0,
+						bottomRight: 0,
+					},
+					borderSkipped: 'bottom',
 				},
 			],
 		},
-		options: {
-			responsive: true,
-			maintainAspectRatio: true,
-			plugins: {
-				legend: { labels: { color: '#fff' } },
-				tooltip: {
-					callbacks: {
-						title: ctx => ctx[0].label,
-						label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}`,
-					},
-				},
-			},
-			scales: {
-				x: {
-					ticks: { color: '#fff' },
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-				},
-				y: {
-					ticks: { color: '#fff' },
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-				},
-			},
-		},
+		options,
 	});
 };
 
 const createPeakHoursChart = data => {
-	const ctx = document.getElementById('peak-hours-chart').getContext('2d');
+	destroyChart('peakHours');
 
-	if (charts.peakHours) charts.peakHours.destroy();
+	const ctx = document.getElementById('peak-hours-chart')?.getContext('2d');
+	if (!ctx) return;
 
-	// Aggregate by hour (date + hour)
 	const hourlyData = {};
 	data.forEach(item => {
 		const hour = item.time.split(':')[0];
@@ -431,64 +564,56 @@ const createPeakHoursChart = data => {
 		hourlyData[key] = (hourlyData[key] || 0) + (item.total || 0);
 	});
 
-	// Sort and get top 10
 	const sorted = Object.entries(hourlyData)
 		.sort((a, b) => b[1] - a[1])
 		.slice(0, 10);
 
-	const labels = sorted.map(([key]) => key);
-	const values = sorted.map(([, val]) => val);
+	const options = getCommonChartOptions(false);
+	options.indexAxis = 'y';
+	options.plugins.tooltip.callbacks = {
+		title: ctx => ctx[0].label,
+		label: ctx => `Peak: ${ctx.parsed.x.toLocaleString()} requests`,
+	};
+	options.scales.x.title = {
+		display: true,
+		text: 'Number of Requests',
+		color: 'rgba(255, 255, 255, 0.9)',
+		font: {
+			family: "'Cascadia Mono', 'Calibri', sans-serif",
+			size: 13,
+			weight: '600',
+		},
+	};
 
 	charts.peakHours = new Chart(ctx, {
 		type: 'bar',
 		data: {
-			labels,
-			datasets: [
-				{
-					label: 'Requests',
-					data: values,
-					backgroundColor: 'rgba(237, 100, 166, 0.8)',
-					borderColor: 'rgba(237, 100, 166, 1)',
-					borderWidth: 2,
+			labels: sorted.map(([key]) => key),
+			datasets: [{
+				label: 'Requests',
+				data: sorted.map(([, val]) => val),
+				backgroundColor: '#ed64a6',
+				hoverBackgroundColor: '#dc5395',
+				borderColor: '#dc5395',
+				borderWidth: 1,
+				borderRadius: {
+					topLeft: 6,
+					topRight: 6,
+					bottomLeft: 0,
+					bottomRight: 0,
 				},
-			],
+				borderSkipped: 'left',
+			}],
 		},
-		options: {
-			responsive: true,
-			maintainAspectRatio: true,
-			indexAxis: 'y',
-			plugins: {
-				legend: { display: false },
-				tooltip: {
-					callbacks: {
-						title: ctx => ctx[0].label,
-						label: ctx => `${ctx.parsed.x.toLocaleString()} requests`,
-					},
-				},
-			},
-			scales: {
-				x: {
-					ticks: { color: '#fff' },
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-					title: {
-						display: true,
-						text: 'Requests',
-						color: '#fff',
-					},
-				},
-				y: {
-					ticks: { color: '#fff' },
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-				},
-			},
-		},
+		options,
 	});
 };
 
 const createFormatDistributionChart = data => {
-	const ctx = document.getElementById('format-distribution-chart').getContext('2d');
+	destroyChart('formatDist');
 
-	if (charts.formatDist) charts.formatDist.destroy();
+	const ctx = document.getElementById('format-distribution-chart')?.getContext('2d');
+	if (!ctx) return;
 
 	const formatLabels = {
 		hosts: '0.0.0.0',
@@ -500,60 +625,56 @@ const createFormatDistributionChart = data => {
 		unbound: 'Unbound',
 	};
 
-	const formatKeys = Object.keys(formatLabels);
 	const colors = [
-		'rgba(102, 126, 234, 1)',
-		'rgba(118, 75, 162, 1)',
-		'rgba(237, 100, 166, 1)',
-		'rgba(255, 154, 158, 1)',
-		'rgba(250, 208, 196, 1)',
-		'rgba(132, 250, 252, 1)',
-		'rgba(0, 168, 252, 1)',
+		'#667eea',
+		'#764ba2',
+		'#ed64a6',
+		'#ff9a9e',
+		'#fad0c4',
+		'#84fafc',
+		'#00a8fc',
 	];
 
 	const labels = data.map(d => `${d.date} ${d.time}`);
-	const datasets = formatKeys.map((key, idx) => ({
+	const datasets = Object.keys(formatLabels).map((key, idx) => ({
 		label: formatLabels[key],
 		data: data.map(d => d.categories?.[key] || 0),
 		borderColor: colors[idx],
-		backgroundColor: colors[idx].replace('1)', '0.1)'),
+		backgroundColor: colors[idx] + '33',
+		borderWidth: 2,
 		fill: false,
 		tension: 0.4,
 		pointRadius: 0,
-		pointHoverRadius: 4,
+		pointBackgroundColor: colors[idx],
+		pointBorderColor: colors[idx],
+		pointHoverRadius: 6,
+		pointHoverBackgroundColor: colors[idx],
+		pointHoverBorderColor: '#fff',
+		pointHoverBorderWidth: 2,
+		pointBorderWidth: 1,
 	}));
+
+	const options = getCommonChartOptions();
+	options.interaction = {
+		mode: 'index',
+		intersect: false,
+	};
+	options.plugins.legend.position = 'bottom';
+	options.plugins.tooltip.callbacks = {
+		title: ctx => ctx[0].label,
+		label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()} downloads`,
+		afterBody: ctx => {
+			const total = ctx.reduce((sum, item) => sum + item.parsed.y, 0);
+			return `\nTotal: ${total.toLocaleString()} downloads`;
+		},
+	};
+	options.scales.x.ticks.maxTicksLimit = 20;
+	options.scales.x.ticks.autoSkip = true;
 
 	charts.formatDist = new Chart(ctx, {
 		type: 'line',
 		data: { labels, datasets },
-		options: {
-			responsive: true,
-			maintainAspectRatio: true,
-			interaction: {
-				mode: 'index',
-				intersect: false,
-			},
-			plugins: {
-				legend: {
-					labels: { color: '#fff' },
-					position: 'bottom',
-				},
-			},
-			scales: {
-				x: {
-					ticks: {
-						color: '#fff',
-						maxTicksLimit: 20,
-						autoSkip: true,
-					},
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-				},
-				y: {
-					ticks: { color: '#fff' },
-					grid: { color: 'rgba(255, 255, 255, 0.1)' },
-				},
-			},
-		},
+		options,
 	});
 };
 
@@ -588,14 +709,12 @@ const loadQuickData = async hours => {
 	const to = new Date();
 	const from = new Date(to);
 
-	if (hours) {
-		from.setHours(to.getHours() - hours);
-	} else {
-		from.setDate(to.getDate() - 30);
-	}
+	hours ? from.setHours(to.getHours() - hours) : from.setDate(to.getDate() - 30);
 
-	document.getElementById('date-from').value = formatDate(from);
-	document.getElementById('date-to').value = formatDate(to);
+	const dateFrom = document.getElementById('date-from');
+	const dateTo = document.getElementById('date-to');
+	if (dateFrom) dateFrom.value = formatDate(from);
+	if (dateTo) dateTo.value = formatDate(to);
 
 	await loadData();
 };
