@@ -18,7 +18,9 @@ body {
     font-weight: 700;
     letter-spacing: -1px;
     position: relative;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .metrics-container h1::after {
@@ -27,11 +29,11 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, #00a8fc, transparent);
-    border-radius: 2px;
-    box-shadow: 0 0 10px rgba(0, 168, 252, 0.6);
+    width: 180px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00a8fc 20%, #00a8fc 80%, transparent);
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgba(0, 168, 252, 0.8), 0 0 25px rgba(0, 168, 252, 0.4);
 }
 
 .all-time-section,
@@ -44,9 +46,9 @@ body {
 .time-range-section h2 {
     color: #fff;
     font-size: 2rem;
-    margin-bottom: 2rem;
     padding-left: 1.5rem;
-    padding-bottom: 0.8rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
     border-left: 5px solid #00a8fc;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
     font-family: 'Cascadia Mono', 'Calibri', sans-serif;
@@ -54,6 +56,12 @@ body {
     letter-spacing: 0.5px;
     position: relative;
     display: inline-block;
+    line-height: 1;
+}
+
+.all-time-section > h2,
+.time-range-section > h2 {
+    margin-bottom: 3.5rem;
 }
 
 .utc-badge {
@@ -78,22 +86,63 @@ body {
     content: '';
     position: absolute;
     left: -5px;
-    top: 0;
+    top: 0.4rem;
     width: 5px;
-    height: 100%;
+    height: calc(100% - 0.8rem);
     background: linear-gradient(180deg, #00a8fc, rgba(0, 168, 252, 0.3));
     box-shadow: 0 0 15px rgba(0, 168, 252, 0.6);
+}
+
+.stats-timestamps {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    padding: 1.2rem 2rem;
+    background: rgba(0, 168, 252, 0.05);
+    border: 1px solid rgba(0, 168, 252, 0.15);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.timestamp-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.timestamp-label {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+}
+
+.timestamp-value {
+    font-size: 1.1rem;
+    color: #00a8fc;
+    font-weight: 600;
+    font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+    text-shadow: 0 0 10px rgba(0, 168, 252, 0.4);
 }
 
 .time-range-section h2::before {
     content: '';
     position: absolute;
     left: -5px;
-    top: 0;
+    top: 0.4rem;
     width: 5px;
-    height: 100%;
+    height: calc(100% - 0.8rem);
     background: linear-gradient(180deg, #84fafc, rgba(132, 250, 252, 0.3));
     box-shadow: 0 0 15px rgba(132, 250, 252, 0.6);
+}
+
+.controls-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .date-controls {
@@ -102,7 +151,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 2rem;
-    margin-bottom: 2.5rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 168, 252, 0.1);
     position: relative;
     overflow: hidden;
@@ -123,15 +171,15 @@ body {
 
 .quick-select {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
     flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
 }
 
 .date-divider {
     text-align: center;
     position: relative;
-    margin: 0.5rem 0;
+    margin: 0;
 }
 
 .date-divider::before,
@@ -165,17 +213,16 @@ body {
 }
 
 .date-range {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 .date-input-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    min-width: 0;
 }
 
 .date-input-group label {
@@ -187,10 +234,10 @@ body {
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
 }
 
-.date-range input[type="date"] {
+.date-input-group input[type="date"] {
     padding: 0.75rem 1.25rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
+    border-radius: 10px;
     background: rgba(0, 10, 24, 0.6);
     color: #fff;
     font-size: 1rem;
@@ -198,29 +245,30 @@ body {
     cursor: pointer;
     backdrop-filter: blur(5px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    min-width: 160px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.date-range input[type="date"]:hover {
+.date-input-group input[type="date"]:hover {
     background: rgba(0, 10, 24, 0.8);
     border-color: rgba(0, 168, 252, 0.5);
     box-shadow: 0 0 15px rgba(0, 168, 252, 0.2);
 }
 
-.date-range input[type="date"]:focus {
+.date-input-group input[type="date"]:focus {
     outline: none;
     border-color: rgba(0, 168, 252, 0.8);
     box-shadow: 0 0 20px rgba(0, 168, 252, 0.3);
 }
 
-.date-range input[type="date"]::-webkit-calendar-picker-indicator {
+.date-input-group input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.2s;
 }
 
-.date-range input[type="date"]::-webkit-calendar-picker-indicator:hover {
+.date-input-group input[type="date"]::-webkit-calendar-picker-indicator:hover {
     opacity: 1;
 }
 
@@ -239,6 +287,7 @@ body {
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
     position: relative;
     overflow: hidden;
+    grid-column: 1 / -1;
 }
 
 .btn-primary::before {
@@ -269,13 +318,6 @@ body {
 .btn-primary:active {
     transform: translateY(-1px);
     box-shadow: 0 3px 15px rgba(0, 168, 252, 0.4);
-}
-
-.quick-select {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
 }
 
 .btn-quick {
@@ -309,17 +351,28 @@ body {
 
 .interval-controls {
     backdrop-filter: blur(25px);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    padding: 1.5rem 2rem;
-    margin-bottom: 2.5rem;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25), 0 0 15px rgba(132, 250, 252, 0.08);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 168, 252, 0.1);
+    position: relative;
+    overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    flex-wrap: wrap;
+}
+
+.interval-controls::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #84fafc, transparent);
 }
 
 .interval-controls label {
@@ -329,6 +382,13 @@ body {
     text-transform: uppercase;
     letter-spacing: 1.2px;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+}
+
+.interval-select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
 }
 
 .interval-select {
@@ -377,8 +437,8 @@ body {
 
 .peak-minute-banner {
     backdrop-filter: blur(25px);
-    background: linear-gradient(135deg, rgba(237, 100, 166, 0.15) 0%, rgba(237, 100, 166, 0.08) 100%);
-    border: 1px solid rgba(237, 100, 166, 0.3);
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(255, 107, 53, 0.08) 100%);
+    border: 1px solid rgba(255, 107, 53, 0.3);
     border-radius: 16px;
     padding: 1.5rem 2rem;
     margin-bottom: 3rem;
@@ -389,12 +449,81 @@ body {
     gap: 1rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.peak-minute-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.3) 0%, transparent 70%);
+    animation: fireGlow 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.peak-minute-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(ellipse at center, rgba(255, 140, 0, 0.4) 0%, rgba(255, 69, 0, 0.2) 40%, transparent 70%);
+    filter: blur(20px);
+    animation: fireFlicker 3s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes fireGlow {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(10%, 10%) scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+@keyframes fireFlicker {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.5;
+    }
+    25% {
+        transform: translateY(-5%) scale(1.05);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-8%) scale(0.95);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translateY(-3%) scale(1.08);
+        opacity: 0.75;
+    }
+    100% {
+        transform: translateY(-10%) scale(1);
+        opacity: 0.55;
+    }
 }
 
 .peak-minute-banner:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(237, 100, 166, 0.25);
-    border-color: rgba(237, 100, 166, 0.5);
+    box-shadow: 0 12px 40px rgba(255, 107, 53, 0.25);
+    border-color: rgba(255, 107, 53, 0.5);
+}
+
+.peak-minute-banner:hover::before {
+    animation-duration: 2s;
+}
+
+.peak-minute-banner:hover::after {
+    animation-duration: 1.5s;
 }
 
 .peak-label {
@@ -403,6 +532,8 @@ body {
     font-weight: 600;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
     font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+    position: relative;
+    z-index: 1;
 }
 
 .peak-list {
@@ -411,28 +542,32 @@ body {
     gap: 0.6rem;
     width: 100%;
     max-width: 700px;
+    position: relative;
+    z-index: 1;
 }
 
 .peak-item {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1.15rem;
     font-weight: 600;
-    text-shadow: 0 0 10px rgba(237, 100, 166, 0.7);
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
     font-family: 'Cascadia Mono', 'Calibri', sans-serif;
     letter-spacing: 0.5px;
     padding: 0.7rem 1.2rem;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(237, 100, 166, 0.25);
+    border: 1px solid rgba(255, 107, 53, 0.25);
     border-radius: 10px;
     backdrop-filter: blur(10px);
     text-align: center;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .peak-item:hover {
     background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(237, 100, 166, 0.4);
-    transform: translateX(5px);
+    border-color: rgba(255, 107, 53, 0.4);
+    transform: scale(1.02);
 }
 
 .stat-card {
@@ -440,7 +575,7 @@ body {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 100%);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
-    padding: 2.5rem 2rem;
+    padding: 1.8rem 1.5rem;
     text-align: center;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -504,9 +639,9 @@ body {
 
 .stat-card p {
     color: #fff;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin: 0.8rem 0 0.5rem 0;
+    margin: 0.8rem 0;
     text-shadow: 0 0 12px rgba(0, 0, 0, 0.8), 0 0 20px currentColor;
     font-family: 'Cascadia Mono', 'Calibri', sans-serif;
     letter-spacing: -1px;
@@ -519,7 +654,7 @@ body {
 
 .stat-card .stat-label {
     display: block;
-    margin-top: 1rem;
+    margin-top: 0;
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.7);
     font-style: italic;
@@ -532,6 +667,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
     margin-bottom: 3rem;
+}
+
+.chart-full-width {
+    grid-column: 1 / -1;
 }
 
 .chart-container {
@@ -664,18 +803,16 @@ body {
         margin-left: 0.5rem;
     }
 
+    .controls-wrapper {
+        grid-template-columns: 1fr;
+    }
+
     .date-range {
-        flex-direction: column;
-        align-items: stretch;
+        grid-template-columns: 1fr;
     }
 
-    .date-range input[type="date"] {
-        min-width: 100%;
-    }
-
-    .interval-controls {
-        flex-direction: column;
-        gap: 1rem;
+    .btn-primary {
+        grid-column: 1;
     }
 
     .interval-select {
@@ -714,7 +851,8 @@ body {
         gap: 1.5rem;
     }
 
-    .date-controls {
+    .date-controls,
+    .interval-controls {
         padding: 1.5rem;
     }
 }

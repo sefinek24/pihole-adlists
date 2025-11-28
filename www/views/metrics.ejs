@@ -41,48 +41,69 @@
                 <span class="stat-label">2xx/3xx responses</span>
             </div>
         </div>
+        <div class="stats-timestamps">
+            <div class="timestamp-item">
+                <span class="timestamp-label">📅 Tracking Since:</span>
+                <span class="timestamp-value" id="alltime-created">-</span>
+            </div>
+            <div class="timestamp-item">
+                <span class="timestamp-label">🔄 Last Updated:</span>
+                <span class="timestamp-value" id="alltime-updated">-</span>
+            </div>
+        </div>
     </section>
 
     <section class="time-range-section">
         <h2>📅 Time Range Analytics <span class="utc-badge">UTC</span></h2>
 
-        <div class="date-controls">
-            <div class="quick-select">
-                <button class="btn-quick" data-days="7">Last 7 Days</button>
-                <button class="btn-quick active" data-days="14">Last 14 Days</button>
-                <button class="btn-quick" data-days="30">Last 30 Days</button>
-                <button class="btn-quick" data-days="90">Last 90 Days</button>
-            </div>
-
-            <div class="date-divider">
-                <span>or</span>
-            </div>
-
-            <div class="date-range">
-                <div class="date-input-group">
-                    <label for="date-from">From</label>
-                    <input type="date" id="date-from" />
+        <div class="controls-wrapper">
+            <div class="date-controls">
+                <div class="quick-select">
+                    <button class="btn-quick" data-days="3">Last 3 Days</button>
+                    <button class="btn-quick" data-days="7">Last 7 Days</button>
+                    <button class="btn-quick" data-days="14">Last 14 Days</button>
+                    <button class="btn-quick" data-days="30">Last 30 Days</button>
+                    <button class="btn-quick" data-days="90">Last 90 Days</button>
+                    <button class="btn-quick" data-days="max">MAX</button>
                 </div>
 
-                <div class="date-input-group">
-                    <label for="date-to">To</label>
-                    <input type="date" id="date-to" />
+                <div class="date-divider">
+                    <span>or</span>
                 </div>
 
-                <button id="load-data" class="btn-primary">Apply Custom Range</button>
-            </div>
-        </div>
+                <div class="date-range">
+                    <div class="date-input-group">
+                        <label for="date-from">From</label>
+                        <input type="date" id="date-from" />
+                    </div>
 
-        <div class="interval-controls">
-            <label>Time Interval:</label>
-            <div class="interval-select">
-                <button class="btn-interval" data-interval="1">1 min</button>
-                <button class="btn-interval active" data-interval="10">10 min</button>
-                <button class="btn-interval" data-interval="30">30 min</button>
-                <button class="btn-interval" data-interval="120">2h</button>
-                <button class="btn-interval" data-interval="360">6h</button>
-                <button class="btn-interval" data-interval="720">12h</button>
-                <button class="btn-interval" data-interval="1440">24h</button>
+                    <div class="date-input-group">
+                        <label for="date-to">To</label>
+                        <input type="date" id="date-to" />
+                    </div>
+
+                    <button id="load-data" class="btn-primary">Apply Custom Range</button>
+                </div>
+            </div>
+
+            <div class="interval-controls">
+                <label>Time Interval:</label>
+                <div class="interval-select-wrapper">
+                    <div class="interval-select">
+                        <button class="btn-interval" data-interval="1">1m</button>
+                        <button class="btn-interval" data-interval="5">5m</button>
+                        <button class="btn-interval" data-interval="10">10m</button>
+                        <button class="btn-interval" data-interval="15">15m</button>
+                        <button class="btn-interval" data-interval="30">30m</button>
+                    </div>
+                    <div class="interval-select">
+                        <button class="btn-interval" data-interval="60">1h</button>
+                        <button class="btn-interval" data-interval="240">4h</button>
+                        <button class="btn-interval" data-interval="480">8h</button>
+                        <button class="btn-interval" data-interval="960">16h</button>
+                        <button class="btn-interval" data-interval="1440">24h</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -98,6 +119,16 @@
                 <span class="stat-label">Downloads only</span>
             </div>
             <div class="stat-card filtered">
+                <h3>Most Popular Format</h3>
+                <p id="period-top-category">-</p>
+                <span class="stat-label">Top in range</span>
+            </div>
+            <div class="stat-card filtered">
+                <h3 id="top-format-title">Top Format Downloads</h3>
+                <p id="top-format-downloads">-</p>
+                <span class="stat-label" id="top-format-label">-</span>
+            </div>
+            <div class="stat-card filtered">
                 <h3>Success Rate</h3>
                 <p id="success-rate">-</p>
                 <span class="stat-label">2xx/3xx responses</span>
@@ -108,14 +139,19 @@
                 <span class="stat-label">Hourly average</span>
             </div>
             <div class="stat-card filtered">
+                <h3>Average Per Day</h3>
+                <p id="avg-per-day">-</p>
+                <span class="stat-label">Daily average</span>
+            </div>
+            <div class="stat-card filtered">
+                <h3>Blocklist Share</h3>
+                <p id="blocklist-share">-</p>
+                <span class="stat-label">Of total traffic</span>
+            </div>
+            <div class="stat-card filtered">
                 <h3>Error Rate</h3>
                 <p id="error-rate">-</p>
                 <span class="stat-label">4xx/5xx responses</span>
-            </div>
-            <div class="stat-card filtered">
-                <h3>Most Popular Format</h3>
-                <p id="period-top-category">-</p>
-                <span class="stat-label">Top in range</span>
             </div>
             <div class="stat-card filtered">
                 <h3>Days Analyzed</h3>
@@ -154,6 +190,11 @@
         </div>
 
         <div class="chart-container">
+            <h2>🌡️ Traffic Intensity Heatmap</h2>
+            <canvas id="heatmap-chart"></canvas>
+        </div>
+
+        <div class="chart-container chart-full-width">
             <h2>📊 Format Trends</h2>
             <canvas id="format-distribution-chart"></canvas>
         </div>

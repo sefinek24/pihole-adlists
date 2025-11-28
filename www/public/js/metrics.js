@@ -2,7 +2,27 @@ const charts = {};
 const START_DATE = new Date('2024-10-28');
 const SUCCESS_CODES = ['200', '201', '204', '304'];
 const ERROR_CODES = ['400', '401', '403', '404', '429', '500', '502', '503', '504'];
-let currentInterval = 10; // Default 10 minutes
+let dataAvailableDays = 0;
+const FORMAT_LABELS = {
+	hosts: 'hosts 0.0.0.0',
+	localhost: 'localhost',
+	adguard: 'AdGuard',
+	dnsmasq: 'Dnsmasq',
+	noip: 'No-IP',
+	rpz: 'RPZ',
+	unbound: 'Unbound',
+};
+
+const FORMAT_LABELS_SHORT = {
+	hosts: '0.0.0.0',
+	localhost: '127.0.0.1',
+	adguard: 'AdGuard',
+	dnsmasq: 'Dnsmasq',
+	noip: 'No-IP',
+	rpz: 'RPZ',
+	unbound: 'Unbound',
+};
+let currentInterval = 10;
 
 const showLoading = () => document.getElementById('loading').style.display = 'flex';
 const hideLoading = () => document.getElementById('loading').style.display = 'none';
@@ -46,7 +66,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 			labels: {
 				color: '#fff',
 				font: {
-					family: "'Cascadia Mono', 'Calibri', sans-serif",
+					family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 					size: 13,
 					weight: '500',
 				},
@@ -65,16 +85,16 @@ const getCommonChartOptions = (showLegend = true) => ({
 			padding: 12,
 			displayColors: true,
 			titleFont: {
-				family: "'Cascadia Mono', 'Calibri', sans-serif",
+				family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 				size: 14,
 				weight: '600',
 			},
 			bodyFont: {
-				family: "'Cascadia Mono', 'Calibri', sans-serif",
+				family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 				size: 13,
 			},
 			footerFont: {
-				family: "'Cascadia Mono', 'Calibri', sans-serif",
+				family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 				size: 11,
 			},
 			footerColor: 'rgba(255, 255, 255, 0.6)',
@@ -87,7 +107,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 			ticks: {
 				color: 'rgba(255, 255, 255, 0.8)',
 				font: {
-					family: "'Cascadia Mono', 'Calibri', sans-serif",
+					family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 					size: 12,
 				},
 			},
@@ -102,7 +122,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 			ticks: {
 				color: 'rgba(255, 255, 255, 0.8)',
 				font: {
-					family: "'Cascadia Mono', 'Calibri', sans-serif",
+					family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 					size: 12,
 				},
 				callback: value => value.toLocaleString(),
@@ -197,25 +217,109 @@ const loadAllTimeStats = async () => {
 
 		const categories = stats.categories || {};
 		const topCategory = Object.entries(categories).sort((a, b) => b[1] - a[1])[0];
-		updateElement('alltime-top-category', topCategory ? topCategory[0].toUpperCase() : 'N/A');
+		const topCategoryName = topCategory ? (FORMAT_LABELS[topCategory[0]] || topCategory[0].toUpperCase()) : 'N/A';
+		updateElement('alltime-top-category', topCategoryName);
 
-		const daysSinceStart = Math.floor((new Date() - START_DATE) / (1000 * 60 * 60 * 24));
+		let daysSinceStart = 0;
+		if (stats.createdAt) {
+			const createdDate = new Date(stats.createdAt);
+			const now = new Date();
+			daysSinceStart = Math.floor((now - createdDate) / (1000 * 60 * 60 * 24));
+			dataAvailableDays = daysSinceStart;
+
+			updateElement('alltime-created', createdDate.toLocaleString('en-GB', {
+				year: 'numeric',
+				month: 'short',
+				day: 'numeric',
+				hour: '2-digit',
+				minute: '2-digit',
+				timeZone: 'UTC',
+				timeZoneName: 'short',
+			}));
+		} else {
+			daysSinceStart = Math.floor((new Date() - START_DATE) / (1000 * 60 * 60 * 24));
+			dataAvailableDays = daysSinceStart;
+		}
+
 		const avgPerDay = daysSinceStart > 0 ? Math.floor(stats.total / daysSinceStart) : 0;
 		updateElement('alltime-avg', avgPerDay.toLocaleString());
 
 		const successRate = calculateSuccessRate(stats.responses || {}, stats.total);
 		updateElement('alltime-success-rate', `${successRate}%`);
+
+		if (stats.updatedAt) {
+			const updatedDate = new Date(stats.updatedAt);
+			updateElement('alltime-updated', updatedDate.toLocaleString('en-GB', {
+				year: 'numeric',
+				month: 'short',
+				day: 'numeric',
+				hour: '2-digit',
+				minute: '2-digit',
+				timeZone: 'UTC',
+				timeZoneName: 'short',
+			}));
+		}
+
+		updateDayButtons();
+		updateDateInputLimits(stats.createdAt);
 	} catch (err) {
 		console.error('Error loading all-time stats:', err);
 	}
 };
 
+const updateDateInputLimits = createdAt => {
+	const dateFromInput = document.getElementById('date-from');
+	const dateToInput = document.getElementById('date-to');
+	const today = new Date();
+	const todayStr = formatDate(today);
+
+	let minDate;
+	if (createdAt) {
+		const createdDate = new Date(createdAt);
+		minDate = formatDate(createdDate);
+	} else {
+		minDate = formatDate(START_DATE);
+	}
+
+	if (dateFromInput) {
+		dateFromInput.setAttribute('min', minDate);
+		dateFromInput.setAttribute('max', todayStr);
+	}
+
+	if (dateToInput) {
+		dateToInput.setAttribute('min', minDate);
+		dateToInput.setAttribute('max', todayStr);
+	}
+};
+
+const updateDayButtons = () => {
+	document.querySelectorAll('.btn-quick').forEach(btn => {
+		const daysValue = btn.dataset.days;
+		if (daysValue === 'max' || daysValue === '3') {
+			btn.disabled = false;
+			btn.style.opacity = '1';
+			btn.style.cursor = 'pointer';
+		} else {
+			const requiredDays = parseInt(daysValue);
+			if (requiredDays > dataAvailableDays) {
+				btn.disabled = true;
+				btn.style.opacity = '0.4';
+				btn.style.cursor = 'not-allowed';
+			} else {
+				btn.disabled = false;
+				btn.style.opacity = '1';
+				btn.style.cursor = 'pointer';
+			}
+		}
+	});
+};
+
 const setDefaultDates = () => {
 	const today = new Date();
-	const twoWeeksAgo = new Date(today);
-	twoWeeksAgo.setDate(today.getDate() - 14);
+	const sevenDaysAgo = new Date(today);
+	sevenDaysAgo.setDate(today.getDate() - 7);
 
-	document.getElementById('date-from').value = formatDate(twoWeeksAgo);
+	document.getElementById('date-from').value = formatDate(sevenDaysAgo);
 	document.getElementById('date-to').value = formatDate(today);
 };
 
@@ -280,6 +384,8 @@ const aggregateData = data => {
 	const errorRate = totalRequests > 0 ? ((errorCount / totalRequests) * 100).toFixed(2) : '0.00';
 
 	const avgPerHour = data.length > 0 ? Math.floor(totalRequests / (data.length / 60)) : 0;
+	const avgPerDay = uniqueDates.size > 0 ? Math.floor(totalRequests / uniqueDates.size) : 0;
+	const blocklistShare = totalRequests > 0 ? ((totalBlocklists / totalRequests) * 100).toFixed(2) : '0.00';
 	const topCategory = Object.entries(categories).sort((a, b) => b[1] - a[1])[0];
 
 	return {
@@ -292,6 +398,8 @@ const aggregateData = data => {
 		categories,
 		hourlyData,
 		avgPerHour,
+		avgPerDay,
+		blocklistShare,
 		uniqueDays: uniqueDates.size,
 		topCategory: topCategory ? topCategory[0] : 'N/A',
 	};
@@ -300,11 +408,22 @@ const aggregateData = data => {
 const updateSummary = aggregated => {
 	updateElement('total-requests', aggregated.totalRequests.toLocaleString());
 	updateElement('blocklist-requests', aggregated.totalBlocklists.toLocaleString());
+
+	const topFormat = aggregated.topCategory;
+	const topFormatCount = topFormat !== 'N/A' ? (aggregated.categories[topFormat] || 0) : 0;
+	const topFormatName = topFormat !== 'N/A' ? (FORMAT_LABELS[topFormat] || topFormat.toUpperCase()) : 'N/A';
+
+	updateElement('period-top-category', topFormatName);
+	updateElement('top-format-title', topFormatName);
+	updateElement('top-format-downloads', topFormatCount.toLocaleString());
+	updateElement('top-format-label', 'Most downloaded');
+
 	updateElement('success-rate', `${aggregated.successRate}%`);
 	updateElement('error-rate', `${aggregated.errorRate}%`);
 	updateElement('avg-per-hour', aggregated.avgPerHour.toLocaleString());
+	updateElement('avg-per-day', aggregated.avgPerDay.toLocaleString());
+	updateElement('blocklist-share', `${aggregated.blocklistShare}%`);
 	updateElement('unique-days', aggregated.uniqueDays);
-	updateElement('period-top-category', aggregated.topCategory.toUpperCase());
 
 	const peakTimesContainer = document.getElementById('peak-times');
 	if (peakTimesContainer) {
@@ -347,9 +466,9 @@ const createRequestsChart = data => {
 					label: 'Total Requests',
 					data: data.map(d => d.total || 0),
 					borderColor: '#667eea',
-					backgroundColor: '#667eea26',
+					backgroundColor: 'transparent',
 					borderWidth: 2,
-					fill: true,
+					fill: false,
 					tension: 0.4,
 					pointRadius: 0,
 					pointBackgroundColor: '#667eea',
@@ -364,9 +483,9 @@ const createRequestsChart = data => {
 					label: 'Blocklist Requests',
 					data: data.map(d => d.blocklists || 0),
 					borderColor: '#764ba2',
-					backgroundColor: '#764ba226',
+					backgroundColor: 'transparent',
 					borderWidth: 2,
-					fill: true,
+					fill: false,
 					tension: 0.4,
 					pointRadius: 0,
 					pointBackgroundColor: '#764ba2',
@@ -437,7 +556,7 @@ const createResponsesChart = responses => {
 					labels: {
 						color: '#fff',
 						font: {
-							family: "'Cascadia Mono', 'Calibri', sans-serif",
+							family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 							size: 13,
 							weight: '500',
 						},
@@ -456,12 +575,12 @@ const createResponsesChart = responses => {
 					padding: 12,
 					displayColors: true,
 					titleFont: {
-						family: "'Cascadia Mono', 'Calibri', sans-serif",
+						family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 						size: 14,
 						weight: '600',
 					},
 					bodyFont: {
-						family: "'Cascadia Mono', 'Calibri', sans-serif",
+						family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 						size: 13,
 					},
 					cornerRadius: 8,
@@ -486,7 +605,7 @@ const createCategoriesChart = categories => {
 
 	const options = getCommonChartOptions(false);
 	options.plugins.tooltip.callbacks = addUTCFooter({
-		title: ctx => ctx[0].label.toUpperCase(),
+		title: ctx => ctx[0].label,
 		label: ctx => `Downloads: ${ctx.parsed.y.toLocaleString()}`,
 	});
 	options.scales.x.title = {
@@ -494,7 +613,7 @@ const createCategoriesChart = categories => {
 		text: 'Format',
 		color: 'rgba(255, 255, 255, 0.9)',
 		font: {
-			family: "'Cascadia Mono', 'Calibri', sans-serif",
+			family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 			size: 13,
 			weight: '600',
 		},
@@ -503,7 +622,7 @@ const createCategoriesChart = categories => {
 	charts.categories = new Chart(ctx, {
 		type: 'bar',
 		data: {
-			labels: Object.keys(categories),
+			labels: Object.keys(categories).map(key => FORMAT_LABELS_SHORT[key] || key.toUpperCase()),
 			datasets: [{
 				label: 'Downloads',
 				data: Object.values(categories),
@@ -543,7 +662,7 @@ const createHourlyChart = (hourlyData, dateRange) => {
 		text: 'Hour of Day',
 		color: 'rgba(255, 255, 255, 0.9)',
 		font: {
-			family: "'Cascadia Mono', 'Calibri', sans-serif",
+			family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 			size: 13,
 			weight: '600',
 		},
@@ -665,7 +784,7 @@ const createPeakHoursChart = data => {
 		text: 'Number of Requests',
 		color: 'rgba(255, 255, 255, 0.9)',
 		font: {
-			family: "'Cascadia Mono', 'Calibri', sans-serif",
+			family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
 			size: 13,
 			weight: '600',
 		},
@@ -701,16 +820,6 @@ const createFormatDistributionChart = data => {
 	const ctx = document.getElementById('format-distribution-chart')?.getContext('2d');
 	if (!ctx) return;
 
-	const formatLabels = {
-		hosts: '0.0.0.0',
-		localhost: '127.0.0.1',
-		adguard: 'AdGuard',
-		dnsmasq: 'Dnsmasq',
-		noip: 'No-IP',
-		rpz: 'RPZ',
-		unbound: 'Unbound',
-	};
-
 	const colors = [
 		'#667eea',
 		'#764ba2',
@@ -722,8 +831,8 @@ const createFormatDistributionChart = data => {
 	];
 
 	const labels = data.map(d => `${d.date} ${d.time}`);
-	const datasets = Object.keys(formatLabels).map((key, idx) => ({
-		label: formatLabels[key],
+	const datasets = Object.keys(FORMAT_LABELS_SHORT).map((key, idx) => ({
+		label: FORMAT_LABELS_SHORT[key],
 		data: data.map(d => d.categories?.[key] || 0),
 		borderColor: colors[idx],
 		backgroundColor: colors[idx] + '33',
@@ -764,12 +873,199 @@ const createFormatDistributionChart = data => {
 	});
 };
 
+const createHeatmapChart = data => {
+	destroyChart('heatmap');
+
+	const ctx = document.getElementById('heatmap-chart')?.getContext('2d');
+	if (!ctx) return;
+
+	const heatmapData = {};
+	data.forEach(item => {
+		const hour = item.time.split(':')[0];
+		if (!heatmapData[item.date]) {
+			heatmapData[item.date] = {};
+		}
+		heatmapData[item.date][hour] = (heatmapData[item.date][hour] || 0) + (item.total || 0);
+	});
+
+	const dates = Object.keys(heatmapData).sort();
+	const hours = Array.from({ length: 24 }, (_, i) => String(i).padStart(2, '0'));
+
+	const matrix = [];
+	dates.forEach(date => {
+		hours.forEach((hour, hourIndex) => {
+			const value = heatmapData[date]?.[hour] || 0;
+			matrix.push({
+				x: hourIndex,
+				y: date,
+				v: value,
+				hour: hour,
+			});
+		});
+	});
+
+	const values = matrix.map(d => d.v);
+	const maxValue = Math.max(...values);
+
+	const getColor = value => {
+		if (value === 0) return 'rgba(255, 255, 255, 0.05)';
+		const intensity = value / maxValue;
+		if (intensity < 0.2) return `rgba(102, 126, 234, ${0.3 + intensity * 0.3})`;
+		if (intensity < 0.5) return `rgba(118, 75, 162, ${0.4 + intensity * 0.3})`;
+		if (intensity < 0.8) return `rgba(237, 100, 166, ${0.5 + intensity * 0.3})`;
+		return `rgba(255, 107, 53, ${0.6 + intensity * 0.4})`;
+	};
+
+	charts.heatmap = new Chart(ctx, {
+		type: 'bubble',
+		data: {
+			datasets: [{
+				label: 'Traffic Intensity',
+				data: matrix.map(d => ({
+					x: d.x,
+					y: dates.indexOf(d.y),
+					r: Math.sqrt(d.v / maxValue) * 15 + 3,
+					value: d.v,
+					hour: d.hour,
+					date: d.y,
+				})),
+				backgroundColor: matrix.map(d => getColor(d.v)),
+				borderColor: matrix.map(d => getColor(d.v)),
+			}],
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: true,
+			plugins: {
+				legend: { display: false },
+				tooltip: {
+					enabled: true,
+					backgroundColor: 'rgba(0, 0, 0, 0.9)',
+					titleColor: '#00a8fc',
+					bodyColor: '#fff',
+					borderColor: 'rgba(0, 168, 252, 0.5)',
+					borderWidth: 1,
+					padding: 12,
+					titleFont: {
+						family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+						size: 14,
+						weight: '600',
+					},
+					bodyFont: {
+						family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+						size: 13,
+					},
+					callbacks: {
+						title: ctx => `${ctx[0].raw.date} ${ctx[0].raw.hour}:00`,
+						label: ctx => `Requests: ${ctx.raw.value.toLocaleString()}`,
+						footer: () => 'Time: UTC',
+					},
+				},
+			},
+			scales: {
+				x: {
+					type: 'linear',
+					min: -0.5,
+					max: 23.5,
+					ticks: {
+						stepSize: 1,
+						callback: value => {
+							const hour = hours[Math.round(value)];
+							return hour ? hour + ':00' : '';
+						},
+						color: 'rgba(255, 255, 255, 0.8)',
+						font: {
+							family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+							size: 11,
+						},
+					},
+					grid: {
+						color: 'rgba(255, 255, 255, 0.08)',
+						lineWidth: 1,
+					},
+					title: {
+						display: true,
+						text: 'Hour of Day (UTC)',
+						color: 'rgba(255, 255, 255, 0.9)',
+						font: {
+							family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+							size: 13,
+							weight: '600',
+						},
+					},
+				},
+				y: {
+					type: 'linear',
+					min: -0.5,
+					max: dates.length - 0.5,
+					reverse: true,
+					ticks: {
+						stepSize: 1,
+						callback: value => dates[value] || '',
+						color: 'rgba(255, 255, 255, 0.8)',
+						font: {
+							family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+							size: 11,
+						},
+					},
+					grid: {
+						color: 'rgba(255, 255, 255, 0.08)',
+						lineWidth: 1,
+					},
+					title: {
+						display: true,
+						text: 'Date',
+						color: 'rgba(255, 255, 255, 0.9)',
+						font: {
+							family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+							size: 13,
+							weight: '600',
+						},
+					},
+				},
+			},
+		},
+	});
+};
+
 const loadData = async () => {
 	const from = document.getElementById('date-from').value;
 	const to = document.getElementById('date-to').value;
 
 	if (!from || !to) {
 		alert('Please select both start and end dates');
+		return;
+	}
+
+	const fromDate = new Date(from + 'T00:00:00');
+	const toDate = new Date(to + 'T00:00:00');
+	const today = new Date();
+	today.setHours(0, 0, 0, 0);
+
+	if (fromDate > toDate) {
+		alert('Start date cannot be after end date');
+		return;
+	}
+
+	if (toDate > today) {
+		alert('End date cannot be in the future');
+		return;
+	}
+
+	const daysDiff = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
+
+	if (daysDiff < 0) {
+		alert('Invalid date range');
+		return;
+	}
+
+	let minInterval = 1;
+	if (daysDiff > 90) minInterval = 60;
+	else if (daysDiff > 30) minInterval = 15;
+	else if (daysDiff > 14) minInterval = 10;
+
+	if (currentInterval < minInterval) {
+		alert(`For ${daysDiff} days range, minimum interval is ${minInterval >= 60 ? (minInterval / 60) + 'h' : minInterval + 'm'}. Please select a larger interval.`);
 		return;
 	}
 
@@ -789,45 +1085,154 @@ const loadData = async () => {
 	createHourlyChart(aggregated.hourlyData, { from, to });
 	createDailyChart(data);
 	createPeakHoursChart(data);
+	createHeatmapChart(data);
 	createFormatDistributionChart(data);
+};
+
+const updateIntervalButtons = days => {
+	const allButtons = document.querySelectorAll('.btn-interval');
+
+	let minInterval = 1;
+	if (days === 'max') minInterval = 60;
+	else if (days > 90) minInterval = 60;
+	else if (days > 30) minInterval = 15;
+	else if (days > 14) minInterval = 10;
+
+	const needsActiveUpdate = currentInterval < minInterval;
+	let activeSet = false;
+
+	allButtons.forEach(btn => {
+		const interval = parseInt(btn.dataset.interval);
+		const isDisabled = interval < minInterval;
+
+		btn.disabled = isDisabled;
+		btn.style.opacity = isDisabled ? '0.4' : '1';
+		btn.style.cursor = isDisabled ? 'not-allowed' : 'pointer';
+
+		if (needsActiveUpdate && !activeSet && interval === minInterval) {
+			document.querySelectorAll('.btn-interval').forEach(b => b.classList.remove('active'));
+			btn.classList.add('active');
+			currentInterval = minInterval;
+			localStorage.setItem('metrics_interval', currentInterval);
+			activeSet = true;
+		}
+	});
 };
 
 const loadQuickData = async days => {
 	const to = new Date();
-	const from = new Date(to);
+	let from;
 
-	from.setDate(to.getDate() - days);
+	if (days === 'max') {
+		from = new Date(START_DATE);
+	} else {
+		from = new Date(to);
+		from.setDate(to.getDate() - days);
+	}
 
 	const dateFrom = document.getElementById('date-from');
 	const dateTo = document.getElementById('date-to');
 	if (dateFrom) dateFrom.value = formatDate(from);
 	if (dateTo) dateTo.value = formatDate(to);
 
+	updateIntervalButtons(days);
 	await loadData();
 };
 
+const updateIntervalsForCustomRange = () => {
+	const fromInput = document.getElementById('date-from');
+	const toInput = document.getElementById('date-to');
+	const from = fromInput.value;
+	const to = toInput.value;
+
+	if (from) {
+		toInput.setAttribute('min', from);
+	}
+
+	if (!from || !to) return;
+
+	const fromDate = new Date(from + 'T00:00:00');
+	const toDate = new Date(to + 'T00:00:00');
+
+	if (fromDate > toDate) {
+		toInput.value = from;
+		return;
+	}
+
+	const daysDiff = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
+	updateIntervalButtons(daysDiff);
+};
+
+document.getElementById('date-from').addEventListener('change', updateIntervalsForCustomRange);
+document.getElementById('date-to').addEventListener('change', updateIntervalsForCustomRange);
 document.getElementById('load-data').addEventListener('click', loadData);
 
 document.querySelectorAll('.btn-quick').forEach(btn => {
 	btn.addEventListener('click', async e => {
+		if (e.target.disabled) return;
+
 		document.querySelectorAll('.btn-quick').forEach(b => b.classList.remove('active'));
 		e.target.classList.add('active');
 
-		const days = parseInt(e.target.dataset.days) || 7;
+		const daysValue = e.target.dataset.days;
+		const days = daysValue === 'max' ? 'max' : (parseInt(daysValue) || 7);
+		localStorage.setItem('metrics_days', days);
 		await loadQuickData(days);
 	});
 });
 
 document.querySelectorAll('.btn-interval').forEach(btn => {
 	btn.addEventListener('click', async e => {
+		if (e.target.disabled) return;
+
 		document.querySelectorAll('.btn-interval').forEach(b => b.classList.remove('active'));
 		e.target.classList.add('active');
 
 		currentInterval = parseInt(e.target.dataset.interval) || 1;
+		localStorage.setItem('metrics_interval', currentInterval);
 		await loadData();
 	});
 });
 
-setDefaultDates();
-loadAllTimeStats();
-loadQuickData(14);
+const initializeMetrics = () => {
+	const savedDaysRaw = localStorage.getItem('metrics_days');
+	let savedDays = savedDaysRaw === 'max' ? 'max' : (parseInt(savedDaysRaw) || 7);
+	let savedInterval = parseInt(localStorage.getItem('metrics_interval')) || 10;
+
+	const validIntervals = [1, 5, 10, 15, 30, 60, 240, 480, 960, 1440];
+	if (!validIntervals.includes(savedInterval)) {
+		savedInterval = 10;
+		localStorage.setItem('metrics_interval', savedInterval);
+	}
+
+	if (savedDays !== 'max' && ![3, 7, 14, 30, 90].includes(savedDays)) {
+		savedDays = 7;
+		localStorage.setItem('metrics_days', savedDays);
+	}
+
+	document.querySelectorAll('.btn-quick').forEach(btn => {
+		const btnDays = btn.dataset.days === 'max' ? 'max' : parseInt(btn.dataset.days);
+		if (btnDays === savedDays) {
+			btn.classList.add('active');
+		} else {
+			btn.classList.remove('active');
+		}
+	});
+
+	document.querySelectorAll('.btn-interval').forEach(btn => {
+		if (parseInt(btn.dataset.interval) === savedInterval) {
+			btn.classList.add('active');
+		} else {
+			btn.classList.remove('active');
+		}
+	});
+
+	currentInterval = savedInterval;
+
+	setDefaultDates();
+	loadAllTimeStats();
+	updateIntervalButtons(savedDays);
+	loadQuickData(savedDays);
+};
+
+initializeMetrics();
