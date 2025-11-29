@@ -24,8 +24,17 @@ const FORMAT_LABELS_SHORT = {
 };
 let currentInterval = 10;
 
-const showLoading = () => document.getElementById('loading').style.display = 'flex';
-const hideLoading = () => document.getElementById('loading').style.display = 'none';
+const FONT_FAMILY = '\'Cascadia Mono\', \'Calibri\', sans-serif';
+
+let loadingElement;
+const showLoading = () => {
+	if (!loadingElement) loadingElement = document.getElementById('loading');
+	loadingElement.style.display = 'flex';
+};
+const hideLoading = () => {
+	if (!loadingElement) loadingElement = document.getElementById('loading');
+	loadingElement.style.display = 'none';
+};
 
 const formatDate = date => {
 	const year = date.getFullYear();
@@ -66,7 +75,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 			labels: {
 				color: '#fff',
 				font: {
-					family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+					family: FONT_FAMILY,
 					size: 13,
 					weight: '500',
 				},
@@ -85,16 +94,16 @@ const getCommonChartOptions = (showLegend = true) => ({
 			padding: 12,
 			displayColors: true,
 			titleFont: {
-				family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+				family: FONT_FAMILY,
 				size: 14,
 				weight: '600',
 			},
 			bodyFont: {
-				family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+				family: FONT_FAMILY,
 				size: 13,
 			},
 			footerFont: {
-				family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+				family: FONT_FAMILY,
 				size: 11,
 			},
 			footerColor: 'rgba(255, 255, 255, 0.6)',
@@ -107,7 +116,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 			ticks: {
 				color: 'rgba(255, 255, 255, 0.8)',
 				font: {
-					family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+					family: FONT_FAMILY,
 					size: 12,
 				},
 			},
@@ -122,7 +131,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 			ticks: {
 				color: 'rgba(255, 255, 255, 0.8)',
 				font: {
-					family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+					family: FONT_FAMILY,
 					size: 12,
 				},
 				callback: value => value.toLocaleString(),
@@ -205,6 +214,13 @@ const calculateSuccessRate = (responses, total) => {
 	return ((successCount / total) * 100).toFixed(2);
 };
 
+const getMinInterval = days => {
+	if (days === 'max' || days > 90) return 60;
+	if (days > 30) return 15;
+	if (days > 14) return 10;
+	return 1;
+};
+
 const loadAllTimeStats = async () => {
 	try {
 		const response = await fetch('/api/stats/alltime');
@@ -224,7 +240,7 @@ const loadAllTimeStats = async () => {
 		if (stats.createdAt) {
 			const createdDate = new Date(stats.createdAt);
 			const now = new Date();
-			daysSinceStart = Math.floor((now - createdDate) / (1000 * 60 * 60 * 24));
+			daysSinceStart = Math.max(0, Math.floor((now - createdDate) / (1000 * 60 * 60 * 24)));
 			dataAvailableDays = daysSinceStart;
 
 			updateElement('alltime-created', createdDate.toLocaleString('en-GB', {
@@ -237,7 +253,7 @@ const loadAllTimeStats = async () => {
 				timeZoneName: 'short',
 			}));
 		} else {
-			daysSinceStart = Math.floor((new Date() - START_DATE) / (1000 * 60 * 60 * 24));
+			daysSinceStart = Math.max(0, Math.floor((new Date() - START_DATE) / (1000 * 60 * 60 * 24)));
 			dataAvailableDays = daysSinceStart;
 		}
 
@@ -267,9 +283,13 @@ const loadAllTimeStats = async () => {
 	}
 };
 
+let dateFromInputCached, dateToInputCached;
+let quickButtonsCached, intervalButtonsCached;
+
 const updateDateInputLimits = createdAt => {
-	const dateFromInput = document.getElementById('date-from');
-	const dateToInput = document.getElementById('date-to');
+	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
+	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
+
 	const today = new Date();
 	const todayStr = formatDate(today);
 
@@ -281,19 +301,20 @@ const updateDateInputLimits = createdAt => {
 		minDate = formatDate(START_DATE);
 	}
 
-	if (dateFromInput) {
-		dateFromInput.setAttribute('min', minDate);
-		dateFromInput.setAttribute('max', todayStr);
+	if (dateFromInputCached) {
+		dateFromInputCached.setAttribute('min', minDate);
+		dateFromInputCached.setAttribute('max', todayStr);
 	}
 
-	if (dateToInput) {
-		dateToInput.setAttribute('min', minDate);
-		dateToInput.setAttribute('max', todayStr);
+	if (dateToInputCached) {
+		dateToInputCached.setAttribute('min', minDate);
+		dateToInputCached.setAttribute('max', todayStr);
 	}
 };
 
 const updateDayButtons = () => {
-	document.querySelectorAll('.btn-quick').forEach(btn => {
+	if (!quickButtonsCached) quickButtonsCached = document.querySelectorAll('.btn-quick');
+	quickButtonsCached.forEach(btn => {
 		const daysValue = btn.dataset.days;
 		if (daysValue === 'max' || daysValue === '3') {
 			btn.disabled = false;
@@ -315,12 +336,15 @@ const updateDayButtons = () => {
 };
 
 const setDefaultDates = () => {
+	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
+	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
+
 	const today = new Date();
 	const sevenDaysAgo = new Date(today);
 	sevenDaysAgo.setDate(today.getDate() - 7);
 
-	document.getElementById('date-from').value = formatDate(sevenDaysAgo);
-	document.getElementById('date-to').value = formatDate(today);
+	if (dateFromInputCached) dateFromInputCached.value = formatDate(sevenDaysAgo);
+	if (dateToInputCached) dateToInputCached.value = formatDate(today);
 };
 
 const fetchMetrics = async (from, to) => {
@@ -349,11 +373,17 @@ const aggregateData = data => {
 	const hourlyData = {};
 	const uniqueDates = new Set();
 	const allIntervals = [];
+	let minTimestamp = Infinity;
+	let maxTimestamp = -Infinity;
 
 	data.forEach(item => {
 		totalRequests += item.total || 0;
 		totalBlocklists += item.blocklists || 0;
 		uniqueDates.add(item.date);
+
+		const timestamp = new Date(item.timestamp).getTime();
+		if (timestamp < minTimestamp) minTimestamp = timestamp;
+		if (timestamp > maxTimestamp) maxTimestamp = timestamp;
 
 		allIntervals.push({
 			time: `${item.date} ${item.time}`,
@@ -383,7 +413,8 @@ const aggregateData = data => {
 	const successRate = totalRequests > 0 ? ((successCount / totalRequests) * 100).toFixed(2) : '0.00';
 	const errorRate = totalRequests > 0 ? ((errorCount / totalRequests) * 100).toFixed(2) : '0.00';
 
-	const avgPerHour = data.length > 0 ? Math.floor(totalRequests / (data.length / 60)) : 0;
+	const timeRangeHours = data.length > 0 && minTimestamp !== Infinity ? (maxTimestamp - minTimestamp) / (1000 * 60 * 60) : 0;
+	const avgPerHour = timeRangeHours > 0 ? Math.floor(totalRequests / timeRangeHours) : 0;
 	const avgPerDay = uniqueDates.size > 0 ? Math.floor(totalRequests / uniqueDates.size) : 0;
 	const blocklistShare = totalRequests > 0 ? ((totalBlocklists / totalRequests) * 100).toFixed(2) : '0.00';
 	const topCategory = Object.entries(categories).sort((a, b) => b[1] - a[1])[0];
@@ -556,7 +587,7 @@ const createResponsesChart = responses => {
 					labels: {
 						color: '#fff',
 						font: {
-							family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+							family: FONT_FAMILY,
 							size: 13,
 							weight: '500',
 						},
@@ -575,12 +606,12 @@ const createResponsesChart = responses => {
 					padding: 12,
 					displayColors: true,
 					titleFont: {
-						family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+						family: FONT_FAMILY,
 						size: 14,
 						weight: '600',
 					},
 					bodyFont: {
-						family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+						family: FONT_FAMILY,
 						size: 13,
 					},
 					cornerRadius: 8,
@@ -613,7 +644,7 @@ const createCategoriesChart = categories => {
 		text: 'Format',
 		color: 'rgba(255, 255, 255, 0.9)',
 		font: {
-			family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+			family: FONT_FAMILY,
 			size: 13,
 			weight: '600',
 		},
@@ -662,7 +693,7 @@ const createHourlyChart = (hourlyData, dateRange) => {
 		text: 'Hour of Day',
 		color: 'rgba(255, 255, 255, 0.9)',
 		font: {
-			family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+			family: FONT_FAMILY,
 			size: 13,
 			weight: '600',
 		},
@@ -784,7 +815,7 @@ const createPeakHoursChart = data => {
 		text: 'Number of Requests',
 		color: 'rgba(255, 255, 255, 0.9)',
 		font: {
-			family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+			family: FONT_FAMILY,
 			size: 13,
 			weight: '600',
 		},
@@ -905,10 +936,10 @@ const createHeatmapChart = data => {
 	});
 
 	const values = matrix.map(d => d.v);
-	const maxValue = Math.max(...values);
+	const maxValue = Math.max(...values, 1);
 
 	const getColor = value => {
-		if (value === 0) return 'rgba(255, 255, 255, 0.05)';
+		if (value === 0 || maxValue === 0) return 'rgba(255, 255, 255, 0.05)';
 		const intensity = value / maxValue;
 		if (intensity < 0.2) return `rgba(102, 126, 234, ${0.3 + intensity * 0.3})`;
 		if (intensity < 0.5) return `rgba(118, 75, 162, ${0.4 + intensity * 0.3})`;
@@ -924,7 +955,7 @@ const createHeatmapChart = data => {
 				data: matrix.map(d => ({
 					x: d.x,
 					y: dates.indexOf(d.y),
-					r: Math.sqrt(d.v / maxValue) * 15 + 3,
+					r: maxValue > 0 ? Math.sqrt(d.v / maxValue) * 15 + 3 : 3,
 					value: d.v,
 					hour: d.hour,
 					date: d.y,
@@ -947,12 +978,12 @@ const createHeatmapChart = data => {
 					borderWidth: 1,
 					padding: 12,
 					titleFont: {
-						family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+						family: FONT_FAMILY,
 						size: 14,
 						weight: '600',
 					},
 					bodyFont: {
-						family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+						family: FONT_FAMILY,
 						size: 13,
 					},
 					callbacks: {
@@ -975,7 +1006,7 @@ const createHeatmapChart = data => {
 						},
 						color: 'rgba(255, 255, 255, 0.8)',
 						font: {
-							family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+							family: FONT_FAMILY,
 							size: 11,
 						},
 					},
@@ -988,7 +1019,7 @@ const createHeatmapChart = data => {
 						text: 'Hour of Day (UTC)',
 						color: 'rgba(255, 255, 255, 0.9)',
 						font: {
-							family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+							family: FONT_FAMILY,
 							size: 13,
 							weight: '600',
 						},
@@ -1004,7 +1035,7 @@ const createHeatmapChart = data => {
 						callback: value => dates[value] || '',
 						color: 'rgba(255, 255, 255, 0.8)',
 						font: {
-							family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+							family: FONT_FAMILY,
 							size: 11,
 						},
 					},
@@ -1017,7 +1048,7 @@ const createHeatmapChart = data => {
 						text: 'Date',
 						color: 'rgba(255, 255, 255, 0.9)',
 						font: {
-							family: '\'Cascadia Mono\', \'Calibri\', sans-serif',
+							family: FONT_FAMILY,
 							size: 13,
 							weight: '600',
 						},
@@ -1029,8 +1060,11 @@ const createHeatmapChart = data => {
 };
 
 const loadData = async () => {
-	const from = document.getElementById('date-from').value;
-	const to = document.getElementById('date-to').value;
+	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
+	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
+
+	const from = dateFromInputCached.value;
+	const to = dateToInputCached.value;
 
 	if (!from || !to) {
 		alert('Please select both start and end dates');
@@ -1059,10 +1093,7 @@ const loadData = async () => {
 		return;
 	}
 
-	let minInterval = 1;
-	if (daysDiff > 90) minInterval = 60;
-	else if (daysDiff > 30) minInterval = 15;
-	else if (daysDiff > 14) minInterval = 10;
+	const minInterval = getMinInterval(daysDiff);
 
 	if (currentInterval < minInterval) {
 		alert(`For ${daysDiff} days range, minimum interval is ${minInterval >= 60 ? (minInterval / 60) + 'h' : minInterval + 'm'}. Please select a larger interval.`);
@@ -1090,18 +1121,12 @@ const loadData = async () => {
 };
 
 const updateIntervalButtons = days => {
-	const allButtons = document.querySelectorAll('.btn-interval');
-
-	let minInterval = 1;
-	if (days === 'max') minInterval = 60;
-	else if (days > 90) minInterval = 60;
-	else if (days > 30) minInterval = 15;
-	else if (days > 14) minInterval = 10;
-
+	if (!intervalButtonsCached) intervalButtonsCached = document.querySelectorAll('.btn-interval');
+	const minInterval = getMinInterval(days);
 	const needsActiveUpdate = currentInterval < minInterval;
 	let activeSet = false;
 
-	allButtons.forEach(btn => {
+	intervalButtonsCached.forEach(btn => {
 		const interval = parseInt(btn.dataset.interval);
 		const isDisabled = interval < minInterval;
 
@@ -1110,7 +1135,7 @@ const updateIntervalButtons = days => {
 		btn.style.cursor = isDisabled ? 'not-allowed' : 'pointer';
 
 		if (needsActiveUpdate && !activeSet && interval === minInterval) {
-			document.querySelectorAll('.btn-interval').forEach(b => b.classList.remove('active'));
+			intervalButtonsCached.forEach(b => b.classList.remove('active'));
 			btn.classList.add('active');
 			currentInterval = minInterval;
 			localStorage.setItem('metrics_interval', currentInterval);
@@ -1120,6 +1145,9 @@ const updateIntervalButtons = days => {
 };
 
 const loadQuickData = async days => {
+	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
+	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
+
 	const to = new Date();
 	let from;
 
@@ -1130,23 +1158,22 @@ const loadQuickData = async days => {
 		from.setDate(to.getDate() - days);
 	}
 
-	const dateFrom = document.getElementById('date-from');
-	const dateTo = document.getElementById('date-to');
-	if (dateFrom) dateFrom.value = formatDate(from);
-	if (dateTo) dateTo.value = formatDate(to);
+	if (dateFromInputCached) dateFromInputCached.value = formatDate(from);
+	if (dateToInputCached) dateToInputCached.value = formatDate(to);
 
 	updateIntervalButtons(days);
 	await loadData();
 };
 
 const updateIntervalsForCustomRange = () => {
-	const fromInput = document.getElementById('date-from');
-	const toInput = document.getElementById('date-to');
-	const from = fromInput.value;
-	const to = toInput.value;
+	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
+	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
+
+	const from = dateFromInputCached.value;
+	const to = dateToInputCached.value;
 
 	if (from) {
-		toInput.setAttribute('min', from);
+		dateToInputCached.setAttribute('min', from);
 	}
 
 	if (!from || !to) return;
@@ -1155,7 +1182,7 @@ const updateIntervalsForCustomRange = () => {
 	const toDate = new Date(to + 'T00:00:00');
 
 	if (fromDate > toDate) {
-		toInput.value = from;
+		dateToInputCached.value = from;
 		return;
 	}
 
@@ -1167,11 +1194,14 @@ document.getElementById('date-from').addEventListener('change', updateIntervalsF
 document.getElementById('date-to').addEventListener('change', updateIntervalsForCustomRange);
 document.getElementById('load-data').addEventListener('click', loadData);
 
-document.querySelectorAll('.btn-quick').forEach(btn => {
+const quickButtons = document.querySelectorAll('.btn-quick');
+const intervalButtons = document.querySelectorAll('.btn-interval');
+
+quickButtons.forEach(btn => {
 	btn.addEventListener('click', async e => {
 		if (e.target.disabled) return;
 
-		document.querySelectorAll('.btn-quick').forEach(b => b.classList.remove('active'));
+		quickButtons.forEach(b => b.classList.remove('active'));
 		e.target.classList.add('active');
 
 		const daysValue = e.target.dataset.days;
@@ -1181,11 +1211,11 @@ document.querySelectorAll('.btn-quick').forEach(btn => {
 	});
 });
 
-document.querySelectorAll('.btn-interval').forEach(btn => {
+intervalButtons.forEach(btn => {
 	btn.addEventListener('click', async e => {
 		if (e.target.disabled) return;
 
-		document.querySelectorAll('.btn-interval').forEach(b => b.classList.remove('active'));
+		intervalButtons.forEach(b => b.classList.remove('active'));
 		e.target.classList.add('active');
 
 		currentInterval = parseInt(e.target.dataset.interval) || 1;
@@ -1210,7 +1240,10 @@ const initializeMetrics = () => {
 		localStorage.setItem('metrics_days', savedDays);
 	}
 
-	document.querySelectorAll('.btn-quick').forEach(btn => {
+	if (!quickButtonsCached) quickButtonsCached = document.querySelectorAll('.btn-quick');
+	if (!intervalButtonsCached) intervalButtonsCached = document.querySelectorAll('.btn-interval');
+
+	quickButtonsCached.forEach(btn => {
 		const btnDays = btn.dataset.days === 'max' ? 'max' : parseInt(btn.dataset.days);
 		if (btnDays === savedDays) {
 			btn.classList.add('active');
@@ -1219,7 +1252,7 @@ const initializeMetrics = () => {
 		}
 	});
 
-	document.querySelectorAll('.btn-interval').forEach(btn => {
+	intervalButtonsCached.forEach(btn => {
 		if (parseInt(btn.dataset.interval) === savedInterval) {
 			btn.classList.add('active');
 		} else {
@@ -1230,9 +1263,9 @@ const initializeMetrics = () => {
 	currentInterval = savedInterval;
 
 	setDefaultDates();
-	loadAllTimeStats();
+	void loadAllTimeStats();
 	updateIntervalButtons(savedDays);
-	loadQuickData(savedDays);
+	void loadQuickData(savedDays);
 };
 
 initializeMetrics();
