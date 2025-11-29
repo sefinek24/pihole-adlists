@@ -15,7 +15,7 @@
 # Source: Unknown
 # License: DandelionSprout/adfilt is licensed under the Dandelicence License
 # Release: 127.0.0.1 before each domain
-# Last update: April 23, 2025 at 7:09 PM UTC | 2025-04-23T19:09:11.752+00:00
+# Last update: November 29, 2025 at 7:31 AM UTC | 2025-11-29T07:31:36.051+00:00
 #
 # This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 # If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
@@ -46,7 +46,7 @@
 # ——— Nintendo Switch ———
 # There is a system setting for getting rid of the Nintendo eShop advertisements on the lockscreen, which is hidden in System Settings → System → News Channel Settings → Nintendo News → Unfollow.
 # The following entries gives access on demand to the web browser, as per SwitchBru's DNS server trick (https://www.switchbru.com/dns/), while also making it possible to use AdGuard Home for adblocking at the same time. However, since SwitchBru uses a trick to make the Switch think it's partway into logging on to a hotel network, the entries would reject access to all other Switch web activities while the entries are live:
-# 45.55.142.122 ctest.cdn.nintendo.net
+# 127.0.0.1 ctest.cdn.nintendo.net
 # 127.0.0.1 receive-lp1.er.srv.nintendo.net
 # 127.0.0.1 aauth-lp1.ndas.srv.nintendo.net
 # ——— Nintendo DS / Wii ———
