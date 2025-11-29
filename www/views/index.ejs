@@ -37,6 +37,21 @@
     </div>
 </div>
 
+<% const formatNum = num => num?.toLocaleString('en-US') ?? '0';
+const createdDate = new Date(db.createdAt);
+const updatedDate = new Date(db.updatedAt);
+const responsesObj = db.responses instanceof Map ? Object.fromEntries(db.responses) : db.responses;
+const responseCodes = responsesObj ? Object.keys(responsesObj).sort() : [];
+const wsUrl = process.env.NODE_ENV === 'production' ? process.env.WS_ADDRESS : `${process.env.WS_ADDRESS}:${process.env.WS_PORT}`;
+const categories = [
+    { id: 'hosts', label: '0.0.0.0' },
+    { id: 'localhost', label: '127.0.0.1' },
+    { id: 'noip', label: 'No IP' },
+    { id: 'adguard', label: 'AdGuard' },
+    { id: 'unbound', label: 'Unbound format' },
+    { id: 'dnsmasq', label: 'Dnsmasq' },
+    { id: 'rpz', label: 'RPZ format' }
+]; %>
 
 <main>
     <div class="container-box" id="more-info">
@@ -165,52 +180,44 @@
 
     <section>
         <h2 style="margin-top:20px" id="stats">Are you ready for stats? 📝</h2>
-        <p style="text-align:center">Due to the upcoming update, the statistics are temporarily hidden.</p>
-<!--        <div class="container-stats">-->
-<!--            <div class="card-stats">-->
-<!--                <div class="category-big">All requests</div>-->
-<!--                <div class="stats-content" id="stats-content-total-requests"><%= db.total.toLocaleString() %></div>-->
-<!--            </div>-->
-<!--            <div class="card-stats">-->
-<!--                <div class="category-big">Blocklist requests</div>-->
-<!--                <div class="stats-content" id="stats-content-blocklist-requests"><%= db.blocklists.toLocaleString() %></div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <p style="text-align:center">Statistics have been collected since <span id="stats-since-date"><%= createdDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>.</p>
 
-<!--        <div class="container-stats">-->
-<!--            <div>-->
-<!--                <div class="category-small">0.0.0.0</div>-->
-<!--                <div class="stats-content" id="stats-content-hosts"><%= db.categories.hosts?.toLocaleString() %></div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <div class="category-small">127.0.0.1</div>-->
-<!--                <div class="stats-content" id="stats-content-localhost"><%= db.categories.localhost?.toLocaleString() %></div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <div class="category-small">No IP</div>-->
-<!--                <div class="stats-content" id="stats-content-noip"><%= db.categories.noip?.toLocaleString() %></div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <div class="category-small">AdGuard</div>-->
-<!--                <div class="stats-content" id="stats-content-adguard"><%= db.categories.adguard?.toLocaleString() %></div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <div class="category-small">Unbound format</div>-->
-<!--                <div class="stats-content" id="stats-content-unbound"><%= db.categories.unbound?.toLocaleString() %></div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <div class="category-small">Dnsmasq</div>-->
-<!--                <div class="stats-content" id="stats-content-dnsmasq"><%= db.categories.dnsmasq?.toLocaleString() %></div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <div class="category-small">RPZ format</div>-->
-<!--                <div class="stats-content" id="stats-content-rpz"><%= db.categories.rpz?.toLocaleString() %></div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="container-stats">
+            <div class="card-stats">
+                <div class="category-big">All requests</div>
+                <div class="stats-content" id="stats-content-total-requests"><%= formatNum(db.total) %></div>
+            </div>
+            <div class="card-stats">
+                <div class="category-big">Blocklist requests</div>
+                <div class="stats-content" id="stats-content-blocklist-requests"><%= formatNum(db.blocklists) %></div>
+            </div>
+        </div>
 
-<!--        <div id="stats-footer">-->
-<!--            <code>Statistics have been collected since October 28, 2024 (28.10.2024).</code>-->
-<!--        </div>-->
+        <div class="container-stats">
+            <% categories.forEach(cat => { %>
+            <div>
+                <div class="category-small"><%= cat.label %></div>
+                <div class="stats-content" id="stats-content-<%= cat.id %>"><%= formatNum(db.categories[cat.id]) %></div>
+            </div>
+            <% }); %>
+        </div>
+
+        <h2 style="margin-top:40px">HTTP Response Codes 📡</h2>
+        <div class="container-stats">
+            <% if (responseCodes.length > 0) { %>
+                <% responseCodes.forEach(code => { %>
+                <div>
+                    <div class="category-small"><%= code %></div>
+                    <div class="stats-content" id="stats-content-response-<%= code %>"><%= formatNum(responsesObj[code]) %></div>
+                </div>
+                <% }); %>
+            <% } else { %>
+                <div>
+                    <div class="category-small">No data</div>
+                    <div class="stats-content">0</div>
+                </div>
+            <% } %>
+        </div>
     </section>
 
     <section>
@@ -222,11 +229,11 @@
             </div>
             <div>
                 <div>Collection date:</div>
-                <code id="stats-content-coll-cAt"><%= new Date(db.createdAt).toISOString() %></code>
+                <code id="stats-content-coll-cAt"><%= createdDate.toISOString() %></code>
             </div>
             <div>
                 <div>Last collection update:</div>
-                <code id="stats-content-coll-uAt"><%= new Date(db.updatedAt).toISOString() %></code>
+                <code id="stats-content-coll-uAt"><%= updatedDate.toISOString() %></code>
             </div>
         </div>
     </section>
@@ -234,46 +241,76 @@
 
 <script src="/js/date.js"></script>
 <script>
-    const updateStats = (id, value) => {
-        const statsContentElement = document.getElementById(`stats-content-${id}`);
-        if (!statsContentElement) return console.error(`Element ${id} not found`);
+    (() => {
+        const formatNumber = num => num == null ? '0' : (typeof num === 'number' ? num.toLocaleString('en-US') : String(num));
+        const elementCache = new Map();
 
-        const oldValue = statsContentElement.textContent;
-        const formattedValue = value?.toLocaleString();
-        if (oldValue === formattedValue) return;
+        const getElement = id => {
+            if (!elementCache.has(id)) {
+                elementCache.set(id, document.getElementById(`stats-content-${id}`));
+            }
+            return elementCache.get(id);
+        };
 
-        statsContentElement.textContent = formattedValue;
-        statsContentElement.classList.add('stats-updated');
+        const updateStats = (id, value) => {
+            const element = getElement(id);
+            if (!element) return;
 
-        setTimeout(() => {
-            statsContentElement.classList.remove('stats-updated');
-        }, 1000);
-    };
+            const formattedValue = typeof value === 'number' ? formatNumber(value) : String(value);
+            if (element.textContent === formattedValue) return;
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const ws = new WebSocket('<%= process.env.NODE_ENV === 'production' ? process.env.WS_ADDRESS : `${process.env.WS_ADDRESS}:${process.env.WS_PORT}` %>');
+            element.textContent = formattedValue;
+            element.classList.add('stats-updated');
+            setTimeout(() => element.classList.remove('stats-updated'), 1000);
+        };
+
+        const categoryIds = ['hosts', 'localhost', 'noip', 'adguard', 'unbound', 'dnsmasq', 'rpz'];
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+
+        const updateSinceDate = createdAt => {
+            if (!createdAt) return;
+            const element = document.getElementById('stats-since-date');
+            if (element) element.textContent = new Date(createdAt).toLocaleDateString('en-US', dateOptions);
+        };
+
+        const ws = new WebSocket('<%= wsUrl %>');
 
         ws.onopen = () => console.log('WebSocket connection established');
 
         ws.onmessage = event => {
-            const parsedData = JSON.parse(event.data);
+            try {
+                const data = JSON.parse(event.data);
+                if (!data?.stats) return;
 
-            updateStats('total-requests', parsedData.stats.total);
-            updateStats('blocklist-requests', parsedData.stats.blocklists);
+                const { stats, uptime, coll } = data;
 
-            updateStats('hosts', parsedData.stats.categories.hosts);
-            updateStats('localhost', parsedData.stats.categories.localhost);
-            updateStats('noip', parsedData.stats.categories.noip);
-            updateStats('adguard', parsedData.stats.categories.adguard);
-            updateStats('unbound', parsedData.stats.categories.unbound);
-            updateStats('dnsmasq', parsedData.stats.categories.dnsmasq);
-            updateStats('rpz', parsedData.stats.categories.rpz);
+                if (stats.total != null) updateStats('total-requests', stats.total);
+                if (stats.blocklists != null) updateStats('blocklist-requests', stats.blocklists);
 
-            updateStats('uptime', parsedData.uptime);
-            updateStats('coll-cAt', formatDate(parsedData.coll.createdAt));
-            updateStats('coll-uAt', formatDate(parsedData.coll.updatedAt));
+                if (stats.categories) {
+                    categoryIds.forEach(id => {
+                        if (stats.categories[id] != null) updateStats(id, stats.categories[id]);
+                    });
+                }
+
+                if (stats.responses && typeof stats.responses === 'object') {
+                    Object.entries(stats.responses).forEach(([code, count]) => updateStats(`response-${code}`, count));
+                }
+
+                if (uptime) updateStats('uptime', uptime);
+                if (coll?.createdAt) {
+                    updateStats('coll-cAt', formatDate(coll.createdAt));
+                    updateSinceDate(coll.createdAt);
+                }
+                if (coll?.updatedAt) updateStats('coll-uAt', formatDate(coll.updatedAt));
+            } catch (err) {
+                console.error('WebSocket message error:', err);
+            }
         };
-    });
+
+        ws.onerror = err => console.error('WebSocket error:', err);
+        ws.onclose = () => console.log('WebSocket connection closed');
+    })();
 </script>
 
 <%- include('./includes/footer.ejs') %>

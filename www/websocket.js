@@ -2,34 +2,84 @@ const WebSocket = require('ws');
 const { getFullDate } = require('./utils/time.js');
 const RequestStats = require('./database/models/request-stats.model');
 
-const wss = new WebSocket.Server({ port: process.env.WS_PORT });
+const wss = new WebSocket.Server({
+	port: process.env.WS_PORT,
+	maxPayload: 16 * 1024,
+	clientTracking: true,
+	perMessageDeflate: false,
+});
 
-wss.on('connection', ws => {
-	console.log('New WebSocket connection established');
+const MAX_CLIENTS = 100;
+const BROADCAST_INTERVAL = 2000;
+let cacheTimestamp = 0, cachedStats = null;
+const CACHE_TTL = 1000;
 
-	const interval = setInterval(async () => {
+const fetchStats = async () => {
+	const now = Date.now();
+	if (cachedStats && now - cacheTimestamp < CACHE_TTL) {
+		return cachedStats;
+	}
+
+	try {
 		const db = await RequestStats.findOne({}).lean();
+		if (!db) return null;
 
-		ws.send(JSON.stringify({
+		cachedStats = {
 			stats: {
 				total: db.total,
 				blocklists: db.blocklists,
 				categories: db.categories,
+				responses: db.responses,
 			},
-			uptime: getFullDate(process.uptime()),
 			coll: {
 				createdAt: db.createdAt,
 				updatedAt: db.updatedAt,
 			},
-		}));
-	}, 2000);
+		};
+		cacheTimestamp = now;
+		return cachedStats;
+	} catch (err) {
+		console.error('Failed to fetch stats:', err);
+		return null;
+	}
+};
 
-	ws.on('close', () => {
-		console.log('WebSocket connection was closed');
-		clearInterval(interval);
+const broadcast = async () => {
+	const stats = await fetchStats();
+	if (!stats) return;
+
+	const data = JSON.stringify({
+		...stats,
+		uptime: getFullDate(process.uptime()),
 	});
 
-	ws.on('error', console.error);
+	wss.clients.forEach(client => {
+		if (client.readyState === WebSocket.OPEN) {
+			client.send(data);
+		}
+	});
+};
+
+const broadcastInterval = setInterval(broadcast, BROADCAST_INTERVAL);
+
+wss.on('connection', (ws, req) => {
+	if (wss.clients.size > MAX_CLIENTS) {
+		ws.close(1008, 'Server at capacity');
+		return;
+	}
+
+	console.log(`WebSocket connected from ${req.socket.remoteAddress}`);
+
+	fetchStats().then(stats => {
+		if (stats && ws.readyState === WebSocket.OPEN) {
+			ws.send(JSON.stringify({ ...stats, uptime: getFullDate(process.uptime()) }));
+		}
+	});
+
+	ws.on('close', () => console.log('WebSocket disconnected'));
+	ws.on('error', err => console.error('WebSocket error:', err));
 });
 
-console.log(`WebSocket server is running at ${process.env.WS_ADDRESS}:${process.env.WS_PORT}`);
+wss.on('close', () => clearInterval(broadcastInterval));
+
+console.log(`WebSocket server running at ${process.env.WS_ADDRESS}:${process.env.WS_PORT}`);

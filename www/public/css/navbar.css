@@ -1,0 +1,305 @@
+nav {
+	background: rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(16px) saturate(150%);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 70px;
+}
+
+.nav-brand {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #fff;
+	letter-spacing: -0.02em;
+	user-select: none;
+}
+
+.brand-icon {
+	font-size: 1.75rem;
+	filter: drop-shadow(0 0 8px rgba(11, 121, 191, 0.6));
+	animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0%, 100% { transform: scale(1); }
+	50% { transform: scale(1.08); }
+}
+
+.brand-text {
+	background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 50%, #a5d6ff 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.nav-menu {
+	display: flex;
+	gap: 0.5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	align-items: center;
+}
+
+.nav-menu li {
+	position: relative;
+}
+
+.nav-menu a {
+	display: block;
+	padding: 0.625rem 1.25rem;
+	color: rgba(255, 255, 255, 0.85);
+	text-decoration: none;
+	font-size: 0.95rem;
+	font-weight: 500;
+	border-radius: 8px;
+	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+}
+
+.nav-menu a::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #58a6ff, transparent);
+	transform: translateX(-50%);
+	transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-menu a:hover {
+	color: #fff;
+	background: rgba(88, 166, 255, 0.1);
+	transform: translateY(-1px);
+}
+
+.nav-menu a:hover::before {
+	width: 80%;
+}
+
+.nav-menu a.active {
+	color: #fff;
+	background: linear-gradient(135deg, rgba(88, 166, 255, 0.2), rgba(88, 166, 255, 0.15));
+	box-shadow: 0 0 0 1px rgba(88, 166, 255, 0.3), 0 4px 12px rgba(88, 166, 255, 0.15);
+}
+
+.nav-menu a.active::before {
+	width: 100%;
+	background: linear-gradient(90deg, #58a6ff, #79c0ff);
+}
+
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	gap: 5px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 8px;
+	z-index: 10001;
+	transition: transform 0.3s ease;
+}
+
+.menu-toggle span {
+	display: block;
+	width: 26px;
+	height: 3px;
+	background: linear-gradient(90deg, #58a6ff, #79c0ff);
+	border-radius: 3px;
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	box-shadow: 0 0 8px rgba(88, 166, 255, 0.4);
+}
+
+nav.active .menu-toggle span:nth-child(1) {
+	transform: translateY(8px) rotate(45deg);
+}
+
+nav.active .menu-toggle span:nth-child(2) {
+	opacity: 0;
+	transform: translateX(-20px);
+}
+
+nav.active .menu-toggle span:nth-child(3) {
+	transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 1024px) {
+	.nav-container {
+		height: 64px;
+		padding: 0 1.5rem;
+	}
+
+	.nav-brand {
+		font-size: 1.1rem;
+	}
+
+	.brand-icon {
+		font-size: 1.5rem;
+	}
+
+	.menu-toggle {
+		display: flex;
+	}
+
+	.nav-menu {
+		position: fixed;
+		top: 64px;
+		left: 0;
+		right: 0;
+		flex-direction: column;
+		gap: 0;
+		background: linear-gradient(180deg, rgba(13, 17, 23, 0.98), rgba(22, 27, 34, 0.96));
+		backdrop-filter: blur(20px) saturate(200%);
+		border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+		max-height: 0;
+		overflow: hidden;
+		opacity: 0;
+		transition: max-height 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+		            opacity 0.3s ease,
+		            transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		transform: translateY(-20px);
+	}
+
+	nav.active .nav-menu {
+		max-height: 500px;
+		opacity: 1;
+		transform: translateY(0);
+		padding: 1rem 0;
+	}
+
+	.nav-menu li {
+		width: 100%;
+		padding: 0 1rem;
+		opacity: 0;
+		transform: translateX(-30px);
+		transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	nav.active .nav-menu li {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	nav.active .nav-menu li:nth-child(1) { transition-delay: 0.05s; }
+	nav.active .nav-menu li:nth-child(2) { transition-delay: 0.1s; }
+	nav.active .nav-menu li:nth-child(3) { transition-delay: 0.15s; }
+	nav.active .nav-menu li:nth-child(4) { transition-delay: 0.2s; }
+	nav.active .nav-menu li:nth-child(5) { transition-delay: 0.25s; }
+	nav.active .nav-menu li:nth-child(6) { transition-delay: 0.3s; }
+	nav.active .nav-menu li:nth-child(7) { transition-delay: 0.35s; }
+
+	.nav-menu a {
+		width: 100%;
+		padding: 0.875rem 1.25rem;
+		font-size: 1rem;
+		border-radius: 10px;
+	}
+
+	.nav-menu a::before {
+		left: 0;
+		transform: none;
+		width: 4px;
+		height: 100%;
+		border-radius: 0 4px 4px 0;
+		background: linear-gradient(180deg, #58a6ff, #79c0ff);
+	}
+
+	.nav-menu a:hover::before,
+	.nav-menu a.active::before {
+		width: 4px;
+	}
+
+	.nav-menu a:hover {
+		transform: translateX(4px);
+		background: rgba(88, 166, 255, 0.12);
+	}
+
+	.nav-menu a.active {
+		background: linear-gradient(90deg, rgba(88, 166, 255, 0.18), rgba(88, 166, 255, 0.08));
+		border-left: 4px solid #58a6ff;
+		padding-left: calc(1.25rem - 4px);
+	}
+}
+
+@media (max-width: 768px) {
+	.nav-container {
+		height: 60px;
+		padding: 0 1.25rem;
+	}
+
+	.nav-brand {
+		font-size: 1rem;
+		gap: 0.5rem;
+	}
+
+	.brand-icon {
+		font-size: 1.35rem;
+	}
+
+	.brand-text {
+		display: none;
+	}
+
+	.nav-menu {
+		top: 60px;
+	}
+
+	.menu-toggle span {
+		width: 24px;
+		height: 2.5px;
+	}
+
+	nav.active .menu-toggle span:nth-child(1) {
+		transform: translateY(7.5px) rotate(45deg);
+	}
+
+	nav.active .menu-toggle span:nth-child(3) {
+		transform: translateY(-7.5px) rotate(-45deg);
+	}
+}
+
+@media (max-width: 480px) {
+	.nav-container {
+		height: 56px;
+		padding: 0 1rem;
+	}
+
+	.nav-menu {
+		top: 56px;
+	}
+
+	.nav-menu a {
+		padding: 0.75rem 1rem;
+		font-size: 0.95rem;
+	}
+
+	.menu-toggle {
+		padding: 6px;
+	}
+
+	.menu-toggle span {
+		width: 22px;
+	}
+}

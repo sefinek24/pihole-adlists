@@ -10,6 +10,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     <% if (css) { %><link rel="stylesheet" href="/css/<%= css %>.css"> <% } %>
 
     <!-- JS -->
@@ -39,16 +40,25 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="/" <%- page === 'home' ? 'id="selected"' : '' %>>🏠 Home page</a></li>
-            <li><a href="/generated/v1" <%- page === 'blocklists' ? 'id="selected"' : '' %>>📝 Blocklists</a></li>
-            <li><a href="/markdown" <%- page === 'markdown' ? 'id="selected"' : '' %>>📁 Explorer</a></li>
-            <!--<li><a href="/metrics" <%- page === 'metrics' ? 'id="selected"' : '' %>>📊 Metrics</a></li>-->
-            <li><a href="/false-positives" <%- page === 'false-positives' ? 'id="selected"' : '' %>>❌ Report false positive</a></li>
-            <li><a href="/update-schedule" <%- page === 'update-schedule' ? 'id="selected"' : '' %>>⏳ Update schedule</a></li>
-            <li><a href="/logs/v1" <%- page === 'git-logs' ? 'id="selected"' : '' %>>📘 Git logs</a></li>
-        </ul>
-
-        <button class="menu-toggle">☰</button>
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">🛡️</span>
+                <span class="brand-text">Sefinek Blocklists</span>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="/" <%- page === 'home' ? 'class="active"' : '' %>>Home</a></li>
+                <li><a href="/generated/v1" <%- page === 'blocklists' ? 'class="active"' : '' %>>Blocklists</a></li>
+                <li><a href="/markdown" <%- page === 'markdown' ? 'class="active"' : '' %>>Explorer</a></li>
+                <li><a href="/metrics" <%- page === 'metrics' ? 'class="active"' : '' %>>Metrics</a></li>
+                <li><a href="/false-positives" <%- page === 'false-positives' ? 'class="active"' : '' %>>Report</a></li>
+                <li><a href="/update-schedule" <%- page === 'update-schedule' ? 'class="active"' : '' %>>Schedule</a></li>
+                <li><a href="/logs/v1" <%- page === 'git-logs' ? 'class="active"' : '' %>>Logs</a></li>
+            </ul>
+        </div>
     </nav>
 
