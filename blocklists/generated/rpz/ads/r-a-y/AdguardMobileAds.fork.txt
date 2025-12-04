@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025120301 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025120401 43200 3600 259200 300
   NS  localhost.
 adx-open-service.youku.com CNAME .
 *.adx-open-service.youku.com CNAME .
@@ -95,6 +95,10 @@ appodeal.com CNAME .
 *.appodeal.com CNAME .
 appbaqend.com CNAME .
 *.appbaqend.com CNAME .
+static.terratraf.com CNAME .
+*.static.terratraf.com CNAME .
+cdn-rtb.sape.ru CNAME .
+*.cdn-rtb.sape.ru CNAME .
 aatkit.com CNAME .
 *.aatkit.com CNAME .
 gallerieshub.com CNAME .
