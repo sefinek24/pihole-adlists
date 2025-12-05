@@ -1,3 +1,5 @@
+import { formatDateShort, formatToYYYYMMDD } from './date.js';
+
 const charts = {};
 const START_DATE = new Date('2024-10-28');
 const SUCCESS_CODES = ['200', '201', '204', '304'];
@@ -38,7 +40,6 @@ const COLORS = {
 	yellow: '#f39c12',
 	red: '#e74c3c',
 	teal: '#16a085',
-	pink: '#e91e63',
 };
 
 const CHART_COLORS = [COLORS.primary, COLORS.green, COLORS.purple, COLORS.orange, COLORS.yellow, COLORS.teal, COLORS.red];
@@ -75,12 +76,7 @@ const hideLoading = () => {
 	loadingElement.style.display = 'none';
 };
 
-const formatDate = date => {
-	const year = date.getFullYear();
-	const month = String(date.getMonth() + 1).padStart(2, '0');
-	const day = String(date.getDate()).padStart(2, '0');
-	return `${year}-${month}-${day}`;
-};
+const formatDate = formatToYYYYMMDD;
 
 const updateElement = (id, value) => {
 	const element = document.getElementById(id);
@@ -95,6 +91,34 @@ const addUTCFooter = callbacks => ({
 			return customFooter ? `${customFooter}\nTime: UTC` : 'Time: UTC';
 		}
 		: () => 'Time: UTC',
+});
+
+const getTooltipConfig = (callbacks = {}) => ({
+	enabled: true,
+	backgroundColor: UI_COLORS.tooltipBg,
+	titleColor: UI_COLORS.tooltipTitle,
+	bodyColor: UI_COLORS.tooltipBody,
+	borderColor: UI_COLORS.tooltipBorder,
+	borderWidth: 1,
+	padding: 12,
+	displayColors: true,
+	titleFont: {
+		family: FONT_FAMILY,
+		size: 14,
+		weight: '600',
+	},
+	bodyFont: {
+		family: FONT_FAMILY,
+		size: 13,
+	},
+	footerFont: {
+		family: FONT_FAMILY,
+		size: 11,
+	},
+	footerColor: UI_COLORS.tooltipFooter,
+	cornerRadius: 8,
+	caretSize: 6,
+	callbacks,
 });
 
 const getCommonChartOptions = (showLegend = true) => ({
@@ -123,32 +147,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 				pointStyle: 'circle',
 			},
 		},
-		tooltip: {
-			enabled: true,
-			backgroundColor: UI_COLORS.tooltipBg,
-			titleColor: UI_COLORS.tooltipTitle,
-			bodyColor: UI_COLORS.tooltipBody,
-			borderColor: UI_COLORS.tooltipBorder,
-			borderWidth: 1,
-			padding: 12,
-			displayColors: true,
-			titleFont: {
-				family: FONT_FAMILY,
-				size: 14,
-				weight: '600',
-			},
-			bodyFont: {
-				family: FONT_FAMILY,
-				size: 13,
-			},
-			footerFont: {
-				family: FONT_FAMILY,
-				size: 11,
-			},
-			footerColor: UI_COLORS.tooltipFooter,
-			cornerRadius: 8,
-			caretSize: 6,
-		},
+		tooltip: getTooltipConfig(),
 	},
 	scales: {
 		x: {
@@ -184,6 +183,16 @@ const getCommonChartOptions = (showLegend = true) => ({
 	},
 });
 
+const emptyCategories = {
+	hosts: 0,
+	localhost: 0,
+	adguard: 0,
+	dnsmasq: 0,
+	noip: 0,
+	rpz: 0,
+	unbound: 0,
+};
+
 const destroyChart = name => {
 	if (charts[name]) {
 		charts[name].destroy();
@@ -215,15 +224,7 @@ const aggregateByInterval = (data, intervalMinutes) => {
 				time: timeStr,
 				total: 0,
 				blocklists: 0,
-				categories: {
-					hosts: 0,
-					localhost: 0,
-					adguard: 0,
-					dnsmasq: 0,
-					noip: 0,
-					rpz: 0,
-					unbound: 0,
-				},
+				categories: { ...emptyCategories },
 				responses: {},
 			};
 		}
@@ -281,16 +282,7 @@ const loadAllTimeStats = async () => {
 			const now = new Date();
 			daysSinceStart = Math.max(0, Math.floor((now - createdDate) / (1000 * 60 * 60 * 24)));
 			dataAvailableDays = daysSinceStart;
-
-			updateElement('alltime-created', createdDate.toLocaleString(navigator.language || 'en-US', {
-				year: 'numeric',
-				month: 'short',
-				day: 'numeric',
-				hour: '2-digit',
-				minute: '2-digit',
-				timeZone: 'UTC',
-				timeZoneName: 'short',
-			}));
+			updateElement('alltime-created', formatDateShort(stats.createdAt));
 		} else {
 			daysSinceStart = Math.max(0, Math.floor((new Date() - START_DATE) / (1000 * 60 * 60 * 24)));
 			dataAvailableDays = daysSinceStart;
@@ -302,21 +294,10 @@ const loadAllTimeStats = async () => {
 		const successRate = calculateSuccessRate(stats.responses || {}, stats.total);
 		updateElement('alltime-success-rate', `${successRate}%`);
 
-		if (stats.updatedAt) {
-			const updatedDate = new Date(stats.updatedAt);
-			updateElement('alltime-updated', updatedDate.toLocaleString(navigator.language || 'en-US', {
-				year: 'numeric',
-				month: 'short',
-				day: 'numeric',
-				hour: '2-digit',
-				minute: '2-digit',
-				timeZone: 'UTC',
-				timeZoneName: 'short',
-			}));
-		}
+		if (stats.updatedAt) updateElement('alltime-updated', formatDateShort(stats.updatedAt));
 
-		updateDayButtons(); // eslint-disable-line no-use-before-define
-		updateDateInputLimits(stats.createdAt); // eslint-disable-line no-use-before-define
+		updateDayButtons();
+		updateDateInputLimits(stats.createdAt);
 	} catch (err) {
 		console.error('Error loading all-time stats:', err);
 	}
@@ -620,33 +601,13 @@ const createResponsesChart = responses => {
 						pointStyle: 'circle',
 					},
 				},
-				tooltip: {
-					enabled: true,
-					backgroundColor: UI_COLORS.tooltipBg,
-					titleColor: UI_COLORS.tooltipTitle,
-					bodyColor: UI_COLORS.tooltipBody,
-					borderColor: UI_COLORS.tooltipBorder,
-					borderWidth: 1,
-					padding: 12,
-					displayColors: true,
-					titleFont: {
-						family: FONT_FAMILY,
-						size: 14,
-						weight: '600',
+				tooltip: getTooltipConfig({
+					label: tooltipCtx => {
+						const value = tooltipCtx.parsed;
+						const percentage = ((value / total) * 100).toFixed(2);
+						return `HTTP ${tooltipCtx.label}: ${value.toLocaleString()} (${percentage}%)`;
 					},
-					bodyFont: {
-						family: FONT_FAMILY,
-						size: 13,
-					},
-					cornerRadius: 8,
-					callbacks: {
-						label: tooltipCtx => {
-							const value = tooltipCtx.parsed;
-							const percentage = ((value / total) * 100).toFixed(2);
-							return `HTTP ${tooltipCtx.label}: ${value.toLocaleString()} (${percentage}%)`;
-						},
-					},
-				},
+				}),
 			},
 		},
 	});
@@ -926,9 +887,7 @@ const createHeatmapChart = data => {
 	const heatmapData = {};
 	data.forEach(item => {
 		const hour = item.time.split(':')[0];
-		if (!heatmapData[item.date]) {
-			heatmapData[item.date] = {};
-		}
+		if (!heatmapData[item.date]) heatmapData[item.date] = {};
 		heatmapData[item.date][hour] = (heatmapData[item.date][hour] || 0) + (item.total || 0);
 	});
 
@@ -982,29 +941,11 @@ const createHeatmapChart = data => {
 			maintainAspectRatio: true,
 			plugins: {
 				legend: { display: false },
-				tooltip: {
-					enabled: true,
-					backgroundColor: UI_COLORS.tooltipBg,
-					titleColor: UI_COLORS.tooltipTitle,
-					bodyColor: UI_COLORS.tooltipBody,
-					borderColor: UI_COLORS.tooltipBorder,
-					borderWidth: 1,
-					padding: 12,
-					titleFont: {
-						family: FONT_FAMILY,
-						size: 14,
-						weight: '600',
-					},
-					bodyFont: {
-						family: FONT_FAMILY,
-						size: 13,
-					},
-					callbacks: {
-						title: tooltipCtx => `${tooltipCtx[0].raw.date} ${tooltipCtx[0].raw.hour}:00`,
-						label: tooltipCtx => `Requests: ${tooltipCtx.raw.value.toLocaleString()}`,
-						footer: () => 'Time: UTC',
-					},
-				},
+				tooltip: getTooltipConfig({
+					title: tooltipCtx => `${tooltipCtx[0].raw.date} ${tooltipCtx[0].raw.hour}:00`,
+					label: tooltipCtx => `Requests: ${tooltipCtx.raw.value.toLocaleString()}`,
+					footer: () => 'Time: UTC',
+				}),
 			},
 			scales: {
 				x: {
@@ -1203,9 +1144,15 @@ const updateIntervalsForCustomRange = () => {
 	updateIntervalButtons(daysDiff);
 };
 
-document.getElementById('date-from').addEventListener('change', updateIntervalsForCustomRange);
-document.getElementById('date-to').addEventListener('change', updateIntervalsForCustomRange);
-document.getElementById('load-data').addEventListener('click', loadData);
+const initializeEventListeners = () => {
+	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
+	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
+	if (dateFromInputCached) dateFromInputCached.addEventListener('change', updateIntervalsForCustomRange);
+	if (dateToInputCached) dateToInputCached.addEventListener('change', updateIntervalsForCustomRange);
+
+	const loadDataBtn = document.getElementById('load-data');
+	if (loadDataBtn) loadDataBtn.addEventListener('click', loadData);
+};
 
 const quickButtons = document.querySelectorAll('.btn-quick');
 const intervalButtons = document.querySelectorAll('.btn-interval');
@@ -1275,6 +1222,7 @@ const initializeMetrics = () => {
 
 	currentInterval = savedInterval;
 
+	initializeEventListeners();
 	setDefaultDates();
 	void loadAllTimeStats();
 	updateIntervalButtons(savedDays);
