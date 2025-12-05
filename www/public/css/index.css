@@ -163,14 +163,14 @@ body {
 	backdrop-filter:blur(16px) saturate(150%);
 	background:rgba(0, 0, 0, 0.25);
 	border:1px solid rgba(255, 255, 255, 0.08);
-	border-radius:12px;
-	bottom:1.5rem;
+	border-radius:9px;
+	bottom:1rem;
 	box-shadow:0 0 12px rgba(0, 0, 0, 0.4);
 	display:flex;
-	padding:.75rem 1.25rem;
+	padding:.3rem 1rem;
 	pointer-events:auto;
 	position:absolute;
-	right:1.5rem;
+	right:1rem;
 	transition:all .3s cubic-bezier(0.4, 0, 0.2, 1);
 	z-index:1
 }
@@ -187,7 +187,7 @@ body {
 	display:flex;
 	font-size:.9rem;
 	font-weight:500;
-	gap:.625rem;
+	gap:.5rem;
 	margin:0
 }
 
@@ -602,8 +602,7 @@ body {
 	.hero {
 		height:auto;
 		min-height:100vh;
-		padding:0 1.5rem;
-		padding-top:70px
+		padding: 70px 1.5rem 0;
 	}
 
 	.hero__title {
@@ -626,13 +625,14 @@ body {
 	}
 
 	.hero__sponsor {
-		bottom:1rem;
-		padding:.625rem 1rem;
-		right:1rem
+		bottom:.7rem;
+		padding:.3rem .8rem;
+		right:.7rem
 	}
 
 	.hero__sponsor-text {
-		font-size:.85rem
+		gap:.3rem;
+		font-size:.8rem
 	}
 
 	.hero__sponsor-logo {
@@ -735,8 +735,7 @@ body {
 
 	.hero {
 		margin-top:-60px;
-		padding:0 1.25rem;
-		padding-top:60px
+		padding: 60px 1.25rem 0;
 	}
 
 	.hero__content {
@@ -778,14 +777,14 @@ body {
 	.hero__sponsor {
 		bottom:.75rem;
 		left:50%;
-		padding:.625rem .875rem;
+		padding:.4rem 1.5rem;
 		transform:translateX(-50%);
 		width:max-content
 	}
 
 	.hero__sponsor-text {
-		font-size:.8rem;
-		gap:.5rem
+		font-size:.9rem;
+		gap:.4rem
 	}
 
 	.hero__sponsor-logo {
@@ -961,7 +960,7 @@ body {
 		bottom:.5rem;
 		left:50%;
 		max-width:calc(100% - 1.5rem);
-		padding:.5rem .75rem;
+		padding:.3rem 1rem;
 		transform:translateX(-50%);
 		width:max-content
 	}
@@ -970,7 +969,7 @@ body {
 		flex-direction:row;
 		flex-wrap:wrap;
 		font-size:.75rem;
-		gap:.375rem;
+		gap:.37rem;
 		justify-content:center;
 		text-align:center
 	}
@@ -1114,14 +1113,14 @@ body {
 		bottom:.5rem;
 		left:50%;
 		max-width:calc(100% - 1rem);
-		padding:.5rem .625rem;
+		padding:.2rem .8rem;
 		transform:translateX(-50%);
 		width:max-content
 	}
 
 	.hero__sponsor-text {
 		font-size:.7rem;
-		gap:.325rem
+		gap:.2rem
 	}
 
 	.info__heading {
