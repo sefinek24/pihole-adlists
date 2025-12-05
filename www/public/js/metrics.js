@@ -261,48 +261,6 @@ const getMinInterval = days => {
 	return 1;
 };
 
-const loadAllTimeStats = async () => {
-	try {
-		const response = await fetch('/api/stats/alltime');
-		if (!response.ok) throw new Error('Failed to fetch all-time stats');
-
-		const { data: stats } = await response.json();
-
-		updateElement('alltime-total', (stats.total || 0).toLocaleString());
-		updateElement('alltime-blocklists', (stats.blocklists || 0).toLocaleString());
-
-		const categories = stats.categories || {};
-		const topCategory = Object.entries(categories).sort((a, b) => b[1] - a[1])[0];
-		const topCategoryName = topCategory ? (FORMAT_LABELS[topCategory[0]] || topCategory[0].toUpperCase()) : 'N/A';
-		updateElement('alltime-top-category', topCategoryName);
-
-		let daysSinceStart = 0;
-		if (stats.createdAt) {
-			const createdDate = new Date(stats.createdAt);
-			const now = new Date();
-			daysSinceStart = Math.max(0, Math.floor((now - createdDate) / (1000 * 60 * 60 * 24)));
-			dataAvailableDays = daysSinceStart;
-			updateElement('alltime-created', formatDateShort(stats.createdAt));
-		} else {
-			daysSinceStart = Math.max(0, Math.floor((new Date() - START_DATE) / (1000 * 60 * 60 * 24)));
-			dataAvailableDays = daysSinceStart;
-		}
-
-		const avgPerDay = daysSinceStart > 0 ? Math.floor(stats.total / daysSinceStart) : 0;
-		updateElement('alltime-avg', avgPerDay.toLocaleString());
-
-		const successRate = calculateSuccessRate(stats.responses || {}, stats.total);
-		updateElement('alltime-success-rate', `${successRate}%`);
-
-		if (stats.updatedAt) updateElement('alltime-updated', formatDateShort(stats.updatedAt));
-
-		updateDayButtons();
-		updateDateInputLimits(stats.createdAt);
-	} catch (err) {
-		console.error('Error loading all-time stats:', err);
-	}
-};
-
 let dateFromInputCached, dateToInputCached;
 let intervalButtonsCached, quickButtonsCached;
 
@@ -353,6 +311,48 @@ const updateDayButtons = () => {
 			}
 		}
 	});
+};
+
+const loadAllTimeStats = async () => {
+	try {
+		const response = await fetch('/api/stats/alltime');
+		if (!response.ok) throw new Error('Failed to fetch all-time stats');
+
+		const { data: stats } = await response.json();
+
+		updateElement('alltime-total', (stats.total || 0).toLocaleString());
+		updateElement('alltime-blocklists', (stats.blocklists || 0).toLocaleString());
+
+		const categories = stats.categories || {};
+		const topCategory = Object.entries(categories).sort((a, b) => b[1] - a[1])[0];
+		const topCategoryName = topCategory ? (FORMAT_LABELS[topCategory[0]] || topCategory[0].toUpperCase()) : 'N/A';
+		updateElement('alltime-top-category', topCategoryName);
+
+		let daysSinceStart = 0;
+		if (stats.createdAt) {
+			const createdDate = new Date(stats.createdAt);
+			const now = new Date();
+			daysSinceStart = Math.max(0, Math.floor((now - createdDate) / (1000 * 60 * 60 * 24)));
+			dataAvailableDays = daysSinceStart;
+			updateElement('alltime-created', formatDateShort(stats.createdAt));
+		} else {
+			daysSinceStart = Math.max(0, Math.floor((new Date() - START_DATE) / (1000 * 60 * 60 * 24)));
+			dataAvailableDays = daysSinceStart;
+		}
+
+		const avgPerDay = daysSinceStart > 0 ? Math.floor(stats.total / daysSinceStart) : 0;
+		updateElement('alltime-avg', avgPerDay.toLocaleString());
+
+		const successRate = calculateSuccessRate(stats.responses || {}, stats.total);
+		updateElement('alltime-success-rate', `${successRate}%`);
+
+		if (stats.updatedAt) updateElement('alltime-updated', formatDateShort(stats.updatedAt));
+
+		updateDayButtons();
+		updateDateInputLimits(stats.createdAt);
+	} catch (err) {
+		console.error('Error loading all-time stats:', err);
+	}
 };
 
 const setDefaultDates = () => {

@@ -10,6 +10,7 @@ export default [
 				...globals.node,
 				...globals.mongo,
 				...globals.browser,
+				Chart: 'readonly',
 			},
 		},
 		rules: {
