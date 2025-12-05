@@ -1,4 +1,4 @@
-[//]: # (Canonical: /markdown/lists/Index.md)
+[//]: # (Canonical: /docs/lists/Index.md)
 
 <div align="center">
     <h1>🌍 Choose your blocker</h1>

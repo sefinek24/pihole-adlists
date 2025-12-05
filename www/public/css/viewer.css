@@ -1,101 +1,224 @@
-/* Body */
 body {
-    background: url(/images/bg2.png) fixed center;
+	background: #070606 url(/images/bg2.png) fixed center;
+	background-size: cover;
+	padding-top: 0 !important;
 }
 
-/* Content */
-main {
-    padding-top: 100px;
+.main {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	padding: 90px 1rem 2rem;
 }
 
-/* Container Box */
-.container-box {
-    max-width: 1600px;
-    background-color: rgba(13, 12, 12, 0.998) !important;
-    border: 3px solid rgb(13, 8, 8);
-    box-shadow: 0 0 10px rgba(13, 12, 12, 0.5);
+.markdown-viewer {
+	max-width: 1600px;
+	width: 100%;
+	margin: 0 auto;
 }
 
-/* Text Elements */
-.container-box ol, .container-box p, .container-box li, .container-box pre {
-    text-align: left !important;
+.markdown-viewer__content {
+	padding: 2.5rem;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(20px) saturate(140%);
+	border: 1px solid rgba(88, 166, 255, 0.15);
+	border-radius: 16px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
 }
 
-.container-box h1, .container-box h2 {
-    padding: 0 !important;
+.markdown-viewer__content::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, rgba(88, 166, 255, 0.05), rgba(121, 192, 255, 0.02));
+	border-radius: 16px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	pointer-events: none;
 }
 
-.container-box h2:not(:first-child) {
-    font-size: 24px;
-    margin-top: 25px;
+.markdown-viewer__content:hover::before {
+	opacity: 1;
 }
 
-.container-box h3 {
-    font-size: 19px;
+.markdown-viewer__content:hover {
+	border-color: rgba(88, 166, 255, 0.25);
+	box-shadow: 0 12px 40px rgba(88, 166, 255, 0.15);
+	background: rgba(0, 0, 0, 0.55);
 }
 
-.container-box h2, .container-box h3 {
-    text-align: left;
-    margin-bottom: 0;
+.markdown-viewer__content ol,
+.markdown-viewer__content p,
+.markdown-viewer__content li,
+.markdown-viewer__content pre {
+	text-align: left;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.9);
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
-.container-box p {
-    margin-top: 6px !important;
-    margin-bottom: 0 !important;
+.markdown-viewer__content h1,
+.markdown-viewer__content h2 {
+	padding: 0;
+	color: #fff;
+	text-align: left;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.container-box ol, .container-box ul {
-    margin-top: 6px;
-    padding-left: 33px;
+.markdown-viewer__content h2:not(:first-child) {
+	font-size: 1.5rem;
+	margin-top: 1.5625rem;
 }
 
-.container-box summary {
-    padding-top: 6px;
-    font-family: "Calibri Light", sans-serif;
-    font-size: 17px;
-    cursor: pointer;
-    color: #8c8cff;
-    user-select: none;
+.markdown-viewer__content h3 {
+	font-size: 1.1875rem;
+	color: #fff;
+	text-align: left;
+	margin-bottom: 0;
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
-.container-box summary:hover {
-    text-decoration: underline;
+.markdown-viewer__content p {
+	margin-top: 0.375rem;
+	margin-bottom: 0;
 }
 
-/* Code and Syntax Highlighting */
-code {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    color: #fd116d;
+.markdown-viewer__content ol,
+.markdown-viewer__content ul {
+	margin-top: 0.375rem;
+	padding-left: 2.0625rem;
 }
 
-.language-bash {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    padding: 1px 4px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: #fff;
+.markdown-viewer__content summary {
+	padding-top: 0.375rem;
+	font-family: Calibri, sans-serif;
+	font-size: 1.0625rem;
+	cursor: pointer;
+	color: #79c0ff;
+	user-select: none;
+	transition: color 0.2s ease;
 }
 
-.language-yaml {
-    font-family: Consolas, Courier, monospace;
-    font-size: 13px;
-    color: #fff;
+.markdown-viewer__content summary:hover {
+	text-decoration: underline;
+	color: #a5d6ff;
 }
 
-.container-box code.language-ini {
-    color: #939393;
+.markdown-viewer__content code {
+	font-family: 'Cascadia Mono', 'Courier New', monospace;
+	font-size: 0.875rem;
+	color: #a5d6ff;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 0.125rem 0.375rem;
+	border-radius: 4px;
+	border: 1px solid rgba(88, 166, 255, 0.15);
 }
 
-/* Styling blockquote */
-.container-box blockquote {
-    padding: 0.8em;
-    background-color: #1f2a3899;
-    border-left: 4px solid #0f7dc299;
-    margin: 12px 0 12px;
+.markdown-viewer__content .language-bash {
+	font-family: 'Cascadia Mono', 'Courier New', monospace;
+	font-size: 0.875rem;
+	padding: 0.625rem;
+	border: 1px solid rgba(88, 166, 255, 0.2);
+	border-radius: 6px;
+	color: rgba(255, 255, 255, 0.9);
+	background: rgba(0, 0, 0, 0.4);
 }
 
-.container-box blockquote p {
-    margin: 0!important;
+.markdown-viewer__content .language-yaml {
+	font-family: 'Cascadia Mono', Consolas, monospace;
+	font-size: 0.8125rem;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.markdown-viewer__content code.language-ini {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.markdown-viewer__content blockquote {
+	padding: 1rem 1.25rem;
+	background: rgba(0, 0, 0, 0.3);
+	border-left: 4px solid #58a6ff;
+	border-radius: 0 8px 8px 0;
+	margin: 0.75rem 0;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.markdown-viewer__content blockquote p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+	.main {
+		padding: 90px 1rem 1.5rem;
+	}
+
+	.markdown-viewer__content {
+		padding: 2rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.main {
+		padding: 80px 0.625rem 1rem;
+	}
+
+	.markdown-viewer__content {
+		padding: 1.5rem;
+	}
+
+	.markdown-viewer__content h2:not(:first-child) {
+		font-size: 1.25rem;
+	}
+
+	.markdown-viewer__content h3 {
+		font-size: 1.0625rem;
+	}
+
+	.markdown-viewer__content code,
+	.markdown-viewer__content .language-bash,
+	.markdown-viewer__content .language-yaml {
+		font-size: 0.75rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.main {
+		padding: 70px 0.5rem 0.75rem;
+	}
+
+	.markdown-viewer__content {
+		padding: 1.25rem;
+		border-radius: 12px;
+	}
+
+	.markdown-viewer__content h2:not(:first-child) {
+		font-size: 1.125rem;
+		margin-top: 1.25rem;
+	}
+
+	.markdown-viewer__content h3 {
+		font-size: 1rem;
+	}
+
+	.markdown-viewer__content summary {
+		font-size: 1rem;
+	}
+
+	.markdown-viewer__content ol,
+	.markdown-viewer__content ul {
+		padding-left: 1.5rem;
+	}
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+	.markdown-viewer__content summary {
+		transition: none;
+	}
 }

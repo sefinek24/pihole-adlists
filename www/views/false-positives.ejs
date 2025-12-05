@@ -9,31 +9,44 @@
     page: 'false-positives'
 }) %>
 
-<div class="cover">
-    <header class="cover-text">
-        <h1>False positive report</h1>
+<main class="main" role="main">
+    <header class="page-header">
+        <h1 class="page-header__title">Report a false positive</h1>
+        <p class="page-header__subtitle">Choose your preferred reporting method</p>
     </header>
-</div>
 
-<main>
-    <div class="container-box">
-        <div class="container-text">
-            <h2 style="padding-bottom:10px">How to report a false positive?</h2>
-
-            <div>
-                <ul>
-                    <li>
-                        <a href="mailto:contact@sefinek.net?subject=False%20positive%20report%20-%20DOMAIN%20HERE&body=Hi%2C%0AI'd%20like%20to%20report%20a%20false%20positive%20on%20the%20Sefinek%20Blocklist%20Collection.%0A%0ADomain%20or%20URL%3A%0A%0AReason%3A%0A%0AScreenshots%20(optional)%3A">
-                            Via email (recommended)
-                        </a>
-                    </li>
-
-                    <li><a href="https://github.com/sefinek/Sefinek-Blocklist-Collection/issues" target="_blank">GitHub issues</a></li>
-                    <li><a href="https://github.com/sefinek/Sefinek-Blocklist-Collection?tab=readme-ov-file#-contributing" target="_blank">Pull requests</a></li>
-                    <li><a href="https://discord.gg/53DBjTuzgZ" target="_blank">On my Discord server</a></li>
-                </ul>
+    <div class="report-methods" role="navigation" aria-label="Reporting methods">
+        <a href="mailto:contact@sefinek.net?subject=False%20positive%20report%20-%20DOMAIN%20HERE&body=Hi%2C%0AI'd%20like%20to%20report%20a%20false%20positive%20on%20the%20Sefinek%20Blocklist%20Collection.%0A%0ADomain%20or%20URL%3A%0A%0AReason%3A%0A%0AScreenshots%20(optional)%3A" class="report-card">
+            <div class="report-card__icon">✉️</div>
+            <div class="report-card__content">
+                <h2 class="report-card__title">Via email</h2>
+                <p class="report-card__description">Send a detailed report directly to our team</p>
             </div>
-        </div>
+        </a>
+
+        <a href="https://github.com/sefinek/Sefinek-Blocklist-Collection/issues" target="_blank" rel="noopener" class="report-card">
+            <div class="report-card__icon">🐙</div>
+            <div class="report-card__content">
+                <h2 class="report-card__title">GitHub Issues</h2>
+                <p class="report-card__description">Create an issue on our repository</p>
+            </div>
+        </a>
+
+        <a href="https://github.com/sefinek/Sefinek-Blocklist-Collection?tab=readme-ov-file#-contributing" target="_blank" rel="noopener" class="report-card">
+            <div class="report-card__icon">🔀</div>
+            <div class="report-card__content">
+                <h2 class="report-card__title">Pull Request</h2>
+                <p class="report-card__description">Submit a PR with the fix yourself</p>
+            </div>
+        </a>
+
+        <a href="https://discord.gg/53DBjTuzgZ" target="_blank" rel="noopener" class="report-card">
+            <div class="report-card__icon">💬</div>
+            <div class="report-card__content">
+                <h2 class="report-card__title">Discord Server</h2>
+                <p class="report-card__description">Join our community and report there</p>
+            </div>
+        </a>
     </div>
 </main>
 

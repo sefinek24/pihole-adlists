@@ -1,4 +1,4 @@
-[//]: # (Canonical: /markdown/lists/md/adguard.md)
+[//]: # (Canonical: /docs/lists/md/adguard.md)
 
 <div align="center">
     <h1>📝 Default blocklist collection for AdGuard</h1>

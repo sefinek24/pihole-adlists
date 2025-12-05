@@ -9,53 +9,83 @@
     page: 'update-schedule'
 }) %>
 
-<div class="cover">
-    <header class="cover-text">
-        <h1>Update schedule ⏰</h1>
-    </header>
-</div>
-
-<main>
-    <div class="header-text">
-        <h2>Information</h2>
-        <div>
-            This subpage displays upcoming cron tasks for updating blocklist repositories based on your time zone.<br>
+<main class="main" role="main">
+    <section class="schedule-info" aria-labelledby="info-heading">
+        <h1 class="schedule-info__heading" id="info-heading">Update schedule</h1>
+        <p class="schedule-info__text">
+            This subpage displays upcoming cron tasks for updating blocklist repositories based on your time zone.
             You can use it as a reference to set up your own cron job for automatic blocklist updates.
-        </div>
-    </div>
+        </p>
+    </section>
 
-    <div class="container-box">
-        <div class="container-text">
-            <div style="margin-bottom:10px">
-                <b>Your timezone:</b> <span id="user-timezone"></span>
+    <article class="schedule-card" aria-labelledby="schedule-card-heading">
+        <div class="schedule-card__content">
+            <h3 class="schedule-card__heading sr-only" id="schedule-card-heading">Timezone and schedule information</h3>
+
+            <div class="schedule-card__item">
+                <strong class="schedule-card__label">Your timezone:</strong>
+                <span class="schedule-card__value" id="user-timezone" aria-live="polite">Loading...</span>
             </div>
 
-            <div>
-                <b>Local (blocklist.sefinek.net):</b> <span id="remote"></span><br>
-                <b>Remote (GitHub):</b> <span id="github"></span>
+            <div class="schedule-card__item">
+                <strong class="schedule-card__label">Local (blocklist.sefinek.net):</strong>
+                <span class="schedule-card__value" id="remote" aria-live="polite">Loading...</span>
+            </div>
+
+            <div class="schedule-card__item">
+                <strong class="schedule-card__label">Remote (GitHub):</strong>
+                <span class="schedule-card__value" id="github" aria-live="polite">Loading...</span>
             </div>
         </div>
-    </div>
+    </article>
 
-    <div class="header-text">
-        - Lists should not be downloaded too frequently, as this may result in a permanent ban on the IP address.<br>
-        - Synchronization occurs daily at 01:00 and 06:00 (24-hour clock, Poland time zone: GMT+01:00). Cron expression: <u>0 1,6 * * *</u> (at minute 0, past hours 1 and 6). More <a href="https://github.com/sefinek/Sefinek-Blocklist-Collection?tab=readme-ov-file#-update-schedule" target="_blank">here</a>.
-    </div>
+    <aside class="schedule-note" role="note" aria-label="Important information">
+        <p class="schedule-note__text">
+            - Lists should not be downloaded too frequently, as this may result in a permanent ban on the IP address.
+        </p>
+        <p class="schedule-note__text">
+            - Synchronization occurs daily at 01:00 and 06:00 (24-hour clock, Poland time zone: GMT+01:00).
+            Cron expression: <code class="schedule-note__code">0 1,6 * * *</code> (at minute 0, past hours 1 and 6).
+            More <a href="https://github.com/sefinek/Sefinek-Blocklist-Collection?tab=readme-ov-file#-update-schedule" target="_blank" rel="noopener" class="schedule-note__link">here</a>.
+        </p>
+    </aside>
 </main>
 
 <script>
-    const showCronInfo = () => {
-        const userTimezone = luxon.DateTime.local().zoneName;
-        document.getElementById('user-timezone').textContent = userTimezone;
+    (() => {
+        'use strict';
 
-        const github = luxon.DateTime.fromISO('<%= cron.github %>').setZone(userTimezone);
-        const remote = luxon.DateTime.fromISO('<%= cron.remote %>').setZone(userTimezone);
+        const showCronInfo = () => {
+            try {
+                const userTimezone = luxon.DateTime.local().zoneName;
+                const timezoneElement = document.getElementById('user-timezone');
+                if (timezoneElement) {
+                    timezoneElement.textContent = userTimezone;
+                }
 
-        document.getElementById('github').textContent = github.toLocaleString(luxon.DateTime.DATETIME_MED);
-        document.getElementById('remote').textContent = remote.toLocaleString(luxon.DateTime.DATETIME_MED);
-    }
+                const github = luxon.DateTime.fromISO('<%= cron.github %>').setZone(userTimezone);
+                const remote = luxon.DateTime.fromISO('<%= cron.remote %>').setZone(userTimezone);
 
-    document.addEventListener('DOMContentLoaded', showCronInfo);
+                const githubElement = document.getElementById('github');
+                const remoteElement = document.getElementById('remote');
+
+                if (githubElement) {
+                    githubElement.textContent = github.toLocaleString(luxon.DateTime.DATETIME_MED);
+                }
+                if (remoteElement) {
+                    remoteElement.textContent = remote.toLocaleString(luxon.DateTime.DATETIME_MED);
+                }
+            } catch (err) {
+                console.error('Failed to load schedule information:', err);
+            }
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', showCronInfo);
+        } else {
+            showCronInfo();
+        }
+    })();
 </script>
 
 <%- include('./includes/footer.ejs') %>

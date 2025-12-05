@@ -1,4 +1,4 @@
-[//]: # (Canonical: /markdown/lists/Regex.md)
+[//]: # (Canonical: /docs/lists/Regex.md)
 
 ## 📋 Main regular expressions:
 ```regexp

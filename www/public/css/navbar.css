@@ -1,3 +1,9 @@
+/* Fixed navbar body compensation */
+body {
+	padding-top: 70px;
+}
+
+/* Navigation styles */
 nav {
 	background: rgba(0, 0, 0, 0.25);
 	backdrop-filter: blur(16px) saturate(150%);
@@ -8,7 +14,9 @@ nav {
 	left: 0;
 	width: 100%;
 	z-index: 9999;
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: backdrop-filter 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+	            box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: backdrop-filter;
 }
 
 .nav-container {
@@ -25,22 +33,28 @@ nav {
 	display: flex;
 	align-items: center;
 	gap: 0.75rem;
-	font-size: 1.25rem;
+	font-size: 1.35rem;
 	font-weight: 700;
-	color: #fff;
+	color: var(--color-text, #fff);
 	letter-spacing: -0.02em;
 	user-select: none;
 }
 
 .brand-icon {
-	font-size: 1.75rem;
+	width: 32px;
+	height: 32px;
 	filter: drop-shadow(0 0 8px rgba(11, 121, 191, 0.6));
 	animation: pulse 3s ease-in-out infinite;
+	will-change: transform;
 }
 
 @keyframes pulse {
-	0%, 100% { transform: scale(1); }
-	50% { transform: scale(1.08); }
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.08);
+	}
 }
 
 .brand-text {
@@ -71,9 +85,12 @@ nav {
 	font-size: 0.95rem;
 	font-weight: 500;
 	border-radius: 8px;
-	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+	            background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+	            transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 	position: relative;
 	overflow: hidden;
+	will-change: transform;
 }
 
 .nav-menu a::before {
@@ -155,7 +172,8 @@ nav.active .menu-toggle span:nth-child(3) {
 	}
 
 	.brand-icon {
-		font-size: 1.5rem;
+		width: 28px;
+		height: 28px;
 	}
 
 	.menu-toggle {
@@ -255,7 +273,8 @@ nav.active .menu-toggle span:nth-child(3) {
 	}
 
 	.brand-icon {
-		font-size: 1.35rem;
+		width: 26px;
+		height: 26px;
 	}
 
 	.brand-text {

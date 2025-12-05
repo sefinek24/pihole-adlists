@@ -1,12 +1,84 @@
-/* Global styling */
+:root {
+    /* Colors */
+    --color-primary: #00a8fc;
+    --color-primary-light: #84fafc;
+    --color-primary-glow: rgba(132, 250, 252, 0.6);
+    --color-bg-dark: #070606;
+    --color-bg-darker: #101011;
+    --color-bg-card: #09090a;
+    --color-bg-stats: #121215;
+    --color-text: #ffffff;
+    --color-border: rgb(30, 31, 34);
+
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+
+    /* Transitions */
+    --transition-fast: 0.1s ease;
+    --transition-normal: 0.2s ease;
+    --transition-slow: 0.3s ease;
+
+    /* Shadows */
+    --shadow-sm: 0 0 4px rgba(0, 0, 0, 0.8);
+    --shadow-md: 0 0 10px rgba(30, 31, 34, 0.86);
+    --shadow-glow: 0 0 9px var(--color-primary-glow);
+    --shadow-glow-strong: 0 0 12px var(--color-primary-light);
+
+    /* Fonts */
+    --font-primary: Calibri, sans-serif;
+    --font-mono: 'Cascadia Mono', monospace;
+
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 10px;
+    --radius-lg: 17px;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Calibri', sans-serif;
-    background-color: #070606;
+    font-family: var(--font-primary), sans-serif;
+    background-color: var(--color-bg-dark);
 }
 
-/* Header styling */
+/* Global Scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(88, 166, 255, 0.4) rgba(0, 0, 0, 0.3);
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgba(88, 166, 255, 0.4);
+    border-radius: 6px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    transition: background 0.25s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: rgba(88, 166, 255, 0.6);
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background: rgba(121, 192, 255, 0.7);
+}
+
+*::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0.3);
+}
+
 h1, h2 {
     margin: 0;
 }
@@ -16,41 +88,49 @@ h1 {
 }
 
 h2 {
-    margin-bottom: 5px!important;
+    margin-bottom: 5px !important;
     font-size: 30px;
     text-align: center;
 }
 
-/* Link styling */
 a {
-    color: #00a8fc;
-    text-decoration: none;
-    transition: 0.1s;
+    color: #79c0ff;
+    text-decoration: underline;
+    text-decoration-color: rgba(121, 192, 255, 0.4);
+    text-underline-offset: 3px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease, text-shadow 0.2s ease;
+    text-shadow: 0 0 8px rgba(88, 166, 255, 0.3);
 }
 
 a:hover {
-    text-shadow: 0 0 9px #84fafc99;
-    text-decoration: underline;
+    color: #a5d6ff;
+    text-decoration-color: rgba(165, 214, 255, 0.6);
+    text-shadow: 0 0 12px rgba(88, 166, 255, 0.5);
 }
 
 a:active {
-    text-shadow: 0 0 12px #84fafc;
-    text-decoration: none;
+    color: #58a6ff;
+    text-shadow: 0 0 16px rgba(88, 166, 255, 0.7);
 }
 
-/* Custom fonts */
+a:focus-visible {
+    outline: 2px solid rgba(88, 166, 255, 0.6);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
 @font-face {
     font-family: 'Cascadia Mono';
+    font-display: swap;
     src: url('/fonts/CascadiaCode-2111.01/woff2/CascadiaMono.woff2') format('woff2'),
-    url('/fonts/CascadiaCode-2111.01/static/CascadiaMono-Regular.otf') format('opentype');
+         url('/fonts/CascadiaCode-2111.01/static/CascadiaMono-Regular.otf') format('opentype');
 }
 
-/* Cover section styling */
 .cover {
     background: url('/images/bg.jpg') center/cover no-repeat;
     min-height: 100vh;
     text-align: center;
-    color: #fff;
+    color: var(--color-text);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -58,10 +138,15 @@ a:active {
     align-items: center;
 }
 
+/* Variant for shorter pages */
+.cover--short {
+    min-height: 38vh;
+}
+
 .cover-text {
-    font-family: 'Cascadia Mono', sans-serif;
+    font-family: var(--font-mono), sans-serif;
     text-align: center;
-    text-shadow: 0 0 4px #000;
+    text-shadow: var(--shadow-sm);
 }
 
 .cover-text h1 {
@@ -73,17 +158,18 @@ a:active {
 }
 
 .button {
-    padding: 10px 20px;
+    padding: var(--spacing-sm) var(--spacing-md);
     font-size: 17px;
     background: linear-gradient(90deg, rgba(0, 10, 24, 0.5), rgba(0, 10, 24, 0.6));
-    color: #fff;
+    color: var(--color-text);
     border: none;
-    border-radius: 17px;
+    border-radius: var(--radius-lg);
     cursor: pointer;
-    transition: background 0.5s, transform 0.2s, box-shadow 0.2s;
+    transition: background 0.5s ease, transform var(--transition-normal), box-shadow var(--transition-normal);
     box-shadow: 0 0 4px rgba(0, 10, 24, 0.6);
     backdrop-filter: blur(2px);
     margin: 6px;
+    will-change: transform;
 }
 
 .button:hover {
@@ -95,15 +181,15 @@ a:active {
 
 .button:active {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+    transform: translateY(1px);
 }
 
-/* Content section styling */
 main {
-    color: #fff;
-    padding: 20px;
+    color: var(--color-text);
+    padding: var(--spacing-md);
 }
 
-/* Container styling */
+
 .container-stats {
     display: flex;
     flex-wrap: wrap;
@@ -119,40 +205,38 @@ main {
 
 .container-box {
     max-width: 900px;
-    padding: 20px;
-    border: 3px solid rgb(30, 31, 34);
-    border-radius: 10px;
-    background-color: #101011;
+    padding: var(--spacing-md);
+    border: 3px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-darker);
     text-align: center;
-    box-shadow: 0 0 10px rgba(30, 31, 34, 0.86);
-    margin: 0 auto 40px;
+    box-shadow: var(--shadow-md);
+    margin: 0 auto var(--spacing-lg);
 }
 
 .container-text {
     font-size: 17px;
 }
 
-/* Headers */
 .header-text {
     text-align: center;
     padding-bottom: 28px;
-    margin: 0 10px;
+    margin: 0 var(--spacing-sm);
     font-size: 17px;
-    color: #fff;
+    color: var(--color-text);
 }
 
-/* Responsive styles for phones */
 @media (max-width: 1235px) {
     .card-img {
-        flex: 0!important;
+        flex: 0 !important;
     }
 
     .category-big {
-        font-size: 23px!important;
+        font-size: 23px !important;
     }
 
     .category-small {
-        font-size: 22px!important;
+        font-size: 22px !important;
     }
 }
 

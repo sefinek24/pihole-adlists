@@ -1,5 +1,232 @@
-.cover {min-height:38vh}
+body {
+	background: #070606 url('/images/bg.jpg') no-repeat fixed center;
+	background-size: cover;
+	padding-top: 0 !important;
+}
 
-ul {
-    text-align: left;
+/* Main Content */
+main.main {
+	display: block;
+	max-width: 1200px;
+	margin: 90px auto 0;
+	padding: 2rem 1rem;
+}
+
+/* Page Header */
+.page-header {
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+.page-header__title {
+	margin: 0 0 0.75rem;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #fff;
+}
+
+.page-header__subtitle {
+	margin: 0;
+	font-size: 1.125rem;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+/* Report Methods Grid */
+.report-methods {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: 1.5rem;
+}
+
+/* Report Card */
+.report-card {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	padding: 1.75rem;
+	background: rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(16px) saturate(150%);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 12px;
+	color: #fff;
+	text-decoration: none;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+	transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+	            background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+	            border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+	            box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform;
+	position: relative;
+	overflow: hidden;
+}
+
+.report-card::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 3px;
+	background: linear-gradient(90deg, #58a6ff, #79c0ff);
+	transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.report-card:hover {
+	transform: translateY(-2px);
+	background: rgba(88, 166, 255, 0.1);
+	border-color: rgba(88, 166, 255, 0.3);
+	box-shadow: 0 0 0 1px rgba(88, 166, 255, 0.3), 0 8px 32px rgba(0, 0, 0, 0.3);
+	text-decoration: none;
+	text-shadow: none;
+}
+
+.report-card:hover::before {
+	width: 100%;
+}
+
+.report-card:active {
+	transform: translateY(0);
+	text-decoration: none;
+	text-shadow: none;
+}
+
+.report-card:focus-visible {
+	outline: 2px solid rgba(88, 166, 255, 0.8);
+	outline-offset: 2px;
+}
+
+.report-card__icon {
+	flex-shrink: 0;
+	font-size: 2.5rem;
+	line-height: 1;
+	filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.3));
+	transition: filter 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.report-card:hover .report-card__icon {
+	filter: drop-shadow(0 0 12px rgba(88, 166, 255, 0.5));
+}
+
+.report-card__content {
+	flex: 1;
+	min-width: 0;
+	text-align: center;
+}
+
+.report-card__title {
+	margin: 0 0 0.5rem;
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #fff;
+	transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.report-card:hover .report-card__title {
+	color: #79c0ff;
+}
+
+.report-card__description {
+	margin: 0;
+	font-size: 0.9375rem;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.7);
+	transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.report-card:hover .report-card__description {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+	.page-header__title {
+		font-size: 2.25rem;
+	}
+
+	.report-methods {
+		grid-template-columns: 1fr;
+	}
+
+	.report-card {
+		padding: 1.5rem;
+	}
+}
+
+@media (max-width: 768px) {
+	main.main {
+		padding: 1.5rem 0.75rem;
+	}
+
+	.page-header {
+		margin-bottom: 2rem;
+	}
+
+	.page-header__title {
+		font-size: 2rem;
+	}
+
+	.page-header__subtitle {
+		font-size: 1rem;
+	}
+
+	.report-card {
+		padding: 1.25rem;
+	}
+
+	.report-card__icon {
+		font-size: 2rem;
+	}
+
+	.report-card__title {
+		font-size: 1.125rem;
+	}
+
+	.report-card__description {
+		font-size: 0.875rem;
+	}
+}
+
+@media (max-width: 480px) {
+	main.main {
+		padding: 1rem 0.5rem;
+	}
+
+	.page-header__title {
+		font-size: 1.75rem;
+	}
+
+	.page-header__subtitle {
+		font-size: 0.9375rem;
+	}
+
+	.report-methods {
+		gap: 1rem;
+	}
+
+	.report-card {
+		flex-direction: column;
+		padding: 1rem;
+		text-align: center;
+		gap: 1rem;
+	}
+
+	.report-card__icon {
+		font-size: 2.5rem;
+	}
+
+	.report-card__title {
+		font-size: 1rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.report-card__description {
+		font-size: 0.8125rem;
+	}
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+	.report-card {
+		transition: none;
+	}
 }

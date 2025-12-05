@@ -2,21 +2,22 @@ body {
     background: #070606 url('/images/bg.jpg') no-repeat fixed center;
     background-size: cover;
     overflow-x: hidden;
+    padding-top: 0 !important;
 }
 
 .metrics-container {
     max-width: 1920px;
     margin: 0 auto;
-    padding: 100px 4rem 2rem;
+    padding: 90px 4rem 2rem;
     min-height: 100vh;
 }
 
 .metrics-container h1 {
     text-align: center;
-    color: #fff;
+    color: var(--color-text, #fff);
     font-size: 3.2rem;
     text-shadow: 0 0 12px rgba(0, 168, 252, 0.5), 0 0 20px rgba(0, 0, 0, 0.8);
-    font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+    font-family: var(--font-mono, 'Cascadia Mono'), var(--font-primary, Calibri), sans-serif;
     font-weight: 700;
     letter-spacing: -1px;
     position: relative;
@@ -46,14 +47,14 @@ body {
 
 .all-time-section h2,
 .time-range-section h2 {
-    color: #fff;
+    color: var(--color-text, #fff);
     font-size: 2rem;
     padding-left: 1.5rem;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
-    border-left: 5px solid #00a8fc;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-    font-family: 'Cascadia Mono', 'Calibri', sans-serif;
+    border-left: 5px solid var(--color-primary, #00a8fc);
+    text-shadow: var(--shadow-sm, 0 0 8px rgba(0, 0, 0, 0.8));
+    font-family: var(--font-mono, 'Cascadia Mono'), var(--font-primary, Calibri), sans-serif;
     font-weight: 600;
     letter-spacing: 0.5px;
     position: relative;
@@ -450,9 +451,12 @@ body {
     justify-content: center;
     gap: 1rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    will-change: transform;
 }
 
 .peak-minute-banner::before {
@@ -582,9 +586,13 @@ body {
     padding: 1.8rem 1.5rem;
     text-align: center;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    will-change: transform;
 }
 
 .stat-card::before {
@@ -689,9 +697,12 @@ body {
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    will-change: transform;
 }
 
 .chart-container::before {

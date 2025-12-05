@@ -1,4 +1,4 @@
-[//]: # (Canonical: /markdown/lists/md/Pi-hole.md)
+[//]: # (Canonical: /docs/lists/md/Pi-hole.md)
 
 <div align="center">
     <h1>📝 Default blocklist collection for Pi-hole</h1>

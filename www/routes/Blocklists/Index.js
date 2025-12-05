@@ -76,6 +76,7 @@ const extractMatch = (regex, content) => regex.exec(content)?.[1] ?? null;
 const handleRequest = async (req, res, baseDir, basePath, validExtensions, template) => {
 	const relative = (req.params[0] || '').replace(/\/$/, '');
 	const filePath = path.join(baseDir, relative);
+	const isAjax = req.headers['x-requested-with'] === 'XMLHttpRequest' || req.query.ajax === '1';
 
 	try {
 		const now = Date.now();
@@ -96,11 +97,7 @@ const handleRequest = async (req, res, baseDir, basePath, validExtensions, templ
 				const safeExtract = regex => extractMatch(regex, markdown) || '';
 
 				const html = Marked.parse(markdown);
-				return res.render('markdown-viewer.ejs', {
-					html,
-					title: safeExtract(/#\s(.+)/),
-					canonical: markdown.match(CANONICAL_REGEX)?.[1],
-				});
+				return res.render('markdown-viewer.ejs', { html, title: safeExtract(/#\s(.+)/), canonical: markdown.match(CANONICAL_REGEX)?.[1] });
 			}
 
 			return res.sendFile(filePath);
@@ -109,6 +106,7 @@ const handleRequest = async (req, res, baseDir, basePath, validExtensions, templ
 		if (stats.isDirectory()) {
 			const files = await getCachedFiles(filePath, validExtensions);
 			const currentPath = path.join(basePath, relative).replace(/\\/g, '/');
+			if (isAjax) return res.json({ success: true, files, currentPath });
 
 			return res.render(template, { files, currentPath });
 		}
@@ -116,6 +114,8 @@ const handleRequest = async (req, res, baseDir, basePath, validExtensions, templ
 		res.sendFile(filePath);
 	} catch (err) {
 		if (err.code !== 'ENOENT') console.error(err);
+		if (isAjax) return res.status(err.code === 'ENOENT' ? 404 : 500).json({ success: false, error: err.code === 'ENOENT' ? 'Not found' : 'Server error' });
+
 		res.status(err.code === 'ENOENT' ? 404 : 500).end();
 	}
 };
@@ -123,6 +123,6 @@ const handleRequest = async (req, res, baseDir, basePath, validExtensions, templ
 // Routes
 router.get(/^\/generated\/v1(.*)$/, (req, res) => handleRequest(req, res, PATHS.GENERATED, '/generated/v1', ['.txt', '.conf'], 'explorer/file.ejs'));
 router.get(/^\/logs\/v1(.*)$/, (req, res) => handleRequest(req, res, PATHS.LOGS, '/logs/v1', ['.log'], 'explorer/log.ejs'));
-router.get(/^\/markdown(.*)$/, (req, res) => handleRequest(req, res, PATHS.DOCS, '/markdown', ['.md'], 'explorer/markdown.ejs'));
+router.get(/^\/docs(.*)$/, (req, res) => handleRequest(req, res, PATHS.DOCS, '/docs', ['.md'], 'explorer/markdown.ejs'));
 
 module.exports = router;

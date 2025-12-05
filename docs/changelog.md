@@ -1,4 +1,4 @@
-[//]: # (Canonical: /markdown/changelog.md)
+[//]: # (Canonical: /docs/changelog.md)
 
 ## Update v0.18.0 - 27.04.2025
 1. Added new domain lists collected using regular expressions. See [this file](https://github.com/sefinek/Sefinek-Blocklist-Collection/blob/main/scripts/generate/file-processor/scripts/data.js) for more details.
