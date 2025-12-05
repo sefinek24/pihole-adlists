@@ -1,7 +1,3 @@
-body {
-	padding-top:70px
-}
-
 nav {
 	backdrop-filter:blur(6px);
 	background: rgba(0, 0, 0, 0.15);
@@ -177,10 +173,10 @@ nav.active .menu-toggle span:nth-child(3) {
 	}
 
 	.nav-menu {
-		backdrop-filter:blur(20px) saturate(200%);
-		background:linear-gradient(180deg,#0d1117fa,#161b22f5);
-		border-bottom:1px solid #30363d80;
-		box-shadow:0 12px 40px #00000080;
+		backdrop-filter:blur(5px) saturate(150%);
+		background:rgba(0, 0, 0, 0.25);
+		border:1px solid rgba(255, 255, 255, 0.08);
+		box-shadow:0 0 12px rgba(0, 0, 0, 0.4);
 		flex-direction:column;
 		gap:0;
 		left:0;
@@ -191,7 +187,7 @@ nav.active .menu-toggle span:nth-child(3) {
 		right:0;
 		top:64px;
 		transform:translateY(-20px);
-		transition:max-height .4s cubic-bezier(0.68,-0.55,0.265,1.55),opacity .3s ease,transform .4s cubic-bezier(0.68,-0.55,0.265,1.55)
+		transition:max-height .4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity .3s ease, transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55)
 	}
 
 	nav.active .nav-menu {
