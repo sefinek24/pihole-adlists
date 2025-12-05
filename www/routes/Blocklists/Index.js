@@ -62,7 +62,7 @@ const getCachedFiles = async (dirPath, validExtensions = []) => {
 				const isDir = entry.isDirectory();
 				const size = isDir ? await getDirectorySize(fullPath) : stats.size;
 
-				return { name, isDirectory: isDir, size, lastModified: stats.mtime.getTime(), icon: getFileIcon(name, isDir), formattedSize: formatFileSize(size) };
+				return { name, isDirectory: isDir, lastModified: stats.mtime.getTime(), icon: getFileIcon(name, isDir), formattedSize: formatFileSize(size) };
 			})
 	);
 
@@ -76,7 +76,7 @@ const extractMatch = (regex, content) => regex.exec(content)?.[1] ?? null;
 const handleRequest = async (req, res, baseDir, basePath, validExtensions, template) => {
 	const relative = (req.params[0] || '').replace(/\/$/, '');
 	const filePath = path.join(baseDir, relative);
-	const isAjax = req.headers['x-requested-with'] === 'XMLHttpRequest' || req.query.ajax === '1';
+	const isAjax = req.headers['x-requested-with'] === 'XMLHttpRequest';
 
 	try {
 		const now = Date.now();

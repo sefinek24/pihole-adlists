@@ -76,8 +76,6 @@ const hideLoading = () => {
 	loadingElement.style.display = 'none';
 };
 
-const formatDate = formatToYYYYMMDD;
-
 const updateElement = (id, value) => {
 	const element = document.getElementById(id);
 	if (element) element.textContent = value;
@@ -137,11 +135,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 			display: showLegend,
 			labels: {
 				color: UI_COLORS.legendText,
-				font: {
-					family: FONT_FAMILY,
-					size: 13,
-					weight: '500',
-				},
+				font: { family: FONT_FAMILY, size: 13, weight: '500' },
 				padding: 15,
 				usePointStyle: true,
 				pointStyle: 'circle',
@@ -153,10 +147,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 		x: {
 			ticks: {
 				color: UI_COLORS.textSecondary,
-				font: {
-					family: FONT_FAMILY,
-					size: 12,
-				},
+				font: { family: FONT_FAMILY, size: 12 },
 			},
 			grid: {
 				color: UI_COLORS.gridLines,
@@ -168,10 +159,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 			beginAtZero: true,
 			ticks: {
 				color: UI_COLORS.textSecondary,
-				font: {
-					family: FONT_FAMILY,
-					size: 12,
-				},
+				font: { family: FONT_FAMILY, size: 12 },
 				callback: value => value.toLocaleString(),
 			},
 			grid: {
@@ -215,7 +203,7 @@ const aggregateByInterval = (data, intervalMinutes) => {
 		const key = roundedTimestamp.toISOString();
 
 		if (!aggregated[key]) {
-			const dateStr = formatDate(roundedTimestamp);
+			const dateStr = formatToYYYYMMDD(roundedTimestamp);
 			const timeStr = `${String(roundedTimestamp.getHours()).padStart(2, '0')}:${String(roundedTimestamp.getMinutes()).padStart(2, '0')}`;
 
 			aggregated[key] = {
@@ -269,14 +257,14 @@ const updateDateInputLimits = createdAt => {
 	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
 
 	const today = new Date();
-	const todayStr = formatDate(today);
+	const todayStr = formatToYYYYMMDD(today);
 
 	let minDate;
 	if (createdAt) {
 		const createdDate = new Date(createdAt);
-		minDate = formatDate(createdDate);
+		minDate = formatToYYYYMMDD(createdDate);
 	} else {
-		minDate = formatDate(START_DATE);
+		minDate = formatToYYYYMMDD(START_DATE);
 	}
 
 	if (dateFromInputCached) {
@@ -363,8 +351,8 @@ const setDefaultDates = () => {
 	const sevenDaysAgo = new Date(today);
 	sevenDaysAgo.setDate(today.getDate() - 7);
 
-	if (dateFromInputCached) dateFromInputCached.value = formatDate(sevenDaysAgo);
-	if (dateToInputCached) dateToInputCached.value = formatDate(today);
+	if (dateFromInputCached) dateFromInputCached.value = formatToYYYYMMDD(sevenDaysAgo);
+	if (dateToInputCached) dateToInputCached.value = formatToYYYYMMDD(today);
 };
 
 const fetchMetrics = async (from, to) => {
@@ -591,11 +579,7 @@ const createResponsesChart = responses => {
 					position: 'right',
 					labels: {
 						color: UI_COLORS.legendText,
-						font: {
-							family: FONT_FAMILY,
-							size: 13,
-							weight: '500',
-						},
+						font: { family: FONT_FAMILY, size: 13, weight: '500' },
 						padding: 15,
 						usePointStyle: true,
 						pointStyle: 'circle',
@@ -628,11 +612,7 @@ const createCategoriesChart = categories => {
 		display: true,
 		text: 'Format',
 		color: UI_COLORS.textPrimary,
-		font: {
-			family: FONT_FAMILY,
-			size: 13,
-			weight: '600',
-		},
+		font: { family: FONT_FAMILY, size: 13, weight: '600' },
 	};
 
 	charts.categories = new Chart(ctx, {
@@ -676,11 +656,7 @@ const createHourlyChart = (hourlyData, dateRange) => {
 		display: true,
 		text: 'Hour of Day',
 		color: UI_COLORS.textPrimary,
-		font: {
-			family: FONT_FAMILY,
-			size: 13,
-			weight: '600',
-		},
+		font: { family: FONT_FAMILY, size: 13, weight: '600' },
 	};
 
 	charts.hourly = new Chart(ctx, {
@@ -714,9 +690,7 @@ const createDailyChart = data => {
 
 	const dailyData = {};
 	data.forEach(item => {
-		if (!dailyData[item.date]) {
-			dailyData[item.date] = { total: 0, blocklists: 0 };
-		}
+		if (!dailyData[item.date]) dailyData[item.date] = { total: 0, blocklists: 0 };
 		dailyData[item.date].total += item.total || 0;
 		dailyData[item.date].blocklists += item.blocklists || 0;
 	});
@@ -795,11 +769,7 @@ const createPeakHoursChart = data => {
 		display: true,
 		text: 'Number of Requests',
 		color: UI_COLORS.textPrimary,
-		font: {
-			family: FONT_FAMILY,
-			size: 13,
-			weight: '600',
-		},
+		font: { family: FONT_FAMILY, size: 13, weight: '600' },
 	};
 
 	charts.peakHours = new Chart(ctx, {
@@ -959,10 +929,7 @@ const createHeatmapChart = data => {
 							return hour ? hour + ':00' : '';
 						},
 						color: UI_COLORS.textSecondary,
-						font: {
-							family: FONT_FAMILY,
-							size: 11,
-						},
+						font: { family: FONT_FAMILY, size: 11 },
 					},
 					grid: {
 						color: UI_COLORS.gridLines,
@@ -972,11 +939,7 @@ const createHeatmapChart = data => {
 						display: true,
 						text: 'Hour of Day (UTC)',
 						color: UI_COLORS.textPrimary,
-						font: {
-							family: FONT_FAMILY,
-							size: 13,
-							weight: '600',
-						},
+						font: { family: FONT_FAMILY, size: 13, weight: '600' },
 					},
 				},
 				y: {
@@ -988,24 +951,14 @@ const createHeatmapChart = data => {
 						stepSize: 1,
 						callback: value => dates[value] || '',
 						color: UI_COLORS.textSecondary,
-						font: {
-							family: FONT_FAMILY,
-							size: 11,
-						},
+						font: { family: FONT_FAMILY, size: 11 },
 					},
-					grid: {
-						color: UI_COLORS.gridLines,
-						lineWidth: 1,
-					},
+					grid: { color: UI_COLORS.gridLines, lineWidth: 1 },
 					title: {
 						display: true,
 						text: 'Date',
 						color: UI_COLORS.textPrimary,
-						font: {
-							family: FONT_FAMILY,
-							size: 13,
-							weight: '600',
-						},
+						font: { family: FONT_FAMILY, size: 13, weight: '600' },
 					},
 				},
 			},
@@ -1060,6 +1013,9 @@ const loadData = async () => {
 		return;
 	}
 
+	if (!quickButtonsCached) quickButtonsCached = document.querySelectorAll('.btn-quick');
+	quickButtonsCached.forEach(btn => btn.classList.remove('active'));
+
 	const data = aggregateByInterval(rawData, currentInterval);
 	const aggregated = aggregateData(data);
 	updateSummary(aggregated);
@@ -1112,8 +1068,8 @@ const loadQuickData = async days => {
 		from.setDate(to.getDate() - days);
 	}
 
-	if (dateFromInputCached) dateFromInputCached.value = formatDate(from);
-	if (dateToInputCached) dateToInputCached.value = formatDate(to);
+	if (dateFromInputCached) dateFromInputCached.value = formatToYYYYMMDD(from);
+	if (dateToInputCached) dateToInputCached.value = formatToYYYYMMDD(to);
 
 	updateIntervalButtons(days);
 	await loadData();

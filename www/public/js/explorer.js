@@ -74,7 +74,7 @@
 		tbody.innerHTML = '<tr><td colspan="3" style="text-align: center; padding: 2rem; color: rgba(255,255,255,0.6);">Loading...</td></tr>';
 
 		try {
-			const response = await fetch(`${url}${url.includes('?') ? '&' : '?'}ajax=1`, {
+			const response = await fetch(url, {
 				headers: { 'X-Requested-With': 'XMLHttpRequest' },
 			});
 
