@@ -72,7 +72,9 @@ body {
 	font-size:.95rem;
 	font-weight:500;
 	justify-content:center;
+	overflow:hidden;
 	padding:.75rem 1.5rem;
+	position:relative;
 	text-decoration:none;
 	transition:all .3s cubic-bezier(0.4,0,0.2,1)
 }
@@ -752,12 +754,14 @@ body {
 
 	.hero__actions {
 		flex-direction:column;
+		gap:.75rem;
 		margin-bottom:1.5rem;
 		width:100%
 	}
 
 	.hero__button {
 		font-size:.875rem;
+		max-width:100%;
 		padding:.625rem 1.5rem;
 		width:100%
 	}
