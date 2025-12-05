@@ -1013,9 +1013,6 @@ const loadData = async () => {
 		return;
 	}
 
-	if (!quickButtonsCached) quickButtonsCached = document.querySelectorAll('.btn-quick');
-	quickButtonsCached.forEach(btn => btn.classList.remove('active'));
-
 	const data = aggregateByInterval(rawData, currentInterval);
 	const aggregated = aggregateData(data);
 	updateSummary(aggregated);
@@ -1107,7 +1104,13 @@ const initializeEventListeners = () => {
 	if (dateToInputCached) dateToInputCached.addEventListener('change', updateIntervalsForCustomRange);
 
 	const loadDataBtn = document.getElementById('load-data');
-	if (loadDataBtn) loadDataBtn.addEventListener('click', loadData);
+	if (loadDataBtn) {
+		loadDataBtn.addEventListener('click', () => {
+			if (!quickButtonsCached) quickButtonsCached = document.querySelectorAll('.btn-quick');
+			quickButtonsCached.forEach(btn => btn.classList.remove('active'));
+			void loadData();
+		});
+	}
 };
 
 const quickButtons = document.querySelectorAll('.btn-quick');

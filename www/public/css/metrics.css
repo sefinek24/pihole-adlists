@@ -65,7 +65,7 @@ body {
 }
 
 .utc-badge {
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(14px);
     background:linear-gradient(135deg,#00a8fc40 0%,#00a8fc66 100%);
     border:1px solid #00a8fc99;
     border-radius:8px;
@@ -94,9 +94,9 @@ body {
 }
 
 .stats-timestamps {
-    backdrop-filter:blur(16px) saturate(150%);
-    background:#00000040;
-    border:1px solid #ffffff14;
+    backdrop-filter:blur(14px);
+    background:rgba(0, 0, 0, 0.05);
+    border:1px solid #FFFFFF0D;
     border-radius:12px;
     box-shadow:0 0 12px #0006;
     display:flex;
@@ -114,9 +114,8 @@ body {
 }
 
 .timestamp-label {
-    color:#ffffffb3;
     font-family:'Cascadia Mono','Calibri',sans-serif;
-    font-size:.95rem;
+    font-size:1rem;
     font-weight:500
 }
 
@@ -147,9 +146,9 @@ body {
 }
 
 .date-controls {
-    backdrop-filter:blur(16px) saturate(150%);
-    background:#00000040;
-    border:1px solid #ffffff14;
+    backdrop-filter:blur(14px);
+    background:rgba(0, 0, 0, 0.05);
+    border:1px solid #FFFFFF0D;
     border-radius:20px;
     box-shadow:0 0 12px #0006;
     display:flex;
@@ -321,7 +320,7 @@ body {
 }
 
 .btn-quick {
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(14px);
     background:#ffffff0d;
     border:1px solid #fff3;
     border-radius:12px;
@@ -351,9 +350,9 @@ body {
 
 .interval-controls {
     align-items:center;
-    backdrop-filter:blur(16px) saturate(150%);
-    background:#00000040;
-    border:1px solid #ffffff14;
+    backdrop-filter:blur(14px);
+    background:rgba(0, 0, 0, 0.05);
+    border:1px solid #FFFFFF0D;
     border-radius:20px;
     box-shadow:0 0 12px #0006;
     display:flex;
@@ -415,7 +414,7 @@ body {
 }
 
 .btn-interval:hover {
-    background:#ffffff14;
+    background:#FFFFFF0D;
     border-color:#84fafc99;
     box-shadow:0 0 12px #0006;
     transform:translateY(-2px)
@@ -437,7 +436,7 @@ body {
 
 .peak-minute-banner {
     align-items:center;
-    backdrop-filter:blur(16px) saturate(150%);
+    backdrop-filter:blur(14px);
     background:linear-gradient(135deg,#dc321433 0%,#b4280a26 100%);
     border:1px solid #dc321466;
     border-radius:16px;
@@ -553,7 +552,7 @@ body {
 }
 
 .peak-item {
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(14px);
     background:#ffffff0d;
     border:1px solid #ff6b3540;
     border-radius:10px;
@@ -573,15 +572,15 @@ body {
 }
 
 .peak-item:hover {
-    background:#ffffff14;
+    background:#FFFFFF0D;
     border-color:#ff6b3566;
     transform:scale(1.02)
 }
 
 .stat-card {
-    backdrop-filter:blur(16px) saturate(150%);
-    background:#00000040;
-    border:1px solid #ffffff14;
+    backdrop-filter:blur(14px);
+    background:rgba(0, 0, 0, 0.05);
+    border:1px solid #FFFFFF0D;
     border-radius:20px;
     box-shadow:0 0 12px #0006;
     padding:1.8rem 1.5rem;
@@ -672,9 +671,9 @@ body {
 }
 
 .chart-container {
-    backdrop-filter:blur(16px) saturate(150%);
-    background:#00000040;
-    border:1px solid #ffffff14;
+    backdrop-filter:blur(14px);
+    background:rgba(0, 0, 0, 0.05);
+    border:1px solid #FFFFFF0D;
     border-radius:20px;
     box-shadow:0 0 12px #0006;
     overflow:hidden;
@@ -722,9 +721,9 @@ body {
 }
 
 .loading {
-    -webkit-backdrop-filter:blur(16px) saturate(150%);
+    -webkit-backdrop-filter:blur(14px);
     align-items:center;
-    backdrop-filter:blur(16px) saturate(150%);
+    backdrop-filter:blur(14px);
     background:linear-gradient(135deg,#070606d9 0%,#0f0f19e6 100%);
     display:flex;
     flex-direction:column;
