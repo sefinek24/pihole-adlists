@@ -1,426 +1,419 @@
 html {
-    font-family: var(--font-primary, 'Segoe UI'), Tahoma, sans-serif;
+    font-family:var(--font-primary, 'Segoe UI'),Tahoma,sans-serif
 }
 
 body {
-    background: #070606 url('/images/bg.jpg') no-repeat fixed center;
-    background-size: cover;
-    padding-top: 0 !important;
+    background:#070606 url(/images/bg.jpg) no-repeat fixed center;
+    background-size:cover;
+    padding-top:0!important
 }
 
 .main {
-    height: calc(100vh - 70px);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 0.75rem 2rem;
-    margin-top: 70px;
-    box-sizing: border-box;
+    align-items:flex-start;
+    box-sizing:border-box;
+    display:flex;
+    height:calc(100vh - 70px);
+    justify-content:center;
+    margin-top:70px;
+    padding:.75rem 2rem
 }
 
 .explorer {
-    width: 100%;
-    max-width: 1400px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(16px) saturate(150%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    backdrop-filter:blur(16px) saturate(150%);
+    background:#00000040;
+    border:1px solid #ffffff14;
+    border-radius:12px;
+    box-shadow:0 4px 24px #0003;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    max-width:1400px;
+    overflow:hidden;
+    width:100%
 }
 
 .explorer__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0.75rem 1.5rem;
-    background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(16px) saturate(150%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    flex-shrink: 0;
-    min-height: 56px;
+    align-items:center;
+    backdrop-filter:blur(16px) saturate(150%);
+    background:#00000040;
+    border-bottom:1px solid #ffffff14;
+    display:flex;
+    flex-shrink:0;
+    gap:1rem;
+    justify-content:space-between;
+    min-height:56px;
+    padding:.75rem 1.5rem
 }
 
 .explorer__title {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text, #fff);
-    font-family: var(--font-mono, 'Cascadia Mono'), var(--font-primary, Calibri), sans-serif;
-    letter-spacing: 0.5px;
-    line-height: 1.5;
-    flex: 1;
-    min-width: 0;
+    align-items:center;
+    color:var(--color-text,#fff);
+    display:flex;
+    flex:1;
+    font-family:var(--font-mono, 'Cascadia Mono'),var(--font-primary, Calibri),sans-serif;
+    font-size:1rem;
+    font-weight:600;
+    gap:.75rem;
+    letter-spacing:.5px;
+    line-height:1.5;
+    margin:0;
+    min-width:0;
+    padding:0
 }
 
 .explorer__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.5));
-    flex-shrink: 0;
-    line-height: 1;
-    width: 1.5rem;
-    height: 1.5rem;
+    align-items:center;
+    display:flex;
+    filter:drop-shadow(0 0 8px #58a6ff80);
+    flex-shrink:0;
+    font-size:1.5rem;
+    height:1.5rem;
+    justify-content:center;
+    line-height:1;
+    width:1.5rem
 }
 
 .explorer__path {
-    word-break: break-all;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
+    align-items:center;
+    display:flex;
+    line-height:1.5;
+    word-break:break-all
 }
 
 .explorer__action {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: rgba(88, 166, 255, 0.1);
-    border: 1px solid rgba(88, 166, 255, 0.3);
-    border-radius: 8px;
-    color: var(--color-text, #fff);
-    font-size: 0.875rem;
-    font-weight: 500;
-    font-family: var(--font-primary, 'Segoe UI'), sans-serif;
-    cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    flex-shrink: 0;
-    line-height: 1.5;
-    height: 36px;
-    white-space: nowrap;
+    align-items:center;
+    background:#58a6ff1a;
+    border:1px solid #ffffff14;
+    border-radius:8px;
+    color:var(--color-text,#fff);
+    cursor:pointer;
+    display:inline-flex;
+    flex-shrink:0;
+    font-family:var(--font-primary, 'Segoe UI'),sans-serif;
+    font-size:.875rem;
+    font-weight:500;
+    gap:.5rem;
+    height:36px;
+    justify-content:center;
+    line-height:1.5;
+    padding:.5rem 1rem;
+    transition:all .25s cubic-bezier(0.4,0,0.2,1);
+    white-space:nowrap
 }
 
 .explorer__action:hover {
-    background: rgba(88, 166, 255, 0.2);
-    transform: translateY(-1px);
+    background:#58a6ff33;
+    transform:translateY(-1px)
 }
 
 .explorer__action:active {
-    transform: translateY(0);
+    transform:translateY(0)
 }
 
 .explorer__action:focus-visible {
-    outline: 2px solid rgba(88, 166, 255, 0.6);
-    outline-offset: 2px;
+    outline:2px solid #58a6ff99;
+    outline-offset:2px
 }
 
 .explorer__content {
-    flex: 1;
-    min-height: 0;
-    overflow-y: auto;
-    overflow-x: auto;
-    background: rgba(0, 0, 0, 0.15);
+    background:#00000026;
+    flex:1;
+    min-height:0;
+    overflow-x:auto;
+    overflow-y:auto
 }
 
 .explorer__table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--font-primary, 'Segoe UI'), Tahoma, sans-serif;
-    font-size: 15px;
+    border-collapse:collapse;
+    font-family:var(--font-primary, 'Segoe UI'),Tahoma,sans-serif;
+    font-size:15px;
+    width:100%
 }
 
 .explorer__thead {
-    position: sticky;
-    top: 0;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(16px) saturate(150%);
-    z-index: 10;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter:blur(16px) saturate(150%);
+    background:#0000004d;
+    border-bottom:1px solid #ffffff14;
+    box-shadow:0 2px 8px #0003;
+    position:sticky;
+    top:0;
+    z-index:10
 }
 
 .explorer__th {
-    padding: 1rem 1.5rem;
-    text-align: left;
-    font-weight: 600;
-    color: #79c0ff;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #aad5ff;
+    font-size:.9rem;
+    font-weight:600;
+    letter-spacing:1px;
+    padding:1rem 1.5rem;
+    text-align:left;
+    text-transform:uppercase
 }
 
 .explorer__th--name {
-    width: 55%;
+    width:55%
 }
 
 .explorer__th--date {
-    width: 30%;
+    width:30%
 }
 
 .explorer__th--size {
-    width: 15%;
-    text-align: right;
+    text-align:right;
+    width:15%
 }
 
 .explorer__row {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom:1px solid #ffffff08;
+    transition:background .25s cubic-bezier(0.4,0,0.2,1)
 }
 
 .explorer__row:hover {
-    background: rgba(88, 166, 255, 0.1);
+    background:#58a6ff1a
 }
 
 .explorer__row:focus-within {
-    background: rgba(88, 166, 255, 0.12);
+    background:#58a6ff1f
 }
 
 .explorer__cell {
-    padding: 0.625rem 1.5rem;
+    padding:.625rem 1.5rem
 }
 
 .explorer__cell--name {
-    user-select: none;
+    user-select:none
 }
 
 .explorer__cell--date {
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 0.875rem;
-    font-family: var(--font-mono, 'Cascadia Mono'), monospace;
-    user-select: none;
+    color:#ffffffa6;
+    font-family:var(--font-mono, 'Cascadia Mono'),monospace;
+    font-size:.875rem;
+    user-select:none
 }
 
 .explorer__cell--size {
-    text-align: right;
-    color: #a5d6ff;
-    font-size: 0.875rem;
-    font-weight: 500;
-    font-family: var(--font-mono, 'Cascadia Mono'), monospace;
-    user-select: none;
+    color:#a5d6ff;
+    font-family:var(--font-mono, 'Cascadia Mono'),monospace;
+    font-size:.875rem;
+    font-weight:500;
+    text-align:right;
+    user-select:none
 }
 
 .explorer__link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: inherit;
-    text-decoration: none;
-    transition: gap 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    align-items:center;
+    color:inherit;
+    display:flex;
+    gap:.70rem;
+    text-decoration:none;
+    transition:gap .2s cubic-bezier(0.4,0,0.2,1)
 }
 
 .explorer__link:hover {
-    text-decoration: none;
+    text-decoration:none
 }
 
 .explorer__link:focus-visible {
-    outline: 2px solid rgba(88, 166, 255, 0.6);
-    outline-offset: 2px;
-    border-radius: 4px;
+    border-radius:4px;
+    outline:2px solid #58a6ff99;
+    outline-offset:2px
 }
 
 .explorer__img {
-    flex-shrink: 0;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
+    flex-shrink:0;
+    opacity:.85;
+    transition:opacity .2s ease
 }
 
 .explorer__link:hover .explorer__img {
-    opacity: 1;
+    opacity:1
 }
 
 .explorer__name {
-    word-break: break-word;
-    transition: color 0.2s ease;
+    transition:color .2s ease;
+    word-break:break-word
 }
 
 .explorer__row--folder .explorer__name {
-    color: #79c0ff;
-    font-weight: 500;
+    font-weight:500
 }
 
 .explorer__row--file .explorer__name {
-    color: rgba(255, 255, 255, 0.85);
+    color:#ffffffd9
 }
 
 .explorer__row--parent .explorer__name {
-    color: rgba(255, 255, 255, 0.7);
+    color:#ffffffb3
 }
 
 .explorer__empty {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-    padding: 3rem 2rem;
+    align-items:center;
+    display:flex;
+    justify-content:center;
+    min-height:300px;
+    padding:3rem 2rem
 }
 
 .explorer__empty-message {
-    margin: 0;
-    font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.6);
-    font-family: var(--font-primary, 'Segoe UI'), sans-serif;
-    text-align: center;
+    color:#fff9;
+    font-family:var(--font-primary, 'Segoe UI'),sans-serif;
+    font-size:1.125rem;
+    margin:0;
+    text-align:center
 }
 
 @media (max-width: 1024px) {
     .main {
-        padding: 1rem 1.5rem;
+        padding:1rem 1.5rem
     }
 
     .explorer__header {
-        padding: 0.875rem 1.25rem;
-        flex-direction: column;
-        gap: 0.75rem;
-        align-items: stretch;
-        min-height: auto;
+        align-items:stretch;
+        flex-direction:column;
+        gap:.75rem;
+        min-height:auto;
+        padding:.875rem 1.25rem
     }
 
     .explorer__title {
-        font-size: 0.95rem;
+        font-size:.95rem
     }
 
     .explorer__action {
-        width: 100%;
-        justify-content: center;
-        font-size: 0.875rem;
-        padding: 0.625rem 1rem;
-        height: 38px;
+        font-size:.875rem;
+        height:38px;
+        justify-content:center;
+        padding:.625rem 1rem;
+        width:100%
     }
 
     .explorer__th {
-        padding: 0.875rem 1.25rem;
-        font-size: 0.85rem;
+        font-size:.85rem;
+        padding:.875rem 1.25rem
     }
 
     .explorer__cell {
-        padding: 0.75rem 1.25rem;
+        padding:.75rem 1.25rem
     }
 
     .explorer__table {
-        font-size: 14px;
+        font-size:14px
     }
 }
 
 @media (max-width: 768px) {
     .main {
-        padding: 0.75rem 1rem;
+        padding:.75rem 1rem
     }
 
     .explorer__header {
-        padding: 0.875rem 1.25rem;
-        min-height: 56px;
+        min-height:56px;
+        padding:.875rem 1.25rem
     }
 
     .explorer__title {
-        font-size: 0.95rem;
+        font-size:.95rem
     }
 
     .explorer__icon {
-        font-size: 1.35rem;
-        width: 1.35rem;
-        height: 1.35rem;
+        font-size:1.35rem;
+        height:1.35rem;
+        width:1.35rem
     }
 
     .explorer__action {
-        font-size: 0.8125rem;
-        padding: 0.5rem 1rem;
-        height: 34px;
+        font-size:.8125rem;
+        height:34px;
+        padding:.5rem 1rem
     }
 
     .explorer__th {
-        padding: 0.75rem 1rem;
-        font-size: 0.75rem;
-        letter-spacing: 0.5px;
+        font-size:.75rem;
+        letter-spacing:.5px;
+        padding:.75rem 1rem
     }
 
     .explorer__cell {
-        padding: 0.625rem 1rem;
+        padding:.625rem 1rem
     }
 
     .explorer__table {
-        font-size: 13px;
+        font-size:13px
     }
 
     .explorer__img {
-        width: 20px;
-        height: 20px;
+        height:20px;
+        width:20px
     }
 
-    .explorer__cell--date,
-    .explorer__cell--size {
-        font-size: 0.8rem;
+    .explorer__cell--date,.explorer__cell--size {
+        font-size:.8rem
     }
 }
 
 @media (max-width: 480px) {
     .main {
-        padding: 0.5rem;
+        padding:.5rem
     }
 
     .explorer__header {
-        padding: 0.75rem 1rem;
-        min-height: 52px;
+        min-height:52px;
+        padding:.75rem 1rem
     }
 
     .explorer__title {
-        font-size: 0.875rem;
+        font-size:.875rem
     }
 
     .explorer__icon {
-        font-size: 1.25rem;
-        width: 1.25rem;
-        height: 1.25rem;
+        font-size:1.25rem;
+        height:1.25rem;
+        width:1.25rem
     }
 
     .explorer__action {
-        font-size: 0.8125rem;
-        padding: 0.5rem 0.875rem;
-        height: 32px;
+        font-size:.8125rem;
+        height:32px;
+        padding:.5rem .875rem
     }
 
     .explorer__th {
-        padding: 0.625rem 0.75rem;
-        font-size: 0.7rem;
+        font-size:.7rem;
+        padding:.625rem .75rem
     }
 
     .explorer__cell {
-        padding: 0.5rem 0.75rem;
+        padding:.5rem .75rem
     }
 
     .explorer__table {
-        font-size: 12px;
+        font-size:12px
     }
 
     .explorer__img {
-        width: 18px;
-        height: 18px;
+        height:18px;
+        width:18px
     }
 
     .explorer__th--name {
-        width: 50%;
+        width:50%
     }
 
     .explorer__th--date {
-        width: 30%;
+        width:30%
     }
 
     .explorer__th--size {
-        width: 20%;
+        width:20%
     }
 
-    .explorer__cell--date,
-    .explorer__cell--size {
-        font-size: 0.7rem;
+    .explorer__cell--date,.explorer__cell--size {
+        font-size:.7rem
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .explorer__action,
-    .explorer__row,
-    .explorer__link,
-    .explorer__img,
-    .explorer__name {
-        transition: none;
+    .explorer__action,.explorer__row,.explorer__link,.explorer__img,.explorer__name {
+        transition:none
     }
 }

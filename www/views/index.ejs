@@ -194,9 +194,9 @@ const categories = [
     <section class="stats" id="stats" aria-labelledby="stats-heading">
         <h2 class="stats__heading" id="stats-heading">Are you ready for stats? 📝</h2>
         <p class="stats__subtitle">
-            Statistics have been collected since <time class="stats__date" id="stats-since-date" datetime="<%= createdDate.toISOString() %>"><%= createdDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></time>.
+            Statistics have been collected since <time class="stats__date" id="stats-since-date" datetime="<%= createdDate.toISOString() %>"></time>. They are updated every few minutes to avoid server overload.
             <br>
-            Want to see detailed statistics and performance metrics? Check out our <a href="/metrics" class="info__link">metrics dashboard</a> for real-time insights into blocklist performance and system health.
+            Want to see detailed metrics? Check out the <a href="/metrics" class="info__link">Metrics</a> page.
         </p>
 
         <div class="stats__grid stats__grid--primary">
@@ -254,80 +254,6 @@ const categories = [
     </section>
 </main>
 
-<script src="/js/date.js"></script>
-<script>
-    (() => {
-        'use strict';
-
-        const formatNumber = num => num == null ? '0' : (typeof num === 'number' ? num.toLocaleString('en-US') : String(num));
-        const elementCache = new Map();
-
-        const getElement = id => {
-            if (!elementCache.has(id)) {
-                elementCache.set(id, document.getElementById(`stats-content-${id}`));
-            }
-            return elementCache.get(id);
-        };
-
-        const updateStats = (id, value) => {
-            const element = getElement(id);
-            if (!element) return;
-
-            const formattedValue = typeof value === 'number' ? formatNumber(value) : String(value);
-            if (element.textContent === formattedValue) return;
-
-            element.textContent = formattedValue;
-            element.classList.add('stats-updated');
-            setTimeout(() => element.classList.remove('stats-updated'), 1000);
-        };
-
-        const categoryIds = ['hosts', 'localhost', 'noip', 'adguard', 'unbound', 'dnsmasq', 'rpz'];
-        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-
-        const updateSinceDate = createdAt => {
-            if (!createdAt) return;
-            const element = document.getElementById('stats-since-date');
-            if (element) element.textContent = new Date(createdAt).toLocaleDateString('en-US', dateOptions);
-        };
-
-        const ws = new WebSocket('<%= process.env.NODE_ENV === 'production' ? process.env.WS_ADDRESS : `${process.env.WS_ADDRESS}:${process.env.WS_PORT}` %>');
-
-        ws.onopen = () => console.log('WebSocket connection established');
-
-        ws.onmessage = event => {
-            try {
-                const data = JSON.parse(event.data);
-                if (!data?.stats) return;
-
-                const { stats, uptime, coll } = data;
-
-                if (stats.total != null) updateStats('total-requests', stats.total);
-                if (stats.blocklists != null) updateStats('blocklist-requests', stats.blocklists);
-
-                if (stats.categories) {
-                    categoryIds.forEach(id => {
-                        if (stats.categories[id] != null) updateStats(id, stats.categories[id]);
-                    });
-                }
-
-                if (stats.responses && typeof stats.responses === 'object') {
-                    Object.entries(stats.responses).forEach(([code, count]) => updateStats(`response-${code}`, count));
-                }
-
-                if (uptime) updateStats('uptime', uptime);
-                if (coll?.createdAt) {
-                    updateStats('coll-cAt', formatDate(coll.createdAt));
-                    updateSinceDate(coll.createdAt);
-                }
-                if (coll?.updatedAt) updateStats('coll-uAt', formatDate(coll.updatedAt));
-            } catch (err) {
-                console.error('WebSocket message error:', err);
-            }
-        };
-
-        ws.onerror = err => console.error('WebSocket error:', err);
-        ws.onclose = () => console.log('WebSocket connection closed');
-    })();
-</script>
+<script type="module" src="/js/index.js" data-ws-address="<%= process.env.NODE_ENV === 'production' ? process.env.WS_ADDRESS : `${process.env.WS_ADDRESS}:${process.env.WS_PORT}` %>"></script>
 
 <%- include('./includes/footer.ejs') %>

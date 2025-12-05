@@ -26,6 +26,45 @@ let currentInterval = 10;
 
 const FONT_FAMILY = '\'Cascadia Mono\', \'Calibri\', sans-serif';
 
+const COLORS = {
+	primary: '#0088cc',
+	secondary: '#00a8fc',
+	tertiary: '#0066aa',
+	quaternary: '#0099dd',
+	quinary: '#005588',
+	orange: '#ff6b35',
+	purple: '#9b59b6',
+	green: '#27ae60',
+	yellow: '#f39c12',
+	red: '#e74c3c',
+	teal: '#16a085',
+	pink: '#e91e63',
+};
+
+const CHART_COLORS = [COLORS.primary, COLORS.green, COLORS.purple, COLORS.orange, COLORS.yellow, COLORS.teal, COLORS.red];
+
+const UI_COLORS = {
+	tooltipBg: 'rgba(0, 0, 0, 0.9)',
+	tooltipTitle: '#00a8fc',
+	tooltipBody: '#fff',
+	tooltipBorder: 'rgba(0, 168, 252, 0.5)',
+	tooltipFooter: 'rgba(255, 255, 255, 0.6)',
+	textPrimary: 'rgba(255, 255, 255, 0.9)',
+	textSecondary: 'rgba(255, 255, 255, 0.8)',
+	gridLines: 'rgba(255, 255, 255, 0.08)',
+	legendText: '#fff',
+	borderDark: 'rgba(0, 0, 0, 0.5)',
+	borderLight: '#fff',
+};
+
+const HEATMAP_COLORS = {
+	empty: 'rgba(255, 255, 255, 0.05)',
+	low: '39, 174, 96',
+	medium: '243, 156, 18',
+	high: '230, 126, 34',
+	veryHigh: '231, 76, 60',
+};
+
 let loadingElement;
 const showLoading = () => {
 	if (!loadingElement) loadingElement = document.getElementById('loading');
@@ -73,7 +112,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 		legend: {
 			display: showLegend,
 			labels: {
-				color: '#fff',
+				color: UI_COLORS.legendText,
 				font: {
 					family: FONT_FAMILY,
 					size: 13,
@@ -86,10 +125,10 @@ const getCommonChartOptions = (showLegend = true) => ({
 		},
 		tooltip: {
 			enabled: true,
-			backgroundColor: 'rgba(0, 0, 0, 0.9)',
-			titleColor: '#00a8fc',
-			bodyColor: '#fff',
-			borderColor: 'rgba(0, 168, 252, 0.5)',
+			backgroundColor: UI_COLORS.tooltipBg,
+			titleColor: UI_COLORS.tooltipTitle,
+			bodyColor: UI_COLORS.tooltipBody,
+			borderColor: UI_COLORS.tooltipBorder,
 			borderWidth: 1,
 			padding: 12,
 			displayColors: true,
@@ -106,7 +145,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 				family: FONT_FAMILY,
 				size: 11,
 			},
-			footerColor: 'rgba(255, 255, 255, 0.6)',
+			footerColor: UI_COLORS.tooltipFooter,
 			cornerRadius: 8,
 			caretSize: 6,
 		},
@@ -114,14 +153,14 @@ const getCommonChartOptions = (showLegend = true) => ({
 	scales: {
 		x: {
 			ticks: {
-				color: 'rgba(255, 255, 255, 0.8)',
+				color: UI_COLORS.textSecondary,
 				font: {
 					family: FONT_FAMILY,
 					size: 12,
 				},
 			},
 			grid: {
-				color: 'rgba(255, 255, 255, 0.08)',
+				color: UI_COLORS.gridLines,
 				lineWidth: 1,
 				drawBorder: false,
 			},
@@ -129,7 +168,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 		y: {
 			beginAtZero: true,
 			ticks: {
-				color: 'rgba(255, 255, 255, 0.8)',
+				color: UI_COLORS.textSecondary,
 				font: {
 					family: FONT_FAMILY,
 					size: 12,
@@ -137,7 +176,7 @@ const getCommonChartOptions = (showLegend = true) => ({
 				callback: value => value.toLocaleString(),
 			},
 			grid: {
-				color: 'rgba(255, 255, 255, 0.08)',
+				color: UI_COLORS.gridLines,
 				lineWidth: 1,
 				drawBorder: false,
 			},
@@ -243,7 +282,7 @@ const loadAllTimeStats = async () => {
 			daysSinceStart = Math.max(0, Math.floor((now - createdDate) / (1000 * 60 * 60 * 24)));
 			dataAvailableDays = daysSinceStart;
 
-			updateElement('alltime-created', createdDate.toLocaleString('en-GB', {
+			updateElement('alltime-created', createdDate.toLocaleString(navigator.language || 'en-US', {
 				year: 'numeric',
 				month: 'short',
 				day: 'numeric',
@@ -265,7 +304,7 @@ const loadAllTimeStats = async () => {
 
 		if (stats.updatedAt) {
 			const updatedDate = new Date(stats.updatedAt);
-			updateElement('alltime-updated', updatedDate.toLocaleString('en-GB', {
+			updateElement('alltime-updated', updatedDate.toLocaleString(navigator.language || 'en-US', {
 				year: 'numeric',
 				month: 'short',
 				day: 'numeric',
@@ -276,15 +315,15 @@ const loadAllTimeStats = async () => {
 			}));
 		}
 
-		updateDayButtons();
-		updateDateInputLimits(stats.createdAt);
+		updateDayButtons(); // eslint-disable-line no-use-before-define
+		updateDateInputLimits(stats.createdAt); // eslint-disable-line no-use-before-define
 	} catch (err) {
 		console.error('Error loading all-time stats:', err);
 	}
 };
 
 let dateFromInputCached, dateToInputCached;
-let quickButtonsCached, intervalButtonsCached;
+let intervalButtonsCached, quickButtonsCached;
 
 const updateDateInputLimits = createdAt => {
 	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
@@ -484,8 +523,8 @@ const createRequestsChart = data => {
 	options.scales.x.ticks.autoSkip = true;
 	options.interaction = { mode: 'index', intersect: false };
 	options.plugins.tooltip.callbacks = addUTCFooter({
-		title: ctx => ctx[0].label,
-		label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()} requests`,
+		title: tooltipCtx => tooltipCtx[0].label,
+		label: tooltipCtx => `${tooltipCtx.dataset.label}: ${tooltipCtx.parsed.y.toLocaleString()} requests`,
 	});
 
 	charts.requests = new Chart(ctx, {
@@ -496,34 +535,34 @@ const createRequestsChart = data => {
 				{
 					label: 'Total Requests',
 					data: data.map(d => d.total || 0),
-					borderColor: '#667eea',
-					backgroundColor: 'transparent',
-					borderWidth: 2,
+					borderColor: COLORS.primary,
+					backgroundColor: COLORS.primary + '20',
+					borderWidth: 0,
 					fill: false,
 					tension: 0.4,
 					pointRadius: 0,
-					pointBackgroundColor: '#667eea',
-					pointBorderColor: '#667eea',
+					pointBackgroundColor: COLORS.primary,
+					pointBorderColor: COLORS.primary,
 					pointHoverRadius: 5,
-					pointHoverBackgroundColor: '#667eea',
-					pointHoverBorderColor: '#fff',
+					pointHoverBackgroundColor: COLORS.primary,
+					pointHoverBorderColor: COLORS.primary,
 					pointHoverBorderWidth: 2,
 					pointBorderWidth: 1,
 				},
 				{
 					label: 'Blocklist Requests',
 					data: data.map(d => d.blocklists || 0),
-					borderColor: '#764ba2',
-					backgroundColor: 'transparent',
-					borderWidth: 2,
+					borderColor: COLORS.purple,
+					backgroundColor: COLORS.purple + '20',
+					borderWidth: 0,
 					fill: false,
 					tension: 0.4,
 					pointRadius: 0,
-					pointBackgroundColor: '#764ba2',
-					pointBorderColor: '#764ba2',
+					pointBackgroundColor: COLORS.purple,
+					pointBorderColor: COLORS.purple,
 					pointHoverRadius: 5,
-					pointHoverBackgroundColor: '#764ba2',
-					pointHoverBorderColor: '#fff',
+					pointHoverBackgroundColor: COLORS.purple,
+					pointHoverBorderColor: COLORS.purple,
 					pointHoverBorderWidth: 2,
 					pointBorderWidth: 1,
 				},
@@ -539,23 +578,8 @@ const createResponsesChart = responses => {
 	const ctx = document.getElementById('responses-chart')?.getContext('2d');
 	if (!ctx) return;
 
-	const colors = [
-		'#667eea',
-		'#764ba2',
-		'#ed64a6',
-		'#ff9a9e',
-		'#fad0c4',
-	];
-
-	const hoverColors = [
-		'#5568d3',
-		'#6a4292',
-		'#dc5395',
-		'#ff8a8e',
-		'#f9c0b4',
-	];
-
 	const total = Object.values(responses).reduce((sum, val) => sum + val, 0);
+	const colorValues = [COLORS.green, COLORS.primary, COLORS.yellow, COLORS.orange, COLORS.red];
 
 	charts.responses = new Chart(ctx, {
 		type: 'doughnut',
@@ -563,12 +587,12 @@ const createResponsesChart = responses => {
 			labels: Object.keys(responses),
 			datasets: [{
 				data: Object.values(responses),
-				backgroundColor: colors,
-				hoverBackgroundColor: hoverColors,
-				borderWidth: 1,
-				borderColor: 'rgba(0, 0, 0, 0.5)',
-				hoverBorderColor: '#fff',
-				hoverBorderWidth: 1,
+				backgroundColor: colorValues,
+				hoverBackgroundColor: colorValues.map(c => c + 'dd'),
+				borderWidth: 0,
+				borderColor: colorValues.map(c => c + 'aa'),
+				hoverBorderColor: colorValues,
+				hoverBorderWidth: 2,
 			}],
 		},
 		options: {
@@ -585,7 +609,7 @@ const createResponsesChart = responses => {
 					display: true,
 					position: 'right',
 					labels: {
-						color: '#fff',
+						color: UI_COLORS.legendText,
 						font: {
 							family: FONT_FAMILY,
 							size: 13,
@@ -598,10 +622,10 @@ const createResponsesChart = responses => {
 				},
 				tooltip: {
 					enabled: true,
-					backgroundColor: 'rgba(0, 0, 0, 0.9)',
-					titleColor: '#00a8fc',
-					bodyColor: '#fff',
-					borderColor: 'rgba(0, 168, 252, 0.5)',
+					backgroundColor: UI_COLORS.tooltipBg,
+					titleColor: UI_COLORS.tooltipTitle,
+					bodyColor: UI_COLORS.tooltipBody,
+					borderColor: UI_COLORS.tooltipBorder,
 					borderWidth: 1,
 					padding: 12,
 					displayColors: true,
@@ -616,10 +640,10 @@ const createResponsesChart = responses => {
 					},
 					cornerRadius: 8,
 					callbacks: {
-						label: ctx => {
-							const value = ctx.parsed;
+						label: tooltipCtx => {
+							const value = tooltipCtx.parsed;
 							const percentage = ((value / total) * 100).toFixed(2);
-							return `HTTP ${ctx.label}: ${value.toLocaleString()} (${percentage}%)`;
+							return `HTTP ${tooltipCtx.label}: ${value.toLocaleString()} (${percentage}%)`;
 						},
 					},
 				},
@@ -636,13 +660,13 @@ const createCategoriesChart = categories => {
 
 	const options = getCommonChartOptions(false);
 	options.plugins.tooltip.callbacks = addUTCFooter({
-		title: ctx => ctx[0].label,
-		label: ctx => `Downloads: ${ctx.parsed.y.toLocaleString()}`,
+		title: tooltipCtx => tooltipCtx[0].label,
+		label: tooltipCtx => `Downloads: ${tooltipCtx.parsed.y.toLocaleString()}`,
 	});
 	options.scales.x.title = {
 		display: true,
 		text: 'Format',
-		color: 'rgba(255, 255, 255, 0.9)',
+		color: UI_COLORS.textPrimary,
 		font: {
 			family: FONT_FAMILY,
 			size: 13,
@@ -657,10 +681,9 @@ const createCategoriesChart = categories => {
 			datasets: [{
 				label: 'Downloads',
 				data: Object.values(categories),
-				backgroundColor: '#667eea',
-				hoverBackgroundColor: '#5568d3',
-				borderColor: '#5568d3',
-				borderWidth: 1,
+				backgroundColor: COLORS.green,
+				hoverBackgroundColor: COLORS.green,
+				borderWidth: 0,
 				borderRadius: {
 					topLeft: 6,
 					topRight: 6,
@@ -684,14 +707,14 @@ const createHourlyChart = (hourlyData, dateRange) => {
 
 	const options = getCommonChartOptions(false);
 	options.plugins.tooltip.callbacks = addUTCFooter({
-		title: ctx => ctx[0].label,
-		label: ctx => `Requests: ${ctx.parsed.y.toLocaleString()}`,
+		title: tooltipCtx => tooltipCtx[0].label,
+		label: tooltipCtx => `Requests: ${tooltipCtx.parsed.y.toLocaleString()}`,
 		afterLabel: () => `Range: ${dateRange.from} → ${dateRange.to}`,
 	});
 	options.scales.x.title = {
 		display: true,
 		text: 'Hour of Day',
-		color: 'rgba(255, 255, 255, 0.9)',
+		color: UI_COLORS.textPrimary,
 		font: {
 			family: FONT_FAMILY,
 			size: 13,
@@ -706,10 +729,9 @@ const createHourlyChart = (hourlyData, dateRange) => {
 			datasets: [{
 				label: 'Requests',
 				data: hours.map(h => hourlyData[h] || 0),
-				backgroundColor: '#764ba2',
-				hoverBackgroundColor: '#6a4292',
-				borderColor: '#6a4292',
-				borderWidth: 1,
+				backgroundColor: COLORS.teal,
+				hoverBackgroundColor: COLORS.teal,
+				borderWidth: 0,
 				borderRadius: {
 					topLeft: 6,
 					topRight: 6,
@@ -742,8 +764,8 @@ const createDailyChart = data => {
 
 	const options = getCommonChartOptions();
 	options.plugins.tooltip.callbacks = addUTCFooter({
-		title: ctx => ctx[0].label,
-		label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}`,
+		title: tooltipCtx => tooltipCtx[0].label,
+		label: tooltipCtx => `${tooltipCtx.dataset.label}: ${tooltipCtx.parsed.y.toLocaleString()}`,
 	});
 
 	charts.daily = new Chart(ctx, {
@@ -754,10 +776,9 @@ const createDailyChart = data => {
 				{
 					label: 'Total Requests',
 					data: dates.map(d => dailyData[d].total),
-					backgroundColor: '#667eea',
-					hoverBackgroundColor: '#5568d3',
-					borderColor: '#5568d3',
-					borderWidth: 1,
+					backgroundColor: COLORS.primary,
+					hoverBackgroundColor: COLORS.primary,
+					borderWidth: 0,
 					borderRadius: {
 						topLeft: 6,
 						topRight: 6,
@@ -769,10 +790,9 @@ const createDailyChart = data => {
 				{
 					label: 'Blocklist Downloads',
 					data: dates.map(d => dailyData[d].blocklists),
-					backgroundColor: '#764ba2',
-					hoverBackgroundColor: '#6a4292',
-					borderColor: '#6a4292',
-					borderWidth: 1,
+					backgroundColor: COLORS.purple,
+					hoverBackgroundColor: COLORS.purple,
+					borderWidth: 0,
 					borderRadius: {
 						topLeft: 6,
 						topRight: 6,
@@ -807,13 +827,13 @@ const createPeakHoursChart = data => {
 	const options = getCommonChartOptions(false);
 	options.indexAxis = 'y';
 	options.plugins.tooltip.callbacks = addUTCFooter({
-		title: ctx => ctx[0].label,
-		label: ctx => `Peak: ${ctx.parsed.x.toLocaleString()} requests`,
+		title: tooltipCtx => tooltipCtx[0].label,
+		label: tooltipCtx => `Peak: ${tooltipCtx.parsed.x.toLocaleString()} requests`,
 	});
 	options.scales.x.title = {
 		display: true,
 		text: 'Number of Requests',
-		color: 'rgba(255, 255, 255, 0.9)',
+		color: UI_COLORS.textPrimary,
 		font: {
 			family: FONT_FAMILY,
 			size: 13,
@@ -828,15 +848,15 @@ const createPeakHoursChart = data => {
 			datasets: [{
 				label: 'Requests',
 				data: sorted.map(([, val]) => val),
-				backgroundColor: '#ed64a6',
-				hoverBackgroundColor: '#dc5395',
-				borderColor: '#dc5395',
-				borderWidth: 1,
+				backgroundColor: COLORS.orange,
+				hoverBackgroundColor: COLORS.orange,
+				borderColor: COLORS.orange,
+				borderWidth: 0,
 				borderRadius: {
-					topLeft: 6,
+					topLeft: 0,
 					topRight: 6,
 					bottomLeft: 0,
-					bottomRight: 0,
+					bottomRight: 6,
 				},
 				borderSkipped: 'left',
 			}],
@@ -851,34 +871,27 @@ const createFormatDistributionChart = data => {
 	const ctx = document.getElementById('format-distribution-chart')?.getContext('2d');
 	if (!ctx) return;
 
-	const colors = [
-		'#667eea',
-		'#764ba2',
-		'#ed64a6',
-		'#ff9a9e',
-		'#fad0c4',
-		'#84fafc',
-		'#00a8fc',
-	];
-
 	const labels = data.map(d => `${d.date} ${d.time}`);
-	const datasets = Object.keys(FORMAT_LABELS_SHORT).map((key, idx) => ({
-		label: FORMAT_LABELS_SHORT[key],
-		data: data.map(d => d.categories?.[key] || 0),
-		borderColor: colors[idx],
-		backgroundColor: colors[idx] + '33',
-		borderWidth: 2,
-		fill: false,
-		tension: 0.4,
-		pointRadius: 0,
-		pointBackgroundColor: colors[idx],
-		pointBorderColor: colors[idx],
-		pointHoverRadius: 6,
-		pointHoverBackgroundColor: colors[idx],
-		pointHoverBorderColor: '#fff',
-		pointHoverBorderWidth: 2,
-		pointBorderWidth: 1,
-	}));
+	const datasets = Object.keys(FORMAT_LABELS_SHORT).map((key, idx) => {
+		const color = CHART_COLORS[idx % CHART_COLORS.length];
+		return {
+			label: FORMAT_LABELS_SHORT[key],
+			data: data.map(d => d.categories?.[key] || 0),
+			borderColor: color,
+			backgroundColor: color + '33',
+			borderWidth: 0,
+			fill: false,
+			tension: 0.4,
+			pointRadius: 0,
+			pointBackgroundColor: color,
+			pointBorderColor: color,
+			pointHoverRadius: 6,
+			pointHoverBackgroundColor: color,
+			pointHoverBorderColor: UI_COLORS.borderLight,
+			pointHoverBorderWidth: 2,
+			pointBorderWidth: 1,
+		};
+	});
 
 	const options = getCommonChartOptions();
 	options.interaction = {
@@ -887,10 +900,10 @@ const createFormatDistributionChart = data => {
 	};
 	options.plugins.legend.position = 'bottom';
 	options.plugins.tooltip.callbacks = addUTCFooter({
-		title: ctx => ctx[0].label,
-		label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()} downloads`,
-		afterBody: ctx => {
-			const total = ctx.reduce((sum, item) => sum + item.parsed.y, 0);
+		title: tooltipCtx => tooltipCtx[0].label,
+		label: tooltipCtx => `${tooltipCtx.dataset.label}: ${tooltipCtx.parsed.y.toLocaleString()} downloads`,
+		afterBody: tooltipCtx => {
+			const total = tooltipCtx.reduce((sum, item) => sum + item.parsed.y, 0);
 			return `\nTotal: ${total.toLocaleString()} downloads`;
 		},
 	});
@@ -939,12 +952,12 @@ const createHeatmapChart = data => {
 	const maxValue = Math.max(...values, 1);
 
 	const getColor = value => {
-		if (value === 0 || maxValue === 0) return 'rgba(255, 255, 255, 0.05)';
+		if (value === 0 || maxValue === 0) return HEATMAP_COLORS.empty;
 		const intensity = value / maxValue;
-		if (intensity < 0.2) return `rgba(102, 126, 234, ${0.3 + intensity * 0.3})`;
-		if (intensity < 0.5) return `rgba(118, 75, 162, ${0.4 + intensity * 0.3})`;
-		if (intensity < 0.8) return `rgba(237, 100, 166, ${0.5 + intensity * 0.3})`;
-		return `rgba(255, 107, 53, ${0.6 + intensity * 0.4})`;
+		if (intensity < 0.2) return `rgba(${HEATMAP_COLORS.low}, ${0.3 + intensity * 0.3})`;
+		if (intensity < 0.5) return `rgba(${HEATMAP_COLORS.medium}, ${0.4 + intensity * 0.3})`;
+		if (intensity < 0.8) return `rgba(${HEATMAP_COLORS.high}, ${0.5 + intensity * 0.3})`;
+		return `rgba(${HEATMAP_COLORS.veryHigh}, ${0.6 + intensity * 0.4})`;
 	};
 
 	charts.heatmap = new Chart(ctx, {
@@ -971,10 +984,10 @@ const createHeatmapChart = data => {
 				legend: { display: false },
 				tooltip: {
 					enabled: true,
-					backgroundColor: 'rgba(0, 0, 0, 0.9)',
-					titleColor: '#00a8fc',
-					bodyColor: '#fff',
-					borderColor: 'rgba(0, 168, 252, 0.5)',
+					backgroundColor: UI_COLORS.tooltipBg,
+					titleColor: UI_COLORS.tooltipTitle,
+					bodyColor: UI_COLORS.tooltipBody,
+					borderColor: UI_COLORS.tooltipBorder,
 					borderWidth: 1,
 					padding: 12,
 					titleFont: {
@@ -987,8 +1000,8 @@ const createHeatmapChart = data => {
 						size: 13,
 					},
 					callbacks: {
-						title: ctx => `${ctx[0].raw.date} ${ctx[0].raw.hour}:00`,
-						label: ctx => `Requests: ${ctx.raw.value.toLocaleString()}`,
+						title: tooltipCtx => `${tooltipCtx[0].raw.date} ${tooltipCtx[0].raw.hour}:00`,
+						label: tooltipCtx => `Requests: ${tooltipCtx.raw.value.toLocaleString()}`,
 						footer: () => 'Time: UTC',
 					},
 				},
@@ -1004,20 +1017,20 @@ const createHeatmapChart = data => {
 							const hour = hours[Math.round(value)];
 							return hour ? hour + ':00' : '';
 						},
-						color: 'rgba(255, 255, 255, 0.8)',
+						color: UI_COLORS.textSecondary,
 						font: {
 							family: FONT_FAMILY,
 							size: 11,
 						},
 					},
 					grid: {
-						color: 'rgba(255, 255, 255, 0.08)',
+						color: UI_COLORS.gridLines,
 						lineWidth: 1,
 					},
 					title: {
 						display: true,
 						text: 'Hour of Day (UTC)',
-						color: 'rgba(255, 255, 255, 0.9)',
+						color: UI_COLORS.textPrimary,
 						font: {
 							family: FONT_FAMILY,
 							size: 13,
@@ -1033,20 +1046,20 @@ const createHeatmapChart = data => {
 					ticks: {
 						stepSize: 1,
 						callback: value => dates[value] || '',
-						color: 'rgba(255, 255, 255, 0.8)',
+						color: UI_COLORS.textSecondary,
 						font: {
 							family: FONT_FAMILY,
 							size: 11,
 						},
 					},
 					grid: {
-						color: 'rgba(255, 255, 255, 0.08)',
+						color: UI_COLORS.gridLines,
 						lineWidth: 1,
 					},
 					title: {
 						display: true,
 						text: 'Date',
-						color: 'rgba(255, 255, 255, 0.9)',
+						color: UI_COLORS.textPrimary,
 						font: {
 							family: FONT_FAMILY,
 							size: 13,
