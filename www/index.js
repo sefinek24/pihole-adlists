@@ -5,10 +5,9 @@ const numCPUs = require('node:os').availableParallelism();
 const connectToDatabase = require('./database/mongoose.js');
 const { startAggregationJob } = require('./jobs/aggregate-stats.js');
 
-const { NODE_ENV, DOMAIN, PORT, MONGODB_URL, SEFINEK_API } = process.env;
+const { NODE_ENV, DOMAIN, PORT, MONGODB_URL } = process.env;
 if (!NODE_ENV || !DOMAIN || !PORT) throw new Error('Missing basic environment variables');
 if (!MONGODB_URL) throw new Error('Missing MongoDB connection URL');
-if (!SEFINEK_API) throw new Error('Missing SEFINEK_API environment variable');
 
 (async () => {
 	// Development mode - single process
