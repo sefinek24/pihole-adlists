@@ -26,6 +26,10 @@
     --transition-slow:.3s ease
 }
 
+html {
+    scroll-padding-top:90px
+}
+
 body {
     background-color:var(--color-bg-dark);
     font-family:var(--font-primary),sans-serif;
