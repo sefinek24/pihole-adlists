@@ -319,29 +319,39 @@ body {
     transform:translateY(-1px)
 }
 
-.btn-quick {
+.btn-quick,
+.btn-interval {
     backdrop-filter:blur(14px);
     background:#ffffff0d;
     border:1px solid #fff3;
     border-radius:12px;
     color:#fff;
     cursor:pointer;
-    font-size:15px;
+    font-family:'Cascadia Mono','Calibri',sans-serif;
+    font-size:14px;
     font-weight:500;
-    padding:.7rem 1.5rem;
+    padding:.7rem 1.4rem;
     position:relative;
     text-shadow:0 0 4px #000c;
     transition:all .3s cubic-bezier(0.4,0,0.2,1)
 }
 
-.btn-quick:hover {
+.btn-quick:hover:not(:disabled),
+.btn-interval:hover:not(:disabled) {
     background:#ffffff1a;
     border-color:#00a8fc99;
     box-shadow:0 0 12px #0006;
     transform:translateY(-2px)
 }
 
-.btn-quick.active {
+.btn-quick:disabled,
+.btn-interval:disabled {
+    cursor:not-allowed;
+    opacity:.4
+}
+
+.btn-quick.active,
+.btn-interval.active {
     background:linear-gradient(135deg,#00a8fc4d 0%,#00a8fc80 100%);
     border-color:#00a8fccc;
     box-shadow:0 0 12px #0006;
@@ -395,36 +405,6 @@ body {
     flex-wrap:wrap;
     gap:.8rem;
     justify-content:center
-}
-
-.btn-interval {
-    backdrop-filter:blur(8px);
-    background:#ffffff0a;
-    border:1px solid #ffffff2e;
-    border-radius:10px;
-    color:#fff;
-    cursor:pointer;
-    font-family:'Cascadia Mono','Calibri',sans-serif;
-    font-size:14px;
-    font-weight:500;
-    padding:.6rem 1.3rem;
-    position:relative;
-    text-shadow:0 0 4px #000c;
-    transition:all .3s cubic-bezier(0.4,0,0.2,1)
-}
-
-.btn-interval:hover {
-    background:#FFFFFF0D;
-    border-color:#84fafc99;
-    box-shadow:0 0 12px #0006;
-    transform:translateY(-2px)
-}
-
-.btn-interval.active {
-    background:linear-gradient(135deg,#84fafc40 0%,#84fafc66 100%);
-    border-color:#84fafccc;
-    box-shadow:0 0 12px #0006;
-    transform:translateY(-2px)
 }
 
 .stats-summary {
@@ -840,6 +820,7 @@ body {
         gap:.6rem
     }
 
+    .btn-quick,
     .btn-interval {
         font-size:13px;
         padding:.55rem 1.1rem
@@ -961,15 +942,17 @@ body {
         font-size:.95rem
     }
 
-    .quick-select {
+    .quick-select,
+    .interval-select {
         gap:.5rem
     }
 
-    .btn-quick {
-        flex:1 1 calc(50% - 0.25rem);
-        font-size:13px;
+    .btn-quick,
+    .btn-interval {
+        flex:1 1 calc(33.333% - 0.33rem);
+        font-size:12px;
         min-width:0;
-        padding:.6rem 1rem
+        padding:.5rem .9rem
     }
 
     .date-input-group input[type="date"] {
@@ -980,17 +963,6 @@ body {
     .btn-primary {
         font-size:15px;
         padding:.7rem 1.5rem
-    }
-
-    .interval-select {
-        gap:.5rem
-    }
-
-    .btn-interval {
-        flex:1 1 calc(33.333% - 0.33rem);
-        font-size:12px;
-        min-width:0;
-        padding:.5rem .9rem
     }
 
     .peak-minute-banner {

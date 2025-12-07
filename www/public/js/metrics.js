@@ -270,7 +270,9 @@ const calculateSuccessRate = (responses, total) => {
 
 const getMinInterval = days => {
 	const effectiveDays = days === 'max' ? dataAvailableDays : days;
-	if (effectiveDays > 7) return 60;
+	if (effectiveDays > 30) return 1440;
+	if (effectiveDays > 14) return 60;
+	if (effectiveDays > 5) return 10;
 	return 1;
 };
 

@@ -4,6 +4,7 @@ const RequestStats = require('../database/models/request-stats.model.js');
 
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 const MAX_RANGE_DAYS = 365;
+const VALID_INTERVALS = [1, 5, 10, 15, 30, 60, 240, 480, 960, 1440];
 
 const parseDate = dateStr => {
 	if (!DATE_REGEX.test(dateStr)) return null;
@@ -47,6 +48,7 @@ router.get('/api/stats/minute', async (req, res) => {
 		const fromDate = parseDate(from);
 		const toDate = to ? parseDate(to) : fromDate;
 		if (!fromDate || !toDate) return res.status(400).json({ success: false, status: 400, message: 'Invalid date format. Use YYYY-MM-DD' });
+
 		const today = new Date();
 		today.setHours(23, 59, 59, 999);
 
@@ -55,14 +57,19 @@ router.get('/api/stats/minute', async (req, res) => {
 
 		const daysDiff = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
 		if (daysDiff > MAX_RANGE_DAYS) return res.status(400).json({ success: false, status: 400, message: `Date range cannot exceed ${MAX_RANGE_DAYS} days` });
-		const parsedInterval = parseInt(interval) || 1;
 
-		const minInterval = daysDiff > 7 ? 60 : 1;
-		if (parsedInterval < minInterval) {
-			return res.status(400).json({ success: false, status: 400, message: `For ${daysDiff} days range, minimum interval is ${minInterval >= 60 ? (minInterval / 60) + 'h' : minInterval + 'm'}` });
+		const parsedInterval = parseInt(interval) || 1;
+		if (!VALID_INTERVALS.includes(parsedInterval)) {
+			return res.status(400).json({ success: false, status: 400, message: `Invalid interval. Valid values: ${VALID_INTERVALS.join(', ')}` });
 		}
 
-		const maxLimit = daysDiff > 90 ? 14400 : daysDiff > 30 ? 43200 : 100000;
+		const minInterval = daysDiff > 30 ? 1440 : daysDiff > 14 ? 60 : daysDiff > 5 ? 10 : 1;
+		if (parsedInterval < minInterval) {
+			const minLabel = minInterval >= 60 ? (minInterval / 60) + 'h' : minInterval + 'm';
+			return res.status(400).json({ success: false, status: 400, message: `For ${daysDiff} days range, minimum interval is ${minLabel}` });
+		}
+
+		const maxLimit = daysDiff > 90 ? 10000 : daysDiff > 30 ? 30000 : 50000;
 
 		const query = { date: from };
 		if (to && to !== from) query.date = { $gte: from, $lte: to };
