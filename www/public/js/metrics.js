@@ -1,10 +1,11 @@
-import { formatDateShort, formatToYYYYMMDD } from './date.js';
+import { formatDateShort, formatToYYYYMMDD, dateShortOptions } from './date.js';
 
 const charts = {};
-const START_DATE = new Date('2024-10-28');
 const SUCCESS_CODES = ['200', '201', '204', '304'];
 const ERROR_CODES = ['400', '401', '403', '404', '429', '500', '502', '503', '504'];
-let dataAvailableDays = 0;
+const VALID_INTERVALS = [1, 5, 10, 15, 30, 60, 240, 480, 960, 1440];
+const VALID_DAYS = [3, 7, 14, 30, 90];
+let dataAvailableDays = 0, dataStartDate = null, serverTimeOffset = 0;
 const FORMAT_LABELS = {
 	hosts: 'hosts 0.0.0.0',
 	localhost: 'localhost',
@@ -30,10 +31,6 @@ const FONT_FAMILY = '\'Cascadia Mono\', \'Calibri\', sans-serif';
 
 const COLORS = {
 	primary: '#0088cc',
-	secondary: '#00a8fc',
-	tertiary: '#0066aa',
-	quaternary: '#0099dd',
-	quinary: '#005588',
 	orange: '#ff6b35',
 	purple: '#9b59b6',
 	green: '#27ae60',
@@ -54,7 +51,6 @@ const UI_COLORS = {
 	textSecondary: 'rgba(255, 255, 255, 0.8)',
 	gridLines: 'rgba(255, 255, 255, 0.08)',
 	legendText: '#fff',
-	borderDark: 'rgba(0, 0, 0, 0.5)',
 	borderLight: '#fff',
 };
 
@@ -65,6 +61,8 @@ const HEATMAP_COLORS = {
 	high: '230, 126, 34',
 	veryHigh: '231, 76, 60',
 };
+
+const HOURS_24 = Array.from({ length: 24 }, (_, i) => String(i).padStart(2, '0'));
 
 let loadingElement;
 const showLoading = () => {
@@ -79,6 +77,33 @@ const hideLoading = () => {
 const updateElement = (id, value) => {
 	const element = document.getElementById(id);
 	if (element) element.textContent = value;
+};
+
+const clientLanguage = navigator.language || 'en-US';
+
+const localTimeOptions = {
+	...dateShortOptions,
+	timeZone: undefined,
+	second: '2-digit',
+};
+
+const formatTimeUTC = date => date.toLocaleString(clientLanguage, { ...dateShortOptions, second: '2-digit' });
+
+const formatTimeLocal = date => date.toLocaleString(clientLanguage, localTimeOptions);
+
+const updateServerTimeOffset = serverTime => {
+	if (serverTime) {
+		const serverDate = new Date(serverTime);
+		const clientDate = new Date();
+		serverTimeOffset = serverDate.getTime() - clientDate.getTime();
+	}
+};
+
+const updateClocks = () => {
+	const now = new Date();
+	const serverTime = new Date(now.getTime() + serverTimeOffset);
+	updateElement('server-time', formatTimeUTC(serverTime));
+	updateElement('client-time', formatTimeLocal(now));
 };
 
 const addUTCFooter = callbacks => ({
@@ -204,7 +229,7 @@ const aggregateByInterval = (data, intervalMinutes) => {
 
 		if (!aggregated[key]) {
 			const dateStr = formatToYYYYMMDD(roundedTimestamp);
-			const timeStr = `${String(roundedTimestamp.getHours()).padStart(2, '0')}:${String(roundedTimestamp.getMinutes()).padStart(2, '0')}`;
+			const timeStr = `${String(roundedTimestamp.getUTCHours()).padStart(2, '0')}:${String(roundedTimestamp.getUTCMinutes()).padStart(2, '0')}`;
 
 			aggregated[key] = {
 				timestamp: roundedTimestamp.toISOString(),
@@ -243,9 +268,10 @@ const calculateSuccessRate = (responses, total) => {
 };
 
 const getMinInterval = days => {
-	if (days === 'max' || days > 90) return 60;
-	if (days > 30) return 15;
-	if (days > 14) return 10;
+	const effectiveDays = days === 'max' ? dataAvailableDays : days;
+	if (effectiveDays > 90) return 60;
+	if (effectiveDays > 30) return 15;
+	if (effectiveDays > 14) return 10;
 	return 1;
 };
 
@@ -263,8 +289,10 @@ const updateDateInputLimits = createdAt => {
 	if (createdAt) {
 		const createdDate = new Date(createdAt);
 		minDate = formatToYYYYMMDD(createdDate);
+	} else if (dataStartDate) {
+		minDate = formatToYYYYMMDD(dataStartDate);
 	} else {
-		minDate = formatToYYYYMMDD(START_DATE);
+		return;
 	}
 
 	if (dateFromInputCached) {
@@ -282,22 +310,12 @@ const updateDayButtons = () => {
 	if (!quickButtonsCached) quickButtonsCached = document.querySelectorAll('.btn-quick');
 	quickButtonsCached.forEach(btn => {
 		const daysValue = btn.dataset.days;
-		if (daysValue === 'max' || daysValue === '3') {
-			btn.disabled = false;
-			btn.style.opacity = '1';
-			btn.style.cursor = 'pointer';
-		} else {
-			const requiredDays = parseInt(daysValue);
-			if (requiredDays > dataAvailableDays) {
-				btn.disabled = true;
-				btn.style.opacity = '0.4';
-				btn.style.cursor = 'not-allowed';
-			} else {
-				btn.disabled = false;
-				btn.style.opacity = '1';
-				btn.style.cursor = 'pointer';
-			}
-		}
+		const requiredDays = daysValue === 'max' ? 0 : parseInt(daysValue);
+		const isDisabled = requiredDays > dataAvailableDays;
+
+		btn.disabled = isDisabled;
+		btn.style.opacity = isDisabled ? '0.4' : '1';
+		btn.style.cursor = isDisabled ? 'not-allowed' : 'pointer';
 	});
 };
 
@@ -307,6 +325,8 @@ const loadAllTimeStats = async () => {
 		if (!response.ok) throw new Error('Failed to fetch all-time stats');
 
 		const { data: stats } = await response.json();
+
+		updateServerTimeOffset(stats.serverTime);
 
 		updateElement('alltime-total', (stats.total || 0).toLocaleString());
 		updateElement('alltime-blocklists', (stats.blocklists || 0).toLocaleString());
@@ -319,13 +339,11 @@ const loadAllTimeStats = async () => {
 		let daysSinceStart = 0;
 		if (stats.createdAt) {
 			const createdDate = new Date(stats.createdAt);
+			dataStartDate = createdDate;
 			const now = new Date();
 			daysSinceStart = Math.max(0, Math.floor((now - createdDate) / (1000 * 60 * 60 * 24)));
 			dataAvailableDays = daysSinceStart;
 			updateElement('alltime-created', formatDateShort(stats.createdAt));
-		} else {
-			daysSinceStart = Math.max(0, Math.floor((new Date() - START_DATE) / (1000 * 60 * 60 * 24)));
-			dataAvailableDays = daysSinceStart;
 		}
 
 		const avgPerDay = daysSinceStart > 0 ? Math.floor(stats.total / daysSinceStart) : 0;
@@ -363,6 +381,7 @@ const fetchMetrics = async (from, to) => {
 		if (!response.ok) throw new Error('Failed to fetch metrics');
 
 		const data = await response.json();
+		updateServerTimeOffset(data.serverTime);
 		return data.data || [];
 	} catch (err) {
 		console.error('Error fetching metrics:', err);
@@ -409,7 +428,7 @@ const aggregateData = data => {
 		}
 
 		const hour = item.time.split(':')[0];
-		hourlyData[hour] = (hourlyData[hour] || 0) + item.total;
+		hourlyData[hour] = (hourlyData[hour] || 0) + (item.total || 0);
 	});
 
 	const top3Peaks = allIntervals
@@ -548,6 +567,8 @@ const createResponsesChart = responses => {
 	if (!ctx) return;
 
 	const total = Object.values(responses).reduce((sum, val) => sum + val, 0);
+	if (total === 0) return;
+
 	const colorValues = [COLORS.green, COLORS.primary, COLORS.yellow, COLORS.orange, COLORS.red];
 
 	charts.responses = new Chart(ctx, {
@@ -644,8 +665,6 @@ const createHourlyChart = (hourlyData, dateRange) => {
 	const ctx = document.getElementById('hourly-chart')?.getContext('2d');
 	if (!ctx) return;
 
-	const hours = Array.from({ length: 24 }, (_, i) => String(i).padStart(2, '0'));
-
 	const options = getCommonChartOptions(false);
 	options.plugins.tooltip.callbacks = addUTCFooter({
 		title: tooltipCtx => tooltipCtx[0].label,
@@ -662,10 +681,10 @@ const createHourlyChart = (hourlyData, dateRange) => {
 	charts.hourly = new Chart(ctx, {
 		type: 'bar',
 		data: {
-			labels: hours.map(h => `${h}:00`),
+			labels: HOURS_24.map(h => `${h}:00`),
 			datasets: [{
 				label: 'Requests',
-				data: hours.map(h => hourlyData[h] || 0),
+				data: HOURS_24.map(h => hourlyData[h] || 0),
 				backgroundColor: COLORS.teal,
 				hoverBackgroundColor: COLORS.teal,
 				borderWidth: 0,
@@ -862,11 +881,10 @@ const createHeatmapChart = data => {
 	});
 
 	const dates = Object.keys(heatmapData).sort();
-	const hours = Array.from({ length: 24 }, (_, i) => String(i).padStart(2, '0'));
 
 	const matrix = [];
 	dates.forEach(date => {
-		hours.forEach((hour, hourIndex) => {
+		HOURS_24.forEach((hour, hourIndex) => {
 			const value = heatmapData[date]?.[hour] || 0;
 			matrix.push({
 				x: hourIndex,
@@ -925,7 +943,7 @@ const createHeatmapChart = data => {
 					ticks: {
 						stepSize: 1,
 						callback: value => {
-							const hour = hours[Math.round(value)];
+							const hour = HOURS_24[Math.round(value)];
 							return hour ? hour + ':00' : '';
 						},
 						color: UI_COLORS.textSecondary,
@@ -995,11 +1013,6 @@ const loadData = async () => {
 
 	const daysDiff = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
 
-	if (daysDiff < 0) {
-		alert('Invalid date range');
-		return;
-	}
-
 	const minInterval = getMinInterval(daysDiff);
 
 	if (currentInterval < minInterval) {
@@ -1058,8 +1071,10 @@ const loadQuickData = async days => {
 	const to = new Date();
 	let from;
 
-	if (days === 'max') {
-		from = new Date(START_DATE);
+	if (days === 'max' && dataStartDate) {
+		from = new Date(dataStartDate);
+	} else if (days === 'max') {
+		return;
 	} else {
 		from = new Date(to);
 		from.setDate(to.getDate() - days);
@@ -1113,48 +1128,49 @@ const initializeEventListeners = () => {
 	}
 };
 
-const quickButtons = document.querySelectorAll('.btn-quick');
-const intervalButtons = document.querySelectorAll('.btn-interval');
+const initializeButtonListeners = () => {
+	if (!quickButtonsCached) quickButtonsCached = document.querySelectorAll('.btn-quick');
+	if (!intervalButtonsCached) intervalButtonsCached = document.querySelectorAll('.btn-interval');
 
-quickButtons.forEach(btn => {
-	btn.addEventListener('click', async e => {
-		if (e.target.disabled) return;
+	quickButtonsCached.forEach(btn => {
+		btn.addEventListener('click', async e => {
+			if (e.target.disabled) return;
 
-		quickButtons.forEach(b => b.classList.remove('active'));
-		e.target.classList.add('active');
+			quickButtonsCached.forEach(b => b.classList.remove('active'));
+			e.target.classList.add('active');
 
-		const daysValue = e.target.dataset.days;
-		const days = daysValue === 'max' ? 'max' : (parseInt(daysValue) || 7);
-		localStorage.setItem('metrics_days', days);
-		await loadQuickData(days);
+			const daysValue = e.target.dataset.days;
+			const days = daysValue === 'max' ? 'max' : (parseInt(daysValue) || 7);
+			localStorage.setItem('metrics_days', days);
+			await loadQuickData(days);
+		});
 	});
-});
 
-intervalButtons.forEach(btn => {
-	btn.addEventListener('click', async e => {
-		if (e.target.disabled) return;
+	intervalButtonsCached.forEach(btn => {
+		btn.addEventListener('click', async e => {
+			if (e.target.disabled) return;
 
-		intervalButtons.forEach(b => b.classList.remove('active'));
-		e.target.classList.add('active');
+			intervalButtonsCached.forEach(b => b.classList.remove('active'));
+			e.target.classList.add('active');
 
-		currentInterval = parseInt(e.target.dataset.interval) || 1;
-		localStorage.setItem('metrics_interval', currentInterval);
-		await loadData();
+			currentInterval = parseInt(e.target.dataset.interval) || 1;
+			localStorage.setItem('metrics_interval', currentInterval);
+			await loadData();
+		});
 	});
-});
+};
 
 const initializeMetrics = () => {
 	const savedDaysRaw = localStorage.getItem('metrics_days');
 	let savedDays = savedDaysRaw === 'max' ? 'max' : (parseInt(savedDaysRaw) || 7);
 	let savedInterval = parseInt(localStorage.getItem('metrics_interval')) || 10;
 
-	const validIntervals = [1, 5, 10, 15, 30, 60, 240, 480, 960, 1440];
-	if (!validIntervals.includes(savedInterval)) {
+	if (!VALID_INTERVALS.includes(savedInterval)) {
 		savedInterval = 10;
 		localStorage.setItem('metrics_interval', savedInterval);
 	}
 
-	if (savedDays !== 'max' && ![3, 7, 14, 30, 90].includes(savedDays)) {
+	if (savedDays !== 'max' && !VALID_DAYS.includes(savedDays)) {
 		savedDays = 7;
 		localStorage.setItem('metrics_days', savedDays);
 	}
@@ -1182,10 +1198,16 @@ const initializeMetrics = () => {
 	currentInterval = savedInterval;
 
 	initializeEventListeners();
+	initializeButtonListeners();
 	setDefaultDates();
-	void loadAllTimeStats();
 	updateIntervalButtons(savedDays);
-	void loadQuickData(savedDays);
+
+	updateClocks();
+	setInterval(updateClocks, 1000);
+
+	loadAllTimeStats().then(() => {
+		loadQuickData(savedDays);
+	});
 };
 
 initializeMetrics();

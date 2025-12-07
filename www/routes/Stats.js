@@ -7,7 +7,7 @@ router.get('/api/stats/alltime', async (req, res) => {
 	try {
 		const stats = await RequestStats.findOne({}).lean();
 		if (!stats) {
-			return res.json({ success: true, data: { total: 0, blocklists: 0, categories: {}, responses: {} } });
+			return res.json({ success: true, data: { total: 0, blocklists: 0, categories: {}, responses: {}, serverTime: new Date().toISOString() } });
 		}
 
 		res.json({
@@ -19,6 +19,7 @@ router.get('/api/stats/alltime', async (req, res) => {
 				responses: stats.responses || {},
 				createdAt: stats.createdAt,
 				updatedAt: stats.updatedAt,
+				serverTime: new Date().toISOString(),
 			},
 		});
 	} catch (err) {
@@ -55,6 +56,7 @@ router.get('/api/stats/minute', async (req, res) => {
 			success: true,
 			count: stats.length,
 			data: stats,
+			serverTime: new Date().toISOString(),
 		});
 	} catch (err) {
 		console.error('Error fetching minute stats:', err);
