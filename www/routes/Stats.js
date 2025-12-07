@@ -2,13 +2,13 @@ const router = require('express').Router();
 const MinuteStats = require('../database/models/minute-stats.model.js');
 const RequestStats = require('../database/models/request-stats.model.js');
 
+const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
+
 // Get all-time statistics
 router.get('/api/stats/alltime', async (req, res) => {
 	try {
 		const stats = await RequestStats.findOne({}).lean();
-		if (!stats) {
-			return res.json({ success: true, data: { total: 0, blocklists: 0, categories: {}, responses: {}, serverTime: new Date().toISOString() } });
-		}
+		if (!stats) return res.json({ success: true, data: { total: 0, blocklists: 0, categories: {}, responses: {}, serverTime: new Date().toISOString() } });
 
 		res.json({
 			success: true,
@@ -34,19 +34,19 @@ router.get('/api/stats/minute', async (req, res) => {
 	try {
 		const { from, to, interval = 1 } = req.query;
 		if (!from) return res.status(400).json({ success: false, status: 400, message: 'Missing "from" query parameter (YYYY-MM-DD)' });
+		if (!DATE_REGEX.test(from) || (to && !DATE_REGEX.test(to))) return res.status(400).json({ success: false, status: 400, message: 'Invalid date format. Use YYYY-MM-DD' });
 
 		const fromDate = new Date(from);
 		const toDate = to ? new Date(to) : fromDate;
+		if (isNaN(fromDate.getTime()) || isNaN(toDate.getTime())) return res.status(400).json({ success: false, status: 400, message: 'Invalid date' });
+		if (toDate < fromDate) return res.status(400).json({ success: false, status: 400, message: '"to" date cannot be before "from" date' });
+
 		const daysDiff = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
 		const parsedInterval = parseInt(interval) || 1;
 
 		const minInterval = daysDiff > 7 ? 60 : 1;
 		if (parsedInterval < minInterval) {
-			return res.status(400).json({
-				success: false,
-				status: 400,
-				message: `For ${daysDiff} days range, minimum interval is ${minInterval >= 60 ? (minInterval / 60) + 'h' : minInterval + 'm'}`,
-			});
+			return res.status(400).json({ success: false, status: 400, message: `For ${daysDiff} days range, minimum interval is ${minInterval >= 60 ? (minInterval / 60) + 'h' : minInterval + 'm'}` });
 		}
 
 		const maxLimit = daysDiff > 90 ? 14400 : daysDiff > 30 ? 43200 : 100000;
@@ -61,12 +61,7 @@ router.get('/api/stats/minute', async (req, res) => {
 			.limit(maxLimit)
 			.lean();
 
-		res.json({
-			success: true,
-			count: stats.length,
-			data: stats,
-			serverTime: new Date().toISOString(),
-		});
+		res.json({ success: true, count: stats.length, data: stats, serverTime: new Date().toISOString() });
 	} catch (err) {
 		console.error('Error fetching minute stats:', err);
 		res.status(500).json({ success: false, status: 500, message: 'Internal server error' });
