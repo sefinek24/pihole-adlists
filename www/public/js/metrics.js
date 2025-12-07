@@ -270,9 +270,7 @@ const calculateSuccessRate = (responses, total) => {
 
 const getMinInterval = days => {
 	const effectiveDays = days === 'max' ? dataAvailableDays : days;
-	if (effectiveDays > 90) return 60;
-	if (effectiveDays > 30) return 15;
-	if (effectiveDays > 14) return 10;
+	if (effectiveDays > 7) return 60;
 	return 1;
 };
 
@@ -378,15 +376,18 @@ const fetchMetrics = async (from, to) => {
 	try {
 		showLoading();
 
-		const response = await fetch(`/api/stats/minute?from=${from}&to=${to}&limit=10000`);
-		if (!response.ok) throw new Error('Failed to fetch metrics');
+		const response = await fetch(`/api/stats/minute?from=${from}&to=${to}&interval=${currentInterval}`);
+		if (!response.ok) {
+			const errorData = await response.json().catch(() => ({}));
+			throw new Error(errorData.message || 'Failed to fetch metrics');
+		}
 
 		const data = await response.json();
 		updateServerTimeOffset(data.serverTime);
 		return data.data || [];
 	} catch (err) {
 		console.error('Error fetching metrics:', err);
-		alert('Failed to load metrics. Please try again.');
+		alert(err.message || 'Failed to load metrics. Please try again.');
 		return [];
 	} finally {
 		hideLoading();

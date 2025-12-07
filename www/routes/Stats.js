@@ -29,18 +29,27 @@ router.get('/api/stats/alltime', async (req, res) => {
 });
 
 // Get minute stats for a specific date range
-// Example: GET /api/stats/minute?from=2024-11-26&to=2024-11-27
+// Example: GET /api/stats/minute?from=2024-11-26&to=2024-11-27&interval=10
 router.get('/api/stats/minute', async (req, res) => {
 	try {
-		const { from, to, limit = 1440 } = req.query;
+		const { from, to, interval = 1 } = req.query;
 		if (!from) return res.status(400).json({ success: false, status: 400, message: 'Missing "from" query parameter (YYYY-MM-DD)' });
 
 		const fromDate = new Date(from);
 		const toDate = to ? new Date(to) : fromDate;
 		const daysDiff = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
+		const parsedInterval = parseInt(interval) || 1;
+
+		const minInterval = daysDiff > 7 ? 60 : 1;
+		if (parsedInterval < minInterval) {
+			return res.status(400).json({
+				success: false,
+				status: 400,
+				message: `For ${daysDiff} days range, minimum interval is ${minInterval >= 60 ? (minInterval / 60) + 'h' : minInterval + 'm'}`,
+			});
+		}
 
 		const maxLimit = daysDiff > 90 ? 14400 : daysDiff > 30 ? 43200 : 100000;
-		const finalLimit = Math.min(parseInt(limit), maxLimit);
 
 		const query = { date: from };
 		if (to && to !== from) query.date = { $gte: from, $lte: to };
@@ -49,7 +58,7 @@ router.get('/api/stats/minute', async (req, res) => {
 			.find(query)
 			.select('-_id')
 			.sort({ timestamp: 1 })
-			.limit(finalLimit)
+			.limit(maxLimit)
 			.lean();
 
 		res.json({
