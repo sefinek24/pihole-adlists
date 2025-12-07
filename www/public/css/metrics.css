@@ -336,8 +336,8 @@ body {
     transition:all .3s cubic-bezier(0.4,0,0.2,1)
 }
 
-.btn-quick:hover:not(:disabled),
-.btn-interval:hover:not(:disabled) {
+.btn-quick:hover:not(:disabled):not(.active),
+.btn-interval:hover:not(:disabled):not(.active) {
     background:#ffffff1a;
     border-color:#00a8fc99;
     box-shadow:0 0 12px #0006;
@@ -354,8 +354,7 @@ body {
 .btn-interval.active {
     background:linear-gradient(135deg,#00a8fc4d 0%,#00a8fc80 100%);
     border-color:#00a8fccc;
-    box-shadow:0 0 12px #0006;
-    transform:translateY(-2px)
+    box-shadow:0 0 12px #0006
 }
 
 .interval-controls {
