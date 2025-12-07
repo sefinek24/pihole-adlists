@@ -26,7 +26,7 @@ const formatFileSize = bytes => {
 };
 
 const getFileIcon = (fileName, isDirectory) =>
-	isDirectory ? 'open-folder.png'
+	isDirectory ? 'folder.png'
 		: TEXT_FILE_EXTENSIONS.has(path.extname(fileName).toLowerCase()) ? 'word.png'
 			: 'unknown-file.png';
 

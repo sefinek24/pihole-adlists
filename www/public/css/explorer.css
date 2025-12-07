@@ -41,8 +41,8 @@ body {
     flex-shrink:0;
     gap:1rem;
     justify-content:space-between;
-    min-height:56px;
-    padding:.75rem 1.5rem
+    min-height:60px;
+    padding:0 1.5rem
 }
 
 .explorer__title {
@@ -55,29 +55,26 @@ body {
     font-weight:600;
     gap:.75rem;
     letter-spacing:.5px;
-    line-height:1.5;
     margin:0;
     min-width:0;
     padding:0
 }
 
 .explorer__icon {
+    display:inline-flex;
     align-items:center;
-    display:flex;
+    justify-content:center;
     filter:drop-shadow(0 0 8px #58a6ff80);
     flex-shrink:0;
-    font-size:1.5rem;
-    height:1.5rem;
-    justify-content:center;
-    line-height:1;
-    width:1.5rem
+    font-size:1.3rem;
+    width:1.5rem;
+    height:1.5rem
 }
 
 .explorer__path {
     align-items:center;
     display:flex;
     font-size:1.1rem;
-    line-height:1.5;
     word-break:break-all
 }
 
