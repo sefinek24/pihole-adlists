@@ -1207,7 +1207,7 @@ const initializeMetrics = () => {
 	setInterval(updateClocks, 1000);
 
 	loadAllTimeStats().then(() => {
-		loadQuickData(savedDays);
+		void loadQuickData(savedDays);
 	});
 };
 
