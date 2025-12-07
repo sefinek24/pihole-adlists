@@ -24,15 +24,15 @@ const categories = [
     { id: 'rpz', label: 'RPZ format', ariaLabel: 'RPZ format' }
 ]; %>
 
-<div class="hero" role="banner">
+<header class="hero">
     <div class="hero__content">
-        <header class="hero__header">
+        <div class="hero__header">
             <h1 class="hero__title">Sefinek Blocklists - v<%= version %></h1>
             <p class="hero__description">
                 Discover the best blocklists for your DNS server or any other blocking tool. Your first and last stop for reliable lists with minimal false positives.<br>
                 Enjoy a safer internet experience by effectively blocking unwanted content or other websites of your choice! Scroll down to learn more about this.
             </p>
-        </header>
+        </div>
 
         <div class="hero__actions">
             <a href="https://sefinek.net/blocklist-generator?referrer=blocklist.sefinek.net" class="hero__button" rel="noopener">Blocklist generator</a>
@@ -59,9 +59,9 @@ const categories = [
             <img src="https://cdn.sefinek.net/images/stormserverhosting/logo.png" alt="Storm Server Hosting logo" class="hero__sponsor-logo" width="45" height="45" loading="lazy">
         </p>
     </aside>
-</div>
+</header>
 
-<main class="main" role="main">
+<main class="main">
     <section class="info" id="more-info" aria-labelledby="info-heading">
         <div class="info__container">
             <h2 class="info__heading" id="info-heading">Information</h2>
