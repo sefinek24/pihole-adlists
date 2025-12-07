@@ -5,9 +5,8 @@ const BOT_REGEX = /netcraftsurveyagent|domainsproject\.org|f(?:reepublicapis|ace
 
 const getMinuteKey = () => {
 	const now = new Date();
-	const date = now.toISOString().slice(0, 10); // YYYY-MM-DD
-	const time = now.toISOString().slice(11, 16); // HH:mm
-	return `stats:minute:${date}:${time}`;
+	const iso = now.toISOString();
+	return `stats:minute:${iso.slice(0, 10)}:${iso.slice(11, 13)}:${iso.slice(14, 16)}`;
 };
 
 const updateStats = async (req, res) => {
