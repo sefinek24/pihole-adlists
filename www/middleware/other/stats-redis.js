@@ -1,4 +1,4 @@
-const RedisClient = require('../../database/redis.js');
+const RedisClient = require('../../services/redis.js');
 const parseCategoryFromLink = require('../../utils/parseCategoryFromLink.js');
 
 const BOT_REGEX = /netcraftsurveyagent|domainsproject\.org|f(?:reepublicapis|acebook)|screaming frog|i(?:a_archiv|ndex)er|s(?:istrix|crapy|lurp)|scraper|(?:s(?:cann|pid)|fetch)er|lychee\/|crawl|yahoo|jest\/|bot/i;

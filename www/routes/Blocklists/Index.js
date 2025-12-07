@@ -15,6 +15,7 @@ const CACHE_EXPIRATION_TIME = 5 * 60 * 60 * 1000;
 
 const SIZE_UNITS = ['B', 'KB', 'MB', 'GB'];
 const TEXT_FILE_EXTENSIONS = new Set(['.txt', '.conf', '.log', '.md']);
+const SENDFILE_EXTENSIONS = new Set(['.txt', '.conf', '.log']);
 
 const CANONICAL_REGEX = /^\[\/\/\]:\s*#\s*\(Canonical:\s*(.*)\)/mi;
 
@@ -29,16 +30,7 @@ const getFileIcon = (fileName, isDirectory) =>
 		: TEXT_FILE_EXTENSIONS.has(path.extname(fileName).toLowerCase()) ? 'word.png'
 			: 'unknown-file.png';
 
-const getDirectorySize = async dirPath => {
-	const entries = await fs.readdir(dirPath, { withFileTypes: true });
-	const sizes = await Promise.all(entries.map(async entry => {
-		const fullPath = path.join(dirPath, entry.name);
-		return entry.isDirectory() ? await getDirectorySize(fullPath) : (await fs.stat(fullPath)).size;
-	}));
-	return sizes.reduce((sum, size) => sum + size, 0);
-};
-
-const getCachedFiles = async (dirPath, validExtensions = [], sortByDate = false) => {
+const getCachedFiles = async (dirPath, validExtensions, sortByDate = false) => {
 	const now = Date.now();
 	const cacheKey = `${dirPath}:${sortByDate}`;
 	const cached = FILE_CACHE.get(cacheKey);
@@ -52,7 +44,7 @@ const getCachedFiles = async (dirPath, validExtensions = [], sortByDate = false)
 				if (!name || name.startsWith('.')) return false;
 				if (!entry.isDirectory()) {
 					const ext = path.extname(name).toLowerCase();
-					if (!ext || !validExtensions.includes(ext)) return false;
+					if (!ext || !validExtensions.has(ext)) return false;
 				}
 				return true;
 			})
@@ -61,9 +53,8 @@ const getCachedFiles = async (dirPath, validExtensions = [], sortByDate = false)
 				const fullPath = path.join(dirPath, name);
 				const stats = await fs.stat(fullPath);
 				const isDir = entry.isDirectory();
-				const size = isDir ? await getDirectorySize(fullPath) : stats.size;
 
-				return { name, isDirectory: isDir, lastModified: stats.mtime.getTime(), icon: getFileIcon(name, isDir), formattedSize: formatFileSize(size) };
+				return { name, isDirectory: isDir, lastModified: stats.mtime.getTime(), icon: getFileIcon(name, isDir), formattedSize: isDir ? '-' : formatFileSize(stats.size) };
 			})
 	);
 
@@ -96,14 +87,12 @@ const handleRequest = async (req, res, baseDir, basePath, validExtensions, templ
 		const stats = cached.stats;
 		if (stats.isFile()) {
 			const ext = path.extname(filePath);
-			if (['.txt', '.conf'].includes(ext)) return res.sendFile(filePath);
+			if (SENDFILE_EXTENSIONS.has(ext)) return res.sendFile(filePath);
 
 			if (ext === '.md') {
 				const markdown = await fs.readFile(filePath, 'utf-8');
-				const safeExtract = regex => extractMatch(regex, markdown) || '';
-
 				const html = Marked.parse(markdown);
-				return res.render('markdown-viewer.ejs', { html, title: safeExtract(/#\s(.+)/), canonical: markdown.match(CANONICAL_REGEX)?.[1] });
+				return res.render('markdown-viewer.ejs', { html, title: extractMatch(/#\s(.+)/, markdown) || '', canonical: markdown.match(CANONICAL_REGEX)?.[1] });
 			}
 
 			return res.sendFile(filePath);
@@ -127,8 +116,12 @@ const handleRequest = async (req, res, baseDir, basePath, validExtensions, templ
 };
 
 // Routes
-router.get(/^\/generated\/v1(.*)$/, (req, res) => handleRequest(req, res, PATHS.GENERATED, '/generated/v1', ['.txt', '.conf'], 'explorer/file.ejs'));
-router.get(/^\/logs\/v1(.*)$/, (req, res) => handleRequest(req, res, PATHS.LOGS, '/logs/v1', ['.log'], 'explorer/log.ejs', true));
-router.get(/^\/docs(.*)$/, (req, res) => handleRequest(req, res, PATHS.DOCS, '/docs', ['.md'], 'explorer/markdown.ejs'));
+const EXT_GENERATED = new Set(['.txt', '.conf']);
+const EXT_LOGS = new Set(['.log']);
+const EXT_DOCS = new Set(['.md']);
+
+router.get(/^\/generated\/v1(.*)$/, (req, res) => handleRequest(req, res, PATHS.GENERATED, '/generated/v1', EXT_GENERATED, 'explorer/file.ejs'));
+router.get(/^\/logs\/v1(.*)$/, (req, res) => handleRequest(req, res, PATHS.LOGS, '/logs/v1', EXT_LOGS, 'explorer/log.ejs', true));
+router.get(/^\/docs(.*)$/, (req, res) => handleRequest(req, res, PATHS.DOCS, '/docs', EXT_DOCS, 'explorer/markdown.ejs'));
 
 module.exports = router;

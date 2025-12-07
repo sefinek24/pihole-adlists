@@ -18,7 +18,7 @@ app.set('views', './www/views');
 
 // Middleware configuration
 app.use(helmet({ contentSecurityPolicy: false, crossOriginResourcePolicy: false }));
-app.use(express.static('./www/public', { maxAge: process.env.NODE_ENV === 'production' ? '1d' : 0, etag: true, lastModified: true }));
+app.use(express.static('./www/public'));
 app.use(morgan);
 app.use(limiter);
 app.use(timeout());

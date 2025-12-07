@@ -1,4 +1,4 @@
-const RedisClient = require('../database/redis.js');
+const RedisClient = require('./redis.js');
 const RequestStats = require('../database/models/request-stats.model.js');
 const MinuteStats = require('../database/models/minute-stats.model.js');
 
@@ -208,7 +208,7 @@ const startAggregationJob = () => {
 	if (isDev) console.log(`Job started, running every ${AGGREGATION_INTERVAL / 1000 / 60} minutes`);
 
 	// Run immediately on start
-	aggregateRedisToMongo();
+	void aggregateRedisToMongo();
 
 	// Then run every N minutes
 	setInterval(aggregateRedisToMongo, AGGREGATION_INTERVAL);

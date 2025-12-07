@@ -3,7 +3,7 @@ process.loadEnvFile();
 const cluster = require('node:cluster');
 const numCPUs = require('node:os').availableParallelism();
 const connectToDatabase = require('./database/mongoose.js');
-const { startAggregationJob } = require('./jobs/aggregate-stats.js');
+const { startAggregationJob } = require('./services/aggregateStats.js');
 
 const { NODE_ENV, DOMAIN, PORT, MONGODB_URL } = process.env;
 if (!NODE_ENV || !DOMAIN || !PORT) throw new Error('Missing basic environment variables');
@@ -13,7 +13,7 @@ if (!MONGODB_URL) throw new Error('Missing MongoDB connection URL');
 	// Development mode - single process
 	if (NODE_ENV === 'development') {
 		await connectToDatabase();
-		require('./database/redis.js');
+		require('./services/redis.js');
 		startAggregationJob();
 		require('./server.js');
 		require('./websocket.js');
@@ -23,7 +23,7 @@ if (!MONGODB_URL) throw new Error('Missing MongoDB connection URL');
 	// Production mode - cluster with primary + workers
 	if (cluster.isPrimary) {
 		await connectToDatabase();
-		require('./database/redis.js');
+		require('./services/redis.js');
 		require('./websocket.js');
 
 		// Start Redis → MongoDB aggregation job (runs every 5 minutes)
@@ -44,7 +44,7 @@ if (!MONGODB_URL) throw new Error('Missing MongoDB connection URL');
 	} else {
 		// Worker process - handles HTTP requests
 		await connectToDatabase();
-		require('./database/redis.js');
+		require('./services/redis.js');
 		require('./server.js');
 		console.log(`Worker ${process.pid} started`);
 	}
