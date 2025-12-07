@@ -38,9 +38,10 @@ const getDirectorySize = async dirPath => {
 	return sizes.reduce((sum, size) => sum + size, 0);
 };
 
-const getCachedFiles = async (dirPath, validExtensions = []) => {
+const getCachedFiles = async (dirPath, validExtensions = [], sortByDate = false) => {
 	const now = Date.now();
-	const cached = FILE_CACHE.get(dirPath);
+	const cacheKey = `${dirPath}:${sortByDate}`;
+	const cached = FILE_CACHE.get(cacheKey);
 	if (cached && now - cached.timestamp < CACHE_EXPIRATION_TIME) return cached.data;
 
 	const entries = await fs.readdir(dirPath, { withFileTypes: true });
@@ -66,14 +67,19 @@ const getCachedFiles = async (dirPath, validExtensions = []) => {
 			})
 	);
 
-	fileList.sort((a, b) => a.isDirectory === b.isDirectory ? a.name.localeCompare(b.name) : a.isDirectory ? -1 : 1);
-	FILE_CACHE.set(dirPath, { data: fileList, timestamp: now });
+	if (sortByDate) {
+		fileList.sort((a, b) => a.isDirectory === b.isDirectory ? b.lastModified - a.lastModified : a.isDirectory ? -1 : 1);
+	} else {
+		fileList.sort((a, b) => a.isDirectory === b.isDirectory ? a.name.localeCompare(b.name) : a.isDirectory ? -1 : 1);
+	}
+
+	FILE_CACHE.set(cacheKey, { data: fileList, timestamp: now });
 	return fileList;
 };
 
 const extractMatch = (regex, content) => regex.exec(content)?.[1] ?? null;
 
-const handleRequest = async (req, res, baseDir, basePath, validExtensions, template) => {
+const handleRequest = async (req, res, baseDir, basePath, validExtensions, template, sortByDate = false) => {
 	const relative = (req.params[0] || '').replace(/\/$/, '');
 	const filePath = path.join(baseDir, relative);
 	const isAjax = req.headers['x-requested-with'] === 'XMLHttpRequest';
@@ -104,7 +110,7 @@ const handleRequest = async (req, res, baseDir, basePath, validExtensions, templ
 		}
 
 		if (stats.isDirectory()) {
-			const files = await getCachedFiles(filePath, validExtensions);
+			const files = await getCachedFiles(filePath, validExtensions, sortByDate);
 			const currentPath = path.join(basePath, relative).replace(/\\/g, '/');
 			if (isAjax) return res.json({ success: true, files, currentPath });
 
@@ -122,7 +128,7 @@ const handleRequest = async (req, res, baseDir, basePath, validExtensions, templ
 
 // Routes
 router.get(/^\/generated\/v1(.*)$/, (req, res) => handleRequest(req, res, PATHS.GENERATED, '/generated/v1', ['.txt', '.conf'], 'explorer/file.ejs'));
-router.get(/^\/logs\/v1(.*)$/, (req, res) => handleRequest(req, res, PATHS.LOGS, '/logs/v1', ['.log'], 'explorer/log.ejs'));
+router.get(/^\/logs\/v1(.*)$/, (req, res) => handleRequest(req, res, PATHS.LOGS, '/logs/v1', ['.log'], 'explorer/log.ejs', true));
 router.get(/^\/docs(.*)$/, (req, res) => handleRequest(req, res, PATHS.DOCS, '/docs', ['.md'], 'explorer/markdown.ejs'));
 
 module.exports = router;

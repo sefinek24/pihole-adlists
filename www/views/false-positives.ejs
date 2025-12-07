@@ -9,13 +9,13 @@
     page: 'false-positives'
 }) %>
 
-<main class="main" role="main">
+<main class="main">
     <header class="page-header">
         <h1 class="page-header__title">Report a false positive</h1>
         <p class="page-header__subtitle">Choose your preferred reporting method</p>
     </header>
 
-    <div class="report-methods" role="navigation" aria-label="Reporting methods">
+    <nav class="report-methods" aria-label="Reporting methods">
         <a href="mailto:contact@sefinek.net?subject=False%20positive%20report%20-%20DOMAIN%20HERE&body=Hi%2C%0AI'd%20like%20to%20report%20a%20false%20positive%20on%20the%20Sefinek%20Blocklist%20Collection.%0A%0ADomain%20or%20URL%3A%0A%0AReason%3A%0A%0AScreenshots%20(optional)%3A" class="report-card">
             <div class="report-card__icon">✉️</div>
             <div class="report-card__content">
@@ -47,7 +47,7 @@
                 <p class="report-card__description">Join our community and report there</p>
             </div>
         </a>
-    </div>
+    </nav>
 </main>
 
 <%- include('./includes/footer.ejs') %>

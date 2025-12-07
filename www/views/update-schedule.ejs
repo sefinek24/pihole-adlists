@@ -9,7 +9,7 @@
     page: 'update-schedule'
 }) %>
 
-<main class="main" role="main">
+<main class="main">
     <section class="schedule-info" aria-labelledby="info-heading">
         <h1 class="schedule-info__heading" id="info-heading">Update schedule</h1>
         <p class="schedule-info__text">
@@ -18,9 +18,9 @@
         </p>
     </section>
 
-    <article class="schedule-card" aria-labelledby="schedule-card-heading">
+    <section class="schedule-card" aria-labelledby="schedule-card-heading">
+        <h2 class="schedule-card__heading sr-only" id="schedule-card-heading">Timezone and schedule information</h2>
         <div class="schedule-card__content">
-            <h3 class="schedule-card__heading sr-only" id="schedule-card-heading">Timezone and schedule information</h3>
 
             <div class="schedule-card__item">
                 <strong class="schedule-card__label">Your timezone:</strong>
@@ -37,9 +37,9 @@
                 <span class="schedule-card__value" id="github" aria-live="polite">Loading...</span>
             </div>
         </div>
-    </article>
+    </section>
 
-    <aside class="schedule-note" role="note" aria-label="Important information">
+    <aside class="schedule-note" aria-label="Important information">
         <p class="schedule-note__text">
             - Lists should not be downloaded too frequently, as this may result in a permanent ban on the IP address.
         </p>
