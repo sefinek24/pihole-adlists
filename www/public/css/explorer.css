@@ -19,8 +19,8 @@ body {
 }
 
 .explorer {
-    backdrop-filter:blur(16px) saturate(150%);
-    background:#00000040;
+    backdrop-filter:blur(11px);
+    background:rgba(0,0,0,.12);
     border:1px solid #FFFFFF0D;
     border-radius:12px;
     box-shadow:0 4px 24px #0003;
@@ -34,8 +34,8 @@ body {
 
 .explorer__header {
     align-items:center;
-    backdrop-filter:blur(16px) saturate(150%);
-    background:#00000040;
+    backdrop-filter:blur(11px);
+    background:rgba(0, 0, 0, 0.3);
     border-bottom:1px solid #FFFFFF0D;
     display:flex;
     flex-shrink:0;
@@ -76,16 +76,17 @@ body {
 .explorer__path {
     align-items:center;
     display:flex;
+    font-size:1.1rem;
     line-height:1.5;
     word-break:break-all
 }
 
 .explorer__action {
     align-items:center;
-    background:#58a6ff1a;
-    border:1px solid #FFFFFF0D;
+    background:rgba(88, 166, 255, 0.1);
+    border:1px solid rgba(88, 166, 255, 0.2);
     border-radius:8px;
-    color:var(--color-text,#fff);
+    color:#ffffffd9;
     cursor:pointer;
     display:inline-flex;
     flex-shrink:0;
@@ -102,7 +103,8 @@ body {
 }
 
 .explorer__action:hover {
-    background:#58a6ff33;
+    background:rgba(88, 166, 255, 0.2);
+    color:#fff;
     transform:translateY(-1px)
 }
 
@@ -116,7 +118,8 @@ body {
 }
 
 .explorer__content {
-    background:#00000026;
+    backdrop-filter:blur(11px);
+    background:rgba(0, 0, 0, 0.1);
     flex:1;
     min-height:0;
     overflow-x:auto;
@@ -131,8 +134,8 @@ body {
 }
 
 .explorer__thead {
-    backdrop-filter:blur(16px) saturate(150%);
-    background:#0000004d;
+    backdrop-filter:blur(11px);
+    background:rgba(0, 0, 0, 0.2);
     border-bottom:1px solid #FFFFFF0D;
     box-shadow:0 2px 8px #0003;
     position:sticky;
@@ -141,10 +144,10 @@ body {
 }
 
 .explorer__th {
-    color: #aad5ff;
-    font-size:.9rem;
+    color:#79c0ff;
+    font-size:.85rem;
     font-weight:600;
-    letter-spacing:1px;
+    letter-spacing:.5px;
     padding:1rem 1.5rem;
     text-align:left;
     text-transform:uppercase
@@ -169,11 +172,11 @@ body {
 }
 
 .explorer__row:hover {
-    background:#58a6ff1a
+    background:rgba(88, 166, 255, 0.08)
 }
 
 .explorer__row:focus-within {
-    background:#58a6ff1f
+    background:rgba(88, 166, 255, 0.12)
 }
 
 .explorer__cell {
@@ -181,11 +184,12 @@ body {
 }
 
 .explorer__cell--name {
+    padding:0;
     user-select:none
 }
 
 .explorer__cell--date {
-    color:#ffffffa6;
+    color:rgba(255, 255, 255, 0.8);
     font-family:var(--font-mono, 'Cascadia Mono'),monospace;
     font-size:.875rem;
     user-select:none
@@ -205,8 +209,9 @@ body {
     color:inherit;
     display:flex;
     gap:.70rem;
+    padding:.625rem 1.5rem;
     text-decoration:none;
-    transition:gap .2s cubic-bezier(0.4,0,0.2,1)
+    width:100%
 }
 
 .explorer__link:hover {
@@ -296,6 +301,10 @@ body {
         padding:.75rem 1.25rem
     }
 
+    .explorer__link {
+        padding:.75rem 1.25rem
+    }
+
     .explorer__table {
         font-size:14px
     }
@@ -334,6 +343,10 @@ body {
     }
 
     .explorer__cell {
+        padding:.625rem 1rem
+    }
+
+    .explorer__link {
         padding:.625rem 1rem
     }
 
@@ -383,6 +396,10 @@ body {
     }
 
     .explorer__cell {
+        padding:.5rem .75rem
+    }
+
+    .explorer__link {
         padding:.5rem .75rem
     }
 
