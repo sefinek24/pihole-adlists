@@ -3,6 +3,15 @@ const MinuteStats = require('../database/models/minute-stats.model.js');
 const RequestStats = require('../database/models/request-stats.model.js');
 
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
+const MAX_RANGE_DAYS = 365;
+
+const parseDate = dateStr => {
+	if (!DATE_REGEX.test(dateStr)) return null;
+	const [year, month, day] = dateStr.split('-').map(Number);
+	const date = new Date(year, month - 1, day);
+	if (date.getFullYear() !== year || date.getMonth() !== month - 1 || date.getDate() !== day) return null;
+	return date;
+};
 
 // Get all-time statistics
 router.get('/api/stats/alltime', async (req, res) => {
@@ -34,14 +43,18 @@ router.get('/api/stats/minute', async (req, res) => {
 	try {
 		const { from, to, interval = 1 } = req.query;
 		if (!from) return res.status(400).json({ success: false, status: 400, message: 'Missing "from" query parameter (YYYY-MM-DD)' });
-		if (!DATE_REGEX.test(from) || (to && !DATE_REGEX.test(to))) return res.status(400).json({ success: false, status: 400, message: 'Invalid date format. Use YYYY-MM-DD' });
 
-		const fromDate = new Date(from);
-		const toDate = to ? new Date(to) : fromDate;
-		if (isNaN(fromDate.getTime()) || isNaN(toDate.getTime())) return res.status(400).json({ success: false, status: 400, message: 'Invalid date' });
+		const fromDate = parseDate(from);
+		const toDate = to ? parseDate(to) : fromDate;
+		if (!fromDate || !toDate) return res.status(400).json({ success: false, status: 400, message: 'Invalid date format. Use YYYY-MM-DD' });
+		const today = new Date();
+		today.setHours(23, 59, 59, 999);
+
+		if (toDate > today) return res.status(400).json({ success: false, status: 400, message: 'Date cannot be in the future' });
 		if (toDate < fromDate) return res.status(400).json({ success: false, status: 400, message: '"to" date cannot be before "from" date' });
 
 		const daysDiff = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
+		if (daysDiff > MAX_RANGE_DAYS) return res.status(400).json({ success: false, status: 400, message: `Date range cannot exceed ${MAX_RANGE_DAYS} days` });
 		const parsedInterval = parseInt(interval) || 1;
 
 		const minInterval = daysDiff > 7 ? 60 : 1;
