@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025120801 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025121001 43200 3600 259200 300
   NS  localhost.
 0.myikas.com CNAME .
 *.0.myikas.com CNAME .
@@ -7995,6 +7995,8 @@ ab-machine.forbes.com CNAME .
 *.ab-machine.forbes.com CNAME .
 ab.blogs.es CNAME .
 *.ab.blogs.es CNAME .
+ab.dns-finder.com CNAME .
+*.ab.dns-finder.com CNAME .
 ab.fanatical.com CNAME .
 *.ab.fanatical.com CNAME .
 ab.oney.es CNAME .
@@ -20615,8 +20617,6 @@ deeplink.wbnc.99array.com CNAME .
 *.deeplink.wbnc.99array.com CNAME .
 deeplink.winespectator.com CNAME .
 *.deeplink.winespectator.com CNAME .
-deeplink.xeropan.com CNAME .
-*.deeplink.xeropan.com CNAME .
 deeplinkdev.upoker.net CNAME .
 *.deeplinkdev.upoker.net CNAME .
 deeplinks.amex.dynamify.com CNAME .
@@ -47207,6 +47207,8 @@ p.classroombookings.com CNAME .
 *.p.classroombookings.com CNAME .
 p.codio.com CNAME .
 *.p.codio.com CNAME .
+p.controld.com CNAME .
+*.p.controld.com CNAME .
 p.cquotient.com CNAME .
 *.p.cquotient.com CNAME .
 p.data.cctv.com CNAME .
