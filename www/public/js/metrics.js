@@ -1,4 +1,3 @@
-// TODO
 import { formatDateShort, formatToYYYYMMDD, dateShortOptions } from './date.js';
 
 const charts = {};
@@ -1078,6 +1077,8 @@ const loadQuickData = async days => {
 	if (days === 'max' && dataStartDate) {
 		from = new Date(dataStartDate);
 	} else if (days === 'max') {
+		hideLoading();
+		console.warn('Cannot load MAX range: dataStartDate not available');
 		return;
 	} else {
 		from = new Date(to);
@@ -1209,9 +1210,13 @@ const initializeMetrics = () => {
 	updateClocks();
 	setInterval(updateClocks, 1000);
 
-	loadAllTimeStats().then(() => {
-		void loadQuickData(savedDays);
-	});
+	loadAllTimeStats()
+		.then(() => loadQuickData(savedDays))
+		.catch(err => {
+			console.error('Failed to initialize metrics:', err);
+			hideLoading();
+			alert('Failed to load metrics. Please refresh the page.');
+		});
 };
 
 initializeMetrics();
