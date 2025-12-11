@@ -81,6 +81,12 @@ main.main {
 	transition:filter .25s cubic-bezier(0.4,0,0.2,1)
 }
 
+.report-card__icon img {
+	display:block;
+	height:40px;
+	width:40px
+}
+
 .report-card:hover .report-card__icon {
 	filter:drop-shadow(0 0 12px #58a6ff80)
 }

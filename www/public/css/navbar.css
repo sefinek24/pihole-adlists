@@ -34,21 +34,9 @@ nav {
 }
 
 .brand-icon {
-	animation:pulse 3s ease-in-out infinite;
 	filter:drop-shadow(0 0 8px #0b79bf99);
 	height:32px;
-	width:32px;
-	will-change:transform
-}
-
-@keyframes pulse {
-	0%,100% {
-		transform:scale(1)
-	}
-
-	50% {
-		transform:scale(1.08)
-	}
+	width:32px
 }
 
 .brand-text {

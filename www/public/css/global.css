@@ -44,23 +44,23 @@ body {
 
 * {
     scrollbar-color:#58a6ff66 #0000004d;
-    scrollbar-width:thin
+    scrollbar-width:auto
 }
 
 ::-webkit-scrollbar {
-    height:12px;
-    width:12px
+    height:14px;
+    width:14px
 }
 
 ::-webkit-scrollbar-track {
     background:#0000004d;
-    border-radius:6px
+    border-radius:8px
 }
 
 ::-webkit-scrollbar-thumb {
     background:#58a6ff66;
     border:2px solid #0000004d;
-    border-radius:6px;
+    border-radius:7px;
     transition:background .25s ease
 }
 
