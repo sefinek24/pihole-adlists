@@ -214,6 +214,42 @@ body {
 	transform:scale(1.1)
 }
 
+.hero__version {
+	align-items:center;
+	backdrop-filter:blur(16px) saturate(150%);
+	background:linear-gradient(135deg,#18344e,#02182f);
+	border:1px solid rgba(88, 166, 255, 0.2);
+	border-radius:8px;
+	bottom:1rem;
+	box-shadow:0 0 16px rgba(24, 52, 78, 0.4), 0 4px 24px rgba(0, 0, 0, 0.3);
+	display:flex;
+	left:1rem;
+	padding:.4rem .95rem;
+	pointer-events:auto;
+	position:absolute;
+	transition:all .3s cubic-bezier(0.4, 0, 0.2, 1);
+	z-index:1
+}
+
+.hero__version:hover {
+	background:linear-gradient(135deg,#1e4160,#03213d);
+	border-color:rgba(88, 166, 255, 0.4);
+	box-shadow:0 0 20px rgba(88, 166, 255, 0.3), 0 6px 32px rgba(0, 0, 0, 0.4);
+	transform:translateY(-2px)
+}
+
+.hero__version-text {
+	background:linear-gradient(135deg,#79c0ff,#a5d6ff);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	background-clip:text;
+	font-family:'Cascadia Mono',monospace;
+	font-size:.95rem;
+	font-weight:700;
+	letter-spacing:.3px;
+	text-shadow:0 0 12px rgba(88, 166, 255, 0.5)
+}
+
 .main {
 	margin:0 auto;
 	max-width:1400px;
@@ -623,6 +659,16 @@ body {
 		width:40px
 	}
 
+	.hero__version {
+		bottom:.7rem;
+		left:.7rem;
+		padding:.4rem 1rem
+	}
+
+	.hero__version-text {
+		font-size:1rem
+	}
+
 	.hero__sponsor {
 		bottom:.7rem;
 		padding:.3rem .8rem;
@@ -771,6 +817,17 @@ body {
 	.hero__social-icon {
 		height:38px;
 		width:38px
+	}
+
+	.hero__version {
+		bottom:3.5rem;
+		left:50%;
+		padding:.4rem 1rem;
+		transform:translateX(-50%)
+	}
+
+	.hero__version-text {
+		font-size:.95rem
 	}
 
 	.hero__sponsor {
@@ -953,6 +1010,15 @@ body {
 
 	.hero__social-link {
 		padding:.5rem
+	}
+
+	.hero__version {
+		bottom:3.2rem;
+		padding:.35rem .9rem
+	}
+
+	.hero__version-text {
+		font-size:.875rem
 	}
 
 	.hero__sponsor {

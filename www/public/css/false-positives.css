@@ -49,32 +49,17 @@ main.main {
 	padding:1.75rem;
 	position:relative;
 	text-decoration:none;
-	transition:transform .25s cubic-bezier(0.4,0,0.2,1),background .25s cubic-bezier(0.4,0,0.2,1),border-color .25s cubic-bezier(0.4,0,0.2,1),box-shadow .25s cubic-bezier(0.4,0,0.2,1);
+	transition:all .5s cubic-bezier(0.25,0.46,0.45,0.94);
 	will-change:transform
 }
 
-.report-card::before {
-	background:linear-gradient(90deg,#58a6ff,#79c0ff);
-	bottom:0;
-	content:'';
-	height:3px;
-	left:0;
-	position:absolute;
-	transition:width .3s cubic-bezier(0.4,0,0.2,1);
-	width:0
-}
-
 .report-card:hover {
-	background:#58a6ff1a;
-	border-color:#58a6ff4d;
-	box-shadow:0 0 0 1px #58A6FF4C, 0 8px 32px #0000004C;
+	background:linear-gradient(135deg,#58a6ff1a,#58a6ff12);
+	border-color:#58a6ff60;
+	box-shadow:0 0 0 1px #58A6FF40, 0 8px 28px #58A6FF26, 0 0 48px #58A6FF12;
 	text-decoration:none;
 	text-shadow:none;
-	transform:translateY(-2px)
-}
-
-.report-card:hover::before {
-	width:100%
+	transform:translateY(-4px) scale(1.01)
 }
 
 .report-card:active {
