@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025121201 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025121301 43200 3600 259200 300
   NS  localhost.
 adx-open-service.youku.com CNAME .
 *.adx-open-service.youku.com CNAME .
@@ -159,6 +159,8 @@ startup.mobile.webvisor.com CNAME .
 *.startup.mobile.webvisor.com CNAME .
 startup-mobile.ap.yandex-net.ru CNAME .
 *.startup-mobile.ap.yandex-net.ru CNAME .
+sonicsads.com CNAME .
+*.sonicsads.com CNAME .
 nextacdn.top CNAME .
 *.nextacdn.top CNAME .
 se.rfvtgbyhn.com CNAME .
@@ -1421,8 +1423,12 @@ iadsdk.apple.com CNAME .
 *.iadsdk.apple.com CNAME .
 infolinks.com CNAME .
 *.infolinks.com CNAME .
-inmobi.com CNAME .
-*.inmobi.com CNAME .
+ads.inmobi.com CNAME .
+*.ads.inmobi.com CNAME .
+config.inmobi.com CNAME .
+*.config.inmobi.com CNAME .
+glance.inmobi.com CNAME .
+*.glance.inmobi.com CNAME .
 inmobi.net CNAME .
 *.inmobi.net CNAME .
 inmobi.cn CNAME .
