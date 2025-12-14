@@ -23,5 +23,6 @@ const MinuteStatsSchema = new Schema({
 
 MinuteStatsSchema.index({ date: 1, time: 1 }, { unique: true });
 MinuteStatsSchema.index({ timestamp: 1 }, { expireAfterSeconds: 90 * 24 * 60 * 60 });
+MinuteStatsSchema.index({ date: 1, timestamp: 1 });
 
 module.exports = model('MinuteStats', MinuteStatsSchema, 'minute-stats');

@@ -11,7 +11,7 @@ const wss = new WebSocket.Server({
 
 const MAX_CLIENTS = 100;
 const BROADCAST_INTERVAL = 2000;
-let cacheTimestamp = 0, cachedStats = null;
+let cacheTimestamp = 0, cachedStats = null, cachedStatsJSON = null;
 const CACHE_TTL = 1000;
 
 const fetchStats = async () => {
@@ -36,6 +36,9 @@ const fetchStats = async () => {
 				updatedAt: db.updatedAt,
 			},
 		};
+
+		// Pre-serialize stats (without uptime as it changes every broadcast)
+		cachedStatsJSON = JSON.stringify(cachedStats);
 		cacheTimestamp = now;
 		return cachedStats;
 	} catch (err) {
@@ -46,16 +49,16 @@ const fetchStats = async () => {
 
 const broadcast = async () => {
 	const stats = await fetchStats();
-	if (!stats) return;
+	if (!stats || !cachedStatsJSON) return;
 
-	const data = JSON.stringify({
-		...stats,
-		uptime: getFullDate(process.uptime()),
-	});
+	// Build message with cached JSON and dynamic uptime
+	const uptime = getFullDate(process.uptime());
+	// Instead of re-serializing everything, inject uptime into cached JSON
+	const message = cachedStatsJSON.slice(0, -1) + `,"uptime":"${uptime}"}`;
 
 	wss.clients.forEach(client => {
 		if (client.readyState === WebSocket.OPEN) {
-			client.send(data);
+			client.send(message);
 		}
 	});
 };

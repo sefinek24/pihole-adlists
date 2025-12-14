@@ -206,13 +206,6 @@ const emptyCategories = {
 	unbound: 0,
 };
 
-const destroyChart = name => {
-	if (charts[name]) {
-		charts[name].destroy();
-		charts[name] = null;
-	}
-};
-
 const aggregateByInterval = (data, intervalMinutes) => {
 	if (intervalMinutes === 1) return data;
 
@@ -278,10 +271,25 @@ const getMinInterval = days => {
 let dateFromInputCached, dateToInputCached;
 let intervalButtonsCached, quickButtonsCached;
 
-const updateDateInputLimits = createdAt => {
-	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
-	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
+// Pre-initialize DOM cache
+const initDOMCache = () => {
+	dateFromInputCached = document.getElementById('date-from');
+	dateToInputCached = document.getElementById('date-to');
+	intervalButtonsCached = document.querySelectorAll('.btn-interval');
+	quickButtonsCached = document.querySelectorAll('.btn-quick');
+	loadingElement = document.getElementById('loading');
+};
 
+// Debounce helper function
+const debounce = (fn, delay) => {
+	let timeoutId;
+	return (...args) => {
+		clearTimeout(timeoutId);
+		timeoutId = setTimeout(() => fn(...args), delay);
+	};
+};
+
+const updateDateInputLimits = createdAt => {
 	const today = new Date();
 	const todayStr = formatToYYYYMMDD(today);
 
@@ -307,7 +315,6 @@ const updateDateInputLimits = createdAt => {
 };
 
 const updateDayButtons = () => {
-	if (!quickButtonsCached) quickButtonsCached = document.querySelectorAll('.btn-quick');
 	quickButtonsCached.forEach(btn => {
 		const daysValue = btn.dataset.days;
 		const requiredDays = daysValue === 'max' ? 0 : parseInt(daysValue);
@@ -362,9 +369,6 @@ const loadAllTimeStats = async () => {
 };
 
 const setDefaultDates = () => {
-	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
-	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
-
 	const today = new Date();
 	const sevenDaysAgo = new Date(today);
 	sevenDaysAgo.setDate(today.getDate() - 7);
@@ -398,16 +402,26 @@ const fetchMetrics = async (from, to) => {
 const aggregateData = data => {
 	let totalRequests = 0;
 	let totalBlocklists = 0;
+	let successCount = 0;
+	let errorCount = 0;
 	const responses = {};
 	const categories = {};
 	const hourlyData = {};
 	const uniqueDates = new Set();
-	const allIntervals = [];
 	let minTimestamp = Infinity;
 	let maxTimestamp = -Infinity;
 
-	data.forEach(item => {
-		totalRequests += item.total || 0;
+	// Track top 3 peaks efficiently
+	const peakTracker = [
+		{ time: '', count: 0 },
+		{ time: '', count: 0 },
+		{ time: '', count: 0 },
+	];
+
+	// Single-pass aggregation
+	for (const item of data) {
+		const itemTotal = item.total || 0;
+		totalRequests += itemTotal;
 		totalBlocklists += item.blocklists || 0;
 		uniqueDates.add(item.date);
 
@@ -415,29 +429,48 @@ const aggregateData = data => {
 		if (timestamp < minTimestamp) minTimestamp = timestamp;
 		if (timestamp > maxTimestamp) maxTimestamp = timestamp;
 
-		allIntervals.push({
-			time: `${item.date} ${item.time}`,
-			count: item.total || 0,
-		});
-
-		for (const [code, count] of Object.entries(item.responses || {})) {
-			responses[code] = (responses[code] || 0) + count;
+		// Track top 3 peaks inline
+		const intervalTime = `${item.date} ${item.time}`;
+		if (itemTotal > peakTracker[2].count) {
+			if (itemTotal > peakTracker[0].count) {
+				peakTracker[2] = peakTracker[1];
+				peakTracker[1] = peakTracker[0];
+				peakTracker[0] = { time: intervalTime, count: itemTotal };
+			} else if (itemTotal > peakTracker[1].count) {
+				peakTracker[2] = peakTracker[1];
+				peakTracker[1] = { time: intervalTime, count: itemTotal };
+			} else {
+				peakTracker[2] = { time: intervalTime, count: itemTotal };
+			}
 		}
 
-		for (const [cat, count] of Object.entries(item.categories || {})) {
-			if (count > 0) categories[cat] = (categories[cat] || 0) + count;
+		// Aggregate responses with inline success/error counting
+		if (item.responses) {
+			for (const [code, count] of Object.entries(item.responses)) {
+				responses[code] = (responses[code] || 0) + count;
+				if (SUCCESS_CODES.includes(code)) {
+					successCount += count;
+				} else if (ERROR_CODES.includes(code)) {
+					errorCount += count;
+				}
+			}
 		}
 
+		// Aggregate categories
+		if (item.categories) {
+			for (const [cat, count] of Object.entries(item.categories)) {
+				if (count > 0) categories[cat] = (categories[cat] || 0) + count;
+			}
+		}
+
+		// Hourly data
 		const hour = item.time.split(':')[0];
-		hourlyData[hour] = (hourlyData[hour] || 0) + (item.total || 0);
-	});
+		hourlyData[hour] = (hourlyData[hour] || 0) + itemTotal;
+	}
 
-	const top3Peaks = allIntervals
-		.sort((a, b) => b.count - a.count)
-		.slice(0, 3);
+	// Filter out empty peaks
+	const top3Peaks = peakTracker.filter(p => p.count > 0);
 
-	const successCount = SUCCESS_CODES.reduce((sum, code) => sum + (responses[code] || 0), 0);
-	const errorCount = ERROR_CODES.reduce((sum, code) => sum + (responses[code] || 0), 0);
 	const successRate = totalRequests > 0 ? ((successCount / totalRequests) * 100).toFixed(2) : '0.00';
 	const errorRate = totalRequests > 0 ? ((errorCount / totalRequests) * 100).toFixed(2) : '0.00';
 
@@ -445,7 +478,16 @@ const aggregateData = data => {
 	const avgPerHour = timeRangeHours > 0 ? Math.floor(totalRequests / timeRangeHours) : 0;
 	const avgPerDay = uniqueDates.size > 0 ? Math.floor(totalRequests / uniqueDates.size) : 0;
 	const blocklistShare = totalRequests > 0 ? ((totalBlocklists / totalRequests) * 100).toFixed(2) : '0.00';
-	const topCategory = Object.entries(categories).sort((a, b) => b[1] - a[1])[0];
+
+	// Find top category efficiently
+	let topCategory = 'N/A';
+	let maxCategoryCount = 0;
+	for (const [cat, count] of Object.entries(categories)) {
+		if (count > maxCategoryCount) {
+			maxCategoryCount = count;
+			topCategory = cat;
+		}
+	}
 
 	return {
 		totalRequests,
@@ -460,7 +502,7 @@ const aggregateData = data => {
 		avgPerDay,
 		blocklistShare,
 		uniqueDays: uniqueDates.size,
-		topCategory: topCategory ? topCategory[0] : 'N/A',
+		topCategory,
 	};
 };
 
@@ -500,8 +542,6 @@ const updateSummary = aggregated => {
 };
 
 const createRequestsChart = data => {
-	destroyChart('requests');
-
 	const ctx = document.getElementById('requests-chart')?.getContext('2d');
 	if (!ctx) return;
 
@@ -516,59 +556,73 @@ const createRequestsChart = data => {
 		label: tooltipCtx => `${tooltipCtx.dataset.label}: ${tooltipCtx.parsed.y.toLocaleString()} requests`,
 	});
 
-	charts.requests = new Chart(ctx, {
-		type: 'line',
-		data: {
-			labels,
-			datasets: [
-				{
-					label: 'Total Requests',
-					data: data.map(d => d.total || 0),
-					borderColor: COLORS.primary,
-					backgroundColor: COLORS.primary + '20',
-					borderWidth: 2,
-					fill: false,
-					tension: 0.4,
-					pointRadius: 0,
-					pointBackgroundColor: COLORS.primary,
-					pointBorderColor: COLORS.primary,
-					pointHoverRadius: 5,
-					pointHoverBackgroundColor: COLORS.primary,
-					pointHoverBorderColor: COLORS.primary,
-					pointHoverBorderWidth: 2,
-					pointBorderWidth: 1,
-				},
-				{
-					label: 'Blocklist Requests',
-					data: data.map(d => d.blocklists || 0),
-					borderColor: COLORS.purple,
-					backgroundColor: COLORS.purple + '20',
-					borderWidth: 2,
-					fill: false,
-					tension: 0.4,
-					pointRadius: 0,
-					pointBackgroundColor: COLORS.purple,
-					pointBorderColor: COLORS.purple,
-					pointHoverRadius: 5,
-					pointHoverBackgroundColor: COLORS.purple,
-					pointHoverBorderColor: COLORS.purple,
-					pointHoverBorderWidth: 2,
-					pointBorderWidth: 1,
-				},
-			],
-		},
-		options,
-	});
+	if (charts.requests) {
+		// Update existing chart
+		charts.requests.data.labels = labels;
+		charts.requests.data.datasets[0].data = data.map(d => d.total || 0);
+		charts.requests.data.datasets[1].data = data.map(d => d.blocklists || 0);
+		charts.requests.update('none'); // 'none' skips animation for faster update
+	} else {
+		// Create new chart
+		charts.requests = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels,
+				datasets: [
+					{
+						label: 'Total Requests',
+						data: data.map(d => d.total || 0),
+						borderColor: COLORS.primary,
+						backgroundColor: COLORS.primary + '20',
+						borderWidth: 2,
+						fill: false,
+						tension: 0.4,
+						pointRadius: 0,
+						pointBackgroundColor: COLORS.primary,
+						pointBorderColor: COLORS.primary,
+						pointHoverRadius: 5,
+						pointHoverBackgroundColor: COLORS.primary,
+						pointHoverBorderColor: COLORS.primary,
+						pointHoverBorderWidth: 2,
+						pointBorderWidth: 1,
+					},
+					{
+						label: 'Blocklist Requests',
+						data: data.map(d => d.blocklists || 0),
+						borderColor: COLORS.purple,
+						backgroundColor: COLORS.purple + '20',
+						borderWidth: 2,
+						fill: false,
+						tension: 0.4,
+						pointRadius: 0,
+						pointBackgroundColor: COLORS.purple,
+						pointBorderColor: COLORS.purple,
+						pointHoverRadius: 5,
+						pointHoverBackgroundColor: COLORS.purple,
+						pointHoverBorderColor: COLORS.purple,
+						pointHoverBorderWidth: 2,
+						pointBorderWidth: 1,
+					},
+				],
+			},
+			options,
+		});
+	}
 };
 
 const createResponsesChart = responses => {
-	destroyChart('responses');
-
 	const ctx = document.getElementById('responses-chart')?.getContext('2d');
 	if (!ctx) return;
 
 	const total = Object.values(responses).reduce((sum, val) => sum + val, 0);
 	if (total === 0) return;
+
+	if (charts.responses) {
+		charts.responses.data.labels = Object.keys(responses);
+		charts.responses.data.datasets[0].data = Object.values(responses);
+		charts.responses.update('none');
+		return;
+	}
 
 	const colorValues = [COLORS.green, COLORS.primary, COLORS.yellow, COLORS.orange, COLORS.red];
 
@@ -620,10 +674,15 @@ const createResponsesChart = responses => {
 };
 
 const createCategoriesChart = categories => {
-	destroyChart('categories');
-
 	const ctx = document.getElementById('categories-chart')?.getContext('2d');
 	if (!ctx) return;
+
+	if (charts.categories) {
+		charts.categories.data.labels = Object.keys(categories).map(key => FORMAT_LABELS_SHORT[key] || key.toUpperCase());
+		charts.categories.data.datasets[0].data = Object.values(categories);
+		charts.categories.update('none');
+		return;
+	}
 
 	const options = getCommonChartOptions(false);
 	options.plugins.tooltip.callbacks = addUTCFooter({
@@ -661,10 +720,14 @@ const createCategoriesChart = categories => {
 };
 
 const createHourlyChart = (hourlyData, dateRange) => {
-	destroyChart('hourly');
-
 	const ctx = document.getElementById('hourly-chart')?.getContext('2d');
 	if (!ctx) return;
+
+	if (charts.hourly) {
+		charts.hourly.data.datasets[0].data = HOURS_24.map(h => hourlyData[h] || 0);
+		charts.hourly.update('none');
+		return;
+	}
 
 	const options = getCommonChartOptions(false);
 	options.plugins.tooltip.callbacks = addUTCFooter({
@@ -703,8 +766,6 @@ const createHourlyChart = (hourlyData, dateRange) => {
 };
 
 const createDailyChart = data => {
-	destroyChart('daily');
-
 	const ctx = document.getElementById('daily-chart')?.getContext('2d');
 	if (!ctx) return;
 
@@ -716,6 +777,14 @@ const createDailyChart = data => {
 	});
 
 	const dates = Object.keys(dailyData).sort();
+
+	if (charts.daily) {
+		charts.daily.data.labels = dates;
+		charts.daily.data.datasets[0].data = dates.map(d => dailyData[d].total);
+		charts.daily.data.datasets[1].data = dates.map(d => dailyData[d].blocklists);
+		charts.daily.update('none');
+		return;
+	}
 
 	const options = getCommonChartOptions();
 	options.plugins.tooltip.callbacks = addUTCFooter({
@@ -763,8 +832,6 @@ const createDailyChart = data => {
 };
 
 const createPeakHoursChart = data => {
-	destroyChart('peakHours');
-
 	const ctx = document.getElementById('peak-hours-chart')?.getContext('2d');
 	if (!ctx) return;
 
@@ -778,6 +845,13 @@ const createPeakHoursChart = data => {
 	const sorted = Object.entries(hourlyData)
 		.sort((a, b) => b[1] - a[1])
 		.slice(0, 10);
+
+	if (charts.peakHours) {
+		charts.peakHours.data.labels = sorted.map(([key]) => key);
+		charts.peakHours.data.datasets[0].data = sorted.map(([, val]) => val);
+		charts.peakHours.update('none');
+		return;
+	}
 
 	const options = getCommonChartOptions(false);
 	options.indexAxis = 'y';
@@ -817,12 +891,19 @@ const createPeakHoursChart = data => {
 };
 
 const createFormatDistributionChart = data => {
-	destroyChart('formatDist');
-
 	const ctx = document.getElementById('format-distribution-chart')?.getContext('2d');
 	if (!ctx) return;
 
 	const labels = data.map(d => `${d.date} ${d.time}`);
+
+	if (charts.formatDist) {
+		charts.formatDist.data.labels = labels;
+		Object.keys(FORMAT_LABELS_SHORT).forEach((key, idx) => {
+			charts.formatDist.data.datasets[idx].data = data.map(d => d.categories?.[key] || 0);
+		});
+		charts.formatDist.update('none');
+		return;
+	}
 	const datasets = Object.keys(FORMAT_LABELS_SHORT).map((key, idx) => {
 		const color = CHART_COLORS[idx % CHART_COLORS.length];
 		return {
@@ -866,8 +947,6 @@ const createFormatDistributionChart = data => {
 };
 
 const createHeatmapChart = data => {
-	destroyChart('heatmap');
-
 	const ctx = document.getElementById('heatmap-chart')?.getContext('2d');
 	if (!ctx) return;
 
@@ -983,9 +1062,6 @@ const createHeatmapChart = data => {
 };
 
 const loadData = async () => {
-	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
-	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
-
 	const from = dateFromInputCached.value;
 	const to = dateToInputCached.value;
 	if (!from || !to) {
@@ -1036,7 +1112,6 @@ const loadData = async () => {
 };
 
 const updateIntervalButtons = days => {
-	if (!intervalButtonsCached) intervalButtonsCached = document.querySelectorAll('.btn-interval');
 	const minInterval = getMinInterval(days);
 	const needsActiveUpdate = currentInterval < minInterval;
 	let activeSet = false;
@@ -1060,9 +1135,6 @@ const updateIntervalButtons = days => {
 };
 
 const loadQuickData = async days => {
-	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
-	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
-
 	const to = new Date();
 	let from;
 	if (days === 'max' && dataStartDate) {
@@ -1084,9 +1156,6 @@ const loadQuickData = async days => {
 };
 
 const updateIntervalsForCustomRange = () => {
-	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
-	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
-
 	const from = dateFromInputCached.value;
 	if (from) dateToInputCached.setAttribute('min', from);
 
@@ -1105,15 +1174,13 @@ const updateIntervalsForCustomRange = () => {
 };
 
 const initializeEventListeners = () => {
-	if (!dateFromInputCached) dateFromInputCached = document.getElementById('date-from');
-	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
-	if (dateFromInputCached) dateFromInputCached.addEventListener('change', updateIntervalsForCustomRange);
-	if (dateToInputCached) dateToInputCached.addEventListener('change', updateIntervalsForCustomRange);
+	const debouncedUpdate = debounce(updateIntervalsForCustomRange, 300);
+	if (dateFromInputCached) dateFromInputCached.addEventListener('change', debouncedUpdate);
+	if (dateToInputCached) dateToInputCached.addEventListener('change', debouncedUpdate);
 
 	const loadDataBtn = document.getElementById('load-data');
 	if (loadDataBtn) {
 		loadDataBtn.addEventListener('click', () => {
-			if (!quickButtonsCached) quickButtonsCached = document.querySelectorAll('.btn-quick');
 			quickButtonsCached.forEach(btn => btn.classList.remove('active'));
 			void loadData();
 		});
@@ -1121,9 +1188,6 @@ const initializeEventListeners = () => {
 };
 
 const initializeButtonListeners = () => {
-	if (!quickButtonsCached) quickButtonsCached = document.querySelectorAll('.btn-quick');
-	if (!intervalButtonsCached) intervalButtonsCached = document.querySelectorAll('.btn-interval');
-
 	quickButtonsCached.forEach(btn => {
 		btn.addEventListener('click', async e => {
 			if (e.target.disabled) return;
@@ -1153,6 +1217,9 @@ const initializeButtonListeners = () => {
 };
 
 const initializeMetrics = () => {
+	// Initialize DOM cache first
+	initDOMCache();
+
 	const savedDaysRaw = localStorage.getItem('metrics_days');
 	let savedDays = savedDaysRaw === 'max' ? 'max' : (parseInt(savedDaysRaw) || 7);
 	let savedInterval = parseInt(localStorage.getItem('metrics_interval')) || 10;
@@ -1166,9 +1233,6 @@ const initializeMetrics = () => {
 		savedDays = 7;
 		localStorage.setItem('metrics_days', savedDays);
 	}
-
-	if (!quickButtonsCached) quickButtonsCached = document.querySelectorAll('.btn-quick');
-	if (!intervalButtonsCached) intervalButtonsCached = document.querySelectorAll('.btn-interval');
 
 	quickButtonsCached.forEach(btn => {
 		const btnDays = btn.dataset.days === 'max' ? 'max' : parseInt(btn.dataset.days);
