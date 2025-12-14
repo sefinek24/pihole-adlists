@@ -5,8 +5,7 @@ const RECONNECT_DELAY = 3000;
 const MAX_RECONNECT_DELAY = 30000;
 const CATEGORY_IDS = ['hosts', 'localhost', 'noip', 'adguard', 'unbound', 'dnsmasq', 'rpz'];
 
-let reconnectAttempts = 0;
-let reconnectTimeout = null;
+let reconnectAttempts = 0, reconnectTimeout = null;
 let ws = null;
 
 const elementCache = new Map();
