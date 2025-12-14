@@ -425,9 +425,7 @@ const aggregateData = data => {
 		}
 
 		for (const [cat, count] of Object.entries(item.categories || {})) {
-			if (count > 0) {
-				categories[cat] = (categories[cat] || 0) + count;
-			}
+			if (count > 0) categories[cat] = (categories[cat] || 0) + count;
 		}
 
 		const hour = item.time.split(':')[0];
@@ -847,10 +845,7 @@ const createFormatDistributionChart = data => {
 	});
 
 	const options = getCommonChartOptions();
-	options.interaction = {
-		mode: 'index',
-		intersect: false,
-	};
+	options.interaction = { mode: 'index', intersect: false };
 	options.plugins.legend.position = 'bottom';
 	options.plugins.tooltip.callbacks = addUTCFooter({
 		title: tooltipCtx => tooltipCtx[0].label,
@@ -993,7 +988,6 @@ const loadData = async () => {
 
 	const from = dateFromInputCached.value;
 	const to = dateToInputCached.value;
-
 	if (!from || !to) {
 		alert('Please select both start and end dates');
 		return;
@@ -1015,9 +1009,7 @@ const loadData = async () => {
 	}
 
 	const daysDiff = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
-
 	const minInterval = getMinInterval(daysDiff);
-
 	if (currentInterval < minInterval) {
 		alert(`For ${daysDiff} days range, minimum interval is ${minInterval >= 60 ? (minInterval / 60) + 'h' : minInterval + 'm'}. Please select a larger interval.`);
 		return;
@@ -1073,7 +1065,6 @@ const loadQuickData = async days => {
 
 	const to = new Date();
 	let from;
-
 	if (days === 'max' && dataStartDate) {
 		from = new Date(dataStartDate);
 	} else if (days === 'max') {
@@ -1097,17 +1088,13 @@ const updateIntervalsForCustomRange = () => {
 	if (!dateToInputCached) dateToInputCached = document.getElementById('date-to');
 
 	const from = dateFromInputCached.value;
+	if (from) dateToInputCached.setAttribute('min', from);
+
 	const to = dateToInputCached.value;
-
-	if (from) {
-		dateToInputCached.setAttribute('min', from);
-	}
-
 	if (!from || !to) return;
 
 	const fromDate = new Date(from + 'T00:00:00');
 	const toDate = new Date(to + 'T00:00:00');
-
 	if (fromDate > toDate) {
 		dateToInputCached.value = from;
 		return;
