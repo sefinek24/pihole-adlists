@@ -41,19 +41,62 @@ const processDirectory = async dirPath => {
 					continue;
 				}
 
-				if (local.test(line) || line.startsWith('#')) {
+				// Keep only header comments (multi-line comments, decorative headers, metadata)
+				// Remove commented domains (e.g., "# example.com" or "! example.com")
+				if (line.startsWith('#')) {
+					// Check if it's a commented domain (# followed by domain-like pattern)
+					const afterHash = line.substring(1).trim();
+					// Skip if it's a URL (contains ://) or path (contains /)
+					const isUrl = afterHash.includes('://') || afterHash.includes('/');
+					// Domain pattern: no spaces, has dot, not starting with =, not a URL
+					const isDomain = afterHash && !afterHash.includes(' ') && afterHash.includes('.') && !afterHash.startsWith('=') && !isUrl;
+					if (isDomain) {
+						// Looks like a commented domain, skip it
+						stats.invalidLinesRemoved++;
+						continue;
+					}
+					// Keep as header/metadata comment
 					processedLines.push(line);
 					continue;
 				}
 
-				// ! comment → # comment
+				// Remove commented AdBlock domains (! example.com)
 				if (line.startsWith('!')) {
+					const afterExclamation = line.substring(1).trim();
+					// Skip URLs completely (don't convert to #)
+					if (afterExclamation.startsWith('http') || afterExclamation.includes('://')) {
+						stats.invalidLinesRemoved++;
+						continue;
+					}
+					const isUrl = afterExclamation.includes('/');
+					const isDomain = afterExclamation && !afterExclamation.includes(' ') && afterExclamation.includes('.') && !isUrl;
+					if (isDomain) {
+						// Looks like a commented domain, skip it
+						stats.invalidLinesRemoved++;
+						continue;
+					}
+					// Convert AdBlock comment to standard comment
 					line = line.replace(/^!+/, '#');
 					if (line === '# Syntax: Adblock Plus Filter List') line = '# Syntax: domain.tld';
 					stats.modifiedLines++;
 					stats.commentsConverted++;
 					processedLines.push(line);
 					continue;
+				}
+
+				// Keep local network patterns
+				if (local.test(line)) {
+					processedLines.push(line);
+					continue;
+				}
+
+				// Remove inline comments FIRST: example.com # comment → example.com
+				if (line.includes('#')) {
+					const withoutComment = line.split('#')[0].trim();
+					if (withoutComment && withoutComment !== line.trim()) {
+						line = withoutComment;
+						stats.modifiedLines++;
+					}
 				}
 
 				// Remove IP prefixes: 127.0.0.1 domain → domain, 0.0.0.0 domain → domain
@@ -77,7 +120,7 @@ const processDirectory = async dirPath => {
 				}
 
 				// 0.0.0.0example.com → example.com (fix glued IP)
-				const gluedIpMatch = line.match(/^(?:127\.0\.0\.1|0\.0\.0\.0)([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})(\s+.*)?$/);
+				const gluedIpMatch = line.match(/^(?:127\.0\.0\.1|0\.0\.0\.0)([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/);
 				if (gluedIpMatch) {
 					line = gluedIpMatch[1];
 					stats.modifiedLines++;
@@ -101,7 +144,7 @@ const processDirectory = async dirPath => {
 				}
 
 				// example1.com example2.com → split into multiple lines
-				if (!line.includes('#') && line.includes(' ')) {
+				if (line.includes(' ')) {
 					const words = line.split(/\s+/);
 					if (words.length > 1) {
 						const uniqueDomains = [...new Set(words)];

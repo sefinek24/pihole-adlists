@@ -45,8 +45,7 @@ const processDirectory = async (dirPath, whitelist, basePath) => {
 			const line = originalLine.trim();
 			if (!line || line.startsWith('#') || line.startsWith('!')) return true;
 
-			const cleanLine = line.split('#')[0].trim();
-			const domain = cleanLine.replace(/^(0\.0\.0\.0|127\.0\.0\.1)\s+/, '');
+			const domain = line.split('#')[0].trim();
 
 			if (seen.has(domain)) return false;
 			seen.add(domain);
