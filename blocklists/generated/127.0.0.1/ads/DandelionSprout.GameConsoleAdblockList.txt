@@ -9,13 +9,13 @@
 # Title: Block game console ads
 # Description: https://github.com/DandelionSprout
 # Expires: 1 day
-# Count: 12
+# Count: 8
 # Author: Sefinek (https://sefinek.net) <contact@sefinek.net>
 # Modified by: cochcoder <cochcoderContact@gmail.com>, Sefinek <contact@sefinek.net>
 # Source: Unknown
 # License: DandelionSprout/adfilt is licensed under the Dandelicence License
 # Release: 127.0.0.1 before each domain
-# Last update: November 29, 2025 at 7:31 AM UTC | 2025-11-29T07:31:36.051+00:00
+# Last update: December 18, 2025 at 6:10 PM UTC | 2025-12-18T18:10:04.261+00:00
 #
 # This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 # If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
@@ -39,16 +39,16 @@
 # Removes sponsored info slots in the system menu
 # https://new.reddit.com/r/pihole/comments/act023/psa_block_the_sponsored_banner_ad_on_the_xbox_one
 # Note that this also blocks Perks from Xbox Game Pass if you are subscribed to that (https://github.com/DandelionSprout/adfilt/pull/162).
-# 127.0.0.1 arc.msn.com
+# 0.0.0.0 arc.msn.com
 # ——— Xbox 360 ———
 # Removes paid advertising on the Xbox Live Dashboard
 # https://www.ign.com/wikis/xbox-360/Block_Ads_on_Xbox_Live
 # ——— Nintendo Switch ———
 # There is a system setting for getting rid of the Nintendo eShop advertisements on the lockscreen, which is hidden in System Settings → System → News Channel Settings → Nintendo News → Unfollow.
 # The following entries gives access on demand to the web browser, as per SwitchBru's DNS server trick (https://www.switchbru.com/dns/), while also making it possible to use AdGuard Home for adblocking at the same time. However, since SwitchBru uses a trick to make the Switch think it's partway into logging on to a hotel network, the entries would reject access to all other Switch web activities while the entries are live:
-# 127.0.0.1 ctest.cdn.nintendo.net
-# 127.0.0.1 receive-lp1.er.srv.nintendo.net
-# 127.0.0.1 aauth-lp1.ndas.srv.nintendo.net
+# 0.0.0.0 ctest.cdn.nintendo.net
+# 0.0.0.0 receive-lp1.er.srv.nintendo.net
+# 0.0.0.0 aauth-lp1.ndas.srv.nintendo.net
 # ——— Nintendo DS / Wii ———
 # For a largely official list to connect to Wiimmfi (for DS games only) and RiiConnect24, check out https://raw.githubusercontent.com/RiiConnect24/DNS-Server/master/dns_zones-hosts.txt
 # ——— PlayStation 5 ———
@@ -71,13 +71,9 @@
 # ——— Other consoles ———
 # Entry suggestions on GitHub would be much appreciated.
 # Especially desired, since I don't own them: Sega Saturn, PlayStation Portable, PlayStation Vita, Xbox (2001 model), GameCube (https://en.wikipedia.org/wiki/GameCube_online_functionality#Supported_games), Game Boy Color/Advance (https://bulbapedia.bulbagarden.net/wiki/Mobile_System_GB#Access), PlayStation 1 (i-Mode adapter), Nintendo 64 (Randnet, Morita Shogi 64 modem), Nokia N-Gage
-127.0.0.1 adproxy.ndmdhs.com # Ticker ads in the XMB clockbar
 127.0.0.1 at.atwola.com
 127.0.0.1 discovery.olv.nintendo.net
-127.0.0.1 mercury.dl.playstation.net # What's New
 127.0.0.1 npdl.cdn.nintendowifi.net
-127.0.0.1 nsx-e.np.dl.playstation.net # Ads
-127.0.0.1 nsx.np.dl.playstation.net # PlayStation Store Preview, incl. 'My Channels' logos
 127.0.0.1 nw-umwatson.events.data.microsoft.com
 127.0.0.1 rad.msn.com
 127.0.0.1 telemetry-cii.api.playstation.com
