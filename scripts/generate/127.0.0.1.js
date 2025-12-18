@@ -21,8 +21,13 @@ const convert = async (folderPath = path.join(__dirname, '../../blocklists/templ
 
 		const date = getDate();
 		const replacedFile = fileContent
-			.replace(/(?:127\.0\.0\.1|0\.0\.0\.0) /gm, '127.0.0.1 ')
-			.replace(/#(?: ?127\.0\.0\.1| ?0\.0\.0\.0) |:: /gm, '# 127.0.0.1 ')
+			.split('\n')
+			.map(line => {
+				line = line.trim();
+				if (!line || line.startsWith('#')) return line;
+				return `127.0.0.1 ${line}`;
+			})
+			.join('\n')
 			.replace('<Release>', '127.0.0.1 before each domain')
 			.replace('<LastUpdate>', `${date.full} | ${date.now}`);
 

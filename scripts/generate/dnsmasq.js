@@ -21,15 +21,13 @@ const convert = async (folderPath = path.join(__dirname, '../../blocklists/templ
 
 		const date = getDate();
 		const replacedFile = fileContent
-			.replace(
-				/127\.0\.0\.1 localhost\.localdomain|255\.255\.255\.255 broadcasthost|ff0(?:0::0 ip6-mcastprefix|2::(?:2 ip6-allrouter|(?:1 ip6-allnode|3 ip6-allhost))s)|(?:fe80::1%lo0 |(?:(?:127\.0\.0\.|::)1 {2}|::1 (?:ip6-)?))localhost|ff00::0 ip6-localnet|127\.0\.0\.1 local(?:host)?|::1 ip6-loopback|0\.0\.0\.0 0\.0\.0\.0/gi,
-				''
-			)
-			.replace('#=====', '# =====')
-			.replace('# Custom host records are listed here.', '# Custom host records are listed here.\n\n')
-			.replace(/(?:127\.0\.0\.1|0\.0\.0\.0) (.*?)( .*)?$/gm, '0.0.0.0 $1/$2')
-			.replace(/(?:127\.0\.0\.1|0\.0\.0\.0) /gm, 'server=/')
-			.replace(/::|#/, '#')
+			.split('\n')
+			.map(line => {
+				line = line.trim();
+				if (!line || line.startsWith('#')) return line;
+				return `server=/${line}/`;
+			})
+			.join('\n')
 			.replace('<Release>', 'Dnsmasq')
 			.replace('<LastUpdate>', `${date.full} | ${date.now}`);
 

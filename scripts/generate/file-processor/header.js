@@ -15,7 +15,10 @@ const processCategory = async ({ title, description, category, file }) => {
 	let fileContent = await fs.readFile(filePath, 'utf8');
 	fileContent = fileContent.replace(/#.*/gm, '').trim();
 
-	const count = fileContent.split('\n').filter(line => line.startsWith('0.0.0.0')).length;
+	const count = fileContent.split('\n').filter(line => {
+		const trimmed = line.trim();
+		return trimmed && !trimmed.startsWith('#');
+	}).length;
 	const headerContent = generateHeader(title, description, count);
 
 	await fs.writeFile(filePath, `${headerContent}\n${fileContent}`, 'utf8');

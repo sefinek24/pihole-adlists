@@ -49,21 +49,21 @@ const processDirectory = async dirPath => {
 				// ! comment → # comment
 				if (line.startsWith('!')) {
 					line = line.replace(/^!+/, '#');
-					if (line === '# Syntax: Adblock Plus Filter List') line = '# Syntax: 0.0.0.0 domain.tld';
+					if (line === '# Syntax: Adblock Plus Filter List') line = '# Syntax: domain.tld';
 					stats.modifiedLines++;
 					stats.commentsConverted++;
 				}
 
-				// 127.0.0.1 || 195.187.6.33-35 → 0.0.0.0
-				if ((/^127\.0\.0\.1\s+|^195\.187\.6\.3[3-5]\s+/).test(line)) {
-					line = line.replace(/^127\.0\.0\.1\s+|^195\.187\.6\.3[3-5]\s+/, '0.0.0.0 ');
+				// Remove IP prefixes: 127.0.0.1 domain → domain, 0.0.0.0 domain → domain
+				if ((/^(?:127\.0\.0\.1|0\.0\.0\.0|195\.187\.6\.3[3-5])\s+/).test(line)) {
+					line = line.replace(/^(?:127\.0\.0\.1|0\.0\.0\.0|195\.187\.6\.3[3-5])\s+/, '');
 					stats.ipsReplaced++;
 					stats.modifiedLines++;
 				}
 
-				// ||example.com^ → 0.0.0.0 example.com
+				// ||example.com^ → example.com
 				if (line.startsWith('||') && line.endsWith('^')) {
-					line = `0.0.0.0 ${line.slice(2, -1)}`;
+					line = line.slice(2, -1);
 					stats.modifiedLines++;
 					stats.convertedAdGuard++;
 				}
@@ -74,68 +74,43 @@ const processDirectory = async dirPath => {
 					stats.modifiedLines++;
 				}
 
-				// 0.0.0.0example.com → 0.0.0.0 example.com
+				// 0.0.0.0example.com → example.com (fix glued IP)
 				const gluedIpMatch = line.match(/^(?:127\.0\.0\.1|0\.0\.0\.0)([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})(\s+.*)?$/);
 				if (gluedIpMatch) {
-					line = `0.0.0.0 ${gluedIpMatch[1]}${gluedIpMatch[2] || ''}`;
+					line = gluedIpMatch[1];
 					stats.modifiedLines++;
 					stats.fixedGlued++;
 				}
 
-				// Normalize whitespace after 0.0.0.0
-				if (line.startsWith('0.0.0.0\t') || line.match(/^0\.0\.0\.0\s{2,}/)) {
-					line = line.replace(/^0\.0\.0\.0\s+/, '0.0.0.0 ');
+				// EXAMPLE.com → example.com
+				const lowerDomain = line.toLowerCase();
+				if (line !== lowerDomain) {
+					line = lowerDomain;
 					stats.modifiedLines++;
-					stats.normalizedSpacing++;
+					stats.domainToLower++;
 				}
 
-				// example.com → 0.0.0.0 example.com
-				if (!line.startsWith('0.0.0.0 ')) {
-					line = `0.0.0.0 ${line}`;
-					stats.modifiedLines++;
-					stats.fqdnConverted++;
-				}
-
-				// 0.0.0.0 EXAMPLE.com → 0.0.0.0 example.com
-				let parts = line.split(/\s+/);
-				if (parts[1]) {
-					const lowerDomain = parts[1].toLowerCase();
-					if (parts[1] !== lowerDomain) {
-						parts[1] = lowerDomain;
-						line = parts.join(' ');
-						stats.modifiedLines++;
-						stats.domainToLower++;
-					}
-				} else {
-					stats.invalidLinesRemoved++;
-					continue;
-				}
-
-				// 0.0.0.0 example.com:1234 → 0.0.0.0 example.com
-				const domainNoPort = parts[1].split(':')[0];
-				if (parts[1] !== domainNoPort) {
-					parts[1] = domainNoPort;
-					line = parts.join(' ');
+				// example.com:1234 → example.com
+				const domainNoPort = line.split(':')[0];
+				if (line !== domainNoPort) {
+					line = domainNoPort;
 					stats.modifiedLines++;
 					stats.portRemoved++;
 				}
 
-				// 0.0.0.0 example1.com example2.com → split into multiple lines
-				if (line.startsWith('0.0.0.0') && !line.includes('#')) {
+				// example1.com example2.com → split into multiple lines
+				if (!line.includes('#') && line.includes(' ')) {
 					const words = line.split(/\s+/);
-					const ipAddress = words.shift();
 					if (words.length > 1) {
 						const uniqueDomains = [...new Set(words.map(d => d.toLowerCase().split(':')[0]))];
 
-						const splitLines = uniqueDomains
-							.filter(domain => {
-								if (!validator.isFQDN(domain, { allow_underscores: true }) || isSuspiciousDomain(domain)) {
-									stats.invalidLinesRemoved++;
-									return false;
-								}
-								return true;
-							})
-							.map(domain => `${ipAddress} ${domain}`);
+						const splitLines = uniqueDomains.filter(domain => {
+							if (!validator.isFQDN(domain, { allow_underscores: true }) || isSuspiciousDomain(domain)) {
+								stats.invalidLinesRemoved++;
+								return false;
+							}
+							return true;
+						});
 
 						const duplicatesRemoved = words.length - uniqueDomains.length;
 						if (duplicatesRemoved > 0) stats.invalidLinesRemoved += duplicatesRemoved;
@@ -144,17 +119,11 @@ const processDirectory = async dirPath => {
 						stats.splitMultiDomain += splitLines.length;
 						processedLines.push(...splitLines);
 						continue;
-					} else {
-						line = `${ipAddress} ${words[0].toLowerCase().split(':')[0]}`;
-						parts = line.split(/\s+/);
 					}
 				}
 
-				// Split multi-domain line and preserve comment if any
-				// . . .
-
 				// Final validation
-				if (!validator.isFQDN(parts[1], { allow_underscores: true }) || isSuspiciousDomain(parts[1])) {
+				if (!validator.isFQDN(line, { allow_underscores: true }) || isSuspiciousDomain(line)) {
 					stats.invalidLinesRemoved++;
 					continue;
 				}

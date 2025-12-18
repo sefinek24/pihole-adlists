@@ -22,17 +22,17 @@ const lintFile = async (file, fileContents) => {
 			hasError = true;
 		}
 
-		if (line.startsWith('0.0.0.0 ')) {
-			const lineNoIP = line.replace('0.0.0.0 ', '');
-			const url = lineNoIP.split('#')[0].trim();
+		const trimmed = line.trim();
+		if (trimmed && !trimmed.startsWith('#')) {
+			const domain = trimmed.split('#')[0].trim();
 
-			if (url.toLowerCase() !== url) {
-				console.error(`[Line ${index + 1}]: ${url} must be all lowercase - ${file}`);
+			if (domain.toLowerCase() !== domain) {
+				console.error(`[Line ${index + 1}]: ${domain} must be all lowercase - ${file}`);
 				hasError = true;
 			}
 
-			if ((/\s/gmu).test(url)) {
-				console.error(`[Line ${index + 1}]: in ${file} url ${url} contains whitespace in the URL.`);
+			if ((/\s/gmu).test(domain)) {
+				console.error(`[Line ${index + 1}]: in ${file} domain ${domain} contains whitespace.`);
 				hasError = true;
 			}
 		}

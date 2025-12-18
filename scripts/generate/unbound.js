@@ -21,7 +21,13 @@ const convert = async (folderPath = path.join(__dirname, '../../blocklists/templ
 
 		const date = getDate();
 		const replacedFile = fileContent
-			.replace(/(?:127\.0\.0\.1|0\.0\.0\.0) (\S+)/gm, 'local-zone: "$1." always_nxdomain')
+			.split('\n')
+			.map(line => {
+				line = line.trim();
+				if (!line || line.startsWith('#')) return line;
+				return `local-zone: "${line}." always_nxdomain`;
+			})
+			.join('\n')
 			.replace('<Release>', 'Unbound')
 			.replace('<LastUpdate>', `${date.full} | ${date.now}`);
 

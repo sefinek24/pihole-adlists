@@ -36,7 +36,7 @@ const processChunk = async (start, end, chunkId) => {
 		for (const { regex, file, whitelist } of CATEGORIES) {
 			if (whitelist?.test(line)) continue;
 			if (regex.test(line)) {
-				writeStreams[file].write(`\n0.0.0.0 ${line}`);
+				writeStreams[file].write(`\n${line}`);
 				counters[file]++;
 			}
 		}

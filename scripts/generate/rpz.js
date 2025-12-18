@@ -23,15 +23,15 @@ const convert = async (folderPath = path.join(__dirname, '../../blocklists/templ
 		const outputLines = [];
 
 		fileContent.split('\n').forEach(line => {
-			const match = line.match(/^(?:127\.0\.0\.1|0\.0\.0\.0) (\S+)/);
-			if (match) {
-				let domain = match[1];
-				if (domain.startsWith('www.')) domain = domain.slice(4);
+			line = line.trim();
+			if (!line || line.startsWith('#')) return;
 
-				if (!seenDomains.has(domain)) {
-					seenDomains.add(domain);
-					outputLines.push(`${domain} CNAME .`, `*.${domain} CNAME .`);
-				}
+			let domain = line;
+			if (domain.startsWith('www.')) domain = domain.slice(4);
+
+			if (!seenDomains.has(domain)) {
+				seenDomains.add(domain);
+				outputLines.push(`${domain} CNAME .`, `*.${domain} CNAME .`);
 			}
 		});
 

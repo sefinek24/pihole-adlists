@@ -20,7 +20,8 @@ const countDomains = async file => {
 
 	const rl = readline.createInterface({ input: createReadStream(file, 'utf8'), crlfDelay: Infinity });
 	for await (const line of rl) {
-		if (line.startsWith('0.0.0.0 ')) domainCount++;
+		const trimmed = line.trim();
+		if (trimmed && !trimmed.startsWith('#')) domainCount++;
 		lines.push(line);
 	}
 

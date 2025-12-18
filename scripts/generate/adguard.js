@@ -21,14 +21,14 @@ const convert = async (folderPath = path.join(__dirname, '../../blocklists/templ
 
 		const date = getDate();
 		const replacedFile = fileContent
-			.replace(
-				/127\.0\.0\.1 localhost\.localdomain|255\.255\.255\.255 broadcasthost|ff0(?:0::0 ip6-mcastprefix|2::(?:2 ip6-allrouter|(?:1 ip6-allnode|3 ip6-allhost))s)|(?:fe80::1%lo0 |(?:(?:127\.0\.0\.|::)1 {2}|::1 (?:ip6-)?))localhost|ff00::0 ip6-localnet|127\.0\.0\.1 local(?:host)?|::1 ip6-loopback|0\.0\.0\.0 0\.0\.0\.0/gi,
-				''
-			)
-			.replace('#=====', '! =====')
-			.replace(/# 0\.0\.0\.0 (.*?) (.*)/gm, '@@||$1^! $2')
-			.replace(/0\.0\.0\.0 (.*?)$/gm, '||$1^')
-			.replace(/::|#/gm, '!')
+			.split('\n')
+			.map(line => {
+				line = line.trim();
+				if (!line) return line;
+				if (line.startsWith('#')) return line.replace(/^#/, '!');
+				return `||${line}^`;
+			})
+			.join('\n')
 			.replace('<Release>', 'AdGuard [adguard.com]')
 			.replace('<LastUpdate>', `${date.full} | ${date.now}`);
 

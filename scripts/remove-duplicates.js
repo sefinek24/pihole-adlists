@@ -4,9 +4,9 @@ const { join } = require('node:path');
 const processLine = (line, existingDomains) => {
 	if (line === '') return { shouldKeep: false, reason: 'emptyLine' };
 	if (line.startsWith('# [')) return { shouldKeep: false, reason: 'uselessComment' };
-	if (line.startsWith('##') || line.startsWith('#') || line.startsWith('!') || line === '0.0.0.0 0.0.0.0') return { shouldKeep: true };
+	if (line.startsWith('##') || line.startsWith('#') || line.startsWith('!')) return { shouldKeep: true };
 
-	const [, domain] = line.split(/\s+/);
+	const domain = line.trim();
 	if (!domain) return { shouldKeep: true };
 
 	if (existingDomains.has(domain)) return { shouldKeep: false, reason: 'duplicate' };
