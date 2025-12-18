@@ -23,11 +23,9 @@ const convert = async (folderPath = path.join(__dirname, '../../blocklists/templ
 		const outputLines = [];
 
 		fileContent.split('\n').forEach(line => {
-			line = line.trim();
 			if (!line || line.startsWith('#')) return;
 
-			let domain = line;
-			if (domain.startsWith('www.')) domain = domain.slice(4);
+			let domain = line.startsWith('www.') ? line.slice(4) : line;
 
 			if (!seenDomains.has(domain)) {
 				seenDomains.add(domain);

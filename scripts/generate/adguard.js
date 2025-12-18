@@ -23,7 +23,6 @@ const convert = async (folderPath = path.join(__dirname, '../../blocklists/templ
 		const replacedFile = fileContent
 			.split('\n')
 			.map(line => {
-				line = line.trim();
 				if (!line) return line;
 				if (line.startsWith('#')) return line.replace(/^#/, '!');
 				return `||${line}^`;

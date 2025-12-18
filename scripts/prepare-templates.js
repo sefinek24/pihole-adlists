@@ -36,7 +36,7 @@ const processDirectory = async dirPath => {
 
 			for (let line of lines) {
 				line = line.trim();
-				if (!line || line === '0.0.0.0' || line === '127.0.0.1') {
+				if (!line || line === '0.0.0.0' || line === '127.0.0.1' || line === '0.0.0.0 0.0.0.0') {
 					stats.invalidLinesRemoved++;
 					continue;
 				}
@@ -52,6 +52,8 @@ const processDirectory = async dirPath => {
 					if (line === '# Syntax: Adblock Plus Filter List') line = '# Syntax: domain.tld';
 					stats.modifiedLines++;
 					stats.commentsConverted++;
+					processedLines.push(line);
+					continue;
 				}
 
 				// Remove IP prefixes: 127.0.0.1 domain → domain, 0.0.0.0 domain → domain
@@ -102,7 +104,7 @@ const processDirectory = async dirPath => {
 				if (!line.includes('#') && line.includes(' ')) {
 					const words = line.split(/\s+/);
 					if (words.length > 1) {
-						const uniqueDomains = [...new Set(words.map(d => d.toLowerCase().split(':')[0]))];
+						const uniqueDomains = [...new Set(words)];
 
 						const splitLines = uniqueDomains.filter(domain => {
 							if (!validator.isFQDN(domain, { allow_underscores: true }) || isSuspiciousDomain(domain)) {
