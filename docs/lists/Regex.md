@@ -34,7 +34,7 @@
 
 ## 🗑️ Removed regular expressions
 1. `^count(ers?)?[0-9]*[_.-]` - This expression has been removed because it was blocking access to [counter-strike.net](https://www.counter-strike.net).
-2. `^stat(s|istics)?[0-9]*[_.-]` - It is blocking access to [stats.uptimerobot.com](https://stats.uptimerobot.com)
+2. `^stat(s|istics)?[0-9]*[_.-]` - It is blocking access to [stats.uptimerobot.com](https://stats.uptimerobot.com).
 
 ## 🔠 Source
 https://github.com/mmotti/pihole-regex/blob/master/regex.list
