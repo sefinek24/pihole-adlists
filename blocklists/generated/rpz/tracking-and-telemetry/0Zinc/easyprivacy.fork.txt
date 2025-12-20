@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2025121901 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2025122001 43200 3600 259200 300
   NS  localhost.
 00px.net CNAME .
 *.00px.net CNAME .
@@ -2683,6 +2683,8 @@ rtxpx-a.akamaihd.net CNAME .
 *.rtxpx-a.akamaihd.net CNAME .
 rudder-tracking.rudderstack.com CNAME .
 *.rudder-tracking.rudderstack.com CNAME .
+rum-collector.leaderint.workers.dev CNAME .
+*.rum-collector.leaderint.workers.dev CNAME .
 rum.azion.com CNAME .
 *.rum.azion.com CNAME .
 rum.azioncdn.net CNAME .
@@ -3117,6 +3119,8 @@ telemetry.smartframe.io CNAME .
 *.telemetry.smartframe.io CNAME .
 telemetry.soundcloud.com CNAME .
 *.telemetry.soundcloud.com CNAME .
+telemetry.svc.transifex.net CNAME .
+*.telemetry.svc.transifex.net CNAME .
 telemetry.tableausoftware.com CNAME .
 *.telemetry.tableausoftware.com CNAME .
 telemetry.transcend.io CNAME .
@@ -3547,6 +3551,8 @@ web-beacon.starii-rover.com CNAME .
 *.web-beacon.starii-rover.com CNAME .
 web-tracker.smsbump.com CNAME .
 *.web-tracker.smsbump.com CNAME .
+web-vitals-script.leaderint.workers.dev CNAME .
+*.web-vitals-script.leaderint.workers.dev CNAME .
 web1.51.la CNAME .
 *.web1.51.la CNAME .
 websdk.appsflyer.com CNAME .
