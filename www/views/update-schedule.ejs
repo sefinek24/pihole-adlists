@@ -29,12 +29,18 @@
 
             <div class="schedule-card__item">
                 <strong class="schedule-card__label">Local (blocklist.sefinek.net):</strong>
-                <span class="schedule-card__value" id="remote" aria-live="polite">Loading...</span>
+                <div class="schedule-card__meta">
+                    <span class="schedule-card__value" id="remote" aria-live="polite">Loading...</span>
+                    <span class="schedule-card__countdown" id="remote-countdown" aria-live="polite">Loading...</span>
+                </div>
             </div>
 
             <div class="schedule-card__item">
                 <strong class="schedule-card__label">Remote (GitHub):</strong>
-                <span class="schedule-card__value" id="github" aria-live="polite">Loading...</span>
+                <div class="schedule-card__meta">
+                    <span class="schedule-card__value" id="github" aria-live="polite">Loading...</span>
+                    <span class="schedule-card__countdown" id="github-countdown" aria-live="polite">Loading...</span>
+                </div>
             </div>
         </div>
     </section>
@@ -44,9 +50,9 @@
             - Lists should not be downloaded too frequently, as this may result in a permanent ban on the IP address.
         </p>
         <p class="schedule-note__text">
-            - Synchronization occurs daily at 01:00 and 06:00 (24-hour clock, Poland time zone: GMT+01:00).
-            Cron expression: <code class="schedule-note__code">0 1,6 * * *</code> (at minute 0, past hours 1 and 6).
-            More <a href="https://github.com/sefinek/Sefinek-Blocklist-Collection?tab=readme-ov-file#-update-schedule" target="_blank" rel="noopener" class="schedule-note__link">here</a>.
+            - Synchronization occurs daily at <%= sync.times.join(' and ') %>
+            (24-hour clock, Poland time zone: <%= sync.timeZoneOffset || sync.timeZone %>).
+            Cron expression: <code class="schedule-note__code"><%= sync.cron %></code> (<%= sync.cronNote %>).
         </p>
     </aside>
 </main>
@@ -55,26 +61,58 @@
     (() => {
         'use strict';
 
+        const FORMATTER_OPTIONS = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+        };
+
+        const formatCountdown = ms => {
+            if (ms <= 0) return 'now';
+
+            const totalSeconds = Math.floor(ms / 1000);
+            const days = Math.floor(totalSeconds / 86400);
+            const hours = Math.floor((totalSeconds % 86400) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            const parts = [];
+
+            if (days) parts.push(`${days}d`);
+            parts.push(`${hours}h`, `${minutes}m`, `${seconds}s`);
+
+            return `in ${parts.join(' ')}`;
+        };
+
         const showCronInfo = () => {
             try {
-                const userTimezone = luxon.DateTime.local().zoneName;
+                const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
                 const timezoneElement = document.getElementById('user-timezone');
-                if (timezoneElement) {
-                    timezoneElement.textContent = userTimezone;
-                }
-
-                const github = luxon.DateTime.fromISO('<%= cron.github %>').setZone(userTimezone);
-                const remote = luxon.DateTime.fromISO('<%= cron.remote %>').setZone(userTimezone);
+                if (timezoneElement) timezoneElement.textContent = userTimezone || '?';
+                if (userTimezone) FORMATTER_OPTIONS.timeZone = userTimezone;
+            
+                const formatter = new Intl.DateTimeFormat(undefined, FORMATTER_OPTIONS);
+                const githubDate = new Date('<%= cron.github %>');
+                const remoteDate = new Date('<%= cron.remote %>');
 
                 const githubElement = document.getElementById('github');
-                const remoteElement = document.getElementById('remote');
+                if (githubElement) githubElement.textContent = formatter.format(githubDate);
 
-                if (githubElement) {
-                    githubElement.textContent = github.toLocaleString(luxon.DateTime.DATETIME_MED);
-                }
-                if (remoteElement) {
-                    remoteElement.textContent = remote.toLocaleString(luxon.DateTime.DATETIME_MED);
-                }
+                const remoteElement = document.getElementById('remote');
+                if (remoteElement) remoteElement.textContent = formatter.format(remoteDate);
+
+                const githubCountdown = document.getElementById('github-countdown');
+                const remoteCountdown = document.getElementById('remote-countdown');
+
+                const updateCountdowns = () => {
+                    if (githubCountdown) githubCountdown.textContent = formatCountdown(githubDate.getTime() - Date.now());
+                    if (remoteCountdown) remoteCountdown.textContent = formatCountdown(remoteDate.getTime() - Date.now());
+                };
+
+                updateCountdowns();
+                setInterval(updateCountdowns, 1000);
             } catch (err) {
                 console.error('Failed to load schedule information:', err);
             }
