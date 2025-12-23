@@ -161,100 +161,74 @@ nav.active .menu-toggle span:nth-child(3) {
 	}
 
 	.nav-menu {
-		backdrop-filter:blur(5px) saturate(150%);
-		background:rgba(0, 0, 0, 0.25);
-		border:1px solid rgba(255, 255, 255, 0.08);
-		box-shadow:0 0 12px rgba(0, 0, 0, 0.4);
+		background:rgba(0, 0, 0, 0.15);
+		border-bottom:1px solid #FFFFFF0D;
+		border-left:1px solid #FFFFFF0D;
+		border-radius:0 0 16px 16px;
+		border-right:1px solid #FFFFFF0D;
+		border-top:none;
+		box-shadow:0 4px 24px #0003;
+		display:none;
 		flex-direction:column;
-		gap:0;
+		gap:4px;
 		left:0;
-		max-height:0;
-		opacity:0;
-		overflow:hidden;
 		position:fixed;
 		right:0;
-		top:64px;
-		transform:translateY(-20px);
-		transition:max-height .4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity .3s ease, transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+		top:64px
 	}
 
 	nav.active .nav-menu {
-		max-height:500px;
-		opacity:1;
-		padding:1rem 0;
-		transform:translateY(0)
+		display:flex;
+		padding:0.875rem 0.75rem 1rem
 	}
 
 	.nav-menu li {
-		opacity:0;
-		padding:0 1rem;
-		transform:translateX(-30px);
-		transition:opacity .3s ease,transform .3s cubic-bezier(0.68,-0.55,0.265,1.55);
+		padding:0;
+		position:relative;
 		width:100%
 	}
 
-	nav.active .nav-menu li {
-		opacity:1;
-		transform:translateX(0)
+	.nav-menu li:not(:last-child) {
+		margin-bottom:4px
 	}
 
-	nav.active .nav-menu li:nth-child(1) {
-		transition-delay:.05s
-	}
-
-	nav.active .nav-menu li:nth-child(2) {
-		transition-delay:.1s
-	}
-
-	nav.active .nav-menu li:nth-child(3) {
-		transition-delay:.15s
-	}
-
-	nav.active .nav-menu li:nth-child(4) {
-		transition-delay:.2s
-	}
-
-	nav.active .nav-menu li:nth-child(5) {
-		transition-delay:.25s
-	}
-
-	nav.active .nav-menu li:nth-child(6) {
-		transition-delay:.3s
-	}
-
-	nav.active .nav-menu li:nth-child(7) {
-		transition-delay:.35s
+	.nav-menu li:not(:last-child)::after {
+		background:linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.15), transparent);
+		bottom:0;
+		content:'';
+		height:1px;
+		left:1.5rem;
+		position:absolute;
+		right:1.5rem
 	}
 
 	.nav-menu a {
+		align-items:center;
+		background:rgba(255, 255, 255, 0.03);
+		border:1px solid rgba(255, 255, 255, 0.05);
+		border-left:3px solid transparent;
 		border-radius:10px;
+		display:flex;
 		font-size:1rem;
-		padding:.875rem 1.25rem;
+		font-weight:500;
+		padding:0.6rem 0.8rem;
+		transition:all .2s ease;
 		width:100%
 	}
 
-	.nav-menu a::before {
-		background:linear-gradient(180deg,#58a6ff,#79c0ff);
-		border-radius:0 4px 4px 0;
-		height:100%;
-		left:0;
-		transform:none;
-		width:4px
-	}
-
-	.nav-menu a:hover::before,.nav-menu a.active::before {
-		width:4px
-	}
-
 	.nav-menu a:hover {
-		background:#58a6ff1f;
-		transform:translateX(4px)
+		background:rgba(88, 166, 255, 0.15);
+		border-color:rgba(88, 166, 255, 0.2);
+		border-left-color:rgba(88, 166, 255, 0.5);
+		color:#fff
 	}
 
 	.nav-menu a.active {
-		background:linear-gradient(90deg,#58a6ff2e,#58a6ff14);
-		border-left:4px solid #58a6ff;
-		padding-left:calc(1.25rem - 4px)
+		background:linear-gradient(90deg, rgba(88, 166, 255, 0.2), rgba(88, 166, 255, 0.1));
+		border-color:rgba(88, 166, 255, 0.25);
+		border-left:3px solid #58a6ff;
+		box-shadow:0 2px 8px rgba(88, 166, 255, 0.15);
+		color:#fff
 	}
 }
 
@@ -279,7 +253,22 @@ nav.active .menu-toggle span:nth-child(3) {
 	}
 
 	.nav-menu {
+		border-radius:0 0 14px 14px;
 		top:60px
+	}
+
+	nav.active .nav-menu {
+		padding:0.875rem 0.75rem 1.125rem
+	}
+
+	.nav-menu a {
+		font-size:0.95rem;
+		padding:0.55rem 0.75rem
+	}
+
+	.nav-menu li:not(:last-child)::after {
+		left:1.25rem;
+		right:1.25rem
 	}
 
 	.menu-toggle span {
@@ -303,12 +292,23 @@ nav.active .menu-toggle span:nth-child(3) {
 	}
 
 	.nav-menu {
+		border-radius:0 0 12px 12px;
 		top:56px
 	}
 
+	nav.active .nav-menu {
+		padding:0.75rem 0.625rem 1rem
+	}
+
 	.nav-menu a {
-		font-size:.95rem;
-		padding:.75rem 1rem
+		border-radius:10px;
+		font-size:0.9rem;
+		padding:0.5rem 0.7rem
+	}
+
+	.nav-menu li:not(:last-child)::after {
+		left:1.125rem;
+		right:1.125rem
 	}
 
 	.menu-toggle {
@@ -317,5 +317,46 @@ nav.active .menu-toggle span:nth-child(3) {
 
 	.menu-toggle span {
 		width:22px
+	}
+}
+
+@media (max-width: 1024px) {
+	.nav-menu a {
+		min-height:48px;
+		-webkit-tap-highlight-color:transparent;
+		-webkit-touch-callout:none
+	}
+
+	.nav-menu a:active {
+		background:rgba(88, 166, 255, 0.25);
+		border-left-color:#58a6ff
+	}
+
+	nav::before {
+		background:rgba(0, 0, 0, 0.2);
+		bottom:0;
+		content:'';
+		display:none;
+		left:0;
+		position:fixed;
+		right:0;
+		top:64px;
+		z-index:9997
+	}
+
+	nav.active::before {
+		display:block
+	}
+}
+
+@media (max-width: 768px) {
+	nav::before {
+		top:60px
+	}
+}
+
+@media (max-width: 480px) {
+	nav::before {
+		top:56px
 	}
 }
