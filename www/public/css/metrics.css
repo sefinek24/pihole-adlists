@@ -513,7 +513,7 @@ body {
 .peak-label {
     color:#ffffffe6;
     font-family:'Cascadia Mono','Calibri',sans-serif;
-    font-size:1.2rem;
+    font-size:1.4rem;
     font-weight:600;
     position:relative;
     text-shadow:0 0 8px #000c;
@@ -537,7 +537,7 @@ body {
     border-radius:10px;
     color:#ffffffe6;
     font-family:'Cascadia Mono','Calibri',sans-serif;
-    font-size:1.15rem;
+    font-size:1.05rem;
     font-weight:600;
     letter-spacing:.5px;
     overflow-wrap:break-word;
@@ -717,15 +717,15 @@ body {
 
 .spinner {
     animation:spin 1s linear infinite;
-    border:6px solid rgba(0, 136, 204, 0.08);
+    border:7px solid rgba(0, 136, 204, 0.15);
     border-radius:50%;
     border-top-color:#0088cc;
     box-shadow:0 0 25px rgba(0, 136, 204, 0.35),
                0 0 50px rgba(0, 136, 204, 0.15),
                inset 0 0 15px rgba(0, 136, 204, 0.1);
-    height:80px;
+    height:96px;
     position:relative;
-    width:80px;
+    width:96px;
     z-index:1
 }
 
