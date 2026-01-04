@@ -30,7 +30,7 @@ body {
 }
 
 .schedule-card {
-	backdrop-filter:blur(16px) saturate(150%);
+	backdrop-filter:blur(8px) saturate(150%);
 	background:#00000040;
 	border:1px solid #FFFFFF0D;
 	border-radius:12px;
@@ -64,7 +64,7 @@ body {
 
 .schedule-card__item {
 	align-items:center;
-	backdrop-filter:blur(12px);
+	backdrop-filter:blur(6px);
 	border:1px solid #FFFFFF0D;
 	border-radius:12px;
 	display:flex;
@@ -115,7 +115,7 @@ body {
 }
 
 .schedule-note {
-	backdrop-filter:blur(16px) saturate(150%);
+	backdrop-filter:blur(8px) saturate(150%);
 	background:#00000040;
 	border:1px solid #FFFFFF0D;
 	border-left:3px solid #58a6ff;

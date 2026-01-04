@@ -65,7 +65,7 @@ body {
 }
 
 .utc-badge {
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(8px);
     background:linear-gradient(135deg,#00a8fc40 0%,#00a8fc66 100%);
     border:1px solid #00a8fc99;
     border-radius:8px;
@@ -94,7 +94,7 @@ body {
 }
 
 .stats-timestamps {
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(8px);
     background:rgba(0, 0, 0, 0.05);
     border:1px solid #FFFFFF0D;
     border-radius:12px;
@@ -146,7 +146,7 @@ body {
 }
 
 .date-controls {
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(8px);
     background:rgba(0, 0, 0, 0.05);
     border:1px solid #FFFFFF0D;
     border-radius:20px;
@@ -321,7 +321,7 @@ body {
 
 .btn-quick,
 .btn-interval {
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(8px);
     background:#ffffff0d;
     border:1px solid #fff3;
     border-radius:12px;
@@ -359,7 +359,7 @@ body {
 
 .interval-controls {
     align-items:center;
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(8px);
     background:rgba(0, 0, 0, 0.05);
     border:1px solid #FFFFFF0D;
     border-radius:20px;
@@ -415,7 +415,7 @@ body {
 
 .peak-minute-banner {
     align-items:center;
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(8px);
     background:linear-gradient(135deg,#dc321433 0%,#b4280a26 100%);
     border:1px solid #dc321466;
     border-radius:16px;
@@ -449,7 +449,7 @@ body {
     background:radial-gradient(ellipse at center,#c83c0073 0%,#b41e0040 40%,transparent 70%);
     bottom:-30%;
     content:'';
-    filter:blur(20px);
+    filter:blur(10px);
     height:60%;
     left:10%;
     pointer-events:none;
@@ -531,7 +531,7 @@ body {
 }
 
 .peak-item {
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(8px);
     background:#ffffff0d;
     border:1px solid #ff6b3540;
     border-radius:10px;
@@ -557,7 +557,7 @@ body {
 }
 
 .stat-card {
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(8px);
     background:rgba(0, 0, 0, 0.05);
     border:1px solid #FFFFFF0D;
     border-radius:20px;
@@ -650,7 +650,7 @@ body {
 }
 
 .chart-container {
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(8px);
     background:rgba(0, 0, 0, 0.05);
     border:1px solid #FFFFFF0D;
     border-radius:20px;
@@ -700,9 +700,9 @@ body {
 }
 
 .loading {
-    -webkit-backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(8px);
     align-items:center;
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(8px);
     background:linear-gradient(135deg,#070606d9 0%,#0f0f19e6 100%);
     display:flex;
     flex-direction:column;
