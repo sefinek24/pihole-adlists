@@ -20,99 +20,53 @@
 # GitHub repository : https://github.com/sefinek/Sefinek-Blocklist-Collection
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Discord (chat)
-click.discord.com ads/jerryn70/GoodbyeAds.fork.txt
-click.discord.com ads/yoyo/ads-trackers-etc.fork.txt
-click.discord.com other/StevenBlack/fakenews-gambling-porn.fork.txt
-click.discord.com other/StevenBlack/hosts.fork.txt
-click.discord.com ads/firebog/Prigent-Ads.fork.txt
+# 2ip.io (IP address lookup service)
+2ip.io malicious/RPiList/Malware.fork.txt
 
-# FaceIT (gaming platform)
-email.faceit.com ads/jerryn70/GoodbyeAds.fork.txt
-email.faceit.com malicious/RPiList/Malware.fork.txt
+# 9gag (entertainment and meme platform)
+9gag.com porn/4skinSkywalker/hosts.fork.txt
+www.9gag.com porn/4skinSkywalker/hosts.fork.txt
 
-# Google
-manifest.googlevideo.com ads/kboghdady/youtubelist.fork.txt
+# AdTidy (ad blocking service)
+email-link.adtidy.org ads/yoyo/ads-trackers-etc.fork.txt
 
-# Stripe (payment gateway)
-m.stripe.com ads/firebog/AdguardDNS.fork.txt
-m.stripe.com extensions/MajkiIT/adguard-host.fork.txt
+# Ahrefs (SEO and marketing tool)
+ahrefs.com tracking-and-telemetry/neodevpro/host.fork.txt
 
-# DeviantArt (art community)
-deviantart.com porn/4skinSkywalker/hosts.fork.txt
-www.deviantart.com porn/4skinSkywalker/hosts.fork.txt
+# Akamai (CDN and IP lookup service)
+whatismyip.akamai.com ads/blocklistproject/hosts.fork.txt
 
-# Booth (art community)
+# AlbaHost (web hosting provider)
+albahost.net malicious/blocklistproject/malware.fork.txt
+albahost.net abuse/blocklistproject/hosts.fork.txt
+
+# American Girl (toy company)
+americangirl.com porn/blocklistproject/porn.fork.txt
+americangirl.com porn/chadmayfield/pi-blocklist-porn-all.fork.txt
+
+# Arquivo.pt (Portuguese web archive)
+arquivo.pt phishing/blocklistproject/phishing.fork.txt
+
+# Binance (cryptocurrency exchange)
+log.bntrace.com extensions/hagezi/pro.fork.txt
+log.bntrace.com jerryn70/GoodbyeAds.fork.txt
+
+# Bitbucket (Git repository hosting)
+bitbucket.io ads/blocklistproject/hosts.fork.txt
+
+# Booth (Japanese online marketplace for creative works)
 booth.pm other/StevenBlack/fakenews-gambling-porn.fork.txt
 booth.pm porn/Sinfonietta/pornography-hosts.fork.txt
 booth.pm porn/StevenBlack/porn.fork.txt
 
-# TheAnnoyingSite (this page is actually a meme and is entirely safe)
-theannoyingsite.com ads/blocklistproject/hosts.fork.txt
-theannoyingsite.com other/StevenBlack/fakenews-gambling-porn.fork.txt
-theannoyingsite.com porn/4skinSkywalker/hosts.fork.txt
-theannoyingsite.com tracking-and-telemetry/neodevpro/host.fork.txt
+# Brave (web browser)
+referrals.brave.com ads/firebog/Prigent-Ads.fork.txt
 
-# KuCoin (crypto)
-kucoin.com crypto/cryptojacking/firebog/Prigent/Crypto.fork.txt
+# Buffer (social media management tool)
+buffer-media-uploads.s3.amazonaws.com phishing/blocklistproject/phishing.fork.txt
 
-# Binance (crypto)
-log.bntrace.com extensions/hagezi/pro.fork.txt
-log.bntrace.com jerryn70/GoodbyeAds.fork.txt
-
-# Trustpilot (widget)
-widget.trustpilot.com ads/blocklistproject/hosts.fork.txt
-widget.trustpilot.com ads/ShadowWhisperer/Ads.fork.txt
-
-# Userlike (chat)
-userlike-cdn-widgets.s3-eu-west-1.amazonaws.com ads/ShadowWhisperer/Ads.fork.txt
-userlike-cdn-widgets.s3-eu-west-1.amazonaws.com extensions/hagezi/pro.fork.txt
-
-# Komputer Świat (Polish magazine)
-download.komputerswiat.pl abuse/blocklistproject/hosts.fork.txt
-download.komputerswiat.pl malicious/blocklistproject/malware.fork.txt
-komputerswiat.pl abuse/blocklistproject/hosts.fork.txt
-komputerswiat.pl malicious/blocklistproject/malware.fork.txt
-www.komputerswiat.pl abuse/blocklistproject/hosts.fork.txt
-www.komputerswiat.pl malicious/blocklistproject/malware.fork.txt
-
-# Forum PCLab.pl (Polish forum)
-forum.pclab.pl abuse/blocklistproject/hosts.fork.txt
-forum.pclab.pl malicious/blocklistproject/malware.fork.txt
-
-# G2A (Game marketplace)
-g2a.com fraud/blocklistproject/hosts.fork.txt
-www.g2a.com fraud/blocklistproject/hosts.fork.txt
-
-# Microsoft
-arc.msn.com ads/blocklistproject/hosts.fork.txt
-arc.msn.com ads/ShadowWhisperer/Ads.fork.txt
-microsoft.design phishing/RPiList/Phishing-Angriffe.fork.txt
-
-# Windows
-client.wns.windows.com ads/ShadowWhisperer/Ads.fork.txt
-
-# mail.ru (Russian mail service)
-trk.mail.ru extensions/hagezi/pro.fork.txt
-
-# WP (Polish mail service)
-onelogin.wpcdn.pl ads/ShadowWhisperer/Ads.fork.txt
-
-# Nvidia (graphics cards)
-events.gfe.nvidia.com tracking-and-telemetry/quidsup/trackers-hosts.fork.txt
-
-# reg.ru (Russian Internet Service Provider that offers web hosting, domain registration, and email services, including RoundCube Webmail)
-ns2.parking.reg.ru extensions/hagezi/pro.fork.txt
-parking.reg.ru ads/blocklistproject/hosts.fork.txt
-parking.reg.ru extensions/hagezi/pro.fork.txt
-parking.reg.ru StevenBlack/fakenews-gambling-porn.fork.txt
-parking.reg.ru tracking-and-telemetry/neodevpro/host.fork.txt
-www.reg.ru ads/blocklistproject/hosts.fork.txt
-
-# Outbyte (software company)
-email.mg.outbyte.com malicious/RPiList/Malware.fork.txt
-outbyte.com malicious/DandelionSprout-AntiMalwareHosts.fork.txt
-outbyte.com malicious/RPiList/Malware.fork.txt
+# Cedexis (performance monitoring and load balancing)
+cedexis.net ads/ShadowWhisperer/Ads.fork.txt
 
 # Chomikuj.pl (Polish file hosting service)
 chomikuj.pl other/StevenBlack/fakenews-gambling-porn.fork.txt
@@ -126,174 +80,278 @@ s72.chomikuj.pl malicious/blocklistproject/malware.fork.txt
 s8802.chomikuj.pl abuse/blocklistproject/hosts.fork.txt
 s8802.chomikuj.pl malicious/blocklistproject/malware.fork.txt
 
-# Zapier (automation tool)
-email.mail.zapier.com ads/jerryn70/GoodbyeAds.fork.txt
-email.mail.zapier.com malicious/RPiList/Malware.fork.txt
+# CIS Security (cybersecurity resources)
+learn.cisecurity.org tracking-and-telemetry/frogeye/firstparty-trackers-hosts.txt
 
-# Wordpress (blogging platform) & Gravatar (avatar service)
-s0.wp.com porn/4skinSkywalker/hosts.fork.txt
+# CloudFront (Amazon CDN)
+cloudfront.net phishing/Dogino/Discord-Phishing-URLs-phishing.fork.txt
+cloudfront.net scam/Dogino/Discord-Phishing-URLs-scam.fork.txt
 
-# Sirus (Private server of World of Warcraft)
-sirus.su abuse/blocklistproject/hosts.fork.txt
-sirus.su malicious/blocklistproject/malware.fork.txt
-www.sirus.su abuse/blocklistproject/hosts.fork.txt
-www.sirus.su malicious/blocklistproject/malware.fork.txt
+# Counter-Strike (first-person shooter game)
+counter-strike.net phishing/Dogino/Discord-Phishing-URLs-phishing.fork.txt
+counter-strike.net scam/Dogino/Discord-Phishing-URLs-scam.fork.txt
 
-# Customer.io (email service)
+# Customer.io (marketing automation platform)
 e.customeriomail.com ads/jerryn70/GoodbyeAds.fork.txt
 e.customeriomail.com malicious/RPiList/Malware.fork.txt
 
-# MyWOT (Web of Trust)
+# DeviantArt (online art community)
+deviantart.com porn/4skinSkywalker/hosts.fork.txt
+www.deviantart.com porn/4skinSkywalker/hosts.fork.txt
+
+# Discord (voice, video and text communication platform)
+click.discord.com ads/jerryn70/GoodbyeAds.fork.txt
+click.discord.com ads/yoyo/ads-trackers-etc.fork.txt
+click.discord.com other/StevenBlack/fakenews-gambling-porn.fork.txt
+click.discord.com other/StevenBlack/hosts.fork.txt
+click.discord.com ads/firebog/Prigent-Ads.fork.txt
+
+# DiscordServers (Discord server listing)
+discordservers.com phishing/Dogino/Discord-Phishing-URLs-phishing.fork.txt
+discordservers.com scam/Dogino/Discord-Phishing-URLs-scam.fork.txt
+
+# Drift (conversational marketing platform)
+driftt.com ads/firebog/AdguardDNS.fork.txt
+driftt.com tracking-and-telemetry/quidsup/trackers-hosts.fork.txt
+driftt.com extensions/MajkiIT/adguard-host.fork.txt
+
+# EvenInsight (gambling platform)
+eveninsight.com gambling/TrustPositif/gambling-indonesia.fork.txt
+
+# FaceIT (competitive gaming platform)
+email.faceit.com ads/jerryn70/GoodbyeAds.fork.txt
+email.faceit.com malicious/RPiList/Malware.fork.txt
+
+# Filmweb (Polish movie database)
+filmweb.pl porn/4skinSkywalker/hosts.fork.txt
+www.filmweb.pl porn/4skinSkywalker/hosts.fork.txt
+fwcdn.pl scam/jarelllama/scam.fork.txt
+
+# FirstMail (email service)
+firstmail.ltd spam/stopforumspam/toxic-domains-whole.fork.txt
+
+# FOSSA (open source license compliance)
+go.fossa.com malicious/RPiList/Malware.fork.txt
+
+# Forum PCLab.pl (Polish technology forum)
+forum.pclab.pl abuse/blocklistproject/hosts.fork.txt
+forum.pclab.pl malicious/blocklistproject/malware.fork.txt
+
+# G2A (digital marketplace for games)
+g2a.com fraud/blocklistproject/hosts.fork.txt
+www.g2a.com fraud/blocklistproject/hosts.fork.txt
+
+# Google (search engine and technology company)
+manifest.googlevideo.com ads/kboghdady/youtubelist.fork.txt
+scholar.google.com ads/jerryn70/GoodbyeAds.fork.txt
+lh7-rt.googleusercontent.com spam/RPiList/spam-mails.fork.txt
+
+# Hatch (customer loyalty platform)
+gethatch.com ads/ShadowWhisperer/Ads.fork.txt
+
+# HeadHunter (Russian job search website)
+api.hh.ru ads/blocklistproject/hosts.fork.txt
+
+# Hugging Face (AI and machine learning platform)
+huggingface.co malicious/RPiList/Malware.fork.txt
+
+# ImgBB (image hosting service)
+i.ibb.co gambling/TrustPositif/gambling-indonesia.fork.txt
+
+# IP2Location (IP geolocation service)
+ip2location.com ads/blocklistproject/hosts.fork.txt
+
+# IPify (simple IP address API)
+api.ipify.org ads/blocklistproject/hosts.fork.txt
+ipify.org ads/blocklistproject/hosts.fork.txt
+www.ipify.org ads/blocklistproject/hosts.fork.txt
+
+# IPQualityScore (fraud detection and IP reputation)
+ipqualityscore.com ads/blocklistproject/hosts.fork.txt
+www.ipqualityscore.com ads/blocklistproject/hosts.fork.txt
+
+# IronGeek (information security blog and resources)
+irongeek.com malicious/blocklistproject/malware.fork.txt
+www.irongeek.com malicious/blocklistproject/malware.fork.txt
+irongeek.com abuse/blocklistproject/hosts.fork.txt
+www.irongeek.com abuse/blocklistproject/hosts.fork.txt
+
+# JDownloader (download manager)
+jdownloader.org porn/4skinSkywalker/hosts.fork.txt
+
+# Keeper Security (password manager)
+keepersecurity.com porn/4skinSkywalker/hosts.fork.txt
+www.keepersecurity.com porn/4skinSkywalker/hosts.fork.txt
+
+# Komputer Świat (Polish technology magazine)
+download.komputerswiat.pl abuse/blocklistproject/hosts.fork.txt
+download.komputerswiat.pl malicious/blocklistproject/malware.fork.txt
+komputerswiat.pl abuse/blocklistproject/hosts.fork.txt
+komputerswiat.pl malicious/blocklistproject/malware.fork.txt
+www.komputerswiat.pl abuse/blocklistproject/hosts.fork.txt
+www.komputerswiat.pl malicious/blocklistproject/malware.fork.txt
+
+# KuCoin (cryptocurrency exchange)
+kucoin.com crypto/cryptojacking/firebog/Prigent/Crypto.fork.txt
+
+# LiveChat (customer service software)
+secure.livechatinc.com gambling/TrustPositif/gambling-indonesia.fork.txt
+
+# Mail.ru (Russian email and portal service)
+trk.mail.ru extensions/hagezi/pro.fork.txt
+
+# Mailgun (email delivery service)
+mailgun.org malicious/RPiList/Malware.fork.txt
+
+# Microsoft (technology company)
+arc.msn.com ads/blocklistproject/hosts.fork.txt
+arc.msn.com ads/ShadowWhisperer/Ads.fork.txt
+microsoft.design phishing/RPiList/Phishing-Angriffe.fork.txt
+wcpstatic.microsoft.com ads/ShadowWhisperer/Ads.fork.txt
+
+# MSI (computer hardware manufacturer)
+storage-asset.msi.com gambling/TrustPositif/gambling-indonesia.fork.txt
+
+# MyDealz (German deals community)
+mydealz.digidip.net ads/firebog/Prigent-Ads.fork.txt
+
+# MyWOT (Web of Trust reputation service)
 mywot.com other/StevenBlack/fakenews-gambling-porn.fork.txt
 mywot.com porn/4skinSkywalker/hosts.fork.txt
 www.mywot.com other/StevenBlack/fakenews-gambling-porn.fork.txt
 www.mywot.com porn/4skinSkywalker/hosts.fork.txt
 
-# IPQualityScore (IP address lookup service)
-ipqualityscore.com ads/blocklistproject/hosts.fork.txt
-www.ipqualityscore.com ads/blocklistproject/hosts.fork.txt
+# Niconico (Japanese video sharing platform)
+www.nicovideo.jp porn/StevenBlack/porn.fork.txt
+www.nicovideo.jp porn/Sinfonietta/pornography-hosts.fork.txt
+www.nicovideo.jp porn/oisd/nsfw.fork.txt
 
-# IPify (IP address lookup service)
-api.ipify.org ads/blocklistproject/hosts.fork.txt
-ipify.org ads/blocklistproject/hosts.fork.txt
-www.ipify.org ads/blocklistproject/hosts.fork.txt
+# NSFWJS (machine learning library for NSFW detection)
+nsfwjs.com porn/oisd/nsfw.fork.txt
 
-# Semrush
-semrush.com ads/blocklistproject/hosts.fork.txt
-www.semrush.com ads/blocklistproject/hosts.fork.txt
+# Nvidia (graphics card manufacturer)
+events.gfe.nvidia.com tracking-and-telemetry/quidsup/trackers-hosts.fork.txt
 
-# 9gag.com
-9gag.com porn/4skinSkywalker/hosts.fork.txt
-www.9gag.com porn/4skinSkywalker/hosts.fork.txt
+# o2.pl (Polish email and internet service provider)
+poczta.o2.pl porn/StevenBlack/porn.fork.txt
+poczta.o2.pl porn/Sinfonietta/pornography-hosts.fork.txt
 
-# X (social media platform formerly known as Twitter)
-ton.twimg.com ads/ShadowWhisperer/Ads.fork.txt
-pbs.twimg.com porn/4skinSkywalker/hosts.fork.txt
-video.twimg.com porn/4skinSkywalker/hosts.fork.txt
-t.co ads/yoyo/ads-trackers-etc.fork.txt
+# OneTrust (cookie consent management)
+cdn.cookielaw.org other/polish-blocklists/MajkiIT/hostfile.fork.txt
 
-# Patreon
+# Outbyte (PC optimization software)
+email.mg.outbyte.com malicious/RPiList/Malware.fork.txt
+outbyte.com malicious/DandelionSprout-AntiMalwareHosts.fork.txt
+outbyte.com malicious/RPiList/Malware.fork.txt
+
+# Patreon (membership platform for creators)
 email.mailgun.patreon.com ads/jerryn70/GoodbyeAds.fork.txt
 c6.patreon.com ads/ShadowWhisperer/Ads.fork.txt
 
-# DiscordServers
-discordservers.com phishing/Dogino/Discord-Phishing-URLs-phishing.fork.txt
-discordservers.com scam/Dogino/Discord-Phishing-URLs-scam.fork.txt
+# Pinterest (image sharing and social media)
+i.pinimg.com spam/RPiList/spam-mails.fork.txt
 
-# Chat
+# Pixalate (ad fraud detection)
+pixalate.com ads/ShadowWhisperer/Ads.fork.txt
+
+# Plex (media server and streaming)
+my.plexapp.com ads/blocklistproject/hosts.fork.txt
+
+# PostImage (image hosting service)
+postimg.cc gambling/TrustPositif/gambling-indonesia.fork.txt
+
+# PrepMyMeal (meal planning service)
+prepmymeal.com spam/RPiList/spam-mails.fork.txt
+
+# reg.ru (Russian domain registrar and hosting)
+ns2.parking.reg.ru extensions/hagezi/pro.fork.txt
+parking.reg.ru ads/blocklistproject/hosts.fork.txt
+parking.reg.ru extensions/hagezi/pro.fork.txt
+parking.reg.ru StevenBlack/fakenews-gambling-porn.fork.txt
+parking.reg.ru tracking-and-telemetry/neodevpro/host.fork.txt
+www.reg.ru ads/blocklistproject/hosts.fork.txt
+
+# Samsung (electronics manufacturer)
+eu-auth2.samsungosp.com tracking-and-telemetry/ente-dev/tv.fork.txt
+ocfconnect-shard-eu02-euwest1.samsungiotcloud.com tracking-and-telemetry/ente-dev/tv.fork.txt
+
+# Semrush (SEO and marketing platform)
+semrush.com ads/blocklistproject/hosts.fork.txt
+www.semrush.com ads/blocklistproject/hosts.fork.txt
+
+# ShipSpotting (ship photography community)
+shipspotting.com malicious/blocklistproject/malware.fork.txt
+shipspotting.com abuse/blocklistproject/hosts.fork.txt
+
+# Sirus (World of Warcraft private server)
+sirus.su abuse/blocklistproject/hosts.fork.txt
+sirus.su malicious/blocklistproject/malware.fork.txt
+www.sirus.su abuse/blocklistproject/hosts.fork.txt
+www.sirus.su malicious/blocklistproject/malware.fork.txt
+
+# Sporting Life (Canadian sporting goods retailer)
+sportinglife.ca fraud/blocklistproject/hosts.fork.txt
+www.sportinglife.ca fraud/blocklistproject/hosts.fork.txt
+
+# Stripe (payment processing platform)
+m.stripe.com ads/firebog/AdguardDNS.fork.txt
+m.stripe.com extensions/MajkiIT/adguard-host.fork.txt
+
+# SwiftMail (email service)
+swiftmail.cc scam/jarelllama/scam.fork.txt
+
+# Tawk.to (live chat application)
 embed.tawk.to ads/blocklistproject/hosts.fork.txt
 va.tawk.to abuse/blocklistproject/hosts.fork.txt
 va.tawk.to ads/blocklistproject/hosts.fork.txt
 va.tawk.to malicious/blocklistproject/malware.fork.txt
 
-# Samsung (Blocking these subdomains prevents adding a Samsung refrigerator to the SmartThings app)
-eu-auth2.samsungosp.com tracking-and-telemetry/ente-dev/tv.fork.txt
-ocfconnect-shard-eu02-euwest1.samsungiotcloud.com tracking-and-telemetry/ente-dev/tv.fork.txt
+# TheAnnoyingSite (humorous prank website)
+theannoyingsite.com ads/blocklistproject/hosts.fork.txt
+theannoyingsite.com other/StevenBlack/fakenews-gambling-porn.fork.txt
+theannoyingsite.com porn/4skinSkywalker/hosts.fork.txt
+theannoyingsite.com tracking-and-telemetry/neodevpro/host.fork.txt
 
-# Sporting goods store in Canada
-sportinglife.ca fraud/blocklistproject/hosts.fork.txt
-www.sportinglife.ca fraud/blocklistproject/hosts.fork.txt
+# Trustpilot (customer review platform)
+widget.trustpilot.com ads/blocklistproject/hosts.fork.txt
+widget.trustpilot.com ads/ShadowWhisperer/Ads.fork.txt
 
-# nicovideo.jp (https://github.com/sefinek/Sefinek-Blocklist-Collection/issues/81)
-www.nicovideo.jp porn/StevenBlack/porn.fork.txt
-www.nicovideo.jp porn/Sinfonietta/pornography-hosts.fork.txt
-www.nicovideo.jp porn/oisd/nsfw.fork.txt
+# Userlike (live chat software)
+userlike-cdn-widgets.s3-eu-west-1.amazonaws.com ads/ShadowWhisperer/Ads.fork.txt
+userlike-cdn-widgets.s3-eu-west-1.amazonaws.com extensions/hagezi/pro.fork.txt
 
-# keepersecurity.com
-keepersecurity.com porn/4skinSkywalker/hosts.fork.txt
-www.keepersecurity.com porn/4skinSkywalker/hosts.fork.txt
-
-# o2.pl (Polish mail service)
-poczta.o2.pl porn/StevenBlack/porn.fork.txt
-poczta.o2.pl porn/Sinfonietta/pornography-hosts.fork.txt
-
-# vk.com (https://github.com/sefinek/Sefinek-Blocklist-Collection/issues/84)
+# VK (Russian social network)
 m.vk.com porn/StevenBlack/porn.fork.txt
 m.vk.com porn/Sinfonietta/pornography-hosts.fork.txt
 vk.com porn/4skinSkywalker/hosts.fork.txt
 
-# albahost.net
-albahost.net malicious/blocklistproject/malware.fork.txt
-albahost.net abuse/blocklistproject/hosts.fork.txt
-
-# shipspotting.com
-shipspotting.com malicious/blocklistproject/malware.fork.txt
-shipspotting.com abuse/blocklistproject/hosts.fork.txt
-
-# Counter-Strike (game)
-counter-strike.net phishing/Dogino/Discord-Phishing-URLs-phishing.fork.txt
-counter-strike.net scam/Dogino/Discord-Phishing-URLs-scam.fork.txt
-
-# Other
-my.plexapp.com ads/blocklistproject/hosts.fork.txt
-firstmail.ltd spam/stopforumspam/toxic-domains-whole.fork.txt
-secure.livechatinc.com gambling/TrustPositif/gambling-indonesia.fork.txt
-ahrefs.com tracking-and-telemetry/neodevpro/host.fork.txt
-bitbucket.io ads/blocklistproject/hosts.fork.txt
-wcpstatic.microsoft.com ads/ShadowWhisperer/Ads.fork.txt
-eveninsight.com gambling/TrustPositif/gambling-indonesia.fork.txt
-buffer-media-uploads.s3.amazonaws.com phishing/blocklistproject/phishing.fork.txt
-referrals.brave.com ads/firebog/Prigent-Ads.fork.txt
-wykop.pl porn/oisd/nsfw.fork.txt
-whatismyip.akamai.com ads/blocklistproject/hosts.fork.txt
-ip2location.com ads/blocklistproject/hosts.fork.txt
-api.sec.intl.miui.com ads/blocklistproject/hosts.fork.txt
-arquivo.pt phishing/blocklistproject/phishing.fork.txt
-scholar.google.com ads/jerryn70/GoodbyeAds.fork.txt
-api.hh.ru ads/blocklistproject/hosts.fork.txt
-go.fossa.com malicious/RPiList/Malware.fork.txt
-email-link.adtidy.org ads/yoyo/ads-trackers-etc.fork.txt
+# WebParanoid (online security tool)
 webparanoid.com gambling/TrustPositif/gambling-indonesia.fork.txt
-cdn.cookielaw.org other/polish-blocklists/MajkiIT/hostfile.fork.txt
-postimg.cc gambling/TrustPositif/gambling-indonesia.fork.txt
-i.ibb.co gambling/TrustPositif/gambling-indonesia.fork.txt
-storage-asset.msi.com gambling/TrustPositif/gambling-indonesia.fork.txt
-gethatch.com ads/ShadowWhisperer/Ads.fork.txt
-pixalate.com ads/ShadowWhisperer/Ads.fork.txt
-2ip.io malicious/RPiList/Malware.fork.txt
-cedexis.net ads/ShadowWhisperer/Ads.fork.txt
-mailgun.org malicious/RPiList/Malware.fork.txt
-learn.cisecurity.org tracking-and-telemetry/frogeye/firstparty-trackers-hosts.txt
-americangirl.com porn/blocklistproject/porn.fork.txt
-americangirl.com porn/chadmayfield/pi-blocklist-porn-all.fork.txt
-irongeek.com malicious/blocklistproject/malware.fork.txt
-www.irongeek.com malicious/blocklistproject/malware.fork.txt
-irongeek.com abuse/blocklistproject/hosts.fork.txt
-www.irongeek.com abuse/blocklistproject/hosts.fork.txt
-swiftmail.cc scam/jarelllama/scam.fork.txt
+
+# Windows (Microsoft operating system)
+client.wns.windows.com ads/ShadowWhisperer/Ads.fork.txt
+
+# WordPress (content management system)
+s0.wp.com porn/4skinSkywalker/hosts.fork.txt
+
+# WP (Polish web portal and email service)
+onelogin.wpcdn.pl ads/ShadowWhisperer/Ads.fork.txt
+
+# Wykop (Polish social news aggregator)
+wykop.pl porn/oisd/nsfw.fork.txt
+
+# X (social media platform formerly Twitter)
+ton.twimg.com ads/ShadowWhisperer/Ads.fork.txt
+pbs.twimg.com porn/4skinSkywalker/hosts.fork.txt
+video.twimg.com porn/4skinSkywalker/hosts.fork.txt
+t.co ads/yoyo/ads-trackers-etc.fork.txt
+
+# Xiaomi MIUI (Android-based mobile operating system)
+api.sec.intl.miui.com ads/blocklistproject/hosts.fork.txt
+
+# Zapier (automation platform)
+email.mail.zapier.com ads/jerryn70/GoodbyeAds.fork.txt
+email.mail.zapier.com malicious/RPiList/Malware.fork.txt
+
+# Ziff Media (digital media company)
 cdn.ziffstatic.com ads/blocklistproject/hosts.fork.txt
-
-# driftt.com
-driftt.com ads/firebog/AdguardDNS.fork.txt
-driftt.com tracking-and-telemetry/quidsup/trackers-hosts.fork.txt
-driftt.com extensions/MajkiIT/adguard-host.fork.txt
-
-# cloudfront.net
-cloudfront.net phishing/Dogino/Discord-Phishing-URLs-phishing.fork.txt
-cloudfront.net scam/Dogino/Discord-Phishing-URLs-scam.fork.txt
-
-# filmweb.pl
-filmweb.pl porn/4skinSkywalker/hosts.fork.txt
-www.filmweb.pl porn/4skinSkywalker/hosts.fork.txt
-fwcdn.pl scam/jarelllama/scam.fork.txt
-
-# AI
-huggingface.co malicious/RPiList/Malware.fork.txt
-
-# prepmymeal.com
-prepmymeal.com spam/RPiList/spam-mails.fork.txt
-
-# jdownloader.org
-jdownloader.org porn/4skinSkywalker/hosts.fork.txt
-
-# mydealz.digidip.net
-mydealz.digidip.net ads/firebog/Prigent-Ads.fork.txt
-
-# nsfwjs.com
-nsfwjs.com porn/oisd/nsfw.fork.txt
-
-# googleusercontent.com
-lh7-rt.googleusercontent.com spam/RPiList/spam-mails.fork.txt
-
-# pinterest.com
-i.pinimg.com spam/RPiList/spam-mails.fork.txt
