@@ -610,6 +610,15 @@ const createRequestsChart = data => {
 	}
 };
 
+const getHttpCodeColor = code => {
+	const codeNum = parseInt(code);
+	if (codeNum >= 200 && codeNum < 300) return COLORS.green; // 2xx Success
+	if (codeNum >= 300 && codeNum < 400) return COLORS.primary; // 3xx Redirect
+	if (codeNum >= 400 && codeNum < 500) return COLORS.orange; // 4xx Client Error
+	if (codeNum >= 500 && codeNum < 600) return COLORS.red; // 5xx Server Error
+	return COLORS.purple; // Unknown
+};
+
 const createResponsesChart = responses => {
 	const ctx = document.getElementById('responses-chart')?.getContext('2d');
 	if (!ctx) return;
@@ -617,19 +626,24 @@ const createResponsesChart = responses => {
 	const total = Object.values(responses).reduce((sum, val) => sum + val, 0);
 	if (total === 0) return;
 
+	const codes = Object.keys(responses);
+	const colorValues = codes.map(getHttpCodeColor);
+
 	if (charts.responses) {
-		charts.responses.data.labels = Object.keys(responses);
+		charts.responses.data.labels = codes;
 		charts.responses.data.datasets[0].data = Object.values(responses);
+		charts.responses.data.datasets[0].backgroundColor = colorValues;
+		charts.responses.data.datasets[0].hoverBackgroundColor = colorValues.map(c => c + 'dd');
+		charts.responses.data.datasets[0].borderColor = colorValues.map(c => c + 'aa');
+		charts.responses.data.datasets[0].hoverBorderColor = colorValues;
 		charts.responses.update('none');
 		return;
 	}
 
-	const colorValues = [COLORS.green, COLORS.primary, COLORS.yellow, COLORS.orange, COLORS.red];
-
 	charts.responses = new Chart(ctx, {
 		type: 'doughnut',
 		data: {
-			labels: Object.keys(responses),
+			labels: codes,
 			datasets: [{
 				data: Object.values(responses),
 				backgroundColor: colorValues,
