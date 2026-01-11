@@ -21,7 +21,7 @@ body {
 .explorer {
     backdrop-filter:blur(6px);
     background:rgba(0,0,0,.12);
-    border:1px solid #FFFFFF0D;
+    border:1px solid var(--color-border-light);
     border-radius:12px;
     box-shadow:0 4px 24px #0003;
     display:flex;
@@ -35,8 +35,8 @@ body {
 .explorer__header {
     align-items:center;
     backdrop-filter:blur(6px);
-    background:rgba(0, 0, 0, 0.3);
-    border-bottom:1px solid #FFFFFF0D;
+    background:rgba(0,0,0,.3);
+    border-bottom:1px solid var(--color-border-light);
     display:flex;
     flex-shrink:0;
     gap:1rem;
@@ -80,14 +80,14 @@ body {
 
 .explorer__action {
     align-items:center;
-    background:rgba(88, 166, 255, 0.1);
-    border:1px solid rgba(88, 166, 255, 0.2);
-    border-radius:8px;
+    background:rgba(88,166,255,.1);
+    border:1px solid rgba(88,166,255,.2);
+    border-radius:var(--radius-sm);
     color:#ffffffd9;
     cursor:pointer;
     display:inline-flex;
     flex-shrink:0;
-    font-family:var(--font-primary, 'Segoe UI'),sans-serif;
+    font-family:var(--font-primary,'Segoe UI'),sans-serif;
     font-size:.875rem;
     font-weight:500;
     gap:.5rem;
@@ -95,13 +95,13 @@ body {
     justify-content:center;
     line-height:1.5;
     padding:.5rem 1rem;
-    transition:all .25s cubic-bezier(0.4,0,0.2,1);
+    transition:var(--transition-smooth);
     white-space:nowrap
 }
 
 .explorer__action:hover {
-    background:rgba(88, 166, 255, 0.2);
-    color:#fff;
+    background:rgba(88,166,255,.2);
+    color:var(--color-text);
     transform:translateY(-1px)
 }
 
@@ -110,7 +110,7 @@ body {
 }
 
 .explorer__action:focus-visible {
-    outline:2px solid #58a6ff99;
+    outline:2px solid var(--color-secondary);
     outline-offset:2px
 }
 
@@ -165,15 +165,15 @@ body {
 
 .explorer__row {
     border-bottom:1px solid #ffffff08;
-    transition:background .25s cubic-bezier(0.4,0,0.2,1)
+    transition:background var(--transition-smooth)
 }
 
 .explorer__row:hover {
-    background:rgba(88, 166, 255, 0.08)
+    background:rgba(88,166,255,.08)
 }
 
 .explorer__row:focus-within {
-    background:rgba(88, 166, 255, 0.12)
+    background:rgba(88,166,255,.12)
 }
 
 .explorer__cell {
@@ -217,7 +217,7 @@ body {
 
 .explorer__link:focus-visible {
     border-radius:4px;
-    outline:2px solid #58a6ff99;
+    outline:2px solid var(--color-secondary);
     outline-offset:2px
 }
 

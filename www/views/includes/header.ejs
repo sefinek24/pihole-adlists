@@ -8,22 +8,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <% if (canonical || canonical === '') { %><link rel="canonical" href="<%= process.env.DOMAIN %><%= canonical %>"><% } %>
 
+    <link rel="preconnect" href="https://cdn.sefinek.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.sefinek.net">
+    <link rel="preconnect" href="https://sefinek.net" crossorigin>
+
     <!-- CSS -->
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <% if (css) { %><link rel="stylesheet" href="/css/<%= css %>.css"> <% } %>
 
     <!-- SEO -->
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <meta name="theme-color" content="#223672">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="application-name" content="Sefinek Blocklist Collection">
     <meta name="apple-mobile-web-app-title" content="Sefinek Blocklist Collection">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#223672">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Sefinek Blocklist Collection">
@@ -34,6 +38,29 @@
     <meta property="twitter:title" content="Sefinek Blocklist Collection">
     <meta property="twitter:image" content="https://blocklist.sefinek.net/images/meta-og.jpg">
     <meta property="twitter:image:alt" content="Sefinek Blocklist Collection banner">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Sefinek Blocklist Collection",
+        "url": "https://blocklist.sefinek.net",
+        "description": "The largest blocklist collection for AdGuard and Pi-hole, including over 100 lists and over 6 million domains",
+        "author": {
+            "@type": "Person",
+            "name": "Sefinek",
+            "url": "https://sefinek.net"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Sefinek",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://sefinek.net/favicon.png"
+            }
+        }
+    }
+    </script>
 </head>
 <body>
     <nav>

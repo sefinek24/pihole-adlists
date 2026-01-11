@@ -1,6 +1,9 @@
 (() => {
 	'use strict';
 
+	const requestCache = new Map();
+	const CACHE_TTL = 60000;
+
 	const formatTimestamp = element => {
 		const timestamp = Number(element.dataset.timestamp);
 		if (!Number.isNaN(timestamp) && timestamp > 0) {
@@ -33,8 +36,7 @@
 				</a>
 			</td>
 			<td class="explorer__cell explorer__cell--date" data-timestamp="${file.lastModified}"></td>
-			<td class="explorer__cell explorer__cell--size">${file.formattedSize}</td>
-		`;
+			<td class="explorer__cell explorer__cell--size">${file.formattedSize}</td>`;
 
 		return row;
 	};
@@ -53,8 +55,7 @@
 				</a>
 			</td>
 			<td class="explorer__cell explorer__cell--date"></td>
-			<td class="explorer__cell explorer__cell--size"></td>
-		`;
+			<td class="explorer__cell explorer__cell--size"></td>`;
 
 		return row;
 	};
@@ -66,12 +67,43 @@
 		});
 	};
 
+	const renderDirectory = (data, tbody, pathElement, pushState) => {
+		tbody.innerHTML = '';
+
+		const basePath = window.location.pathname.split('/').slice(0, 3).join('/');
+		const parentRow = createParentRow(data.currentPath, basePath);
+		if (parentRow) tbody.appendChild(parentRow);
+
+		data.files.forEach(file => {
+			tbody.appendChild(createTableRow(file, data.currentPath.replace(/\/$/, '')));
+		});
+
+		tbody.querySelectorAll('.explorer__cell--date[data-timestamp]').forEach(formatTimestamp);
+
+		if (pathElement) pathElement.textContent = data.currentPath;
+
+		if (pushState) {
+			const newUrl = data.currentPath.endsWith('/') ? data.currentPath : `${data.currentPath}/`;
+			window.history.pushState({ path: newUrl }, '', newUrl);
+		}
+
+		attachAjaxListeners(handleAjaxClick);
+	};
+
 	const loadDirectory = async (url, pushState = true) => {
 		const tbody = document.querySelector('.explorer__tbody');
 		const pathElement = document.querySelector('.explorer__path');
 		if (!tbody) return;
 
-		tbody.innerHTML = '<tr><td colspan="3" style="text-align: center; padding: 2rem; color: rgba(255,255,255,0.6);">Loading...</td></tr>';
+		const cached = requestCache.get(url);
+		const now = Date.now();
+
+		if (cached && (now - cached.timestamp) < CACHE_TTL) {
+			renderDirectory(cached.data, tbody, pathElement, pushState);
+			return;
+		}
+
+		tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;padding:2rem;color:rgba(255,255,255,0.6)">Loading...</td></tr>';
 
 		try {
 			const response = await fetch(url, {
@@ -83,29 +115,17 @@
 			const data = await response.json();
 			if (!data.success) throw new Error(data.error || 'Unknown error');
 
-			tbody.innerHTML = '';
+			requestCache.set(url, { data, timestamp: Date.now() });
 
-			const basePath = window.location.pathname.split('/').slice(0, 3).join('/');
-			const parentRow = createParentRow(data.currentPath, basePath);
-			if (parentRow) tbody.appendChild(parentRow);
-
-			data.files.forEach(file => {
-				tbody.appendChild(createTableRow(file, data.currentPath.replace(/\/$/, '')));
-			});
-
-			tbody.querySelectorAll('.explorer__cell--date[data-timestamp]').forEach(formatTimestamp);
-
-			if (pathElement) pathElement.textContent = data.currentPath;
-
-			if (pushState) {
-				const newUrl = data.currentPath.endsWith('/') ? data.currentPath : `${data.currentPath}/`;
-				window.history.pushState({ path: newUrl }, '', newUrl);
+			if (requestCache.size > 50) {
+				const firstKey = requestCache.keys().next().value;
+				requestCache.delete(firstKey);
 			}
 
-			attachAjaxListeners(handleAjaxClick);
+			renderDirectory(data, tbody, pathElement, pushState);
 		} catch (err) {
 			console.error('Error loading directory:', err);
-			tbody.innerHTML = `<tr><td colspan="3" style="text-align: center; padding: 2rem; color: rgba(255,100,100,0.8);">Error: ${err.message}</td></tr>`;
+			tbody.innerHTML = `<tr><td colspan="3" style="text-align:center;padding:2rem;color:rgba(255,100,100,0.8)">Error: ${err.message}</td></tr>`;
 		}
 	};
 

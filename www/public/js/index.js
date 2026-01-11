@@ -3,10 +3,12 @@ import { formatDate, updateElementDate, updateElementDateOnly } from './date.js'
 const WS_ADDRESS = document.querySelector('script[data-ws-address]')?.dataset?.wsAddress;
 const RECONNECT_DELAY = 3000;
 const MAX_RECONNECT_DELAY = 30000;
+const HEARTBEAT_INTERVAL = 30000;
 const CATEGORY_IDS = ['hosts', 'localhost', 'noip', 'adguard', 'unbound', 'dnsmasq', 'rpz'];
 
-let reconnectAttempts = 0, reconnectTimeout = null;
+let heartbeatInterval = null, reconnectAttempts = 0, reconnectTimeout = null;
 let ws = null;
+let lastMessageTime = Date.now();
 
 const elementCache = new Map();
 
@@ -30,6 +32,8 @@ const updateStats = (id, value) => {
 };
 
 const handleWebSocketMessage = event => {
+	lastMessageTime = Date.now();
+
 	try {
 		const data = JSON.parse(event.data);
 		if (!data?.stats) return;
@@ -77,6 +81,16 @@ const connect = () => {
 	ws.onopen = () => {
 		console.log('WebSocket connected');
 		reconnectAttempts = 0;
+		lastMessageTime = Date.now();
+
+		if (heartbeatInterval) clearInterval(heartbeatInterval);
+		heartbeatInterval = setInterval(() => {
+			const timeSinceLastMessage = Date.now() - lastMessageTime;
+			if (timeSinceLastMessage > HEARTBEAT_INTERVAL * 2) {
+				console.log('Connection appears stale, reconnecting...');
+				ws.close();
+			}
+		}, HEARTBEAT_INTERVAL);
 	};
 
 	ws.onmessage = handleWebSocketMessage;
@@ -85,6 +99,11 @@ const connect = () => {
 
 	ws.onclose = () => {
 		console.log('WebSocket disconnected');
+
+		if (heartbeatInterval) {
+			clearInterval(heartbeatInterval);
+			heartbeatInterval = null;
+		}
 
 		if (reconnectTimeout) clearTimeout(reconnectTimeout);
 

@@ -6,6 +6,54 @@ const ERROR_CODES = ['400', '401', '403', '404', '429', '500', '502', '503', '50
 const VALID_INTERVALS = [1, 5, 10, 15, 30, 60, 240, 480, 960, 1440];
 const VALID_DAYS = [3, 7, 14, 30, 90];
 let dataAvailableDays = 0, dataStartDate = null, serverTimeOffset = 0;
+
+const dateFormatCache = new Map();
+const MAX_CACHE_SIZE = 500;
+
+const memoizedFormatToYYYYMMDD = date => {
+	const timestamp = date instanceof Date ? date.getTime() : new Date(date).getTime();
+	if (dateFormatCache.has(timestamp)) {
+		return dateFormatCache.get(timestamp);
+	}
+
+	const result = formatToYYYYMMDD(date);
+
+	if (dateFormatCache.size >= MAX_CACHE_SIZE) {
+		const firstKey = dateFormatCache.keys().next().value;
+		dateFormatCache.delete(firstKey);
+	}
+
+	dateFormatCache.set(timestamp, result);
+	return result;
+};
+
+const localStorageBatcher = (() => {
+	const pendingWrites = new Map();
+	let timeoutId = null;
+
+	const flush = () => {
+		pendingWrites.forEach((value, key) => {
+			try {
+				localStorage.setItem(key, value);
+			} catch (err) {
+				console.error('localStorage write failed:', key, err);
+			}
+		});
+		pendingWrites.clear();
+		timeoutId = null;
+	};
+
+	return {
+		set: (key, value) => {
+			pendingWrites.set(key, String(value));
+
+			if (!timeoutId) {
+				timeoutId = setTimeout(flush, 100);
+			}
+		},
+		flush
+	};
+})();
 const FORMAT_LABELS = {
 	hosts: 'hosts 0.0.0.0',
 	localhost: 'localhost',
@@ -221,7 +269,7 @@ const aggregateByInterval = (data, intervalMinutes) => {
 		const key = roundedTimestamp.toISOString();
 
 		if (!aggregated[key]) {
-			const dateStr = formatToYYYYMMDD(roundedTimestamp);
+			const dateStr = memoizedFormatToYYYYMMDD(roundedTimestamp);
 			const timeStr = `${String(roundedTimestamp.getUTCHours()).padStart(2, '0')}:${String(roundedTimestamp.getUTCMinutes()).padStart(2, '0')}`;
 
 			aggregated[key] = {
@@ -271,7 +319,6 @@ const getMinInterval = days => {
 let dateFromInputCached, dateToInputCached;
 let intervalButtonsCached, quickButtonsCached;
 
-// Pre-initialize DOM cache
 const initDOMCache = () => {
 	dateFromInputCached = document.getElementById('date-from');
 	dateToInputCached = document.getElementById('date-to');
@@ -280,7 +327,6 @@ const initDOMCache = () => {
 	loadingElement = document.getElementById('loading');
 };
 
-// Debounce helper function
 const debounce = (fn, delay) => {
 	let timeoutId;
 	return (...args) => {
@@ -291,14 +337,14 @@ const debounce = (fn, delay) => {
 
 const updateDateInputLimits = createdAt => {
 	const today = new Date();
-	const todayStr = formatToYYYYMMDD(today);
+	const todayStr = memoizedFormatToYYYYMMDD(today);
 
 	let minDate;
 	if (createdAt) {
 		const createdDate = new Date(createdAt);
-		minDate = formatToYYYYMMDD(createdDate);
+		minDate = memoizedFormatToYYYYMMDD(createdDate);
 	} else if (dataStartDate) {
-		minDate = formatToYYYYMMDD(dataStartDate);
+		minDate = memoizedFormatToYYYYMMDD(dataStartDate);
 	} else {
 		return;
 	}
@@ -373,8 +419,8 @@ const setDefaultDates = () => {
 	const sevenDaysAgo = new Date(today);
 	sevenDaysAgo.setDate(today.getDate() - 7);
 
-	if (dateFromInputCached) dateFromInputCached.value = formatToYYYYMMDD(sevenDaysAgo);
-	if (dateToInputCached) dateToInputCached.value = formatToYYYYMMDD(today);
+	if (dateFromInputCached) dateFromInputCached.value = memoizedFormatToYYYYMMDD(sevenDaysAgo);
+	if (dateToInputCached) dateToInputCached.value = memoizedFormatToYYYYMMDD(today);
 };
 
 const fetchMetrics = async (from, to) => {
@@ -411,14 +457,12 @@ const aggregateData = data => {
 	let minTimestamp = Infinity;
 	let maxTimestamp = -Infinity;
 
-	// Track top 3 peaks efficiently
 	const peakTracker = [
 		{ time: '', count: 0 },
 		{ time: '', count: 0 },
 		{ time: '', count: 0 },
 	];
 
-	// Single-pass aggregation
 	for (const item of data) {
 		const itemTotal = item.total || 0;
 		totalRequests += itemTotal;
@@ -429,7 +473,6 @@ const aggregateData = data => {
 		if (timestamp < minTimestamp) minTimestamp = timestamp;
 		if (timestamp > maxTimestamp) maxTimestamp = timestamp;
 
-		// Track top 3 peaks inline
 		const intervalTime = `${item.date} ${item.time}`;
 		if (itemTotal > peakTracker[2].count) {
 			if (itemTotal > peakTracker[0].count) {
@@ -444,7 +487,6 @@ const aggregateData = data => {
 			}
 		}
 
-		// Aggregate responses with inline success/error counting
 		if (item.responses) {
 			for (const [code, count] of Object.entries(item.responses)) {
 				responses[code] = (responses[code] || 0) + count;
@@ -456,19 +498,16 @@ const aggregateData = data => {
 			}
 		}
 
-		// Aggregate categories
 		if (item.categories) {
 			for (const [cat, count] of Object.entries(item.categories)) {
 				if (count > 0) categories[cat] = (categories[cat] || 0) + count;
 			}
 		}
 
-		// Hourly data
 		const hour = item.time.split(':')[0];
 		hourlyData[hour] = (hourlyData[hour] || 0) + itemTotal;
 	}
 
-	// Filter out empty peaks
 	const top3Peaks = peakTracker.filter(p => p.count > 0);
 
 	const successRate = totalRequests > 0 ? ((successCount / totalRequests) * 100).toFixed(2) : '0.00';
@@ -479,7 +518,6 @@ const aggregateData = data => {
 	const avgPerDay = uniqueDates.size > 0 ? Math.floor(totalRequests / uniqueDates.size) : 0;
 	const blocklistShare = totalRequests > 0 ? ((totalBlocklists / totalRequests) * 100).toFixed(2) : '0.00';
 
-	// Find top category efficiently
 	let topCategory = 'N/A';
 	let maxCategoryCount = 0;
 	for (const [cat, count] of Object.entries(categories)) {
@@ -557,13 +595,11 @@ const createRequestsChart = data => {
 	});
 
 	if (charts.requests) {
-		// Update existing chart
 		charts.requests.data.labels = labels;
 		charts.requests.data.datasets[0].data = data.map(d => d.total || 0);
 		charts.requests.data.datasets[1].data = data.map(d => d.blocklists || 0);
-		charts.requests.update('none'); // 'none' skips animation for faster update
+		charts.requests.update('none');
 	} else {
-		// Create new chart
 		charts.requests = new Chart(ctx, {
 			type: 'line',
 			data: {
@@ -612,11 +648,11 @@ const createRequestsChart = data => {
 
 const getHttpCodeColor = code => {
 	const codeNum = parseInt(code);
-	if (codeNum >= 200 && codeNum < 300) return COLORS.green; // 2xx Success
-	if (codeNum >= 300 && codeNum < 400) return COLORS.primary; // 3xx Redirect
-	if (codeNum >= 400 && codeNum < 500) return COLORS.orange; // 4xx Client Error
-	if (codeNum >= 500 && codeNum < 600) return COLORS.red; // 5xx Server Error
-	return COLORS.purple; // Unknown
+	if (codeNum >= 200 && codeNum < 300) return COLORS.green;
+	if (codeNum >= 300 && codeNum < 400) return COLORS.primary;
+	if (codeNum >= 400 && codeNum < 500) return COLORS.orange;
+	if (codeNum >= 500 && codeNum < 600) return COLORS.red;
+	return COLORS.purple;
 };
 
 const createResponsesChart = responses => {
@@ -1142,7 +1178,7 @@ const updateIntervalButtons = days => {
 			intervalButtonsCached.forEach(b => b.classList.remove('active'));
 			btn.classList.add('active');
 			currentInterval = minInterval;
-			localStorage.setItem('metrics_interval', currentInterval);
+			localStorageBatcher.set('metrics_interval', currentInterval);
 			activeSet = true;
 		}
 	});
@@ -1162,8 +1198,8 @@ const loadQuickData = async days => {
 		from.setDate(to.getDate() - days);
 	}
 
-	if (dateFromInputCached) dateFromInputCached.value = formatToYYYYMMDD(from);
-	if (dateToInputCached) dateToInputCached.value = formatToYYYYMMDD(to);
+	if (dateFromInputCached) dateFromInputCached.value = memoizedFormatToYYYYMMDD(from);
+	if (dateToInputCached) dateToInputCached.value = memoizedFormatToYYYYMMDD(to);
 
 	updateIntervalButtons(days);
 	await loadData();
@@ -1211,7 +1247,7 @@ const initializeButtonListeners = () => {
 
 			const daysValue = e.target.dataset.days;
 			const days = daysValue === 'max' ? 'max' : (parseInt(daysValue) || 7);
-			localStorage.setItem('metrics_days', days);
+			localStorageBatcher.set('metrics_days', days);
 			await loadQuickData(days);
 		});
 	});
@@ -1224,14 +1260,13 @@ const initializeButtonListeners = () => {
 			e.target.classList.add('active');
 
 			currentInterval = parseInt(e.target.dataset.interval) || 1;
-			localStorage.setItem('metrics_interval', currentInterval);
+			localStorageBatcher.set('metrics_interval', currentInterval);
 			await loadData();
 		});
 	});
 };
 
 const initializeMetrics = () => {
-	// Initialize DOM cache first
 	initDOMCache();
 
 	const savedDaysRaw = localStorage.getItem('metrics_days');
@@ -1240,12 +1275,12 @@ const initializeMetrics = () => {
 
 	if (!VALID_INTERVALS.includes(savedInterval)) {
 		savedInterval = 10;
-		localStorage.setItem('metrics_interval', savedInterval);
+		localStorageBatcher.set('metrics_interval', savedInterval);
 	}
 
 	if (savedDays !== 'max' && !VALID_DAYS.includes(savedDays)) {
 		savedDays = 7;
-		localStorage.setItem('metrics_days', savedDays);
+		localStorageBatcher.set('metrics_days', savedDays);
 	}
 
 	quickButtonsCached.forEach(btn => {

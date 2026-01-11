@@ -3,27 +3,37 @@
     --color-bg-dark:#070606;
     --color-bg-darker:#101011;
     --color-bg-stats:#121215;
+    --color-bg-overlay:rgba(0,0,0,.4);
+    --color-bg-overlay-light:rgba(0,0,0,.05);
     --color-border:#1e1f22;
+    --color-border-light:#FFFFFF0D;
     --color-primary:#00a8fc;
     --color-primary-glow:#84fafc99;
     --color-primary-light:#84fafc;
+    --color-secondary:#58a6ff;
     --color-text:#fff;
+    --color-text-dim:#ffffffe6;
     --font-mono:'Cascadia Mono',monospace;
     --font-primary:Calibri,sans-serif;
     --radius-lg:17px;
     --radius-md:10px;
     --radius-sm:8px;
+    --shadow-default:0 0 14px #0009;
     --shadow-glow:0 0 9px var(--color-primary-glow);
     --shadow-glow-strong:0 0 12px var(--color-primary-light);
     --shadow-md:0 0 10px #1e1f22db;
     --shadow-sm:0 0 4px #000c;
+    --shadow-text:0 0 8px #00000080;
     --spacing-lg:40px;
     --spacing-md:20px;
     --spacing-sm:10px;
     --spacing-xs:5px;
     --transition-fast:.1s ease;
     --transition-normal:.2s ease;
-    --transition-slow:.3s ease
+    --transition-slow:.3s ease;
+    --transition-smooth:.3s cubic-bezier(0.4,0,0.2,1);
+    --backdrop-blur:blur(8px) saturate(150%);
+    --backdrop-blur-strong:blur(10px) saturate(150%)
 }
 
 html {
@@ -119,7 +129,7 @@ a:focus-visible {
 @font-face {
     font-display:swap;
     font-family:'Cascadia Mono';
-    src:url(/fonts/CascadiaCode-2111.01/woff2/CascadiaMono.woff2) format("woff2"),url(/fonts/CascadiaCode-2111.01/static/CascadiaMono-Regular.otf) format("opentype")
+    src:url(/fonts/CascadiaCode-2111.01/woff2/CascadiaMono.woff2) format("woff2")
 }
 
 .cover {
@@ -291,4 +301,57 @@ main {
         padding:7px 0;
         width:100%
     }
+}
+
+#footer {
+    background-color:var(--color-bg-darker);
+    border-top:1px solid var(--color-border);
+    color:var(--color-text);
+    padding:var(--spacing-md);
+    text-align:center
+}
+
+#footer__text {
+    font-size:16px;
+    margin:0;
+    opacity:.7
+}
+
+.glass-card {
+    backdrop-filter:var(--backdrop-blur);
+    background:var(--color-bg-overlay);
+    border:1px solid var(--color-border-light);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-default);
+    transition:var(--transition-smooth)
+}
+
+.glass-card:hover {
+    background:#00000059;
+    border-color:#ffffff1f;
+    transform:translateY(-4px)
+}
+
+.text-gradient {
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background:linear-gradient(135deg,#79c0ff,#a5d6ff);
+    background-clip:text
+}
+
+.link-primary {
+    color:#79c0ff;
+    text-decoration:underline;
+    transition:color var(--transition-normal)
+}
+
+.link-primary:hover {
+    color:#a5d6ff;
+    text-decoration:none
+}
+
+.focus-ring:focus-visible {
+    border-radius:2px;
+    outline:2px solid #58a6ff99;
+    outline-offset:2px
 }
