@@ -74,15 +74,14 @@
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-menu">
-                <li><a href="/" <%- page === 'home' ? 'class="active"' : '' %>>Home</a></li>
-                <li><a href="/generated/v1" <%- page === 'blocklists' ? 'class="active"' : '' %>>Blocklists</a></li>
-                <li><a href="/docs" <%- page === 'docs' ? 'class="active"' : '' %>>Docs</a></li>
-                <li><a href="/metrics" <%- page === 'metrics' ? 'class="active"' : '' %>>Metrics</a></li>
-                <li><a href="/false-positives" <%- page === 'false-positives' ? 'class="active"' : '' %>>Report</a></li>
-                <li><a href="/update-schedule" <%- page === 'update-schedule' ? 'class="active"' : '' %>>Schedule</a></li>
-                <li><a href="/logs/v1" <%- page === 'git-logs' ? 'class="active"' : '' %>>Logs</a></li>
+            <ul class="nav-menu"> <%const a=p=>page===p?' class="active"':'';%>
+                <li><a href="/"<%- a('home') %>>Home</a></li>
+                <li><a href="/generated/v1"<%- a('blocklists') %>>Blocklists</a></li>
+                <li><a href="/docs"<%- a('docs') %>>Docs</a></li>
+                <li><a href="/metrics"<%- a('metrics') %>>Metrics</a></li>
+                <li><a href="/false-positives"<%- a('false-positives') %>>Report</a></li>
+                <li><a href="/update-schedule"<%- a('update-schedule') %>>Schedule</a></li>
+                <li><a href="/logs/v1"<%- a('git-logs') %>>Logs</a></li>
             </ul>
         </div>
     </nav>
-
