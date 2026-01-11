@@ -97,7 +97,6 @@
 
 		const cached = requestCache.get(url);
 		const now = Date.now();
-
 		if (cached && (now - cached.timestamp) < CACHE_TTL) {
 			renderDirectory(cached.data, tbody, pathElement, pushState);
 			return;
