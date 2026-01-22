@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026011701 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026012201 43200 3600 259200 300
   NS  localhost.
 adeventtracker.spotify.com CNAME .
 *.adeventtracker.spotify.com CNAME .
@@ -205,6 +205,24 @@ int.vlancaa.fun CNAME .
 *.int.vlancaa.fun CNAME .
 tok.vaicore.xyz CNAME .
 *.tok.vaicore.xyz CNAME .
+log.clearcleanerpro.live CNAME .
+*.log.clearcleanerpro.live CNAME .
+client-telemetry-preauth.hingeprod.net CNAME .
+*.client-telemetry-preauth.hingeprod.net CNAME .
+event-log-api-data-platform-data-lake-prod.gryphline.com CNAME .
+*.event-log-api-data-platform-data-lake-prod.gryphline.com CNAME .
+event-log-api-ipv6.gryphline.com CNAME .
+*.event-log-api-ipv6.gryphline.com CNAME .
+eventlog.gryphline.com CNAME .
+*.eventlog.gryphline.com CNAME .
+native-log-collect.gryphline.com CNAME .
+*.native-log-collect.gryphline.com CNAME .
+data-p.gryphline.com CNAME .
+*.data-p.gryphline.com CNAME .
+fp-sa-it.fengkongcloud.com CNAME .
+*.fp-sa-it.fengkongcloud.com CNAME .
+api-fp-retry-sa.fengkongcloud.com CNAME .
+*.api-fp-retry-sa.fengkongcloud.com CNAME .
 ir-sdk.guardease.com CNAME .
 *.ir-sdk.guardease.com CNAME .
 verifysession.uxcam.com CNAME .
@@ -2005,6 +2023,8 @@ ulogs2.ksapisrv.com CNAME .
 *.ulogs2.ksapisrv.com CNAME .
 wlog.ksapisrv.com CNAME .
 *.wlog.ksapisrv.com CNAME .
+log-va.tiktokv.com CNAME .
+*.log-va.tiktokv.com CNAME .
 mcs.tiktokw.us CNAME .
 *.mcs.tiktokw.us CNAME .
 sf16-telemetry-proxy-oci.tiktokcdn-us.com CNAME .

@@ -1,6 +1,8 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026011701 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026012201 43200 3600 259200 300
   NS  localhost.
+banner.bet365partners.com CNAME .
+*.banner.bet365partners.com CNAME .
 playwire.com CNAME .
 *.playwire.com CNAME .
 fingerhi.net CNAME .
