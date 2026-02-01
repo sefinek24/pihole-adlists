@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026013101 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026020101 43200 3600 259200 300
   NS  localhost.
 00px.net CNAME .
 *.00px.net CNAME .
@@ -2781,6 +2781,8 @@ rum.ingress.layer0.co CNAME .
 *.rum.ingress.layer0.co CNAME .
 rum.layer0.co CNAME .
 *.rum.layer0.co CNAME .
+rum.optimizely.com CNAME .
+*.rum.optimizely.com CNAME .
 rum.perfops.net CNAME .
 *.rum.perfops.net CNAME .
 rum.uptime.com CNAME .
