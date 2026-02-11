@@ -50,8 +50,8 @@ const ROUTES = [
 	{ url: '/forks/RPiList-Malware.txt', file: 'malicious/RPiList/Malware.fork.txt' },
 	{ url: '/forks/Spam404.main-blacklist.txt', file: 'malicious/Spam404/main-blacklist.fork.txt' },
 	{ url: '/malicious/blocklistproject.malware.txt', file: 'malicious/blocklistproject/malware.fork.txt' },
-	{ url: '/malicious/main.txt', file: 'malicious/sefinek.hosts1.txt' },
-	{ url: '/malicious/main-2.txt', file: 'malicious/sefinek.hosts2.txt' },
+	{ url: '/malicious/main.txt', file: 'malicious/sefinek.hosts.txt' },
+	{ url: '/malicious/main-2.txt', file: 'malicious/sefinek.hosts.txt' },
 	{ url: '/malicious/reported-by-norton.txt', file: 'malicious/reported-by-norton.txt' },
 	{ url: '/malicious/web-attacks.txt', file: 'malicious/web-attacks.txt' },
 

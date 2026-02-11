@@ -70,8 +70,7 @@ https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/phishing.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/quidsup/notrack-malware.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/reported-by-norton.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/RPiList/Malware.fork.txt
-https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/sefinek.hosts1.txt
-https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/sefinek.hosts2.txt
+https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/Spam404/main-blacklist.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/suspicious.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/malicious/web-attacks.txt
