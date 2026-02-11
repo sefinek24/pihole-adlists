@@ -82,7 +82,6 @@ https://blocklist.sefinek.net/generated/v1/noip/phishing/Dogino/Discord-Phishing
 https://blocklist.sefinek.net/generated/v1/noip/phishing/phishing.army/blocklist-extended.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/phishing/RPiList/Phishing-Angriffe.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/piracy/blocklistproject/piracy.fork.txt
-https://blocklist.sefinek.net/generated/v1/noip/piracy/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/noip/porn/4skinSkywalker/hosts.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/porn/blocklistproject/porn.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/porn/chadmayfield/pi-blocklist-porn-all.fork.txt
