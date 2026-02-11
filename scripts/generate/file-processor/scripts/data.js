@@ -4,7 +4,7 @@ exports.CATEGORIES = [{
 	category: 'Anime',
 	// grex "anime" "rule34" "manga" "animeboobs" "nekomimi" "nekomusume" "crunchyroll" "hentai" "vtuber" "cosplay" "otaku" "shonen" "shoujo" "yuri" "yaoi" "ecchi" "isekai" "kawaii" "tsundere" "yandere" "yande.re" "waifu" "seinen" "doujinshi" "bishounen" "bishoujo" "chibi" "bishojo" "doujin" "seiyuu" "harem" "loli"
 	regex: /c(?:runchyroll|osplay)|animeboobs|(?:nekomusum|yander)e|bisho(?:u(?:nen|jo)|jo)|(?:doujinsh|henta|iseka|kawai|chib|ecch|lol|y(?:ao|ur))i|nekomimi|yande\.re|tsundere|doujin|rule34|seiyuu|vtuber|shoujo|s(?:ei|ho)nen|anime|harem|manga|(?:otak|waif)u/i,
-	file: 'anime/main.txt',
+	file: 'sites/main2.txt',
 }, {
 	title: 'Blocks websites with LGBTQ+ content or related discourse (both supportive and critical)',
 	description: 'Active, inactive, and parked domains. Some of them may also share pornographic content.',
