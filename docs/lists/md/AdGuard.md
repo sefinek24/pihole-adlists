@@ -36,7 +36,6 @@ https://blocklist.sefinek.net/generated/v1/adguard/ads/yoyo/ads-trackers-etc.for
 https://blocklist.sefinek.net/generated/v1/adguard/crypto/cryptojacking/firebog/Prigent/Crypto.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/crypto/cryptojacking/hoshsadiq/adblock-nocoin-list.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/crypto/cryptojacking/Snota418/Crypto-streams.fork.txt
-https://blocklist.sefinek.net/generated/v1/adguard/dating-services/developerdan/extended.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/dating-services/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/adguard/dead-domains/jarelllama/dead-domains.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/drugs/blocklistproject/drugs.fork.txt
