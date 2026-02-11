@@ -54,9 +54,6 @@ readonly urls=(
   "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/gambling-hosts.txt gambling/MajkiIT/gambling-hosts.fork.txt"
   "https://raw.githubusercontent.com/BrigsLabs/judol/main/judol_domains.txt gambling/judol/hosts.fork.txt"
 
-  # Hate and junk
-  "https://www.github.developerdan.com/hosts/lists/hate-and-junk-extended.txt hate-and-junk/developerdan/extended.fork.txt"
-
   # Malicious
   "https://blocklistproject.github.io/Lists/malware.txt malicious/blocklistproject/malware.fork.txt"
   "https://gitlab.com/quidsup/notrack-blocklists/raw/master/malware.list malicious/quidsup/notrack-malware.fork.txt"

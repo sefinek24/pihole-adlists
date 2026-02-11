@@ -62,7 +62,6 @@ https://blocklist.sefinek.net/generated/v1/rpz/gambling/StevenBlack/hosts.fork.t
 https://blocklist.sefinek.net/generated/v1/rpz/gambling/TrustPositif/gambling-indonesia.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/games/league-of-legends.txt
 https://blocklist.sefinek.net/generated/v1/rpz/games/valorant.txt
-https://blocklist.sefinek.net/generated/v1/rpz/hate-and-junk/developerdan/extended.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/hate-and-junk/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/rpz/malicious/AssoEchap/stalkerware-indicators.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/malicious/bigdargon/hostsVN.fork.txt
