@@ -33,7 +33,6 @@ https://blocklist.sefinek.net/generated/v1/adguard/ads/r-a-y/AdguardMobileAds.fo
 https://blocklist.sefinek.net/generated/v1/adguard/ads/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/adguard/ads/ShadowWhisperer/Ads.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/ads/yoyo/ads-trackers-etc.fork.txt
-https://blocklist.sefinek.net/generated/v1/adguard/amp/developerdan/amp-hosts-extended.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/crypto/cryptojacking/firebog/Prigent/Crypto.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/crypto/cryptojacking/hoshsadiq/adblock-nocoin-list.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/crypto/cryptojacking/Snota418/Crypto-streams.fork.txt
