@@ -1,0 +1,931 @@
+# Various telemetry endpoints (hosts and domains) used by mobile location tracking libraries
+# Contact: mobiletrackers [at] protonmail.ch
+# See: https://github.com/craiu/mobiletrackers/
+# Version 1.46 - 2024-02-07
+#
+# xmodesocial - e65912e897bd9e6f41865a8ab0eb9b15fef4bc0af68eb8217f5360fb1c53f423 - 13.1Trainer_95.19-.apk
+server=/bin5y4muil.execute-api.us-east-1.amazonaws.com/
+# unknown, possibly xmodesocial - e65912e897bd9e6f41865a8ab0eb9b15fef4bc0af68eb8217f5360fb1c53f423 - 13.1Trainer_95.19-.apk
+server=/8balwalz1i.execute-api.us-east-2.amazonaws.com/
+# unknowns - e65912e897bd9e6f41865a8ab0eb9b15fef4bc0af68eb8217f5360fb1c53f423 - 13.1Trainer_95.19-.apk
+server=/api.smartechmetrics.com/
+server=/ck-running-apps-700f1.firebaseio.com/
+server=/pie.wirelessregistry.com/
+# unknowns - 010f7bb33f35cc650b7d6104b07102eb0dbaf79bcec1f1c6255fdcaffefe6b68 - com.davidsukhin.com.sukhin.snowdaycalculator.SnowDay
+# URLs below stored as base64 and encrypted xor 0x09 ->
+server=/udata.elephantdata.net/
+server=/atb.bearclod.com/
+#pDNS data for the IPs associated with atb.bearclod.com ->
+server=/alb.bearclod.com/
+server=/aly.bearclod.com/
+server=/alz.bearclod.com/
+server=/bivitis.bearclod.com/
+server=/brt.bearclod.com/
+server=/brul.bearclod.com/
+server=/hfstat.bearclod.com/
+server=/hkn01.bearclod.com/
+server=/ply.bearclod.com/
+server=/zoo.bearclod.com/
+# crashlytics - 4711634730d5367756bba4d776d846b01b8d0373336ea877a2c20b1da0a95477 - com.sgiggle.production_5.2.229629_1538560344.apk
+server=/settings.crashlytics.com/
+server=/e.crashlytics.com/
+# starbolt - cb9b9de8616e55849b9140e7915b2ba237818625828acfa55b59f5268f589e91 - com.kellytechnology.Forecast_Now
+server=/sdk.starbolt.io/
+server=/dmp.starbolt.io/
+server=/devices.starbolt.io/
+# sense360 ? - cb9b9de8616e55849b9140e7915b2ba237818625828acfa55b59f5268f589e91 - com.kellytechnology.Forecast_Now
+server=/android-quinoa-config-prod.sense360eng.com/
+server=/survey-notify-event.sense360eng.com/
+server=/quinoa-personal-identify-prod.sense360eng.com/
+# appmeasurement - cb9b9de8616e55849b9140e7915b2ba237818625828acfa55b59f5268f589e91 - com.kellytechnology.Forecast_Now
+server=/app-measurement.com/
+# newrelic - 2d4c9c037db43704f52968c9c363cbdf382cbb6a4b9143825f6e8b523b7c0c01 - com.crowdcompass.appmQaIam3e7C.apk
+server=/mobile-collector.newrelic.com/
+server=/mobile-crash.newrelic.com/
+# Xiao mi related telemetry endpoints - see https://twitter.com/hookgab/status/1255859289945780225
+server=/data.mistat.india.xiaomi.com/
+server=/data.mistat.intl.xiaomi.com/
+server=/data.mistat.rus.xiaomi.com/
+server=/tracking.rus.miui.com/
+server=/tracking.intl.miui.com/
+server=/tracking.india.miui.com/
+# from https://twitter.com/cybergibbons/status/1256703550954057729
+server=/sa.api.intl.miui.com/
+server=/sa.api.india.miui.com/
+server=/sa.api.rus.miui.com/
+# new xmodesocial - from https://mobile.twitter.com/guardianiosapp/status/1262545645941874689
+server=/api.myendpoint.io/
+# aggressive advertisers - https://securelist.com/in-app-advertising-in-android/97065/
+# 1eeda6306a2b12f78902a1bc0b7a7961 – com.android.ggtoolkit_tw_xd
+# 134283b8efedc3d7244ba1b3a52e4a92  – com.xprodev.cutcam
+# 3aba867b8b91c17531e58a9054657e10 – com.powerd.cleaner
+server=/ti.domainforlite.com/
+server=/uu.domainforlite.com/
+# pDNS resolutions for uu.domainforlite.com, hosting on 47.252.80.195
+server=/adserver.hahamobi.com/
+server=/analytics.hahamobi.com/
+server=/analytics.salmonads.com/
+server=/api.salmonads.com/
+server=/dat.funheroic.com/
+server=/lg.luckyforworlds.com/
+server=/lg.requestads.com/
+server=/lg.smardroid.com/
+server=/log.adywind.com/
+server=/log.mobpowertech.com/
+server=/net.hahamobi.com/
+server=/net.salmonads.com/
+server=/us01.salmonads.com/
+# mobile ads, 2020-07-07, additions from https://securelist.com/pig-in-a-poke-smartphone-adware/97607/
+server=/www.ywupscsff.com/
+server=/www.mzeibiyr.com/
+server=/i151125.infourl.net/
+server=/www.jueoxdr.com/
+server=/ufz.doesxyz.com/
+server=/htapi.getapiv8.com/
+server=/stable.icecyber.org/
+server=/404mobi.com/
+server=/51ginkgo.com/
+server=/lbjg7.com/
+server=/bigdata800.com/
+server=/apd1.warnlog.com/
+server=/apd1.thunup.com/
+# mintegral, 2020-08-30, described at: https://snyk.io/research/sour-mint-malicious-sdk/
+server=/n.systemlog.me/
+server=/setting.rayjump.com/
+server=/analytics.rayjump.com/
+# from pDNS on n.systemlog.me ->
+server=/net.cleverjp.com/
+# from fake NEXTALIVE (moonfair) application - https://www.zdnet.com/article/google-removes-android-app-that-was-used-to-spy-on-belarusian-protesters/
+server=/arcpi.nextialive.roimaster.site/
+server=/api.nextialive.roimaster.site/
+server=/ws.nextialive.roimaster.site/
+server=/nextialive.roimaster.site/
+server=/api.dev.chat.roimaster.site/
+server=/dev.chat.roimaster.site/
+# Joker download URLs / hosts as described by ZScaler - https://www.zscaler.com/blogs/security-research/joker-playing-hide-and-seek-google-play
+server=/2j1i9uqw.oss-eu-central-1.aliyuncs.com/
+server=/blackdragon03.oss-ap-southeast-5.aliyuncs.com/
+server=/blackdragon.oss-ap-southeast-5.aliyuncs.com/
+server=/fgcxweasqw.oss-eu-central-1.aliyuncs.com/
+server=/jk8681oy.oss-eu-central-1.aliyuncs.com/
+server=/laodaoo.oss-ap-southeast-5.aliyuncs.com/
+server=/n47n.oss-ap-southeast-5.aliyuncs.com/
+server=/nineth03.oss-ap-southeast-5.aliyuncs.com/
+server=/proxy48.oss-eu-central-1.aliyuncs.com/
+server=/rinimae.oss-ap-southeast-5.aliyuncs.com/
+server=/sahar.oss-us-east-1.aliyuncs.com/
+# Cerberus C2s as described by BitDefender - https://labs.bitdefender.com/2020/09/apps-on-google-play-tainted-with-cerberus-banker-malware/
+server=/2fapass.club/
+server=/androidradio.life/
+server=/downdating.club/
+server=/fitnessstrategy.xyz/
+server=/groovefitness.xyz/
+server=/loversfinder.xyz/
+server=/positivefitness.club/
+server=/safeyourdata.xyz/
+server=/sport4ever.club/
+server=/vipyoga.today/
+server=/weatherclub.club/
+server=/yoga4u.xyz/
+# unknown (?) telemetry receiving endpoints from:
+# 066de93f181e9cbcb8611c675bbcb0fc - com.speedcamera.detector.radar.detector.direction
+server=/yqchpwxvbg.execute-api.us-east-1.amazonaws.com/
+server=/pn8sm7rjuc.execute-api.us-east-1.amazonaws.com/
+# venntel / gravy analytics from https://github.com/sociam/PROWISH/blob/master/data/200appsdynamic.csv
+# venntel / gravy analytics from https://fil.forbrukerradet.no/wp-content/uploads/2020/01/2020-01-14-out-of-control-final-version.pdf
+# gravy analytics docs - http://developers.findgravy.com/products/gold-api/docs/index2.html
+server=/api.findgravy.com/
+server=/nwzhmwux-api.findgravy.com/
+server=/zmq5ytc1-api.findgravy.com/
+server=/mtm1nwmx-api.findgravy.com/
+server=/gravyanalytics.com/
+# 51ec8159efb88a852005b94f0fd9891016b75f4b40d24608ee8a5c8d34826a3e - com.usatoday.android.news
+server=/ws.findgravy.com/
+server=/api.foozor.com/
+server=/testapi.foozor.com/
+# potentially related hosts on top of findgravy.com
+server=/img01.findgravy.com/
+server=/img02.findgravy.com/
+server=/img03.findgravy.com/
+server=/img04.findgravy.com/
+# 51ec8159efb88a852005b94f0fd9891016b75f4b40d24608ee8a5c8d34826a3e - com.usatoday.android.news
+server=/pushapi.localytics.com/
+server=/analytics.localytics.com/
+server=/profile.localytics.com/
+# cuebiq location sdk from ->
+# 2dc269d7237c97edefa653a379eca897a23f46adcf14705801041817bf5d1e7e - net.androgames.compass
+server=/in.cuebiq.com/
+server=/ingestion-api.kiwi.sand.cuebiq.ai/
+# nodle.io sdk from ->
+# 2dc269d7237c97edefa653a379eca897a23f46adcf14705801041817bf5d1e7e - net.androgames.compass
+server=/dev.nodle.io/
+server=/us-central1-production-242307.cloudfunctions.net/
+# unknown sdk from 2dc269d7237c97edefa653a379eca897a23f46adcf14705801041817bf5d1e7e - net.androgames.compass possibly xmode related
+# more crashlytics hosts from 2dc269d7237c97edefa653a379eca897a23f46adcf14705801041817bf5d1e7e - net.androgames.compass
+server=/firebase-settings.crashlytics.com/
+server=/update.crashlytics.com/
+server=/reports.crashlytics.com/
+# 2dc269d7237c97edefa653a379eca897a23f46adcf14705801041817bf5d1e7e - net.androgames.compass ->
+server=/pixelprose.fr/
+# appsflyer from b8ce13566a048108b4321f5277e4d95a5d5743da4f082fbca30074439acf5a15 - com.unacademyapp
+server=/onelink.me/
+server=/onelnk.com/
+server=/app.aflink.com/
+server=/t.appsflyer.com/
+# other various telemetry endpoints (not necessarily location related) from from b8ce13566a048108b4321f5277e4d95a5d5743da4f082fbca30074439acf5a15 - com.unacademyapp
+server=/api.mixpanel.com/
+server=/decide.mixpanel.com/
+server=/cdn.optimizely.com/
+server=/logx.optimizely.com/
+server=/outline.truecaller.com/
+server=/api4.truecaller.com/
+server=/c.webengage.com/
+server=/p.webengage.com/
+server=/api.branch.io/
+server=/bnc.lt/
+server=/cdn.branch.io/
+server=/js.intercomcdn.com/
+server=/mobile-sdk-api.intercom.io/
+# Clevertap's wzrkt.com - also see https://twitter.com/fs0c131y/status/977267255309463554
+server=/wzrkt.com/
+server=/in.wzrkt.com/
+# subdomains from wzrkt.com - https://subdomainfinder.c99.nl/scans/2020-04-19/wzrkt.com
+server=/api.wzrkt.com/
+server=/cb.wzrkt.com/
+server=/eu1-spiky.wzrkt.com/
+server=/eu1.alb.wzrkt.com/
+server=/eu1.wzrkt.com/
+server=/in.cb.wzrkt.com/
+server=/in1-spiky.wzrkt.com/
+server=/in1.alb.wzrkt.com/
+server=/in1.wzrkt.com/
+server=/sg1-spiky.wzrkt.com/
+server=/sg1.cb.wzrkt.com/
+server=/sg1.wzrkt.com/
+server=/sk1-spiky.wzrkt.com/
+server=/sk1-staging-1.wzrkt.com/
+server=/sk1-staging-10.wzrkt.com/
+server=/sk1-staging-2.wzrkt.com/
+server=/sk1-staging-3.wzrkt.com/
+server=/sk1-staging-4.wzrkt.com/
+server=/sk1-staging-5.wzrkt.com/
+server=/sk1-staging-6.wzrkt.com/
+server=/sk1-staging-7.wzrkt.com/
+server=/sk1-staging-8.wzrkt.com/
+server=/sk1-staging-9.wzrkt.com/
+server=/sk1.wzrkt.com/
+server=/us1-spiky.wzrkt.com/
+server=/us1.cb.wzrkt.com/
+server=/us1.wzrkt.com/
+# from cb9f6bb72a9766ba8c805c25769b47c46751052706bb41ed333db0b42cd586ff - 	com.byjus.thelearningapp
+# also see https://digitalwatchdog.org/wp-content/uploads/2020/09/IDAC-Ed-Tech-Report_AppendixB_SensitiveData.pdf
+server=/api.tllms.com/
+server=/marketing.tllms.com/
+# from 09f5bcadde3351eb3f509f5a471cbd7bb00536292da560bcf8ee59eb73116f00 - luo.speedometergps
+# teragence ->
+server=/control.teragence.net/
+server=/pfsense02-01.is-61194.teragence.net/
+# tutela ->
+server=/upload-tutelawest.s3-accelerate.amazonaws.com/
+server=/reporting-util.tutelatechnologies.com/
+server=/hail-reporting.tutelatechnologies.com/
+server=/thepopulator.tutelatechnologies.com/
+# huq (also from 9c53a29a7e6a871f57b20097185a09afd2ff818455a42792d502f1eb8f2e3679) ->
+server=/api.huqindustries.co.uk/
+server=/report.huqindustries.co.uk/
+server=/charles.huqindustries.co.uk/
+# IOCs from https://www.whiteops.com/blog/somewhere-over-the-rainbowmix
+server=/api.pythonexample.com/
+# Predicio - from Funny Weather - pl.lawiusz.funnyweather.release.apk - 6d23151e69a57f67111d4969594316576577ae8a2015aff336ab6ef0fb2a07b4
+# see https://www.vice.com/en/article/epdpdm/ice-dhs-fbi-location-data-venntel-apps
+server=/sdk.predic.io/
+# Kinesis endpoint from Funny Weather:
+server=/kinesis.ap-southeast-1.amazonaws.com/
+# Complementics endpoints from 4ba50272718c95af20940912c7968410d797fbc07dcce2bad8183b94887b0ab4
+server=/sdk-as.complementics.com/
+server=/static.complementics.com/
+# Goontact from https://blog.lookout.com/lookout-discovers-new-spyware-goontact-used-by-sextortionists-for-blackmail
+server=/redvios.com/
+server=/v-talk.top/
+server=/v-talk.vip/
+server=/ladysizi.top/
+server=/mmbox.top/
+server=/oncamera.top/
+server=/oncast.top/
+server=/mimibox.top/
+server=/voicecontrol.top/
+server=/signaltalk.top/
+server=/oncamera.vip/
+server=/dalbam.vip/
+server=/mimimsg.net/
+server=/signal-live.vip/
+server=/tele-gram.vip/
+server=/vtalk.vip/
+server=/a-video.vip/
+server=/livetalk.vip/
+server=/livetalk.top/
+server=/download-file.top/
+server=/grd77.cn/
+server=/mimicwt.net/
+server=/super-voice.vip/
+server=/mimi18s.top/
+server=/momomsg.top/
+server=/live-live.vip/
+server=/zerobyte.top/
+server=/zerobt.net/
+server=/w-video.vip/
+server=/ser-chat.com/
+server=/tocast.vip/
+server=/videosound.vip/
+server=/twi-tter.vip/
+server=/my-player.vip/
+server=/voicesupport.vip/
+# Joker from https://research.checkpoint.com/2020/new-joker-variant-hits-google-play-with-an-old-trick/
+server=/gd-1301476296.cos.na-toronto.myqcloud.com/
+# Related to: https://github.com/greatsuspender/thegreatsuspender/issues/1175
+# and: https://www.theregister.com/2021/01/07/great_suspender_malware/
+server=/cdn.owebanalytics.com/
+server=/static.trckingbyte.com/
+server=/static.trckpath.com/
+server=/static.privacytrck.com/
+server=/rctphvxwnjhx.pw/
+server=/hanstrackr.com/
+# Postlo spyware - https://twitter.com/ESETresearch/status/1374889857403785218?s=20
+server=/api.mainrepo.org/
+# EvilEye malware C2s mentioned at https://about.fb.com/news/2021/03/taking-action-against-hackers-in-china/
+server=/anayurt.net/
+server=/apkprue.info/
+server=/geo2ipapi.org/
+server=/gotossl.ml/
+server=/icptime.com/
+server=/istiqlaihaber.com/
+server=/misran.org/
+server=/newyorkingsite.com/
+server=/playgoog1e.com/
+server=/preservtyg.com/
+server=/sslportservices.com/
+server=/strunhvgpk.com/
+server=/uhtpuerdfbnm.com/
+server=/uyghur-news.com/
+server=/uyghur-soft-market.com/
+server=/uyghurhaber.com/
+server=/www.apkhl.pw/
+server=/apkhl.pw/
+server=/www.apkpure.bz/
+server=/apkpure.bz/
+# Xcodespy - https://labs.sentinelone.com/new-macos-malware-xcodespy-targets-xcode-developers-with-eggshell-backdoor/
+server=/www.liveupdate.cc/
+server=/www.appmarket.co/
+server=/www.recentnews.cc/
+server=/www.truckrental.cc/
+server=/www.everestnote.com/
+server=/www.alinbox.co/
+server=/www.suppro.co/
+# APKPure compromise by Triada malware - https://securelist.com/apkpure-android-app-store-infected/101845/
+server=/wcf.seven1029.com/
+server=/foodin.site/
+# Triada from https://securelist.com/triada-trojan-in-whatsapp-mod/103679/
+# Trojan.AndroidOS.Triada.ef b1aa5d5bf39fee0b1e201d835e4dc8de
+server=/t1k22.c8xwor.com/
+server=/dgmxn.c8xwor.com/
+# Tutela technologies - f9db002cbc6e5b6de37fb15aefaaf3934a700a7a2f9d5949f3cd6bb8c7dfc1bc - org.speedspot.speedanalytics
+server=/reporting.tutelatechnologies.com/
+server=/video-url.tutelatechnologies.com/
+server=/d3clybje3sun07.cloudfront.net/
+# speedspot - reports GPS location, other data - SpeedtestResultViews.java - inside f9db002cbc6e5b6de37fb15aefaaf3934a700a7a2f9d5949f3cd6bb8c7dfc1bc
+server=/api.speedspot.org/
+server=/www.speedcheck.org/
+server=/net.etrality.com/
+server=/a2.etrality.com/
+server=/a1.etrality.com/
+server=/c4.etrality.com/
+server=/b3.etrality.com/
+server=/c3.etrality.com/
+server=/b2.etrality.com/
+server=/c2.etrality.com/
+server=/b1.etrality.com/
+server=/c1.etrality.com/
+server=/wpc.a3cd.edgecastcdn.net/
+server=/speedspot.speedspot.netdna-cdn.com/
+server=/www.speedspot5.com/
+server=/www.speedspot1.com/
+server=/www.speedspot7.com/
+server=/www.speedspot2.com/
+server=/www.speedspot3.com/
+server=/www.speedspot4.com/
+server=/www.speedspot6.com/
+#Kochava endpoints, from rugabunda https://beta.pithus.org/report/844aa271ef47f7807ab3ccc63952e2215298701a6851857c22456317927f08fd
+server=/co.akisinn.info/
+server=/co.dewrain.life/
+server=/co.vaicore.site/
+server=/co.vaicore.xyz/
+server=/int.akisinn.info/
+server=/int.akisinn.me/
+server=/int.akisinn.site/
+server=/int.dewrain.life/
+server=/int.dewrain.site/
+server=/int.dewrain.world/
+server=/int.vaicore.site/
+server=/int.vaicore.store/
+server=/int.vaicore.xyz/
+server=/int.vlancaa.site/
+server=/int.vlancaa.fun/
+server=/tok.vaicore.xyz/
+server=/vaicore.xyz/
+server=/web.ab-salute.com/
+server=/smart.link/
+# Adeco and inappertising - see https://www.occrp.org/en/investigations/how-a-russian-mobile-app-developer-recruited-phones-into-a-secret-ad-watching-robot-army
+# Ultimate-Mortal-Kombat-3-v1-1.apk - https://www.virustotal.com/gui/file/dc078b004830ff03a27371bbc1c4a7b5882d5a0fb577a8477c09e8b3bfe0d6d3/details
+server=/cfg.inappertising.org/
+server=/stats.inappertising.org/
+server=/app-stats.net2share.com/
+server=/s.net2share.com/
+server=/adeco.adecosystems.com/
+server=/dd.adecosystems.com/
+# GriftHorse Android from - https://blog.zimperium.com/grifthorse-android-trojan-steals-millions-from-over-10-million-victims-globally/
+server=/hotofecro.com/
+server=/alaiblompass.com/
+server=/heartratteandpulsetracker.com/
+server=/icoonectedtrack.com/
+server=/ospocatracker.com/
+server=/laalaslirayeblection.com/
+server=/iblompass.com/
+server=/smalllcalllrecorder.com/
+server=/anguaganslatast.com/
+server=/oroscopemestry.com/
+server=/blompascator.com/
+server=/leunoon.com/
+server=/arindocation.com/
+server=/rooitor.com/
+server=/mychattranslator.club/
+server=/rulapptoplan.com/
+server=/rportranslator.com/
+server=/muslimasauda.com/
+server=/martpolocator.com/
+server=/wfupppx.com/
+server=/scandocnotes.com/
+server=/freecoupon21.com/
+server=/ponyvideochat.com/
+server=/ludamec.com/
+server=/chat-transa.com/
+server=/soulscanneryh.com/
+server=/d3cameraplan.com/
+server=/qibla-ultima.com/
+server=/zoofanimalm.com/
+server=/ciaolvc.com/
+server=/heartrateproxhealthmonitor.com/
+server=/bus-metrolis.com/
+server=/truck-rouddrive.com/
+server=/locatinfind.com/
+server=/camerdentifier.com/
+server=/locatorqiafindlocation.com/
+server=/cocachar.com/
+server=/squishyp.com/
+server=/antranslaro.com/
+server=/ftphotom.com/
+server=/lockul.com/
+server=/fingerprihanger.com/
+server=/locatorshar.com/
+server=/kfcwsa.com/
+server=/gpsphonuetrackerfamilylocator.com/
+server=/cailrecorder.com/
+server=/tqiblacompas.com/
+server=/kvprojectop.com/
+server=/pikchoeditor.com/
+server=/streetprocarsracingss.com/
+server=/nemaeovies.com/
+server=/aecodero.com/
+server=/ivlewepapallrbkragonucd.com/
+server=/heartrateandmealtracker.com/
+server=/phonecontrolblockspamcalls.com/
+server=/etcotater.com/
+server=/canopoument.com/
+server=/locxfindxlocx.com/
+server=/mnesytrlatr.com/
+server=/huntcontactz.com/
+server=/intelgenttran.com/
+server=/facenalyer.com/
+server=/fnbdeiegpslocoiatntcrkaer.com/
+server=/trcalluecodr.com/
+server=/qrreaderpro.com/
+server=/itranstxtvoicepht.com/
+server=/qiberiblaon.com/
+server=/iconylc.com/
+server=/lsepeanitor.com/
+server=/fxkwboard.com/
+server=/dehcoveanager.com/
+server=/tickeakhatsp.com/
+server=/phoneboster.com/
+server=/phonfinbyclap.com/
+server=/aralaper.com/
+server=/qibdirctiowa.com/
+server=/islsrickers.com/
+server=/feartranslator.com/
+server=/vpnzfep.com/
+server=/snaplens-pt.com/
+server=/qiblassirection.com/
+server=/easyvshow.com/
+server=/qibla-quran.com/
+server=/qrcodesscan.com/
+server=/hoolives.com/
+server=/burivingsim.com/
+server=/coupongiftsnstashop.com/
+server=/fingdefend.com/
+server=/projectormp.com/
+server=/forzahmobile.com/
+server=/artateulseonitor.com/
+server=/sslasmr.com/
+server=/bagscaner.com/
+server=/phonecallerscreen.com/
+server=/datingappswmt.com/
+server=/lifeel-scan.com/
+server=/colorizerset.club/
+server=/expresscreditcash.com/
+server=/ccallerx.com/
+server=/transatitonneap.com/
+server=/lasouncherio.com/
+server=/claptfindzmphone.com/
+server=/mirrorscreencasttvv.com/
+server=/ircleocatinder.com/
+server=/mobleingsder.com/
+server=/proocallerr.com/
+server=/frecalwolwid.com/
+server=/allelpcoonmber.com/
+server=/faspulhearratmoni.com/
+server=/fincconttact.com/
+server=/uncherdroid.com/
+server=/iveilembercker.com/
+server=/lepamcker.com/
+server=/lockaaocker.com/
+server=/onarchbylap.com/
+server=/secontranslatpr.com/
+server=/tgscontakcs.com/
+server=/callwhozdine.com/
+server=/perargero.com/
+server=/mylocatorplus.club/
+server=/comclap.club/
+server=/callerids.club/
+server=/instantspeechtranslation.club/
+server=/photoeditorbest.club/
+server=/piction.club/
+server=/driveriders.club/
+server=/skycoachgg.club/
+server=/ffitnesstrainer.club/
+server=/racerscardriver.club/
+server=/fitnessdias.club/
+server=/meetingonlinechat.club/
+server=/fitnessgymup.club/
+server=/editsbackground.club/
+server=/cutcutpro.club/
+server=/drivingexpiriencesimulator.club/
+server=/clipbuddy.club/
+server=/horoscopefortune.club/
+server=/ludospeakeasy.club/
+server=/fitnesspoint.club/
+server=/wallvoluminousfourk.club/
+server=/cvectorart.club/
+server=/ludospeakv2.club/
+server=/callrecordpro.club/
+server=/carracer.club/
+server=/slimesimulator.club/
+server=/offroaderssurvive.club/
+server=/lending-online.club/
+server=/controlcenterios.club/
+server=/streetracingg.club/
+server=/checkheart.club/
+server=/keyboardthemes.club/
+server=/whatsmesticker.club/
+server=/batterychargingeffect.club/
+server=/luxoreditor.club/
+server=/lionflix.club/
+server=/amazingvideoeditor.club/
+server=/zodiachand.club/
+server=/zeusalmighty.club/
+server=/pharaohsadventure.club/
+server=/batterylivewallpaperhd.club/
+server=/comqubla.club/
+server=/safelock.club/
+server=/heartrhythm.club/
+server=/easybassbooster.club/
+server=/comphotolab.club/
+# GriftHorse Second-Stage Domain
+server=/678ikmbtui.com/
+# GriftHorse Third-Stage Domains
+server=/safe-link.mobi/
+server=/at.gogameportal.club/
+server=/activate-your-account-now.com/
+server=/continue-to-get-content-now.com/
+server=/your-access-here.com/
+server=/app.buenosocial.club/
+server=/join.crazymob.co/
+server=/vl.denrok.space/
+server=/www.timpromos.com.br/
+server=/campaignmanager.fun.moobig.com/
+server=/get-your-access-now.com/
+server=/v.mobzones.com/
+server=/mt2-sdp4.mt-2.co/
+server=/go.whatabookmark.com/
+server=/lp.shoopadoo.com/
+server=/es.mobiplus.me/
+server=/af.to.123games.club/
+server=/be.startdownload.mobi/
+server=/za.startdownload.mobi/
+server=/n.appspool.net/
+server=/wap.trend-tech.net/
+server=/fr.chillaxgames.mobi/
+server=/tracking.hexilo.com/
+# Suspected GriftHorse from pDNS 	185.255.179.131 / 185.255.179.132 ->
+server=/1g7kvrv.xyz/
+server=/2fnoqifq.com/
+server=/2g8cvdii.com/
+server=/2oafxcbq.xyz/
+server=/5rfvbnji9.com/
+server=/7lc6jc.xyz/
+server=/7nvdx0.xyz/
+server=/8sghnct.xyz/
+server=/berf4o.xyz/
+server=/blfnf9y.com/
+server=/brlyp4pg.com/
+server=/chulahfi.xyz/
+server=/cmvkvncsse.xyz/
+server=/cophico.pw/
+server=/cwkjravqsj.xyz/
+server=/dhfvbsihjf.com/
+server=/dsfhskln.com/
+server=/eksndtpf.org/
+server=/emraiyz.xyz/
+server=/eok8wd5v.net/
+server=/erbfzk.com/
+server=/ersokbkj.com/
+server=/fdfjhks.com/
+server=/ffnbafc.xyz/
+server=/hrvxkxq.xyz/
+server=/il0baz.com/
+server=/jduzuyd.com/
+server=/jsdfbhsa.com/
+server=/jydfoafcaf.xyz/
+server=/kgr0aixa.xyz/
+server=/krkmyvlmdg.xyz/
+server=/lgdzbch.com/
+server=/liahkhe.xyz/
+server=/lljmbbk.com/
+server=/lmbbnrhiuj.xyz/
+server=/lwvurdsjk.org/
+server=/lxghjoxzns.com/
+server=/mnfbodivbv.com/
+server=/mt5vsuf1.net/
+server=/nfrmg1y.xyz/
+server=/nwluoodzct.xyz/
+server=/ocheyhv.xyz/
+server=/okjojihgv.com/
+server=/olimob.net/
+server=/ortn13der.xyz/
+server=/poiuwhejgr.com/
+server=/pwtgnp.pw/
+server=/qtwjhuj.com/
+server=/rfjdhxbz.com/
+server=/sjkfsdkg.com/
+server=/trfvbnji7.com/
+server=/urtyhfds.com/
+server=/v9czaci.xyz/
+server=/vortnomade.net/
+server=/w9x7itu.xyz/
+server=/www.mnfbodivbv.com/
+server=/www.okjojihgv.com/
+server=/y0vvbm.xyz/
+server=/yq0z3d.xyz/
+# additional suspected GriftHorse from pDNS - 2021-10-21
+server=/down.tracksz.co/
+server=/go.creativemobilemarketing.com/
+server=/go.fastfinderworld.com/
+server=/go.grandprizewinners.com/
+server=/go.interlinkinternet.com/
+server=/go.protectyoursearch.com/
+server=/go.trackitalltheway.com/
+server=/go.trackiteazy.com/
+server=/go.watchwiser.com/
+# TangleBot domains, research based on - https://www.cloudmark.com/en/blog/mobile/tanglebot-new-advanced-sms-malware-targets-mobile-users-across-us-and-canada-covid-19
+server=/covid19-ca.link/
+server=/hydro-ca.link/
+server=/sock.godforgiveuss.live/
+server=/sock.hhhhrkanandda.xyz/
+server=/sock.nmnmnmfsamsfan.xyz/
+server=/socktest.ankatras.xyz/
+server=/vaccine-appointment.link/
+# Donot / Origami Elephant / APT-C-35 IOCs from Amnesty - https://github.com/AmnestyTech/investigations/blob/master/2021-10-07_donot/domains.txt
+server=/bulk.fun/
+server=/apkv5.ppadaolnwod.xyz/
+server=/apkv6.endurecif.top/
+server=/getelements.xyz/
+server=/fiddaz.club/
+server=/lif0.top/
+server=/fif0.top/
+server=/chipp.pw/
+server=/mimestyle.xyz/
+server=/mangasiso.top/
+server=/and.retardrattle.website/
+server=/help.domainoutlet.site/
+server=/whynotworkonit.top/
+server=/spectronet.pw/
+server=/full.naturalpercent.life/
+server=/mimeversion.top/
+server=/rythemsjoy.club/
+server=/lowlight.xyz/
+server=/inapturst.top/
+server=/auth.forwardtoken.website/
+server=/accounts.loginshare.info/
+server=/seahome.top/
+server=/imageview.xyz/
+server=/flickry.xyz/
+server=/apkv2.qwertykeypad.host/
+server=/userauthen.pw/
+server=/join.officeframe.work/
+server=/zumba.tampotrust.agency/
+server=/image.loadingmessage.info/
+# AbstractEmu hosts from https://blog.lookout.com/lookout-discovers-global-rooting-malware-campaign
+server=/jobs.illaewinstralinc.com/
+server=/outline.abunddhighett.com/
+server=/tags.illaryboucnc.com/
+server=/cloud.nathompsstra.com/
+server=/store.dianmpsoathom.com/
+server=/fluency.ryboucoathom.com/
+server=/csa.naaronegya.com/
+server=/tips.ghetaldhighe.com/
+server=/color.joarteauxelb.com/
+# Cynos hosts from https://vms.drweb.com/virus/?i=24972842 - 46bc4c6c87fcb519a8f315c0010b949d682ac3abee62b33bd624b251a3521b19
+server=/dns1.sdkbalance.com/
+server=/dns2.sdkbalance.com/
+server=/dns3.sdkbalance.com/
+server=/sdk.sdkbalance.com/
+server=/mg.sdkbalance.com/
+# PhoneSpy hosts from https://blog.zimperium.com/phonespy-the-app-based-cyberattack-snooping-south-korean-citizens/ and pDNS related
+server=/acd.kcpro.ga/
+server=/aki.kcpro.ga/
+server=/arr.kcpro.tk/
+server=/b.freespy1.ml/
+server=/b.freespy1.tk/
+server=/c.freespy1.ml/
+server=/c.freespy1.tk/
+server=/cef.kcpro.tk/
+server=/cfs.kcpro.ga/
+server=/d.freespy1.ml/
+server=/d.freespy1.tk/
+server=/dto.kcpro.ga/
+server=/e.freespy1.ml/
+server=/ejn.kcpro.ga/
+server=/ern.kcpro.ga/
+server=/f.freespy1.ml/
+server=/f.freespy1.tk/
+server=/freespy.cf/
+server=/g.freespy1.ml/
+server=/g.freespy1.tk/
+server=/h.freespy1.ml/
+server=/h.freespy1.tk/
+server=/hxg.kcpro.ga/
+server=/i.freespy1.ml/
+server=/i.freespy1.tk/
+server=/j.freespy1.ml/
+server=/j.freespy1.tk/
+server=/k.freespy1.ml/
+server=/k.freespy1.tk/
+server=/koreavopi.kro.kr/
+server=/l.freespy1.ml/
+server=/l.freespy1.tk/
+server=/m.freespy1.ml/
+server=/m.freespy1.tk/
+server=/mda.kcpro.ga/
+server=/mgo.kcpro.ga/
+server=/n.freespy1.ml/
+server=/n.freespy1.tk/
+server=/o.freespy1.ml/
+server=/o.freespy1.tk/
+server=/oso.kcpro.ga/
+server=/p.freespy1.ml/
+server=/p.freespy1.tk/
+server=/pql.kcpro.ga/
+server=/wvv.kcpro.ga/
+server=/ydc.kcpro.ga/
+server=/zqn.kcpro.ga/
+server=/zsx.kcpro.ga/
+# https://blog.appcensus.io/2022/04/06/the-curious-case-of-coulus-coelib/
+server=/mobile.measurelib.com/
+server=/measurelib.com/
+server=/ami0wned.com/
+server=/amiowned.com/
+server=/arduous.work/
+server=/attorney-client-privileged.com/
+server=/attorney-client.org/
+server=/attorneyclientprivileged.com/
+server=/beachhackerspace.com/
+server=/cloudwatchtower.com/
+server=/consilio.lawyer/
+server=/consiliolaw.com/
+server=/darknetinfo.com/
+server=/dataillusionist.com/
+server=/easycalea.com/
+server=/extremeexploits.com/
+server=/extremeexploits.org/
+server=/fraudpreventionsys.com/
+server=/gleancorp.com/
+server=/idme.org/
+server=/indelibleblue.net/
+server=/indelibleblueinc.net/
+server=/internetcartography.com/
+server=/internetcartography.net/
+server=/internetcartography.org/
+server=/littoralventures.com/
+server=/marketinfo.tips/
+server=/measurementsys.com/
+server=/mxout.net/
+server=/myaddress.today/
+server=/ndagri.com/
+server=/networkcartography.com/
+server=/networkcartography.net/
+server=/networkcartography.org/
+server=/newdulcina.com/
+server=/opensourcecontext.com/
+server=/oppleman.org/
+server=/oscontext.com/
+server=/pathanalyzer.com/
+server=/pathanalyzerpro.com/
+server=/precise.fit/
+server=/pwhois.net/
+server=/pwhois.org/
+server=/quietquell.com/
+server=/trustcor.co/
+server=/vbchs.com/
+server=/vbchs.org/
+server=/vbhacker.space/
+server=/vbhackerspace.com/
+server=/vbhackerspace.org/
+server=/vostrom.ventures/
+server=/whoisanalyzer.com/
+server=/whoisanalyzerpro.com/
+server=/mobile.fra2.measurelib.com/
+server=/mobile.ams2.measurelib.com/
+# Telematicsdirect - from al-moazin-lite-prayer-times.apk - dcb56dc7b817dd65a1f5ebfe81cf36b85ad523990b8e4f69a4a1654d1cc8277c
+server=/nav.telematicsdirect.com/
+# SafeGraph / OpenLocate
+# https://github.com/pablobaxter/openlocate-android
+# https://www.vice.com/en/article/m7vymn/cdc-tracked-phones-location-data-curfews
+server=/api.safegraph.com/
+# daily-scratchers.apk / 22a80df1084af11129baef89bce0bafad0aaae41e58dc2bb6e7c27fd3f4bac49 /	me.actv8.tvwallet
+server=/actv8technologies.com/
+server=/api-production-v4.actv8technologies.com/
+server=/sonar.actv8technologies.com/
+# Joker - RelaxingMusicSootheYourBody_signed.apk - 14c35d1158cc47cfb605fdd686603b0929d38c046dce03fd6033fb8a31433798
+server=/novasdk.oss-cn-beijing.aliyuncs.com/
+# Joker - https://github.com/DoctorWebLtd/malware-iocs/tree/master/Android.Joker
+# Note: domain offline since Feb 2022
+server=/ad.mobnv.com/
+# pDNS for 	161.117.252.102
+server=/app.mobnv.com/
+server=/aff.fortunnecat.com/
+# WhatsApp mod distributed through legitimate apps:
+# https://securelist.com/malicious-whatsapp-mod-distributed-through-legitimate-apps/107690/?utm_source=everyonesocial&utm_medium=partner&utm_campaign=us_NA-newsletter_en0177&utm_content=sm-post&utm_term=us_everyonesocial_organic_an17748oyfteksz&es_id=cfde1a3994
+server=/wa.zcnewy.com/
+server=/av2wg.rt14v.com/
+server=/g1790.rt14v.com/
+# xnspy - 578a880848bc52bed83b2be817a148187fde129cc8ad50db49630c0ebf59102c - xnspyappv2.apk
+# https://techcrunch.com/2022/12/12/xnspy-stalkerware-iphone-android/
+server=/alert.xiz4me.com/
+server=/asset.xiz4me.com/
+server=/sync.xiz4me.com/
+server=/xiz4me.com/
+server=/mydwnd.com/
+server=/brilliant-flame-585.firebaseio.com/
+server=/brilliant-flame-585.appspot.com/
+# xnspy - 7e3930771370ed111cdb83397a04fa7ee89f1ea35b7f5306bb1522b82bc6d38d
+server=/sync.bk128.com/
+server=/alert.bk128.com/
+server=/asset.bk128.com/
+server=/bk128.com/
+# xnspy - 9114e561c42ea19b183ef5d8a36e743f2b873874e43d805b11e3753035c7900d
+server=/true-truck-86810.firebaseio.com/
+server=/true-truck-86810.appspot.com/
+# Fleckpe - from https://securelist.com/fleckpe-a-new-family-of-trojan-subscribers-on-google-play/109643/
+server=/ac.iprocam.xyz/
+server=/ad.iprocam.xyz/
+server=/ap.iprocam.xyz/
+server=/b7.photoeffect.xyz/
+server=/ba3.photoeffect.xyz/
+server=/f0.photoeffect.xyz/
+server=/m11.slimedit.live/
+server=/m12.slimedit.live/
+server=/m13.slimedit.live/
+server=/ba.beautycam.xyz/
+server=/f6.beautycam.xyz/
+server=/f8a.beautycam.xyz/
+server=/ae.mveditor.xyz/
+server=/b8c.mveditor.xyz/
+server=/d3.mveditor.xyz/
+server=/fa.gifcam.xyz/
+server=/fb.gifcam.xyz/
+server=/fl.gifcam.xyz/
+server=/a.hdmodecam.live/
+server=/b.hdmodecam.live/
+server=/l.hdmodecam.live/
+server=/vd.toobox.online/
+server=/ve.toobox.online/
+server=/vt.toobox.online/
+server=/t1.twmills.xyz/
+server=/t2.twmills.xyz/
+server=/t3.twmills.xyz/
+server=/api.odskguo.xyz/
+server=/gbcf.odskguo.xyz/
+server=/track.odskguo.xyz/
+#AhRat - see https://www.welivesecurity.com/2023/05/23/android-app-breaking-bad-legitimate-screen-recording-file-exfiltration/
+server=/order.80876dd5.shop/
+#AhRat - b2c1517e4b0e0b3286a5cde06310b2277da7333f5ab3c2828f08272e3f85b260 - iRecorder - Screen Recorder_2.0_apkcombo.com.apk
+server=/config.unityads.unity3d.com/
+server=/config.unityads.unitychina.cn/
+server=/init.supersonicads.com/
+server=/logs.supersonic.com/
+server=/outcome-ssp.supersonicads.com/
+server=/supersonicads.com/
+# uBlock telemetry endpoint - adblock-stats.js  inside a01ff7dac823f3666e7f38527739802e5a7ce3cb539b6a390ca99d423b5c9779
+# data sent even if telemetry is disabled
+server=/ublocker-chrome.com/
+# Cytrox Predator domains, see - https://citizenlab.ca/2023/09/predator-in-the-wires-ahmed-eltantawy-targeted-with-predator-spyware-after-announcing-presidential-ambitions/
+server=/almal-news.com/
+server=/chat-support.support/
+server=/cibeg.online/
+server=/notifications-sec.com/
+server=/wa-info.com/
+server=/whatssapp.co/
+server=/wts-app.info/
+server=/sec-flare.com/
+server=/verifyurl.me/
+server=/c.betly.me/
+server=/betly.me/
+server=/web.whatssapp.co/
+server=/whatspp.wa-info.com/
+server=/notifications.wa-info.com/
+server=/t-bit.me/
+# PEACHPIT and BADBOX, extended infrastructure (expansion by @craiu), see - https://www.humansecurity.com/hubfs/HUMAN_Report_BADBOX-and-PEACHPIT.pdf
+server=/adbsc.flyermobi.com/
+server=/adbsc.ikmytech.com/
+server=/adbsdk.flyermobi.com/
+server=/admin.dofunapps.com/
+server=/ads.dofunapps.com/
+server=/ads.flyermobi.com/
+server=/apkcar.com/
+server=/ats.flyermobi.com/
+server=/ats.ikmytech.com/
+server=/cbphe.com/
+server=/cbpheback.com/
+server=/dcylog.com/
+server=/flyermobi.com/
+server=/n1.flyermobi.com/
+server=/sdk.dofunapps.com/
+server=/www.apkcar.com/
+server=/www.flyermobi.com/
+server=/ycxrl.com/
+server=/ymex.apkcar.com/
+server=/ymlog.apkcar.com/
+server=/ymsdk.apkcar.com/
+# Unityads from https://github.com/Unity-Technologies/unity-ads-ios
+server=/scar.unityads.unity3d.com/
+server=/webviewbridge.unityads.unity3d.com/
+server=/unityads.unity3d.com/
+server=/gateway.unityads.unity3d.com/

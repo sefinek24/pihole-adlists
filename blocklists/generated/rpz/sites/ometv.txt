@@ -1,0 +1,17 @@
+$TTL 300
+@ SOA localhost. root.localhost. 2026021101 43200 3600 259200 300
+  NS  localhost.
+cdn.ome.tv CNAME .
+*.cdn.ome.tv CNAME .
+m-cdn.ome.tv CNAME .
+*.m-cdn.ome.tv CNAME .
+mail.ome.tv CNAME .
+*.mail.ome.tv CNAME .
+ome.tv CNAME .
+*.ome.tv CNAME .
+ometv.chat CNAME .
+*.ometv.chat CNAME .
+ometv.pl CNAME .
+*.ometv.pl CNAME .
+superawes.ome.tv CNAME .
+*.superawes.ome.tv CNAME .
