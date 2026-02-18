@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026021301 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026021801 43200 3600 259200 300
   NS  localhost.
 adeventtracker.spotify.com CNAME .
 *.adeventtracker.spotify.com CNAME .
@@ -247,8 +247,6 @@ eventlog.gryphline.com CNAME .
 *.eventlog.gryphline.com CNAME .
 native-log-collect.gryphline.com CNAME .
 *.native-log-collect.gryphline.com CNAME .
-data-p.gryphline.com CNAME .
-*.data-p.gryphline.com CNAME .
 fp-sa-it.fengkongcloud.com CNAME .
 *.fp-sa-it.fengkongcloud.com CNAME .
 api-fp-retry-sa.fengkongcloud.com CNAME .
@@ -845,8 +843,6 @@ log.documentmanagerpdfdocxlssale.live CNAME .
 *.log.documentmanagerpdfdocxlssale.live CNAME .
 stats.samsungpass.com CNAME .
 *.stats.samsungpass.com CNAME .
-analytics.google.com CNAME .
-*.analytics.google.com CNAME .
 log.pdfviewerscannerstore.live CNAME .
 *.log.pdfviewerscannerstore.live CNAME .
 log-sg.capcutapi.com CNAME .
