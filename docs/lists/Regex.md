@@ -18,18 +18,18 @@
 
 ## 🤔 Explanation
 <div align="center">
-    <img src="../../images/regex/1.png" alt="1">
-    <img src="../../images/regex/2.png" alt="2">
-    <img src="../../images/regex/3.png" alt="3">
-    <img src="../../images/regex/4.png" alt="4">
-    <img src="../../images/regex/5.png" alt="5">
-    <img src="../../images/regex/6.png" alt="6">
-    <img src="../../images/regex/7.png" alt="7"><br>
-    <img src="../../images/regex/8.png" alt="8"><br>
-    <img src="../../images/regex/9.png" alt="9"><br>
-    <img src="../../images/regex/10.png" alt="10"><br>
-    <img src="../../images/regex/11.png" alt="11"><br>
-    <img src="../../images/regex/12.png" alt="12">
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/1.png" alt="1">
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/2.png" alt="2">
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/3.png" alt="3">
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/4.png" alt="4">
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/5.png" alt="5">
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/6.png" alt="6">
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/7.png" alt="7"><br>
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/8.png" alt="8"><br>
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/9.png" alt="9"><br>
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/10.png" alt="10"><br>
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/11.png" alt="11"><br>
+    <img src="https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/images/regex/12.png" alt="12">
 </div>
 
 ## 🗑️ Removed regular expressions

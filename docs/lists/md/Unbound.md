@@ -76,8 +76,7 @@ https://blocklist.sefinek.net/generated/v1/unbound/malicious/phishing.conf
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/quidsup/notrack-malware.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/reported-by-norton.conf
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/RPiList/Malware.fork.conf
-https://blocklist.sefinek.net/generated/v1/unbound/malicious/sefinek.hosts1.conf
-https://blocklist.sefinek.net/generated/v1/unbound/malicious/sefinek.hosts2.conf
+https://blocklist.sefinek.net/generated/v1/unbound/malicious/sefinek.hosts.conf
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/Spam404/main-blacklist.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/suspicious.conf
 https://blocklist.sefinek.net/generated/v1/unbound/malicious/web-attacks.conf

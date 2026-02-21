@@ -42,7 +42,7 @@
 1. Updated all dependencies.
 2. Updated Eslint to version 9.
 3. Performed code cleanup.
-4. Added Unbound and RPZ formats to the [lists/Index.md](lists/Index.md) file.
+4. Added Unbound and RPZ formats to the [lists/Index.md](https://blocklist.sefinek.net/docs/lists/Index.md) file.
 5. Other improvements and fixes.
 
 ## Update v0.15.0 - 18.05.2024

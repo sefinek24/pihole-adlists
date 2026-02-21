@@ -80,8 +80,8 @@ This will help you schedule the cron job for optimal timing.
 </details>
 
 <h3 align="right">
-    📃 <a href="docs/lists/Index.md">Select your DNS server and copy the URLs »</a><br>
-    🔡 <a href="docs/lists/Regex.md">View the regex list »</a>
+    📃 <a href="https://blocklist.sefinek.net/docs/lists/Index.md">Select your DNS server and copy the URLs »</a><br>
+    🔡 <a href="https://blocklist.sefinek.net/docs/lists/Regex.md">View the regex list »</a>
 </h3>
 
 
