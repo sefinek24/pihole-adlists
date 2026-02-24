@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026022001 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026022401 43200 3600 259200 300
   NS  localhost.
 00px.net CNAME .
 *.00px.net CNAME .
@@ -1171,6 +1171,8 @@ analytics-fe.digital-cloud-prem.medallia.com CNAME .
 *.analytics-fe.digital-cloud-prem.medallia.com CNAME .
 analytics-fe.digital-cloud.medallia.com CNAME .
 *.analytics-fe.digital-cloud.medallia.com CNAME .
+analytics-ipv6.tiktokw.us CNAME .
+*.analytics-ipv6.tiktokw.us CNAME .
 analytics-prd.aws.wehaa.net CNAME .
 *.analytics-prd.aws.wehaa.net CNAME .
 analytics-prod-alb-292764149.us-west-2.elb.amazonaws.com CNAME .
