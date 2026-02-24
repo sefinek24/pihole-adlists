@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026022001 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026022401 43200 3600 259200 300
   NS  localhost.
 adeventtracker.spotify.com CNAME .
 *.adeventtracker.spotify.com CNAME .
@@ -223,8 +223,6 @@ event-gateway.data.karrotmarket.com CNAME .
 *.event-gateway.data.karrotmarket.com CNAME .
 h-adashx4id.ut.taobao.com CNAME .
 *.h-adashx4id.ut.taobao.com CNAME .
-gjtrack.ucweb.com CNAME .
-*.gjtrack.ucweb.com CNAME .
 ip.xindong.com CNAME .
 *.ip.xindong.com CNAME .
 openlog.tapapis.com CNAME .
@@ -677,18 +675,12 @@ app-tracking.hlogo.de CNAME .
 *.app-tracking.hlogo.de CNAME .
 px.wpk.quark.cn CNAME .
 *.px.wpk.quark.cn CNAME .
-uc9.ucweb.com CNAME .
-*.uc9.ucweb.com CNAME .
-ucus.ucweb.com CNAME .
-*.ucus.ucweb.com CNAME .
 applog.lc.quark.cn CNAME .
 *.applog.lc.quark.cn CNAME .
 track.lc.quark.cn CNAME .
 *.track.lc.quark.cn CNAME .
 log.m.sm.cn CNAME .
 *.log.m.sm.cn CNAME .
-track.uc.cn CNAME .
-*.track.uc.cn CNAME .
 track.adflow-prod.minionplatform.com CNAME .
 *.track.adflow-prod.minionplatform.com CNAME .
 t-odx.op-mobile.opera.com CNAME .
@@ -1167,8 +1159,6 @@ beacon-api.aliyuncs.com CNAME .
 *.beacon-api.aliyuncs.com CNAME .
 adash.man.aliyuncs.com CNAME .
 *.adash.man.aliyuncs.com CNAME .
-woodpecker.uc.cn CNAME .
-*.woodpecker.uc.cn CNAME .
 adashx4ae.ut.taobao.com CNAME .
 *.adashx4ae.ut.taobao.com CNAME .
 h-adashx4ae.ut.taobao.com CNAME .
@@ -1639,8 +1629,6 @@ sensors.snappea.com CNAME .
 *.sensors.snappea.com CNAME .
 analytics.snaptube.app CNAME .
 *.analytics.snaptube.app CNAME .
-px.ucweb.com CNAME .
-*.px.ucweb.com CNAME .
 adtima-static.zadn.vn CNAME .
 *.adtima-static.zadn.vn CNAME .
 ztevents.zaloapp.com CNAME .
@@ -1667,10 +1655,6 @@ analytics.datasavannah.com CNAME .
 *.analytics.datasavannah.com CNAME .
 sq.requestads.com CNAME .
 *.sq.requestads.com CNAME .
-insight.ucweb.com CNAME .
-*.insight.ucweb.com CNAME .
-gjapplog.ucweb.com CNAME .
-*.gjapplog.ucweb.com CNAME .
 stat.meitudata.com CNAME .
 *.stat.meitudata.com CNAME .
 collect.media.jio.com CNAME .
@@ -1829,10 +1813,6 @@ rt.applvn.com CNAME .
 *.rt.applvn.com CNAME .
 rt.applovin.com CNAME .
 *.rt.applovin.com CNAME .
-uc.ucweb.com CNAME .
-*.uc.ucweb.com CNAME .
-puds.ucweb.com CNAME .
-*.puds.ucweb.com CNAME .
 patriot.cs.pp.cn CNAME .
 *.patriot.cs.pp.cn CNAME .
 sdk-orion.appboy.com CNAME .
@@ -1845,12 +1825,6 @@ decide.mixpanel.com CNAME .
 *.decide.mixpanel.com CNAME .
 api.segment.io CNAME .
 *.api.segment.io CNAME .
-applog.uc.cn CNAME .
-*.applog.uc.cn CNAME .
-dispatcher.upmc.uc.cn CNAME .
-*.dispatcher.upmc.uc.cn CNAME .
-gjapplog.uc.cn CNAME .
-*.gjapplog.uc.cn CNAME .
 tracking.directservices.it CNAME .
 *.tracking.directservices.it CNAME .
 metrics.timewarnercable.com CNAME .
@@ -2073,6 +2047,34 @@ mcs-va.tiktokv.com CNAME .
 *.mcs-va.tiktokv.com CNAME .
 analytics.tiktok.com CNAME .
 *.analytics.tiktok.com CNAME .
+woodpecker.uc.cn CNAME .
+*.woodpecker.uc.cn CNAME .
+track.uc.cn CNAME .
+*.track.uc.cn CNAME .
+applog.uc.cn CNAME .
+*.applog.uc.cn CNAME .
+dispatcher.upmc.uc.cn CNAME .
+*.dispatcher.upmc.uc.cn CNAME .
+gjapplog.uc.cn CNAME .
+*.gjapplog.uc.cn CNAME .
+uc9.ucweb.com CNAME .
+*.uc9.ucweb.com CNAME .
+ucus.ucweb.com CNAME .
+*.ucus.ucweb.com CNAME .
+logssug.ucweb.com CNAME .
+*.logssug.ucweb.com CNAME .
+gjtrack.ucweb.com CNAME .
+*.gjtrack.ucweb.com CNAME .
+px.ucweb.com CNAME .
+*.px.ucweb.com CNAME .
+insight.ucweb.com CNAME .
+*.insight.ucweb.com CNAME .
+gjapplog.ucweb.com CNAME .
+*.gjapplog.ucweb.com CNAME .
+uc.ucweb.com CNAME .
+*.uc.ucweb.com CNAME .
+puds.ucweb.com CNAME .
+*.puds.ucweb.com CNAME .
 bts-la.ucweb.com CNAME .
 *.bts-la.ucweb.com CNAME .
 intlsucus.ucweb.com CNAME .

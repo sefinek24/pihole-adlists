@@ -1,7 +1,7 @@
 ! AdguardMobileSpyware
 !
 ! Converted from - https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt
-! Last converted - Fri, 20 Feb 2026 19:42:49 +0000
+! Last converted - Tue, 24 Feb 2026 03:13:28 +0000
 !
 ||adeventtracker.spotify.com^
 ||do-not-tracker.org^
@@ -114,7 +114,6 @@
 ||events.production.us1.pgw-pci.klarna.net^
 ||event-gateway.data.karrotmarket.com^
 ||h-adashx4id.ut.taobao.com^
-||gjtrack.ucweb.com^
 ||ip.xindong.com^
 ||openlog.tapapis.com^
 ||logc-sg.tsd.xindong.com^
@@ -341,12 +340,9 @@
 ||api-fp-retry-bj.fengkongcloud.com^
 ||app-tracking.hlogo.de^
 ||px.wpk.quark.cn^
-||uc9.ucweb.com^
-||ucus.ucweb.com^
 ||applog.lc.quark.cn^
 ||track.lc.quark.cn^
 ||log.m.sm.cn^
-||track.uc.cn^
 ||track.adflow-prod.minionplatform.com^
 ||t-odx.op-mobile.opera.com^
 ||stat-analytics.mediavitrina.ru^
@@ -586,7 +582,6 @@
 ||logger.growstarry.com^
 ||beacon-api.aliyuncs.com^
 ||adash.man.aliyuncs.com^
-||woodpecker.uc.cn^
 ||adashx4ae.ut.taobao.com^
 ||h-adashx4ae.ut.taobao.com^
 ||audid-api.taobao.com^
@@ -822,7 +817,6 @@
 ||sdk-log-inter.youdao.com^
 ||sensors.snappea.com^
 ||analytics.snaptube.app^
-||px.ucweb.com^
 ||adtima-static.zadn.vn^
 ||ztevents.zaloapp.com^
 ||log.adtimaserver.vn^
@@ -836,8 +830,6 @@
 ||bi.manhuaren.com^
 ||analytics.datasavannah.com^
 ||sq.requestads.com^
-||insight.ucweb.com^
-||gjapplog.ucweb.com^
 ||stat.meitudata.com^
 ||collect.media.jio.com^
 ||log.apk.v-mate.mobi^
@@ -917,17 +909,12 @@
 ||d.applvn.com^
 ||rt.applvn.com^
 ||rt.applovin.com^
-||uc.ucweb.com^
-||puds.ucweb.com^
 ||patriot.cs.pp.cn^
 ||sdk-orion.appboy.com^
 ||loadus.exelator.com^
 ||api.mixpanel.com^
 ||decide.mixpanel.com^
 ||api.segment.io^
-||applog.uc.cn^
-||dispatcher.upmc.uc.cn^
-||gjapplog.uc.cn^
 ||tracking.directservices.it^
 ||metrics.timewarnercable.com^
 ||amptrack-dailymail-co-uk.cdn.ampproject.org^
@@ -1039,6 +1026,20 @@
 ||xlog-va.tiktokv.com^
 ||mcs-va.tiktokv.com^
 ||analytics.tiktok.com^
+||woodpecker.uc.cn^
+||track.uc.cn^
+||applog.uc.cn^
+||dispatcher.upmc.uc.cn^
+||gjapplog.uc.cn^
+||uc9.ucweb.com^
+||ucus.ucweb.com^
+||logssug.ucweb.com^
+||gjtrack.ucweb.com^
+||px.ucweb.com^
+||insight.ucweb.com^
+||gjapplog.ucweb.com^
+||uc.ucweb.com^
+||puds.ucweb.com^
 ||bts-la.ucweb.com^
 ||intlsucus.ucweb.com^
 ||adtrack-intl.ucweb.com^
