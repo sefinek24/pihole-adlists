@@ -1,5 +1,5 @@
 process.loadEnvFile();
-const fs = require('fs').promises;
+const fs = require('node:fs/promises');
 const axios = require('../www/services/axios.js');
 const { version } = require('../package.json');
 

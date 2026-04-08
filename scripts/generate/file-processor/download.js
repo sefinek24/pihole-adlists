@@ -1,10 +1,10 @@
 const { createInterface } = require('readline');
-const { get } = require('../../../www/services/axios.js');
 const { Extract } = require('unzipper');
 const { createDecompressor } = require('lzma-native');
 const { mkdir, rm, readdir } = require('node:fs/promises');
 const { join, basename, extname } = require('node:path');
 const { createWriteStream, createReadStream } = require('node:fs');
+const { get } = require('../../../www/services/axios.js');
 const { pipeline } = require('node:stream/promises');
 const { fileUrls } = require('./scripts/data.js');
 
