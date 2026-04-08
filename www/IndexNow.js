@@ -13,7 +13,7 @@ const parseSitemap = () => {
 
 const submitToIndexNow = async (urls, batchNum, totalBatches) => {
 	try {
-		const key = fs.readFileSync(`public/${FILENAME}.txt`, 'utf8').trim();
+		const key = fs.readFileSync(`www/public/${FILENAME}.txt`, 'utf8').trim();
 		const payload = {
 			host: DOMAIN,
 			key,
