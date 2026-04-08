@@ -103,7 +103,7 @@ jobs:
         run: |
           cd blocklists
 
-          git pull --rebase origin blocklists
+          git pull origin blocklists
 
           git add .
 
