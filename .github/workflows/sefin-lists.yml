@@ -6,6 +6,10 @@ on:
 
   workflow_dispatch:
 
+concurrency:
+  group: blocklists-push
+  cancel-in-progress: false
+
 jobs:
   generate-sefin-lists:
     runs-on: ubuntu-latest
@@ -58,14 +62,40 @@ jobs:
       - name: Lint
         run: node scripts/lint.js
 
+      - name: Generate No IP list
+        run: node scripts/generate/noip.js
+
+      - name: Generate 0.0.0.0 list
+        run: node scripts/generate/0.0.0.0.js
+
+      - name: Generate 127.0.0.1 list
+        run: node scripts/generate/127.0.0.1.js
+
+      - name: Generate AdGuard list
+        run: node scripts/generate/adguard.js
+
+      - name: Generate Dnsmasq list
+        run: node scripts/generate/dnsmasq.js
+
+      - name: Generate RPZ list
+        run: node scripts/generate/rpz.js
+
+      - name: Generate list for Unbound
+        run: node scripts/generate/unbound.js
+
+      - name: Count domains
+        run: node scripts/update-number-of-domains.js
+
+      - name: Configure Git
+        run: |
+          git -C blocklists config user.name "Sefinek Actions"
+          git -C blocklists config user.email "sefinek.actions@gmail.com"
+
       - name: Commit and push to blocklists branch
         run: |
           cd blocklists
 
-          git config user.name "Sefinek Actions"
-          git config user.email "sefinek.actions@gmail.com"
-
-          git pull origin blocklists
+          git pull --rebase origin blocklists
 
           git add .
 

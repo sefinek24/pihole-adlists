@@ -6,6 +6,10 @@ on:
 
   workflow_dispatch:
 
+concurrency:
+  group: blocklists-push
+  cancel-in-progress: false
+
 jobs:
   download-lists:
     runs-on: ubuntu-latest
@@ -73,14 +77,16 @@ jobs:
       - name: Count domains
         run: node scripts/update-number-of-domains.js
 
+      - name: Configure Git
+        run: |
+          git -C blocklists config user.name "Sefinek Actions"
+          git -C blocklists config user.email "sefinek.actions@gmail.com"
+
       - name: Commit and push to blocklists branch
         run: |
           cd blocklists
 
-          git config user.name "Sefinek Actions"
-          git config user.email "sefinek.actions@gmail.com"
-
-          git pull origin blocklists
+          git pull --rebase origin blocklists
 
           git add .
 

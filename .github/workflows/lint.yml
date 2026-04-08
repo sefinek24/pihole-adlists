@@ -2,13 +2,15 @@ name: Lint
 
 on:
   push:
+    branches:
+      - main
     paths:
-      - 'blocklists/**'
+      - 'lists/**'
 
   pull_request:
     types: [opened, synchronize]
     paths:
-      - 'blocklists/**'
+      - 'lists/**'
 
   workflow_dispatch:
 
@@ -18,11 +20,25 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: main
+          fetch-depth: 1
+
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          ref: blocklists
+          path: blocklists
 
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24.x
+          cache: 'npm'
 
-      - run: node scripts/lint.js
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prepare templates
+        run: node scripts/prepare-templates.js
+
+      - name: Lint
+        run: node scripts/lint.js

@@ -9,6 +9,10 @@ on:
 
   workflow_dispatch:
 
+concurrency:
+  group: blocklists-push
+  cancel-in-progress: false
+
 jobs:
   update-lists:
     runs-on: ubuntu-latest
@@ -99,7 +103,7 @@ jobs:
         run: |
           cd blocklists
 
-          git pull origin blocklists
+          git pull --rebase origin blocklists
 
           git add .
 
