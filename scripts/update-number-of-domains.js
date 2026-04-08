@@ -1,8 +1,8 @@
 const { writeFile } = require('node:fs/promises');
 const { createReadStream } = require('node:fs');
-const { resolve } = require('node:path');
+const { join } = require('node:path');
 const readline = require('readline');
-const getAllTxtFiles = require('./utils/getAllTxtFiles.js');
+const getAllFiles = require('./utils/getAllFiles.js');
 
 const formatCount = count => count.toLocaleString('en-US', { minimumIntegerDigits: 8, useGrouping: true }).replace(/,/g, ' ');
 
@@ -41,10 +41,8 @@ const processFile = async file => {
 };
 
 (async () => {
-	try {
-		const files = await getAllTxtFiles(resolve(__dirname, '..', 'blocklists', 'generated'));
-		await Promise.all(files.map(processFile));
-	} catch (err) {
-		console.error(err);
-	}
+	const blockListDir = join(__dirname, '..', 'blocklists', 'generated');
+
+	const files = await getAllFiles(blockListDir, ['.txt', '.conf']);
+	await Promise.all(files.map(processFile));
 })();

@@ -1,16 +1,6 @@
-const { readdir, readFile } = require('node:fs/promises');
-const { resolve, join } = require('node:path');
-
-const getAllTxtFiles = async dir => {
-	const dirents = await readdir(dir, { withFileTypes: true });
-	const files = await Promise.all(
-		dirents.map(dirent => {
-			const res = resolve(dir, dirent.name);
-			return dirent.isDirectory() ? getAllTxtFiles(res) : res;
-		})
-	);
-	return files.flat().filter(file => file.endsWith('.txt') && file.includes('blocklists'));
-};
+const { readFile } = require('node:fs/promises');
+const { join } = require('node:path');
+const getAllFiles = require('./utils/getAllFiles.js');
 
 const lintFile = async (file, fileContents) => {
 	let hasError = false;
@@ -44,7 +34,7 @@ const lintFile = async (file, fileContents) => {
 (async () => {
 	let hasError = false;
 	const blockListDir = join(__dirname, '..', 'blocklists', 'templates');
-	const files = await getAllTxtFiles(blockListDir);
+	const files = await getAllFiles(blockListDir, ['.txt']);
 
 	await Promise.all(
 		files.map(async file => {
