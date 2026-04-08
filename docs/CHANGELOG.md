@@ -1,10 +1,10 @@
 [//]: # (Canonical: /docs/CHANGELOG.md)
 
 # 📦 Changelog - Sefinek Blocklist Collection
-To stay up to date with the latest changes, list updates, and information about added or removed sources, we encourage you to join our [Discord server](https://discord.gg/38gCM3agfa).
-On the server, we publish upcoming changes, technical details about updates, as well as information about potential issues and their resolutions.
-It is also a place where you can suggest new lists, report bugs, false positives, and share your feedback about the project.
-The project uses semantic versioning. Thank you for choosing Sefinek Blocklists!
+To stay up to date with the latest changes, list updates, and information about added or removed sources, join our [Discord server](https://discord.gg/38gCM3agfa).
+We post upcoming changes, technical details about updates, and information about any issues and how to resolve them.
+It is also the place where you can suggest new lists, report bugs or false positives, and share your feedback about the project.
+The project follows semantic versioning. Thank you for using Sefinek Blocklists!
 
 
 ## Version 0.21.0 from 8.04.2026
