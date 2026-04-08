@@ -8,7 +8,7 @@ The project follows semantic versioning. Thank you for using Sefinek Blocklists!
 
 
 ## Version 0.21.0 from 8.04.2026
-1. Generated blocklists have been moved to a dedicated `blocklists` orphan branch, keeping the `main` branch history clean and free from automated commits.
+1. Generated blocklists have been moved to a dedicated [blocklists](https://github.com/sefinek/Sefinek-Blocklist-Collection/tree/blocklists) orphan branch, keeping the `main` branch history clean and free from automated commits.
 2. Sefinek's curated domain lists have been moved from `blocklists/templates/` to a new `lists/` directory directly on `main`, making them easy to browse and manage.
 3. The `update-blocklists` workflow now triggers only on changes to `lists/**` instead of any `.txt` file.
 4. Updated `pull.sh` to sync both `main` and the `blocklists` branch via git worktree.
