@@ -12,6 +12,7 @@ The project follows semantic versioning. Thank you for using Sefinek Blocklists!
 2. Sefinek's curated domain lists have been moved from `blocklists/templates/` to a new `lists/` directory directly on `main`, making them easy to browse and manage.
 3. The `update-blocklists` workflow now triggers only on changes to [lists/**](https://github.com/sefinek/Sefinek-Blocklist-Collection/tree/main/lists) instead of any `.txt` file.
 4. Updated `pull.sh` to sync both `main` and the `blocklists` branch via git worktree.
+5. Minor frontend improvements.
 
 > On April 8, 2026, maintenance work was carried out as part of this update's deployment — the server was unavailable for approximately 30 minutes during that time. Any errors related to downloading lists during that period can be disregarded.
 
