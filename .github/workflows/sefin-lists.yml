@@ -52,6 +52,12 @@ jobs:
       - name: Remove domains that are on the whitelist
         run: node scripts/whitelist.js
 
+      - name: Normalize line endings in .txt files
+        run: node scripts/normalize-line-endings.js blocklists/templates
+
+      - name: Lint
+        run: node scripts/lint.js
+
       - name: Commit and push to blocklists branch
         run: |
           cd blocklists

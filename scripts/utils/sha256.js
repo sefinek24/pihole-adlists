@@ -20,10 +20,12 @@ module.exports = async (thisFileName, type) => {
 		return { stop: true };
 	}
 
-	await fs.writeFile(cacheFilePath, hash).catch(err => {
+	try {
+		await fs.writeFile(cacheFilePath, hash);
+	} catch (err) {
 		console.error(`❌ Error writing cache file ${cacheFilePath}: ${err}`);
 		return { stop: true };
-	});
+	}
 
 	console.log(`✅ ${hash} -> ${type}:${path.basename(thisFileName)} / hashed`);
 	return { cacheHash: hash, stop: false };
