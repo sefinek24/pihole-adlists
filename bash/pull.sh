@@ -29,7 +29,7 @@ mkdir -p "$logs_dir"
     echo
 
     if cd "$repo_path"; then
-        if git pull && \
+        if git fetch origin && git reset --hard origin/main && \
            git -C "$repo_path/blocklists" fetch origin '+refs/heads/blocklists:refs/remotes/origin/blocklists' && \
            git -C "$repo_path/blocklists" reset --hard origin/blocklists; then
             npm ci --omit=dev
