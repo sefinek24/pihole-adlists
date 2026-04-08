@@ -16,9 +16,7 @@ const CACHE_TTL = 1000;
 
 const fetchStats = async () => {
 	const now = Date.now();
-	if (cachedStats && now - cacheTimestamp < CACHE_TTL) {
-		return cachedStats;
-	}
+	if (cachedStats && now - cacheTimestamp < CACHE_TTL) return cachedStats;
 
 	try {
 		const db = await RequestStats.findOne({}).lean();
