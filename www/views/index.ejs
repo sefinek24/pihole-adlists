@@ -53,14 +53,14 @@ const categories = [
         </div>
     </div>
 
-    <aside class="hero__version" role="complementary" aria-label="Application version">
-        <span class="hero__version-text">v<%= version %></span>
+    <aside class="hero__version" role="complementary" aria-label="Website version">
+        <a href="/docs/CHANGELOG.md" title="Changelog" class="hero__version-text">v<%= version %></a>
     </aside>
 
     <aside class="hero__sponsor" role="complementary">
         <p class="hero__sponsor-text">
             Powered by <a href="https://stormserverhosting.com" class="hero__sponsor-link" target="_blank" rel="noopener">Storm Server Hosting</a>
-            <img src="https://cdn.sefinek.net/images/stormserverhosting/logo.png" alt="Storm Server Hosting logo" class="hero__sponsor-logo" width="45" height="45" loading="lazy">
+            <img src="https://cdn.sefinek.net/images/stormserverhosting/logo.png" alt="Storm Server Hosting logo" class="hero__sponsor-logo" width="32" height="32" loading="lazy">
         </p>
     </aside>
 </header>
@@ -217,7 +217,7 @@ const categories = [
             <% categories.forEach(cat => { %>
             <div class="stat-card">
                 <h3 class="stat-card__title stat-card__title--small"><%= cat.label %></h3>
-                <div class="stat-card__value" id="stats-content-<%= cat.id %>" aria-live="polite" aria-label="<%= cat.ariaLabel %>"><%= formatNum(db.categories[cat.id]) %></div>
+                <div class="stat-card__value stat-card__value--small" id="stats-content-<%= cat.id %>" aria-live="polite" aria-label="<%= cat.ariaLabel %>"><%= formatNum(db.categories[cat.id]) %></div>
             </div>
             <% }); %>
         </div>
@@ -228,7 +228,7 @@ const categories = [
                 <% responseCodes.forEach(code => { %>
                 <div class="stat-card">
                     <h4 class="stat-card__title stat-card__title--small"><%= code %></h4>
-                    <div class="stat-card__value" id="stats-content-response-<%= code %>" aria-live="polite" aria-label="HTTP <%= code %> responses"><%= formatNum(responsesObj[code]) %></div>
+                    <div class="stat-card__value stat-card__value--small" id="stats-content-response-<%= code %>" aria-live="polite" aria-label="HTTP <%= code %> responses"><%= formatNum(responsesObj[code]) %></div>
                 </div>
                 <% }); %>
             <% } else { %>
