@@ -13,7 +13,7 @@ The project uses semantic versioning. Thank you for choosing Sefinek Blocklists!
 3. The `update-blocklists` workflow now triggers only on changes to `lists/**` instead of any `.txt` file.
 4. Updated `pull.sh` to sync both `main` and the `blocklists` branch via git worktree.
 
-> On April 8, 2026, maintenance work was carried out as part of this update's deployment — the server was unavailable for a few hours during that time. Any errors related to downloading lists during that period can be disregarded.
+> On April 8, 2026, maintenance work was carried out as part of this update's deployment — the server was unavailable for approximately 30 minutes during that time. Any errors related to downloading lists during that period can be disregarded.
 
 
 ## Version 0.20.0 from 17.03.2026
