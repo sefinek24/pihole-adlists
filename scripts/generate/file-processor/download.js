@@ -1,5 +1,5 @@
 const { createInterface } = require('readline');
-const { get } = require('axios');
+const { get } = require('../../../www/services/axios.js');
 const { Extract } = require('unzipper');
 const { createDecompressor } = require('lzma-native');
 const { mkdir, rm, readdir } = require('node:fs/promises');

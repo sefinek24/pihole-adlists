@@ -1,6 +1,6 @@
 process.loadEnvFile();
 const fs = require('fs').promises;
-const axios = require('axios');
+const axios = require('../www/services/axios.js');
 const { version } = require('../package.json');
 
 const markdownFiles = [
