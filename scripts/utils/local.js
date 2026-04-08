@@ -1,0 +1,1 @@
+module.exports = /^(0\.0\.0\.0\s+)?(0\.0\.0\.0|local|broadcasthost|localhost|ff0(?:0::0|2::[1-3])|::1)$/i;

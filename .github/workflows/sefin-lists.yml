@@ -1,0 +1,79 @@
+name: Update Sefinek's lists
+
+on:
+  schedule: # https://crontab.guru
+    - cron: '0 10 * * *' # At 10:00.
+
+  workflow_dispatch:
+
+jobs:
+  generate-sefin-lists:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          ref: main
+
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          ref: blocklists
+          path: blocklists
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.x
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download lists
+        run: node scripts/generate/file-processor/download.js
+
+      - name: Generate lists
+        run: node scripts/generate/file-processor/generate.js
+
+      - name: Regex check
+        run: node scripts/generate/file-processor/regex.js
+
+      - name: Generate header
+        run: node scripts/generate/file-processor/header.js
+
+      - name: Prepare templates
+        run: node scripts/prepare-templates.js
+
+      - name: Remove duplicates from templates
+        run: node scripts/remove-duplicates.js blocklists/templates
+
+      - name: Remove domains that are on the whitelist
+        run: node scripts/whitelist.js
+
+      - name: Commit and push to blocklists branch
+        run: |
+          cd blocklists
+
+          git config user.name "Sefinek Actions"
+          git config user.email "sefinek.actions@gmail.com"
+
+          git pull origin blocklists
+
+          git add .
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Canceled. No changes to commit."
+            exit 0
+          fi
+
+          MODIFIED_FILES=$(git diff --name-only HEAD | grep -v '^cache/')
+          FILE_COUNT=$(echo "$MODIFIED_FILES" | grep -c . || true)
+          if [ "$FILE_COUNT" -eq 0 ]; then
+            echo "Canceled. Only cache/ changes detected."
+            exit 0
+          fi
+
+          git commit -m "Update of Sefinek's lists [$FILE_COUNT files] - $(date -u '+%Y-%m-%d %H:%M:%S UTC')" -m "$MODIFIED_FILES"
+          git push origin blocklists

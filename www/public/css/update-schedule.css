@@ -1,0 +1,259 @@
+body {
+	background:#070606 url(/images/bg.jpg) no-repeat fixed center;
+	background-size:cover;
+	padding-top:0!important
+}
+
+main {
+	margin:70px auto 0;
+	max-width:1000px;
+	padding:2rem 1rem;
+	text-shadow:0 0 4px #000
+}
+
+.schedule-info {
+	margin-bottom:2rem;
+	text-align:center
+}
+
+.schedule-info__heading {
+	color:#fff;
+	font-size:2.5rem;
+	font-weight:700;
+	margin:0 0 1rem
+}
+
+.schedule-info__text {
+	color:#ffffffe6;
+	font-size:1.0625rem;
+	line-height:1.7;
+	margin:0
+}
+
+.schedule-card {
+	backdrop-filter:blur(8px) saturate(150%);
+	background:#00000040;
+	border:1px solid #FFFFFF0D;
+	border-radius:12px;
+	box-shadow:0 4px 24px #0003;
+	margin-bottom:2rem;
+	padding:2rem;
+	transition:box-shadow .25s cubic-bezier(0.4,0,0.2,1),border-color .25s cubic-bezier(0.4,0,0.2,1)
+}
+
+.schedule-card__content {
+	margin:0 auto;
+	max-width:700px
+}
+
+.schedule-card__heading.sr-only {
+	border:0;
+	clip:rect(0,0,0,0);
+	height:1px;
+	margin:-1px;
+	overflow:hidden;
+	padding:0;
+	position:absolute;
+	white-space:nowrap;
+	width:1px
+}
+
+.schedule-card__item {
+	align-items:center;
+	backdrop-filter:blur(6px);
+	border:1px solid #FFFFFF0D;
+	border-radius:12px;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	margin-bottom:.875rem;
+	padding:1.25rem 1.5rem;
+	transition:background .25s cubic-bezier(0.4,0,0.2,1),border-color .25s cubic-bezier(0.4,0,0.2,1)
+}
+
+.schedule-card__item:hover {
+	background:#58a6ff1a;
+	border-color:#58a6ff4d
+}
+
+.schedule-card__item:last-child {
+	margin-bottom:0
+}
+
+.schedule-card__label {
+	color:#ffffffe6;
+	font-size:1.0625rem;
+	font-weight:600
+}
+
+.schedule-card__value {
+	color:#a5d6ff;
+	font-family:var(--font-mono, 'Cascadia Mono'),monospace;
+	font-size:1.0625rem;
+	text-shadow:0 0 12px #000
+}
+
+.schedule-card__meta {
+	align-items:flex-end;
+	display:flex;
+	flex-direction:column;
+	gap:.35rem;
+	text-align:right
+}
+
+.schedule-card__countdown {
+	color:#c9def7;
+	font-family:var(--font-mono, 'Cascadia Mono'),monospace;
+	font-size:.9375rem
+}
+
+.schedule-note {
+	backdrop-filter:blur(8px) saturate(150%);
+	background:#00000040;
+	border:1px solid #FFFFFF0D;
+	border-left:3px solid #58a6ff;
+	border-left:3px solid #58a6ff;
+	border-radius:12px;
+	box-shadow:0 4px 24px #0003;
+	margin-top:2rem;
+	padding:1.5rem 2rem
+}
+
+.schedule-note__text {
+	color:#ffffffd9;
+	font-size:1rem;
+	line-height:1.7;
+	margin:0 0 .875rem
+}
+
+.schedule-note__text:last-child {
+	margin-bottom:0
+}
+
+.schedule-note__code {
+	background:#0006;
+	border:1px solid #FFFFFF0D;
+	border-radius:4px;
+	color:#79c0ff;
+	font-family:var(--font-mono, 'Cascadia Mono'),monospace;
+	font-size:.9375rem;
+	padding:.25rem .5rem
+}
+
+.schedule-note__link {
+	color:#58a6ff;
+	text-decoration:underline;
+	transition:color .25s cubic-bezier(0.4,0,0.2,1)
+}
+
+.schedule-note__link:focus-visible {
+	border-radius:2px;
+	outline:2px solid #58a6ffcc;
+	outline-offset:2px
+}
+
+@media (max-width: 1024px) {
+	main {
+		padding:2rem 1rem
+	}
+
+	.schedule-info__heading {
+		font-size:2.25rem
+	}
+
+	.schedule-card {
+		padding:1.75rem
+	}
+
+	.schedule-card__item {
+		padding:.875rem 1.25rem
+	}
+}
+
+@media (max-width: 768px) {
+	main {
+		padding:1.5rem .75rem
+	}
+
+	.schedule-info__heading {
+		font-size:2rem
+	}
+
+	.schedule-info__text {
+		font-size:1rem
+	}
+
+	.schedule-card {
+		padding:1.5rem
+	}
+
+	.schedule-card__item {
+		align-items:flex-start;
+		flex-direction:column;
+		gap:.5rem;
+		padding:.75rem 1rem
+	}
+
+	.schedule-card__label,.schedule-card__value {
+		font-size:1rem
+	}
+
+	.schedule-card__meta {
+		align-items:flex-start;
+		text-align:left
+	}
+
+	.schedule-note {
+		padding:1.25rem 1.5rem
+	}
+
+	.schedule-note__text {
+		font-size:.9375rem
+	}
+}
+
+@media (max-width: 480px) {
+	main {
+		padding:1rem .5rem
+	}
+
+	.schedule-info__heading {
+		font-size:1.75rem
+	}
+
+	.schedule-info__text {
+		font-size:.9375rem
+	}
+
+	.schedule-card {
+		padding:1.25rem
+	}
+
+	.schedule-card__item {
+		margin-bottom:.5rem;
+		padding:.625rem .875rem
+	}
+
+	.schedule-card__label,.schedule-card__value {
+		font-size:.9375rem
+	}
+
+	.schedule-note {
+		padding:1rem 1.25rem
+	}
+
+	.schedule-note__text {
+		font-size:.875rem
+	}
+
+	.schedule-note__code {
+		font-size:.875rem;
+		padding:.2rem .4rem
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.schedule-note__link {
+		transition:none
+	}
+}

@@ -1,0 +1,196 @@
+body {
+	background:#070606 url(/images/bg2.jpg) fixed center;
+	background-size:cover;
+	padding-top:0!important
+}
+
+main {
+	display:flex;
+	flex-direction:column;
+	min-height:100vh;
+	padding:90px 1rem 2rem;
+	text-shadow:0 0 4px #000
+}
+
+.markdown-viewer {
+	margin:0 auto;
+	max-width:1600px;
+	width:100%
+}
+
+.markdown-viewer__content {
+	backdrop-filter:blur(8px);
+	background:#00000080;
+	border:1px solid #FFFFFF0D;
+	border-radius:16px;
+	box-shadow:0 8px 32px #0000004d;
+	font-size:1.03rem;
+	overflow:hidden;
+	padding:2.5rem;
+	position:relative;
+	transition:all .3s cubic-bezier(0.4,0,0.2,1)
+}
+
+.markdown-viewer__content ol,.markdown-viewer__content p,.markdown-viewer__content li,.markdown-viewer__content pre {
+	line-height:1.6;
+	text-align:left
+}
+
+.markdown-viewer__content h1 {
+	font-size:1.85rem;
+	padding:0
+}
+
+.markdown-viewer__content h2 {
+	color:#fff;
+	padding:0;
+	text-align:left
+}
+
+.markdown-viewer__content h2:not(:first-child) {
+	font-size:1.6rem;
+	margin-top:1.5rem
+}
+
+.markdown-viewer__content h3 {
+	color:#fff;
+	font-size:1.18rem;
+	margin-bottom:0;
+	text-align:left
+}
+
+.markdown-viewer__content p {
+	margin-bottom:0;
+	margin-top:.375rem
+}
+
+.markdown-viewer__content ol,.markdown-viewer__content ul {
+	margin-top:.375rem;
+	padding-left:2.0625rem
+}
+
+.markdown-viewer__content summary {
+	color:#79c0ff;
+	cursor:pointer;
+	font-family:Calibri,sans-serif;
+	font-size:1.062rem;
+	padding-top:.375rem;
+	transition:color .2s ease;
+	user-select:none
+}
+
+.markdown-viewer__content summary:hover {
+	color:#a5d6ff;
+	text-decoration:underline
+}
+
+.markdown-viewer__content code {
+	background:#0006;
+	border:1px solid #58a6ff26;
+	border-radius:4px;
+	color:#a5d6ff;
+	font-family:'Cascadia Mono','Courier New',monospace;
+	font-size:.88rem;
+	padding:.125rem .375rem
+}
+
+.markdown-viewer__content .language-bash {
+	background:#0006;
+	border:1px solid #58a6ff33;
+	border-radius:6px;
+	color:#ffffffe6;
+	font-family:'Cascadia Mono','Courier New',monospace;
+	font-size:.875rem;
+	padding:.625rem
+}
+
+.markdown-viewer__content .language-yaml {
+	color:#ffffffe6;
+	font-family:'Cascadia Mono',Consolas,monospace;
+	font-size:.8125rem
+}
+
+.markdown-viewer__content code.language-ini {
+	color:#fff9
+}
+
+.markdown-viewer__content blockquote {
+	backdrop-filter:blur(6px);
+	background:#0000004d;
+	border-left:4px solid #58a6ff;
+	border-radius:0 8px 8px 0;
+	box-shadow:0 2px 8px #0003;
+	margin:.75rem 0;
+	padding:1rem 1.25rem
+}
+
+.markdown-viewer__content blockquote p {
+	color:#ffffffd9;
+	margin:0
+}
+
+@media (max-width: 1024px) {
+	main {
+		padding:90px 1rem 1.5rem
+	}
+
+	.markdown-viewer__content {
+		padding:2rem
+	}
+}
+
+@media (max-width: 768px) {
+	main {
+		padding:80px .625rem 1rem
+	}
+
+	.markdown-viewer__content {
+		padding:1.5rem
+	}
+
+	.markdown-viewer__content h2:not(:first-child) {
+		font-size:1.25rem
+	}
+
+	.markdown-viewer__content h3 {
+		font-size:1.0625rem
+	}
+
+	.markdown-viewer__content code,.markdown-viewer__content .language-bash,.markdown-viewer__content .language-yaml {
+		font-size:.75rem
+	}
+}
+
+@media (max-width: 480px) {
+	main {
+		padding:70px .5rem .75rem
+	}
+
+	.markdown-viewer__content {
+		border-radius:12px;
+		padding:1.25rem
+	}
+
+	.markdown-viewer__content h2:not(:first-child) {
+		font-size:1.125rem;
+		margin-top:1.25rem
+	}
+
+	.markdown-viewer__content h3 {
+		font-size:1rem
+	}
+
+	.markdown-viewer__content summary {
+		font-size:1rem
+	}
+
+	.markdown-viewer__content ol,.markdown-viewer__content ul {
+		padding-left:1.5rem
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.markdown-viewer__content summary {
+		transition:none
+	}
+}

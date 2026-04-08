@@ -1,0 +1,17 @@
+<%- include('./includes/header.ejs', {
+    title: `Markdown viewer - Sefinek Blocklists`,
+    meta: {},
+    canonical,
+    css: 'viewer',
+    page: 'docs'
+}) %>
+
+<main>
+    <article class="markdown-viewer" aria-label="Markdown document">
+        <div class="markdown-viewer__content">
+            <%- html %>
+        </div>
+    </article>
+</main>
+
+<%- include('./includes/footer.ejs') %>

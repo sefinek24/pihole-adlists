@@ -1,0 +1,264 @@
+<%- include('./includes/header.ejs', {
+    title: 'Sefinek Blocklists - The best list for your DNS Server',
+    meta: {
+        desc: 'The largest blocklist collection available for AdGuard and Pi-hole, including over 100 lists and over 6 million domains.',
+        tags: 'blocklist, pihole, adguard, ublock origin, links, urls, blacklist, polskie, listy, blokowan, polskie listy pihole, adlisty pihole, generator pihole, pihole blocklist generator, generator listy blokowan'
+    },
+    canonical: '',
+    css: 'index',
+    page: 'home'
+}) %>
+
+<% const formatNum = num => num?.toLocaleString('en-US') ?? '0';
+const createdDate = new Date(db.createdAt);
+const updatedDate = new Date(db.updatedAt);
+const responsesObj = db.responses instanceof Map ? Object.fromEntries(db.responses) : db.responses;
+const responseCodes = responsesObj ? Object.keys(responsesObj).sort() : [];
+const categories = [
+    { id: 'hosts', label: '0.0.0.0', ariaLabel: 'IP 0.0.0.0 format' },
+    { id: 'localhost', label: '127.0.0.1', ariaLabel: 'Localhost format' },
+    { id: 'noip', label: 'No IP', ariaLabel: 'No IP format' },
+    { id: 'adguard', label: 'AdGuard', ariaLabel: 'AdGuard format' },
+    { id: 'unbound', label: 'Unbound format', ariaLabel: 'Unbound format' },
+    { id: 'dnsmasq', label: 'Dnsmasq', ariaLabel: 'Dnsmasq format' },
+    { id: 'rpz', label: 'RPZ format', ariaLabel: 'RPZ format' }
+]; %>
+
+<header class="hero">
+    <div class="hero__content">
+        <div class="hero__header">
+            <h1 class="hero__title">Blocklist Collection for AdGuard, Pi-hole & More</h1>
+            <p class="hero__description">
+                Discover the best blocklists for your DNS server or any other blocking tool. Your first and last stop for reliable lists with minimal false positives.<br>
+                Enjoy a safer internet experience by effectively blocking unwanted content or other websites of your choice! Scroll down to learn more about this.
+            </p>
+        </div>
+
+        <div class="hero__actions">
+            <a href="https://sefinek.net/blocklist-generator?referrer=blocklist.sefinek.net" class="hero__button" rel="noopener">Blocklist generator</a>
+            <a href="#more-info" class="hero__button">Learn more</a>
+            <a href="#stats" class="hero__button">Go to Statistics</a>
+        </div>
+
+        <div class="hero__social" role="navigation" aria-label="Social links">
+            <a href="https://sefinek.net/donate?referrer=blocklist.sefinek.net" class="hero__social-link" target="_blank" rel="noopener" aria-label="Support this project with a donation">
+                <img src="/images/flaticon/heart.png" alt="Donation icon" class="hero__social-icon" width="45" height="45" loading="lazy">
+            </a>
+            <a href="https://www.youtube.com/watch?v=xfTX8GVw3B8" class="hero__social-link" target="_blank" rel="noopener" aria-label="Watch our YouTube video">
+                <img src="/images/flaticon/youtube.png" alt="YouTube icon" class="hero__social-icon" width="45" height="45" loading="lazy">
+            </a>
+            <a href="https://github.com/sefinek/Sefinek-Blocklist-Collection" class="hero__social-link" target="_blank" rel="noopener" aria-label="Visit our GitHub repository">
+                <img src="/images/flaticon/github.png" alt="GitHub icon" class="hero__social-icon" width="45" height="45" loading="lazy">
+            </a>
+        </div>
+    </div>
+
+    <aside class="hero__version" role="complementary" aria-label="Application version">
+        <span class="hero__version-text">v<%= version %></span>
+    </aside>
+
+    <aside class="hero__sponsor" role="complementary">
+        <p class="hero__sponsor-text">
+            Powered by <a href="https://stormserverhosting.com" class="hero__sponsor-link" target="_blank" rel="noopener">Storm Server Hosting</a>
+            <img src="https://cdn.sefinek.net/images/stormserverhosting/logo.png" alt="Storm Server Hosting logo" class="hero__sponsor-logo" width="45" height="45" loading="lazy">
+        </p>
+    </aside>
+</header>
+
+<main>
+    <section class="info" id="more-info" aria-labelledby="info-heading">
+        <div class="info__container">
+            <p class="info__text">
+                Welcome to Sefinek Blocklists, your premier source for top-quality lists used for DNS servers and beyond.
+                We are committed to providing the most reliable and comprehensive lists that effectively eliminate unwanted ads with minimal false alarms.
+                Our blocklists ensure a safer, more private, and faster internet browsing experience for you.
+                Say goodbye to false positives and interruptions, and enjoy seamless browsing while safeguarding your privacy!
+            </p>
+        </div>
+    </section>
+
+    <section class="features" aria-labelledby="features-heading">
+        <h2 class="features__heading" id="features-heading">Okay, but why should I choose Sefinek Blocklists? 🤔</h2>
+
+        <article class="feature">
+            <div class="feature__content">
+                <h3 class="feature__title">Commitment to Privacy and Quality</h3>
+                <p class="feature__description">
+                    Our blocklists receive continuous support and monitoring to enhance your online experience.
+                    We go beyond mere ad-blocking, dedicating ourselves to improving your overall browsing satisfaction.
+                    With our extensive lists, you can confidently explore the web, knowing your data remains secure and your privacy is fortified.
+                </p>
+            </div>
+            <div class="feature__media">
+                <img src="/images/flaticon/hand.png" alt="Privacy commitment illustration" class="feature__image" width="120" height="120" loading="lazy">
+            </div>
+        </article>
+
+        <article class="feature">
+            <div class="feature__media">
+                <img src="/images/flaticon/application-control.png" alt="Whitelist management illustration" class="feature__image" width="120" height="120" loading="lazy">
+            </div>
+            <div class="feature__content">
+                <h3 class="feature__title">Whitelists</h3>
+                <p class="feature__description">
+                    We have our own <a href="https://github.com/sefinek/Sefinek-Blocklist-Collection/blob/main/whitelists/main.txt" target="_blank" rel="noopener" class="feature__link">whitelist</a>.
+                    During each compilation of blocklists, our automated script meticulously removes the specified domains from the whitelist across all compiled files, ensuring compatibility in various formats.
+                    This process guarantees that essential websites remain accessible. As a result, we have an easy way to eliminate false positives from specified blocklists.
+                </p>
+            </div>
+        </article>
+
+        <article class="feature">
+            <div class="feature__content">
+                <h3 class="feature__title">Blocklist Generator</h3>
+                <p class="feature__description">
+                    Don't have time to search for blocklists? Use our generator!
+                    Just choose what you want to block in your network, and the generator will create a ready-to-use collection of URLs for you, which you can use freely and safely.
+                    The generator is available at <a href="https://sefinek.net/blocklist-generator?referrer=blocklist.sefinek.net" class="feature__link" rel="noopener">sefinek.net/blocklist-generator</a>.
+                </p>
+            </div>
+            <div class="feature__media">
+                <img src="/images/flaticon/checkbox.png" alt="Blocklist generator illustration" class="feature__image" width="120" height="120" loading="lazy">
+            </div>
+        </article>
+
+        <article class="feature">
+            <div class="feature__media">
+                <img src="/images/flaticon/various.png" alt="Multiple format options illustration" class="feature__image" width="120" height="120" loading="lazy">
+            </div>
+            <div class="feature__content">
+                <h3 class="feature__title">Various Formats</h3>
+                <p class="feature__description">
+                    We offer various formats of blocked domain lists to meet your needs. The available formats are:<br>
+                    0.0.0.0, 127.0.0.1, No IP, AdGuard, Dnsmasq, Unbound, RPZ.
+                </p>
+            </div>
+        </article>
+
+        <article class="feature">
+            <div class="feature__content">
+                <h3 class="feature__title">Synchronization and Security Maintenance</h3>
+                <p class="feature__description">
+                    At Sefinek Blocklists, we understand how important it is to keep up with evolving online threats to ensure our blocklists are effective.
+                    That's why we have created a robust synchronization process.
+                    Our blocklists are updated every 3 hours in our GitHub repository. This ensures constant access to the latest versions that are not yet ready for production.
+                    Daily updates are carried out on our main server (blocklist.sefinek.net) at 01:00 and 06:00 (Europe/Warsaw time zone).
+                    We recommend configuring your DNS to fetch blocklists from blocklist.sefinek.net only at night. This way, you will avoid any issues related to site unavailability or other network interruptions.
+                </p>
+            </div>
+            <div class="feature__media">
+                <img src="/images/flaticon/loop.png" alt="Synchronization process illustration" class="feature__image" width="120" height="120" loading="lazy">
+            </div>
+        </article>
+
+        <article class="feature">
+            <div class="feature__media">
+                <img src="/images/flaticon/loading-bar.png" alt="Fast page loading illustration" class="feature__image" width="120" height="120" loading="lazy">
+            </div>
+            <div class="feature__content">
+                <h3 class="feature__title">Faster Page Loading</h3>
+                <p class="feature__description">
+                    Say goodbye to slow web page loading. Our carefully curated block lists are optimized to reduce page load times.
+                    By blocking resource-heavy ads and scripts, we ensure a smoother and more efficient browsing experience.
+                    Enjoy faster page loading, providing you with quick access to desired content without unnecessary delays.
+                    This makes your web journey fast and seamless. For even greater privacy, consider configuring the <a href="https://www.nlnetlabs.nl/projects/unbound/about" target="_blank" rel="noopener" class="feature__link">Unbound resolver</a>.
+                </p>
+            </div>
+        </article>
+
+        <article class="feature">
+            <div class="feature__content">
+                <h3 class="feature__title">Secure and Fast Server, Enhanced by Cloudflare</h3>
+                <p class="feature__description">
+                    Our service is based on a secure and fast server, powered by Cloudflare, a leading content delivery and security network.
+                    Our priority is the reliability and performance of our blocklists, ensuring quick, uninterrupted updates and a high level of security.
+                </p>
+            </div>
+            <div class="feature__media">
+                <img src="/images/flaticon/privacy.png" alt="Security and privacy illustration" class="feature__image" width="120" height="120" loading="lazy">
+            </div>
+        </article>
+
+        <article class="feature feature--last">
+            <div class="feature__media">
+                <img src="/images/flaticon/coding.png" alt="Open source development illustration" class="feature__image" width="120" height="120" loading="lazy">
+            </div>
+            <div class="feature__content">
+                <h3 class="feature__title">Open Source on GitHub</h3>
+                <p class="feature__description">
+                    We invite developers from all over the world to explore our source code, share their knowledge, and become integral members of a community that values transparency.
+                    In addition to supporting innovation, we highly value your privacy, ensuring a secure and respectful environment.
+                    Join us to shape a future where technology and privacy coexist in harmony.
+                </p>
+            </div>
+        </article>
+    </section>
+
+    <section class="stats" id="stats" aria-labelledby="stats-heading">
+        <h2 class="stats__heading" id="stats-heading">Are you ready for stats? 📝</h2>
+        <p class="stats__subtitle">
+            Statistics have been collected since <time class="stats__date" id="stats-since-date" datetime="<%= createdDate.toISOString() %>"></time>. They are updated every few minutes to avoid server overload.
+            <br>
+            Want to see detailed metrics? Check out the <a href="/metrics">Metrics</a> page!
+        </p>
+
+        <div class="stats__grid stats__grid--primary">
+            <div class="stat-card stat-card--primary">
+                <h3 class="stat-card__title">All requests</h3>
+                <div class="stat-card__value" id="stats-content-total-requests" aria-live="polite"><%= formatNum(db.total) %></div>
+            </div>
+            <div class="stat-card stat-card--primary">
+                <h3 class="stat-card__title">Blocklist requests</h3>
+                <div class="stat-card__value" id="stats-content-blocklist-requests" aria-live="polite"><%= formatNum(db.blocklists) %></div>
+            </div>
+        </div>
+
+        <div class="stats__grid" role="region" aria-label="Category statistics">
+            <% categories.forEach(cat => { %>
+            <div class="stat-card">
+                <h3 class="stat-card__title stat-card__title--small"><%= cat.label %></h3>
+                <div class="stat-card__value" id="stats-content-<%= cat.id %>" aria-live="polite" aria-label="<%= cat.ariaLabel %>"><%= formatNum(db.categories[cat.id]) %></div>
+            </div>
+            <% }); %>
+        </div>
+
+        <h3 class="stats__subheading">HTTP Response Codes 📡</h3>
+        <div class="stats__grid" role="region" aria-label="HTTP response code statistics">
+            <% if (responseCodes.length > 0) { %>
+                <% responseCodes.forEach(code => { %>
+                <div class="stat-card">
+                    <h4 class="stat-card__title stat-card__title--small"><%= code %></h4>
+                    <div class="stat-card__value" id="stats-content-response-<%= code %>" aria-live="polite" aria-label="HTTP <%= code %> responses"><%= formatNum(responsesObj[code]) %></div>
+                </div>
+                <% }); %>
+            <% } else { %>
+                <div class="stat-card">
+                    <h4 class="stat-card__title stat-card__title--small">No data</h4>
+                    <div class="stat-card__value">0</div>
+                </div>
+            <% } %>
+        </div>
+
+        <h3 class="stats__subheading">Our Server 🌍</h3>
+        <div class="stats__grid stats__grid--server" role="region" aria-label="Server statistics">
+            <div class="stat-card stat-card--server">
+                <h4 class="stat-card__label">Uptime:</h4>
+                <code class="stat-card__code" id="stats-content-uptime" aria-live="polite"><%= uptime %></code>
+            </div>
+            <div class="stat-card stat-card--server">
+                <h4 class="stat-card__label">Collection date:</h4>
+                <code class="stat-card__code" id="stats-content-coll-cAt" aria-live="polite"><time datetime="<%= createdDate.toISOString() %>"><%= createdDate.toISOString() %></time></code>
+            </div>
+            <div class="stat-card stat-card--server">
+                <h4 class="stat-card__label">Last collection update:</h4>
+                <code class="stat-card__code" id="stats-content-coll-uAt" aria-live="polite"><time datetime="<%= updatedDate.toISOString() %>"><%= updatedDate.toISOString() %></time></code>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('./includes/copyright.ejs') %>
+
+<script type="module" src="/js/index.js" data-ws-address="<%= process.env.NODE_ENV === 'production' ? process.env.WS_ADDRESS : `${process.env.WS_ADDRESS}:${process.env.WS_PORT}` %>"></script>
+
+<%- include('./includes/footer.ejs') %>

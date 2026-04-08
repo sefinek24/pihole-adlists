@@ -1,0 +1,87 @@
+<!DOCTYPE html> <!-- Copyright 2023-2026 © by Sefinek. All Rights Reserved. -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <% if (title) { %><title><%= title %></title><meta property="og:title" content="<%= title %>"><% } %>
+    <% if (meta.desc) { %><meta name="description" content="<%= meta.desc %>"><meta property="og:description" content="<%= meta.desc %>"><meta name="twitter:description" content="<%= meta.desc %>"><% } %>
+    <% if (meta.tags) { %><meta name="keywords" content="<%= meta.tags %>"><% } %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% if (canonical || canonical === '') { %><link rel="canonical" href="<%= process.env.DOMAIN %><%= canonical %>"><% } %>
+
+    <link rel="preconnect" href="https://cdn.sefinek.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.sefinek.net">
+    <link rel="preconnect" href="https://sefinek.net" crossorigin>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <% if (css) { %><link rel="stylesheet" href="/css/<%= css %>.css"> <% } %>
+
+    <!-- SEO -->
+    <meta name="theme-color" content="#223672">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="application-name" content="Sefinek Blocklist Collection">
+    <meta name="apple-mobile-web-app-title" content="Sefinek Blocklist Collection">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sefinek Blocklist Collection">
+    <meta property="og:url" content="https://blocklist.sefinek.net">
+    <meta property="og:image" content="https://blocklist.sefinek.net/images/meta-og.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://blocklist.sefinek.net">
+    <meta property="twitter:title" content="Sefinek Blocklist Collection">
+    <meta property="twitter:image" content="https://blocklist.sefinek.net/images/meta-og.jpg">
+    <meta property="twitter:image:alt" content="Sefinek Blocklist Collection banner">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Sefinek Blocklist Collection",
+        "url": "https://blocklist.sefinek.net",
+        "description": "The largest blocklist collection for AdGuard and Pi-hole, including over 100 lists and over 6 million domains",
+        "author": {
+            "@type": "Person",
+            "name": "Sefinek",
+            "url": "https://sefinek.net"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Sefinek",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://sefinek.net/favicon.png"
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://sefinek.net/favicon.png" alt="Sefinek logo" class="brand-icon" width="32" height="32" loading="eager">
+                <span class="brand-text">Sefinek Blocklists</span>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu"> <%const a=p=>page===p?' class="active"':'';%>
+                <li><a href="/"<%- a('home') %>>Home</a></li>
+                <li><a href="/generated/v1"<%- a('blocklists') %>>Blocklists</a></li>
+                <li><a href="/docs"<%- a('docs') %>>Docs</a></li>
+                <li><a href="/metrics"<%- a('metrics') %>>Metrics</a></li>
+                <li><a href="/false-positives"<%- a('false-positives') %>>Report</a></li>
+                <li><a href="/update-schedule"<%- a('update-schedule') %>>Schedule</a></li>
+                <li><a href="/logs/v1"<%- a('git-logs') %>>Logs</a></li>
+            </ul>
+        </div>
+    </nav>

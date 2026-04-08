@@ -1,0 +1,28 @@
+name: Lint
+
+on:
+  push:
+    paths:
+      - 'blocklists/**'
+
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - 'blocklists/**'
+
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.x
+
+      - run: node scripts/lint.js

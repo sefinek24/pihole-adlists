@@ -1,0 +1,101 @@
+<%- include('./includes/header.ejs', {
+    title: 'Report False Positive - Sefinek Blocklist Collection',
+    meta: {
+        desc: 'Found a legitimate domain blocked by our lists? Report false positives easily via email, GitHub Issues, Pull Request, or Discord. Help us improve blocklist accuracy and protect the web better.',
+        tags: 'false positive report, blocklist false positive, domain whitelist request, report blocked domain, Sefinek blocklists, DNS filtering, ad blocking, security filtering, contribute blocklist, improve blocklist accuracy'
+    },
+    canonical: '/false-positives',
+    css: 'false-positives',
+    page: 'false-positives'
+}) %>
+
+<main>
+    <header class="page-header">
+        <h1 class="page-header__title">Report a false positive</h1>
+        <p class="page-header__subtitle">Found a domain that shouldn't be blocked? Let us know.</p>
+    </header>
+
+    <section class="report-form-section" aria-labelledby="form-heading">
+        <h2 class="report-form-section__heading" id="form-heading">Quick report form (recommended)</h2>
+        <p class="report-form-section__desc">Fill out the form below, and we will review your report as soon as possible. The domain will also be automatically checked in the source.</p>
+
+        <form class="report-form" id="reportForm" novalidate>
+            <div class="report-form__group">
+                <label class="report-form__label" for="domain">Domain <span id="domain-hint" class="report-form__label-hint" aria-live="polite">*</span></label>
+                <input class="report-form__input" type="text" id="domain" name="domain" placeholder="example.com" maxlength="253" required autocomplete="off" spellcheck="false">
+            </div>
+
+            <div class="report-form__group">
+                <label class="report-form__label" for="reason">Reason <span id="reason-hint" class="report-form__label-hint" aria-live="polite">*</span></label>
+                <textarea class="report-form__textarea" id="reason" name="reason" placeholder="Explain why this domain should not be blocked (screenshots uploaded to Imgur are welcome)..." minlength="10" maxlength="2000" required rows="5"></textarea>
+            </div>
+
+            <div class="report-form__group">
+                <label class="report-form__label" for="email">Your email <span id="email-hint" class="report-form__label-hint report-form__optional" aria-live="polite">(optional, you'll receive a reply)</span></label>
+                <input class="report-form__input" type="email" id="email" name="email" placeholder="username@example.com" maxlength="254" autocomplete="email">
+            </div>
+
+            <div class="report-form__footer">
+                <button class="report-form__submit" type="submit" id="checkBtn">Check domain</button>
+            </div>
+        </form>
+    </section>
+
+    <div id="fpModal" role="dialog" aria-modal="true" aria-labelledby="fpModalTitle" hidden>
+        <div id="fpModalBackdrop"></div>
+        <div id="fpModalBox">
+            <div id="fpModalHeader">
+                <span id="fpModalIcon" hidden></span>
+                <h3 id="fpModalTitle">Domain check results</h3>
+                <button id="fpModalClose" aria-label="Close">&times;</button>
+            </div>
+            <div id="fpModalBody">
+                <p id="fpModalStatus" role="status" aria-live="polite"></p>
+                <ul id="fpModalMatches" hidden></ul>
+            </div>
+            <div id="fpModalFooter">
+                <button id="fpModalCancel" type="button">Close</button>
+                <button id="fpModalClearClose" type="button" hidden>Clear &amp; close</button>
+                <button id="fpModalConfirm" type="button" hidden>Confirm &amp; send report</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="report-methods__heading" id="alternatives-heading">Or use an alternative method</h2>
+    <section class="report-methods" aria-labelledby="alternatives-heading">
+        <a href="https://discord.gg/53DBjTuzgZ" target="_blank" rel="noopener" class="report-card">
+            <div class="report-card__icon">
+                <img src="/images/flaticon/chat.png" alt="Chat icon" width="40" height="40" loading="lazy">
+            </div>
+            <div class="report-card__content">
+                <h2 class="report-card__title">Discord Server</h2>
+                <p class="report-card__description">Join our community and report the issue on Discord server. Quick contact with the team and other users.</p>
+            </div>
+        </a>
+
+        <a href="https://github.com/sefinek/Sefinek-Blocklist-Collection/issues" target="_blank" rel="noopener" class="report-card">
+            <div class="report-card__icon">
+                <img src="/images/flaticon/github-2.png" alt="GitHub icon" width="40" height="40" loading="lazy">
+            </div>
+            <div class="report-card__content">
+                <h2 class="report-card__title">GitHub Issues</h2>
+                <p class="report-card__description">Report a falsely blocked domain in the public repository. Perfect method for transparency and tracking your report status.</p>
+            </div>
+        </a>
+
+        <a href="https://github.com/sefinek/Sefinek-Blocklist-Collection/blob/main/whitelists/main.txt" target="_blank" rel="noopener" class="report-card">
+            <div class="report-card__icon">
+                <img src="/images/flaticon/programing.png" alt="Programing icon" width="40" height="40" loading="lazy">
+            </div>
+            <div class="report-card__content">
+                <h2 class="report-card__title">Pull Request</h2>
+                <p class="report-card__description">Remove the domain from the list yourself and submit a PR with the fix. Make sure to read the contributing guidelines first.</p>
+            </div>
+        </a>
+    </section>
+</main>
+
+<script src="/js/false-positives.js"></script>
+
+<%- include('./includes/copyright.ejs') %>
+<%- include('./includes/footer.ejs') %>

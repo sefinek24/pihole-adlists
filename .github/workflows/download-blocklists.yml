@@ -1,0 +1,100 @@
+name: Download and update blocklists
+
+on:
+  schedule: # https://crontab.guru
+    - cron: '0 */3 * * *' # At minute 0 past every 3rd hour.
+
+  workflow_dispatch:
+
+jobs:
+  download-lists:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          ref: main
+
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          ref: blocklists
+          path: blocklists
+
+      - name: Download blocklists
+        run: bash bash/download.sh
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.x
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prepare templates
+        run: node scripts/prepare-templates.js
+
+      - name: Remove duplicates from templates
+        run: node scripts/remove-duplicates.js blocklists/templates
+
+      - name: Remove domains that are on the whitelist
+        run: node scripts/whitelist.js
+
+      - name: Normalize line endings in .txt files
+        run: node scripts/normalize-line-endings.js blocklists/templates
+
+      - name: Lint
+        run: node scripts/lint.js
+
+      - name: Generate No IP list
+        run: node scripts/generate/noip.js
+
+      - name: Generate 0.0.0.0 list
+        run: node scripts/generate/0.0.0.0.js
+
+      - name: Generate 127.0.0.1 list
+        run: node scripts/generate/127.0.0.1.js
+
+      - name: Generate AdGuard list
+        run: node scripts/generate/adguard.js
+
+      - name: Generate Dnsmasq list
+        run: node scripts/generate/dnsmasq.js
+
+      - name: Generate RPZ list
+        run: node scripts/generate/rpz.js
+
+      - name: Generate list for Unbound
+        run: node scripts/generate/unbound.js
+
+      - name: Count domains
+        run: node scripts/update-number-of-domains.js
+
+      - name: Commit and push to blocklists branch
+        run: |
+          cd blocklists
+
+          git config user.name "Sefinek Actions"
+          git config user.email "sefinek.actions@gmail.com"
+
+          git pull origin blocklists
+
+          git add .
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Canceled. No changes to commit."
+            exit 0
+          fi
+
+          MODIFIED_FILES=$(git diff --name-only HEAD | grep -v '^cache/')
+          FILE_COUNT=$(echo "$MODIFIED_FILES" | grep -c . || true)
+          if [ "$FILE_COUNT" -eq 0 ]; then
+            echo "Canceled. Only cache/ changes detected."
+            exit 0
+          fi
+
+          git commit -m "Main blocklist update every 3h [$FILE_COUNT files] - $(date -u '+%Y-%m-%d %H:%M:%S UTC')" -m "$MODIFIED_FILES"
+          git push origin blocklists

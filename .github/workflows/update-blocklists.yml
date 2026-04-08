@@ -1,0 +1,119 @@
+name: Update manually added domains
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lists/**'
+
+  workflow_dispatch:
+
+jobs:
+  update-lists:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          ref: main
+
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          ref: blocklists
+          path: blocklists
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.x
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Sefinek Actions"
+          git config --global user.email "sefinek.actions@gmail.com"
+
+      - name: Cleanup lists/
+        run: |
+          node scripts/normalize-line-endings.js lists
+          node scripts/remove-duplicates.js lists
+
+      - name: Commit cleaned lists/ to main
+        run: |
+          git add lists/
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes in lists/ to commit."
+          else
+            FILE_COUNT=$(git diff --name-only --cached | grep -c . || true)
+            git commit -m "chore: cleanup lists/ [$FILE_COUNT files]"
+            git push origin main
+          fi
+
+      - name: Prepare templates
+        run: node scripts/prepare-templates.js
+
+      - name: Remove duplicates from templates
+        run: node scripts/remove-duplicates.js blocklists/templates
+
+      - name: Remove domains that are on the whitelist
+        run: node scripts/whitelist.js
+
+      - name: Normalize line endings in .txt files
+        run: node scripts/normalize-line-endings.js blocklists/templates
+
+      - name: Lint
+        run: node scripts/lint.js
+
+      - name: Generate No IP list
+        run: node scripts/generate/noip.js
+
+      - name: Generate 0.0.0.0 list
+        run: node scripts/generate/0.0.0.0.js
+
+      - name: Generate 127.0.0.1 list
+        run: node scripts/generate/127.0.0.1.js
+
+      - name: Generate AdGuard list
+        run: node scripts/generate/adguard.js
+
+      - name: Generate Dnsmasq list
+        run: node scripts/generate/dnsmasq.js
+
+      - name: Generate RPZ list
+        run: node scripts/generate/rpz.js
+
+      - name: Generate list for Unbound
+        run: node scripts/generate/unbound.js
+
+      - name: Count domains
+        run: node scripts/update-number-of-domains.js
+
+      - name: Commit and push to blocklists branch
+        run: |
+          cd blocklists
+
+          git pull origin blocklists
+
+          git add .
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Canceled. No changes to commit."
+            exit 0
+          fi
+
+          MODIFIED_FILES=$(git diff --name-only HEAD | grep -v '^cache/')
+          FILE_COUNT=$(echo "$MODIFIED_FILES" | grep -c . || true)
+          if [ "$FILE_COUNT" -eq 0 ]; then
+            echo "Canceled. Only cache/ changes detected."
+            exit 0
+          fi
+
+          git commit -m "Update previously committed blocklists in $GITHUB_SHA [$FILE_COUNT files]" -m "$MODIFIED_FILES"
+          git push origin blocklists

@@ -1,0 +1,60 @@
+<%- include('../includes/header.ejs', {
+    title: `File explorer ${currentPath} - Sefinek Blocklist Collection`,
+    meta: {
+        desc: `Explore static directory (${currentPath}) of logs.`,
+        tags: 'log explorer, sefinek log explorer, view log files, view logs, sefinek logs'
+    },
+    canonical: currentPath,
+    css: 'explorer',
+    page: 'git-logs'
+}) %>
+
+<main>
+    <article class="explorer" aria-label="Log File Explorer">
+        <header class="explorer__header">
+            <h1 class="explorer__title">
+                <span class="explorer__icon" aria-hidden="true">📋</span>
+                <span class="explorer__path"><%= currentPath %></span>
+            </h1>
+            <button type="button" class="explorer__action" id="reloadPage" aria-label="Reload current directory">
+                <span aria-hidden="true">🔃</span> Reload
+            </button>
+        </header>
+
+        <div class="explorer__content" role="region" aria-label="Log file listing">
+            <% if (files.length) { %>
+                <table class="explorer__table" id="explorerTable">
+                    <thead class="explorer__thead">
+                        <tr>
+                            <th class="explorer__th explorer__th--name" scope="col">Name</th>
+                            <th class="explorer__th explorer__th--date" scope="col">Date modified</th>
+                            <th class="explorer__th explorer__th--size" scope="col">Size</th>
+                        </tr>
+                    </thead>
+                    <tbody class="explorer__tbody">
+                    <% files.forEach(file => { %>
+                        <tr class="explorer__row <%= file.isDirectory ? 'explorer__row--folder' : 'explorer__row--file' %>">
+                            <td class="explorer__cell explorer__cell--name">
+                                <a href="<%= currentPath.replace(/\/$/, '') %>/<%= file.name %>" class="explorer__link" aria-label="<%= file.isDirectory ? 'Folder' : 'Log file' %>: <%= file.name %>" <%= file.isDirectory ? 'data-ajax-link' : '' %>>
+                                    <img src="/images/flaticon/<%= file.icon %>" alt="" class="explorer__img" width="24" height="24" loading="lazy">
+                                    <span class="explorer__name"><%= file.name %></span>
+                                </a>
+                            </td>
+                            <td class="explorer__cell explorer__cell--date" data-timestamp="<%= file.lastModified %>"></td>
+                            <td class="explorer__cell explorer__cell--size"><%= file.formattedSize %></td>
+                        </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <div class="explorer__empty" role="status">
+                    <p class="explorer__empty-message">No log files available.</p>
+                </div>
+            <% } %>
+        </div>
+    </article>
+</main>
+
+<script src="/js/explorer.js"></script>
+
+<%- include('../includes/footer.ejs') %>
