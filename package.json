@@ -16,7 +16,7 @@
   "scripts": {
     "m": "ncu -u && npm i && npm update && npm audit fix",
     "pull": "git fetch origin && git reset --hard origin/main",
-    "pull:blocklists": "git -C blocklists fetch origin '+refs/heads/blocklists:refs/remotes/origin/blocklists' && git -C blocklists reset --hard origin/blocklists",
+    "pull:blocklists": "git -C blocklists fetch origin +refs/heads/blocklists:refs/remotes/origin/blocklists && git -C blocklists reset --hard origin/blocklists",
     "pullsh": "bash bash/pull.sh",
     "test": "node scripts/test-urls.js",
     "update": "npm run pull && npm run pull:blocklists && npm ci --omit=dev && pm2 restart blocklist"
