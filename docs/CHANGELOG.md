@@ -3,7 +3,7 @@
 # 📦 Changelog - Sefinek Blocklist Collection
 To stay up to date with the latest changes, list updates, and information about added or removed sources, join our [Discord server](https://discord.gg/38gCM3agfa).
 We post upcoming changes, technical details about updates, and information about any issues and how to resolve them.
-It is also the place where you can suggest new lists, report bugs or false positives, and share your feedback about the project.
+It is also the place where you can suggest new lists, report bugs or false positives, and share your feedback about the project.  
 The project follows semantic versioning. Thank you for using Sefinek Blocklists!
 
 
