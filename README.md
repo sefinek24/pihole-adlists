@@ -108,7 +108,7 @@ Thank you in advance for your valuable contributions!
 ```bash
 git clone --branch main --single-branch https://github.com/sefinek/Sefinek-Blocklist-Collection.git
 cd Sefinek-Blocklist-Collection
-git fetch origin blocklists:blocklists
+git fetch --depth=1 origin blocklists:blocklists
 git worktree add blocklists blocklists
 ```
 
