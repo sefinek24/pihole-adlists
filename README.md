@@ -107,6 +107,9 @@ Thank you in advance for your valuable contributions!
 ## 📥 How to Clone?
 ```bash
 git clone --branch main --single-branch https://github.com/sefinek/Sefinek-Blocklist-Collection.git
+cd Sefinek-Blocklist-Collection
+git fetch origin blocklists
+git worktree add blocklists blocklists
 ```
 
 
