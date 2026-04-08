@@ -7,7 +7,7 @@ const DOMAIN = pkg.homepage.replace('https://', '');
 const BATCH_SIZE = 10000;
 
 const parseSitemap = () => {
-	const xml = fs.readFileSync('public/sitemap.xml', 'utf8');
+	const xml = fs.readFileSync('www/public/sitemap.xml', 'utf8');
 	return [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1].trim());
 };
 
