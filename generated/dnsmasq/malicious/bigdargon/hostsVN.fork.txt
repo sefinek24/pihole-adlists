@@ -1,7 +1,7 @@
 # Title: hostsVN
-# Last modified: 30 Mar 2026 11:14 UTC+7
-# Version: 2603301114
-# Blocked: 17.589 domains
+# Last modified: 09 Apr 2026 09:58 UTC+7
+# Version: 2604090958
+# Blocked: 17.608 domains
 # Please report any ads or problems on GitHub
 # Homepage: https://bigdargon.github.io/hostsVN/
 # GitHub: https://github.com/bigdargon/hostsVN
@@ -1198,6 +1198,7 @@ server=/logsdk.qq.com/
 server=/mtrace.qq.com/
 server=/report.qq.com/
 server=/rmonitor.qq.com/
+server=/snowflake.qq.com/
 server=/up-hl.3g.qq.com/
 server=/yun-hl.3g.qq.com/
 server=/beacon.qq.com/
@@ -8700,16 +8701,26 @@ server=/mobile-http-intake.logs.datadoghq.eu/
 server=/public-trace-http-intake.logs.datadoghq.eu/
 server=/rum-http-intake.logs.datadoghq.eu/
 server=/browser-intake-datadoghq.com/
+server=/csp-report.browser-intake-datadoghq.com/
 server=/logs.browser-intake-datadoghq.com/
 server=/rum.browser-intake-datadoghq.com/
 server=/session-replay.browser-intake-datadoghq.com/
 server=/trace.browser-intake-datadoghq.com/
 server=/browser-intake-ap1-datadoghq.com/
+server=/browser-intake-ap2-datadoghq.com/
 server=/browser-intake-us3-datadoghq.com/
 server=/browser-intake-us5-datadoghq.com/
 #[datadoghq]
 server=/browser-intake-datadoghq.eu/
+server=/csp-report.browser-intake-datadoghq.eu/
+server=/logs.browser-intake-datadoghq.eu/
+server=/rum.browser-intake-datadoghq.eu/
+server=/session-replay.browser-intake-datadoghq.eu/
+server=/www.browser-intake-datadoghq.eu/
 server=/browser-intake-ddog-gov.com/
+server=/rum.browser-intake-ddog-gov.com/
+server=/session-replay.browser-intake-ddog-gov.com/
+server=/www.browser-intake-ddog-gov.com/
 server=/beacon-api.aliyuncs.com/
 server=/adash.man.aliyuncs.com/
 server=/log.aliyuncs.com/
@@ -10681,6 +10692,14 @@ server=/dmsdk-api.dmrtb.com/
 server=/sdk-oversea.dmrtb.com/
 server=/ssp-api.dmrtb.com/
 server=/www.dmrtb.com/
+server=/dmads.dailymotion.com/
+server=/dmxleo.dailymotion.com/
+server=/optoutadvertising.com/
+server=/adserving.optoutadvertising.com/
+server=/cdn.optoutadvertising.com/
+server=/proxy.optoutadvertising.com/
+server=/ster.optoutadvertising.com/
+server=/www.optoutadvertising.com/
 # --- GroupVN block ---
 #[adtimaserver]
 server=/adtimaserver.vn/
@@ -14174,7 +14193,6 @@ server=/dkre4lyk6a9bt.cloudfront.net/
 server=/dlrioxg1637dk.cloudfront.net/
 server=/dmp.starbolt.io/
 server=/dmtracker.com/
-server=/dmxleo.dailymotion.com/
 server=/dn.loupmismaze.com/
 server=/dn0qt3r0xannq.cloudfront.net/
 server=/dnemkhkbsdbl.com/
@@ -17268,6 +17286,7 @@ server=/log.tutuapp.com/
 server=/log.umsns.com/
 server=/log.x2convert.com/
 server=/log.ys7.com/
+server=/logger.eji6.cc/
 server=/logger.unsplash.com/
 server=/logriancesenius.com/
 server=/logs.amap.com/

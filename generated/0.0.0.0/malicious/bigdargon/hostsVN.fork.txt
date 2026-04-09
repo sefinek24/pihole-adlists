@@ -1,7 +1,7 @@
 # Title: hostsVN
-# Last modified: 30 Mar 2026 11:14 UTC+7
-# Version: 2603301114
-# Blocked: 17.589 domains
+# Last modified: 09 Apr 2026 09:58 UTC+7
+# Version: 2604090958
+# Blocked: 17.608 domains
 # Please report any ads or problems on GitHub
 # Homepage: https://bigdargon.github.io/hostsVN/
 # GitHub: https://github.com/bigdargon/hostsVN
@@ -1198,6 +1198,7 @@
 0.0.0.0 mtrace.qq.com
 0.0.0.0 report.qq.com
 0.0.0.0 rmonitor.qq.com
+0.0.0.0 snowflake.qq.com
 0.0.0.0 up-hl.3g.qq.com
 0.0.0.0 yun-hl.3g.qq.com
 0.0.0.0 beacon.qq.com
@@ -8700,16 +8701,26 @@
 0.0.0.0 public-trace-http-intake.logs.datadoghq.eu
 0.0.0.0 rum-http-intake.logs.datadoghq.eu
 0.0.0.0 browser-intake-datadoghq.com
+0.0.0.0 csp-report.browser-intake-datadoghq.com
 0.0.0.0 logs.browser-intake-datadoghq.com
 0.0.0.0 rum.browser-intake-datadoghq.com
 0.0.0.0 session-replay.browser-intake-datadoghq.com
 0.0.0.0 trace.browser-intake-datadoghq.com
 0.0.0.0 browser-intake-ap1-datadoghq.com
+0.0.0.0 browser-intake-ap2-datadoghq.com
 0.0.0.0 browser-intake-us3-datadoghq.com
 0.0.0.0 browser-intake-us5-datadoghq.com
 #[datadoghq]
 0.0.0.0 browser-intake-datadoghq.eu
+0.0.0.0 csp-report.browser-intake-datadoghq.eu
+0.0.0.0 logs.browser-intake-datadoghq.eu
+0.0.0.0 rum.browser-intake-datadoghq.eu
+0.0.0.0 session-replay.browser-intake-datadoghq.eu
+0.0.0.0 www.browser-intake-datadoghq.eu
 0.0.0.0 browser-intake-ddog-gov.com
+0.0.0.0 rum.browser-intake-ddog-gov.com
+0.0.0.0 session-replay.browser-intake-ddog-gov.com
+0.0.0.0 www.browser-intake-ddog-gov.com
 0.0.0.0 beacon-api.aliyuncs.com
 0.0.0.0 adash.man.aliyuncs.com
 0.0.0.0 log.aliyuncs.com
@@ -10681,6 +10692,14 @@
 0.0.0.0 sdk-oversea.dmrtb.com
 0.0.0.0 ssp-api.dmrtb.com
 0.0.0.0 www.dmrtb.com
+0.0.0.0 dmads.dailymotion.com
+0.0.0.0 dmxleo.dailymotion.com
+0.0.0.0 optoutadvertising.com
+0.0.0.0 adserving.optoutadvertising.com
+0.0.0.0 cdn.optoutadvertising.com
+0.0.0.0 proxy.optoutadvertising.com
+0.0.0.0 ster.optoutadvertising.com
+0.0.0.0 www.optoutadvertising.com
 # --- GroupVN block ---
 #[adtimaserver]
 0.0.0.0 adtimaserver.vn
@@ -14174,7 +14193,6 @@
 0.0.0.0 dlrioxg1637dk.cloudfront.net
 0.0.0.0 dmp.starbolt.io
 0.0.0.0 dmtracker.com
-0.0.0.0 dmxleo.dailymotion.com
 0.0.0.0 dn.loupmismaze.com
 0.0.0.0 dn0qt3r0xannq.cloudfront.net
 0.0.0.0 dnemkhkbsdbl.com
@@ -17268,6 +17286,7 @@
 0.0.0.0 log.umsns.com
 0.0.0.0 log.x2convert.com
 0.0.0.0 log.ys7.com
+0.0.0.0 logger.eji6.cc
 0.0.0.0 logger.unsplash.com
 0.0.0.0 logriancesenius.com
 0.0.0.0 logs.amap.com

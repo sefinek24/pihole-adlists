@@ -1,7 +1,7 @@
 ! Title: hostsVN
-! Last modified: 30 Mar 2026 11:14 UTC+7
-! Version: 2603301114
-! Blocked: 17.589 domains
+! Last modified: 09 Apr 2026 09:58 UTC+7
+! Version: 2604090958
+! Blocked: 17.608 domains
 ! Please report any ads or problems on GitHub
 ! Homepage: https://bigdargon.github.io/hostsVN/
 ! GitHub: https://github.com/bigdargon/hostsVN
@@ -1198,6 +1198,7 @@
 ||mtrace.qq.com^
 ||report.qq.com^
 ||rmonitor.qq.com^
+||snowflake.qq.com^
 ||up-hl.3g.qq.com^
 ||yun-hl.3g.qq.com^
 ||beacon.qq.com^
@@ -8700,16 +8701,26 @@
 ||public-trace-http-intake.logs.datadoghq.eu^
 ||rum-http-intake.logs.datadoghq.eu^
 ||browser-intake-datadoghq.com^
+||csp-report.browser-intake-datadoghq.com^
 ||logs.browser-intake-datadoghq.com^
 ||rum.browser-intake-datadoghq.com^
 ||session-replay.browser-intake-datadoghq.com^
 ||trace.browser-intake-datadoghq.com^
 ||browser-intake-ap1-datadoghq.com^
+||browser-intake-ap2-datadoghq.com^
 ||browser-intake-us3-datadoghq.com^
 ||browser-intake-us5-datadoghq.com^
 ![datadoghq]
 ||browser-intake-datadoghq.eu^
+||csp-report.browser-intake-datadoghq.eu^
+||logs.browser-intake-datadoghq.eu^
+||rum.browser-intake-datadoghq.eu^
+||session-replay.browser-intake-datadoghq.eu^
+||www.browser-intake-datadoghq.eu^
 ||browser-intake-ddog-gov.com^
+||rum.browser-intake-ddog-gov.com^
+||session-replay.browser-intake-ddog-gov.com^
+||www.browser-intake-ddog-gov.com^
 ||beacon-api.aliyuncs.com^
 ||adash.man.aliyuncs.com^
 ||log.aliyuncs.com^
@@ -10681,6 +10692,14 @@
 ||sdk-oversea.dmrtb.com^
 ||ssp-api.dmrtb.com^
 ||www.dmrtb.com^
+||dmads.dailymotion.com^
+||dmxleo.dailymotion.com^
+||optoutadvertising.com^
+||adserving.optoutadvertising.com^
+||cdn.optoutadvertising.com^
+||proxy.optoutadvertising.com^
+||ster.optoutadvertising.com^
+||www.optoutadvertising.com^
 ! --- GroupVN block ---
 ![adtimaserver]
 ||adtimaserver.vn^
@@ -14174,7 +14193,6 @@
 ||dlrioxg1637dk.cloudfront.net^
 ||dmp.starbolt.io^
 ||dmtracker.com^
-||dmxleo.dailymotion.com^
 ||dn.loupmismaze.com^
 ||dn0qt3r0xannq.cloudfront.net^
 ||dnemkhkbsdbl.com^
@@ -17268,6 +17286,7 @@
 ||log.umsns.com^
 ||log.x2convert.com^
 ||log.ys7.com^
+||logger.eji6.cc^
 ||logger.unsplash.com^
 ||logriancesenius.com^
 ||logs.amap.com^

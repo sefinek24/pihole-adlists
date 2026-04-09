@@ -1,7 +1,7 @@
 # Title: hostsVN
-# Last modified: 30 Mar 2026 11:14 UTC+7
-# Version: 2603301114
-# Blocked: 17.589 domains
+# Last modified: 09 Apr 2026 09:58 UTC+7
+# Version: 2604090958
+# Blocked: 17.608 domains
 # Please report any ads or problems on GitHub
 # Homepage: https://bigdargon.github.io/hostsVN/
 # GitHub: https://github.com/bigdargon/hostsVN
@@ -1198,6 +1198,7 @@
 127.0.0.1 mtrace.qq.com
 127.0.0.1 report.qq.com
 127.0.0.1 rmonitor.qq.com
+127.0.0.1 snowflake.qq.com
 127.0.0.1 up-hl.3g.qq.com
 127.0.0.1 yun-hl.3g.qq.com
 127.0.0.1 beacon.qq.com
@@ -8700,16 +8701,26 @@
 127.0.0.1 public-trace-http-intake.logs.datadoghq.eu
 127.0.0.1 rum-http-intake.logs.datadoghq.eu
 127.0.0.1 browser-intake-datadoghq.com
+127.0.0.1 csp-report.browser-intake-datadoghq.com
 127.0.0.1 logs.browser-intake-datadoghq.com
 127.0.0.1 rum.browser-intake-datadoghq.com
 127.0.0.1 session-replay.browser-intake-datadoghq.com
 127.0.0.1 trace.browser-intake-datadoghq.com
 127.0.0.1 browser-intake-ap1-datadoghq.com
+127.0.0.1 browser-intake-ap2-datadoghq.com
 127.0.0.1 browser-intake-us3-datadoghq.com
 127.0.0.1 browser-intake-us5-datadoghq.com
 #[datadoghq]
 127.0.0.1 browser-intake-datadoghq.eu
+127.0.0.1 csp-report.browser-intake-datadoghq.eu
+127.0.0.1 logs.browser-intake-datadoghq.eu
+127.0.0.1 rum.browser-intake-datadoghq.eu
+127.0.0.1 session-replay.browser-intake-datadoghq.eu
+127.0.0.1 www.browser-intake-datadoghq.eu
 127.0.0.1 browser-intake-ddog-gov.com
+127.0.0.1 rum.browser-intake-ddog-gov.com
+127.0.0.1 session-replay.browser-intake-ddog-gov.com
+127.0.0.1 www.browser-intake-ddog-gov.com
 127.0.0.1 beacon-api.aliyuncs.com
 127.0.0.1 adash.man.aliyuncs.com
 127.0.0.1 log.aliyuncs.com
@@ -10681,6 +10692,14 @@
 127.0.0.1 sdk-oversea.dmrtb.com
 127.0.0.1 ssp-api.dmrtb.com
 127.0.0.1 www.dmrtb.com
+127.0.0.1 dmads.dailymotion.com
+127.0.0.1 dmxleo.dailymotion.com
+127.0.0.1 optoutadvertising.com
+127.0.0.1 adserving.optoutadvertising.com
+127.0.0.1 cdn.optoutadvertising.com
+127.0.0.1 proxy.optoutadvertising.com
+127.0.0.1 ster.optoutadvertising.com
+127.0.0.1 www.optoutadvertising.com
 # --- GroupVN block ---
 #[adtimaserver]
 127.0.0.1 adtimaserver.vn
@@ -14174,7 +14193,6 @@
 127.0.0.1 dlrioxg1637dk.cloudfront.net
 127.0.0.1 dmp.starbolt.io
 127.0.0.1 dmtracker.com
-127.0.0.1 dmxleo.dailymotion.com
 127.0.0.1 dn.loupmismaze.com
 127.0.0.1 dn0qt3r0xannq.cloudfront.net
 127.0.0.1 dnemkhkbsdbl.com
@@ -17268,6 +17286,7 @@
 127.0.0.1 log.umsns.com
 127.0.0.1 log.x2convert.com
 127.0.0.1 log.ys7.com
+127.0.0.1 logger.eji6.cc
 127.0.0.1 logger.unsplash.com
 127.0.0.1 logriancesenius.com
 127.0.0.1 logs.amap.com

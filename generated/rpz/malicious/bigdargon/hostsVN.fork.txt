@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026040801 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026040901 43200 3600 259200 300
   NS  localhost.
 api-adservices.apple.com CNAME .
 *.api-adservices.apple.com CNAME .
@@ -2267,6 +2267,8 @@ report.qq.com CNAME .
 *.report.qq.com CNAME .
 rmonitor.qq.com CNAME .
 *.rmonitor.qq.com CNAME .
+snowflake.qq.com CNAME .
+*.snowflake.qq.com CNAME .
 up-hl.3g.qq.com CNAME .
 *.up-hl.3g.qq.com CNAME .
 yun-hl.3g.qq.com CNAME .
@@ -16393,6 +16395,8 @@ rum-http-intake.logs.datadoghq.eu CNAME .
 *.rum-http-intake.logs.datadoghq.eu CNAME .
 browser-intake-datadoghq.com CNAME .
 *.browser-intake-datadoghq.com CNAME .
+csp-report.browser-intake-datadoghq.com CNAME .
+*.csp-report.browser-intake-datadoghq.com CNAME .
 logs.browser-intake-datadoghq.com CNAME .
 *.logs.browser-intake-datadoghq.com CNAME .
 rum.browser-intake-datadoghq.com CNAME .
@@ -16403,14 +16407,28 @@ trace.browser-intake-datadoghq.com CNAME .
 *.trace.browser-intake-datadoghq.com CNAME .
 browser-intake-ap1-datadoghq.com CNAME .
 *.browser-intake-ap1-datadoghq.com CNAME .
+browser-intake-ap2-datadoghq.com CNAME .
+*.browser-intake-ap2-datadoghq.com CNAME .
 browser-intake-us3-datadoghq.com CNAME .
 *.browser-intake-us3-datadoghq.com CNAME .
 browser-intake-us5-datadoghq.com CNAME .
 *.browser-intake-us5-datadoghq.com CNAME .
 browser-intake-datadoghq.eu CNAME .
 *.browser-intake-datadoghq.eu CNAME .
+csp-report.browser-intake-datadoghq.eu CNAME .
+*.csp-report.browser-intake-datadoghq.eu CNAME .
+logs.browser-intake-datadoghq.eu CNAME .
+*.logs.browser-intake-datadoghq.eu CNAME .
+rum.browser-intake-datadoghq.eu CNAME .
+*.rum.browser-intake-datadoghq.eu CNAME .
+session-replay.browser-intake-datadoghq.eu CNAME .
+*.session-replay.browser-intake-datadoghq.eu CNAME .
 browser-intake-ddog-gov.com CNAME .
 *.browser-intake-ddog-gov.com CNAME .
+rum.browser-intake-ddog-gov.com CNAME .
+*.rum.browser-intake-ddog-gov.com CNAME .
+session-replay.browser-intake-ddog-gov.com CNAME .
+*.session-replay.browser-intake-ddog-gov.com CNAME .
 beacon-api.aliyuncs.com CNAME .
 *.beacon-api.aliyuncs.com CNAME .
 adash.man.aliyuncs.com CNAME .
@@ -20245,6 +20263,20 @@ sdk-oversea.dmrtb.com CNAME .
 *.sdk-oversea.dmrtb.com CNAME .
 ssp-api.dmrtb.com CNAME .
 *.ssp-api.dmrtb.com CNAME .
+dmads.dailymotion.com CNAME .
+*.dmads.dailymotion.com CNAME .
+dmxleo.dailymotion.com CNAME .
+*.dmxleo.dailymotion.com CNAME .
+optoutadvertising.com CNAME .
+*.optoutadvertising.com CNAME .
+adserving.optoutadvertising.com CNAME .
+*.adserving.optoutadvertising.com CNAME .
+cdn.optoutadvertising.com CNAME .
+*.cdn.optoutadvertising.com CNAME .
+proxy.optoutadvertising.com CNAME .
+*.proxy.optoutadvertising.com CNAME .
+ster.optoutadvertising.com CNAME .
+*.ster.optoutadvertising.com CNAME .
 adtimaserver.vn CNAME .
 *.adtimaserver.vn CNAME .
 api.adtimaserver.vn CNAME .
@@ -27043,8 +27075,6 @@ dmp.starbolt.io CNAME .
 *.dmp.starbolt.io CNAME .
 dmtracker.com CNAME .
 *.dmtracker.com CNAME .
-dmxleo.dailymotion.com CNAME .
-*.dmxleo.dailymotion.com CNAME .
 dn.loupmismaze.com CNAME .
 *.dn.loupmismaze.com CNAME .
 dn0qt3r0xannq.cloudfront.net CNAME .
@@ -33095,6 +33125,8 @@ log.x2convert.com CNAME .
 *.log.x2convert.com CNAME .
 log.ys7.com CNAME .
 *.log.ys7.com CNAME .
+logger.eji6.cc CNAME .
+*.logger.eji6.cc CNAME .
 logger.unsplash.com CNAME .
 *.logger.unsplash.com CNAME .
 logriancesenius.com CNAME .
