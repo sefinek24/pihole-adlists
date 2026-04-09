@@ -1,33 +1,23 @@
-const { writeFile, readdir } = require('node:fs/promises');
-const { createReadStream } = require('node:fs');
+const { readFile, writeFile, readdir } = require('node:fs/promises');
 const { join, relative, extname } = require('node:path');
-const readline = require('node:readline');
 const getAllFiles = require('./utils/getAllFiles.js');
 
 const CANONICAL_TYPE = 'noip';
 const TYPE_EXTENSIONS = { unbound: '.conf' };
 const DEFAULT_EXT = '.txt';
+const CONCURRENCY = 8;
+
+const COUNT_HEADER_RE = /^([#!]\s*)(Domains|Count|Entries|Number of entries|Number of unique domains|Total number of network filters)(:\s*)(\d[\d,]*|<Count>)(\s+domains)?$/im;
 
 const formatCount = count => count.toLocaleString('en-US', { minimumIntegerDigits: 8, useGrouping: true }).replace(/,/g, ' ');
-
-const createUpdatedContents = (lines, domainCount) => {
-	const countText = domainCount.toLocaleString('en-US');
-	return lines.join('\n').replace(
-		/^([#!]\s*)(Domains|Count|Entries|Number of entries|Number of unique domains|Total number of network filters)(:\s*)(\d[\d,]*|<Count>)(\s+domains)?$/im,
-		(_, prefix, key, separator) => `${prefix}${key}${separator}${countText} domains`
+const replaceCount = (content, domainCount) =>
+	content.replace(COUNT_HEADER_RE, (_, prefix, key, sep, _num, suffix) =>
+		`${prefix}${key}${sep}${domainCount.toLocaleString('en-US')}${/^domains$/i.test(key) ? '' : (suffix ?? '')}`
 	);
-};
 
-const readLines = async file => {
-	const lines = [];
-	const rl = readline.createInterface({ input: createReadStream(file, 'utf8'), crlfDelay: Infinity });
-	for await (const line of rl) lines.push(line);
-	return lines;
-};
-
-const countDomains = lines => {
+const countDomains = content => {
 	let count = 0;
-	for (const line of lines) {
+	for (const line of content.split('\n')) {
 		const t = line.trim();
 		if (t && !t.startsWith('#')) count++;
 	}
@@ -43,30 +33,41 @@ const countDomains = lines => {
 		.map(e => e.name);
 
 	const otherTypes = allTypes.filter(t => t !== CANONICAL_TYPE);
-
 	const canonicalFiles = await getAllFiles(canonicalDir, [DEFAULT_EXT]);
 
-	await Promise.all(canonicalFiles.map(async canonicalFile => {
-		const lines = await readLines(canonicalFile);
-		const domainCount = countDomains(lines);
+	// Phase 1: count domains from noip, update noip files
+	const counts = new Map();
 
-		const relBase = relative(canonicalDir, canonicalFile).slice(0, -extname(canonicalFile).length);
+	for (let i = 0; i < canonicalFiles.length; i += CONCURRENCY) {
+		await Promise.all(canonicalFiles.slice(i, i + CONCURRENCY).map(async file => {
+			const content = await readFile(file, 'utf8');
+			const domainCount = countDomains(content);
+			const relBase = relative(canonicalDir, file).slice(0, -extname(file).length);
+			counts.set(relBase, domainCount);
+			await writeFile(file, replaceCount(content, domainCount), 'utf8');
+			console.log(`${formatCount(domainCount)} domains → ${file}`);
+		}));
+	}
 
-		await Promise.all([
-			writeFile(canonicalFile, createUpdatedContents(lines, domainCount), 'utf8')
-				.then(() => console.log(`${formatCount(domainCount)} domains → ${canonicalFile}`)),
-			...otherTypes.map(async type => {
-				const targetFile = join(generatedDir, type, relBase + (TYPE_EXTENSIONS[type] ?? DEFAULT_EXT));
-				try {
-					const targetLines = await readLines(targetFile);
-					await writeFile(targetFile, createUpdatedContents(targetLines, domainCount), 'utf8');
-				} catch (err) {
-					console.error(`Failed to update ${targetFile}:`, err.message);
-					process.exitCode = 1;
-				}
-			}),
-		]);
-	}));
+	// Phase 2: propagate counts to each other type
+	for (const type of otherTypes) {
+		const ext = TYPE_EXTENSIONS[type] ?? DEFAULT_EXT;
+		let updated = 0;
+
+		await Promise.all([...counts.entries()].map(async ([relBase, domainCount]) => {
+			const targetFile = join(generatedDir, type, relBase + ext);
+			try {
+				const content = await readFile(targetFile, 'utf8');
+				await writeFile(targetFile, replaceCount(content, domainCount), 'utf8');
+				updated++;
+			} catch (err) {
+				console.error(`  Failed: ${targetFile}: ${err.message}`);
+				process.exitCode = 1;
+			}
+		}));
+
+		console.log(`${type.padEnd(12)} updated ${updated}/${counts.size} files`);
+	}
 })().catch(err => {
 	console.error('Fatal:', err.message);
 	process.exitCode = 1;
