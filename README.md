@@ -98,10 +98,21 @@ Subsequently, usually within 1 day, the false positive entry will be automatical
 
 
 ## 🤝 Contributing
-If you have any suggestions or ideas that could improve this project, please don't hesitate to share them with me.
-I encourage you to contribute by submitting a [Pull request](https://github.com/sefinek/Sefinek-Blocklist-Collection/pulls) with your proposed changes.
-Your efforts and insights are greatly appreciated and will help make this project even better and more valuable for others.
-Thank you in advance for your valuable contributions!
+Contributions are welcome — if you have suggestions or ideas, open a [Pull request](https://github.com/sefinek/Sefinek-Blocklist-Collection/pulls) with your proposed changes.
+Your efforts are greatly appreciated and help make this project better for everyone. Thank you!
+
+### False positive
+Add the incorrectly blocked domain to [whitelists/main.txt](whitelists/main.txt), following the existing entries as a reference, then submit a Pull request.
+To report a false positive without opening a pull request, visit: https://blocklist.sefinek.net/false-positives.
+
+### Submitting a new domain for blocking
+Add the domain to the appropriate file in the [lists](lists) folder, matching the relevant category.
+Make sure it is not already listed, then submit a Pull request with a brief explanation.
+
+### Branches
+The [blocklists](https://github.com/sefinek/Sefinek-Blocklist-Collection/tree/blocklists) branch is generated automatically and should not be modified manually.
+Any changes made directly to this branch will be overwritten on the next GitHub Actions run.
+Pull requests should target the `main` branch only.
 
 
 ## 📥 How to Clone?
