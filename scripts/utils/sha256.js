@@ -28,5 +28,5 @@ module.exports = async (thisFileName, type) => {
 	}
 
 	console.log(`✅ ${hash} -> ${type}:${path.basename(thisFileName)} / hashed`);
-	return { cacheHash: hash, stop: false };
+	return { stop: false, content: buff.toString('utf8') };
 };

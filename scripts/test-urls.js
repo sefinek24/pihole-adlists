@@ -25,12 +25,7 @@ const serveUrl = link => process.env.NODE_ENV === 'production'
 	? link
 	: link.replace('https://blocklist.sefinek.net', `${process.env.DOMAIN}${process.env.PORT ? `:${process.env.PORT}` : ''}`);
 
-const extractLinks = content => {
-	const links = [];
-	let match;
-	while ((match = URL_REGEX.exec(content))) links.push(match[0]);
-	return links;
-};
+const extractLinks = content => [...content.matchAll(URL_REGEX)].map(m => m[0]);
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 

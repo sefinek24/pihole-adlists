@@ -19,7 +19,8 @@ const isSuspiciousDomain = domain =>
 const processDirectory = async dirPath => {
 	try {
 		await mkdir(dirPath, { recursive: true });
-		const fileNames = (await readdir(dirPath)).filter(name => name.endsWith('.txt'));
+		const allEntries = await readdir(dirPath, { withFileTypes: true });
+		const fileNames = allEntries.filter(e => e.isFile() && e.name.endsWith('.txt')).map(e => e.name);
 
 		for (const fileName of fileNames) {
 			const filePath = join(dirPath, fileName);
@@ -187,7 +188,7 @@ const processDirectory = async dirPath => {
 			}
 		}
 
-		const subDirs = (await readdir(dirPath, { withFileTypes: true })).filter(d => d.isDirectory());
+		const subDirs = allEntries.filter(d => d.isDirectory());
 		for (const sub of subDirs) {
 			await processDirectory(join(dirPath, sub.name));
 		}

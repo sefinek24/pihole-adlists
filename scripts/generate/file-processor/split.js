@@ -1,7 +1,7 @@
-const fs = require('node:fs').promises;
+const fs = require('node:fs/promises');
 const path = require('node:path');
 
-const MAX_FILE_SIZE = 104847142; // 99.99 MB
+const MAX_FILE_SIZE = 104856000; // ~99.999 MB (GitHub hard limit: 104857600)
 
 module.exports = async (fullNewFile, replacedFile, comment = '#', header = null) => {
 	const fileStats = await fs.stat(fullNewFile);

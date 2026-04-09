@@ -9,8 +9,8 @@ const { CATEGORIES, GLOBAL_WHITELIST } = require('./scripts/data.js');
 const TMP_DIR = join(__dirname, '..', '..', '..', 'tmp');
 const MAIN_FILE = join(TMP_DIR, 'main.txt');
 
-const matchesPattern = (pattern, domain) => new RegExp('^' + pattern.replace(/\./g, '\\.').replace(/\*/g, '.*') + '$').test(domain);
-const isDomainWhitelisted = domain => GLOBAL_WHITELIST.some(pattern => matchesPattern(pattern, domain));
+const compiledWhitelist = GLOBAL_WHITELIST.map(p => new RegExp('^' + p.replace(/\./g, '\\.').replace(/\*/g, '.*') + '$'));
+const isDomainWhitelisted = domain => compiledWhitelist.some(re => re.test(domain));
 
 const setupWriteStreams = () => {
 	const streams = {};

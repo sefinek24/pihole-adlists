@@ -13,11 +13,8 @@ const convert = async (folderPath = path.join(__dirname, '../../blocklists/templ
 		const thisFileName = path.join(folderPath, file.name);
 
 		// Cache
-		const { stop } = await sha256(thisFileName, format, file);
+		const { stop, content: fileContent } = await sha256(thisFileName, format, file);
 		if (stop) return;
-
-		// Content
-		const fileContent = await fs.readFile(thisFileName, 'utf8');
 
 		const date = getDate();
 		const replacedFile = fileContent

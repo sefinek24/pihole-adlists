@@ -1,7 +1,7 @@
 const { writeFile } = require('node:fs/promises');
 const { createReadStream } = require('node:fs');
 const { join } = require('node:path');
-const readline = require('readline');
+const readline = require('node:readline');
 const getAllFiles = require('./utils/getAllFiles.js');
 
 const formatCount = count => count.toLocaleString('en-US', { minimumIntegerDigits: 8, useGrouping: true }).replace(/,/g, ' ');
