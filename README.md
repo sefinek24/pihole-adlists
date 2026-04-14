@@ -134,4 +134,4 @@ git worktree add blocklists blocklists
 
 
 ## 📝 CC BY-NC-ND 4.0 License
-Copyright © 2023–2026 [Sefinek](https://sefinek.net)
+Copyright © 2025-2026 [Sefinek](https://sefinek.net)
