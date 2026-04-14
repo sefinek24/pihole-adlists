@@ -23,7 +23,6 @@ https://blocklist.sefinek.net/generated/v1/noip/ads/craiu/mobiletrackers.fork.tx
 https://blocklist.sefinek.net/generated/v1/noip/ads/crazy-max/spy.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/ads/DandelionSprout.GameConsoleAdblockList.txt
 https://blocklist.sefinek.net/generated/v1/noip/ads/disconnectme/simple-ad.fork.txt
-https://blocklist.sefinek.net/generated/v1/noip/ads/FadeMind/UncheckyAds.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/ads/firebog/AdguardDNS.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/ads/firebog/Admiral.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/ads/firebog/Easylist.fork.txt
@@ -39,7 +38,6 @@ https://blocklist.sefinek.net/generated/v1/noip/crypto/cryptojacking/Snota418/Cr
 https://blocklist.sefinek.net/generated/v1/noip/dating-services/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/noip/dead-domains/jarelllama/dead-domains.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/drugs/blocklistproject/drugs.fork.txt
-https://blocklist.sefinek.net/generated/v1/noip/extensions/FadeMind/add-2o7Net.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/extensions/hagezi/pro.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/extensions/MajkiIT/adguard-host.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/extensions/MajkiIT/easy-privacy-host.fork.txt
@@ -100,10 +98,8 @@ https://blocklist.sefinek.net/generated/v1/noip/sites/pixiv.txt
 https://blocklist.sefinek.net/generated/v1/noip/sites/riotgames.txt
 https://blocklist.sefinek.net/generated/v1/noip/social/snapchat.txt
 https://blocklist.sefinek.net/generated/v1/noip/social/tiktok.txt
-https://blocklist.sefinek.net/generated/v1/noip/spam/FadeMind/add-Spam.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/spam/RPiList/spam-mails.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/spam/stopforumspam/toxic-domains-whole.fork.txt
-https://blocklist.sefinek.net/generated/v1/noip/suspicious/FadeMind/add-Risk.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/suspicious/firebog/w3kbl.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/suspicious/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/noip/test.txt

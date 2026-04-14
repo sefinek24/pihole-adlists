@@ -15,7 +15,6 @@ readonly urls=(
   "https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt ads/anudeepND/adservers.fork.txt"
   "https://raw.githubusercontent.com/craiu/mobiletrackers/master/list.txt ads/craiu/mobiletrackers.fork.txt"
   "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt ads/crazy-max/spy.fork.txt"
-  "https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts ads/FadeMind/UncheckyAds.fork.txt"
   "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt ads/jerryn70/GoodbyeAds.fork.txt"
   "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/SmartTV_ads.txt ads/MajkiIT/SmartTV-ads.fork.txt"
   "https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardMobileAds.txt ads/r-a-y/AdguardMobileAds.fork.txt"
@@ -99,7 +98,6 @@ readonly urls=(
   "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt other/polish-blocklists/PolishFiltersTeam/KADhosts.fork.txt"
 
   # Spam
-  "https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts spam/FadeMind/add-Spam.fork.txt"
   "https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/spam.mails spam/RPiList/spam-mails.fork.txt"
   "https://www.stopforumspam.com/downloads/toxic_domains_whole.txt spam/stopforumspam/toxic-domains-whole.fork.txt"
 
@@ -113,13 +111,11 @@ readonly urls=(
   "https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/Lists/Tracking tracking-and-telemetry/ShadowWhisperer/tracking.fork.txt"
 
   # Suspicious
-  "https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Risk/hosts suspicious/FadeMind/add-Risk.fork.txt"
   "https://v.firebog.net/hosts/static/w3kbl.txt suspicious/firebog/w3kbl.fork.txt"
 
   # Extension
   "https://big.oisd.nl/domainswild2 extensions/oisd/big.fork.txt"
   "https://justdomains.github.io/blocklists/lists/adguarddns-justdomains.txt extensions/justdomains/adguarddns-justdomains.fork.txt"
-  "https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.2o7Net/hosts extensions/FadeMind/add-2o7Net.fork.txt"
   "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/pro.txt extensions/hagezi/pro.fork.txt"
   "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/adguard_host.txt extensions/MajkiIT/adguard-host.fork.txt"
   "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/easy_privacy_host.txt extensions/MajkiIT/easy-privacy-host.fork.txt"

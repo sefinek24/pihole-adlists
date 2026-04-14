@@ -23,7 +23,6 @@ https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/craiu/mobiletrackers.fork
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/crazy-max/spy.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/DandelionSprout.GameConsoleAdblockList.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/disconnectme/simple-ad.fork.txt
-https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/FadeMind/UncheckyAds.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/firebog/AdguardDNS.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/firebog/Admiral.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/ads/firebog/Easylist.fork.txt
@@ -39,7 +38,6 @@ https://blocklist.sefinek.net/generated/v1/dnsmasq/crypto/cryptojacking/Snota418
 https://blocklist.sefinek.net/generated/v1/dnsmasq/dating-services/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/dead-domains/jarelllama/dead-domains.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/drugs/blocklistproject/drugs.fork.txt
-https://blocklist.sefinek.net/generated/v1/dnsmasq/extensions/FadeMind/add-2o7Net.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/extensions/hagezi/pro.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/extensions/MajkiIT/adguard-host.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/extensions/MajkiIT/easy-privacy-host.fork.txt
@@ -100,10 +98,8 @@ https://blocklist.sefinek.net/generated/v1/dnsmasq/sites/pixiv.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/sites/riotgames.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/social/snapchat.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/social/tiktok.txt
-https://blocklist.sefinek.net/generated/v1/dnsmasq/spam/FadeMind/add-Spam.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/spam/RPiList/spam-mails.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/spam/stopforumspam/toxic-domains-whole.fork.txt
-https://blocklist.sefinek.net/generated/v1/dnsmasq/suspicious/FadeMind/add-Risk.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/suspicious/firebog/w3kbl.fork.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/suspicious/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/dnsmasq/test.txt

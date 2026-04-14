@@ -23,7 +23,6 @@ https://blocklist.sefinek.net/generated/v1/rpz/ads/craiu/mobiletrackers.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/ads/crazy-max/spy.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/ads/DandelionSprout.GameConsoleAdblockList.txt
 https://blocklist.sefinek.net/generated/v1/rpz/ads/disconnectme/simple-ad.fork.txt
-https://blocklist.sefinek.net/generated/v1/rpz/ads/FadeMind/UncheckyAds.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/ads/firebog/AdguardDNS.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/ads/firebog/Admiral.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/ads/firebog/Easylist.fork.txt
@@ -39,7 +38,6 @@ https://blocklist.sefinek.net/generated/v1/rpz/crypto/cryptojacking/Snota418/Cry
 https://blocklist.sefinek.net/generated/v1/rpz/dating-services/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/rpz/dead-domains/jarelllama/dead-domains.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/drugs/blocklistproject/drugs.fork.txt
-https://blocklist.sefinek.net/generated/v1/rpz/extensions/FadeMind/add-2o7Net.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/extensions/hagezi/pro.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/extensions/MajkiIT/adguard-host.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/extensions/MajkiIT/easy-privacy-host.fork.txt
@@ -100,10 +98,8 @@ https://blocklist.sefinek.net/generated/v1/rpz/sites/pixiv.txt
 https://blocklist.sefinek.net/generated/v1/rpz/sites/riotgames.txt
 https://blocklist.sefinek.net/generated/v1/rpz/social/snapchat.txt
 https://blocklist.sefinek.net/generated/v1/rpz/social/tiktok.txt
-https://blocklist.sefinek.net/generated/v1/rpz/spam/FadeMind/add-Spam.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/spam/RPiList/spam-mails.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/spam/stopforumspam/toxic-domains-whole.fork.txt
-https://blocklist.sefinek.net/generated/v1/rpz/suspicious/FadeMind/add-Risk.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/suspicious/firebog/w3kbl.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/suspicious/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/rpz/test.txt

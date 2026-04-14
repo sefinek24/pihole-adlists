@@ -23,7 +23,6 @@ https://blocklist.sefinek.net/generated/v1/adguard/ads/craiu/mobiletrackers.fork
 https://blocklist.sefinek.net/generated/v1/adguard/ads/crazy-max/spy.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/ads/DandelionSprout.GameConsoleAdblockList.txt
 https://blocklist.sefinek.net/generated/v1/adguard/ads/disconnectme/simple-ad.fork.txt
-https://blocklist.sefinek.net/generated/v1/adguard/ads/FadeMind/UncheckyAds.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/ads/firebog/AdguardDNS.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/ads/firebog/Admiral.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/ads/firebog/Easylist.fork.txt
@@ -39,7 +38,6 @@ https://blocklist.sefinek.net/generated/v1/adguard/crypto/cryptojacking/Snota418
 https://blocklist.sefinek.net/generated/v1/adguard/dating-services/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/adguard/dead-domains/jarelllama/dead-domains.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/drugs/blocklistproject/drugs.fork.txt
-https://blocklist.sefinek.net/generated/v1/adguard/extensions/FadeMind/add-2o7Net.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/extensions/hagezi/pro.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/extensions/MajkiIT/adguard-host.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/extensions/MajkiIT/easy-privacy-host.fork.txt
@@ -100,10 +98,8 @@ https://blocklist.sefinek.net/generated/v1/adguard/sites/pixiv.txt
 https://blocklist.sefinek.net/generated/v1/adguard/sites/riotgames.txt
 https://blocklist.sefinek.net/generated/v1/adguard/social/snapchat.txt
 https://blocklist.sefinek.net/generated/v1/adguard/social/tiktok.txt
-https://blocklist.sefinek.net/generated/v1/adguard/spam/FadeMind/add-Spam.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/spam/RPiList/spam-mails.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/spam/stopforumspam/toxic-domains-whole.fork.txt
-https://blocklist.sefinek.net/generated/v1/adguard/suspicious/FadeMind/add-Risk.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/suspicious/firebog/w3kbl.fork.txt
 https://blocklist.sefinek.net/generated/v1/adguard/suspicious/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/adguard/test.txt
