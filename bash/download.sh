@@ -77,7 +77,6 @@ readonly urls=(
   # Porn & Adult
   "https://blocklistproject.github.io/Lists/porn.txt porn/blocklistproject/porn.fork.txt"
   "https://nsfw.oisd.nl/domainswild2 porn/oisd/nsfw.fork.txt"
-  "https://raw.githubusercontent.com/4skinSkywalker/Anti-Porn-HOSTS-File/master/HOSTS.txt porn/4skinSkywalker/hosts.fork.txt"
   "https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/Lists/Adult porn/ShadowWhisperer/adult.fork.txt"
   "https://raw.githubusercontent.com/Sinfonietta/hostfiles/master/pornography-hosts porn/Sinfonietta/pornography-hosts.fork.txt"
   "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn-only/hosts porn/StevenBlack/porn.fork.txt"

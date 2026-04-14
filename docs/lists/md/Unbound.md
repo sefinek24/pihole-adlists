@@ -89,7 +89,6 @@ https://blocklist.sefinek.net/generated/v1/unbound/phishing/phishing.army/blockl
 https://blocklist.sefinek.net/generated/v1/unbound/phishing/RPiList/Phishing-Angriffe.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/piracy/blocklistproject/piracy.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/piracy/sefinek.hosts.conf
-https://blocklist.sefinek.net/generated/v1/unbound/porn/4skinSkywalker/hosts.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/porn/blocklistproject/porn.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/porn/oisd/nsfw.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/porn/sefinek.hosts.conf
