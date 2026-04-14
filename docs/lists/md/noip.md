@@ -39,9 +39,6 @@ https://blocklist.sefinek.net/generated/v1/noip/crypto/cryptojacking/Snota418/Cr
 https://blocklist.sefinek.net/generated/v1/noip/dating-services/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/noip/dead-domains/jarelllama/dead-domains.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/drugs/blocklistproject/drugs.fork.txt
-https://blocklist.sefinek.net/generated/v1/noip/extensions/deathbybandaid/CountryCodesLists-France.fork.txt
-https://blocklist.sefinek.net/generated/v1/noip/extensions/deathbybandaid/ParsedBlacklists-EasyList-Liste-FR.fork.txt
-https://blocklist.sefinek.net/generated/v1/noip/extensions/deathbybandaid/ParsedBlacklists-EasyList.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/extensions/FadeMind/add-2o7Net.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/extensions/hagezi/pro.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/extensions/MajkiIT/adguard-host.fork.txt

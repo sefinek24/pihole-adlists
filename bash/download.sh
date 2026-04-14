@@ -120,9 +120,6 @@ readonly urls=(
   # Extension
   "https://big.oisd.nl/domainswild2 extensions/oisd/big.fork.txt"
   "https://justdomains.github.io/blocklists/lists/adguarddns-justdomains.txt extensions/justdomains/adguarddns-justdomains.fork.txt"
-  "https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/CountryCodesLists/France.txt extensions/deathbybandaid/CountryCodesLists-France.fork.txt"
-  "https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/ParsedBlacklists/EasyList-Liste-FR.txt extensions/deathbybandaid/ParsedBlacklists-EasyList-Liste-FR.fork.txt"
-  "https://raw.githubusercontent.com/deathbybandaid/piholeparser/master/Subscribable-Lists/ParsedBlacklists/EasyList.txt extensions/deathbybandaid/ParsedBlacklists-EasyList.fork.txt"
   "https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.2o7Net/hosts extensions/FadeMind/add-2o7Net.fork.txt"
   "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/pro.txt extensions/hagezi/pro.fork.txt"
   "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/adguard_host.txt extensions/MajkiIT/adguard-host.fork.txt"

@@ -42,9 +42,6 @@ https://blocklist.sefinek.net/generated/v1/unbound/dating-services/developerdan/
 https://blocklist.sefinek.net/generated/v1/unbound/dating-services/sefinek.hosts.conf
 https://blocklist.sefinek.net/generated/v1/unbound/dead-domains/jarelllama/dead-domains.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/drugs/blocklistproject/drugs.fork.conf
-https://blocklist.sefinek.net/generated/v1/unbound/extensions/deathbybandaid/CountryCodesLists-France.fork.conf
-https://blocklist.sefinek.net/generated/v1/unbound/extensions/deathbybandaid/ParsedBlacklists-EasyList-Liste-FR.fork.conf
-https://blocklist.sefinek.net/generated/v1/unbound/extensions/deathbybandaid/ParsedBlacklists-EasyList.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/extensions/FadeMind/add-2o7Net.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/extensions/hagezi/pro.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/extensions/justdomains/adguarddns-justdomains.fork.conf
