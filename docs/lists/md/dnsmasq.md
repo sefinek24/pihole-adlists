@@ -1,4 +1,4 @@
-[//]: # (Canonical: /docs/lists/md/RPZ.md)
+[//]: # (Canonical: /docs/lists/md/dnsmasq.md)
 
 <div align="center">
     <h1>📝 Default blocklist collection (Dnsmasq)</h1>
