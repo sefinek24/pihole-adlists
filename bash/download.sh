@@ -43,7 +43,6 @@ readonly urls=(
   "https://blocklistproject.github.io/Lists/gambling.txt gambling/blocklistproject/hosts.fork.txt"
   "https://raw.githubusercontent.com/alsyundawy/TrustPositif/main/gambling_indonesia.txt gambling/TrustPositif/gambling-indonesia.fork.txt"
   "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/gambling-hosts.txt gambling/MajkiIT/gambling-hosts.fork.txt"
-  "https://raw.githubusercontent.com/BrigsLabs/judol/main/judol_domains.txt gambling/judol/hosts.fork.txt"
   "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling-onlydomains.txt gambling/hagezi/gambling-onlydomains.fork.txt"
 
   # Malicious
