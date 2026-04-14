@@ -34,7 +34,7 @@
 > Please do not download the lists too frequently (e.g., every few hours). It is recommended to download them no more than once per day. Frequent downloads are unnecessary, as the lists are updated only twice during the night (Polish time). More information can be found [here](https://blocklist.sefinek.net/update-schedule).
 
 
-## ❌ How to Report a False Positive? ([more info](https://blocklist.sefinek.net/false-positives))
+## ❌ How to Report a False Positive?
 Please visit https://blocklist.sefinek.net/false-positives.
 Within 2 days after the analysis is completed, the specified domain will be added to the [whitelist](whitelists/main.txt).
 Subsequently, usually within 1 day, the false positive entry will be automatically removed from the blocklist via [GitHub Actions](.github/workflows/update-blocklists.yml).
