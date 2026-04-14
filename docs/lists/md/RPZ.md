@@ -4,7 +4,7 @@
     <h1>📝 Default blocklist collection (RPZ)</h1>
     <p>
         📄 » <b>Format: domain.tld CNAME .</b><br>
-        📥 » <b>Last update: 3.03.2026 / DD.MM.YYYY</b><br>
+        📥 » <b>Last update: 14.04.2026 / DD.MM.YYYY</b><br>
         ⭐ » <b>Mark this repository with a star if you find it useful.</b>
     </p>
 </div>

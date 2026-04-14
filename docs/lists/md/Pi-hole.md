@@ -4,7 +4,7 @@
     <h1>📝 Default blocklist collection for Pi-hole</h1>
     <p>
         📄 » <b>Format: 0.0.0.0 domain.tld</b><br>
-        📥 » <b>Last update: 3.03.2026 / DD.MM.YYYY</b><br>
+        📥 » <b>Last update: 14.04.2026 / DD.MM.YYYY</b><br>
         ⭐ » <b>Mark this repository with a star if you find it useful.</b>
     </p>
 </div>
