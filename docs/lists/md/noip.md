@@ -46,7 +46,6 @@ https://blocklist.sefinek.net/generated/v1/noip/extensions/MajkiIT/easy-privacy-
 https://blocklist.sefinek.net/generated/v1/noip/extensions/oisd/big.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/extensions/r-a-y/AdguardApps.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/extensions/r-a-y/AdguardMobileSpyware.fork.txt
-https://blocklist.sefinek.net/generated/v1/noip/fakenews/marktron/hosts.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/fakenews/StevenBlack/hosts.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/fraud/blocklistproject/hosts.fork.txt
 https://blocklist.sefinek.net/generated/v1/noip/gambling/blocklistproject/hosts.fork.txt

@@ -50,7 +50,6 @@ https://blocklist.sefinek.net/generated/v1/unbound/extensions/MajkiIT/easy-priva
 https://blocklist.sefinek.net/generated/v1/unbound/extensions/oisd/big.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/extensions/r-a-y/AdguardApps.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/extensions/r-a-y/AdguardMobileSpyware.fork.conf
-https://blocklist.sefinek.net/generated/v1/unbound/fakenews/marktron/hosts.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/fakenews/StevenBlack/hosts.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/fraud/blocklistproject/hosts.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/gambling/blocklistproject/hosts.fork.conf
