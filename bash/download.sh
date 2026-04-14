@@ -82,6 +82,7 @@ readonly urls=(
   "https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/Lists/Adult porn/ShadowWhisperer/adult.fork.txt"
   "https://raw.githubusercontent.com/Sinfonietta/hostfiles/master/pornography-hosts porn/Sinfonietta/pornography-hosts.fork.txt"
   "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn-only/hosts porn/StevenBlack/porn.fork.txt"
+  "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/nsfw-onlydomains.txt porn/hagezi/nsfw-onlydomains.fork.txt"
 
   # Ransomware
   "https://blocklistproject.github.io/Lists/ransomware.txt ransomware/blocklistproject/ransomware.fork.txt"
