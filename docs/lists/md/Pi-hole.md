@@ -16,7 +16,6 @@
 ```
 https://blocklist.sefinek.net/generated/v1/0.0.0.0/abuse/blocklistproject/hosts.fork.txt
 https://blocklist.sefinek.net/generated/v1/0.0.0.0/abuse/urlhaus.abuse.ch/hostfile.fork.txt
-https://blocklist.sefinek.net/generated/v1/0.0.0.0/ads/0Zinc/easylist.fork.txt
 https://blocklist.sefinek.net/generated/v1/0.0.0.0/ads/adaway/hosts.fork.txt
 https://blocklist.sefinek.net/generated/v1/0.0.0.0/ads/blocklistproject/hosts.fork.txt
 https://blocklist.sefinek.net/generated/v1/0.0.0.0/ads/craiu/mobiletrackers.fork.txt

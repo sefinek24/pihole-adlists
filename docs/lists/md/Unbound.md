@@ -16,7 +16,6 @@
 ```
 https://blocklist.sefinek.net/generated/v1/unbound/abuse/blocklistproject/hosts.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/abuse/urlhaus.abuse.ch/hostfile.fork.conf
-https://blocklist.sefinek.net/generated/v1/unbound/ads/0Zinc/easylist.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/ads/adaway/hosts.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/ads/anudeepND/adservers.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/ads/blocklistproject/hosts.fork.conf
@@ -42,7 +41,6 @@ https://blocklist.sefinek.net/generated/v1/unbound/dating-services/sefinek.hosts
 https://blocklist.sefinek.net/generated/v1/unbound/dead-domains/jarelllama/dead-domains.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/drugs/blocklistproject/drugs.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/extensions/hagezi/pro.fork.conf
-https://blocklist.sefinek.net/generated/v1/unbound/extensions/justdomains/adguarddns-justdomains.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/extensions/MajkiIT/adguard-host.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/extensions/MajkiIT/easy-privacy-host.fork.conf
 https://blocklist.sefinek.net/generated/v1/unbound/extensions/oisd/big.fork.conf
