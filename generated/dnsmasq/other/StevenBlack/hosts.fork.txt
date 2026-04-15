@@ -1,23 +1,24 @@
-# Title: StevenBlack/hosts
+#       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
+#      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
+#     | (___   | |__    | |__      | |   |  \| | | |__    | ' /        | |_) | | |      | |  | | | |      | ' /  | |        | |   | (___      | |
+#      \___ \  |  __|   |  __|     | |   | . ` | |  __|   |  <         |  _ <  | |      | |  | | | |      |  <   | |        | |    \___ \     | |
+#      ____) | | |____  | |       _| |_  | |\  | | |____  | . \        | |_) | | |____  | |__| | | |____  | . \  | |____   _| |_   ____) |    | |
+#     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 #
-# This hosts file is a merged collection of hosts from reputable sources,
-# with a dash of crowd sourcing via GitHub
+#                                            The best blocklist collection: https://blocklist.sefinek.net
+# Title: StevenBlack Unified Hosts
+# Description: Unified hosts file with base extensions, combining multiple reputable blocklists.
+# Expires: 1 day
+# Count: 87,767 domains
+# Source: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+# License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+# Release: Dnsmasq
+# Last update: April 15, 2026 at 7:17 PM UTC | 2026-04-15T19:17:02.384Z
 #
-# Date: 12 April 2026 23:10:56 (UTC)
-# Number of unique domains: 87,767
-#
-# Fetch the latest version of this file: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-# Project home page: https://github.com/StevenBlack/hosts
-# Project releases: https://github.com/StevenBlack/hosts/releases
-#
-# ===============================================================
+# This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
+# If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
 server=/localhost.localdomain/
-# Custom host records are listed here.
-# End of custom host records.
-# Start StevenBlack
-#=====================================
-# Title: Hosts contributed by Steven Black
-# http://stevenblack.com
 server=/ad-assets.futurecdn.net/
 server=/ck.getcookiestxt.com/
 server=/eu1.clevertap-prod.com/
@@ -1612,7 +1613,6 @@ server=/zoplm.com/
 server=/zvatrswtsrw.ml/
 server=/alibaba.zzux.com/
 server=/browserservice.zzux.com/
-# Added January 23, 2021
 server=/www.skinstrip.net/
 server=/creative.skinstrip.net/
 server=/go.alxbgo.com/
@@ -1695,7 +1695,6 @@ server=/www.livejasmincall.net/
 server=/www.livejasmine.us/
 server=/www.mylivejasmin.org/
 server=/www.new.livejasmin.com/
-# Added January 27, 2021
 server=/ads.adviad.com/
 server=/ads2.adviad.com/
 server=/ads3.adviad.com/
@@ -1709,14 +1708,11 @@ server=/dsp.adviad.com/
 server=/ssp.adviad.com/
 server=/report.adviad.com/
 server=/cdnuz.adviad.com/
-# Added February 5, 2021
 server=/viglink.com/
 server=/live.rezync.com/
 server=/netc.sfr.fr/
 server=/tag.clrstm.com/
-# Added February 9, 2021
 server=/vkcache.com/
-# Added February 26, 2021
 server=/b174.s240.meetrics.net/
 server=/b95.s79.research.de.com/
 server=/bid.sxp.smartclip.net/
@@ -1733,14 +1729,11 @@ server=/s385.mxcdn.net/
 server=/s79.mxcdn.net/
 server=/www.lacmp.net/
 server=/zipservice.adalliance.io/
-# Added February 28, 2021
 server=/github.com.cnpmjs.org/
-# Added March 15, 2021
 server=/facilitategovernor.com/
 server=/mvideo.facilitategovernor.com/
 server=/ns1.facilitategovernor.com/
 server=/www.facilitategovernor.com/
-# Added April 2, 2021
 server=/p.vtracy.de/
 server=/www.asadcdn.com/
 server=/adstax-cdn.adrtx.net/
@@ -1772,14 +1765,11 @@ server=/bls.adalliance.io/
 server=/traffic.emsservice.de/
 server=/static.emsservice.de/
 server=/te.technical-service.net/
-# Added April 29, 2021
 server=/news.thaprior.net/
 server=/blog.eduelects.com/
 server=/cdn.mirror-codes.net/
 server=/status.sublineover.net/
-# Added May 4, 2021
 server=/docs.pipenv.org/
-# Added May 10, 2021  See discussion in Issue https://github.com/StevenBlack/hosts/pull/1643
 server=/a9v8.cn/
 server=/config.unityads.unitychina.cn/
 server=/cu-cn-north00001.gala.convection.cn/
@@ -1795,9 +1785,7 @@ server=/picanalysis.vivo.com.cn/
 server=/rp.hpplay.cn/
 server=/safeurl.maxthon.cn/
 server=/ssdkauth.hpplay.cn/
-# Added May 12, 2021
 server=/urgente.eu/
-# Added May 22, 2021
 server=/localbestdating1.com/
 server=/sylviagreen.club/
 server=/xvtelink.com/
@@ -1807,7 +1795,6 @@ server=/go.trafficrouter.io/
 server=/track.venatusmedia.com/
 server=/amptrack.dailymail.co.uk/
 server=/mailmetromedia.amp.permutive.com/
-# Added May 31, 2021
 server=/mc.speakol.com/
 server=/rd.speakol.com/
 server=/inline.speakol.com/
@@ -1819,7 +1806,6 @@ server=/ads.speakol.com/
 server=/plugins.speakol.com/
 server=/publishers.speakol.com/
 server=/dev.publishers.speakol.com/
-# Added June 16, 2021
 server=/www.gmial.com/
 server=/gmial.com/
 server=/assets.vlitag.com/
@@ -1828,7 +1814,6 @@ server=/tag.vlitag.com/
 server=/static.vliplatform.com/
 server=/c.hrzn-nxt.com/
 server=/s.clcktrax.com/
-# Added June 17, 2021
 server=/ssl.googleanalytics.com/
 server=/click.googleanalytics.com/
 server=/alt2.googleanalytics.com/
@@ -1837,15 +1822,10 @@ server=/sandbox.googleanalytics.com/
 server=/admobclick.com/
 server=/www.admobclick.com/
 server=/pixel.admobclick.com/
-# Added June 22, 2021
 server=/coinjoin.io/
-# Added June 27, 2021
 server=/dealabs.digidip.net/
-# Added June 28, 2021
 server=/whynotwin11.com/
 server=/www.whynotwin11.com/
-# Added June 30, 2021
-# Chase Bank Scam. See #1699
 server=/www.secure-verify-info.ddns.info/
 server=/secure-verify-info.ddns.info/
 server=/www.secure-verify-account.ddns.info/
@@ -1872,13 +1852,11 @@ server=/www.security-update.qhigh.com/
 server=/security-update.qhigh.com/
 server=/www.seure-update.fartit.com/
 server=/seure-update.fartit.com/
-# Added July 29, 2021 See https://github.com/StevenBlack/hosts/issues/1721
 server=/www.updatecatalogs.com/
 server=/microsoft.updatecatalogs.com/
 server=/webmail.mmtimes.net/
 server=/myanmar.flymna.net/
 server=/new.mmtimes.org/
-# Added August 2, 2021 See https://github.com/StevenBlack/hosts/issues/1722
 server=/ackng.com/
 server=/bb3u9.com/
 server=/ttr3p.com/
@@ -1895,29 +1873,19 @@ server=/amynx.com/
 server=/zer9g.com/
 server=/b69kq.com/
 server=/down.sqlnetcat.com/
-# Added August 8, 2021 see https://github.com/StevenBlack/hosts/issues/1725
 server=/gjapplog.ucweb.com/
 server=/logssug.ucweb.com/
 server=/attr.union.ucweb.com/
-# Added August 11, 2021
 server=/www.luckycrush.live/
-# Added September 17, 2021
 server=/mmsotk.com/
-# Added September 24, 2021 see https://github.com/StevenBlack/hosts/issues/1764
 server=/discord-app.net/
-# Added October 2, 2021 see https://github.com/StevenBlack/hosts/issues/1770
 server=/sk.mplmnt.io/
-# Added October 17, 2021 see https://github.com/StevenBlack/hosts/issues/1752
 server=/org-upgrade.com/
 server=/www.org-upgrade.com/
-# Added October 19, 2021
 server=/www.abc.co.bz/
-# Added October 24, 2021 See https://github.com/StevenBlack/hosts/issues/1789
 server=/xfnl-spspostit-online.preview-domain.com/
 server=/ibancalculator-com.preview-domain.com/
-# added November 29, 2021
 server=/hiperdex.com/
-# added December 13, 2021 See https://github.com/StevenBlack/hosts/issues/1832
 server=/cloudshare.nocoshop.ru/
 server=/easyfiles.nocoshop.ru/
 server=/filedrive.nocoshop.ru/
@@ -1966,10 +1934,8 @@ server=/nathanielhawthorne.site/
 server=/samuel-beckett.site/
 server=/tahmil-kutib-pdf.info/
 server=/uberupload.online/
-# Added December 25, 2021 see https://github.com/StevenBlack/hosts/issues/1840
 server=/pokemoney.biz/
 server=/pokemoney.shop/
-# added December 30, 2021 see https://github.com/StevenBlack/hosts/issues/1849
 server=/c752sa.k9oeb2eg2ehpgc8fnhkeyyyyyn.domsearch.net/
 server=/domsearch.net/
 server=/k9oeb2eg2ehpgc8fnhkeyyyyyn.domsearch.net/
@@ -1977,63 +1943,43 @@ server=/mail.domsearch.net/
 server=/vor.ngo/
 server=/vor.ong/
 server=/www.domsearch.net/
-# Added December 31, 2021
 server=/xxsweety.com/
 server=/manualdrain.com/
-# Added January 2, 2022
 server=/mypornsnap.top/
-# Added January 11, 2022
 server=/asecv.xyz/
-# Added January 12, 2022
 server=/loopybatl.site/
 server=/technoob.info/
 server=/thefappeningpics.com/
 server=/hotzxgirl.com/
-# Added January 13, 2022
 server=/roksa.sx/
-# Added January 30, 2022
 server=/waaw.to/
-# Added February 5, 2022
 server=/zmyslowyklub.com/
 server=/flndmyiove.com/
-# Added February 17, 2022
 server=/yourbestwoman.life/
-# Added February 28, 2022
 server=/sweetchicks.net/
 server=/rbgbq.sweetchicks.net/
 server=/fuckmebook.com/
-# Added May 20, 2022
 server=/tracking.overwolf.com/
 server=/analyticsnew.overwolf.com/
 server=/raf.overwolf.com/
-# Added June 21, 2022
 server=/speeddials.opera.com/
 server=/merchandise.opera-api.com/
-# added June 25, 2022
 server=/analytics.binaryfortress.com/
-# added July 10, 2022
 server=/seductivegirls.cyou/
 server=/amusingdates.net/
 server=/honey-date4u.life/
-# Added August 9, 2022
 server=/shopsplumbing.com/
-# Added August 12, 2022
 server=/nl-crypto.com/
 server=/evri-package-gb.web.app/
-# Added August 13, 2022
 server=/telemetry.acronis.com/
-# Added August 17, 2022
 server=/mlbcash.com/
 server=/easy-extra-income-ways-makes-you-rich.store/
 server=/www.easy-extra-income-ways-makes-you-rich.store/
-# Added August 20, 2022
 server=/arizona-golf-vacations.com/
-# Added August 25, 2022
 server=/prd-lender.cdp.internal.unity3d.com/
 server=/config.uca.cloud.unity3d.com/
 server=/didna-d.openx.net/
 server=/c2shb.ssp.yahoo.com/
-# Added August 26, 2022
 server=/anmooq.deiicatedate.net/
 server=/www.pornsite123.com/
 server=/pornsite123.com/
@@ -2041,50 +1987,36 @@ server=/www.xxxbullet.com/
 server=/xxxbullet.com/
 server=/www.packsdechicas.online/
 server=/packsdechicas.online/
-# Added August 27, 2022
 server=/ip-info.ff.avast.com/
 server=/ipm-provider.ff.avast.com/
 server=/ipmcdn.avast.com/
 server=/ncc.avast.com/
 server=/shepherd.ff.avast.com/
 server=/clicktut.site/
-# Added Auguest 30, 2022
 server=/secureaddisplay.com/
 server=/wiztube.xyz/
-# Added September 2, 2022
 server=/yourgodess.com/
 server=/www.quinni.cyou/
 server=/quinni.cyou/
 server=/www.alenai.cyou/
 server=/alenai.cyou/
-# Added September 5, 2022
 server=/telewizja-online.net/
 server=/bramka.org/
 server=/ustreamix.su/
 server=/inatv.pl/
-# Added September 7, 2022
 server=/tracking.minitool.com/
-# Added September 9, 2022
 server=/pasiekazlotoklos.pl/
-# Added September 12, 2022
 server=/eu-commercialb.com/
-# Added September 29, 2022
 server=/gratlfyingdates.net/
 server=/www.gratlfyingdates.net/
-# Added October 15, 2022
 server=/filmsexeporno.com/
-# Added October 24, 2022
 server=/supdqwepu.com/
 server=/vawardquac.com/
 server=/lemmingro.com/
-# Added October 27, 2022
 server=/flashrewards.co/
-# Added November 13, 2022
 server=/info-eastflirts.com/
 server=/www.info-eastflirts.com/
-# Added November 20, 2022
 server=/reporting-api.gannettinnovation.com/
-# Added November 26, 2022
 server=/1041598d1a.da1a0e7bb3.com/
 server=/12112336.pix-cdn.org/
 server=/1d3c8a1eaa.faeaeeaafa.com/
@@ -2125,9 +2057,7 @@ server=/spikereekvelocity.com/
 server=/www.gaming-adult.com/
 server=/mediasama.com/
 server=/danbo.org/
-# Added November 27, 2022
 server=/crmt.livejasmin.com/
-# Added December 4, 2022. Malware domains using TXT record to transfer powershell scripts.
 server=/wmail-endpoint.com/
 server=/wmail-blog.com/
 server=/wmail-chat.com/
@@ -2178,7 +2108,6 @@ server=/ahoravideo-blog.xyz/
 server=/ahoravideo-chat.xyz/
 server=/ahoravideo-cdn.xyz/
 server=/ahoravideo-schnellvpn.xyz/
-# Added December 4, 2022
 server=/cesareurope.com/
 server=/cws-hotstar.conviva.com/
 server=/events-analytics.hotstar.com/
@@ -2187,10 +2116,8 @@ server=/service.hotstar.com/
 server=/settings-analytics.hotstar.com/
 server=/videoads.hotstar.com/
 server=/vs.hotstar.com/
-# Added December 11, 2022
 server=/analytics.shein.com/
 server=/analytics.shein.co.uk/
-# Added December 29, 2022
 server=/8a97175fd63e1d3a69f36979b9b34470.safeframe.googlesyndication.com/
 server=/c2shb.pubgw.yahoo.com/
 server=/cdn.confiant-integrations.net/
@@ -2203,22 +2130,18 @@ server=/freestar-d.openx.net/
 server=/freestar-io.videoplayerhub.com/
 server=/oa.openxcdn.net/
 server=/s2s.t13.io/
-# Added January 11, 2023
 server=/btc8886.com/
 server=/en.xachinaproject.fun/
-# Added January 12, 2023
 server=/antihohol.cloud/
 server=/hosteagle.club/
 server=/anz-shield-secure.com/
 server=/alert-bendigobank.com/
 server=/linkt-transport.top/
 server=/linkt-help.top/
-# Added January 13, 2023
 server=/reviewmygov.tuquy.com/
 server=/auspost-record.com/
 server=/alert-auspost.com/
 server=/auspost-input.com/
-# Added January 22, 2023
 server=/vep.hautnah-kosmetik-grafenau.de/
 server=/ttri.kanzlei-ecklmaier.de/
 server=/d-stuff.cfd/
@@ -2234,11 +2157,9 @@ server=/mf-massoterapia.it/
 server=/tyty.lolokira.lol/
 server=/yord.serawent-pole.lol/
 server=/redivosrl.it/
-# Added January 23, 2023
 server=/products.gobankingrates.com/
 server=/cdn.rates.consumertrack.com/
 server=/ads-api.twitter.com/
-# Added February 7, 2023
 server=/aax-dtb-cf.amazon-adsystem.com/
 server=/assets-jpcust.jwpsrv.com/
 server=/fundingchoicesmessages.google.com/
@@ -2246,46 +2167,33 @@ server=/images.twnmm.com/
 server=/prod.us-east-1.cxm-bcn.publisher-services.amazon.dev/
 server=/secure.cdn.fastclick.ne/
 server=/twngcpbidder.lb.engagecore.com/
-# Added March 7, 2023
 server=/a125375509.cdn.optimizely.com/
 server=/cdn.cookielaw.org/
 server=/cdn.indexww.com/
-# Added March 25, 2023
 server=/wpad.www.tendawifi.com/
 server=/crprt.livejasmin.com/
-# Added March 28, 2023
 server=/grow.gab.com/
-# Added April 3, 2023
 server=/transive.top/
 server=/warehousesale.shop/
-# Added April 4, 2023
 server=/fpjscdn.net/
 server=/api.fpjs.io/
 server=/use1.fptls.com/
 server=/use1.fptls3.com/
-# Added April 7, 2023
 server=/d2uap9jskdzp2.cloudfront.net/
 server=/steadfastseat.com/
 server=/eq97f.publishers.tremorhub.com/
-# Added April 13, 2023
 server=/wota-tournament.com/
-# Added April 19, 2023
 server=/rukalebi.ru/
 server=/bueromoebelservice.com/
-# Added April 21, 2023
 server=/beautydates.cn/
 server=/www.beautydates.cn/
 server=/hhoneyann96.beautydates.cn/
 server=/nilaima.com/
 server=/www.nilaima.com/
-# Added April 27, 2023
 server=/www.gameitlive.com/
 server=/gameitlive.com/
-# Added April 28, 2023
 server=/stripchat.com/
-# Added April 29, 2023
 server=/crmpt.livejasmin.com/
-# Added May 2, 2023
 server=/claudfront.net/
 server=/allowlisted.net/
 server=/atlas-upd.com/
@@ -2293,16 +2201,12 @@ server=/ads-tm-glb.click/
 server=/cbox4.ignorelist.com/
 server=/hsdps.cc/
 server=/api.sprig.com/
-# Added May 15, 2023
 server=/telemetry-cii.api.playstation.com/
-# Added May 19, 2023
 server=/clorec4.net/
 server=/wu.idismfonts.com/
 server=/xml-eu.flairadscpc.com/
-# Added May 30, 2023
 server=/serasearchtop.com/
 server=/track.atom-ds.com/
-# Added June 3, 2023
 server=/addatamarket.net/
 server=/backuprabbit.com/
 server=/businessvideonews.com/
@@ -2320,37 +2224,29 @@ server=/anstv.net/
 server=/ans7tv.net/
 server=/123-vendasvoos25.lovestoblog.com/
 server=/c-123milhas.shop/
-# Added June 13, 2023
 server=/assistant-chronopost.com/
 server=/zhihu-web-analytics.zhihu.com/
-# Added July 4, 2023
 server=/stmicroelectronics.d3.sc.omtrdc.net/
 server=/giyhub.com/
 server=/d2wzkjnj9pfptq.cloudfront.net/
 server=/storiesnexus.com/
 server=/rumadel.com/
-# Added August 8, 2023
 server=/ms4.applvn.com/
 server=/adsninjacdn.b-cdn.net/
 server=/cdn.adsninja.ca/
 server=/nom.telemetrydeck.com/
 server=/api.ibeat-analytics.com/
 server=/mads.amazon.com/
-# Add August 9, 2023
 server=/s2.bl-1.com/
-# Added August 10, 2023
 server=/w61.1piecemanga.com/
 server=/fbet.com/
 server=/stemboastfulrattle.com/
 server=/onwardrespirationcommandment.com/
-# Added October 13, 2023
 server=/s.dmmew.com/
-# Added November 2, 2023
 server=/run.cntxtfl.com/
 server=/live-manifests-lln.warnermediacdn.com/
 server=/live-manifests-aka.warnermediacdn.com/
 server=/logs.browser-intake-datadoghq.com/
-# Added November 3, 2023
 server=/b2b6d102cb7a4898bc54a3b73e31b759.safeframe.googlesyndication.com/
 server=/cpm.didna.io/
 server=/hb.minutemedia-prebid.com/
@@ -2360,14 +2256,11 @@ server=/pbs.nextmillmedia.com/
 server=/report2.hb.brainlyads.com/
 server=/ssp-sync.criteo.com/
 server=/st.pubmatic.com/
-# Added November 9, 2023
 server=/beacons5.gvt2.com/
 server=/beacons4.gvt2.com/
 server=/beacons3.gvt2.com/
 server=/beacons2.gvt2.com/
-# Added November 21, 2023
 server=/pickanewdeliverytime.com/
-# Added November 24, 2023
 server=/80d4b6e40cc712bf92fcdbabdd4345fd.safeframe.googlesyndication.com/
 server=/a6709203f34992a5095d2bc7ceaf2ec504f651a8.cws.conviva.com/
 server=/a.jsrdn.com/
@@ -2392,7 +2285,6 @@ server=/i.jsrdn.com/
 server=/lb.eu-1-id5-sync.com/
 server=/live-media-lln.warnermediacdn.com/
 server=/zion.api.cnn.io/
-# Added November 25, 2023
 server=/bucket.cdnwebcloud.com/
 server=/c23811bc8d067cdb4f00f6af2c918f3d.safeframe.googlesyndication.com/
 server=/cadmus.script.ac/
@@ -2406,12 +2298,9 @@ server=/sync.colossusssp.com/
 server=/sync.kueezrtb.com/
 server=/t.adx.opera.com/
 server=/web.hb.ad.cpe.dotomi.com/
-# Added December 17, 2023
 server=/co.vaicore.site/
 server=/int.vaicore.site/
-# Added December 28, 2023
 server=/rtnl.bxcl.de/
-# Added February 11, 2024
 server=/product-cdn.liftoff-creatives.io/
 server=/preview.liftoff-creatives.io/
 server=/adexp.liftoff.io/
@@ -2438,38 +2327,24 @@ server=/et-l.w.inmobi.com/
 server=/i.l-new.inmobicdn.net/
 server=/cdn.liftoff-creatives.io/
 server=/statistik.changing-cities.org/
-# Added March 10, 2024
 server=/mcgthfrqrs95vdbzkhtchf5fc0g4.device.marketingcloudapis.com/
-# Added March 12, 2024
 server=/crpdt.livejasmin.com/
-# Added March 21, 2024
 server=/justtrack-logs.justtrack.io/
 server=/sdk-api.justtrack.io/
 server=/prod.adjoe-programmatic.com/
-# Added March 28, 2024
 server=/argo.svcmot.com/
-# Added April 3, 2024
 server=/canadapost.ca-help-h.top/
-# Added April 8, 2024
 server=/notepad.plus/
-# Added April 13, 2024
 server=/alertcibcsecuremobile.com/
-# Added April 24, 2024
 server=/sadostic.pl/
 server=/www.sadostic.pl/
-# Added April 28, 2024
 server=/ejuiashsateam.info/
 server=/www.ejuiashsateam.info/
-# Added May 3, 2024
 server=/twitterr.com/
 server=/ww25.twitterr.com/
-# Added May 19, 2024
 server=/urdxh.com/
-# Added May 30, 2024
 server=/logs.netflix.com/
-# Added June 26, 2024
 server=/mailsupport-24f7f1500ed129bc71f2ad9c06fe1e73.pages.dev/
-# Added July 7, 2024
 server=/aeventlog.beacon.qq.com/
 server=/astrategy.beacon.qq.com/
 server=/tdid.m.qq.com/
@@ -2479,62 +2354,41 @@ server=/6.adsco.re/
 server=/frwrz661fasv.l4.adsco.re/
 server=/frwrz661fasv.n4.adsco.re/
 server=/frwrz661fasv.s4.adsco.re/
-# Added July 27, 2024
 server=/tracker.nitropay.com/
-# Added August 30, 2024
 server=/grid-bidder.criteo.com/
 server=/a-ring.msedge.net/
 server=/k-ring.msedge.net/
 server=/hb.yellowblue.io/
 server=/gtrack.kueezrtb.com/
 server=/hb-api.omnitagjs.com/
-# Added September 1, 2024
 server=/analytics.intelliscapesolutions.com/
-# Added September 5, 2024
 server=/1000fapvids.online/
 server=/ddbca.localmeets.link/
-# Added September 6, 2024
 server=/browser-intake-datadoghq.com/
-# Added September 16, 2024
 server=/westus-0.in.applicationinsights.azure.com/
 server=/default.exp-tas.com/
-# Added September 17, 2024
 server=/api.receptivity.io/
 server=/commentaires.qub.ca/
 server=/indicedebonheur.com/
-# Added September 21, 2024
 server=/ads-static.phonepe.com/
-# Added September 25, 2024
 server=/gotoyahoo.com/
-# Added September 27, 2024
 server=/two.opensourced.us/
-# Added October 2, 2024
 server=/api.adnz.co/
 server=/xd.adnz.co/
-# Added October 9, 2024
 server=/canada.postcanadantwb.top/
-# Added October 10, 2024
 server=/flowto.it/
-# Added October 11, 2024
 server=/5197248-trckp05t.com/
-# Added October 12, 2024
 server=/api-visitor-analytics.intercom.com/
-# Added October 13, 2024
 server=/region1.google-analytics.com/
 server=/starshipstart.com/
-# Added October 17, 2024
 server=/delivery-schedule.com/
 server=/rustdesk.io/
 server=/rustdesk.pl/
 server=/rustdesk.co.nz/
 server=/rustdesk.secure-box.de/
-# Added October 28, 2024
 server=/tiny.centralacp.com/
-# Added October 31, 2024
 server=/j3lbpcd9.r.us-east-1.awstrack.me/
-# Added December 1, 2024
 server=/canada.postscanadafil.top/
-# Added December 4, 2024
 server=/html-load.com/
 server=/vs-api.voodoo-tech.io/
 server=/vg-aws-ad-track-sdk-us-east-1a.mtgglobals.com/
@@ -2563,11 +2417,8 @@ server=/l1.audiomob.com/
 server=/o-adq.mediation.unity3d.com/
 server=/gateway.unityads.unity3d.com/
 server=/scar.unityads.unity3d.com/
-# Added December 16, 2024
 server=/ofbel.com/
-# Added December 18, 2024
 server=/candeliverypostca.com/
-# Added December 20, 2024
 server=/ads.heytapmobi.com/
 server=/ads.heytapmobile.com/
 server=/ads.oppomobile.com/
@@ -2663,17 +2514,12 @@ server=/configure-tcp-android.mtgglobals.com/
 server=/cdn-adn-https.mtgglobals.com/
 server=/hybird.mtgglobals.com/
 server=/api.revenuads.com/
-# Added December 23, 2024
 server=/joinhoney.com/
 server=/www.joinhoney.com/
-# Added December 31, 2024
 server=/scomobilehelp.com/
-# Added January 8, 2025
 server=/paqueteriadhl.com.mx/
-# Added February 17, 2025
 server=/hoppingtheglobe.com/
 server=/firebaselogging-pa.googleapis.com/
-# Added March 7, 2025
 server=/cdn.yektanet.com/
 server=/biscotti.yektanet.com/
 server=/ua.yektanet.com/
@@ -2684,19 +2530,12 @@ server=/static.adverge.ir/
 server=/cdn.goftino.com/
 server=/beta.kaprila.com/
 server=/panel.kaprila.com/
-# Added March 28, 2025
 server=/streamboo.com/
-# Added April 1, 2025
 server=/rosysolvingscallion.com/
-# Added April 5, 2025
 server=/photo-reaktivieren.org/
-# Added April 9, 2025
 server=/startseite24.net/
-# Added April 21, 2025
 server=/rcvlink.com/
-# Added May 8, 2025
 server=/clientennota-webnl.ddns.info/
-# Added June 25, 2025
 server=/afs.googlesyndication.com/
 server=/analyticsengine.s3.amazonaws.com/
 server=/analytics.s3.amazonaws.com/
@@ -2710,50 +2549,33 @@ server=/adfstat.yandex.ru/
 server=/adfox.yandex.ru/
 server=/bdapi-ads.realmemobile.com/
 server=/bdapi-in-ads.realmemobile.com/
-# Added July 3, 2025
 server=/my-tracknl.com/
-# Added August 3, 2025
 server=/trk.na.patagonia.com/
-# Added August 8, 2025
 server=/ads.playstream.media/
 server=/pscontent.playstream.media/
 server=/cdn.playstream.media/
 server=/prodcdn.playstream.media/
-# Added August 13, 2025
 server=/zopro.duckdns.org/
-# Added August 14, 2025
 server=/analytics.arz.at/
-# added September 14, 2025
 server=/eventcra.com/
-# added September 15, 2025
 server=/safalindustries.com/
-# added September 22, 2025
 server=/cryptocurrency.market/
-# added October 2, 2025
 server=/log.cookieyes.com/
 server=/directory.cookieyes.com/
-# Added October 12, 2025
 server=/xpoalswwkjddsljsy.com/
 server=/xoiiasdpsdoasdpojas.com/
-# Added November 7, 2025
 server=/d2.ads.rmbl.ws/
 server=/a.ads.rmbl.ws/
-# Added November 11, 2025
 server=/st5fdbvs.r.us-east-1.awstrack.me/
 server=/fullgamingacc.com/
-# Added November 15, 2025
 server=/enstat.xbext.com/
 server=/enappstat.xbext.com/
-# Added November 24, 2025
 server=/zpr.io/
-# Added November 29, 2025
 server=/tillequal.com/
 server=/html-load.cc/
-# Added December 4, 2025
 server=/colombia.ru.com/
 server=/fasss62r9nowzzz.z13.web.core.windows.net/
 server=/etonynew345zzz.z13.web.core.windows.net/
-# Added December 11, 2025
 server=/foldexmoon.fun/
 server=/foldexmoon.shop/
 server=/foldexmoon.today/
@@ -2761,67 +2583,31 @@ server=/foldexmoon.top/
 server=/foldexmoon.world/
 server=/foldexmoon.xyz/
 server=/instant-mac.com/
-# Added December 15, 2025
 server=/pixelfy.me/
-# Added December 26, 2025
 server=/logs.ads.vungle.com/
-# Added January 2, 2026
 server=/content-loader.com/
-# Added January 10, 2026
 server=/iwad.cachefly.net/
-# Added January 19, 2026
 server=/intelcom.615344.vip/
 server=/615344.vip/
-# Added January 21, 2026
 server=/privacy-sandbox.appsflyersdk.com/
 server=/api16-dual-event-sg2.pangle.io/
 server=/api16-access-ttp.tiktokpangle.us/
 server=/api16-access-wf-sg.pangle.io/
 server=/prod-mediate-events.applovin.com/
-# Added January 25, 2026
 server=/newsentry.simpals.md/
-# Added February 14, 2026
 server=/datarouter.ol.epicgames.com/
 server=/rkv1.com/
 server=/msft-ssp.adnxs.com/
-# Added February 24, 2026
 server=/admixer.md/
-# Added March 22, 2026
 server=/proxy.optoutadvertising.com/
 server=/cdn.optoutadvertising.com/
-# Added March 25, 2026
 server=/cstasa.ca/
 server=/porewin.net/
-# Added March 29, 2026
 server=/kra18.com/
-# Added March 31, 2026
 server=/sfrclak.com/
 server=/callnrwise.com/
-# Added April 4, 2026
 server=/ca-pagei.bond/
 server=/ontario.ca-pagei.bond/
-# End StevenBlack
-# Start adaway.org
-# AdAway default blocklist
-# Blocking mobile ad providers and some analytics providers
-#
-# Project home page:
-# https://github.com/AdAway/adaway.github.io/
-#
-# Fetch the latest version of this file:
-# https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
-#
-# License:
-# CC Attribution 3.0 (http://creativecommons.org/licenses/by/3.0/)
-#
-# Contributions by:
-# Kicelo, Dominik Schuermann.
-# Further changes and contributors maintained in the commit history at
-# https://github.com/AdAway/adaway.github.io/commits/master
-#
-# Contribute:
-# Create an issue at https://github.com/AdAway/adaway.github.io/issues
-#
 server=/analytics.163.com/
 server=/crash.163.com/
 server=/crashlytics.163.com/
@@ -10020,8 +9806,6 @@ server=/beacon.ztgame.com/
 server=/zucks.net/
 server=/zwaar.org/
 server=/log-collector.svctr.zynga.com/
-# End adaway.org
-# Start add.2o7Net
 server=/sanalytics.spark.co.nz/
 server=/analytics.metro.com.kz/
 server=/smetrics.airbank.cz/
@@ -12041,8 +11825,6 @@ server=/smetrics.realcanadiansuperstore.ca/
 server=/metrics.assurances-bnc.ca/
 server=/smetrics.cbc.ca/
 server=/securemetrics.gapcanada.ca/
-# End add.2o7Net
-# Start add.Dead
 server=/avast-downloads.com/
 server=/blacksnake.com/
 server=/europcareer.com/
@@ -12057,8 +11839,6 @@ server=/www.europcareer.com/
 server=/www.get-avast.com/
 server=/www.iphonegames3g.com/
 server=/www.microsoft-update.name/
-# End add.Dead
-# Start add.Risk
 server=/0.r.msn.com/
 server=/050003.voodoo.com/
 server=/050005.voodoo.com/
@@ -14235,8 +14015,6 @@ server=/zootravel.com/
 server=/zr1.zeroredirect11.com/
 server=/zs1.zeroredirect1.com/
 server=/zuverink.net/
-# End add.Risk
-# Start add.Spam
 server=/100.1qingdao.com/
 server=/7minuteworkout.com/
 server=/addshoppers.com/
@@ -14293,43 +14071,6 @@ server=/www.tkdami.net/
 server=/www.unionleisurewear.com/
 server=/www.vntanktransport.com/
 server=/www.vydoxtrial.com/
-# End add.Spam
-# Start Badd-Boyz-Hosts
-# This hosts file is brought to you by Mitchell Krog
-# Copyright: https://github.com/mitchellkrogza
-# Source: https://github.com/mitchellkrogza/Badd-Boyz-Hosts
-##################################################################################
-#                                                                                #
-#        ___          __   __    ___                    __ __         __         #
-#       / _ )___ ____/ /__/ /   / _ )___  __ _____     / // /__  ___ / /____     #
-#      / _  / _ `/ _  / _  /   / _  / _ \/ // /_ /    / _  / _ \(_-</ __(_-<     #
-#     /____/\_,_/\_,_/\_,_/   /____/\___/\_, //__/   /_//_/\___/___/\__/___/     #
-#                                       /___/                                    #
-##################################################################################
-# You are free to copy and distribute this file for non-commercial uses,
-# as long the original URL and attribution is included.
-# Please forward any additions, corrections or comments by logging an issue at
-# https://github.com/mitchellkrogza/Badd-Boyz-Hosts/issues
-# This list of hosts is compiled from server logs on my own servers
-# and forms the basis of the bad referrers domain lists for
-# The Nginx Ultimate Bad Bot Blocker at:
-# https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
-# and the Apache Ultimate Bad Bot Blocker at:
-# https://github.com/mitchellkrogza/apache-ultimate-bad-bot-blocker
-##### Version Information #
-###################################################
-### Version: V1.2021.05.8588
-##### Version Information ##
-# Use this file to prevent your computer or server from connecting to selected
-# internet hosts. This is an easy and effective way to protect you from
-# many types of spyware, adware, malware, click-jacking and porn sites and reduces
-# bandwidth use.
-# The file should be named "hosts" NOT "hosts.txt"
-# For Linux based Operating systems place this file at "/etc/hosts"
-# For Windows based systems this is placed either at
-# C:\windows\system32\drivers\etc\hosts
-# or C:\Windows\System32\drivers\etc\hosts
-# START HOSTS LIST ### DO NOT EDIT THIS LINE AT ALL ###
 server=/000free.us/
 server=/000.gaysexe.free.fr/
 server=/000tristanprod.free.fr/
@@ -15698,23 +15439,6 @@ server=/www.townhousefilms.com/
 server=/www.utopia-privacy.com/
 server=/yuarra.pluto.ro/
 server=/yunque.pluto.ro/
-# END HOSTS LIST ### DO NOT EDIT THIS LINE AT ALL ###
-# End Badd-Boyz-Hosts
-# Start hostsVN
-# Title: hostsVN
-# Last modified: 09 Apr 2026 09:58 UTC+7
-# Version: 2604090958
-# Blocked: 1.733 domains
-# Only include advertisers in Vietnam
-# Homepage: https://bigdargon.github.io/hostsVN/
-# GitHub: https://github.com/bigdargon/hostsVN
-# Report issues: https://github.com/bigdargon/hostsVN/issues
-# Download: https://github.com/bigdargon/hostsVN/raw/master/option/hosts-VN
-#
-# =====================================================
-#
-# --- GroupVN block ---
-#[adtimaserver]
 server=/media.adtimaserver.vn/
 server=/media.org.adtimaserver.vn/
 server=/staging.api.adtimaserver.vn/
@@ -15723,7 +15447,6 @@ server=/static2.adtimaserver.vn/
 server=/stream.adtimaserver.vn/
 server=/stream.org.adtimaserver.vn/
 server=/web.api.adtimaserver.vn/
-#[eclick]
 server=/admin.iad.eclick.vn/
 server=/analytics.eclick.vn/
 server=/c.d.eclick.vn/
@@ -15798,7 +15521,6 @@ server=/adi.vcmedia.vn/
 server=/admicro4.vcmedia.vn/
 server=/admicro5.vcmedia.vn/
 server=/admicro6.vcmedia.vn/
-#[novanet]
 server=/admin.novanet.vn/
 server=/ads.novanet.vn/
 server=/analytics.novanet.vn/
@@ -15818,7 +15540,6 @@ server=/rnd.novanet.vn/
 server=/script.novanet.vn/
 server=/static.novanet.vn/
 server=/www.novanet.vn/
-#[novaonads]
 server=/novaonads.com/
 server=/www.novaonads.com/
 server=/novaon.vn/
@@ -15873,7 +15594,6 @@ server=/log.lavanetwork.net/
 server=/revive.lavanetwork.net/
 server=/video.lavanetwork.net/
 server=/www.lavanetwork.net/
-#[polyad]
 server=/cp.polyad.net/
 server=/cpx.polyad.net/
 server=/dst.polyad.net/
@@ -16040,7 +15760,6 @@ server=/stc.interactive.brand.zing.vn/
 server=/log.zingmp3.vn/
 server=/za.zingmp3.vn/
 server=/zlog.zingmp3.vn/
-#[zingnews]
 server=/log.zingnews.vn/
 server=/log.znews.vn/
 server=/trackingbr.zingplay.com/
@@ -16133,13 +15852,11 @@ server=/tracking.api.media.zapps.vn/
 server=/za.zapps.vn/
 server=/analytics.zapps.me/
 server=/tech.zapps.me/
-#[yomedia]
 server=/demo.yomedia.vn/
 server=/dmp-log.yomedia.vn/
 server=/media.yomedia.vn/
 server=/sslstatic.yomedia.vn/
 server=/static.yomedia.vn/
-#[pinetech]
 server=/demo.pinetech.vn/
 server=/pinetech.vn/
 server=/www.pinetech.vn/
@@ -16150,7 +15867,6 @@ server=/tool.cleverads.vn/
 server=/widget.cleverads.vn/
 server=/wifiads.cleverads.vn/
 server=/www.cleverads.vn/
-#[klick]
 server=/adv.klick.vn/
 server=/demo.klick.vn/
 server=/euro.klick.vn/
@@ -16243,7 +15959,6 @@ server=/www.cityads.com/
 server=/cityadstrack.com/
 server=/p.cityadstrack.com/
 server=/stats.cityadstrack.com/
-#[adsota]
 server=/ads.appota.com/
 server=/adsota.com/
 server=/agency.adsota.com/
@@ -16347,14 +16062,12 @@ server=/www.dable.io/
 server=/api.adbro.me/
 server=/portal.adbro.me/
 server=/tag.adbro.me/
-#[adasiaholdings]
 server=/advertisers.adasiaholdings.com/
 server=/apm.adasiaholdings.com/
 server=/media.adasiaholdings.com/
 server=/pixel.adasiaholdings.com/
 server=/publishers.adasiaholdings.com/
 server=/www.adasiaholdings.com/
-#[adsplay]
 server=/admin.adsplay.net/
 server=/d1.adsplay.net/
 server=/d2.adsplay.net/
@@ -16883,11 +16596,9 @@ server=/log.tv360.vn/
 server=/pubads-wiinvent.tv360.vn/
 server=/log-collector.shopee.vn/
 server=/userstats.shopee.vn/
-#[moneyoyo]
 server=/api.moneyoyo.org/
 server=/feed.moneyoyo.org/
 server=/sdk.moneyoyo.com/
-# --- Block adsVN ---
 server=/12signup.com/
 server=/ad-admin.vnay.vn/
 server=/ad-ndtv.3s.com.vn/
@@ -17097,7 +16808,6 @@ server=/www.vietdorje.com/
 server=/www.vipads.live/
 server=/xads.joboko.com/
 server=/xmadsapi.joboko.com/
-# --- Block trackingVN ---
 server=/360.anatic.net/
 server=/a.ladipage.com/
 server=/a.vtvdigital.vn/
@@ -17363,7 +17073,6 @@ server=/za.agiay.vn/
 server=/za.baomoi.com/
 server=/zigzag.vn/
 server=/ztrck.me/
-# --- Block popupVN ---
 server=/b8zk2cl6bjs92j7ah8k2kzi92jf8ck9vj7v0z5bv2v3cj2azlp0c8z5vb7dt.me/
 server=/ch6p2aj2gh8zy5cm0px9ow7aj3tmzhtk6lzx2ch9xj7gx2jq1cj8v4jklz6b.me/
 server=/h6o2z0pwx5ja7dwxn0wx4fhv7mp0qoladm8vj6do4h1c6gja8evrn6g5fixk.me/
@@ -17377,26 +17086,6 @@ server=/v0h8c6kcd8wd9lzg2mtlo0gj7cju82latost2c8qjs2gj6yti8zhs5kltx7d.me/
 server=/wfgo5vjs6cp0cdjx7bms3cn9lof2p01xho0pxgm1fd2fah3j5d8qd7x1d6eu.me/
 server=/y8z5nv0slz06vj2k5vh6akv7dj2c8aj62zhj2v7zj8vp0zq7fj2gf4mv6zsb.me/
 server=/z8g0wlq5p0f6jg3k7eh2kyd58hjeskx0w9g5eu7q3m5hyq8l0xwofj3ap2nv.me/
-# End hostsVN
-# Start KADhosts
-# Title: KADhosts
-# Description: Filtry chroniace przed roznego rodzaju przekretami i oszustwami, takimi jak np. subskrypcje SMS, wirusy i falszywe sklepy internetowe. Oprocz wlasnego zestawu, zawieraja one rowniez wpisy z list stworzonych przez takie zespoly jak np. CERT Polska, legalniewsieci.pl i KNF.
-# Last modified: Sun, 12 Apr 2026, 22:21 UTC+02:00
-# Version: 2026.4.12.7
-# Expires: 2 days
-# Website: https://kadantiscam.netlify.app/
-# Based on: https://github.com/FiltersHeroes/KAD
-# License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-# Creator: azet12
-# Maintainer: Filters Heroes
-#
-# (EN) WARNING: Sites listed below can be harmful. Please, do not visit them if you don't know what you're doing!
-# (PL) UWAGA: Strony ponizej moga byc szkodliwe. Prosze, nie wchodz na nie, jesli nie wiesz co robisz!
-#
-#
-#
-# Podejrzane i/lub strony polaczone z innymi oszustwami
-#@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/podejrzane_inne_oszustwa.txt => hosts
 server=/4life.com/
 server=/4shoes.com.pl/
 server=/4shoes.pl/
@@ -20050,11 +19739,6 @@ server=/zosprp-wagrowiec.pl/
 server=/zpafiska.pl/
 server=/zrobswiatlo.pl/
 server=/zuvia.pl/
-#@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/podejrzane_inne_oszustwa.txt => hosts
-#
-#
-# Przekierowuja do innych stron z przekretami
-#@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekierowujace_do_przekretow.txt => hosts
 server=/0n.click/
 server=/4clicker.pro/
 server=/12monki-redirect.com/
@@ -20355,11 +20039,6 @@ server=/xn--30986-udb.biz/
 server=/xtroglobal.com/
 server=/zetreview.com/
 server=/znajdzbdsmkontakt.pl/
-#@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekierowujace_do_przekretow.txt => hosts
-#
-#
-# Szybko wygaszajace
-#@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/szybko_wygaszajace.txt => hosts
 server=/4332.ws/
 server=/ac-feedback.com/
 server=/adsbtrk.com/
@@ -20426,11 +20105,6 @@ server=/www.st.acstnst.com/
 server=/www.tylko-dla-ciebie.com/
 server=/www.uroffer.link/
 server=/www.uzupelniaj-dane.ml/
-#@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/szybko_wygaszajace.txt => hosts
-#
-#
-# Przekrety
-#@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety.txt + https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety_CERT.txt => hosts
 server=/0ej37yhe.cfd/
 server=/0ek7er.lol/
 server=/0equalsinfinity.org/
@@ -65265,16 +64939,6 @@ server=/zzqbfk.com/
 server=/zzsyt.com/
 server=/zztwkj.com/
 server=/zzxyxx.com/
-#@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety.txt + https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety_CERT.txt => hosts
-#
-#
-# Blogspot
-#@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/blogspot.txt => hosts
-#@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/blogspot.txt => hosts
-#
-#
-# Dodatki hosts
-#@ >>>>>>>> hostsplus + hostsplus-cert => hosts
 server=/4s13t.doctortrf.com/
 server=/05agu.doctortrf.com/
 server=/a-tocard-pl.treasure-shop.org/
@@ -65907,11 +65571,6 @@ server=/zalukaj.org/
 server=/zalukaj.ws/
 server=/zdjecienago2.c.pl/
 server=/zebywybielanie.c.pl/
-#@ <<<<<<<< hostsplus + hostsplus-cert => hosts
-# End KADhosts
-# Start minecraft-hosts
-# minecraft-hosts - Tracking Domains
-# License: CC0
 server=/analytics.atlauncher.com/
 server=/auxilium.ftb.team/
 server=/beacon.quiltmc.org/
@@ -65921,31 +65580,6 @@ server=/mcstats.org/
 server=/metrics.shmeeb.net/
 server=/openeye.openmods.info/
 server=/posthog.modrinth.com/
-# End minecraft-hosts
-# Start mvps.org
-# This MVPS HOSTS file is a free download from:            #
-# http://winhelp2002.mvps.org/hosts.htm                    #
-#                                                          #
-# Notes: The Operating System does not read the "#" symbol #
-# or anything after the # symbol on the same line          #
-#                                                          #
-# This *must* be the first line: 127.0.0.1     localhost   #
-#                                                          #
-#**********************************************************#
-# -------------- Updated: March-06-2021 ------------------ #
-#**********************************************************#
-#                                                          #
-# Disclaimer: this file is free to use for personal use    #
-# only. Furthermore it is NOT permitted to copy any of the #
-# contents or host on any other site without permission or #
-# meeting the full criteria of the below license terms.    #
-#                                                          #
-# This work is licensed under the Creative Commons         #
-# Attribution-NonCommercial-ShareAlike License.            #
-# https://creativecommons.org/licenses/by-nc-sa/4.0/       #
-#                                                          #
-# License info for commercial purposes contact Winhelp2002 #
-#
 server=/fr.a2dfp.net/
 server=/mfr.a2dfp.net/
 server=/ad.a8.net/
@@ -66051,7 +65685,6 @@ server=/junior.apk.net/
 server=/five.partner.archive-it.org/
 server=/ads.aspalliance.com/
 server=/www.astalavista.us/
-# 0.0.0.0 rules.atgsvcs.com #[affects banking]
 server=/ads.auctionads.com/
 server=/d.audienceiq.com/
 server=/ads.autotrader.com/
@@ -66061,7 +65694,6 @@ server=/avantlink.com/
 server=/www.avantlink.com/
 server=/rev.avsforum.com/
 server=/analytics.aweber.com/
-# 0.0.0.0 clicks.aweber.com #[affects newsletters]
 server=/banerator.net/
 server=/www.banner-rotation.com/
 server=/match.basebanner.com/
@@ -66141,7 +65773,6 @@ server=/radar.cedexis.com/
 server=/t.cfjump.com/
 server=/count.channeladvisor.com/
 server=/adsapi.chartbeat.com/
-# 0.0.0.0 st.chatango.com #[affects chat]
 server=/ads.china.com/
 server=/v5.chinoc.net/
 server=/ckstatic.com/
@@ -66184,7 +65815,6 @@ server=/adverts.creativemark.co.uk/
 server=/ads.crisppremium.com/
 server=/i.ctnsnet.com/
 server=/ads.milliyet.cubecdn.net/
-# 0.0.0.0 cdn.cxense.com #[affects dagsavisen.no]
 server=/www.cybereps.com/
 server=/count.daem0n.com/
 server=/www.dataforce.net/
@@ -66333,7 +65963,6 @@ server=/tracker.gtarcade.com/
 server=/ads.gumgum.com/
 server=/c.gumgum.com/
 server=/cdn.gumgum.com/
-# 0.0.0.0 www.sdad.guru #[affects msn.com]
 server=/beacon.gutefrage.net/
 server=/adserver.hardwareanalysis.com/
 server=/stats.berkman.harvard.edu/
@@ -66371,7 +66000,6 @@ server=/bbcdn-bbnaut.ibillboard.com/
 server=/bbcdn-tag.ibillboard.com/
 server=/hits.icdirect.com/
 server=/tracker.icerocket.com/
-# 0.0.0.0 mpsnare.iesnare.com #[affects westernunion.com]
 server=/adsrv2.ihlassondakika.com/
 server=/ads.imarketservices.com/
 server=/ads.imeem.com/
@@ -66418,7 +66046,6 @@ server=/pagerank.jklir.net/
 server=/ads.joemonster.org/
 server=/site.johnlewis.com/
 server=/www.jscount.com/
-# 0.0.0.0 cdn.jsdelivr.net #[affects spireenergy.com]
 server=/ck.juicyads.com/
 server=/js.juicyads.com/
 server=/nl.ads.justpremium.com/
@@ -66565,7 +66192,6 @@ server=/www.onestatfree.com/
 server=/404.online.net/
 server=/sayac.onlinewebstats.com/
 server=/lifemediahouse1.onlinewelten.com/
-# 0.0.0.0 assets.onswipe.com #[affects mobile devices]
 server=/invitation.opinionbar.com/
 server=/by.optimost.com/
 server=/es.optimost.com/
@@ -66598,7 +66224,6 @@ server=/www.pixazza.com/
 server=/banner.play-asia.com/
 server=/pu.plugrush.com/
 server=/webstats.plus.net/
-# 0.0.0.0 po.st #[affects URL shortening]
 server=/ads.po-zdravidnes.com/
 server=/piwik.pokerlistings.com/
 server=/adserve.podaddies.com/
@@ -66676,7 +66301,6 @@ server=/laurel.rovicorp.com/
 server=/gbjfc.rsvpgenius.com/
 server=/rtrgt2.com/
 server=/advert.runescape.com/
-# 0.0.0.0 runslin.com
 server=/banners.rushcommerce.com/
 server=/rutrk.org/
 server=/www.s2d6.com/
@@ -66720,7 +66344,6 @@ server=/ivox.socratos.net/
 server=/analytic.spamfighter.com/
 server=/tags.spider-mails.com/
 server=/dp2.specificclick.net/
-# 0.0.0.0 spclient.wg.spotify.com #[affects mobile app]
 server=/js.spotx.tv/
 server=/www.speedcounter.net/
 server=/speediest.net/
@@ -66805,15 +66428,12 @@ server=/cdna.tremormedia.com/
 server=/objects.tremormedia.com/
 server=/www.trendcounter.com/
 server=/ads.tripican.com/
-# 0.0.0.0 s1.trrsf.com #[affects terra.com]
-# 0.0.0.0 s2.trrsf.com #[affects terra.com]
 server=/hits3.truehits.net/
 server=/tracker.truehits.net/
 server=/origin-tracking.trulia.com/
 server=/ht.tube8.com/
 server=/presentation-atl1.turn.com/
 server=/adserver.tvcatchup.com/
-# 0.0.0.0 analytics.twitter.com #[affects Twitter Dashboard]
 server=/twittercounter.com/
 server=/et.twyn.com/
 server=/tracknet.twyn.com/
@@ -66828,7 +66448,6 @@ server=/www.ukbanners.com/
 server=/ukrbanner.net/
 server=/tracking.ukwm.co.uk/
 server=/www.ultimatetopsites.com/
-# 0.0.0.0 tags.api.umbel.com #[affects polygon.com]
 server=/undertonenetworks.com/
 server=/www.undertonenetworks.com/
 server=/adserving.unibet.com/
@@ -66857,7 +66476,6 @@ server=/p.vibrant.co/
 server=/advice-ads-cdn.vice.com/
 server=/geoip-lookup.vice.com/
 server=/vice-ads-cdn.vice.com/
-# 0.0.0.0 vice-web-statics-cdn.vice.com #[affects vice.com]
 server=/chappel.videogamer.com/
 server=/ads.videohub.tv/
 server=/adserver.virginmedia.com/
@@ -66874,7 +66492,6 @@ server=/beacon.walmart.ca/
 server=/beacon.walmart.com/
 server=/beacon.affil.walmart.com/
 server=/ad.wanderlist.com/
-# 0.0.0.0 tracking.waterfrontmedia.com #[affects MayoClinic]
 server=/ads.weather.ca/
 server=/btn.counter.weather.ca/
 server=/tr.webantenna.info/
@@ -66892,7 +66509,6 @@ server=/banner-server.winecountry.com/
 server=/ads.wineenthusiast.com/
 server=/api.wipmania.com/
 server=/stats.wired.com/
-# 0.0.0.0 f.wishabi.net #[affects walmart.ca]
 server=/helper-stats.wondershare.com/
 server=/phpadsnew.wn.com/
 server=/clicktrack.wnu.com/
@@ -67199,7 +66815,6 @@ server=/pridesource.advertserve.com/
 server=/projectorreviews.advertserve.com/
 server=/tradearabia.advertserve.com/
 server=/www.advertserve.com/
-# 0.0.0.0 static.kleinezeitung.at
 server=/static.styria-digital.com/
 server=/smp.adviva.net/
 server=/afe2.specificclick.net/
@@ -67220,10 +66835,8 @@ server=/fiona.ai.net/
 server=/tag.aticdn.net/
 server=/a.bf-ad.net/
 server=/fast.timeinc.demdex.net/
-# 0.0.0.0 dap.digitalgov.gov #[Universal Federated Analytics]
 server=/static.ampxchange.com/
 server=/p.bm23.com/
-# 0.0.0.0 cdn.tt.omtrdc.net #[affects Verizon]
 server=/ads.pictela.net/
 server=/b.thanksearch.com/
 server=/e.thanksearch.com/
@@ -67262,7 +66875,6 @@ server=/ak.quantcast.com/
 server=/widget.quantcast.com/
 server=/mediaserver.bwinpartypartners.com/
 server=/www.everestjs.net/
-# 0.0.0.0 cdn.optimizely.com #[affects sigfig.com/ 2go.com]
 server=/cdn.static.zdbb.net/
 server=/b.6sc.co/
 server=/ad131m.adk2.co/
@@ -67270,7 +66882,6 @@ server=/adsrvmedia.adk2.co/
 server=/adtgs.adk2.co/
 server=/cdn.adk2.co/
 server=/matomy.adk2.co/
-# 0.0.0.0 assets.adobedtm.com #[affects landsend.com]
 server=/www.adobetag.com/
 server=/a.adready.com/
 server=/www.adreadytractions.com/
@@ -67288,19 +66899,15 @@ server=/cdn.bidvertiser.com/
 server=/ip.casalemedia.com/
 server=/ads.cdnslate.com/
 server=/cc.chango.com/
-# 0.0.0.0 ad-js.chip.de #[affects images]
 server=/cdn1.clkrev.com/
 server=/tiads.essence.com/
 server=/tiads.ew.com/
 server=/promo.freshdirect.com/
-# 0.0.0.0 cdns.gigya.com #[affects IHeartRadio]
 server=/tiads.health.com/
 server=/js.hs-analytics.net/
-# 0.0.0.0 s2.mdpcdn.com #[affects bhg.com]
 server=/cdn.mediavoice.com/
 server=/d-track.send.microadinc.com/
 server=/mnet-ad.net/
-# 0.0.0.0 cdn.mxpnl.com #[affects optimum.com]
 server=/adcache.nymag.com/
 server=/cdn.polmontventures.com/
 server=/a.postrelease.com/
@@ -67314,8 +66921,6 @@ server=/us.rewardearners.com/
 server=/c2.rfihub.net/
 server=/ced.sascdn.com/
 server=/m.servebom.com/
-# 0.0.0.0 tiads.time.com #[affects Time.com]
-# 0.0.0.0 cdn.vidible.tv #[affects Aol]
 server=/content.womensforum.com/
 server=/s9.addthis.com/
 server=/ssltracking.esearchvision.com/
@@ -67337,9 +66942,7 @@ server=/hs.interpolls.com/
 server=/sr2.liveperson.net/
 server=/ad.policeone.com/
 server=/graphics.pop6.com/
-# 0.0.0.0  media.richrelevance.com #[affects Walmart.ca]
 server=/a.rmgserving.com/
-# 0.0.0.0  imagesak.secureserver.net #[affects GoDaddy]
 server=/track.sitetag.us/
 server=/anon.doubleclick.speedera.net/
 server=/d.thanksearch.com/
@@ -67420,7 +67023,6 @@ server=/d.shareaholic.com/
 server=/s.shopify.com/
 server=/pix.silverpush.co/
 server=/ads.skinected.com/
-# 0.0.0.0 analytics.supplyframe.com #[affects findchips.com]
 server=/images.ads.supplyframe.com/
 server=/b.t.tailtarget.com/
 server=/ads.tracking202.com/
@@ -67434,7 +67036,6 @@ server=/ads.chango.com/
 server=/adunit.chango.com/
 server=/admonkey.dapper.net/
 server=/b.ensighten.com/
-# 0.0.0.0 nexus.ensighten.com #[affects Subaru / Staples]
 server=/cs.exitmonitor.com/
 server=/g2.gumgum.com/
 server=/stack9.collect.igodigital.com/
@@ -67451,7 +67052,6 @@ server=/socialspark.com/
 server=/req.tidaltv.com/
 server=/static.tracking202.com/
 server=/p1.tcr21.tynt.com/
-# 0.0.0.0 redirect.viglink.com #[affects disqus.com]
 server=/www.w3counter.com/
 server=/ots.optimize.webtrends.com/
 server=/b.wishabi.com/
@@ -67496,7 +67096,6 @@ server=/pixel.realtor.com/
 server=/howler.shareaholic.com/
 server=/cdn.spectate.com/
 server=/track.securedvisit.com/
-# 0.0.0.0 id.trove.com #[prevents registration]
 server=/rtb.tubemogul.com/
 server=/www.webspectator.com/
 server=/cdn.beaconpush.com/
@@ -67513,7 +67112,6 @@ server=/dc8xl0ndzn2cb.cloudfront.net/
 server=/gernewt.info/
 server=/ads.goodreads.com/
 server=/lionstracking.com/
-# 0.0.0.0 widget-cdn.rpxnow.com #[affects amc.com]
 server=/secureredirect101.com/
 server=/trkmydomain.com/
 server=/s.206solutions.com/
@@ -67591,7 +67189,6 @@ server=/barilliance.net/
 server=/www.barilliance.net/
 server=/srv.clickfuse.com/
 server=/com.com/
-# 0.0.0.0 api.demandbase.com #[affects Ringcentral]
 server=/adobe.demdex.net/
 server=/fairfax.demdex.net/
 server=/mtvn.demdex.net/
@@ -67713,7 +67310,6 @@ server=/track.prizeglobal.net/
 server=/trax.prostrax.com/
 server=/vid-io-dub.springserve.com/
 server=/admediator.unityads.unity3d.com/
-# 0.0.0.0 wurfl.io #[affects Google]
 server=/www.cloudtracked.com/
 server=/za-ssl.effectivemeasure.net/
 server=/tracker.freecharge.in/
@@ -67728,14 +67324,12 @@ server=/d1jikhx1ssl81z.cloudfront.net/
 server=/d1lxhc4jvstzrp.cloudfront.net/
 server=/d1xfq2052q7thw.cloudfront.net/
 server=/d1z2jf7jlzjs58.cloudfront.net/
-# 0.0.0.0 d2gatte9o95jao.cloudfront.net #[affects urbandictionary.com]
 server=/d2zah9y47r7bi2.cloudfront.net/
 server=/d3qxwzhswv93jk.cloudfront.net/
 server=/me-ssl.effectivemeasure.net/
 server=/gscounters.eu1.gigya.com/
 server=/resources.kiosked.com/
 server=/cdn.listrakbi.com/
-# 0.0.0.0 www.livefyre.com #[affects startribune.com]
 server=/t.mdn2015x2.com/
 server=/ads.mic.com/
 server=/ap.octopuspop.com/
@@ -67770,7 +67364,6 @@ server=/analytics.upworthy.com/
 server=/rumds.wpdigital.net/
 server=/i.yldbt.com/
 server=/z2.zedo.com/
-# 0.0.0.0 segment-data.zqtk.net #[affects wsj.com]
 server=/ads-stream.com/
 server=/js.apxlv.com/
 server=/www.adbooth.com/
@@ -67801,12 +67394,10 @@ server=/images1.cliqueclack.com/
 server=/d1fc8wv8zag5ca.cloudfront.net/
 server=/d1l6p2sc9645hc.cloudfront.net/
 server=/d1piupybsgr6dr.cloudfront.net/
-# 0.0.0.0 d3c3cq33003psk.cloudfront.net #[affects sunglassesshop.com]
 server=/d5nxst8fruw4z.cloudfront.net/
 server=/dl1d2m8ri9v3j.cloudfront.net/
 server=/cdn-1.convertexperiments.com/
 server=/use.convertglobal.com/
-# 0.0.0.0 scripts.demandbase.com #[affects ringcentral.com]
 server=/bet.demdex.net/
 server=/cbsi.demdex.net/
 server=/de.demdex.net/
@@ -67854,7 +67445,6 @@ server=/cdn.traffichunt.com/
 server=/analytics.userreport.com/
 server=/cdn.userreport.com/
 server=/sdscdn.userreport.com/
-# 0.0.0.0 delivery.vidible.tv #[affects aol.com]
 server=/wsc1.webspectator.com/
 server=/zafiti01.webtrekk-us.net/
 server=/sdk-controller.widespace.com/
@@ -67870,7 +67460,6 @@ server=/cdn.adquantix.com/
 server=/adactive-ads.aimatch.com/
 server=/crtl.aimatch.com/
 server=/tr-1.agilone.com/
-#  0.0.0.0 as.eu.angsrvr.com #[affects videos]
 server=/www.badassjv.com/
 server=/blockmetrics.com/
 server=/cache.btrll.com/
@@ -68101,7 +67690,6 @@ server=/logv145.xiti.com/
 server=/www.xiti.com/
 server=/secure-ams.adnxs.com/
 server=/ib.reachjunction.com/
-# 0.0.0.0 ib.adnxs.com #[affects Microsoft site]
 server=/photobucket.adnxs.com/
 server=/ym.adnxs.com/
 server=/action.media6degrees.com/
@@ -68386,7 +67974,6 @@ server=/srv.bebi.com/
 server=/buzzcpm.com/
 server=/cdnmedia.xyz/
 server=/wp1.cor-natty.com/
-# 0.0.0.0 onesignal.com #[blocks Push notifications]
 server=/cdn.spoutable.com/
 server=/engine.spoutable.com/
 server=/cdn.tynt.com/
@@ -68395,7 +67982,6 @@ server=/in4.zog.link/
 server=/cdn1.zopiny.com/
 server=/adfoc.us/
 server=/img.avatraffic.com/
-# 0.0.0.0 js.maxmind.com #[affects marchon.com / directvnow.com]
 server=/trafficg.com/
 server=/www.trafficg.com/
 server=/trw12.com/
@@ -68589,7 +68175,6 @@ server=/login.tracking101.com/
 server=/images.bmnq.com/
 server=/images.cnomy.com/
 server=/ads.webhosting.info/
-# 0.0.0.0 hb.disney.go.com #[affects links]
 server=/seavideo-ak.espn.go.com/
 server=/adsatt.abcnews.starwave.com/
 server=/adsatt.disney.starwave.com/
@@ -68662,13 +68247,11 @@ server=/y.cdn.adblade.com/
 server=/adunit.cdn.auditude.com/
 server=/ndn.cdn.auditude.com/
 server=/cv.bsvideos.com/
-# 0.0.0.0 livepassdl.conviva.com #[affects videos]
 server=/banners.crakcash.com/
 server=/pixel.indieclick.com/
 server=/staticd.cdn.industrybrains.com/
 server=/electosake.com/
 server=/c.supert.ag/
-# 0.0.0.0 tags.tiqcdn.com #[affects Intel.com/Shaw]
 server=/tororango.com/
 server=/cdn.engine.trklnks.com/
 server=/img1.zergnet.com/
@@ -68712,13 +68295,6 @@ server=/2278.stats.misstrends.com/
 server=/4184.stats.misstrends.com/
 server=/www.humanclick.com/
 server=/hc2.humanclick.com/
-# 0.0.0.0 wizard.liveperson.com
-# 0.0.0.0 www.liveperson.com #[affects citi.com]
-# 0.0.0.0 liveperson.net
-# 0.0.0.0 lptag.liveperson.net
-# 0.0.0.0 sales.liveperson.net #[affects Live Chat]
-# 0.0.0.0 sec1.liveperson.net
-# 0.0.0.0 server.iad.liveperson.net
 server=/landingpages.sunnytoolz.com/
 server=/ads.guru3d.com/
 server=/banner1.pornhost.com/
@@ -68784,7 +68360,6 @@ server=/g1.v.fwmrm.net/
 server=/1c6e2.v.fwmrm.net/
 server=/2df7e.v.fwmrm.net/
 server=/5bde1.v.fwmrm.net/
-# 0.0.0.0 140cc.v.fwmrm.net #[affects videos]
 server=/2975c.v.fwmrm.net/
 server=/29773.v.fwmrm.net/
 server=/bea4.v.fwmrm.net/
@@ -68882,9 +68457,7 @@ server=/frontpagecash.com/
 server=/www.frontpagecash.com/
 server=/www.clickaction.net/
 server=/server2.discountclick.com/
-# 0.0.0.0 link.p0.com #[Affects email newsletters]
 server=/a.hspvst.com/
-# 0.0.0.0 secure.footprint.net #[affects nfl.com]
 server=/van.redlightcenter.com/
 server=/webmaster.utherverse.com/
 server=/www.cpx24.com/
@@ -68901,7 +68474,6 @@ server=/www.otherossettlement.com/
 server=/redemptionengine.com/
 server=/www.redemptionengine.com/
 server=/images-pw.secureserver.net/
-# 0.0.0.0 images.secureserver.net #[affects GoDaddy]
 server=/highpro1.com/
 server=/adexchangeprediction.com/
 server=/static-trackers.adtarget.me/
@@ -68947,7 +68519,6 @@ server=/undefined.fls.doubleclick.net/
 server=/pagead-googlehosted.l.google.com/
 server=/5362399.fls.doubleclick.net/
 server=/video-ad-stats.googlesyndication.com/
-# 0.0.0.0 redirector.googlevideo.com #[affects video playback]
 server=/dp.g.doubleclick.net/
 server=/service.urchin.com/
 server=/analytics-api-samples.googlecode.com/
@@ -68956,7 +68527,6 @@ server=/1435575.fls.doubleclick.net/
 server=/2542116.fls.doubleclick.net/
 server=/4053494.fls.doubleclick.net/
 server=/4236808.fls.doubleclick.net/
-# 0.0.0.0 www.googletagmanager.com #[affects ASUS]
 server=/www3.webhostingtalk.com/
 server=/analytics.inform.com/
 server=/track.searchiq.co/
@@ -69037,11 +68607,8 @@ server=/www2.doubleclick.com/
 server=/www3.doubleclick.com/
 server=/www.doubleclick.com/
 server=/www.bt.emsecure.net/
-# 0.0.0.0  www.youtube-nocookie.com #[affects various videos]
 server=/ad.rs.doubleclick.net/
 server=/affiliate.2mdn.net/
-# 0.0.0.0  s0.2mdn.net #[affects video stream]
-# 0.0.0.0  static.2mdn.net #[affects Youtube]
 server=/clickserve.us2.dartsearch.net/
 server=/ad-apac.doubleclick.net/
 server=/ad.mo.doubleclick.net/
@@ -69305,7 +68872,6 @@ server=/prizemachine.games.iwon.com/
 server=/searchassistant.iwon.com/
 server=/www1.iwon.com/
 server=/image.i1img.com/
-# 0.0.0.0  wzus1.reference.com #[affects Dictonary.com]
 server=/keisu02.eproof.com/
 server=/control.adap.tv/
 server=/ads.shopstyle.com/
@@ -69536,7 +69102,6 @@ server=/adimg1.chosun.com/
 server=/cad.chosun.com/
 server=/hitlog2.chosun.com/
 server=/counter.joins.com/
-# 0.0.0.0 www.luminate.com #[affects login]
 server=/openx.4shared.com/
 server=/www.easycounter.com/
 server=/www.fastusersonline.com/
@@ -69693,7 +69258,6 @@ server=/beacon-us-iad2.rubiconproject.com/
 server=/banners.securedataimages.com/
 server=/e.sexad.net/
 server=/pod.sexsearch.com/
-# 0.0.0.0 api.solvemedia.com #[affects captcha]
 server=/pixel.solvemedia.com/
 server=/demoq.use-trade.com/
 server=/richmedia.yimg.com/
@@ -69725,7 +69289,6 @@ server=/static.fleshlight.com/
 server=/content.ipro.com/
 server=/cdn-01.yumenetworks.com/
 server=/img100-321.xvideos.com/
-# 0.0.0.0  libs.coremetrics.com #[affects tMobile/EverBank]
 server=/e.freewebhostingarea.com/
 server=/ad-rotator.com/
 server=/serv.adspeed.com/
@@ -69821,7 +69384,6 @@ server=/hits.spylog.com/
 server=/www.spylog.com/
 server=/www.cpaempire.com/
 server=/ekmas.com/
-# 0.0.0.0  stat3.cybermonitor.com #[affects podcasts]
 server=/www.adpeepshosted.com/
 server=/ping.hellobar.com/
 server=/adklip.com/
@@ -69834,8 +69396,6 @@ server=/trafficgateway.research-int.se/
 server=/my.trackjs.com/
 server=/image.atdmt.com/
 server=/img.atdmt.com/
-# 0.0.0.0  switch.atdmt.com #[affects Hotmail signup]
-# 0.0.0.0  view.atdmt.com #[affects Microsoft / Sprint.com]
 server=/www.atdmt.com/
 server=/analytics.newsvine.com/
 server=/tracking.bannerflow.com/
@@ -69869,13 +69429,11 @@ server=/blu.mobileads.msn.com/
 server=/col.mobileads.msn.com/
 server=/popup.msn.com/
 server=/analytics.r.msn.com/
-# 0.0.0.0  rad.msn.com #[affects MSN Messenger]
 server=/rmads.msn.com/
 server=/rmads.eu.msn.com/
 server=/analytics.msnbc.com/
 server=/msn.serving-sys.com/
 server=/click.atdmt.com/
-# 0.0.0.0  clk.atdmt.com #[affects MS downloads]
 server=/sact.atdmt.com/
 server=/beacon.clickequations.net/
 server=/js.clickequations.net/
@@ -70095,7 +69653,6 @@ server=/pixel1739.everesttech.net/
 server=/ads.mediatwo.com/
 server=/mads.dailymail.co.uk/
 server=/in-cdn.effectivemeasure.net/
-# 0.0.0.0 s.marketwatch.com #[affects marketwatch]
 server=/stags.peer39.net/
 server=/www.zipitfast.com/
 server=/ads.drugs.com/
@@ -70202,7 +69759,6 @@ server=/metrics.necn.com/
 server=/1und1internetag.d3.sc.omtrdc.net/
 server=/cafemom.d2.sc.omtrdc.net/
 server=/centricabritishgas.d3.sc.omtrdc.net/
-# 0.0.0.0 citicorpcreditservic.tt.omtrdc.net
 server=/comcastresidentialservices.tt.omtrdc.net/
 server=/comvelgmbh.d1.sc.omtrdc.net/
 server=/condenast.insight.omtrdc.net/
@@ -70225,14 +69781,12 @@ server=/tacobell.d1.sc.omtrdc.net/
 server=/metrics.td.com/
 server=/tracking.whattoexpect.com/
 server=/102.112.207.net/
-# 0.0.0.0 appleglobal.112.2o7.net #[affects Apple site]
 server=/byubroadcast.112.2o7.net/
 server=/kasperthreatpostprod.112.2o7.net/
 server=/kaspersky.122.2o7.net/
 server=/ldsfch.112.2o7.net/
 server=/myfamilyancestry.112.2o7.net/
 server=/nautilus.122.2o7.net/
-# 0.0.0.0  survey.112.2o7.net #[affect Sprint.com]
 server=/tirerackcom.112.2o7.net/
 server=/stats.esomniture.com/
 server=/www.omniture.com/
@@ -70242,7 +69796,6 @@ server=/metrics.aarp.org/
 server=/ewstv.abc15.com/
 server=/metrics.accuweather.com/
 server=/metrics.acehardware.com/
-# 0.0.0.0 stats.adobe.com #[affects MacOS updates]
 server=/stats.adultswim.com/
 server=/analytic.ae.com/
 server=/metric.allrecipes.com/
@@ -70251,11 +69804,8 @@ server=/b.alot.com/
 server=/analytics.amakings.com/
 server=/metrics.amd.com/
 server=/metrics.americancityandcounty.com/
-# 0.0.0.0 metrics.ancestry.co.uk #[affects login]
 server=/metric.angieslist.com/
 server=/metrics.apartmentfinder.com/
-# 0.0.0.0 metrics.apple.com #[affects Apple site/MacOS]
-# 0.0.0.0 securemetrics.apple.com #[affects Apple site/MacOS]
 server=/metrics.ariba.com/
 server=/omniture.artinstitutes.edu/
 server=/stats2.arstechnica.com/
@@ -70305,7 +69855,6 @@ server=/metrics.chacha.com/
 server=/webstat.channel4.com/
 server=/omniture.chip.de/
 server=/metrics.chron.com/
-# 0.0.0.0 metrics1.citibank.com #[affects login]
 server=/om.cnet.co.uk/
 server=/metrics.cleveland.com/
 server=/metrics.cnn.com/
@@ -70313,7 +69862,6 @@ server=/track.collegeboard.com/
 server=/serviceo.comcast.net/
 server=/metrics.compactappliance.com/
 server=/stats.concierge.com/
-# 0.0.0.0 metrics.consumerreports.org #[affects login]
 server=/metrics.corus.ca/
 server=/metrics.cosmopolitan.co.uk/
 server=/omn.crackle.com/
@@ -70365,7 +69913,6 @@ server=/stats2.glamour.com/
 server=/metrics.gnc.com/
 server=/stats2.golfdigest.com/
 server=/metrics.govexec.com/
-# 0.0.0.0 w88.go.com #[affects espn.com]
 server=/hits.guardian.co.uk/
 server=/metrics.harley-davidson.com/
 server=/analytics.hayneedle.com/
@@ -70383,7 +69930,6 @@ server=/www91.intel.com/
 server=/stats.investors.com/
 server=/metrics.store.irobot.com/
 server=/metrics.kbb.com/
-# 0.0.0.0 ww9.kohls.com #[affects Chrome]
 server=/metrics.lawyers.com/
 server=/metrics.lehighvalleylive.com/
 server=/metrics.us.levi.com/
@@ -70391,7 +69937,6 @@ server=/metrics.lexus.com/
 server=/metrics.lhj.com/
 server=/stats.libresse.no/
 server=/om.lonelyplanet.com/
-# 0.0.0.0  omni.macworld.com #[affects Safari]
 server=/analytics.mail-corp.com/
 server=/metric.makemytrip.com/
 server=/metric.marthastewart.com/
@@ -70444,7 +69989,6 @@ server=/metrics.shoedazzle.com/
 server=/omniture.shopstyle.com/
 server=/metrics.silive.com/
 server=/b.skinstore.com/
-# 0.0.0.0 metrics.skype.com
 server=/metrics.slate.com/
 server=/metrics.speedousa.com/
 server=/omni.sportingnews.com/
@@ -70452,7 +69996,6 @@ server=/metrics.solarwinds.com/
 server=/metrics.sony.com/
 server=/omn.sonypictures.com/
 server=/metrics.southwest.com/
-# 0.0.0.0  metrics.sprint.com #[affects login]
 server=/metrics.starwoodhotels.com/
 server=/omniture.stuff.co.nz/
 server=/metrics.sun.com/
@@ -70468,7 +70011,6 @@ server=/hits.theguardian.com/
 server=/metrics.thinkgeek.com/
 server=/metrics.three.co.uk/
 server=/metrics.ticketmaster.com/
-# 0.0.0.0 metric.timewarnercable.com #[affects billing?]
 server=/metrics.tlc.com/
 server=/metrics.toptenreviews.com/
 server=/metrics.toyota.com/
@@ -70497,7 +70039,6 @@ server=/stats2.wmagazine.com/
 server=/an.worldbaseballclassic.com/
 server=/metric.worldcat.org/
 server=/metrics.worldmarket.com/
-# 0.0.0.0 metric.wtop.com #[affects login]
 server=/smetrics.yellowbook.com/
 server=/metric.yellowpages.com/
 server=/mbox.offermatica.intuit.com/
@@ -70717,7 +70258,6 @@ server=/cdn.amgdgt.com/
 server=/js.bizographics.com/
 server=/images.ddc.com/
 server=/cdn.firstlook.com/
-# 0.0.0.0  adm.fwmrm.net #[affects nhl.com]
 server=/m2.fwmrm.net/
 server=/cache.gfrevenge.com/
 server=/cache.izearanks.com/
@@ -70886,7 +70426,6 @@ server=/ccc00.opinionlab.com/
 server=/ccc01.opinionlab.com/
 server=/rate.opinionlab.com/
 server=/www.opinionlab.com/
-# 0.0.0.0  static.chartbeat.com #[affects Healthcare.gov]
 server=/csma95349.analytics.edgesuite.net/
 server=/ads.tarrobads.com/
 server=/hu.2.cqcounter.com/
@@ -71044,7 +70583,6 @@ server=/www9.addfreestats.com/
 server=/www.mvav.com/
 server=/admax.nexage.com/
 server=/bbads.sx.atl.publicus.com/
-# 0.0.0.0 d.xp1.ru4.com #[affects Battlefield]
 server=/udm.ia6.scorecardresearch.com/
 server=/udm.ia7.scorecardresearch.com/
 server=/sa.scorecardresearch.com/
@@ -71242,7 +70780,6 @@ server=/www.admixxer.com/
 server=/c.chango.com/
 server=/d.chango.com/
 server=/dnetshelter3.d.chango.com/
-# 0.0.0.0 realtime.services.disqus.com #[affects politicalwire.com]
 server=/eclkmpbn.com/
 server=/eclkmpsa.com/
 server=/eclkspbn.com/
@@ -71311,7 +70848,6 @@ server=/hitstatus.com/
 server=/hits.informer.com/
 server=/my.mobfox.com/
 server=/banners.mynakedweb.com/
-# 0.0.0.0 api.nanigans.com #[affects 2go.com]
 server=/www.seekways.com/
 server=/www.toplistim.com/
 server=/r.bid4keywords.com/
@@ -71761,7 +71297,6 @@ server=/analytics.harpercollins.com/
 server=/log.aebn.net/
 server=/www3.bloomingdales.com/
 server=/cmd.customink.com/
-# 0.0.0.0 www.securitymetrics.com #[affects bank login]
 server=/mv.treehousei.com/
 server=/beacon.lijit.com/
 server=/www.lijit.com/
@@ -72516,7 +72051,6 @@ server=/zug.us.intellitxt.com/
 server=/vibrantmedia.com/
 server=/www.vibrantmedia.com/
 server=/banners.payserve.com/
-# 0.0.0.0 cdn.visiblemeasures.com #[affects Collegehumor.com]
 server=/api.adrenalads.com/
 server=/f.blogads.com/
 server=/g.blogads.com/
@@ -72774,7 +72308,6 @@ server=/mx.adserver.yahoo.com/
 server=/adinterax.com/
 server=/www.adinterax.com/
 server=/np.lexity.com/
-# 0.0.0.0 beap.adss.yahoo.com #[affects Yahoo video]
 server=/beap.adx.yahoo.com/
 server=/ac.ybinst0.ec.yimg.com/
 server=/ac.ybinst1.ec.yimg.com/
@@ -72796,13 +72329,10 @@ server=/ybinst6.ec.yimg.com/
 server=/ybinst7.ec.yimg.com/
 server=/ybinst8.ec.yimg.com/
 server=/ybinst9.ec.yimg.com/
-# 0.0.0.0 yastatic.net #[affects Yandex Mail]
 server=/an.yandex.ru/
 server=/advertising.yandex.ru/
 server=/bs.yandex.ru/
 server=/bs-meta.yandex.ru/
-# 0.0.0.0 clck.yandex.ru
-# 0.0.0.0 grade.market.yandex.ru
 server=/informer.yandex.ru/
 server=/mc.yandex.ru/
 server=/serw.myroitracking.com/
@@ -72854,137 +72384,11 @@ server=/yads.zedo.com/
 server=/www.zedo.com/
 server=/rt.udmserve.net/
 server=/www.stickylogic.com/
-# End mvps.org
-# Start someonewhocares.org
-# This hosts file is brought to you by Dan Pollock and can be found at
-# http://someonewhocares.org/hosts/zero/
-# You are free to copy and distribute this file for non-commercial uses,
-# as long the original URL and attribution is included.
-#
-# This hosts file is proudly sponsored by adguard.com.
-#
-# See below for acknowledgements.
-# Please forward any additions, corrections or comments by email to
-# Last updated: Fri, 10 Apr 2026 at 21:26:03 GMT
-# Use this file to prevent your computer from connecting to selected
-# internet hosts. This is an easy and effective way to protect you from
-# many types of spyware, reduces bandwidth use, blocks certain pop-up
-# traps, prevents user tracking by way of "web bugs" embedded in spam,
-# provides partial protection to IE from certain web-based exploits and
-# blocks most advertising you would otherwise be subjected to on the
-# There is a version of this file that uses 127.0.0.1 instead of 0.0.0.0
-# available at http://someonewhocares.org/hosts/.
-# On some machines the zero version may run minutely faster, however it
-# may not be compatible with all systems.
-# This file must be saved as a text file with no extension. (This means
-# that the file name should be exactly as below, without a ".txt" appended.)
-# Let me repeat, the file should be named "hosts" NOT "hosts.txt".
-# For Windows 9x and ME place this file at "C:\Windows\hosts"
-# For NT, Win2K and XP use "C:\windows\system32\drivers\etc\hosts"
-#                       or "C:\winnt\system32\drivers\etc\hosts"
-# For Windows 7 and Vista use "C:\windows\system32\drivers\etc\hosts"
-#			or "%systemroot%\system32\drivers\etc\hosts"
-# For Windows 8 and Windows 10 use "C:\Windows\System32\drivers\etc\hosts"
-# 		You may need to tell Windows Defender to ignore this path
-# 		see: http://support.microsoft.com/kb/2764944
-# You may have to use Notepad and "Run as Administrator"
-#
-# For Linux, Unix, or OS X place this file at "/etc/hosts" or on some
-#    systems at "/private/etc/hosts". You will require root access to do
-#    this. Saving this file to "~/hosts" will allow you to run something
-#    like "sudo cp ~/hosts /etc/hosts".
-# For OS/2 copy the file to "%ETC%\HOSTS" and in the CONFIG.SYS file,
-#    ensure that the line "SET USE_HOSTS_FIRST=1" is included.
-# For BeOS place it at "/boot/beos/etc/hosts"
-# On a Netware system, the location is System\etc\hosts"
-# For Macintosh (pre OS X) place it in the Mac System Folder or Preferences
-#    folder and reboot. (something like HD:System Folder:Preferences:Hosts)
-#    Alternatively you can save it elsewhere on your machine, then go to the
-#    TCP/IP control panel and click on "Select hosts file" to read it in.
-#    ------------------
-#    | As well, note that the format is different on old macs, so
-#    | please visit http://someonewhocares.org/hosts/zero/mac/ for mac format
-# For Android place the file at "/system/etc/hosts". You will need root
-#   access on your device to do this.
-#    ------------------
-# To convert the hosts file to a set of Cisco IOS commands for Cisco routers
-#   use this script by Jesse Baird:
-#   http://jebaird.com/2012/12/21/hosts-to-ip-host-generating-blocked-hosts-from-a-host-file-for-a-cisco-router.html
-# If there is a domain name you would rather never see, simply add a line
-# that reads "0.0.0.0 machine.domain.tld". This will have the effect of
-# redirecting any requests to that host to your own computer. For example
-# this will prevent your browser from downloading banner ads, or sending
-# your information back to a company.
-#<localhost>
-#fe80::1%lo0	localhost
-#</localhost>
-#<shortcut-examples>
-# As well by specifying the ipaddress of a server, you can gain access
-#   to some of your favourite sites with a single letter, instead of
-#   using the whole domain name
-# It is perhaps a better solution to use Favourites/Bookmarks instead.
-#216.34.181.45   s        # slashdot.org
-#74.125.127.105	g        # google.com
-#</shortcut-examples>
-#<hijack-sites>
-# The sites ads234.com and ads345.com -- These sites hijack internet explorer
-# and redirect all requests through their servers. You may need to use spyware
-# removal programs such as SpyBotS&amp;D, AdAware or HijackThis to remove this
-# nasty parasite. It's possible that blocking these sites using a hosts file
-# may not work, in which case you should remove the following lines from this
-# file and try the tools listed above immediately. Don't forget to reboot
-# after a scan.
 server=/ads234.com/
 server=/ads345.com/
 server=/www.ads234.com/
 server=/www.ads345.com/
-#</hijack-sites>
-#<spyware-sites>
-# Spyware and user tracking
-# By entering domains here, it will prevent certain companies from
-# gathering information on your surfing habits. These servers do not
-# necessarily serve ads, instead some are used by certain products to
-# "phone home". Others use web cookies to gather statistics on surfing
-# habits. Among other uses, this is a common tactic by spammers, to
-# let them know that you have read your mail.
-# Uncomment (remove the #) the lines that you wish to block, as some
-# may provide you with services you like.
-#<maybe-spy>
-#0.0.0.0 auto.search.msn.com  # Microsoft uses this server to redirect
-# mistyped URLs to search engines. They
-# log all such errors.
-#0.0.0.0 sitefinder.verisign.com	# Verisign has joined the game
-#0.0.0.0 sitefinder-idn.verisign.com	# of trying to hijack mistyped
-# URLs to their site.
-# May break iOS Game Center.
-#0.0.0.0 s0.2mdn.net		# This may interfere with some streaming
-# video on sites such as cbc.ca
-#0.0.0.0 ad.doubleclick.net   # This may interefere with www.sears.com
-# and potentially other sites.
 server=/media.fastclick.net/
-#0.0.0.0 ebay.doubleclick.net		# may interfere with ebay
-#0.0.0.0 google-analytics.com			# breaks some sites
-#0.0.0.0 ssl.google-analytics.com
-#0.0.0.0 www.google-analytics.l.google.com
-#0.0.0.0 stat.livejournal.com		# There are reports that this may mess
-# up CSS on livejournal
-#0.0.0.0 stats.surfaid.ihost.com	# This has been known cause
-# problems with NPR.org
-#0.0.0.0 www.google-analytics.com		# breaks some sites
-#0.0.0.0 ads.imeem.com		# Seems to interfere with the functioning of imeem.com
-#</maybe-spy>
-#0.0.0.0 ci-mpsnare.iovation.com	# See http://www.codingthewheel.com/archives/online-gambling-privacy-iesnare
-#0.0.0.0 ll.a.hulu.com	# Uncomment to block Hulu.
-#0.0.0.0 metrics.ticketmaster.com	# interferes with logging in to ticketmaster.com
-#0.0.0.0 nl.sitestat.com	# may interfere with duo.nl
-#0.0.0.0 pro.hit.gemius.pl	# May interfere with some video sites
-#0.0.0.0 s.youtube.com				# Blocking this will interfere with video watching history and may interfere with Google Podcasts
-#0.0.0.0 services.krxd.net
-#0.0.0.0 stats.channel4.com
-#0.0.0.0 t2.hulu.com		# Uncomment to block Hulu.
-#0.0.0.0 track.hulu.com	# Uncomment to block Hulu.
-#0.0.0.0 webstat.channel4.com
-#0.0.0.0 www.googletagservices.com		#interferes with techrepublic
 server=/006.freecounters.co.uk/
 server=/0stats.com/
 server=/123counter.mycomputer.com/
@@ -73006,8 +72410,6 @@ server=/adapi.ragapa.com/
 server=/adelogs.adobe.com/
 server=/ademails.com/
 server=/adlog.com.com/
-# ads and track users across
-# the com.com family of sites
 server=/admin.iovation.com/
 server=/adpatrof.com/
 server=/ads.tiscali.it/
@@ -73900,9 +73302,6 @@ server=/xtrasizeoriginal.com.br/
 server=/xxxcounter.com/
 server=/zc1.campaign-view.com.cn/
 server=/zc1.maillist-manage.com.cn/
-#</spyware-sites>
-#<malware-sites>
-# sites with known trojans, phishing, or other malware
 server=/0.nextyourcontent.com/
 server=/05tz2e9.com/
 server=/1-bmo-client-login.com/
@@ -76336,15 +75735,10 @@ server=/zjchao.com/
 server=/zjgaoergao.com/
 server=/ztriskl.divisionfair.homes/
 server=/zzkwg.comfortykive.xyz/
-#</malware-sites>
-#<doubleclick-sites>
-#0.0.0.0 pubads.g.doubleclick.net	#interferes with video on cwtv.com
 server=/ad.ve.doubleclick.net/
 server=/doubleclick.de/
 server=/m.2mdn.net/
 server=/ukrpts.net/
-#</doubleclick-sites>
-#<intellitxt-sites>
 server=/gadgets.fosfor.se.intellitxt.com/
 server=/maccity.it.intellitxt.com/
 server=/macuser.uk.intellitxt.com/
@@ -76356,10 +75750,6 @@ server=/pcadvisor.uk.intellitxt.com/
 server=/pcgameshardware.de.intellitxt.com/
 server=/pspcave.uk.intellitxt.com/
 server=/splashnews.uk.intellitxt.com/
-#</intellitxt-sites>
-#<red-sheriff-sites>
-# Red Sheriff and imrworldwide.com  -- server side tracking
-#0.0.0.0 secure-au.imrworldwide.com
 server=/fe-au.imrworldwide.com/
 server=/fe1-au.imrworldwide.com/
 server=/fe2-au.imrworldwide.com/
@@ -76371,9 +75761,6 @@ server=/server-hk.imrworldwide.com/
 server=/server-ru.imrworldwide.com/
 server=/server-ua.imrworldwide.com/
 server=/www.redsheriff.com/
-#</red-sheriff-sites>
-#<cydoor-sites>
-# cydoor -- server side tracking
 server=/cydoor.com/
 server=/j.2004cms.com/
 server=/jbaventures.cjt1.net/
@@ -76438,11 +75825,6 @@ server=/jsandboxer.cjt1.net/
 server=/jumcna.cjt1.net/
 server=/jwebbsense.cjt1.net/
 server=/www.cydoor.com/
-#</cydoor-sites>
-#<2o7-sites>
-# 2o7.net -- server side tracking
-#0.0.0.0 appleglobal.112.2o7.net	#breaks apple.com
-#0.0.0.0 applestoreus.112.2o7.net	#breaks apple.com
 server=/actforvictory.112.2o7.net/
 server=/adbrite.112.2o7.net/
 server=/americanbaby.112.2o7.net/
@@ -76714,9 +76096,6 @@ server=/wmgmulti.112.2o7.net/
 server=/workopolis.122.2o7.net/
 server=/youtube.112.2o7.net/
 server=/yrkeve.112.2o7.net/
-#</2o7-sites>
-#<oewabox-sites>
-# oewabox.at -- 'Austrian Webanalysis Society'
 server=/1000ps.oewabox.at/
 server=/afinder.oewabox.at/
 server=/alphalux.oewabox.at/
@@ -76842,9 +76221,6 @@ server=/wirtvlg.oewabox.at/
 server=/woche.oewabox.at/
 server=/wohnnet.oewabox.at/
 server=/zfm.oewabox.at/
-#</oewabox-sites>
-#<pegasus-spyware-sites>
-# Pegasus spyware sites.
 server=/24-7clinic.com/
 server=/365redirect.co/
 server=/a-redirect.com/
@@ -77318,25 +76694,6 @@ server=/youintelligence.com/
 server=/youliehow.com/
 server=/yourbestclothes.com/
 server=/yummyfoodallover.com/
-#</pegasus-spyware-sites>
-#<ad-sites>
-#<maybe-ads>
-#0.0.0.0 adfarm.mediaplex.com		# may interfere with ebay
-#0.0.0.0 ads.msn.com			#This may cause problems with zone.msn.com
-#0.0.0.0 ak.imgfarm.com		# may cause problems with iwon.com
-#0.0.0.0 click.linksynergy.com
-#0.0.0.0 global.msads.net		#This may cause problems with zone.msn.com
-#0.0.0.0 lads.myspace.com		# blocks myspace media/video players
-#0.0.0.0 refer.ccbill.com		#affiliate program, to add it back, remove the #
-#0.0.0.0 rmads.msn.com			#This may cause problems with zone.msn.com
-#0.0.0.0 www.apmebf.com		#qksrv
-#0.0.0.0 www.tkqlhce.com		#qksrv
-#0.0.0.0 ad.ca.doubleclick.net	#intereferes with video on globeandmail.com
-#0.0.0.0 transfer.go.com		#may interfere with Disney websites
-#</maybe-ads>
-# ads
-#0.0.0.0 aax-eu.amazon-adsystem.com 	# may interfere with Amazon ad preferences
-#0.0.0.0 s.amazon-adsystem.com	# may interfere with Amazon ad preferences
 server=/0101011.com/
 server=/0427d7.se/
 server=/0d79ed.r.axf8.net/
@@ -82840,30 +82197,17 @@ server=/zoeandjo.co.uk/
 server=/zu1.november-lax.com/
 server=/zulu.r867qq.net/
 server=/zytpirwai.net/
-#</ad-sites>
-# https://securehomes.esat.kuleuven.be/~gacar/persistent/index.html
-#<canvass-fingerprinting-sites>
 server=/cya2.net/
 server=/i.ligatus.com/
 server=/images.revtrax.com/
 server=/shorte.st/
 server=/src.kitcode.net/
-#</canvass-fingerprinting-sites>
-#<evercookies-sites>
 server=/ar.hao123.com/
 server=/irs01.net/
 server=/kiks.yandex.ru/
 server=/y3.ifengimg.com/
-#</evercookies-sites>
-#<yahoo-ad-sites>
-# yahoo banner ads
-# If you have trouble with Yahoo email, you may need to comment out these lines
-#0.0.0.0 us.i1.yimg.com	#Uncomment this to block yahoo images
 server=/in.yimg.com/
 server=/us.a1.yimg.com/
-#</yahoo-ad-sites>
-#<hitbox-sites>
-# hitbox.com web bugs
 server=/adminec1.hitbox.com/
 server=/ads.hitbox.com/
 server=/ai.hitbox.com/
@@ -83155,13 +82499,7 @@ server=/wwd.hitbox.com/
 server=/www.hitbox.com/
 server=/yang.hitbox.com/
 server=/ying.hitbox.com/
-#</hitbox-sites>
-#<extreme-dm-sites>
-# www.extreme-dm.com tracking
 server=/www.extreme-dm.com/
-#</extreme-dm-sites>
-#<realmedia-sites>
-# realmedia.com's Open Ad Stream
 server=/oas-central.east.realmedia.com/
 server=/oas-central.realmedia.com/
 server=/oas.adservingml.com/
@@ -83271,13 +82609,7 @@ server=/oascentral.wkrn.com/
 server=/oascentral.yellowpages.com/
 server=/oascentral.zwire.com/
 server=/oascentralnx.comcast.net/
-#</realmedia-sites>
-#<fastclick-sites>
-# fastclick banner ads
 server=/fastclick.net/
-#</fastclick-sites>
-#<belo-interactive-sites>
-# belo interactive ads
 server=/te.about.com/
 server=/te.advance.net/
 server=/te.ap.org/
@@ -83299,9 +82631,6 @@ server=/te.thestar.ca/
 server=/te.thestar.com/
 server=/te.trb.com/
 server=/te.versiontracker.com/
-#</belo-interactive-sites>
-#<popup-traps>
-# popup traps -- sites that bounce you around or won't let you leave
 server=/incestland.com/
 server=/lesview.com/
 server=/searchforit.com/
@@ -83319,10 +82648,6 @@ server=/www.wowjs.1www.cn/
 server=/www.xxxnations.com/
 server=/www.xxxtoolbar.com/
 server=/www.yourfuckbook.com/
-#</popup-traps>
-#<ecard-scam-sites>
-# malicious e-card -- these sites send out mass quantities of spam
-# and some distribute adware and spyware
 server=/123greetings.com/
 server=/2000greetings.com/
 server=/celebwelove.com/
@@ -83346,13 +82671,6 @@ server=/www.friendgreetings.com/
 server=/www.friendgreetings.net/
 server=/www.laugh-mail.com/
 server=/www.laugh-mail.net/
-#</ecard-scam-sites>
-#<IVW-sites>
-# European network of tracking sites
-#</IVW-sites>
-#<wiki-spam-sites>
-# message board and wiki spam -- these sites are linked in
-# message board spam and are unlikely to be real sites
 server=/21jewelry.com/
 server=/24x7.soliday.org/
 server=/2site.com/
@@ -83837,9 +83155,6 @@ server=/zyban.1.p2l.info/
 server=/zyrtec.1.p2l.info/
 server=/zyrtec.3.p2l.info/
 server=/zyrtec.4.p2l.info/
-#</wiki-spam-sites>
-#<Windows10>
-# Windows 10 reporting domains.
 server=/adnexus.net/
 server=/az361816.vo.msecnd.net/
 server=/az512334.vo.msecnd.net/
@@ -83854,9 +83169,6 @@ server=/schemas.microsoft.akadns.net/
 server=/secure.flashtalking.com/
 server=/statsfe2.ws.microsoft.com/
 server=/wes.df.telemetry.microsoft.com/
-#</Windows10>
-#<shock-sites>
-# For example, to block unpleasant pages, try:
 server=/goatse.cx/
 server=/www.goatse.cx/
 server=/oralse.cx/
@@ -84041,42 +83353,6 @@ server=/www.ypmate.com/
 server=/www.zentastic.com/
 server=/youaresogay.com/
 server=/zentastic.com/
-#</shock-sites>
-# Acknowledgements
-# I'd like to thank the following people for submitting sites, and
-# helping promote the site.
-# Bill Allison, Harj Basi, Lance Russhing, Marshall Drew-Brook,
-#  Leigh Brasington, Scott Terbush, Cary Newfeldt, Kaye, Jeff
-#  Scrivener, Mark Hudson, Matt Bells, T. Kim Nguyen, Lino Demasi,
-#  Marcelo Volmaro, Troy Martin, Donald Kerns, B.Patten-Walsh,
-#  bobeangi, Chris Maniscalco, George Gilbert, Kim Nilsson, zeromus,
-#  Robert Petty, Rob Morrison, Clive Smith, Cecilia Varni, OleKing
-#  Cole, William Jones, Brian Small, Raj Tailor, Richard Heritage,
-#  Alan Harrison, Ordorica, Crimson, Joseph Cianci, sirapacz,
-#  Dvixen, Matthew Craig, Tobias Hessem, Kevin F. Quinn, Thomas
-#  Corthals, Chris McBee, Jaime A. Guerra, Anders Josefson,
-#  Simon Manderson, Spectre Ghost, Darren Tay, Dallas Eschenauer, Cecilia
-#  Varni, Adam P. Cole, George Lefkaditis, grzesiek, Adam Howard, Mike
-#  Bizon, Samuel P. Mallare, Leinweber, Walter Novak, Stephen Genus,
-#  Zube, Johny Provoost, Peter Grafton, Johann Burkard, Magus, Ron Karner,
-#  Fredrik Dahlman, Michele Cybula, Bernard Conlu, Riku B, Twillers,
-#  Shaika-Dzari, Vartkes Goetcherian, Michael McCown, Garth, Richard Nairn,
-#  Exzar Reed, Robert Gauthier, Floyd Wilder, Mark Drissel, Kenny Lyons,
-#  Paul Dunne, Tirath Pannu, Mike Lambert, Dan Kolcun, Daniel Aleksandersen,
-#  Chris Heegard, Miles Golding, Daniel Bisca, Frederic Begou, Charles
-#  Fordyce, Mark Lehrer, Sebastien Nadeau-Jean, Russell Gordon, Alexey
-#  Gopachenko, Stirling Pearson, Alan Segal, Bobin Joseph, Chris Wall, Sean
-#  Flesch, Brent Getz, Jerry Cain, Brian Micek, Lee Hancock, Kay Thiele,
-#  Kwan Ting Chan, Wladimir Labeikovsky, Lino Demasi, Bowie Bailey, Andreas
-#  Marschall, Michael Tompkins, Michael O'Donnell, Jos&eacute; Lucas Teixeira
-#  de Oliveira, M. &Ouml;mer G&ouml;lgeli, and Anthony Gelibert for helping to build
-#  the hosts file.
-# Russell O'Connor for OS/2 information
-# kwadronaut for Windows 7 and Vista information
-# John Mueller and Lawrence H Smith for Mac Pre-OSX information
-# Jesse Baird for the Cisco IOS script
-# End someonewhocares.org
-# Start tiuxo
 server=/100234.advision-adnw.jp/
 server=/100291.adnico.jp/
 server=/100602.advision-adnw.jp/
@@ -85440,8 +84716,6 @@ server=/yuibo.com/
 server=/zemanta.com/
 server=/zenback.jp/
 server=/ziyu.net/
-# End tiuxo
-# Start UncheckyAds
 server=/cdn.appround.biz/
 server=/cdn.download.sweetpacks.com/
 server=/cdn.insta.playbryte.com/
@@ -85450,16 +84724,6 @@ server=/cdn.mypcbackup.com/
 server=/inno.bisrv.com/
 server=/installer.betterinstaller.com/
 server=/nsis.bisrv.com/
-# End UncheckyAds
-# Start URLHaus
-################################################################
-# abuse.ch URLhaus Host file                                   #
-# Last updated: 2026-04-12 23:00:17 (UTC)                      #
-#                                                              #
-# Terms Of Use: https://urlhaus.abuse.ch/api/                  #
-# For questions please contact urlhaus [at] abuse.ch           #
-################################################################
-#
 server=/0022a601.pphost.net/
 server=/111101111.ru/
 server=/123.ywxww.net/
@@ -85895,23 +85159,6 @@ server=/zamilgroups.com/
 server=/zenglobalenerji.com/
 server=/zhigao5191.com/
 server=/zycdjz.com/
-# Number of entries: 436
-# End URLHaus
-# Start yoyo.org
-# Blocklist for use with hosts files to block ads, trackers, and other nasty things
-#
-# For more information about this list, see: https://pgl.yoyo.org/adservers/
-# ----
-# last updated:   Wed, 07 Jan 2026 11:24:10 GMT
-# entries:        3501
-# format:         hosts (hosts -- in hosts file format)
-# credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
-# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0
-# Patreon:        https://patreon.com/blocklist
-# other formats:  https://pgl.yoyo.org/adservers/formats.php
-# policy:         https://pgl.yoyo.org/adservers/policy.php
-#
-# start date:    Fri, 06 Jun 2003 00:00:00
 server=/101com.com/
 server=/180hits.de/
 server=/180searchassistant.com/
@@ -88166,7 +87413,6 @@ server=/synonymoussticks.com/
 server=/systemssummit.com/
 server=/t.bawafx.com/
 server=/t.carta.com/
-# 0.0.0.0 t.co
 server=/t.eloqua.com/
 server=/t.email.superdrug.com/
 server=/t.en25.com/
@@ -88539,10 +87785,3 @@ server=/zmedia.com/
 server=/zonewedgeshaft.com/
 server=/zpu.samsungelectronics.com/
 server=/zqtk.net/
-# End yoyo.org
-# blacklist
-#
-# The contents of this file (containing a listing of additional domains in
-# 'hosts' file format) are appended to the unified hosts file during the
-# update process. For example, uncomment the following line to block
-# 0.0.0.0 example.com

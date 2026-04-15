@@ -1,16 +1,23 @@
+#       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
+#      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
+#     | (___   | |__    | |__      | |   |  \| | | |__    | ' /        | |_) | | |      | |  | | | |      | ' /  | |        | |   | (___      | |
+#      \___ \  |  __|   |  __|     | |   | . ` | |  __|   |  <         |  _ <  | |      | |  | | | |      |  <   | |        | |    \___ \     | |
+#      ____) | | |____  | |       _| |_  | |\  | | |____  | . \        | |_) | | |____  | |__| | | |____  | . \  | |____   _| |_   ____) |    | |
+#     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
+#
+#                                            The best blocklist collection: https://blocklist.sefinek.net
 # Title: hostsVN
-# Last modified: 09 Apr 2026 09:58 UTC+7
-# Version: 2604090958
-# Blocked: 17.608 domains
-# Please report any ads or problems on GitHub
-# Homepage: https://bigdargon.github.io/hostsVN/
-# GitHub: https://github.com/bigdargon/hostsVN
-# Report issues: https://github.com/bigdargon/hostsVN/issues
-# Download: https://github.com/bigdargon/hostsVN/raw/master/hosts
+# Description: N/A
+# Expires: 1 day
+# Count: 17,608 domains
+# Source: https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts
+# License: MIT
+# Release: Dnsmasq
+# Last update: April 15, 2026 at 7:17 PM UTC | 2026-04-15T19:17:02.278Z
 #
-# =====================================================
-#
-# --- Group block ---
+# This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
+# If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
 server=/api-adservices.apple.com/
 server=/books-analytics-events.apple.com/
 server=/notes-analytics-events.apple.com/
@@ -171,7 +178,6 @@ server=/ads.youtube.com/
 server=/ads.google.com/
 server=/analytics-alv.google.com/
 server=/mail-ads.google.com/
-#[google-cn]
 server=/2mdn-cn.net/
 server=/admob-cn.com/
 server=/doubleclick-cn.net/
@@ -199,7 +205,6 @@ server=/adtrafficquality.google/
 server=/ep1.adtrafficquality.google/
 server=/ep2.adtrafficquality.google/
 server=/ep3.adtrafficquality.google/
-#[google]
 server=/syndicatedsearch.goog/
 server=/adsensecustomsearchads.com/
 server=/www.adsensecustomsearchads.com/
@@ -303,7 +308,6 @@ server=/ws-fe.assoc-amazon.com/
 server=/ws-na.assoc-amazon.com/
 server=/ws.assoc-amazon.com/
 server=/www.assoc-amazon.com/
-#[assoc-amazon]
 server=/assoc-amazon.ca/
 server=/assoc-amazon.co.uk/
 server=/assoc-amazon.de/
@@ -427,7 +431,6 @@ server=/metrics.imdb.a2z.com/
 server=/cdn.prod.metrics.imdb.a2z.com/
 server=/clientlogger.marketplace.aws.a2z.com/
 server=/minerva.devices.a2z.com/
-#[tumblr]
 server=/platform.tumblr.com/
 server=/ls.srvcs.tumblr.com/
 server=/px.srvcs.tumblr.com/
@@ -520,7 +523,6 @@ server=/static.affiliate.rakuten.co.jp/
 server=/xml.affiliate.rakuten.co.jp/
 server=/rat.rakuten.co.jp/
 server=/secure.rat.rakuten.co.jp/
-#[facebook]
 server=/an.facebook.com/
 server=/pixel.facebook.com/
 server=/o.update.fbsbx.com/
@@ -539,7 +541,6 @@ server=/ads.twitter.com/
 server=/ads-twitter.com/
 server=/static.ads-twitter.com/
 server=/ads-api.x.com/
-#[spotify]
 server=/adeventtracker.spotify.com/
 server=/adeventtrackermonitoring.spotify.com/
 server=/log.spotify.com/
@@ -547,10 +548,8 @@ server=/log2.spotify.com/
 server=/pixel-static.spotify.com/
 server=/pixel.spotify.com/
 server=/pixels.spotify.com/
-#[viber]
 server=/ads.viber.com/
 server=/ads-d.viber.com/
-#[admob]
 server=/admob.com/
 server=/c.admob.com/
 server=/media.admob.com/
@@ -646,14 +645,12 @@ server=/uac-assets.inmobicdn.net/
 server=/v.g.l.inmobicdn.net/
 server=/website.inmobicdn.net/
 server=/x.g.l.inmobicdn.net/
-#[blueserving]
 server=/blueserving.com/
 server=/a.blueserving.com/
 server=/d.blueserving.com/
 server=/track.blueserving.com/
 server=/dsp.blueserving.com/
 server=/ssp.blueserving.com/
-#[heyzap]
 server=/heyzap.com/
 server=/ads.heyzap.com/
 server=/android.heyzap.com/
@@ -698,7 +695,6 @@ server=/smart.styria-digital.com/
 server=/static.styria-digital.com/
 server=/styria-digital.com/
 server=/www.styria-digital.com/
-#[popads]
 server=/anycast.popads.net/
 server=/banners.popads.net/
 server=/c1.popads.net/
@@ -766,17 +762,14 @@ server=/st-n.ads1-adnow.com/
 server=/st-n.ads2-adnow.com/
 server=/st-n.ads3-adnow.com/
 server=/st-n.ads5-adnow.com/
-#[mobclix]
 server=/ads.mobclix.com/
 server=/mobclix.com/
-#[vserv]
 server=/vserv.mobi/
 server=/a.vserv.mobi/
 server=/admin.vserv.mobi/
 server=/c.vserv.mobi/
 server=/ads.vserv.mobi/
 server=/sf.vserv.mobi/
-#[celtra]
 server=/celtra.com/
 server=/cdn.celtra.com/
 server=/ads.celtra.com/
@@ -806,11 +799,9 @@ server=/stage-img.applovin.com/
 server=/stage-ms.applovin.com/
 server=/stage-pdn.applovin.com/
 server=/vid.applovin.com/
-#[mobpartner]
 server=/mobpartner.mobi/
 server=/go.mobpartner.mobi/
 server=/r.mobpartner.mobi/
-#[mydas]
 server=/mydas.mobi/
 server=/cvt.mydas.mobi/
 server=/lp.mydas.mobi/
@@ -820,11 +811,9 @@ server=/aio.lp.mydas.mobi/
 server=/lp.mp.mydas.mobi/
 server=/media.mydas.mobi/
 server=/ads.mp.mydas.mobi/
-#[chitika]
 server=/chitika.com/
 server=/labs.chitika.com/
 server=/research.chitika.com/
-#[conversantmedia]
 server=/ams-ae.conversantmedia.com/
 server=/tab-obj.conversantmedia.com/
 server=/go.conversantmedia.com/
@@ -838,7 +827,6 @@ server=/devjira-ext.conversantmedia.com/
 server=/vpn-europe.conversantmedia.com/
 server=/vpn-us-west.conversantmedia.com/
 server=/conversantmedia.com/
-#[exponential]
 server=/a.deepdive.exponential.com/
 server=/app.exponential.com/
 server=/aubrandsummit.exponential.com/
@@ -885,7 +873,6 @@ server=/webconf.exponential.com/
 server=/workday.exponential.com/
 server=/workdaylab.exponential.com/
 server=/www.exponential.com/
-#[propellerads]
 server=/ad.propellerads.com/
 server=/offers.propellerads.com/
 server=/partners.propellerads.com/
@@ -893,7 +880,6 @@ server=/promo.propellerads.com/
 server=/propellerads.com/
 server=/publishers.propellerads.com/
 server=/tracking.propellerads.com/
-#[yllix]
 server=/yllix.com/
 server=/pub.yllix.com/
 server=/www.yllix.com/
@@ -904,7 +890,6 @@ server=/banners.yllix.com/
 server=/click2.yllix.com/
 server=/click1.yllix.com/
 server=/click.yllix.com/
-#[lifestreet]
 server=/lifestreet.com/
 server=/www.lifestreet.com/
 server=/swift.lifestreet.com/
@@ -1155,7 +1140,6 @@ server=/data-ipv6.flurry.com/
 server=/data.flurry.com/
 server=/gw.flurry.com/
 server=/www.flurry.com/
-#[appnext]
 server=/admin.appnext.com/
 server=/ads.appnext.com/
 server=/api.appnext.com/
@@ -1544,7 +1528,6 @@ server=/reports.nexage.com/
 server=/sjc.ads0.nexage.com/
 server=/tangerine.nexage.com/
 server=/www.nexage.com/
-#[pushwoosh]
 server=/ha.pushwoosh.com/
 server=/ha-api.pushwoosh.com/
 server=/dbs.pushwoosh.com/
@@ -1639,7 +1622,6 @@ server=/api-us.appodealx.com/
 server=/api.appodealx.com/
 server=/appodealx.com/
 server=/www.appodealx.com/
-#[chartboost]
 server=/a.chartboost.com/
 server=/a2.chartboost.com/
 server=/analytics.chartboost.com/
@@ -1661,13 +1643,11 @@ server=/v2.chartboost.com/
 server=/v4.chartboost.com/
 server=/v5.chartboost.com/
 server=/www.chartboost.com/
-#[adtrue]
 server=/exchange.adtrue.com/
 server=/cdn.adtrue.com/
 server=/adtrue.com/
 server=/track.adtrue.com/
 server=/publishers.adtrue.com/
-#[amung]
 server=/amung.us/
 server=/assets.amung.us/
 server=/graphs.amung.us/
@@ -1688,7 +1668,6 @@ server=/usage.trackjs.com/
 server=/www.trackjs.com/
 server=/d2zah9y47r7bi2.cloudfront.net/
 server=/dl1d2m8ri9v3j.cloudfront.net/
-#[advertnative]
 server=/advertnative.com/
 server=/click.advertnative.com/
 server=/worker1.advertnative.com/
@@ -1712,7 +1691,6 @@ server=/stripewh.getadmiral.com/
 server=/dev.getadmiral.com/
 server=/staging.getadmiral.com/
 server=/getadmiral.typeform.com/
-#[avazutracking]
 server=/click-mdsp.avazutracking.net/
 server=/apx.trck.avazutracking.net/
 server=/apx.avazutracking.net/
@@ -1986,7 +1964,6 @@ server=/crwdcntrl.net/
 server=/id.crwdcntrl.net/
 server=/sync.crwdcntrl.net/
 server=/tags.crwdcntrl.net/
-#[teads]
 server=/a.teads.tv/
 server=/cdn.teads.tv/
 server=/cdn2.teads.tv/
@@ -2003,7 +1980,6 @@ server=/sync.teads.tv/
 server=/t.teads.tv/
 server=/teads.tv/
 server=/www.teads.tv/
-#[flashtalking]
 server=/a.flashtalking.com/
 server=/cdn.flashtalking.com/
 server=/d9.flashtalking.com/
@@ -2092,13 +2068,11 @@ server=/media.innity.net/
 server=/ssl-avd.innity.net/
 server=/ssl-cdn.media.innity.net/
 server=/vcdn.media.innity.net/
-#[woopra]
 server=/woopra.com/
 server=/app.woopra.com/
 server=/cdn-origin.woopra.com/
 server=/www.woopra.com/
 server=/static.woopra.com/
-#[trafficjunky]
 server=/ads.trafficjunky.net/
 server=/c-staging.trafficjunky.net/
 server=/ctrack.trafficjunky.net/
@@ -2118,7 +2092,6 @@ server=/viamichelin.ads.trafficjunky.net/
 server=/viamichelin.media.trafficjunky.net/
 server=/vz-cdn.trafficjunky.net/
 server=/www.trafficjunky.net/
-#[engageya]
 server=/engageya.com/
 server=/ext1-api.engageya.com/
 server=/ecs1.engageya.com/
@@ -2126,7 +2099,6 @@ server=/ext1.engageya.com/
 server=/recs.engageya.com/
 server=/platform.engageya.com/
 server=/widget.engageya.com/
-#[advertica]
 server=/advertica.ae/
 server=/www.advertica.ae/
 server=/advertica.eu/
@@ -2137,7 +2109,6 @@ server=/aff-a.advertica-cdn.com/
 server=/af-web.advertica-cdn.com/
 server=/aw.advertica-cdn.com/
 server=/web.advertica-cdn.com/
-#[adview]
 server=/adview.cn/
 server=/open.adview.cn/
 server=/adfill.adview.cn/
@@ -2178,7 +2149,6 @@ server=/pnytimes.chartbeat.net/
 server=/psankei.chartbeat.net/
 server=/ptimeinc.chartbeat.net/
 server=/survey.chartbeat.net/
-#[clickagy]
 server=/aorta.clickagy.com/
 server=/clickagy.com/
 server=/i.clickagy.com/
@@ -2221,7 +2191,6 @@ server=/ads.genieessp.com/
 server=/gi-js.genieessp.com/
 server=/js.genieessp.com/
 server=/static.genieessp.com/
-#[2mdnsys]
 server=/2mdnsys.com/
 server=/ads.2mdnsys.com/
 server=/static.2mdnsys.com/
@@ -2268,7 +2237,6 @@ server=/vulcan.branch.io/
 server=/vulcan2.branch.io/
 server=/vulcan3.branch.io/
 server=/www.branch.io/
-#[ioam]
 server=/ioam.de/
 server=/ads.ioam.de/
 server=/config.ioam.de/
@@ -2376,7 +2344,6 @@ server=/api.eu.amplitude.com/
 server=/api.lab.amplitude.com/
 server=/api2.amplitude.com/
 server=/cdn.amplitude.com/
-#[voicefive]
 server=/ar.voicefive.com/
 server=/b.voicefive.com/
 server=/voicefive.com/
@@ -2396,7 +2363,6 @@ server=/dsp.logly.co.jp/
 server=/l.logly.co.jp/
 server=/sync.logly.co.jp/
 server=/www.logly.co.jp/
-#[tynt]
 server=/ac.tynt.com/
 server=/api.tynt.com/
 server=/asa.tynt.com/
@@ -2532,7 +2498,6 @@ server=/sync.adaptv.advertising.com/
 server=/uac.advertising.com/
 server=/video.adaptv.advertising.com/
 server=/www.advertising.com/
-#[moatads]
 server=/adgrx.moatads.com/
 server=/afs.moatads.com/
 server=/apx.moatads.com/
@@ -2627,7 +2592,6 @@ server=/static.media.net/
 server=/whitelabel.media.net/
 server=/www.media.net/
 server=/yahoo.media.net/
-#[sonobi]
 server=/adobe.sync.go.sonobi.com/
 server=/ads.sonobi.com/
 server=/ams-1.go.sonobi.com/
@@ -2678,7 +2642,6 @@ server=/consent.linksynergy.com/
 server=/linksynergy.com/
 server=/mproxy.banner.linksynergy.com/
 server=/track.linksynergy.com/
-#[cdnwidget]
 server=/cdnwidget.com/
 server=/ids.cdnwidget.com/
 server=/pixel.cdnwidget.com/
@@ -2757,7 +2720,6 @@ server=/c.betrad.com/
 server=/cdn.betrad.com/
 server=/l.betrad.com/
 server=/www.betrad.com/
-#[dpmsrv]
 server=/a.dpmsrv.com/
 server=/b.dpmsrv.com/
 server=/dpmsrv.com/
@@ -2766,7 +2728,6 @@ server=/s.dpmsrv.com/
 server=/fidelity-media.com/
 server=/stats.fidelity-media.com/
 server=/x.fidelity-media.com/
-#[getclicky]
 server=/api.getclicky.com/
 server=/cdn.getclicky.com/
 server=/getclicky.com/
@@ -2838,7 +2799,6 @@ server=/delivery.mediawayss.com/
 server=/mediawayss.com/
 server=/stage.ad.mediawayss.com/
 server=/vp.cdn.mediawayss.com/
-#[superfastmediation]
 server=/superfastmediation.com/
 server=/monitor.superfastmediation.com/
 server=/exchange.superfastmediation.com/
@@ -2855,7 +2815,6 @@ server=/pushapi.localytics.com/
 server=/sdk-assets.localytics.com/
 server=/truenorth.localytics.com/
 server=/www.localytics.com/
-#[clevertap]
 server=/api.clevertap.com/
 server=/campaigns.clevertap.com/
 server=/clevertap.com/
@@ -2868,7 +2827,6 @@ server=/eu1.clevertap-prod.com/
 server=/in1.clevertap-prod.com/
 server=/sg1.clevertap-prod.com/
 server=/us1.clevertap-prod.com/
-#[freshmarketer]
 server=/app.freshmarketer.com/
 server=/cdn.freshmarketer.com/
 server=/changelog.freshmarketer.com/
@@ -2876,7 +2834,6 @@ server=/extension.freshmarketer.com/
 server=/freshmarketer.com/
 server=/toolbar.freshmarketer.com/
 server=/www.freshmarketer.com/
-#[clksite]
 server=/clksite.com/
 server=/p117448.clksite.com/
 server=/p128902.clksite.com/
@@ -3065,7 +3022,6 @@ server=/serve.revcontent.com/
 server=/trends.revcontent.com/
 server=/video.revcontent.com/
 server=/www.revcontent.com/
-#[servedby-buysellads]
 server=/assets.servedby-buysellads.com/
 server=/m.servedby-buysellads.com/
 server=/s.servedby-buysellads.com/
@@ -3079,7 +3035,6 @@ server=/s3.buysellads.com/
 server=/srv.buysellads.com/
 server=/stats.buysellads.com/
 server=/www.buysellads.com/
-#[neustar]
 server=/admin.wpm.neustar.biz/
 server=/alert.wpm.neustar.biz/
 server=/cdn.wpm.neustar.biz/
@@ -3143,7 +3098,6 @@ server=/scdn.cxense.com/
 server=/scomcluster.cxense.com/
 server=/sp1cluster.cxense.com/
 server=/tsrid.cxense.com/
-#[onscroll]
 server=/cdn.onscroll.com/
 server=/impl.onscroll.com/
 server=/impl.us.onscroll.com/
@@ -3175,14 +3129,12 @@ server=/vast-events-staging.inner-active.mobi/
 server=/video.inner-active.mobi/
 server=/wv.inner-active.mobi/
 server=/www.inner-active.mobi/
-#[adthor]
 server=/adthor.com/
 server=/api.adthor.com/
 server=/image.adthor.com/
 server=/logger.adthor.com/
 server=/static.adthor.com/
 server=/v.adthor.com/
-#[appadhoc]
 server=/appadhoc.com/
 server=/cdn-api.appadhoc.com/
 server=/count.appadhoc.com/
@@ -3213,7 +3165,6 @@ server=/exp.360in.com/
 server=/hotpot.360in.com/
 server=/i.360in.com/
 server=/member.360in.com/
-#[reklamstore]
 server=/ad.reklamstore.com/
 server=/adserver.reklamstore.com/
 server=/adserver2.reklamstore.com/
@@ -3222,7 +3173,6 @@ server=/pixel.reklamstore.com/
 server=/img.reklamstore.com/
 server=/static.addtoany.com/
 server=/stats.addtoany.com/
-#[staticstuff]
 server=/cdn.staticstuff.net/
 server=/hello.staticstuff.net/
 server=/spy.staticstuff.net/
@@ -3247,7 +3197,6 @@ server=/media.content.ad/
 server=/partners.content.ad/
 server=/rest.content.ad/
 server=/www.content.ad/
-#[adnetworktech]
 server=/adnetworktech.com/
 server=/www.adnetworktech.com/
 server=/cpanel.adnetworktech.com/
@@ -3274,7 +3223,6 @@ server=/s2.nend.net/
 server=/v1.nend.net/
 server=/vdapp.nend.net/
 server=/www.nend.net/
-#[i-mobile]
 server=/i-mobile.co.jp/
 server=/advertiser.i-mobile.co.jp/
 server=/aff-advertiser.i-mobile.co.jp/
@@ -3699,7 +3647,6 @@ server=/zucks.net/
 server=/adspirit.de/
 server=/askfm.adspirit.de/
 server=/cdn.adspirit.de/
-#[propellerclick]
 server=/cnative.propellerclick.com/
 server=/native.propellerclick.com/
 server=/propellerclick.com/
@@ -8710,7 +8657,6 @@ server=/browser-intake-ap1-datadoghq.com/
 server=/browser-intake-ap2-datadoghq.com/
 server=/browser-intake-us3-datadoghq.com/
 server=/browser-intake-us5-datadoghq.com/
-#[datadoghq]
 server=/browser-intake-datadoghq.eu/
 server=/csp-report.browser-intake-datadoghq.eu/
 server=/logs.browser-intake-datadoghq.eu/
@@ -8802,7 +8748,6 @@ server=/www.adwmg.com/
 server=/protagcdn.com/
 server=/x.protagcdn.com/
 server=/y.protagcdn.com/
-#[line]
 server=/crs-event.line.me/
 server=/crs-hometab-event.line.me/
 server=/tr.line.me/
@@ -10275,7 +10220,6 @@ server=/a.ads.rmbl.ws/
 server=/d1.ads.rmbl.ws/
 server=/d2.ads.rmbl.ws/
 server=/d4.ads.rmbl.ws/
-#[adjust]
 server=/analytics.adjust.cn/
 server=/analytics.adjust.com/
 server=/analytics.adjust.io/
@@ -10287,7 +10231,6 @@ server=/app.adjust.com/
 server=/app.adjust.io/
 server=/app.adjust.net.in/
 server=/app.adjust.world/
-#[bright]
 server=/bright-sdk.com/
 server=/brightdata.com/
 server=/brightdata.de/
@@ -10700,8 +10643,6 @@ server=/cdn.optoutadvertising.com/
 server=/proxy.optoutadvertising.com/
 server=/ster.optoutadvertising.com/
 server=/www.optoutadvertising.com/
-# --- GroupVN block ---
-#[adtimaserver]
 server=/adtimaserver.vn/
 server=/api.adtimaserver.vn/
 server=/log.adtimaserver.vn/
@@ -10713,7 +10654,6 @@ server=/static2.adtimaserver.vn/
 server=/stream.adtimaserver.vn/
 server=/stream.org.adtimaserver.vn/
 server=/web.api.adtimaserver.vn/
-#[eclick]
 server=/admin.iad.eclick.vn/
 server=/analytics.eclick.vn/
 server=/c.d.eclick.vn/
@@ -10796,7 +10736,6 @@ server=/admicro1.vcmedia.vn/
 server=/admicro4.vcmedia.vn/
 server=/admicro5.vcmedia.vn/
 server=/admicro6.vcmedia.vn/
-#[novanet]
 server=/admin.novanet.vn/
 server=/ads.novanet.vn/
 server=/analytics.novanet.vn/
@@ -10816,7 +10755,6 @@ server=/rnd.novanet.vn/
 server=/script.novanet.vn/
 server=/static.novanet.vn/
 server=/www.novanet.vn/
-#[novaonads]
 server=/novaonads.com/
 server=/www.novaonads.com/
 server=/novaon.vn/
@@ -10878,7 +10816,6 @@ server=/pub.lavanetwork.net/
 server=/revive.lavanetwork.net/
 server=/video.lavanetwork.net/
 server=/www.lavanetwork.net/
-#[polyad]
 server=/core.polyad.net/
 server=/cp.polyad.net/
 server=/cpx.polyad.net/
@@ -11066,7 +11003,6 @@ server=/stc.interactive.brand.zing.vn/
 server=/log.zingmp3.vn/
 server=/za.zingmp3.vn/
 server=/zlog.zingmp3.vn/
-#[zingnews]
 server=/log.zingnews.vn/
 server=/log.znews.vn/
 server=/trackingbr.zingplay.com/
@@ -11165,7 +11101,6 @@ server=/za.zapps.vn/
 server=/zplayer.trk.zapps.vn/
 server=/analytics.zapps.me/
 server=/tech.zapps.me/
-#[yomedia]
 server=/analytics.yomedia.vn/
 server=/delivery.yomedia.vn/
 server=/demo.yomedia.vn/
@@ -11176,7 +11111,6 @@ server=/sslstatic.yomedia.vn/
 server=/static.yomedia.vn/
 server=/tracking.yomedia.vn/
 server=/yomedia.vn/
-#[pinetech]
 server=/demo.pinetech.vn/
 server=/pinetech.vn/
 server=/www.pinetech.vn/
@@ -11187,7 +11121,6 @@ server=/tool.cleverads.vn/
 server=/widget.cleverads.vn/
 server=/wifiads.cleverads.vn/
 server=/www.cleverads.vn/
-#[klick]
 server=/adv.klick.vn/
 server=/demo.klick.vn/
 server=/euro.klick.vn/
@@ -11283,7 +11216,6 @@ server=/www.cityads.com/
 server=/cityadstrack.com/
 server=/p.cityadstrack.com/
 server=/stats.cityadstrack.com/
-#[adsota]
 server=/ads.appota.com/
 server=/adsota.com/
 server=/agency.adsota.com/
@@ -11401,7 +11333,6 @@ server=/apis.adbro.me/
 server=/cdn.adbro.me/
 server=/portal.adbro.me/
 server=/tag.adbro.me/
-#[adasiaholdings]
 server=/adasiaholdings.com/
 server=/adnetwork.adasiaholdings.com/
 server=/advertisers.adasiaholdings.com/
@@ -11410,7 +11341,6 @@ server=/media.adasiaholdings.com/
 server=/pixel.adasiaholdings.com/
 server=/publishers.adasiaholdings.com/
 server=/www.adasiaholdings.com/
-#[adsplay]
 server=/admin.adsplay.net/
 server=/adsplay.net/
 server=/d.adsplay.net/
@@ -11948,11 +11878,9 @@ server=/log.tv360.vn/
 server=/pubads-wiinvent.tv360.vn/
 server=/log-collector.shopee.vn/
 server=/userstats.shopee.vn/
-#[moneyoyo]
 server=/api.moneyoyo.org/
 server=/feed.moneyoyo.org/
 server=/sdk.moneyoyo.com/
-# --- Block adsVN ---
 server=/12signup.com/
 server=/ad-admin.vnay.vn/
 server=/ad-ndtv.3s.com.vn/
@@ -12164,7 +12092,6 @@ server=/www.vietdorje.com/
 server=/www.vipads.live/
 server=/xads.joboko.com/
 server=/xmadsapi.joboko.com/
-# --- Block trackingVN ---
 server=/360.anatic.net/
 server=/a.ladipage.com/
 server=/a.vtvdigital.vn/
@@ -12436,7 +12363,6 @@ server=/za.agiay.vn/
 server=/za.baomoi.com/
 server=/zigzag.vn/
 server=/ztrck.me/
-# --- Block popupVN ---
 server=/b8zk2cl6bjs92j7ah8k2kzi92jf8ck9vj7v0z5bv2v3cj2azlp0c8z5vb7dt.me/
 server=/ch6p2aj2gh8zy5cm0px9ow7aj3tmzhtk6lzx2ch9xj7gx2jq1cj8v4jklz6b.me/
 server=/h6o2z0pwx5ja7dwxn0wx4fhv7mp0qoladm8vj6do4h1c6gja8evrn6g5fixk.me/
@@ -12450,7 +12376,6 @@ server=/v0h8c6kcd8wd9lzg2mtlo0gj7cju82latost2c8qjs2gj6yti8zhs5kltx7d.me/
 server=/wfgo5vjs6cp0cdjx7bms3cn9lof2p01xho0pxgm1fd2fah3j5d8qd7x1d6eu.me/
 server=/y8z5nv0slz06vj2k5vh6akv7dj2c8aj62zhj2v7zj8vp0zq7fj2gf4mv6zsb.me/
 server=/z8g0wlq5p0f6jg3k7eh2kyd58hjeskx0w9g5eu7q3m5hyq8l0xwofj3ap2nv.me/
-# --- Block other adsVN ---
 server=/0n.click/
 server=/0x01n2ptpuz3.com/
 server=/0xon2uo9s.com/
@@ -16937,7 +16862,6 @@ server=/zunsoach.com/
 server=/zvetokr2hr8pcng09.com/
 server=/zwnoeqzsuz.com/
 server=/zxc.world/
-# --- Block other trackingVN ---
 server=/2xclick.ru/
 server=/3gl.net/
 server=/a.apkpure.com/
@@ -17667,7 +17591,6 @@ server=/ymtracking.com/
 server=/youmi.net/
 server=/youthfire.com/
 server=/zz.bdstatic.com/
-# --- Extra block ---
 server=/api.appsflyer.com/
 server=/api2.appsflyer.com/
 server=/attr.appsflyer.com/
@@ -17703,4 +17626,3 @@ server=/inapps.appsflyersdk.com/
 server=/launches.appsflyersdk.com/
 server=/register.appsflyersdk.com/
 server=/skadsdk.appsflyersdk.com/
-# CNAME Popup

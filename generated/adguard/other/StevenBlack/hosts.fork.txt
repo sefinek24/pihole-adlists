@@ -1,23 +1,24 @@
-! Title: StevenBlack/hosts
+!       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
+!      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
+!     | (___   | |__    | |__      | |   |  \| | | |__    | ' /        | |_) | | |      | |  | | | |      | ' /  | |        | |   | (___      | |
+!      \___ \  |  __|   |  __|     | |   | . ` | |  __|   |  <         |  _ <  | |      | |  | | | |      |  <   | |        | |    \___ \     | |
+!      ____) | | |____  | |       _| |_  | |\  | | |____  | . \        | |_) | | |____  | |__| | | |____  | . \  | |____   _| |_   ____) |    | |
+!     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 !
-! This hosts file is a merged collection of hosts from reputable sources,
-! with a dash of crowd sourcing via GitHub
+!                                            The best blocklist collection: https://blocklist.sefinek.net
+! Title: StevenBlack Unified Hosts
+! Description: Unified hosts file with base extensions, combining multiple reputable blocklists.
+! Expires: 1 day
+! Count: 87,767 domains
+! Source: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+! License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+! Release: AdGuard [adguard.com]
+! Last update: April 15, 2026 at 7:16 PM UTC | 2026-04-15T19:16:58.391Z
 !
-! Date: 12 April 2026 23:10:56 (UTC)
-! Number of unique domains: 87,767
-!
-! Fetch the latest version of this file: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-! Project home page: https://github.com/StevenBlack/hosts
-! Project releases: https://github.com/StevenBlack/hosts/releases
-!
-! ===============================================================
+! This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
+! If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
+! -------------------------------------------------------------------------------------------------------------------------------------------------------
 ||localhost.localdomain^
-! Custom host records are listed here.
-! End of custom host records.
-! Start StevenBlack
-!=====================================
-! Title: Hosts contributed by Steven Black
-! http://stevenblack.com
 ||ad-assets.futurecdn.net^
 ||ck.getcookiestxt.com^
 ||eu1.clevertap-prod.com^
@@ -1612,7 +1613,6 @@
 ||zvatrswtsrw.ml^
 ||alibaba.zzux.com^
 ||browserservice.zzux.com^
-! Added January 23, 2021
 ||www.skinstrip.net^
 ||creative.skinstrip.net^
 ||go.alxbgo.com^
@@ -1695,7 +1695,6 @@
 ||www.livejasmine.us^
 ||www.mylivejasmin.org^
 ||www.new.livejasmin.com^
-! Added January 27, 2021
 ||ads.adviad.com^
 ||ads2.adviad.com^
 ||ads3.adviad.com^
@@ -1709,14 +1708,11 @@
 ||ssp.adviad.com^
 ||report.adviad.com^
 ||cdnuz.adviad.com^
-! Added February 5, 2021
 ||viglink.com^
 ||live.rezync.com^
 ||netc.sfr.fr^
 ||tag.clrstm.com^
-! Added February 9, 2021
 ||vkcache.com^
-! Added February 26, 2021
 ||b174.s240.meetrics.net^
 ||b95.s79.research.de.com^
 ||bid.sxp.smartclip.net^
@@ -1733,14 +1729,11 @@
 ||s79.mxcdn.net^
 ||www.lacmp.net^
 ||zipservice.adalliance.io^
-! Added February 28, 2021
 ||github.com.cnpmjs.org^
-! Added March 15, 2021
 ||facilitategovernor.com^
 ||mvideo.facilitategovernor.com^
 ||ns1.facilitategovernor.com^
 ||www.facilitategovernor.com^
-! Added April 2, 2021
 ||p.vtracy.de^
 ||www.asadcdn.com^
 ||adstax-cdn.adrtx.net^
@@ -1772,14 +1765,11 @@
 ||traffic.emsservice.de^
 ||static.emsservice.de^
 ||te.technical-service.net^
-! Added April 29, 2021
 ||news.thaprior.net^
 ||blog.eduelects.com^
 ||cdn.mirror-codes.net^
 ||status.sublineover.net^
-! Added May 4, 2021
 ||docs.pipenv.org^
-! Added May 10, 2021  See discussion in Issue https://github.com/StevenBlack/hosts/pull/1643
 ||a9v8.cn^
 ||config.unityads.unitychina.cn^
 ||cu-cn-north00001.gala.convection.cn^
@@ -1795,9 +1785,7 @@
 ||rp.hpplay.cn^
 ||safeurl.maxthon.cn^
 ||ssdkauth.hpplay.cn^
-! Added May 12, 2021
 ||urgente.eu^
-! Added May 22, 2021
 ||localbestdating1.com^
 ||sylviagreen.club^
 ||xvtelink.com^
@@ -1807,7 +1795,6 @@
 ||track.venatusmedia.com^
 ||amptrack.dailymail.co.uk^
 ||mailmetromedia.amp.permutive.com^
-! Added May 31, 2021
 ||mc.speakol.com^
 ||rd.speakol.com^
 ||inline.speakol.com^
@@ -1819,7 +1806,6 @@
 ||plugins.speakol.com^
 ||publishers.speakol.com^
 ||dev.publishers.speakol.com^
-! Added June 16, 2021
 ||www.gmial.com^
 ||gmial.com^
 ||assets.vlitag.com^
@@ -1828,7 +1814,6 @@
 ||static.vliplatform.com^
 ||c.hrzn-nxt.com^
 ||s.clcktrax.com^
-! Added June 17, 2021
 ||ssl.googleanalytics.com^
 ||click.googleanalytics.com^
 ||alt2.googleanalytics.com^
@@ -1837,15 +1822,10 @@
 ||admobclick.com^
 ||www.admobclick.com^
 ||pixel.admobclick.com^
-! Added June 22, 2021
 ||coinjoin.io^
-! Added June 27, 2021
 ||dealabs.digidip.net^
-! Added June 28, 2021
 ||whynotwin11.com^
 ||www.whynotwin11.com^
-! Added June 30, 2021
-! Chase Bank Scam. See #1699
 ||www.secure-verify-info.ddns.info^
 ||secure-verify-info.ddns.info^
 ||www.secure-verify-account.ddns.info^
@@ -1872,13 +1852,11 @@
 ||security-update.qhigh.com^
 ||www.seure-update.fartit.com^
 ||seure-update.fartit.com^
-! Added July 29, 2021 See https://github.com/StevenBlack/hosts/issues/1721
 ||www.updatecatalogs.com^
 ||microsoft.updatecatalogs.com^
 ||webmail.mmtimes.net^
 ||myanmar.flymna.net^
 ||new.mmtimes.org^
-! Added August 2, 2021 See https://github.com/StevenBlack/hosts/issues/1722
 ||ackng.com^
 ||bb3u9.com^
 ||ttr3p.com^
@@ -1895,29 +1873,19 @@
 ||zer9g.com^
 ||b69kq.com^
 ||down.sqlnetcat.com^
-! Added August 8, 2021 see https://github.com/StevenBlack/hosts/issues/1725
 ||gjapplog.ucweb.com^
 ||logssug.ucweb.com^
 ||attr.union.ucweb.com^
-! Added August 11, 2021
 ||www.luckycrush.live^
-! Added September 17, 2021
 ||mmsotk.com^
-! Added September 24, 2021 see https://github.com/StevenBlack/hosts/issues/1764
 ||discord-app.net^
-! Added October 2, 2021 see https://github.com/StevenBlack/hosts/issues/1770
 ||sk.mplmnt.io^
-! Added October 17, 2021 see https://github.com/StevenBlack/hosts/issues/1752
 ||org-upgrade.com^
 ||www.org-upgrade.com^
-! Added October 19, 2021
 ||www.abc.co.bz^
-! Added October 24, 2021 See https://github.com/StevenBlack/hosts/issues/1789
 ||xfnl-spspostit-online.preview-domain.com^
 ||ibancalculator-com.preview-domain.com^
-! added November 29, 2021
 ||hiperdex.com^
-! added December 13, 2021 See https://github.com/StevenBlack/hosts/issues/1832
 ||cloudshare.nocoshop.ru^
 ||easyfiles.nocoshop.ru^
 ||filedrive.nocoshop.ru^
@@ -1966,10 +1934,8 @@
 ||samuel-beckett.site^
 ||tahmil-kutib-pdf.info^
 ||uberupload.online^
-! Added December 25, 2021 see https://github.com/StevenBlack/hosts/issues/1840
 ||pokemoney.biz^
 ||pokemoney.shop^
-! added December 30, 2021 see https://github.com/StevenBlack/hosts/issues/1849
 ||c752sa.k9oeb2eg2ehpgc8fnhkeyyyyyn.domsearch.net^
 ||domsearch.net^
 ||k9oeb2eg2ehpgc8fnhkeyyyyyn.domsearch.net^
@@ -1977,63 +1943,43 @@
 ||vor.ngo^
 ||vor.ong^
 ||www.domsearch.net^
-! Added December 31, 2021
 ||xxsweety.com^
 ||manualdrain.com^
-! Added January 2, 2022
 ||mypornsnap.top^
-! Added January 11, 2022
 ||asecv.xyz^
-! Added January 12, 2022
 ||loopybatl.site^
 ||technoob.info^
 ||thefappeningpics.com^
 ||hotzxgirl.com^
-! Added January 13, 2022
 ||roksa.sx^
-! Added January 30, 2022
 ||waaw.to^
-! Added February 5, 2022
 ||zmyslowyklub.com^
 ||flndmyiove.com^
-! Added February 17, 2022
 ||yourbestwoman.life^
-! Added February 28, 2022
 ||sweetchicks.net^
 ||rbgbq.sweetchicks.net^
 ||fuckmebook.com^
-! Added May 20, 2022
 ||tracking.overwolf.com^
 ||analyticsnew.overwolf.com^
 ||raf.overwolf.com^
-! Added June 21, 2022
 ||speeddials.opera.com^
 ||merchandise.opera-api.com^
-! added June 25, 2022
 ||analytics.binaryfortress.com^
-! added July 10, 2022
 ||seductivegirls.cyou^
 ||amusingdates.net^
 ||honey-date4u.life^
-! Added August 9, 2022
 ||shopsplumbing.com^
-! Added August 12, 2022
 ||nl-crypto.com^
 ||evri-package-gb.web.app^
-! Added August 13, 2022
 ||telemetry.acronis.com^
-! Added August 17, 2022
 ||mlbcash.com^
 ||easy-extra-income-ways-makes-you-rich.store^
 ||www.easy-extra-income-ways-makes-you-rich.store^
-! Added August 20, 2022
 ||arizona-golf-vacations.com^
-! Added August 25, 2022
 ||prd-lender.cdp.internal.unity3d.com^
 ||config.uca.cloud.unity3d.com^
 ||didna-d.openx.net^
 ||c2shb.ssp.yahoo.com^
-! Added August 26, 2022
 ||anmooq.deiicatedate.net^
 ||www.pornsite123.com^
 ||pornsite123.com^
@@ -2041,50 +1987,36 @@
 ||xxxbullet.com^
 ||www.packsdechicas.online^
 ||packsdechicas.online^
-! Added August 27, 2022
 ||ip-info.ff.avast.com^
 ||ipm-provider.ff.avast.com^
 ||ipmcdn.avast.com^
 ||ncc.avast.com^
 ||shepherd.ff.avast.com^
 ||clicktut.site^
-! Added Auguest 30, 2022
 ||secureaddisplay.com^
 ||wiztube.xyz^
-! Added September 2, 2022
 ||yourgodess.com^
 ||www.quinni.cyou^
 ||quinni.cyou^
 ||www.alenai.cyou^
 ||alenai.cyou^
-! Added September 5, 2022
 ||telewizja-online.net^
 ||bramka.org^
 ||ustreamix.su^
 ||inatv.pl^
-! Added September 7, 2022
 ||tracking.minitool.com^
-! Added September 9, 2022
 ||pasiekazlotoklos.pl^
-! Added September 12, 2022
 ||eu-commercialb.com^
-! Added September 29, 2022
 ||gratlfyingdates.net^
 ||www.gratlfyingdates.net^
-! Added October 15, 2022
 ||filmsexeporno.com^
-! Added October 24, 2022
 ||supdqwepu.com^
 ||vawardquac.com^
 ||lemmingro.com^
-! Added October 27, 2022
 ||flashrewards.co^
-! Added November 13, 2022
 ||info-eastflirts.com^
 ||www.info-eastflirts.com^
-! Added November 20, 2022
 ||reporting-api.gannettinnovation.com^
-! Added November 26, 2022
 ||1041598d1a.da1a0e7bb3.com^
 ||12112336.pix-cdn.org^
 ||1d3c8a1eaa.faeaeeaafa.com^
@@ -2125,9 +2057,7 @@
 ||www.gaming-adult.com^
 ||mediasama.com^
 ||danbo.org^
-! Added November 27, 2022
 ||crmt.livejasmin.com^
-! Added December 4, 2022. Malware domains using TXT record to transfer powershell scripts.
 ||wmail-endpoint.com^
 ||wmail-blog.com^
 ||wmail-chat.com^
@@ -2178,7 +2108,6 @@
 ||ahoravideo-chat.xyz^
 ||ahoravideo-cdn.xyz^
 ||ahoravideo-schnellvpn.xyz^
-! Added December 4, 2022
 ||cesareurope.com^
 ||cws-hotstar.conviva.com^
 ||events-analytics.hotstar.com^
@@ -2187,10 +2116,8 @@
 ||settings-analytics.hotstar.com^
 ||videoads.hotstar.com^
 ||vs.hotstar.com^
-! Added December 11, 2022
 ||analytics.shein.com^
 ||analytics.shein.co.uk^
-! Added December 29, 2022
 ||8a97175fd63e1d3a69f36979b9b34470.safeframe.googlesyndication.com^
 ||c2shb.pubgw.yahoo.com^
 ||cdn.confiant-integrations.net^
@@ -2203,22 +2130,18 @@
 ||freestar-io.videoplayerhub.com^
 ||oa.openxcdn.net^
 ||s2s.t13.io^
-! Added January 11, 2023
 ||btc8886.com^
 ||en.xachinaproject.fun^
-! Added January 12, 2023
 ||antihohol.cloud^
 ||hosteagle.club^
 ||anz-shield-secure.com^
 ||alert-bendigobank.com^
 ||linkt-transport.top^
 ||linkt-help.top^
-! Added January 13, 2023
 ||reviewmygov.tuquy.com^
 ||auspost-record.com^
 ||alert-auspost.com^
 ||auspost-input.com^
-! Added January 22, 2023
 ||vep.hautnah-kosmetik-grafenau.de^
 ||ttri.kanzlei-ecklmaier.de^
 ||d-stuff.cfd^
@@ -2234,11 +2157,9 @@
 ||tyty.lolokira.lol^
 ||yord.serawent-pole.lol^
 ||redivosrl.it^
-! Added January 23, 2023
 ||products.gobankingrates.com^
 ||cdn.rates.consumertrack.com^
 ||ads-api.twitter.com^
-! Added February 7, 2023
 ||aax-dtb-cf.amazon-adsystem.com^
 ||assets-jpcust.jwpsrv.com^
 ||fundingchoicesmessages.google.com^
@@ -2246,46 +2167,33 @@
 ||prod.us-east-1.cxm-bcn.publisher-services.amazon.dev^
 ||secure.cdn.fastclick.ne^
 ||twngcpbidder.lb.engagecore.com^
-! Added March 7, 2023
 ||a125375509.cdn.optimizely.com^
 ||cdn.cookielaw.org^
 ||cdn.indexww.com^
-! Added March 25, 2023
 ||wpad.www.tendawifi.com^
 ||crprt.livejasmin.com^
-! Added March 28, 2023
 ||grow.gab.com^
-! Added April 3, 2023
 ||transive.top^
 ||warehousesale.shop^
-! Added April 4, 2023
 ||fpjscdn.net^
 ||api.fpjs.io^
 ||use1.fptls.com^
 ||use1.fptls3.com^
-! Added April 7, 2023
 ||d2uap9jskdzp2.cloudfront.net^
 ||steadfastseat.com^
 ||eq97f.publishers.tremorhub.com^
-! Added April 13, 2023
 ||wota-tournament.com^
-! Added April 19, 2023
 ||rukalebi.ru^
 ||bueromoebelservice.com^
-! Added April 21, 2023
 ||beautydates.cn^
 ||www.beautydates.cn^
 ||hhoneyann96.beautydates.cn^
 ||nilaima.com^
 ||www.nilaima.com^
-! Added April 27, 2023
 ||www.gameitlive.com^
 ||gameitlive.com^
-! Added April 28, 2023
 ||stripchat.com^
-! Added April 29, 2023
 ||crmpt.livejasmin.com^
-! Added May 2, 2023
 ||claudfront.net^
 ||allowlisted.net^
 ||atlas-upd.com^
@@ -2293,16 +2201,12 @@
 ||cbox4.ignorelist.com^
 ||hsdps.cc^
 ||api.sprig.com^
-! Added May 15, 2023
 ||telemetry-cii.api.playstation.com^
-! Added May 19, 2023
 ||clorec4.net^
 ||wu.idismfonts.com^
 ||xml-eu.flairadscpc.com^
-! Added May 30, 2023
 ||serasearchtop.com^
 ||track.atom-ds.com^
-! Added June 3, 2023
 ||addatamarket.net^
 ||backuprabbit.com^
 ||businessvideonews.com^
@@ -2320,37 +2224,29 @@
 ||ans7tv.net^
 ||123-vendasvoos25.lovestoblog.com^
 ||c-123milhas.shop^
-! Added June 13, 2023
 ||assistant-chronopost.com^
 ||zhihu-web-analytics.zhihu.com^
-! Added July 4, 2023
 ||stmicroelectronics.d3.sc.omtrdc.net^
 ||giyhub.com^
 ||d2wzkjnj9pfptq.cloudfront.net^
 ||storiesnexus.com^
 ||rumadel.com^
-! Added August 8, 2023
 ||ms4.applvn.com^
 ||adsninjacdn.b-cdn.net^
 ||cdn.adsninja.ca^
 ||nom.telemetrydeck.com^
 ||api.ibeat-analytics.com^
 ||mads.amazon.com^
-! Add August 9, 2023
 ||s2.bl-1.com^
-! Added August 10, 2023
 ||w61.1piecemanga.com^
 ||fbet.com^
 ||stemboastfulrattle.com^
 ||onwardrespirationcommandment.com^
-! Added October 13, 2023
 ||s.dmmew.com^
-! Added November 2, 2023
 ||run.cntxtfl.com^
 ||live-manifests-lln.warnermediacdn.com^
 ||live-manifests-aka.warnermediacdn.com^
 ||logs.browser-intake-datadoghq.com^
-! Added November 3, 2023
 ||b2b6d102cb7a4898bc54a3b73e31b759.safeframe.googlesyndication.com^
 ||cpm.didna.io^
 ||hb.minutemedia-prebid.com^
@@ -2360,14 +2256,11 @@
 ||report2.hb.brainlyads.com^
 ||ssp-sync.criteo.com^
 ||st.pubmatic.com^
-! Added November 9, 2023
 ||beacons5.gvt2.com^
 ||beacons4.gvt2.com^
 ||beacons3.gvt2.com^
 ||beacons2.gvt2.com^
-! Added November 21, 2023
 ||pickanewdeliverytime.com^
-! Added November 24, 2023
 ||80d4b6e40cc712bf92fcdbabdd4345fd.safeframe.googlesyndication.com^
 ||a6709203f34992a5095d2bc7ceaf2ec504f651a8.cws.conviva.com^
 ||a.jsrdn.com^
@@ -2392,7 +2285,6 @@
 ||lb.eu-1-id5-sync.com^
 ||live-media-lln.warnermediacdn.com^
 ||zion.api.cnn.io^
-! Added November 25, 2023
 ||bucket.cdnwebcloud.com^
 ||c23811bc8d067cdb4f00f6af2c918f3d.safeframe.googlesyndication.com^
 ||cadmus.script.ac^
@@ -2406,12 +2298,9 @@
 ||sync.kueezrtb.com^
 ||t.adx.opera.com^
 ||web.hb.ad.cpe.dotomi.com^
-! Added December 17, 2023
 ||co.vaicore.site^
 ||int.vaicore.site^
-! Added December 28, 2023
 ||rtnl.bxcl.de^
-! Added February 11, 2024
 ||product-cdn.liftoff-creatives.io^
 ||preview.liftoff-creatives.io^
 ||adexp.liftoff.io^
@@ -2438,38 +2327,24 @@
 ||i.l-new.inmobicdn.net^
 ||cdn.liftoff-creatives.io^
 ||statistik.changing-cities.org^
-! Added March 10, 2024
 ||mcgthfrqrs95vdbzkhtchf5fc0g4.device.marketingcloudapis.com^
-! Added March 12, 2024
 ||crpdt.livejasmin.com^
-! Added March 21, 2024
 ||justtrack-logs.justtrack.io^
 ||sdk-api.justtrack.io^
 ||prod.adjoe-programmatic.com^
-! Added March 28, 2024
 ||argo.svcmot.com^
-! Added April 3, 2024
 ||canadapost.ca-help-h.top^
-! Added April 8, 2024
 ||notepad.plus^
-! Added April 13, 2024
 ||alertcibcsecuremobile.com^
-! Added April 24, 2024
 ||sadostic.pl^
 ||www.sadostic.pl^
-! Added April 28, 2024
 ||ejuiashsateam.info^
 ||www.ejuiashsateam.info^
-! Added May 3, 2024
 ||twitterr.com^
 ||ww25.twitterr.com^
-! Added May 19, 2024
 ||urdxh.com^
-! Added May 30, 2024
 ||logs.netflix.com^
-! Added June 26, 2024
 ||mailsupport-24f7f1500ed129bc71f2ad9c06fe1e73.pages.dev^
-! Added July 7, 2024
 ||aeventlog.beacon.qq.com^
 ||astrategy.beacon.qq.com^
 ||tdid.m.qq.com^
@@ -2479,62 +2354,41 @@
 ||frwrz661fasv.l4.adsco.re^
 ||frwrz661fasv.n4.adsco.re^
 ||frwrz661fasv.s4.adsco.re^
-! Added July 27, 2024
 ||tracker.nitropay.com^
-! Added August 30, 2024
 ||grid-bidder.criteo.com^
 ||a-ring.msedge.net^
 ||k-ring.msedge.net^
 ||hb.yellowblue.io^
 ||gtrack.kueezrtb.com^
 ||hb-api.omnitagjs.com^
-! Added September 1, 2024
 ||analytics.intelliscapesolutions.com^
-! Added September 5, 2024
 ||1000fapvids.online^
 ||ddbca.localmeets.link^
-! Added September 6, 2024
 ||browser-intake-datadoghq.com^
-! Added September 16, 2024
 ||westus-0.in.applicationinsights.azure.com^
 ||default.exp-tas.com^
-! Added September 17, 2024
 ||api.receptivity.io^
 ||commentaires.qub.ca^
 ||indicedebonheur.com^
-! Added September 21, 2024
 ||ads-static.phonepe.com^
-! Added September 25, 2024
 ||gotoyahoo.com^
-! Added September 27, 2024
 ||two.opensourced.us^
-! Added October 2, 2024
 ||api.adnz.co^
 ||xd.adnz.co^
-! Added October 9, 2024
 ||canada.postcanadantwb.top^
-! Added October 10, 2024
 ||flowto.it^
-! Added October 11, 2024
 ||5197248-trckp05t.com^
-! Added October 12, 2024
 ||api-visitor-analytics.intercom.com^
-! Added October 13, 2024
 ||region1.google-analytics.com^
 ||starshipstart.com^
-! Added October 17, 2024
 ||delivery-schedule.com^
 ||rustdesk.io^
 ||rustdesk.pl^
 ||rustdesk.co.nz^
 ||rustdesk.secure-box.de^
-! Added October 28, 2024
 ||tiny.centralacp.com^
-! Added October 31, 2024
 ||j3lbpcd9.r.us-east-1.awstrack.me^
-! Added December 1, 2024
 ||canada.postscanadafil.top^
-! Added December 4, 2024
 ||html-load.com^
 ||vs-api.voodoo-tech.io^
 ||vg-aws-ad-track-sdk-us-east-1a.mtgglobals.com^
@@ -2563,11 +2417,8 @@
 ||o-adq.mediation.unity3d.com^
 ||gateway.unityads.unity3d.com^
 ||scar.unityads.unity3d.com^
-! Added December 16, 2024
 ||ofbel.com^
-! Added December 18, 2024
 ||candeliverypostca.com^
-! Added December 20, 2024
 ||ads.heytapmobi.com^
 ||ads.heytapmobile.com^
 ||ads.oppomobile.com^
@@ -2663,17 +2514,12 @@
 ||cdn-adn-https.mtgglobals.com^
 ||hybird.mtgglobals.com^
 ||api.revenuads.com^
-! Added December 23, 2024
 ||joinhoney.com^
 ||www.joinhoney.com^
-! Added December 31, 2024
 ||scomobilehelp.com^
-! Added January 8, 2025
 ||paqueteriadhl.com.mx^
-! Added February 17, 2025
 ||hoppingtheglobe.com^
 ||firebaselogging-pa.googleapis.com^
-! Added March 7, 2025
 ||cdn.yektanet.com^
 ||biscotti.yektanet.com^
 ||ua.yektanet.com^
@@ -2684,19 +2530,12 @@
 ||cdn.goftino.com^
 ||beta.kaprila.com^
 ||panel.kaprila.com^
-! Added March 28, 2025
 ||streamboo.com^
-! Added April 1, 2025
 ||rosysolvingscallion.com^
-! Added April 5, 2025
 ||photo-reaktivieren.org^
-! Added April 9, 2025
 ||startseite24.net^
-! Added April 21, 2025
 ||rcvlink.com^
-! Added May 8, 2025
 ||clientennota-webnl.ddns.info^
-! Added June 25, 2025
 ||afs.googlesyndication.com^
 ||analyticsengine.s3.amazonaws.com^
 ||analytics.s3.amazonaws.com^
@@ -2710,50 +2549,33 @@
 ||adfox.yandex.ru^
 ||bdapi-ads.realmemobile.com^
 ||bdapi-in-ads.realmemobile.com^
-! Added July 3, 2025
 ||my-tracknl.com^
-! Added August 3, 2025
 ||trk.na.patagonia.com^
-! Added August 8, 2025
 ||ads.playstream.media^
 ||pscontent.playstream.media^
 ||cdn.playstream.media^
 ||prodcdn.playstream.media^
-! Added August 13, 2025
 ||zopro.duckdns.org^
-! Added August 14, 2025
 ||analytics.arz.at^
-! added September 14, 2025
 ||eventcra.com^
-! added September 15, 2025
 ||safalindustries.com^
-! added September 22, 2025
 ||cryptocurrency.market^
-! added October 2, 2025
 ||log.cookieyes.com^
 ||directory.cookieyes.com^
-! Added October 12, 2025
 ||xpoalswwkjddsljsy.com^
 ||xoiiasdpsdoasdpojas.com^
-! Added November 7, 2025
 ||d2.ads.rmbl.ws^
 ||a.ads.rmbl.ws^
-! Added November 11, 2025
 ||st5fdbvs.r.us-east-1.awstrack.me^
 ||fullgamingacc.com^
-! Added November 15, 2025
 ||enstat.xbext.com^
 ||enappstat.xbext.com^
-! Added November 24, 2025
 ||zpr.io^
-! Added November 29, 2025
 ||tillequal.com^
 ||html-load.cc^
-! Added December 4, 2025
 ||colombia.ru.com^
 ||fasss62r9nowzzz.z13.web.core.windows.net^
 ||etonynew345zzz.z13.web.core.windows.net^
-! Added December 11, 2025
 ||foldexmoon.fun^
 ||foldexmoon.shop^
 ||foldexmoon.today^
@@ -2761,67 +2583,31 @@
 ||foldexmoon.world^
 ||foldexmoon.xyz^
 ||instant-mac.com^
-! Added December 15, 2025
 ||pixelfy.me^
-! Added December 26, 2025
 ||logs.ads.vungle.com^
-! Added January 2, 2026
 ||content-loader.com^
-! Added January 10, 2026
 ||iwad.cachefly.net^
-! Added January 19, 2026
 ||intelcom.615344.vip^
 ||615344.vip^
-! Added January 21, 2026
 ||privacy-sandbox.appsflyersdk.com^
 ||api16-dual-event-sg2.pangle.io^
 ||api16-access-ttp.tiktokpangle.us^
 ||api16-access-wf-sg.pangle.io^
 ||prod-mediate-events.applovin.com^
-! Added January 25, 2026
 ||newsentry.simpals.md^
-! Added February 14, 2026
 ||datarouter.ol.epicgames.com^
 ||rkv1.com^
 ||msft-ssp.adnxs.com^
-! Added February 24, 2026
 ||admixer.md^
-! Added March 22, 2026
 ||proxy.optoutadvertising.com^
 ||cdn.optoutadvertising.com^
-! Added March 25, 2026
 ||cstasa.ca^
 ||porewin.net^
-! Added March 29, 2026
 ||kra18.com^
-! Added March 31, 2026
 ||sfrclak.com^
 ||callnrwise.com^
-! Added April 4, 2026
 ||ca-pagei.bond^
 ||ontario.ca-pagei.bond^
-! End StevenBlack
-! Start adaway.org
-! AdAway default blocklist
-! Blocking mobile ad providers and some analytics providers
-!
-! Project home page:
-! https://github.com/AdAway/adaway.github.io/
-!
-! Fetch the latest version of this file:
-! https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
-!
-! License:
-! CC Attribution 3.0 (http://creativecommons.org/licenses/by/3.0/)
-!
-! Contributions by:
-! Kicelo, Dominik Schuermann.
-! Further changes and contributors maintained in the commit history at
-! https://github.com/AdAway/adaway.github.io/commits/master
-!
-! Contribute:
-! Create an issue at https://github.com/AdAway/adaway.github.io/issues
-!
 ||analytics.163.com^
 ||crash.163.com^
 ||crashlytics.163.com^
@@ -10020,8 +9806,6 @@
 ||zucks.net^
 ||zwaar.org^
 ||log-collector.svctr.zynga.com^
-! End adaway.org
-! Start add.2o7Net
 ||sanalytics.spark.co.nz^
 ||analytics.metro.com.kz^
 ||smetrics.airbank.cz^
@@ -12041,8 +11825,6 @@
 ||metrics.assurances-bnc.ca^
 ||smetrics.cbc.ca^
 ||securemetrics.gapcanada.ca^
-! End add.2o7Net
-! Start add.Dead
 ||avast-downloads.com^
 ||blacksnake.com^
 ||europcareer.com^
@@ -12057,8 +11839,6 @@
 ||www.get-avast.com^
 ||www.iphonegames3g.com^
 ||www.microsoft-update.name^
-! End add.Dead
-! Start add.Risk
 ||0.r.msn.com^
 ||050003.voodoo.com^
 ||050005.voodoo.com^
@@ -14235,8 +14015,6 @@
 ||zr1.zeroredirect11.com^
 ||zs1.zeroredirect1.com^
 ||zuverink.net^
-! End add.Risk
-! Start add.Spam
 ||100.1qingdao.com^
 ||7minuteworkout.com^
 ||addshoppers.com^
@@ -14293,43 +14071,6 @@
 ||www.unionleisurewear.com^
 ||www.vntanktransport.com^
 ||www.vydoxtrial.com^
-! End add.Spam
-! Start Badd-Boyz-Hosts
-! This hosts file is brought to you by Mitchell Krog
-! Copyright: https://github.com/mitchellkrogza
-! Source: https://github.com/mitchellkrogza/Badd-Boyz-Hosts
-!#################################################################################
-!                                                                                #
-!        ___          __   __    ___                    __ __         __         #
-!       / _ )___ ____/ /__/ /   / _ )___  __ _____     / // /__  ___ / /____     #
-!      / _  / _ `/ _  / _  /   / _  / _ \/ // /_ /    / _  / _ \(_-</ __(_-<     #
-!     /____/\_,_/\_,_/\_,_/   /____/\___/\_, //__/   /_//_/\___/___/\__/___/     #
-!                                       /___/                                    #
-!#################################################################################
-! You are free to copy and distribute this file for non-commercial uses,
-! as long the original URL and attribution is included.
-! Please forward any additions, corrections or comments by logging an issue at
-! https://github.com/mitchellkrogza/Badd-Boyz-Hosts/issues
-! This list of hosts is compiled from server logs on my own servers
-! and forms the basis of the bad referrers domain lists for
-! The Nginx Ultimate Bad Bot Blocker at:
-! https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
-! and the Apache Ultimate Bad Bot Blocker at:
-! https://github.com/mitchellkrogza/apache-ultimate-bad-bot-blocker
-!#### Version Information #
-!##################################################
-!## Version: V1.2021.05.8588
-!#### Version Information ##
-! Use this file to prevent your computer or server from connecting to selected
-! internet hosts. This is an easy and effective way to protect you from
-! many types of spyware, adware, malware, click-jacking and porn sites and reduces
-! bandwidth use.
-! The file should be named "hosts" NOT "hosts.txt"
-! For Linux based Operating systems place this file at "/etc/hosts"
-! For Windows based systems this is placed either at
-! C:\windows\system32\drivers\etc\hosts
-! or C:\Windows\System32\drivers\etc\hosts
-! START HOSTS LIST ### DO NOT EDIT THIS LINE AT ALL ###
 ||000free.us^
 ||000.gaysexe.free.fr^
 ||000tristanprod.free.fr^
@@ -15698,23 +15439,6 @@
 ||www.utopia-privacy.com^
 ||yuarra.pluto.ro^
 ||yunque.pluto.ro^
-! END HOSTS LIST ### DO NOT EDIT THIS LINE AT ALL ###
-! End Badd-Boyz-Hosts
-! Start hostsVN
-! Title: hostsVN
-! Last modified: 09 Apr 2026 09:58 UTC+7
-! Version: 2604090958
-! Blocked: 1.733 domains
-! Only include advertisers in Vietnam
-! Homepage: https://bigdargon.github.io/hostsVN/
-! GitHub: https://github.com/bigdargon/hostsVN
-! Report issues: https://github.com/bigdargon/hostsVN/issues
-! Download: https://github.com/bigdargon/hostsVN/raw/master/option/hosts-VN
-!
-! =====================================================
-!
-! --- GroupVN block ---
-![adtimaserver]
 ||media.adtimaserver.vn^
 ||media.org.adtimaserver.vn^
 ||staging.api.adtimaserver.vn^
@@ -15723,7 +15447,6 @@
 ||stream.adtimaserver.vn^
 ||stream.org.adtimaserver.vn^
 ||web.api.adtimaserver.vn^
-![eclick]
 ||admin.iad.eclick.vn^
 ||analytics.eclick.vn^
 ||c.d.eclick.vn^
@@ -15798,7 +15521,6 @@
 ||admicro4.vcmedia.vn^
 ||admicro5.vcmedia.vn^
 ||admicro6.vcmedia.vn^
-![novanet]
 ||admin.novanet.vn^
 ||ads.novanet.vn^
 ||analytics.novanet.vn^
@@ -15818,7 +15540,6 @@
 ||script.novanet.vn^
 ||static.novanet.vn^
 ||www.novanet.vn^
-![novaonads]
 ||novaonads.com^
 ||www.novaonads.com^
 ||novaon.vn^
@@ -15873,7 +15594,6 @@
 ||revive.lavanetwork.net^
 ||video.lavanetwork.net^
 ||www.lavanetwork.net^
-![polyad]
 ||cp.polyad.net^
 ||cpx.polyad.net^
 ||dst.polyad.net^
@@ -16040,7 +15760,6 @@
 ||log.zingmp3.vn^
 ||za.zingmp3.vn^
 ||zlog.zingmp3.vn^
-![zingnews]
 ||log.zingnews.vn^
 ||log.znews.vn^
 ||trackingbr.zingplay.com^
@@ -16133,13 +15852,11 @@
 ||za.zapps.vn^
 ||analytics.zapps.me^
 ||tech.zapps.me^
-![yomedia]
 ||demo.yomedia.vn^
 ||dmp-log.yomedia.vn^
 ||media.yomedia.vn^
 ||sslstatic.yomedia.vn^
 ||static.yomedia.vn^
-![pinetech]
 ||demo.pinetech.vn^
 ||pinetech.vn^
 ||www.pinetech.vn^
@@ -16150,7 +15867,6 @@
 ||widget.cleverads.vn^
 ||wifiads.cleverads.vn^
 ||www.cleverads.vn^
-![klick]
 ||adv.klick.vn^
 ||demo.klick.vn^
 ||euro.klick.vn^
@@ -16243,7 +15959,6 @@
 ||cityadstrack.com^
 ||p.cityadstrack.com^
 ||stats.cityadstrack.com^
-![adsota]
 ||ads.appota.com^
 ||adsota.com^
 ||agency.adsota.com^
@@ -16347,14 +16062,12 @@
 ||api.adbro.me^
 ||portal.adbro.me^
 ||tag.adbro.me^
-![adasiaholdings]
 ||advertisers.adasiaholdings.com^
 ||apm.adasiaholdings.com^
 ||media.adasiaholdings.com^
 ||pixel.adasiaholdings.com^
 ||publishers.adasiaholdings.com^
 ||www.adasiaholdings.com^
-![adsplay]
 ||admin.adsplay.net^
 ||d1.adsplay.net^
 ||d2.adsplay.net^
@@ -16883,11 +16596,9 @@
 ||pubads-wiinvent.tv360.vn^
 ||log-collector.shopee.vn^
 ||userstats.shopee.vn^
-![moneyoyo]
 ||api.moneyoyo.org^
 ||feed.moneyoyo.org^
 ||sdk.moneyoyo.com^
-! --- Block adsVN ---
 ||12signup.com^
 ||ad-admin.vnay.vn^
 ||ad-ndtv.3s.com.vn^
@@ -17097,7 +16808,6 @@
 ||www.vipads.live^
 ||xads.joboko.com^
 ||xmadsapi.joboko.com^
-! --- Block trackingVN ---
 ||360.anatic.net^
 ||a.ladipage.com^
 ||a.vtvdigital.vn^
@@ -17363,7 +17073,6 @@
 ||za.baomoi.com^
 ||zigzag.vn^
 ||ztrck.me^
-! --- Block popupVN ---
 ||b8zk2cl6bjs92j7ah8k2kzi92jf8ck9vj7v0z5bv2v3cj2azlp0c8z5vb7dt.me^
 ||ch6p2aj2gh8zy5cm0px9ow7aj3tmzhtk6lzx2ch9xj7gx2jq1cj8v4jklz6b.me^
 ||h6o2z0pwx5ja7dwxn0wx4fhv7mp0qoladm8vj6do4h1c6gja8evrn6g5fixk.me^
@@ -17377,26 +17086,6 @@
 ||wfgo5vjs6cp0cdjx7bms3cn9lof2p01xho0pxgm1fd2fah3j5d8qd7x1d6eu.me^
 ||y8z5nv0slz06vj2k5vh6akv7dj2c8aj62zhj2v7zj8vp0zq7fj2gf4mv6zsb.me^
 ||z8g0wlq5p0f6jg3k7eh2kyd58hjeskx0w9g5eu7q3m5hyq8l0xwofj3ap2nv.me^
-! End hostsVN
-! Start KADhosts
-! Title: KADhosts
-! Description: Filtry chroniace przed roznego rodzaju przekretami i oszustwami, takimi jak np. subskrypcje SMS, wirusy i falszywe sklepy internetowe. Oprocz wlasnego zestawu, zawieraja one rowniez wpisy z list stworzonych przez takie zespoly jak np. CERT Polska, legalniewsieci.pl i KNF.
-! Last modified: Sun, 12 Apr 2026, 22:21 UTC+02:00
-! Version: 2026.4.12.7
-! Expires: 2 days
-! Website: https://kadantiscam.netlify.app/
-! Based on: https://github.com/FiltersHeroes/KAD
-! License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-! Creator: azet12
-! Maintainer: Filters Heroes
-!
-! (EN) WARNING: Sites listed below can be harmful. Please, do not visit them if you don't know what you're doing!
-! (PL) UWAGA: Strony ponizej moga byc szkodliwe. Prosze, nie wchodz na nie, jesli nie wiesz co robisz!
-!
-!
-!
-! Podejrzane i/lub strony polaczone z innymi oszustwami
-!@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/podejrzane_inne_oszustwa.txt => hosts
 ||4life.com^
 ||4shoes.com.pl^
 ||4shoes.pl^
@@ -20050,11 +19739,6 @@
 ||zpafiska.pl^
 ||zrobswiatlo.pl^
 ||zuvia.pl^
-!@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/podejrzane_inne_oszustwa.txt => hosts
-!
-!
-! Przekierowuja do innych stron z przekretami
-!@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekierowujace_do_przekretow.txt => hosts
 ||0n.click^
 ||4clicker.pro^
 ||12monki-redirect.com^
@@ -20355,11 +20039,6 @@
 ||xtroglobal.com^
 ||zetreview.com^
 ||znajdzbdsmkontakt.pl^
-!@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekierowujace_do_przekretow.txt => hosts
-!
-!
-! Szybko wygaszajace
-!@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/szybko_wygaszajace.txt => hosts
 ||4332.ws^
 ||ac-feedback.com^
 ||adsbtrk.com^
@@ -20426,11 +20105,6 @@
 ||www.tylko-dla-ciebie.com^
 ||www.uroffer.link^
 ||www.uzupelniaj-dane.ml^
-!@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/szybko_wygaszajace.txt => hosts
-!
-!
-! Przekrety
-!@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety.txt + https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety_CERT.txt => hosts
 ||0ej37yhe.cfd^
 ||0ek7er.lol^
 ||0equalsinfinity.org^
@@ -65265,16 +64939,6 @@
 ||zzsyt.com^
 ||zztwkj.com^
 ||zzxyxx.com^
-!@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety.txt + https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety_CERT.txt => hosts
-!
-!
-! Blogspot
-!@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/blogspot.txt => hosts
-!@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/blogspot.txt => hosts
-!
-!
-! Dodatki hosts
-!@ >>>>>>>> hostsplus + hostsplus-cert => hosts
 ||4s13t.doctortrf.com^
 ||05agu.doctortrf.com^
 ||a-tocard-pl.treasure-shop.org^
@@ -65907,11 +65571,6 @@
 ||zalukaj.ws^
 ||zdjecienago2.c.pl^
 ||zebywybielanie.c.pl^
-!@ <<<<<<<< hostsplus + hostsplus-cert => hosts
-! End KADhosts
-! Start minecraft-hosts
-! minecraft-hosts - Tracking Domains
-! License: CC0
 ||analytics.atlauncher.com^
 ||auxilium.ftb.team^
 ||beacon.quiltmc.org^
@@ -65921,31 +65580,6 @@
 ||metrics.shmeeb.net^
 ||openeye.openmods.info^
 ||posthog.modrinth.com^
-! End minecraft-hosts
-! Start mvps.org
-! This MVPS HOSTS file is a free download from:            #
-! http://winhelp2002.mvps.org/hosts.htm                    #
-!                                                          #
-! Notes: The Operating System does not read the "#" symbol #
-! or anything after the # symbol on the same line          #
-!                                                          #
-! This *must* be the first line: 127.0.0.1     localhost   #
-!                                                          #
-!**********************************************************#
-! -------------- Updated: March-06-2021 ------------------ #
-!**********************************************************#
-!                                                          #
-! Disclaimer: this file is free to use for personal use    #
-! only. Furthermore it is NOT permitted to copy any of the #
-! contents or host on any other site without permission or #
-! meeting the full criteria of the below license terms.    #
-!                                                          #
-! This work is licensed under the Creative Commons         #
-! Attribution-NonCommercial-ShareAlike License.            #
-! https://creativecommons.org/licenses/by-nc-sa/4.0/       #
-!                                                          #
-! License info for commercial purposes contact Winhelp2002 #
-!
 ||fr.a2dfp.net^
 ||mfr.a2dfp.net^
 ||ad.a8.net^
@@ -66051,7 +65685,6 @@
 ||five.partner.archive-it.org^
 ||ads.aspalliance.com^
 ||www.astalavista.us^
-! 0.0.0.0 rules.atgsvcs.com #[affects banking]
 ||ads.auctionads.com^
 ||d.audienceiq.com^
 ||ads.autotrader.com^
@@ -66061,7 +65694,6 @@
 ||www.avantlink.com^
 ||rev.avsforum.com^
 ||analytics.aweber.com^
-! 0.0.0.0 clicks.aweber.com #[affects newsletters]
 ||banerator.net^
 ||www.banner-rotation.com^
 ||match.basebanner.com^
@@ -66141,7 +65773,6 @@
 ||t.cfjump.com^
 ||count.channeladvisor.com^
 ||adsapi.chartbeat.com^
-! 0.0.0.0 st.chatango.com #[affects chat]
 ||ads.china.com^
 ||v5.chinoc.net^
 ||ckstatic.com^
@@ -66184,7 +65815,6 @@
 ||ads.crisppremium.com^
 ||i.ctnsnet.com^
 ||ads.milliyet.cubecdn.net^
-! 0.0.0.0 cdn.cxense.com #[affects dagsavisen.no]
 ||www.cybereps.com^
 ||count.daem0n.com^
 ||www.dataforce.net^
@@ -66333,7 +65963,6 @@
 ||ads.gumgum.com^
 ||c.gumgum.com^
 ||cdn.gumgum.com^
-! 0.0.0.0 www.sdad.guru #[affects msn.com]
 ||beacon.gutefrage.net^
 ||adserver.hardwareanalysis.com^
 ||stats.berkman.harvard.edu^
@@ -66371,7 +66000,6 @@
 ||bbcdn-tag.ibillboard.com^
 ||hits.icdirect.com^
 ||tracker.icerocket.com^
-! 0.0.0.0 mpsnare.iesnare.com #[affects westernunion.com]
 ||adsrv2.ihlassondakika.com^
 ||ads.imarketservices.com^
 ||ads.imeem.com^
@@ -66418,7 +66046,6 @@
 ||ads.joemonster.org^
 ||site.johnlewis.com^
 ||www.jscount.com^
-! 0.0.0.0 cdn.jsdelivr.net #[affects spireenergy.com]
 ||ck.juicyads.com^
 ||js.juicyads.com^
 ||nl.ads.justpremium.com^
@@ -66565,7 +66192,6 @@
 ||404.online.net^
 ||sayac.onlinewebstats.com^
 ||lifemediahouse1.onlinewelten.com^
-! 0.0.0.0 assets.onswipe.com #[affects mobile devices]
 ||invitation.opinionbar.com^
 ||by.optimost.com^
 ||es.optimost.com^
@@ -66598,7 +66224,6 @@
 ||banner.play-asia.com^
 ||pu.plugrush.com^
 ||webstats.plus.net^
-! 0.0.0.0 po.st #[affects URL shortening]
 ||ads.po-zdravidnes.com^
 ||piwik.pokerlistings.com^
 ||adserve.podaddies.com^
@@ -66676,7 +66301,6 @@
 ||gbjfc.rsvpgenius.com^
 ||rtrgt2.com^
 ||advert.runescape.com^
-! 0.0.0.0 runslin.com
 ||banners.rushcommerce.com^
 ||rutrk.org^
 ||www.s2d6.com^
@@ -66720,7 +66344,6 @@
 ||analytic.spamfighter.com^
 ||tags.spider-mails.com^
 ||dp2.specificclick.net^
-! 0.0.0.0 spclient.wg.spotify.com #[affects mobile app]
 ||js.spotx.tv^
 ||www.speedcounter.net^
 ||speediest.net^
@@ -66805,15 +66428,12 @@
 ||objects.tremormedia.com^
 ||www.trendcounter.com^
 ||ads.tripican.com^
-! 0.0.0.0 s1.trrsf.com #[affects terra.com]
-! 0.0.0.0 s2.trrsf.com #[affects terra.com]
 ||hits3.truehits.net^
 ||tracker.truehits.net^
 ||origin-tracking.trulia.com^
 ||ht.tube8.com^
 ||presentation-atl1.turn.com^
 ||adserver.tvcatchup.com^
-! 0.0.0.0 analytics.twitter.com #[affects Twitter Dashboard]
 ||twittercounter.com^
 ||et.twyn.com^
 ||tracknet.twyn.com^
@@ -66828,7 +66448,6 @@
 ||ukrbanner.net^
 ||tracking.ukwm.co.uk^
 ||www.ultimatetopsites.com^
-! 0.0.0.0 tags.api.umbel.com #[affects polygon.com]
 ||undertonenetworks.com^
 ||www.undertonenetworks.com^
 ||adserving.unibet.com^
@@ -66857,7 +66476,6 @@
 ||advice-ads-cdn.vice.com^
 ||geoip-lookup.vice.com^
 ||vice-ads-cdn.vice.com^
-! 0.0.0.0 vice-web-statics-cdn.vice.com #[affects vice.com]
 ||chappel.videogamer.com^
 ||ads.videohub.tv^
 ||adserver.virginmedia.com^
@@ -66874,7 +66492,6 @@
 ||beacon.walmart.com^
 ||beacon.affil.walmart.com^
 ||ad.wanderlist.com^
-! 0.0.0.0 tracking.waterfrontmedia.com #[affects MayoClinic]
 ||ads.weather.ca^
 ||btn.counter.weather.ca^
 ||tr.webantenna.info^
@@ -66892,7 +66509,6 @@
 ||ads.wineenthusiast.com^
 ||api.wipmania.com^
 ||stats.wired.com^
-! 0.0.0.0 f.wishabi.net #[affects walmart.ca]
 ||helper-stats.wondershare.com^
 ||phpadsnew.wn.com^
 ||clicktrack.wnu.com^
@@ -67199,7 +66815,6 @@
 ||projectorreviews.advertserve.com^
 ||tradearabia.advertserve.com^
 ||www.advertserve.com^
-! 0.0.0.0 static.kleinezeitung.at
 ||static.styria-digital.com^
 ||smp.adviva.net^
 ||afe2.specificclick.net^
@@ -67220,10 +66835,8 @@
 ||tag.aticdn.net^
 ||a.bf-ad.net^
 ||fast.timeinc.demdex.net^
-! 0.0.0.0 dap.digitalgov.gov #[Universal Federated Analytics]
 ||static.ampxchange.com^
 ||p.bm23.com^
-! 0.0.0.0 cdn.tt.omtrdc.net #[affects Verizon]
 ||ads.pictela.net^
 ||b.thanksearch.com^
 ||e.thanksearch.com^
@@ -67262,7 +66875,6 @@
 ||widget.quantcast.com^
 ||mediaserver.bwinpartypartners.com^
 ||www.everestjs.net^
-! 0.0.0.0 cdn.optimizely.com #[affects sigfig.com/ 2go.com]
 ||cdn.static.zdbb.net^
 ||b.6sc.co^
 ||ad131m.adk2.co^
@@ -67270,7 +66882,6 @@
 ||adtgs.adk2.co^
 ||cdn.adk2.co^
 ||matomy.adk2.co^
-! 0.0.0.0 assets.adobedtm.com #[affects landsend.com]
 ||www.adobetag.com^
 ||a.adready.com^
 ||www.adreadytractions.com^
@@ -67288,19 +66899,15 @@
 ||ip.casalemedia.com^
 ||ads.cdnslate.com^
 ||cc.chango.com^
-! 0.0.0.0 ad-js.chip.de #[affects images]
 ||cdn1.clkrev.com^
 ||tiads.essence.com^
 ||tiads.ew.com^
 ||promo.freshdirect.com^
-! 0.0.0.0 cdns.gigya.com #[affects IHeartRadio]
 ||tiads.health.com^
 ||js.hs-analytics.net^
-! 0.0.0.0 s2.mdpcdn.com #[affects bhg.com]
 ||cdn.mediavoice.com^
 ||d-track.send.microadinc.com^
 ||mnet-ad.net^
-! 0.0.0.0 cdn.mxpnl.com #[affects optimum.com]
 ||adcache.nymag.com^
 ||cdn.polmontventures.com^
 ||a.postrelease.com^
@@ -67314,8 +66921,6 @@
 ||c2.rfihub.net^
 ||ced.sascdn.com^
 ||m.servebom.com^
-! 0.0.0.0 tiads.time.com #[affects Time.com]
-! 0.0.0.0 cdn.vidible.tv #[affects Aol]
 ||content.womensforum.com^
 ||s9.addthis.com^
 ||ssltracking.esearchvision.com^
@@ -67337,9 +66942,7 @@
 ||sr2.liveperson.net^
 ||ad.policeone.com^
 ||graphics.pop6.com^
-! 0.0.0.0  media.richrelevance.com #[affects Walmart.ca]
 ||a.rmgserving.com^
-! 0.0.0.0  imagesak.secureserver.net #[affects GoDaddy]
 ||track.sitetag.us^
 ||anon.doubleclick.speedera.net^
 ||d.thanksearch.com^
@@ -67420,7 +67023,6 @@
 ||s.shopify.com^
 ||pix.silverpush.co^
 ||ads.skinected.com^
-! 0.0.0.0 analytics.supplyframe.com #[affects findchips.com]
 ||images.ads.supplyframe.com^
 ||b.t.tailtarget.com^
 ||ads.tracking202.com^
@@ -67434,7 +67036,6 @@
 ||adunit.chango.com^
 ||admonkey.dapper.net^
 ||b.ensighten.com^
-! 0.0.0.0 nexus.ensighten.com #[affects Subaru / Staples]
 ||cs.exitmonitor.com^
 ||g2.gumgum.com^
 ||stack9.collect.igodigital.com^
@@ -67451,7 +67052,6 @@
 ||req.tidaltv.com^
 ||static.tracking202.com^
 ||p1.tcr21.tynt.com^
-! 0.0.0.0 redirect.viglink.com #[affects disqus.com]
 ||www.w3counter.com^
 ||ots.optimize.webtrends.com^
 ||b.wishabi.com^
@@ -67496,7 +67096,6 @@
 ||howler.shareaholic.com^
 ||cdn.spectate.com^
 ||track.securedvisit.com^
-! 0.0.0.0 id.trove.com #[prevents registration]
 ||rtb.tubemogul.com^
 ||www.webspectator.com^
 ||cdn.beaconpush.com^
@@ -67513,7 +67112,6 @@
 ||gernewt.info^
 ||ads.goodreads.com^
 ||lionstracking.com^
-! 0.0.0.0 widget-cdn.rpxnow.com #[affects amc.com]
 ||secureredirect101.com^
 ||trkmydomain.com^
 ||s.206solutions.com^
@@ -67591,7 +67189,6 @@
 ||www.barilliance.net^
 ||srv.clickfuse.com^
 ||com.com^
-! 0.0.0.0 api.demandbase.com #[affects Ringcentral]
 ||adobe.demdex.net^
 ||fairfax.demdex.net^
 ||mtvn.demdex.net^
@@ -67713,7 +67310,6 @@
 ||trax.prostrax.com^
 ||vid-io-dub.springserve.com^
 ||admediator.unityads.unity3d.com^
-! 0.0.0.0 wurfl.io #[affects Google]
 ||www.cloudtracked.com^
 ||za-ssl.effectivemeasure.net^
 ||tracker.freecharge.in^
@@ -67728,14 +67324,12 @@
 ||d1lxhc4jvstzrp.cloudfront.net^
 ||d1xfq2052q7thw.cloudfront.net^
 ||d1z2jf7jlzjs58.cloudfront.net^
-! 0.0.0.0 d2gatte9o95jao.cloudfront.net #[affects urbandictionary.com]
 ||d2zah9y47r7bi2.cloudfront.net^
 ||d3qxwzhswv93jk.cloudfront.net^
 ||me-ssl.effectivemeasure.net^
 ||gscounters.eu1.gigya.com^
 ||resources.kiosked.com^
 ||cdn.listrakbi.com^
-! 0.0.0.0 www.livefyre.com #[affects startribune.com]
 ||t.mdn2015x2.com^
 ||ads.mic.com^
 ||ap.octopuspop.com^
@@ -67770,7 +67364,6 @@
 ||rumds.wpdigital.net^
 ||i.yldbt.com^
 ||z2.zedo.com^
-! 0.0.0.0 segment-data.zqtk.net #[affects wsj.com]
 ||ads-stream.com^
 ||js.apxlv.com^
 ||www.adbooth.com^
@@ -67801,12 +67394,10 @@
 ||d1fc8wv8zag5ca.cloudfront.net^
 ||d1l6p2sc9645hc.cloudfront.net^
 ||d1piupybsgr6dr.cloudfront.net^
-! 0.0.0.0 d3c3cq33003psk.cloudfront.net #[affects sunglassesshop.com]
 ||d5nxst8fruw4z.cloudfront.net^
 ||dl1d2m8ri9v3j.cloudfront.net^
 ||cdn-1.convertexperiments.com^
 ||use.convertglobal.com^
-! 0.0.0.0 scripts.demandbase.com #[affects ringcentral.com]
 ||bet.demdex.net^
 ||cbsi.demdex.net^
 ||de.demdex.net^
@@ -67854,7 +67445,6 @@
 ||analytics.userreport.com^
 ||cdn.userreport.com^
 ||sdscdn.userreport.com^
-! 0.0.0.0 delivery.vidible.tv #[affects aol.com]
 ||wsc1.webspectator.com^
 ||zafiti01.webtrekk-us.net^
 ||sdk-controller.widespace.com^
@@ -67870,7 +67460,6 @@
 ||adactive-ads.aimatch.com^
 ||crtl.aimatch.com^
 ||tr-1.agilone.com^
-!  0.0.0.0 as.eu.angsrvr.com #[affects videos]
 ||www.badassjv.com^
 ||blockmetrics.com^
 ||cache.btrll.com^
@@ -68101,7 +67690,6 @@
 ||www.xiti.com^
 ||secure-ams.adnxs.com^
 ||ib.reachjunction.com^
-! 0.0.0.0 ib.adnxs.com #[affects Microsoft site]
 ||photobucket.adnxs.com^
 ||ym.adnxs.com^
 ||action.media6degrees.com^
@@ -68386,7 +67974,6 @@
 ||buzzcpm.com^
 ||cdnmedia.xyz^
 ||wp1.cor-natty.com^
-! 0.0.0.0 onesignal.com #[blocks Push notifications]
 ||cdn.spoutable.com^
 ||engine.spoutable.com^
 ||cdn.tynt.com^
@@ -68395,7 +67982,6 @@
 ||cdn1.zopiny.com^
 ||adfoc.us^
 ||img.avatraffic.com^
-! 0.0.0.0 js.maxmind.com #[affects marchon.com / directvnow.com]
 ||trafficg.com^
 ||www.trafficg.com^
 ||trw12.com^
@@ -68589,7 +68175,6 @@
 ||images.bmnq.com^
 ||images.cnomy.com^
 ||ads.webhosting.info^
-! 0.0.0.0 hb.disney.go.com #[affects links]
 ||seavideo-ak.espn.go.com^
 ||adsatt.abcnews.starwave.com^
 ||adsatt.disney.starwave.com^
@@ -68662,13 +68247,11 @@
 ||adunit.cdn.auditude.com^
 ||ndn.cdn.auditude.com^
 ||cv.bsvideos.com^
-! 0.0.0.0 livepassdl.conviva.com #[affects videos]
 ||banners.crakcash.com^
 ||pixel.indieclick.com^
 ||staticd.cdn.industrybrains.com^
 ||electosake.com^
 ||c.supert.ag^
-! 0.0.0.0 tags.tiqcdn.com #[affects Intel.com/Shaw]
 ||tororango.com^
 ||cdn.engine.trklnks.com^
 ||img1.zergnet.com^
@@ -68712,13 +68295,6 @@
 ||4184.stats.misstrends.com^
 ||www.humanclick.com^
 ||hc2.humanclick.com^
-! 0.0.0.0 wizard.liveperson.com
-! 0.0.0.0 www.liveperson.com #[affects citi.com]
-! 0.0.0.0 liveperson.net
-! 0.0.0.0 lptag.liveperson.net
-! 0.0.0.0 sales.liveperson.net #[affects Live Chat]
-! 0.0.0.0 sec1.liveperson.net
-! 0.0.0.0 server.iad.liveperson.net
 ||landingpages.sunnytoolz.com^
 ||ads.guru3d.com^
 ||banner1.pornhost.com^
@@ -68784,7 +68360,6 @@
 ||1c6e2.v.fwmrm.net^
 ||2df7e.v.fwmrm.net^
 ||5bde1.v.fwmrm.net^
-! 0.0.0.0 140cc.v.fwmrm.net #[affects videos]
 ||2975c.v.fwmrm.net^
 ||29773.v.fwmrm.net^
 ||bea4.v.fwmrm.net^
@@ -68882,9 +68457,7 @@
 ||www.frontpagecash.com^
 ||www.clickaction.net^
 ||server2.discountclick.com^
-! 0.0.0.0 link.p0.com #[Affects email newsletters]
 ||a.hspvst.com^
-! 0.0.0.0 secure.footprint.net #[affects nfl.com]
 ||van.redlightcenter.com^
 ||webmaster.utherverse.com^
 ||www.cpx24.com^
@@ -68901,7 +68474,6 @@
 ||redemptionengine.com^
 ||www.redemptionengine.com^
 ||images-pw.secureserver.net^
-! 0.0.0.0 images.secureserver.net #[affects GoDaddy]
 ||highpro1.com^
 ||adexchangeprediction.com^
 ||static-trackers.adtarget.me^
@@ -68947,7 +68519,6 @@
 ||pagead-googlehosted.l.google.com^
 ||5362399.fls.doubleclick.net^
 ||video-ad-stats.googlesyndication.com^
-! 0.0.0.0 redirector.googlevideo.com #[affects video playback]
 ||dp.g.doubleclick.net^
 ||service.urchin.com^
 ||analytics-api-samples.googlecode.com^
@@ -68956,7 +68527,6 @@
 ||2542116.fls.doubleclick.net^
 ||4053494.fls.doubleclick.net^
 ||4236808.fls.doubleclick.net^
-! 0.0.0.0 www.googletagmanager.com #[affects ASUS]
 ||www3.webhostingtalk.com^
 ||analytics.inform.com^
 ||track.searchiq.co^
@@ -69037,11 +68607,8 @@
 ||www3.doubleclick.com^
 ||www.doubleclick.com^
 ||www.bt.emsecure.net^
-! 0.0.0.0  www.youtube-nocookie.com #[affects various videos]
 ||ad.rs.doubleclick.net^
 ||affiliate.2mdn.net^
-! 0.0.0.0  s0.2mdn.net #[affects video stream]
-! 0.0.0.0  static.2mdn.net #[affects Youtube]
 ||clickserve.us2.dartsearch.net^
 ||ad-apac.doubleclick.net^
 ||ad.mo.doubleclick.net^
@@ -69305,7 +68872,6 @@
 ||searchassistant.iwon.com^
 ||www1.iwon.com^
 ||image.i1img.com^
-! 0.0.0.0  wzus1.reference.com #[affects Dictonary.com]
 ||keisu02.eproof.com^
 ||control.adap.tv^
 ||ads.shopstyle.com^
@@ -69536,7 +69102,6 @@
 ||cad.chosun.com^
 ||hitlog2.chosun.com^
 ||counter.joins.com^
-! 0.0.0.0 www.luminate.com #[affects login]
 ||openx.4shared.com^
 ||www.easycounter.com^
 ||www.fastusersonline.com^
@@ -69693,7 +69258,6 @@
 ||banners.securedataimages.com^
 ||e.sexad.net^
 ||pod.sexsearch.com^
-! 0.0.0.0 api.solvemedia.com #[affects captcha]
 ||pixel.solvemedia.com^
 ||demoq.use-trade.com^
 ||richmedia.yimg.com^
@@ -69725,7 +69289,6 @@
 ||content.ipro.com^
 ||cdn-01.yumenetworks.com^
 ||img100-321.xvideos.com^
-! 0.0.0.0  libs.coremetrics.com #[affects tMobile/EverBank]
 ||e.freewebhostingarea.com^
 ||ad-rotator.com^
 ||serv.adspeed.com^
@@ -69821,7 +69384,6 @@
 ||www.spylog.com^
 ||www.cpaempire.com^
 ||ekmas.com^
-! 0.0.0.0  stat3.cybermonitor.com #[affects podcasts]
 ||www.adpeepshosted.com^
 ||ping.hellobar.com^
 ||adklip.com^
@@ -69834,8 +69396,6 @@
 ||my.trackjs.com^
 ||image.atdmt.com^
 ||img.atdmt.com^
-! 0.0.0.0  switch.atdmt.com #[affects Hotmail signup]
-! 0.0.0.0  view.atdmt.com #[affects Microsoft / Sprint.com]
 ||www.atdmt.com^
 ||analytics.newsvine.com^
 ||tracking.bannerflow.com^
@@ -69869,13 +69429,11 @@
 ||col.mobileads.msn.com^
 ||popup.msn.com^
 ||analytics.r.msn.com^
-! 0.0.0.0  rad.msn.com #[affects MSN Messenger]
 ||rmads.msn.com^
 ||rmads.eu.msn.com^
 ||analytics.msnbc.com^
 ||msn.serving-sys.com^
 ||click.atdmt.com^
-! 0.0.0.0  clk.atdmt.com #[affects MS downloads]
 ||sact.atdmt.com^
 ||beacon.clickequations.net^
 ||js.clickequations.net^
@@ -70095,7 +69653,6 @@
 ||ads.mediatwo.com^
 ||mads.dailymail.co.uk^
 ||in-cdn.effectivemeasure.net^
-! 0.0.0.0 s.marketwatch.com #[affects marketwatch]
 ||stags.peer39.net^
 ||www.zipitfast.com^
 ||ads.drugs.com^
@@ -70202,7 +69759,6 @@
 ||1und1internetag.d3.sc.omtrdc.net^
 ||cafemom.d2.sc.omtrdc.net^
 ||centricabritishgas.d3.sc.omtrdc.net^
-! 0.0.0.0 citicorpcreditservic.tt.omtrdc.net
 ||comcastresidentialservices.tt.omtrdc.net^
 ||comvelgmbh.d1.sc.omtrdc.net^
 ||condenast.insight.omtrdc.net^
@@ -70225,14 +69781,12 @@
 ||metrics.td.com^
 ||tracking.whattoexpect.com^
 ||102.112.207.net^
-! 0.0.0.0 appleglobal.112.2o7.net #[affects Apple site]
 ||byubroadcast.112.2o7.net^
 ||kasperthreatpostprod.112.2o7.net^
 ||kaspersky.122.2o7.net^
 ||ldsfch.112.2o7.net^
 ||myfamilyancestry.112.2o7.net^
 ||nautilus.122.2o7.net^
-! 0.0.0.0  survey.112.2o7.net #[affect Sprint.com]
 ||tirerackcom.112.2o7.net^
 ||stats.esomniture.com^
 ||www.omniture.com^
@@ -70242,7 +69796,6 @@
 ||ewstv.abc15.com^
 ||metrics.accuweather.com^
 ||metrics.acehardware.com^
-! 0.0.0.0 stats.adobe.com #[affects MacOS updates]
 ||stats.adultswim.com^
 ||analytic.ae.com^
 ||metric.allrecipes.com^
@@ -70251,11 +69804,8 @@
 ||analytics.amakings.com^
 ||metrics.amd.com^
 ||metrics.americancityandcounty.com^
-! 0.0.0.0 metrics.ancestry.co.uk #[affects login]
 ||metric.angieslist.com^
 ||metrics.apartmentfinder.com^
-! 0.0.0.0 metrics.apple.com #[affects Apple site/MacOS]
-! 0.0.0.0 securemetrics.apple.com #[affects Apple site/MacOS]
 ||metrics.ariba.com^
 ||omniture.artinstitutes.edu^
 ||stats2.arstechnica.com^
@@ -70305,7 +69855,6 @@
 ||webstat.channel4.com^
 ||omniture.chip.de^
 ||metrics.chron.com^
-! 0.0.0.0 metrics1.citibank.com #[affects login]
 ||om.cnet.co.uk^
 ||metrics.cleveland.com^
 ||metrics.cnn.com^
@@ -70313,7 +69862,6 @@
 ||serviceo.comcast.net^
 ||metrics.compactappliance.com^
 ||stats.concierge.com^
-! 0.0.0.0 metrics.consumerreports.org #[affects login]
 ||metrics.corus.ca^
 ||metrics.cosmopolitan.co.uk^
 ||omn.crackle.com^
@@ -70365,7 +69913,6 @@
 ||metrics.gnc.com^
 ||stats2.golfdigest.com^
 ||metrics.govexec.com^
-! 0.0.0.0 w88.go.com #[affects espn.com]
 ||hits.guardian.co.uk^
 ||metrics.harley-davidson.com^
 ||analytics.hayneedle.com^
@@ -70383,7 +69930,6 @@
 ||stats.investors.com^
 ||metrics.store.irobot.com^
 ||metrics.kbb.com^
-! 0.0.0.0 ww9.kohls.com #[affects Chrome]
 ||metrics.lawyers.com^
 ||metrics.lehighvalleylive.com^
 ||metrics.us.levi.com^
@@ -70391,7 +69937,6 @@
 ||metrics.lhj.com^
 ||stats.libresse.no^
 ||om.lonelyplanet.com^
-! 0.0.0.0  omni.macworld.com #[affects Safari]
 ||analytics.mail-corp.com^
 ||metric.makemytrip.com^
 ||metric.marthastewart.com^
@@ -70444,7 +69989,6 @@
 ||omniture.shopstyle.com^
 ||metrics.silive.com^
 ||b.skinstore.com^
-! 0.0.0.0 metrics.skype.com
 ||metrics.slate.com^
 ||metrics.speedousa.com^
 ||omni.sportingnews.com^
@@ -70452,7 +69996,6 @@
 ||metrics.sony.com^
 ||omn.sonypictures.com^
 ||metrics.southwest.com^
-! 0.0.0.0  metrics.sprint.com #[affects login]
 ||metrics.starwoodhotels.com^
 ||omniture.stuff.co.nz^
 ||metrics.sun.com^
@@ -70468,7 +70011,6 @@
 ||metrics.thinkgeek.com^
 ||metrics.three.co.uk^
 ||metrics.ticketmaster.com^
-! 0.0.0.0 metric.timewarnercable.com #[affects billing?]
 ||metrics.tlc.com^
 ||metrics.toptenreviews.com^
 ||metrics.toyota.com^
@@ -70497,7 +70039,6 @@
 ||an.worldbaseballclassic.com^
 ||metric.worldcat.org^
 ||metrics.worldmarket.com^
-! 0.0.0.0 metric.wtop.com #[affects login]
 ||smetrics.yellowbook.com^
 ||metric.yellowpages.com^
 ||mbox.offermatica.intuit.com^
@@ -70717,7 +70258,6 @@
 ||js.bizographics.com^
 ||images.ddc.com^
 ||cdn.firstlook.com^
-! 0.0.0.0  adm.fwmrm.net #[affects nhl.com]
 ||m2.fwmrm.net^
 ||cache.gfrevenge.com^
 ||cache.izearanks.com^
@@ -70886,7 +70426,6 @@
 ||ccc01.opinionlab.com^
 ||rate.opinionlab.com^
 ||www.opinionlab.com^
-! 0.0.0.0  static.chartbeat.com #[affects Healthcare.gov]
 ||csma95349.analytics.edgesuite.net^
 ||ads.tarrobads.com^
 ||hu.2.cqcounter.com^
@@ -71044,7 +70583,6 @@
 ||www.mvav.com^
 ||admax.nexage.com^
 ||bbads.sx.atl.publicus.com^
-! 0.0.0.0 d.xp1.ru4.com #[affects Battlefield]
 ||udm.ia6.scorecardresearch.com^
 ||udm.ia7.scorecardresearch.com^
 ||sa.scorecardresearch.com^
@@ -71242,7 +70780,6 @@
 ||c.chango.com^
 ||d.chango.com^
 ||dnetshelter3.d.chango.com^
-! 0.0.0.0 realtime.services.disqus.com #[affects politicalwire.com]
 ||eclkmpbn.com^
 ||eclkmpsa.com^
 ||eclkspbn.com^
@@ -71311,7 +70848,6 @@
 ||hits.informer.com^
 ||my.mobfox.com^
 ||banners.mynakedweb.com^
-! 0.0.0.0 api.nanigans.com #[affects 2go.com]
 ||www.seekways.com^
 ||www.toplistim.com^
 ||r.bid4keywords.com^
@@ -71761,7 +71297,6 @@
 ||log.aebn.net^
 ||www3.bloomingdales.com^
 ||cmd.customink.com^
-! 0.0.0.0 www.securitymetrics.com #[affects bank login]
 ||mv.treehousei.com^
 ||beacon.lijit.com^
 ||www.lijit.com^
@@ -72516,7 +72051,6 @@
 ||vibrantmedia.com^
 ||www.vibrantmedia.com^
 ||banners.payserve.com^
-! 0.0.0.0 cdn.visiblemeasures.com #[affects Collegehumor.com]
 ||api.adrenalads.com^
 ||f.blogads.com^
 ||g.blogads.com^
@@ -72774,7 +72308,6 @@
 ||adinterax.com^
 ||www.adinterax.com^
 ||np.lexity.com^
-! 0.0.0.0 beap.adss.yahoo.com #[affects Yahoo video]
 ||beap.adx.yahoo.com^
 ||ac.ybinst0.ec.yimg.com^
 ||ac.ybinst1.ec.yimg.com^
@@ -72796,13 +72329,10 @@
 ||ybinst7.ec.yimg.com^
 ||ybinst8.ec.yimg.com^
 ||ybinst9.ec.yimg.com^
-! 0.0.0.0 yastatic.net #[affects Yandex Mail]
 ||an.yandex.ru^
 ||advertising.yandex.ru^
 ||bs.yandex.ru^
 ||bs-meta.yandex.ru^
-! 0.0.0.0 clck.yandex.ru
-! 0.0.0.0 grade.market.yandex.ru
 ||informer.yandex.ru^
 ||mc.yandex.ru^
 ||serw.myroitracking.com^
@@ -72854,137 +72384,11 @@
 ||www.zedo.com^
 ||rt.udmserve.net^
 ||www.stickylogic.com^
-! End mvps.org
-! Start someonewhocares.org
-! This hosts file is brought to you by Dan Pollock and can be found at
-! http://someonewhocares.org/hosts/zero/
-! You are free to copy and distribute this file for non-commercial uses,
-! as long the original URL and attribution is included.
-!
-! This hosts file is proudly sponsored by adguard.com.
-!
-! See below for acknowledgements.
-! Please forward any additions, corrections or comments by email to
-! Last updated: Fri, 10 Apr 2026 at 21:26:03 GMT
-! Use this file to prevent your computer from connecting to selected
-! internet hosts. This is an easy and effective way to protect you from
-! many types of spyware, reduces bandwidth use, blocks certain pop-up
-! traps, prevents user tracking by way of "web bugs" embedded in spam,
-! provides partial protection to IE from certain web-based exploits and
-! blocks most advertising you would otherwise be subjected to on the
-! There is a version of this file that uses 127.0.0.1 instead of 0.0.0.0
-! available at http://someonewhocares.org/hosts/.
-! On some machines the zero version may run minutely faster, however it
-! may not be compatible with all systems.
-! This file must be saved as a text file with no extension. (This means
-! that the file name should be exactly as below, without a ".txt" appended.)
-! Let me repeat, the file should be named "hosts" NOT "hosts.txt".
-! For Windows 9x and ME place this file at "C:\Windows\hosts"
-! For NT, Win2K and XP use "C:\windows\system32\drivers\etc\hosts"
-!                       or "C:\winnt\system32\drivers\etc\hosts"
-! For Windows 7 and Vista use "C:\windows\system32\drivers\etc\hosts"
-!			or "%systemroot%\system32\drivers\etc\hosts"
-! For Windows 8 and Windows 10 use "C:\Windows\System32\drivers\etc\hosts"
-! 		You may need to tell Windows Defender to ignore this path
-! 		see: http://support.microsoft.com/kb/2764944
-! You may have to use Notepad and "Run as Administrator"
-!
-! For Linux, Unix, or OS X place this file at "/etc/hosts" or on some
-!    systems at "/private/etc/hosts". You will require root access to do
-!    this. Saving this file to "~/hosts" will allow you to run something
-!    like "sudo cp ~/hosts /etc/hosts".
-! For OS/2 copy the file to "%ETC%\HOSTS" and in the CONFIG.SYS file,
-!    ensure that the line "SET USE_HOSTS_FIRST=1" is included.
-! For BeOS place it at "/boot/beos/etc/hosts"
-! On a Netware system, the location is System\etc\hosts"
-! For Macintosh (pre OS X) place it in the Mac System Folder or Preferences
-!    folder and reboot. (something like HD:System Folder:Preferences:Hosts)
-!    Alternatively you can save it elsewhere on your machine, then go to the
-!    TCP/IP control panel and click on "Select hosts file" to read it in.
-!    ------------------
-!    | As well, note that the format is different on old macs, so
-!    | please visit http://someonewhocares.org/hosts/zero/mac/ for mac format
-! For Android place the file at "/system/etc/hosts". You will need root
-!   access on your device to do this.
-!    ------------------
-! To convert the hosts file to a set of Cisco IOS commands for Cisco routers
-!   use this script by Jesse Baird:
-!   http://jebaird.com/2012/12/21/hosts-to-ip-host-generating-blocked-hosts-from-a-host-file-for-a-cisco-router.html
-! If there is a domain name you would rather never see, simply add a line
-! that reads "0.0.0.0 machine.domain.tld". This will have the effect of
-! redirecting any requests to that host to your own computer. For example
-! this will prevent your browser from downloading banner ads, or sending
-! your information back to a company.
-!<localhost>
-!fe80::1%lo0	localhost
-!</localhost>
-!<shortcut-examples>
-! As well by specifying the ipaddress of a server, you can gain access
-!   to some of your favourite sites with a single letter, instead of
-!   using the whole domain name
-! It is perhaps a better solution to use Favourites/Bookmarks instead.
-!216.34.181.45   s        # slashdot.org
-!74.125.127.105	g        # google.com
-!</shortcut-examples>
-!<hijack-sites>
-! The sites ads234.com and ads345.com -- These sites hijack internet explorer
-! and redirect all requests through their servers. You may need to use spyware
-! removal programs such as SpyBotS&amp;D, AdAware or HijackThis to remove this
-! nasty parasite. It's possible that blocking these sites using a hosts file
-! may not work, in which case you should remove the following lines from this
-! file and try the tools listed above immediately. Don't forget to reboot
-! after a scan.
 ||ads234.com^
 ||ads345.com^
 ||www.ads234.com^
 ||www.ads345.com^
-!</hijack-sites>
-!<spyware-sites>
-! Spyware and user tracking
-! By entering domains here, it will prevent certain companies from
-! gathering information on your surfing habits. These servers do not
-! necessarily serve ads, instead some are used by certain products to
-! "phone home". Others use web cookies to gather statistics on surfing
-! habits. Among other uses, this is a common tactic by spammers, to
-! let them know that you have read your mail.
-! Uncomment (remove the #) the lines that you wish to block, as some
-! may provide you with services you like.
-!<maybe-spy>
-!0.0.0.0 auto.search.msn.com  # Microsoft uses this server to redirect
-! mistyped URLs to search engines. They
-! log all such errors.
-!0.0.0.0 sitefinder.verisign.com	# Verisign has joined the game
-!0.0.0.0 sitefinder-idn.verisign.com	# of trying to hijack mistyped
-! URLs to their site.
-! May break iOS Game Center.
-!0.0.0.0 s0.2mdn.net		# This may interfere with some streaming
-! video on sites such as cbc.ca
-!0.0.0.0 ad.doubleclick.net   # This may interefere with www.sears.com
-! and potentially other sites.
 ||media.fastclick.net^
-!0.0.0.0 ebay.doubleclick.net		# may interfere with ebay
-!0.0.0.0 google-analytics.com			# breaks some sites
-!0.0.0.0 ssl.google-analytics.com
-!0.0.0.0 www.google-analytics.l.google.com
-!0.0.0.0 stat.livejournal.com		# There are reports that this may mess
-! up CSS on livejournal
-!0.0.0.0 stats.surfaid.ihost.com	# This has been known cause
-! problems with NPR.org
-!0.0.0.0 www.google-analytics.com		# breaks some sites
-!0.0.0.0 ads.imeem.com		# Seems to interfere with the functioning of imeem.com
-!</maybe-spy>
-!0.0.0.0 ci-mpsnare.iovation.com	# See http://www.codingthewheel.com/archives/online-gambling-privacy-iesnare
-!0.0.0.0 ll.a.hulu.com	# Uncomment to block Hulu.
-!0.0.0.0 metrics.ticketmaster.com	# interferes with logging in to ticketmaster.com
-!0.0.0.0 nl.sitestat.com	# may interfere with duo.nl
-!0.0.0.0 pro.hit.gemius.pl	# May interfere with some video sites
-!0.0.0.0 s.youtube.com				# Blocking this will interfere with video watching history and may interfere with Google Podcasts
-!0.0.0.0 services.krxd.net
-!0.0.0.0 stats.channel4.com
-!0.0.0.0 t2.hulu.com		# Uncomment to block Hulu.
-!0.0.0.0 track.hulu.com	# Uncomment to block Hulu.
-!0.0.0.0 webstat.channel4.com
-!0.0.0.0 www.googletagservices.com		#interferes with techrepublic
 ||006.freecounters.co.uk^
 ||0stats.com^
 ||123counter.mycomputer.com^
@@ -73006,8 +72410,6 @@
 ||adelogs.adobe.com^
 ||ademails.com^
 ||adlog.com.com^
-! ads and track users across
-! the com.com family of sites
 ||admin.iovation.com^
 ||adpatrof.com^
 ||ads.tiscali.it^
@@ -73900,9 +73302,6 @@
 ||xxxcounter.com^
 ||zc1.campaign-view.com.cn^
 ||zc1.maillist-manage.com.cn^
-!</spyware-sites>
-!<malware-sites>
-! sites with known trojans, phishing, or other malware
 ||0.nextyourcontent.com^
 ||05tz2e9.com^
 ||1-bmo-client-login.com^
@@ -76336,15 +75735,10 @@
 ||zjgaoergao.com^
 ||ztriskl.divisionfair.homes^
 ||zzkwg.comfortykive.xyz^
-!</malware-sites>
-!<doubleclick-sites>
-!0.0.0.0 pubads.g.doubleclick.net	#interferes with video on cwtv.com
 ||ad.ve.doubleclick.net^
 ||doubleclick.de^
 ||m.2mdn.net^
 ||ukrpts.net^
-!</doubleclick-sites>
-!<intellitxt-sites>
 ||gadgets.fosfor.se.intellitxt.com^
 ||maccity.it.intellitxt.com^
 ||macuser.uk.intellitxt.com^
@@ -76356,10 +75750,6 @@
 ||pcgameshardware.de.intellitxt.com^
 ||pspcave.uk.intellitxt.com^
 ||splashnews.uk.intellitxt.com^
-!</intellitxt-sites>
-!<red-sheriff-sites>
-! Red Sheriff and imrworldwide.com  -- server side tracking
-!0.0.0.0 secure-au.imrworldwide.com
 ||fe-au.imrworldwide.com^
 ||fe1-au.imrworldwide.com^
 ||fe2-au.imrworldwide.com^
@@ -76371,9 +75761,6 @@
 ||server-ru.imrworldwide.com^
 ||server-ua.imrworldwide.com^
 ||www.redsheriff.com^
-!</red-sheriff-sites>
-!<cydoor-sites>
-! cydoor -- server side tracking
 ||cydoor.com^
 ||j.2004cms.com^
 ||jbaventures.cjt1.net^
@@ -76438,11 +75825,6 @@
 ||jumcna.cjt1.net^
 ||jwebbsense.cjt1.net^
 ||www.cydoor.com^
-!</cydoor-sites>
-!<2o7-sites>
-! 2o7.net -- server side tracking
-!0.0.0.0 appleglobal.112.2o7.net	#breaks apple.com
-!0.0.0.0 applestoreus.112.2o7.net	#breaks apple.com
 ||actforvictory.112.2o7.net^
 ||adbrite.112.2o7.net^
 ||americanbaby.112.2o7.net^
@@ -76714,9 +76096,6 @@
 ||workopolis.122.2o7.net^
 ||youtube.112.2o7.net^
 ||yrkeve.112.2o7.net^
-!</2o7-sites>
-!<oewabox-sites>
-! oewabox.at -- 'Austrian Webanalysis Society'
 ||1000ps.oewabox.at^
 ||afinder.oewabox.at^
 ||alphalux.oewabox.at^
@@ -76842,9 +76221,6 @@
 ||woche.oewabox.at^
 ||wohnnet.oewabox.at^
 ||zfm.oewabox.at^
-!</oewabox-sites>
-!<pegasus-spyware-sites>
-! Pegasus spyware sites.
 ||24-7clinic.com^
 ||365redirect.co^
 ||a-redirect.com^
@@ -77318,25 +76694,6 @@
 ||youliehow.com^
 ||yourbestclothes.com^
 ||yummyfoodallover.com^
-!</pegasus-spyware-sites>
-!<ad-sites>
-!<maybe-ads>
-!0.0.0.0 adfarm.mediaplex.com		# may interfere with ebay
-!0.0.0.0 ads.msn.com			#This may cause problems with zone.msn.com
-!0.0.0.0 ak.imgfarm.com		# may cause problems with iwon.com
-!0.0.0.0 click.linksynergy.com
-!0.0.0.0 global.msads.net		#This may cause problems with zone.msn.com
-!0.0.0.0 lads.myspace.com		# blocks myspace media/video players
-!0.0.0.0 refer.ccbill.com		#affiliate program, to add it back, remove the #
-!0.0.0.0 rmads.msn.com			#This may cause problems with zone.msn.com
-!0.0.0.0 www.apmebf.com		#qksrv
-!0.0.0.0 www.tkqlhce.com		#qksrv
-!0.0.0.0 ad.ca.doubleclick.net	#intereferes with video on globeandmail.com
-!0.0.0.0 transfer.go.com		#may interfere with Disney websites
-!</maybe-ads>
-! ads
-!0.0.0.0 aax-eu.amazon-adsystem.com 	# may interfere with Amazon ad preferences
-!0.0.0.0 s.amazon-adsystem.com	# may interfere with Amazon ad preferences
 ||0101011.com^
 ||0427d7.se^
 ||0d79ed.r.axf8.net^
@@ -82840,30 +82197,17 @@
 ||zu1.november-lax.com^
 ||zulu.r867qq.net^
 ||zytpirwai.net^
-!</ad-sites>
-! https://securehomes.esat.kuleuven.be/~gacar/persistent/index.html
-!<canvass-fingerprinting-sites>
 ||cya2.net^
 ||i.ligatus.com^
 ||images.revtrax.com^
 ||shorte.st^
 ||src.kitcode.net^
-!</canvass-fingerprinting-sites>
-!<evercookies-sites>
 ||ar.hao123.com^
 ||irs01.net^
 ||kiks.yandex.ru^
 ||y3.ifengimg.com^
-!</evercookies-sites>
-!<yahoo-ad-sites>
-! yahoo banner ads
-! If you have trouble with Yahoo email, you may need to comment out these lines
-!0.0.0.0 us.i1.yimg.com	#Uncomment this to block yahoo images
 ||in.yimg.com^
 ||us.a1.yimg.com^
-!</yahoo-ad-sites>
-!<hitbox-sites>
-! hitbox.com web bugs
 ||adminec1.hitbox.com^
 ||ads.hitbox.com^
 ||ai.hitbox.com^
@@ -83155,13 +82499,7 @@
 ||www.hitbox.com^
 ||yang.hitbox.com^
 ||ying.hitbox.com^
-!</hitbox-sites>
-!<extreme-dm-sites>
-! www.extreme-dm.com tracking
 ||www.extreme-dm.com^
-!</extreme-dm-sites>
-!<realmedia-sites>
-! realmedia.com's Open Ad Stream
 ||oas-central.east.realmedia.com^
 ||oas-central.realmedia.com^
 ||oas.adservingml.com^
@@ -83271,13 +82609,7 @@
 ||oascentral.yellowpages.com^
 ||oascentral.zwire.com^
 ||oascentralnx.comcast.net^
-!</realmedia-sites>
-!<fastclick-sites>
-! fastclick banner ads
 ||fastclick.net^
-!</fastclick-sites>
-!<belo-interactive-sites>
-! belo interactive ads
 ||te.about.com^
 ||te.advance.net^
 ||te.ap.org^
@@ -83299,9 +82631,6 @@
 ||te.thestar.com^
 ||te.trb.com^
 ||te.versiontracker.com^
-!</belo-interactive-sites>
-!<popup-traps>
-! popup traps -- sites that bounce you around or won't let you leave
 ||incestland.com^
 ||lesview.com^
 ||searchforit.com^
@@ -83319,10 +82648,6 @@
 ||www.xxxnations.com^
 ||www.xxxtoolbar.com^
 ||www.yourfuckbook.com^
-!</popup-traps>
-!<ecard-scam-sites>
-! malicious e-card -- these sites send out mass quantities of spam
-! and some distribute adware and spyware
 ||123greetings.com^
 ||2000greetings.com^
 ||celebwelove.com^
@@ -83346,13 +82671,6 @@
 ||www.friendgreetings.net^
 ||www.laugh-mail.com^
 ||www.laugh-mail.net^
-!</ecard-scam-sites>
-!<IVW-sites>
-! European network of tracking sites
-!</IVW-sites>
-!<wiki-spam-sites>
-! message board and wiki spam -- these sites are linked in
-! message board spam and are unlikely to be real sites
 ||21jewelry.com^
 ||24x7.soliday.org^
 ||2site.com^
@@ -83837,9 +83155,6 @@
 ||zyrtec.1.p2l.info^
 ||zyrtec.3.p2l.info^
 ||zyrtec.4.p2l.info^
-!</wiki-spam-sites>
-!<Windows10>
-! Windows 10 reporting domains.
 ||adnexus.net^
 ||az361816.vo.msecnd.net^
 ||az512334.vo.msecnd.net^
@@ -83854,9 +83169,6 @@
 ||secure.flashtalking.com^
 ||statsfe2.ws.microsoft.com^
 ||wes.df.telemetry.microsoft.com^
-!</Windows10>
-!<shock-sites>
-! For example, to block unpleasant pages, try:
 ||goatse.cx^
 ||www.goatse.cx^
 ||oralse.cx^
@@ -84041,42 +83353,6 @@
 ||www.zentastic.com^
 ||youaresogay.com^
 ||zentastic.com^
-!</shock-sites>
-! Acknowledgements
-! I'd like to thank the following people for submitting sites, and
-! helping promote the site.
-! Bill Allison, Harj Basi, Lance Russhing, Marshall Drew-Brook,
-!  Leigh Brasington, Scott Terbush, Cary Newfeldt, Kaye, Jeff
-!  Scrivener, Mark Hudson, Matt Bells, T. Kim Nguyen, Lino Demasi,
-!  Marcelo Volmaro, Troy Martin, Donald Kerns, B.Patten-Walsh,
-!  bobeangi, Chris Maniscalco, George Gilbert, Kim Nilsson, zeromus,
-!  Robert Petty, Rob Morrison, Clive Smith, Cecilia Varni, OleKing
-!  Cole, William Jones, Brian Small, Raj Tailor, Richard Heritage,
-!  Alan Harrison, Ordorica, Crimson, Joseph Cianci, sirapacz,
-!  Dvixen, Matthew Craig, Tobias Hessem, Kevin F. Quinn, Thomas
-!  Corthals, Chris McBee, Jaime A. Guerra, Anders Josefson,
-!  Simon Manderson, Spectre Ghost, Darren Tay, Dallas Eschenauer, Cecilia
-!  Varni, Adam P. Cole, George Lefkaditis, grzesiek, Adam Howard, Mike
-!  Bizon, Samuel P. Mallare, Leinweber, Walter Novak, Stephen Genus,
-!  Zube, Johny Provoost, Peter Grafton, Johann Burkard, Magus, Ron Karner,
-!  Fredrik Dahlman, Michele Cybula, Bernard Conlu, Riku B, Twillers,
-!  Shaika-Dzari, Vartkes Goetcherian, Michael McCown, Garth, Richard Nairn,
-!  Exzar Reed, Robert Gauthier, Floyd Wilder, Mark Drissel, Kenny Lyons,
-!  Paul Dunne, Tirath Pannu, Mike Lambert, Dan Kolcun, Daniel Aleksandersen,
-!  Chris Heegard, Miles Golding, Daniel Bisca, Frederic Begou, Charles
-!  Fordyce, Mark Lehrer, Sebastien Nadeau-Jean, Russell Gordon, Alexey
-!  Gopachenko, Stirling Pearson, Alan Segal, Bobin Joseph, Chris Wall, Sean
-!  Flesch, Brent Getz, Jerry Cain, Brian Micek, Lee Hancock, Kay Thiele,
-!  Kwan Ting Chan, Wladimir Labeikovsky, Lino Demasi, Bowie Bailey, Andreas
-!  Marschall, Michael Tompkins, Michael O'Donnell, Jos&eacute; Lucas Teixeira
-!  de Oliveira, M. &Ouml;mer G&ouml;lgeli, and Anthony Gelibert for helping to build
-!  the hosts file.
-! Russell O'Connor for OS/2 information
-! kwadronaut for Windows 7 and Vista information
-! John Mueller and Lawrence H Smith for Mac Pre-OSX information
-! Jesse Baird for the Cisco IOS script
-! End someonewhocares.org
-! Start tiuxo
 ||100234.advision-adnw.jp^
 ||100291.adnico.jp^
 ||100602.advision-adnw.jp^
@@ -85440,8 +84716,6 @@
 ||zemanta.com^
 ||zenback.jp^
 ||ziyu.net^
-! End tiuxo
-! Start UncheckyAds
 ||cdn.appround.biz^
 ||cdn.download.sweetpacks.com^
 ||cdn.insta.playbryte.com^
@@ -85450,16 +84724,6 @@
 ||inno.bisrv.com^
 ||installer.betterinstaller.com^
 ||nsis.bisrv.com^
-! End UncheckyAds
-! Start URLHaus
-!###############################################################
-! abuse.ch URLhaus Host file                                   #
-! Last updated: 2026-04-12 23:00:17 (UTC)                      #
-!                                                              #
-! Terms Of Use: https://urlhaus.abuse.ch/api/                  #
-! For questions please contact urlhaus [at] abuse.ch           #
-!###############################################################
-!
 ||0022a601.pphost.net^
 ||111101111.ru^
 ||123.ywxww.net^
@@ -85895,23 +85159,6 @@
 ||zenglobalenerji.com^
 ||zhigao5191.com^
 ||zycdjz.com^
-! Number of entries: 436
-! End URLHaus
-! Start yoyo.org
-! Blocklist for use with hosts files to block ads, trackers, and other nasty things
-!
-! For more information about this list, see: https://pgl.yoyo.org/adservers/
-! ----
-! last updated:   Wed, 07 Jan 2026 11:24:10 GMT
-! entries:        3501
-! format:         hosts (hosts -- in hosts file format)
-! credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
-! this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0
-! Patreon:        https://patreon.com/blocklist
-! other formats:  https://pgl.yoyo.org/adservers/formats.php
-! policy:         https://pgl.yoyo.org/adservers/policy.php
-!
-! start date:    Fri, 06 Jun 2003 00:00:00
 ||101com.com^
 ||180hits.de^
 ||180searchassistant.com^
@@ -88166,7 +87413,6 @@
 ||systemssummit.com^
 ||t.bawafx.com^
 ||t.carta.com^
-! 0.0.0.0 t.co
 ||t.eloqua.com^
 ||t.email.superdrug.com^
 ||t.en25.com^
@@ -88539,10 +87785,3 @@
 ||zonewedgeshaft.com^
 ||zpu.samsungelectronics.com^
 ||zqtk.net^
-! End yoyo.org
-! blacklist
-!
-! The contents of this file (containing a listing of additional domains in
-! 'hosts' file format) are appended to the unified hosts file during the
-! update process. For example, uncomment the following line to block
-! 0.0.0.0 example.com

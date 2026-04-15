@@ -1,7 +1,23 @@
-# Title: AntiPhishingDiscordSteam
-# Description: This list blocks known domains used in the VOIP application Discord by scammers. Adding this list to your Pi-Hole blocklist will prevent those domains from loading.
-# Last modified: Thu, 24 Oct 2024, 11:19 UTC+02
-# Origin: https://github.com/Dogino/Discord-Phishing-URLs
+#       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
+#      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
+#     | (___   | |__    | |__      | |   |  \| | | |__    | ' /        | |_) | | |      | |  | | | |      | ' /  | |        | |   | (___      | |
+#      \___ \  |  __|   |  __|     | |   | . ` | |  __|   |  <         |  _ <  | |      | |  | | | |      |  <   | |        | |    \___ \     | |
+#      ____) | | |____  | |       _| |_  | |\  | | |____  | . \        | |_) | | |____  | |__| | | |____  | . \  | |____   _| |_   ____) |    | |
+#     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
+#
+#                                            The best blocklist collection: https://blocklist.sefinek.net
+# Title: AntiPhishing Discord & Steam
+# Description: Blocks known domains used by scammers in Discord and Steam communities.
+# Expires: 1 day
+# Count: 37,087 domains
+# Source: https://raw.githubusercontent.com/Dogino/Discord-Phishing-URLs/main/pihole-phishing-adlist.txt
+# License: MIT
+# Release: Dnsmasq
+# Last update: April 15, 2026 at 7:17 PM UTC | 2026-04-15T19:17:02.288Z
+#
+# This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
+# If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
 server=/cord.gifts/
 server=/discord.de/
 server=/discord.st/
@@ -11,7 +27,6 @@ server=/iscord.gift/
 server=/ord.gg/
 server=/steamcommunity.co/
 server=/witch.tv/
-# Above domains are listed as false positive for Phades, they will be included in the Pi-Hole list.
 server=/02ip.ru/
 server=/08us2w100ps.top/
 server=/08us2w109ps.top/

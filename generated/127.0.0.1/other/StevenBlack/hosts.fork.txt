@@ -1,23 +1,24 @@
-# Title: StevenBlack/hosts
+#       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
+#      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
+#     | (___   | |__    | |__      | |   |  \| | | |__    | ' /        | |_) | | |      | |  | | | |      | ' /  | |        | |   | (___      | |
+#      \___ \  |  __|   |  __|     | |   | . ` | |  __|   |  <         |  _ <  | |      | |  | | | |      |  <   | |        | |    \___ \     | |
+#      ____) | | |____  | |       _| |_  | |\  | | |____  | . \        | |_) | | |____  | |__| | | |____  | . \  | |____   _| |_   ____) |    | |
+#     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 #
-# This hosts file is a merged collection of hosts from reputable sources,
-# with a dash of crowd sourcing via GitHub
+#                                            The best blocklist collection: https://blocklist.sefinek.net
+# Title: StevenBlack Unified Hosts
+# Description: Unified hosts file with base extensions, combining multiple reputable blocklists.
+# Expires: 1 day
+# Count: 87,767 domains
+# Source: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+# License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+# Release: 127.0.0.1 before each domain
+# Last update: April 15, 2026 at 7:16 PM UTC | 2026-04-15T19:16:54.336Z
 #
-# Date: 12 April 2026 23:10:56 (UTC)
-# Number of unique domains: 87,767
-#
-# Fetch the latest version of this file: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-# Project home page: https://github.com/StevenBlack/hosts
-# Project releases: https://github.com/StevenBlack/hosts/releases
-#
-# ===============================================================
+# This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
+# If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
 127.0.0.1 localhost.localdomain
-# Custom host records are listed here.
-# End of custom host records.
-# Start StevenBlack
-#=====================================
-# Title: Hosts contributed by Steven Black
-# http://stevenblack.com
 127.0.0.1 ad-assets.futurecdn.net
 127.0.0.1 ck.getcookiestxt.com
 127.0.0.1 eu1.clevertap-prod.com
@@ -1612,7 +1613,6 @@
 127.0.0.1 zvatrswtsrw.ml
 127.0.0.1 alibaba.zzux.com
 127.0.0.1 browserservice.zzux.com
-# Added January 23, 2021
 127.0.0.1 www.skinstrip.net
 127.0.0.1 creative.skinstrip.net
 127.0.0.1 go.alxbgo.com
@@ -1695,7 +1695,6 @@
 127.0.0.1 www.livejasmine.us
 127.0.0.1 www.mylivejasmin.org
 127.0.0.1 www.new.livejasmin.com
-# Added January 27, 2021
 127.0.0.1 ads.adviad.com
 127.0.0.1 ads2.adviad.com
 127.0.0.1 ads3.adviad.com
@@ -1709,14 +1708,11 @@
 127.0.0.1 ssp.adviad.com
 127.0.0.1 report.adviad.com
 127.0.0.1 cdnuz.adviad.com
-# Added February 5, 2021
 127.0.0.1 viglink.com
 127.0.0.1 live.rezync.com
 127.0.0.1 netc.sfr.fr
 127.0.0.1 tag.clrstm.com
-# Added February 9, 2021
 127.0.0.1 vkcache.com
-# Added February 26, 2021
 127.0.0.1 b174.s240.meetrics.net
 127.0.0.1 b95.s79.research.de.com
 127.0.0.1 bid.sxp.smartclip.net
@@ -1733,14 +1729,11 @@
 127.0.0.1 s79.mxcdn.net
 127.0.0.1 www.lacmp.net
 127.0.0.1 zipservice.adalliance.io
-# Added February 28, 2021
 127.0.0.1 github.com.cnpmjs.org
-# Added March 15, 2021
 127.0.0.1 facilitategovernor.com
 127.0.0.1 mvideo.facilitategovernor.com
 127.0.0.1 ns1.facilitategovernor.com
 127.0.0.1 www.facilitategovernor.com
-# Added April 2, 2021
 127.0.0.1 p.vtracy.de
 127.0.0.1 www.asadcdn.com
 127.0.0.1 adstax-cdn.adrtx.net
@@ -1772,14 +1765,11 @@
 127.0.0.1 traffic.emsservice.de
 127.0.0.1 static.emsservice.de
 127.0.0.1 te.technical-service.net
-# Added April 29, 2021
 127.0.0.1 news.thaprior.net
 127.0.0.1 blog.eduelects.com
 127.0.0.1 cdn.mirror-codes.net
 127.0.0.1 status.sublineover.net
-# Added May 4, 2021
 127.0.0.1 docs.pipenv.org
-# Added May 10, 2021  See discussion in Issue https://github.com/StevenBlack/hosts/pull/1643
 127.0.0.1 a9v8.cn
 127.0.0.1 config.unityads.unitychina.cn
 127.0.0.1 cu-cn-north00001.gala.convection.cn
@@ -1795,9 +1785,7 @@
 127.0.0.1 rp.hpplay.cn
 127.0.0.1 safeurl.maxthon.cn
 127.0.0.1 ssdkauth.hpplay.cn
-# Added May 12, 2021
 127.0.0.1 urgente.eu
-# Added May 22, 2021
 127.0.0.1 localbestdating1.com
 127.0.0.1 sylviagreen.club
 127.0.0.1 xvtelink.com
@@ -1807,7 +1795,6 @@
 127.0.0.1 track.venatusmedia.com
 127.0.0.1 amptrack.dailymail.co.uk
 127.0.0.1 mailmetromedia.amp.permutive.com
-# Added May 31, 2021
 127.0.0.1 mc.speakol.com
 127.0.0.1 rd.speakol.com
 127.0.0.1 inline.speakol.com
@@ -1819,7 +1806,6 @@
 127.0.0.1 plugins.speakol.com
 127.0.0.1 publishers.speakol.com
 127.0.0.1 dev.publishers.speakol.com
-# Added June 16, 2021
 127.0.0.1 www.gmial.com
 127.0.0.1 gmial.com
 127.0.0.1 assets.vlitag.com
@@ -1828,7 +1814,6 @@
 127.0.0.1 static.vliplatform.com
 127.0.0.1 c.hrzn-nxt.com
 127.0.0.1 s.clcktrax.com
-# Added June 17, 2021
 127.0.0.1 ssl.googleanalytics.com
 127.0.0.1 click.googleanalytics.com
 127.0.0.1 alt2.googleanalytics.com
@@ -1837,15 +1822,10 @@
 127.0.0.1 admobclick.com
 127.0.0.1 www.admobclick.com
 127.0.0.1 pixel.admobclick.com
-# Added June 22, 2021
 127.0.0.1 coinjoin.io
-# Added June 27, 2021
 127.0.0.1 dealabs.digidip.net
-# Added June 28, 2021
 127.0.0.1 whynotwin11.com
 127.0.0.1 www.whynotwin11.com
-# Added June 30, 2021
-# Chase Bank Scam. See #1699
 127.0.0.1 www.secure-verify-info.ddns.info
 127.0.0.1 secure-verify-info.ddns.info
 127.0.0.1 www.secure-verify-account.ddns.info
@@ -1872,13 +1852,11 @@
 127.0.0.1 security-update.qhigh.com
 127.0.0.1 www.seure-update.fartit.com
 127.0.0.1 seure-update.fartit.com
-# Added July 29, 2021 See https://github.com/StevenBlack/hosts/issues/1721
 127.0.0.1 www.updatecatalogs.com
 127.0.0.1 microsoft.updatecatalogs.com
 127.0.0.1 webmail.mmtimes.net
 127.0.0.1 myanmar.flymna.net
 127.0.0.1 new.mmtimes.org
-# Added August 2, 2021 See https://github.com/StevenBlack/hosts/issues/1722
 127.0.0.1 ackng.com
 127.0.0.1 bb3u9.com
 127.0.0.1 ttr3p.com
@@ -1895,29 +1873,19 @@
 127.0.0.1 zer9g.com
 127.0.0.1 b69kq.com
 127.0.0.1 down.sqlnetcat.com
-# Added August 8, 2021 see https://github.com/StevenBlack/hosts/issues/1725
 127.0.0.1 gjapplog.ucweb.com
 127.0.0.1 logssug.ucweb.com
 127.0.0.1 attr.union.ucweb.com
-# Added August 11, 2021
 127.0.0.1 www.luckycrush.live
-# Added September 17, 2021
 127.0.0.1 mmsotk.com
-# Added September 24, 2021 see https://github.com/StevenBlack/hosts/issues/1764
 127.0.0.1 discord-app.net
-# Added October 2, 2021 see https://github.com/StevenBlack/hosts/issues/1770
 127.0.0.1 sk.mplmnt.io
-# Added October 17, 2021 see https://github.com/StevenBlack/hosts/issues/1752
 127.0.0.1 org-upgrade.com
 127.0.0.1 www.org-upgrade.com
-# Added October 19, 2021
 127.0.0.1 www.abc.co.bz
-# Added October 24, 2021 See https://github.com/StevenBlack/hosts/issues/1789
 127.0.0.1 xfnl-spspostit-online.preview-domain.com
 127.0.0.1 ibancalculator-com.preview-domain.com
-# added November 29, 2021
 127.0.0.1 hiperdex.com
-# added December 13, 2021 See https://github.com/StevenBlack/hosts/issues/1832
 127.0.0.1 cloudshare.nocoshop.ru
 127.0.0.1 easyfiles.nocoshop.ru
 127.0.0.1 filedrive.nocoshop.ru
@@ -1966,10 +1934,8 @@
 127.0.0.1 samuel-beckett.site
 127.0.0.1 tahmil-kutib-pdf.info
 127.0.0.1 uberupload.online
-# Added December 25, 2021 see https://github.com/StevenBlack/hosts/issues/1840
 127.0.0.1 pokemoney.biz
 127.0.0.1 pokemoney.shop
-# added December 30, 2021 see https://github.com/StevenBlack/hosts/issues/1849
 127.0.0.1 c752sa.k9oeb2eg2ehpgc8fnhkeyyyyyn.domsearch.net
 127.0.0.1 domsearch.net
 127.0.0.1 k9oeb2eg2ehpgc8fnhkeyyyyyn.domsearch.net
@@ -1977,63 +1943,43 @@
 127.0.0.1 vor.ngo
 127.0.0.1 vor.ong
 127.0.0.1 www.domsearch.net
-# Added December 31, 2021
 127.0.0.1 xxsweety.com
 127.0.0.1 manualdrain.com
-# Added January 2, 2022
 127.0.0.1 mypornsnap.top
-# Added January 11, 2022
 127.0.0.1 asecv.xyz
-# Added January 12, 2022
 127.0.0.1 loopybatl.site
 127.0.0.1 technoob.info
 127.0.0.1 thefappeningpics.com
 127.0.0.1 hotzxgirl.com
-# Added January 13, 2022
 127.0.0.1 roksa.sx
-# Added January 30, 2022
 127.0.0.1 waaw.to
-# Added February 5, 2022
 127.0.0.1 zmyslowyklub.com
 127.0.0.1 flndmyiove.com
-# Added February 17, 2022
 127.0.0.1 yourbestwoman.life
-# Added February 28, 2022
 127.0.0.1 sweetchicks.net
 127.0.0.1 rbgbq.sweetchicks.net
 127.0.0.1 fuckmebook.com
-# Added May 20, 2022
 127.0.0.1 tracking.overwolf.com
 127.0.0.1 analyticsnew.overwolf.com
 127.0.0.1 raf.overwolf.com
-# Added June 21, 2022
 127.0.0.1 speeddials.opera.com
 127.0.0.1 merchandise.opera-api.com
-# added June 25, 2022
 127.0.0.1 analytics.binaryfortress.com
-# added July 10, 2022
 127.0.0.1 seductivegirls.cyou
 127.0.0.1 amusingdates.net
 127.0.0.1 honey-date4u.life
-# Added August 9, 2022
 127.0.0.1 shopsplumbing.com
-# Added August 12, 2022
 127.0.0.1 nl-crypto.com
 127.0.0.1 evri-package-gb.web.app
-# Added August 13, 2022
 127.0.0.1 telemetry.acronis.com
-# Added August 17, 2022
 127.0.0.1 mlbcash.com
 127.0.0.1 easy-extra-income-ways-makes-you-rich.store
 127.0.0.1 www.easy-extra-income-ways-makes-you-rich.store
-# Added August 20, 2022
 127.0.0.1 arizona-golf-vacations.com
-# Added August 25, 2022
 127.0.0.1 prd-lender.cdp.internal.unity3d.com
 127.0.0.1 config.uca.cloud.unity3d.com
 127.0.0.1 didna-d.openx.net
 127.0.0.1 c2shb.ssp.yahoo.com
-# Added August 26, 2022
 127.0.0.1 anmooq.deiicatedate.net
 127.0.0.1 www.pornsite123.com
 127.0.0.1 pornsite123.com
@@ -2041,50 +1987,36 @@
 127.0.0.1 xxxbullet.com
 127.0.0.1 www.packsdechicas.online
 127.0.0.1 packsdechicas.online
-# Added August 27, 2022
 127.0.0.1 ip-info.ff.avast.com
 127.0.0.1 ipm-provider.ff.avast.com
 127.0.0.1 ipmcdn.avast.com
 127.0.0.1 ncc.avast.com
 127.0.0.1 shepherd.ff.avast.com
 127.0.0.1 clicktut.site
-# Added Auguest 30, 2022
 127.0.0.1 secureaddisplay.com
 127.0.0.1 wiztube.xyz
-# Added September 2, 2022
 127.0.0.1 yourgodess.com
 127.0.0.1 www.quinni.cyou
 127.0.0.1 quinni.cyou
 127.0.0.1 www.alenai.cyou
 127.0.0.1 alenai.cyou
-# Added September 5, 2022
 127.0.0.1 telewizja-online.net
 127.0.0.1 bramka.org
 127.0.0.1 ustreamix.su
 127.0.0.1 inatv.pl
-# Added September 7, 2022
 127.0.0.1 tracking.minitool.com
-# Added September 9, 2022
 127.0.0.1 pasiekazlotoklos.pl
-# Added September 12, 2022
 127.0.0.1 eu-commercialb.com
-# Added September 29, 2022
 127.0.0.1 gratlfyingdates.net
 127.0.0.1 www.gratlfyingdates.net
-# Added October 15, 2022
 127.0.0.1 filmsexeporno.com
-# Added October 24, 2022
 127.0.0.1 supdqwepu.com
 127.0.0.1 vawardquac.com
 127.0.0.1 lemmingro.com
-# Added October 27, 2022
 127.0.0.1 flashrewards.co
-# Added November 13, 2022
 127.0.0.1 info-eastflirts.com
 127.0.0.1 www.info-eastflirts.com
-# Added November 20, 2022
 127.0.0.1 reporting-api.gannettinnovation.com
-# Added November 26, 2022
 127.0.0.1 1041598d1a.da1a0e7bb3.com
 127.0.0.1 12112336.pix-cdn.org
 127.0.0.1 1d3c8a1eaa.faeaeeaafa.com
@@ -2125,9 +2057,7 @@
 127.0.0.1 www.gaming-adult.com
 127.0.0.1 mediasama.com
 127.0.0.1 danbo.org
-# Added November 27, 2022
 127.0.0.1 crmt.livejasmin.com
-# Added December 4, 2022. Malware domains using TXT record to transfer powershell scripts.
 127.0.0.1 wmail-endpoint.com
 127.0.0.1 wmail-blog.com
 127.0.0.1 wmail-chat.com
@@ -2178,7 +2108,6 @@
 127.0.0.1 ahoravideo-chat.xyz
 127.0.0.1 ahoravideo-cdn.xyz
 127.0.0.1 ahoravideo-schnellvpn.xyz
-# Added December 4, 2022
 127.0.0.1 cesareurope.com
 127.0.0.1 cws-hotstar.conviva.com
 127.0.0.1 events-analytics.hotstar.com
@@ -2187,10 +2116,8 @@
 127.0.0.1 settings-analytics.hotstar.com
 127.0.0.1 videoads.hotstar.com
 127.0.0.1 vs.hotstar.com
-# Added December 11, 2022
 127.0.0.1 analytics.shein.com
 127.0.0.1 analytics.shein.co.uk
-# Added December 29, 2022
 127.0.0.1 8a97175fd63e1d3a69f36979b9b34470.safeframe.googlesyndication.com
 127.0.0.1 c2shb.pubgw.yahoo.com
 127.0.0.1 cdn.confiant-integrations.net
@@ -2203,22 +2130,18 @@
 127.0.0.1 freestar-io.videoplayerhub.com
 127.0.0.1 oa.openxcdn.net
 127.0.0.1 s2s.t13.io
-# Added January 11, 2023
 127.0.0.1 btc8886.com
 127.0.0.1 en.xachinaproject.fun
-# Added January 12, 2023
 127.0.0.1 antihohol.cloud
 127.0.0.1 hosteagle.club
 127.0.0.1 anz-shield-secure.com
 127.0.0.1 alert-bendigobank.com
 127.0.0.1 linkt-transport.top
 127.0.0.1 linkt-help.top
-# Added January 13, 2023
 127.0.0.1 reviewmygov.tuquy.com
 127.0.0.1 auspost-record.com
 127.0.0.1 alert-auspost.com
 127.0.0.1 auspost-input.com
-# Added January 22, 2023
 127.0.0.1 vep.hautnah-kosmetik-grafenau.de
 127.0.0.1 ttri.kanzlei-ecklmaier.de
 127.0.0.1 d-stuff.cfd
@@ -2234,11 +2157,9 @@
 127.0.0.1 tyty.lolokira.lol
 127.0.0.1 yord.serawent-pole.lol
 127.0.0.1 redivosrl.it
-# Added January 23, 2023
 127.0.0.1 products.gobankingrates.com
 127.0.0.1 cdn.rates.consumertrack.com
 127.0.0.1 ads-api.twitter.com
-# Added February 7, 2023
 127.0.0.1 aax-dtb-cf.amazon-adsystem.com
 127.0.0.1 assets-jpcust.jwpsrv.com
 127.0.0.1 fundingchoicesmessages.google.com
@@ -2246,46 +2167,33 @@
 127.0.0.1 prod.us-east-1.cxm-bcn.publisher-services.amazon.dev
 127.0.0.1 secure.cdn.fastclick.ne
 127.0.0.1 twngcpbidder.lb.engagecore.com
-# Added March 7, 2023
 127.0.0.1 a125375509.cdn.optimizely.com
 127.0.0.1 cdn.cookielaw.org
 127.0.0.1 cdn.indexww.com
-# Added March 25, 2023
 127.0.0.1 wpad.www.tendawifi.com
 127.0.0.1 crprt.livejasmin.com
-# Added March 28, 2023
 127.0.0.1 grow.gab.com
-# Added April 3, 2023
 127.0.0.1 transive.top
 127.0.0.1 warehousesale.shop
-# Added April 4, 2023
 127.0.0.1 fpjscdn.net
 127.0.0.1 api.fpjs.io
 127.0.0.1 use1.fptls.com
 127.0.0.1 use1.fptls3.com
-# Added April 7, 2023
 127.0.0.1 d2uap9jskdzp2.cloudfront.net
 127.0.0.1 steadfastseat.com
 127.0.0.1 eq97f.publishers.tremorhub.com
-# Added April 13, 2023
 127.0.0.1 wota-tournament.com
-# Added April 19, 2023
 127.0.0.1 rukalebi.ru
 127.0.0.1 bueromoebelservice.com
-# Added April 21, 2023
 127.0.0.1 beautydates.cn
 127.0.0.1 www.beautydates.cn
 127.0.0.1 hhoneyann96.beautydates.cn
 127.0.0.1 nilaima.com
 127.0.0.1 www.nilaima.com
-# Added April 27, 2023
 127.0.0.1 www.gameitlive.com
 127.0.0.1 gameitlive.com
-# Added April 28, 2023
 127.0.0.1 stripchat.com
-# Added April 29, 2023
 127.0.0.1 crmpt.livejasmin.com
-# Added May 2, 2023
 127.0.0.1 claudfront.net
 127.0.0.1 allowlisted.net
 127.0.0.1 atlas-upd.com
@@ -2293,16 +2201,12 @@
 127.0.0.1 cbox4.ignorelist.com
 127.0.0.1 hsdps.cc
 127.0.0.1 api.sprig.com
-# Added May 15, 2023
 127.0.0.1 telemetry-cii.api.playstation.com
-# Added May 19, 2023
 127.0.0.1 clorec4.net
 127.0.0.1 wu.idismfonts.com
 127.0.0.1 xml-eu.flairadscpc.com
-# Added May 30, 2023
 127.0.0.1 serasearchtop.com
 127.0.0.1 track.atom-ds.com
-# Added June 3, 2023
 127.0.0.1 addatamarket.net
 127.0.0.1 backuprabbit.com
 127.0.0.1 businessvideonews.com
@@ -2320,37 +2224,29 @@
 127.0.0.1 ans7tv.net
 127.0.0.1 123-vendasvoos25.lovestoblog.com
 127.0.0.1 c-123milhas.shop
-# Added June 13, 2023
 127.0.0.1 assistant-chronopost.com
 127.0.0.1 zhihu-web-analytics.zhihu.com
-# Added July 4, 2023
 127.0.0.1 stmicroelectronics.d3.sc.omtrdc.net
 127.0.0.1 giyhub.com
 127.0.0.1 d2wzkjnj9pfptq.cloudfront.net
 127.0.0.1 storiesnexus.com
 127.0.0.1 rumadel.com
-# Added August 8, 2023
 127.0.0.1 ms4.applvn.com
 127.0.0.1 adsninjacdn.b-cdn.net
 127.0.0.1 cdn.adsninja.ca
 127.0.0.1 nom.telemetrydeck.com
 127.0.0.1 api.ibeat-analytics.com
 127.0.0.1 mads.amazon.com
-# Add August 9, 2023
 127.0.0.1 s2.bl-1.com
-# Added August 10, 2023
 127.0.0.1 w61.1piecemanga.com
 127.0.0.1 fbet.com
 127.0.0.1 stemboastfulrattle.com
 127.0.0.1 onwardrespirationcommandment.com
-# Added October 13, 2023
 127.0.0.1 s.dmmew.com
-# Added November 2, 2023
 127.0.0.1 run.cntxtfl.com
 127.0.0.1 live-manifests-lln.warnermediacdn.com
 127.0.0.1 live-manifests-aka.warnermediacdn.com
 127.0.0.1 logs.browser-intake-datadoghq.com
-# Added November 3, 2023
 127.0.0.1 b2b6d102cb7a4898bc54a3b73e31b759.safeframe.googlesyndication.com
 127.0.0.1 cpm.didna.io
 127.0.0.1 hb.minutemedia-prebid.com
@@ -2360,14 +2256,11 @@
 127.0.0.1 report2.hb.brainlyads.com
 127.0.0.1 ssp-sync.criteo.com
 127.0.0.1 st.pubmatic.com
-# Added November 9, 2023
 127.0.0.1 beacons5.gvt2.com
 127.0.0.1 beacons4.gvt2.com
 127.0.0.1 beacons3.gvt2.com
 127.0.0.1 beacons2.gvt2.com
-# Added November 21, 2023
 127.0.0.1 pickanewdeliverytime.com
-# Added November 24, 2023
 127.0.0.1 80d4b6e40cc712bf92fcdbabdd4345fd.safeframe.googlesyndication.com
 127.0.0.1 a6709203f34992a5095d2bc7ceaf2ec504f651a8.cws.conviva.com
 127.0.0.1 a.jsrdn.com
@@ -2392,7 +2285,6 @@
 127.0.0.1 lb.eu-1-id5-sync.com
 127.0.0.1 live-media-lln.warnermediacdn.com
 127.0.0.1 zion.api.cnn.io
-# Added November 25, 2023
 127.0.0.1 bucket.cdnwebcloud.com
 127.0.0.1 c23811bc8d067cdb4f00f6af2c918f3d.safeframe.googlesyndication.com
 127.0.0.1 cadmus.script.ac
@@ -2406,12 +2298,9 @@
 127.0.0.1 sync.kueezrtb.com
 127.0.0.1 t.adx.opera.com
 127.0.0.1 web.hb.ad.cpe.dotomi.com
-# Added December 17, 2023
 127.0.0.1 co.vaicore.site
 127.0.0.1 int.vaicore.site
-# Added December 28, 2023
 127.0.0.1 rtnl.bxcl.de
-# Added February 11, 2024
 127.0.0.1 product-cdn.liftoff-creatives.io
 127.0.0.1 preview.liftoff-creatives.io
 127.0.0.1 adexp.liftoff.io
@@ -2438,38 +2327,24 @@
 127.0.0.1 i.l-new.inmobicdn.net
 127.0.0.1 cdn.liftoff-creatives.io
 127.0.0.1 statistik.changing-cities.org
-# Added March 10, 2024
 127.0.0.1 mcgthfrqrs95vdbzkhtchf5fc0g4.device.marketingcloudapis.com
-# Added March 12, 2024
 127.0.0.1 crpdt.livejasmin.com
-# Added March 21, 2024
 127.0.0.1 justtrack-logs.justtrack.io
 127.0.0.1 sdk-api.justtrack.io
 127.0.0.1 prod.adjoe-programmatic.com
-# Added March 28, 2024
 127.0.0.1 argo.svcmot.com
-# Added April 3, 2024
 127.0.0.1 canadapost.ca-help-h.top
-# Added April 8, 2024
 127.0.0.1 notepad.plus
-# Added April 13, 2024
 127.0.0.1 alertcibcsecuremobile.com
-# Added April 24, 2024
 127.0.0.1 sadostic.pl
 127.0.0.1 www.sadostic.pl
-# Added April 28, 2024
 127.0.0.1 ejuiashsateam.info
 127.0.0.1 www.ejuiashsateam.info
-# Added May 3, 2024
 127.0.0.1 twitterr.com
 127.0.0.1 ww25.twitterr.com
-# Added May 19, 2024
 127.0.0.1 urdxh.com
-# Added May 30, 2024
 127.0.0.1 logs.netflix.com
-# Added June 26, 2024
 127.0.0.1 mailsupport-24f7f1500ed129bc71f2ad9c06fe1e73.pages.dev
-# Added July 7, 2024
 127.0.0.1 aeventlog.beacon.qq.com
 127.0.0.1 astrategy.beacon.qq.com
 127.0.0.1 tdid.m.qq.com
@@ -2479,62 +2354,41 @@
 127.0.0.1 frwrz661fasv.l4.adsco.re
 127.0.0.1 frwrz661fasv.n4.adsco.re
 127.0.0.1 frwrz661fasv.s4.adsco.re
-# Added July 27, 2024
 127.0.0.1 tracker.nitropay.com
-# Added August 30, 2024
 127.0.0.1 grid-bidder.criteo.com
 127.0.0.1 a-ring.msedge.net
 127.0.0.1 k-ring.msedge.net
 127.0.0.1 hb.yellowblue.io
 127.0.0.1 gtrack.kueezrtb.com
 127.0.0.1 hb-api.omnitagjs.com
-# Added September 1, 2024
 127.0.0.1 analytics.intelliscapesolutions.com
-# Added September 5, 2024
 127.0.0.1 1000fapvids.online
 127.0.0.1 ddbca.localmeets.link
-# Added September 6, 2024
 127.0.0.1 browser-intake-datadoghq.com
-# Added September 16, 2024
 127.0.0.1 westus-0.in.applicationinsights.azure.com
 127.0.0.1 default.exp-tas.com
-# Added September 17, 2024
 127.0.0.1 api.receptivity.io
 127.0.0.1 commentaires.qub.ca
 127.0.0.1 indicedebonheur.com
-# Added September 21, 2024
 127.0.0.1 ads-static.phonepe.com
-# Added September 25, 2024
 127.0.0.1 gotoyahoo.com
-# Added September 27, 2024
 127.0.0.1 two.opensourced.us
-# Added October 2, 2024
 127.0.0.1 api.adnz.co
 127.0.0.1 xd.adnz.co
-# Added October 9, 2024
 127.0.0.1 canada.postcanadantwb.top
-# Added October 10, 2024
 127.0.0.1 flowto.it
-# Added October 11, 2024
 127.0.0.1 5197248-trckp05t.com
-# Added October 12, 2024
 127.0.0.1 api-visitor-analytics.intercom.com
-# Added October 13, 2024
 127.0.0.1 region1.google-analytics.com
 127.0.0.1 starshipstart.com
-# Added October 17, 2024
 127.0.0.1 delivery-schedule.com
 127.0.0.1 rustdesk.io
 127.0.0.1 rustdesk.pl
 127.0.0.1 rustdesk.co.nz
 127.0.0.1 rustdesk.secure-box.de
-# Added October 28, 2024
 127.0.0.1 tiny.centralacp.com
-# Added October 31, 2024
 127.0.0.1 j3lbpcd9.r.us-east-1.awstrack.me
-# Added December 1, 2024
 127.0.0.1 canada.postscanadafil.top
-# Added December 4, 2024
 127.0.0.1 html-load.com
 127.0.0.1 vs-api.voodoo-tech.io
 127.0.0.1 vg-aws-ad-track-sdk-us-east-1a.mtgglobals.com
@@ -2563,11 +2417,8 @@
 127.0.0.1 o-adq.mediation.unity3d.com
 127.0.0.1 gateway.unityads.unity3d.com
 127.0.0.1 scar.unityads.unity3d.com
-# Added December 16, 2024
 127.0.0.1 ofbel.com
-# Added December 18, 2024
 127.0.0.1 candeliverypostca.com
-# Added December 20, 2024
 127.0.0.1 ads.heytapmobi.com
 127.0.0.1 ads.heytapmobile.com
 127.0.0.1 ads.oppomobile.com
@@ -2663,17 +2514,12 @@
 127.0.0.1 cdn-adn-https.mtgglobals.com
 127.0.0.1 hybird.mtgglobals.com
 127.0.0.1 api.revenuads.com
-# Added December 23, 2024
 127.0.0.1 joinhoney.com
 127.0.0.1 www.joinhoney.com
-# Added December 31, 2024
 127.0.0.1 scomobilehelp.com
-# Added January 8, 2025
 127.0.0.1 paqueteriadhl.com.mx
-# Added February 17, 2025
 127.0.0.1 hoppingtheglobe.com
 127.0.0.1 firebaselogging-pa.googleapis.com
-# Added March 7, 2025
 127.0.0.1 cdn.yektanet.com
 127.0.0.1 biscotti.yektanet.com
 127.0.0.1 ua.yektanet.com
@@ -2684,19 +2530,12 @@
 127.0.0.1 cdn.goftino.com
 127.0.0.1 beta.kaprila.com
 127.0.0.1 panel.kaprila.com
-# Added March 28, 2025
 127.0.0.1 streamboo.com
-# Added April 1, 2025
 127.0.0.1 rosysolvingscallion.com
-# Added April 5, 2025
 127.0.0.1 photo-reaktivieren.org
-# Added April 9, 2025
 127.0.0.1 startseite24.net
-# Added April 21, 2025
 127.0.0.1 rcvlink.com
-# Added May 8, 2025
 127.0.0.1 clientennota-webnl.ddns.info
-# Added June 25, 2025
 127.0.0.1 afs.googlesyndication.com
 127.0.0.1 analyticsengine.s3.amazonaws.com
 127.0.0.1 analytics.s3.amazonaws.com
@@ -2710,50 +2549,33 @@
 127.0.0.1 adfox.yandex.ru
 127.0.0.1 bdapi-ads.realmemobile.com
 127.0.0.1 bdapi-in-ads.realmemobile.com
-# Added July 3, 2025
 127.0.0.1 my-tracknl.com
-# Added August 3, 2025
 127.0.0.1 trk.na.patagonia.com
-# Added August 8, 2025
 127.0.0.1 ads.playstream.media
 127.0.0.1 pscontent.playstream.media
 127.0.0.1 cdn.playstream.media
 127.0.0.1 prodcdn.playstream.media
-# Added August 13, 2025
 127.0.0.1 zopro.duckdns.org
-# Added August 14, 2025
 127.0.0.1 analytics.arz.at
-# added September 14, 2025
 127.0.0.1 eventcra.com
-# added September 15, 2025
 127.0.0.1 safalindustries.com
-# added September 22, 2025
 127.0.0.1 cryptocurrency.market
-# added October 2, 2025
 127.0.0.1 log.cookieyes.com
 127.0.0.1 directory.cookieyes.com
-# Added October 12, 2025
 127.0.0.1 xpoalswwkjddsljsy.com
 127.0.0.1 xoiiasdpsdoasdpojas.com
-# Added November 7, 2025
 127.0.0.1 d2.ads.rmbl.ws
 127.0.0.1 a.ads.rmbl.ws
-# Added November 11, 2025
 127.0.0.1 st5fdbvs.r.us-east-1.awstrack.me
 127.0.0.1 fullgamingacc.com
-# Added November 15, 2025
 127.0.0.1 enstat.xbext.com
 127.0.0.1 enappstat.xbext.com
-# Added November 24, 2025
 127.0.0.1 zpr.io
-# Added November 29, 2025
 127.0.0.1 tillequal.com
 127.0.0.1 html-load.cc
-# Added December 4, 2025
 127.0.0.1 colombia.ru.com
 127.0.0.1 fasss62r9nowzzz.z13.web.core.windows.net
 127.0.0.1 etonynew345zzz.z13.web.core.windows.net
-# Added December 11, 2025
 127.0.0.1 foldexmoon.fun
 127.0.0.1 foldexmoon.shop
 127.0.0.1 foldexmoon.today
@@ -2761,67 +2583,31 @@
 127.0.0.1 foldexmoon.world
 127.0.0.1 foldexmoon.xyz
 127.0.0.1 instant-mac.com
-# Added December 15, 2025
 127.0.0.1 pixelfy.me
-# Added December 26, 2025
 127.0.0.1 logs.ads.vungle.com
-# Added January 2, 2026
 127.0.0.1 content-loader.com
-# Added January 10, 2026
 127.0.0.1 iwad.cachefly.net
-# Added January 19, 2026
 127.0.0.1 intelcom.615344.vip
 127.0.0.1 615344.vip
-# Added January 21, 2026
 127.0.0.1 privacy-sandbox.appsflyersdk.com
 127.0.0.1 api16-dual-event-sg2.pangle.io
 127.0.0.1 api16-access-ttp.tiktokpangle.us
 127.0.0.1 api16-access-wf-sg.pangle.io
 127.0.0.1 prod-mediate-events.applovin.com
-# Added January 25, 2026
 127.0.0.1 newsentry.simpals.md
-# Added February 14, 2026
 127.0.0.1 datarouter.ol.epicgames.com
 127.0.0.1 rkv1.com
 127.0.0.1 msft-ssp.adnxs.com
-# Added February 24, 2026
 127.0.0.1 admixer.md
-# Added March 22, 2026
 127.0.0.1 proxy.optoutadvertising.com
 127.0.0.1 cdn.optoutadvertising.com
-# Added March 25, 2026
 127.0.0.1 cstasa.ca
 127.0.0.1 porewin.net
-# Added March 29, 2026
 127.0.0.1 kra18.com
-# Added March 31, 2026
 127.0.0.1 sfrclak.com
 127.0.0.1 callnrwise.com
-# Added April 4, 2026
 127.0.0.1 ca-pagei.bond
 127.0.0.1 ontario.ca-pagei.bond
-# End StevenBlack
-# Start adaway.org
-# AdAway default blocklist
-# Blocking mobile ad providers and some analytics providers
-#
-# Project home page:
-# https://github.com/AdAway/adaway.github.io/
-#
-# Fetch the latest version of this file:
-# https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
-#
-# License:
-# CC Attribution 3.0 (http://creativecommons.org/licenses/by/3.0/)
-#
-# Contributions by:
-# Kicelo, Dominik Schuermann.
-# Further changes and contributors maintained in the commit history at
-# https://github.com/AdAway/adaway.github.io/commits/master
-#
-# Contribute:
-# Create an issue at https://github.com/AdAway/adaway.github.io/issues
-#
 127.0.0.1 analytics.163.com
 127.0.0.1 crash.163.com
 127.0.0.1 crashlytics.163.com
@@ -10020,8 +9806,6 @@
 127.0.0.1 zucks.net
 127.0.0.1 zwaar.org
 127.0.0.1 log-collector.svctr.zynga.com
-# End adaway.org
-# Start add.2o7Net
 127.0.0.1 sanalytics.spark.co.nz
 127.0.0.1 analytics.metro.com.kz
 127.0.0.1 smetrics.airbank.cz
@@ -12041,8 +11825,6 @@
 127.0.0.1 metrics.assurances-bnc.ca
 127.0.0.1 smetrics.cbc.ca
 127.0.0.1 securemetrics.gapcanada.ca
-# End add.2o7Net
-# Start add.Dead
 127.0.0.1 avast-downloads.com
 127.0.0.1 blacksnake.com
 127.0.0.1 europcareer.com
@@ -12057,8 +11839,6 @@
 127.0.0.1 www.get-avast.com
 127.0.0.1 www.iphonegames3g.com
 127.0.0.1 www.microsoft-update.name
-# End add.Dead
-# Start add.Risk
 127.0.0.1 0.r.msn.com
 127.0.0.1 050003.voodoo.com
 127.0.0.1 050005.voodoo.com
@@ -14235,8 +14015,6 @@
 127.0.0.1 zr1.zeroredirect11.com
 127.0.0.1 zs1.zeroredirect1.com
 127.0.0.1 zuverink.net
-# End add.Risk
-# Start add.Spam
 127.0.0.1 100.1qingdao.com
 127.0.0.1 7minuteworkout.com
 127.0.0.1 addshoppers.com
@@ -14293,43 +14071,6 @@
 127.0.0.1 www.unionleisurewear.com
 127.0.0.1 www.vntanktransport.com
 127.0.0.1 www.vydoxtrial.com
-# End add.Spam
-# Start Badd-Boyz-Hosts
-# This hosts file is brought to you by Mitchell Krog
-# Copyright: https://github.com/mitchellkrogza
-# Source: https://github.com/mitchellkrogza/Badd-Boyz-Hosts
-##################################################################################
-#                                                                                #
-#        ___          __   __    ___                    __ __         __         #
-#       / _ )___ ____/ /__/ /   / _ )___  __ _____     / // /__  ___ / /____     #
-#      / _  / _ `/ _  / _  /   / _  / _ \/ // /_ /    / _  / _ \(_-</ __(_-<     #
-#     /____/\_,_/\_,_/\_,_/   /____/\___/\_, //__/   /_//_/\___/___/\__/___/     #
-#                                       /___/                                    #
-##################################################################################
-# You are free to copy and distribute this file for non-commercial uses,
-# as long the original URL and attribution is included.
-# Please forward any additions, corrections or comments by logging an issue at
-# https://github.com/mitchellkrogza/Badd-Boyz-Hosts/issues
-# This list of hosts is compiled from server logs on my own servers
-# and forms the basis of the bad referrers domain lists for
-# The Nginx Ultimate Bad Bot Blocker at:
-# https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
-# and the Apache Ultimate Bad Bot Blocker at:
-# https://github.com/mitchellkrogza/apache-ultimate-bad-bot-blocker
-##### Version Information #
-###################################################
-### Version: V1.2021.05.8588
-##### Version Information ##
-# Use this file to prevent your computer or server from connecting to selected
-# internet hosts. This is an easy and effective way to protect you from
-# many types of spyware, adware, malware, click-jacking and porn sites and reduces
-# bandwidth use.
-# The file should be named "hosts" NOT "hosts.txt"
-# For Linux based Operating systems place this file at "/etc/hosts"
-# For Windows based systems this is placed either at
-# C:\windows\system32\drivers\etc\hosts
-# or C:\Windows\System32\drivers\etc\hosts
-# START HOSTS LIST ### DO NOT EDIT THIS LINE AT ALL ###
 127.0.0.1 000free.us
 127.0.0.1 000.gaysexe.free.fr
 127.0.0.1 000tristanprod.free.fr
@@ -15698,23 +15439,6 @@
 127.0.0.1 www.utopia-privacy.com
 127.0.0.1 yuarra.pluto.ro
 127.0.0.1 yunque.pluto.ro
-# END HOSTS LIST ### DO NOT EDIT THIS LINE AT ALL ###
-# End Badd-Boyz-Hosts
-# Start hostsVN
-# Title: hostsVN
-# Last modified: 09 Apr 2026 09:58 UTC+7
-# Version: 2604090958
-# Blocked: 1.733 domains
-# Only include advertisers in Vietnam
-# Homepage: https://bigdargon.github.io/hostsVN/
-# GitHub: https://github.com/bigdargon/hostsVN
-# Report issues: https://github.com/bigdargon/hostsVN/issues
-# Download: https://github.com/bigdargon/hostsVN/raw/master/option/hosts-VN
-#
-# =====================================================
-#
-# --- GroupVN block ---
-#[adtimaserver]
 127.0.0.1 media.adtimaserver.vn
 127.0.0.1 media.org.adtimaserver.vn
 127.0.0.1 staging.api.adtimaserver.vn
@@ -15723,7 +15447,6 @@
 127.0.0.1 stream.adtimaserver.vn
 127.0.0.1 stream.org.adtimaserver.vn
 127.0.0.1 web.api.adtimaserver.vn
-#[eclick]
 127.0.0.1 admin.iad.eclick.vn
 127.0.0.1 analytics.eclick.vn
 127.0.0.1 c.d.eclick.vn
@@ -15798,7 +15521,6 @@
 127.0.0.1 admicro4.vcmedia.vn
 127.0.0.1 admicro5.vcmedia.vn
 127.0.0.1 admicro6.vcmedia.vn
-#[novanet]
 127.0.0.1 admin.novanet.vn
 127.0.0.1 ads.novanet.vn
 127.0.0.1 analytics.novanet.vn
@@ -15818,7 +15540,6 @@
 127.0.0.1 script.novanet.vn
 127.0.0.1 static.novanet.vn
 127.0.0.1 www.novanet.vn
-#[novaonads]
 127.0.0.1 novaonads.com
 127.0.0.1 www.novaonads.com
 127.0.0.1 novaon.vn
@@ -15873,7 +15594,6 @@
 127.0.0.1 revive.lavanetwork.net
 127.0.0.1 video.lavanetwork.net
 127.0.0.1 www.lavanetwork.net
-#[polyad]
 127.0.0.1 cp.polyad.net
 127.0.0.1 cpx.polyad.net
 127.0.0.1 dst.polyad.net
@@ -16040,7 +15760,6 @@
 127.0.0.1 log.zingmp3.vn
 127.0.0.1 za.zingmp3.vn
 127.0.0.1 zlog.zingmp3.vn
-#[zingnews]
 127.0.0.1 log.zingnews.vn
 127.0.0.1 log.znews.vn
 127.0.0.1 trackingbr.zingplay.com
@@ -16133,13 +15852,11 @@
 127.0.0.1 za.zapps.vn
 127.0.0.1 analytics.zapps.me
 127.0.0.1 tech.zapps.me
-#[yomedia]
 127.0.0.1 demo.yomedia.vn
 127.0.0.1 dmp-log.yomedia.vn
 127.0.0.1 media.yomedia.vn
 127.0.0.1 sslstatic.yomedia.vn
 127.0.0.1 static.yomedia.vn
-#[pinetech]
 127.0.0.1 demo.pinetech.vn
 127.0.0.1 pinetech.vn
 127.0.0.1 www.pinetech.vn
@@ -16150,7 +15867,6 @@
 127.0.0.1 widget.cleverads.vn
 127.0.0.1 wifiads.cleverads.vn
 127.0.0.1 www.cleverads.vn
-#[klick]
 127.0.0.1 adv.klick.vn
 127.0.0.1 demo.klick.vn
 127.0.0.1 euro.klick.vn
@@ -16243,7 +15959,6 @@
 127.0.0.1 cityadstrack.com
 127.0.0.1 p.cityadstrack.com
 127.0.0.1 stats.cityadstrack.com
-#[adsota]
 127.0.0.1 ads.appota.com
 127.0.0.1 adsota.com
 127.0.0.1 agency.adsota.com
@@ -16347,14 +16062,12 @@
 127.0.0.1 api.adbro.me
 127.0.0.1 portal.adbro.me
 127.0.0.1 tag.adbro.me
-#[adasiaholdings]
 127.0.0.1 advertisers.adasiaholdings.com
 127.0.0.1 apm.adasiaholdings.com
 127.0.0.1 media.adasiaholdings.com
 127.0.0.1 pixel.adasiaholdings.com
 127.0.0.1 publishers.adasiaholdings.com
 127.0.0.1 www.adasiaholdings.com
-#[adsplay]
 127.0.0.1 admin.adsplay.net
 127.0.0.1 d1.adsplay.net
 127.0.0.1 d2.adsplay.net
@@ -16883,11 +16596,9 @@
 127.0.0.1 pubads-wiinvent.tv360.vn
 127.0.0.1 log-collector.shopee.vn
 127.0.0.1 userstats.shopee.vn
-#[moneyoyo]
 127.0.0.1 api.moneyoyo.org
 127.0.0.1 feed.moneyoyo.org
 127.0.0.1 sdk.moneyoyo.com
-# --- Block adsVN ---
 127.0.0.1 12signup.com
 127.0.0.1 ad-admin.vnay.vn
 127.0.0.1 ad-ndtv.3s.com.vn
@@ -17097,7 +16808,6 @@
 127.0.0.1 www.vipads.live
 127.0.0.1 xads.joboko.com
 127.0.0.1 xmadsapi.joboko.com
-# --- Block trackingVN ---
 127.0.0.1 360.anatic.net
 127.0.0.1 a.ladipage.com
 127.0.0.1 a.vtvdigital.vn
@@ -17363,7 +17073,6 @@
 127.0.0.1 za.baomoi.com
 127.0.0.1 zigzag.vn
 127.0.0.1 ztrck.me
-# --- Block popupVN ---
 127.0.0.1 b8zk2cl6bjs92j7ah8k2kzi92jf8ck9vj7v0z5bv2v3cj2azlp0c8z5vb7dt.me
 127.0.0.1 ch6p2aj2gh8zy5cm0px9ow7aj3tmzhtk6lzx2ch9xj7gx2jq1cj8v4jklz6b.me
 127.0.0.1 h6o2z0pwx5ja7dwxn0wx4fhv7mp0qoladm8vj6do4h1c6gja8evrn6g5fixk.me
@@ -17377,26 +17086,6 @@
 127.0.0.1 wfgo5vjs6cp0cdjx7bms3cn9lof2p01xho0pxgm1fd2fah3j5d8qd7x1d6eu.me
 127.0.0.1 y8z5nv0slz06vj2k5vh6akv7dj2c8aj62zhj2v7zj8vp0zq7fj2gf4mv6zsb.me
 127.0.0.1 z8g0wlq5p0f6jg3k7eh2kyd58hjeskx0w9g5eu7q3m5hyq8l0xwofj3ap2nv.me
-# End hostsVN
-# Start KADhosts
-# Title: KADhosts
-# Description: Filtry chroniace przed roznego rodzaju przekretami i oszustwami, takimi jak np. subskrypcje SMS, wirusy i falszywe sklepy internetowe. Oprocz wlasnego zestawu, zawieraja one rowniez wpisy z list stworzonych przez takie zespoly jak np. CERT Polska, legalniewsieci.pl i KNF.
-# Last modified: Sun, 12 Apr 2026, 22:21 UTC+02:00
-# Version: 2026.4.12.7
-# Expires: 2 days
-# Website: https://kadantiscam.netlify.app/
-# Based on: https://github.com/FiltersHeroes/KAD
-# License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-# Creator: azet12
-# Maintainer: Filters Heroes
-#
-# (EN) WARNING: Sites listed below can be harmful. Please, do not visit them if you don't know what you're doing!
-# (PL) UWAGA: Strony ponizej moga byc szkodliwe. Prosze, nie wchodz na nie, jesli nie wiesz co robisz!
-#
-#
-#
-# Podejrzane i/lub strony polaczone z innymi oszustwami
-#@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/podejrzane_inne_oszustwa.txt => hosts
 127.0.0.1 4life.com
 127.0.0.1 4shoes.com.pl
 127.0.0.1 4shoes.pl
@@ -20050,11 +19739,6 @@
 127.0.0.1 zpafiska.pl
 127.0.0.1 zrobswiatlo.pl
 127.0.0.1 zuvia.pl
-#@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/podejrzane_inne_oszustwa.txt => hosts
-#
-#
-# Przekierowuja do innych stron z przekretami
-#@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekierowujace_do_przekretow.txt => hosts
 127.0.0.1 0n.click
 127.0.0.1 4clicker.pro
 127.0.0.1 12monki-redirect.com
@@ -20355,11 +20039,6 @@
 127.0.0.1 xtroglobal.com
 127.0.0.1 zetreview.com
 127.0.0.1 znajdzbdsmkontakt.pl
-#@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekierowujace_do_przekretow.txt => hosts
-#
-#
-# Szybko wygaszajace
-#@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/szybko_wygaszajace.txt => hosts
 127.0.0.1 4332.ws
 127.0.0.1 ac-feedback.com
 127.0.0.1 adsbtrk.com
@@ -20426,11 +20105,6 @@
 127.0.0.1 www.tylko-dla-ciebie.com
 127.0.0.1 www.uroffer.link
 127.0.0.1 www.uzupelniaj-dane.ml
-#@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/szybko_wygaszajace.txt => hosts
-#
-#
-# Przekrety
-#@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety.txt + https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety_CERT.txt => hosts
 127.0.0.1 0ej37yhe.cfd
 127.0.0.1 0ek7er.lol
 127.0.0.1 0equalsinfinity.org
@@ -65265,16 +64939,6 @@
 127.0.0.1 zzsyt.com
 127.0.0.1 zztwkj.com
 127.0.0.1 zzxyxx.com
-#@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety.txt + https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/przekrety_CERT.txt => hosts
-#
-#
-# Blogspot
-#@ >>>>>>>> https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/blogspot.txt => hosts
-#@ <<<<<<<< https://raw.githubusercontent.com/FiltersHeroes/KAD/master/sections/blogspot.txt => hosts
-#
-#
-# Dodatki hosts
-#@ >>>>>>>> hostsplus + hostsplus-cert => hosts
 127.0.0.1 4s13t.doctortrf.com
 127.0.0.1 05agu.doctortrf.com
 127.0.0.1 a-tocard-pl.treasure-shop.org
@@ -65907,11 +65571,6 @@
 127.0.0.1 zalukaj.ws
 127.0.0.1 zdjecienago2.c.pl
 127.0.0.1 zebywybielanie.c.pl
-#@ <<<<<<<< hostsplus + hostsplus-cert => hosts
-# End KADhosts
-# Start minecraft-hosts
-# minecraft-hosts - Tracking Domains
-# License: CC0
 127.0.0.1 analytics.atlauncher.com
 127.0.0.1 auxilium.ftb.team
 127.0.0.1 beacon.quiltmc.org
@@ -65921,31 +65580,6 @@
 127.0.0.1 metrics.shmeeb.net
 127.0.0.1 openeye.openmods.info
 127.0.0.1 posthog.modrinth.com
-# End minecraft-hosts
-# Start mvps.org
-# This MVPS HOSTS file is a free download from:            #
-# http://winhelp2002.mvps.org/hosts.htm                    #
-#                                                          #
-# Notes: The Operating System does not read the "#" symbol #
-# or anything after the # symbol on the same line          #
-#                                                          #
-# This *must* be the first line: 127.0.0.1     localhost   #
-#                                                          #
-#**********************************************************#
-# -------------- Updated: March-06-2021 ------------------ #
-#**********************************************************#
-#                                                          #
-# Disclaimer: this file is free to use for personal use    #
-# only. Furthermore it is NOT permitted to copy any of the #
-# contents or host on any other site without permission or #
-# meeting the full criteria of the below license terms.    #
-#                                                          #
-# This work is licensed under the Creative Commons         #
-# Attribution-NonCommercial-ShareAlike License.            #
-# https://creativecommons.org/licenses/by-nc-sa/4.0/       #
-#                                                          #
-# License info for commercial purposes contact Winhelp2002 #
-#
 127.0.0.1 fr.a2dfp.net
 127.0.0.1 mfr.a2dfp.net
 127.0.0.1 ad.a8.net
@@ -66051,7 +65685,6 @@
 127.0.0.1 five.partner.archive-it.org
 127.0.0.1 ads.aspalliance.com
 127.0.0.1 www.astalavista.us
-# 0.0.0.0 rules.atgsvcs.com #[affects banking]
 127.0.0.1 ads.auctionads.com
 127.0.0.1 d.audienceiq.com
 127.0.0.1 ads.autotrader.com
@@ -66061,7 +65694,6 @@
 127.0.0.1 www.avantlink.com
 127.0.0.1 rev.avsforum.com
 127.0.0.1 analytics.aweber.com
-# 0.0.0.0 clicks.aweber.com #[affects newsletters]
 127.0.0.1 banerator.net
 127.0.0.1 www.banner-rotation.com
 127.0.0.1 match.basebanner.com
@@ -66141,7 +65773,6 @@
 127.0.0.1 t.cfjump.com
 127.0.0.1 count.channeladvisor.com
 127.0.0.1 adsapi.chartbeat.com
-# 0.0.0.0 st.chatango.com #[affects chat]
 127.0.0.1 ads.china.com
 127.0.0.1 v5.chinoc.net
 127.0.0.1 ckstatic.com
@@ -66184,7 +65815,6 @@
 127.0.0.1 ads.crisppremium.com
 127.0.0.1 i.ctnsnet.com
 127.0.0.1 ads.milliyet.cubecdn.net
-# 0.0.0.0 cdn.cxense.com #[affects dagsavisen.no]
 127.0.0.1 www.cybereps.com
 127.0.0.1 count.daem0n.com
 127.0.0.1 www.dataforce.net
@@ -66333,7 +65963,6 @@
 127.0.0.1 ads.gumgum.com
 127.0.0.1 c.gumgum.com
 127.0.0.1 cdn.gumgum.com
-# 0.0.0.0 www.sdad.guru #[affects msn.com]
 127.0.0.1 beacon.gutefrage.net
 127.0.0.1 adserver.hardwareanalysis.com
 127.0.0.1 stats.berkman.harvard.edu
@@ -66371,7 +66000,6 @@
 127.0.0.1 bbcdn-tag.ibillboard.com
 127.0.0.1 hits.icdirect.com
 127.0.0.1 tracker.icerocket.com
-# 0.0.0.0 mpsnare.iesnare.com #[affects westernunion.com]
 127.0.0.1 adsrv2.ihlassondakika.com
 127.0.0.1 ads.imarketservices.com
 127.0.0.1 ads.imeem.com
@@ -66418,7 +66046,6 @@
 127.0.0.1 ads.joemonster.org
 127.0.0.1 site.johnlewis.com
 127.0.0.1 www.jscount.com
-# 0.0.0.0 cdn.jsdelivr.net #[affects spireenergy.com]
 127.0.0.1 ck.juicyads.com
 127.0.0.1 js.juicyads.com
 127.0.0.1 nl.ads.justpremium.com
@@ -66565,7 +66192,6 @@
 127.0.0.1 404.online.net
 127.0.0.1 sayac.onlinewebstats.com
 127.0.0.1 lifemediahouse1.onlinewelten.com
-# 0.0.0.0 assets.onswipe.com #[affects mobile devices]
 127.0.0.1 invitation.opinionbar.com
 127.0.0.1 by.optimost.com
 127.0.0.1 es.optimost.com
@@ -66598,7 +66224,6 @@
 127.0.0.1 banner.play-asia.com
 127.0.0.1 pu.plugrush.com
 127.0.0.1 webstats.plus.net
-# 0.0.0.0 po.st #[affects URL shortening]
 127.0.0.1 ads.po-zdravidnes.com
 127.0.0.1 piwik.pokerlistings.com
 127.0.0.1 adserve.podaddies.com
@@ -66676,7 +66301,6 @@
 127.0.0.1 gbjfc.rsvpgenius.com
 127.0.0.1 rtrgt2.com
 127.0.0.1 advert.runescape.com
-# 0.0.0.0 runslin.com
 127.0.0.1 banners.rushcommerce.com
 127.0.0.1 rutrk.org
 127.0.0.1 www.s2d6.com
@@ -66720,7 +66344,6 @@
 127.0.0.1 analytic.spamfighter.com
 127.0.0.1 tags.spider-mails.com
 127.0.0.1 dp2.specificclick.net
-# 0.0.0.0 spclient.wg.spotify.com #[affects mobile app]
 127.0.0.1 js.spotx.tv
 127.0.0.1 www.speedcounter.net
 127.0.0.1 speediest.net
@@ -66805,15 +66428,12 @@
 127.0.0.1 objects.tremormedia.com
 127.0.0.1 www.trendcounter.com
 127.0.0.1 ads.tripican.com
-# 0.0.0.0 s1.trrsf.com #[affects terra.com]
-# 0.0.0.0 s2.trrsf.com #[affects terra.com]
 127.0.0.1 hits3.truehits.net
 127.0.0.1 tracker.truehits.net
 127.0.0.1 origin-tracking.trulia.com
 127.0.0.1 ht.tube8.com
 127.0.0.1 presentation-atl1.turn.com
 127.0.0.1 adserver.tvcatchup.com
-# 0.0.0.0 analytics.twitter.com #[affects Twitter Dashboard]
 127.0.0.1 twittercounter.com
 127.0.0.1 et.twyn.com
 127.0.0.1 tracknet.twyn.com
@@ -66828,7 +66448,6 @@
 127.0.0.1 ukrbanner.net
 127.0.0.1 tracking.ukwm.co.uk
 127.0.0.1 www.ultimatetopsites.com
-# 0.0.0.0 tags.api.umbel.com #[affects polygon.com]
 127.0.0.1 undertonenetworks.com
 127.0.0.1 www.undertonenetworks.com
 127.0.0.1 adserving.unibet.com
@@ -66857,7 +66476,6 @@
 127.0.0.1 advice-ads-cdn.vice.com
 127.0.0.1 geoip-lookup.vice.com
 127.0.0.1 vice-ads-cdn.vice.com
-# 0.0.0.0 vice-web-statics-cdn.vice.com #[affects vice.com]
 127.0.0.1 chappel.videogamer.com
 127.0.0.1 ads.videohub.tv
 127.0.0.1 adserver.virginmedia.com
@@ -66874,7 +66492,6 @@
 127.0.0.1 beacon.walmart.com
 127.0.0.1 beacon.affil.walmart.com
 127.0.0.1 ad.wanderlist.com
-# 0.0.0.0 tracking.waterfrontmedia.com #[affects MayoClinic]
 127.0.0.1 ads.weather.ca
 127.0.0.1 btn.counter.weather.ca
 127.0.0.1 tr.webantenna.info
@@ -66892,7 +66509,6 @@
 127.0.0.1 ads.wineenthusiast.com
 127.0.0.1 api.wipmania.com
 127.0.0.1 stats.wired.com
-# 0.0.0.0 f.wishabi.net #[affects walmart.ca]
 127.0.0.1 helper-stats.wondershare.com
 127.0.0.1 phpadsnew.wn.com
 127.0.0.1 clicktrack.wnu.com
@@ -67199,7 +66815,6 @@
 127.0.0.1 projectorreviews.advertserve.com
 127.0.0.1 tradearabia.advertserve.com
 127.0.0.1 www.advertserve.com
-# 0.0.0.0 static.kleinezeitung.at
 127.0.0.1 static.styria-digital.com
 127.0.0.1 smp.adviva.net
 127.0.0.1 afe2.specificclick.net
@@ -67220,10 +66835,8 @@
 127.0.0.1 tag.aticdn.net
 127.0.0.1 a.bf-ad.net
 127.0.0.1 fast.timeinc.demdex.net
-# 0.0.0.0 dap.digitalgov.gov #[Universal Federated Analytics]
 127.0.0.1 static.ampxchange.com
 127.0.0.1 p.bm23.com
-# 0.0.0.0 cdn.tt.omtrdc.net #[affects Verizon]
 127.0.0.1 ads.pictela.net
 127.0.0.1 b.thanksearch.com
 127.0.0.1 e.thanksearch.com
@@ -67262,7 +66875,6 @@
 127.0.0.1 widget.quantcast.com
 127.0.0.1 mediaserver.bwinpartypartners.com
 127.0.0.1 www.everestjs.net
-# 0.0.0.0 cdn.optimizely.com #[affects sigfig.com/ 2go.com]
 127.0.0.1 cdn.static.zdbb.net
 127.0.0.1 b.6sc.co
 127.0.0.1 ad131m.adk2.co
@@ -67270,7 +66882,6 @@
 127.0.0.1 adtgs.adk2.co
 127.0.0.1 cdn.adk2.co
 127.0.0.1 matomy.adk2.co
-# 0.0.0.0 assets.adobedtm.com #[affects landsend.com]
 127.0.0.1 www.adobetag.com
 127.0.0.1 a.adready.com
 127.0.0.1 www.adreadytractions.com
@@ -67288,19 +66899,15 @@
 127.0.0.1 ip.casalemedia.com
 127.0.0.1 ads.cdnslate.com
 127.0.0.1 cc.chango.com
-# 0.0.0.0 ad-js.chip.de #[affects images]
 127.0.0.1 cdn1.clkrev.com
 127.0.0.1 tiads.essence.com
 127.0.0.1 tiads.ew.com
 127.0.0.1 promo.freshdirect.com
-# 0.0.0.0 cdns.gigya.com #[affects IHeartRadio]
 127.0.0.1 tiads.health.com
 127.0.0.1 js.hs-analytics.net
-# 0.0.0.0 s2.mdpcdn.com #[affects bhg.com]
 127.0.0.1 cdn.mediavoice.com
 127.0.0.1 d-track.send.microadinc.com
 127.0.0.1 mnet-ad.net
-# 0.0.0.0 cdn.mxpnl.com #[affects optimum.com]
 127.0.0.1 adcache.nymag.com
 127.0.0.1 cdn.polmontventures.com
 127.0.0.1 a.postrelease.com
@@ -67314,8 +66921,6 @@
 127.0.0.1 c2.rfihub.net
 127.0.0.1 ced.sascdn.com
 127.0.0.1 m.servebom.com
-# 0.0.0.0 tiads.time.com #[affects Time.com]
-# 0.0.0.0 cdn.vidible.tv #[affects Aol]
 127.0.0.1 content.womensforum.com
 127.0.0.1 s9.addthis.com
 127.0.0.1 ssltracking.esearchvision.com
@@ -67337,9 +66942,7 @@
 127.0.0.1 sr2.liveperson.net
 127.0.0.1 ad.policeone.com
 127.0.0.1 graphics.pop6.com
-# 0.0.0.0  media.richrelevance.com #[affects Walmart.ca]
 127.0.0.1 a.rmgserving.com
-# 0.0.0.0  imagesak.secureserver.net #[affects GoDaddy]
 127.0.0.1 track.sitetag.us
 127.0.0.1 anon.doubleclick.speedera.net
 127.0.0.1 d.thanksearch.com
@@ -67420,7 +67023,6 @@
 127.0.0.1 s.shopify.com
 127.0.0.1 pix.silverpush.co
 127.0.0.1 ads.skinected.com
-# 0.0.0.0 analytics.supplyframe.com #[affects findchips.com]
 127.0.0.1 images.ads.supplyframe.com
 127.0.0.1 b.t.tailtarget.com
 127.0.0.1 ads.tracking202.com
@@ -67434,7 +67036,6 @@
 127.0.0.1 adunit.chango.com
 127.0.0.1 admonkey.dapper.net
 127.0.0.1 b.ensighten.com
-# 0.0.0.0 nexus.ensighten.com #[affects Subaru / Staples]
 127.0.0.1 cs.exitmonitor.com
 127.0.0.1 g2.gumgum.com
 127.0.0.1 stack9.collect.igodigital.com
@@ -67451,7 +67052,6 @@
 127.0.0.1 req.tidaltv.com
 127.0.0.1 static.tracking202.com
 127.0.0.1 p1.tcr21.tynt.com
-# 0.0.0.0 redirect.viglink.com #[affects disqus.com]
 127.0.0.1 www.w3counter.com
 127.0.0.1 ots.optimize.webtrends.com
 127.0.0.1 b.wishabi.com
@@ -67496,7 +67096,6 @@
 127.0.0.1 howler.shareaholic.com
 127.0.0.1 cdn.spectate.com
 127.0.0.1 track.securedvisit.com
-# 0.0.0.0 id.trove.com #[prevents registration]
 127.0.0.1 rtb.tubemogul.com
 127.0.0.1 www.webspectator.com
 127.0.0.1 cdn.beaconpush.com
@@ -67513,7 +67112,6 @@
 127.0.0.1 gernewt.info
 127.0.0.1 ads.goodreads.com
 127.0.0.1 lionstracking.com
-# 0.0.0.0 widget-cdn.rpxnow.com #[affects amc.com]
 127.0.0.1 secureredirect101.com
 127.0.0.1 trkmydomain.com
 127.0.0.1 s.206solutions.com
@@ -67591,7 +67189,6 @@
 127.0.0.1 www.barilliance.net
 127.0.0.1 srv.clickfuse.com
 127.0.0.1 com.com
-# 0.0.0.0 api.demandbase.com #[affects Ringcentral]
 127.0.0.1 adobe.demdex.net
 127.0.0.1 fairfax.demdex.net
 127.0.0.1 mtvn.demdex.net
@@ -67713,7 +67310,6 @@
 127.0.0.1 trax.prostrax.com
 127.0.0.1 vid-io-dub.springserve.com
 127.0.0.1 admediator.unityads.unity3d.com
-# 0.0.0.0 wurfl.io #[affects Google]
 127.0.0.1 www.cloudtracked.com
 127.0.0.1 za-ssl.effectivemeasure.net
 127.0.0.1 tracker.freecharge.in
@@ -67728,14 +67324,12 @@
 127.0.0.1 d1lxhc4jvstzrp.cloudfront.net
 127.0.0.1 d1xfq2052q7thw.cloudfront.net
 127.0.0.1 d1z2jf7jlzjs58.cloudfront.net
-# 0.0.0.0 d2gatte9o95jao.cloudfront.net #[affects urbandictionary.com]
 127.0.0.1 d2zah9y47r7bi2.cloudfront.net
 127.0.0.1 d3qxwzhswv93jk.cloudfront.net
 127.0.0.1 me-ssl.effectivemeasure.net
 127.0.0.1 gscounters.eu1.gigya.com
 127.0.0.1 resources.kiosked.com
 127.0.0.1 cdn.listrakbi.com
-# 0.0.0.0 www.livefyre.com #[affects startribune.com]
 127.0.0.1 t.mdn2015x2.com
 127.0.0.1 ads.mic.com
 127.0.0.1 ap.octopuspop.com
@@ -67770,7 +67364,6 @@
 127.0.0.1 rumds.wpdigital.net
 127.0.0.1 i.yldbt.com
 127.0.0.1 z2.zedo.com
-# 0.0.0.0 segment-data.zqtk.net #[affects wsj.com]
 127.0.0.1 ads-stream.com
 127.0.0.1 js.apxlv.com
 127.0.0.1 www.adbooth.com
@@ -67801,12 +67394,10 @@
 127.0.0.1 d1fc8wv8zag5ca.cloudfront.net
 127.0.0.1 d1l6p2sc9645hc.cloudfront.net
 127.0.0.1 d1piupybsgr6dr.cloudfront.net
-# 0.0.0.0 d3c3cq33003psk.cloudfront.net #[affects sunglassesshop.com]
 127.0.0.1 d5nxst8fruw4z.cloudfront.net
 127.0.0.1 dl1d2m8ri9v3j.cloudfront.net
 127.0.0.1 cdn-1.convertexperiments.com
 127.0.0.1 use.convertglobal.com
-# 0.0.0.0 scripts.demandbase.com #[affects ringcentral.com]
 127.0.0.1 bet.demdex.net
 127.0.0.1 cbsi.demdex.net
 127.0.0.1 de.demdex.net
@@ -67854,7 +67445,6 @@
 127.0.0.1 analytics.userreport.com
 127.0.0.1 cdn.userreport.com
 127.0.0.1 sdscdn.userreport.com
-# 0.0.0.0 delivery.vidible.tv #[affects aol.com]
 127.0.0.1 wsc1.webspectator.com
 127.0.0.1 zafiti01.webtrekk-us.net
 127.0.0.1 sdk-controller.widespace.com
@@ -67870,7 +67460,6 @@
 127.0.0.1 adactive-ads.aimatch.com
 127.0.0.1 crtl.aimatch.com
 127.0.0.1 tr-1.agilone.com
-#  0.0.0.0 as.eu.angsrvr.com #[affects videos]
 127.0.0.1 www.badassjv.com
 127.0.0.1 blockmetrics.com
 127.0.0.1 cache.btrll.com
@@ -68101,7 +67690,6 @@
 127.0.0.1 www.xiti.com
 127.0.0.1 secure-ams.adnxs.com
 127.0.0.1 ib.reachjunction.com
-# 0.0.0.0 ib.adnxs.com #[affects Microsoft site]
 127.0.0.1 photobucket.adnxs.com
 127.0.0.1 ym.adnxs.com
 127.0.0.1 action.media6degrees.com
@@ -68386,7 +67974,6 @@
 127.0.0.1 buzzcpm.com
 127.0.0.1 cdnmedia.xyz
 127.0.0.1 wp1.cor-natty.com
-# 0.0.0.0 onesignal.com #[blocks Push notifications]
 127.0.0.1 cdn.spoutable.com
 127.0.0.1 engine.spoutable.com
 127.0.0.1 cdn.tynt.com
@@ -68395,7 +67982,6 @@
 127.0.0.1 cdn1.zopiny.com
 127.0.0.1 adfoc.us
 127.0.0.1 img.avatraffic.com
-# 0.0.0.0 js.maxmind.com #[affects marchon.com / directvnow.com]
 127.0.0.1 trafficg.com
 127.0.0.1 www.trafficg.com
 127.0.0.1 trw12.com
@@ -68589,7 +68175,6 @@
 127.0.0.1 images.bmnq.com
 127.0.0.1 images.cnomy.com
 127.0.0.1 ads.webhosting.info
-# 0.0.0.0 hb.disney.go.com #[affects links]
 127.0.0.1 seavideo-ak.espn.go.com
 127.0.0.1 adsatt.abcnews.starwave.com
 127.0.0.1 adsatt.disney.starwave.com
@@ -68662,13 +68247,11 @@
 127.0.0.1 adunit.cdn.auditude.com
 127.0.0.1 ndn.cdn.auditude.com
 127.0.0.1 cv.bsvideos.com
-# 0.0.0.0 livepassdl.conviva.com #[affects videos]
 127.0.0.1 banners.crakcash.com
 127.0.0.1 pixel.indieclick.com
 127.0.0.1 staticd.cdn.industrybrains.com
 127.0.0.1 electosake.com
 127.0.0.1 c.supert.ag
-# 0.0.0.0 tags.tiqcdn.com #[affects Intel.com/Shaw]
 127.0.0.1 tororango.com
 127.0.0.1 cdn.engine.trklnks.com
 127.0.0.1 img1.zergnet.com
@@ -68712,13 +68295,6 @@
 127.0.0.1 4184.stats.misstrends.com
 127.0.0.1 www.humanclick.com
 127.0.0.1 hc2.humanclick.com
-# 0.0.0.0 wizard.liveperson.com
-# 0.0.0.0 www.liveperson.com #[affects citi.com]
-# 0.0.0.0 liveperson.net
-# 0.0.0.0 lptag.liveperson.net
-# 0.0.0.0 sales.liveperson.net #[affects Live Chat]
-# 0.0.0.0 sec1.liveperson.net
-# 0.0.0.0 server.iad.liveperson.net
 127.0.0.1 landingpages.sunnytoolz.com
 127.0.0.1 ads.guru3d.com
 127.0.0.1 banner1.pornhost.com
@@ -68784,7 +68360,6 @@
 127.0.0.1 1c6e2.v.fwmrm.net
 127.0.0.1 2df7e.v.fwmrm.net
 127.0.0.1 5bde1.v.fwmrm.net
-# 0.0.0.0 140cc.v.fwmrm.net #[affects videos]
 127.0.0.1 2975c.v.fwmrm.net
 127.0.0.1 29773.v.fwmrm.net
 127.0.0.1 bea4.v.fwmrm.net
@@ -68882,9 +68457,7 @@
 127.0.0.1 www.frontpagecash.com
 127.0.0.1 www.clickaction.net
 127.0.0.1 server2.discountclick.com
-# 0.0.0.0 link.p0.com #[Affects email newsletters]
 127.0.0.1 a.hspvst.com
-# 0.0.0.0 secure.footprint.net #[affects nfl.com]
 127.0.0.1 van.redlightcenter.com
 127.0.0.1 webmaster.utherverse.com
 127.0.0.1 www.cpx24.com
@@ -68901,7 +68474,6 @@
 127.0.0.1 redemptionengine.com
 127.0.0.1 www.redemptionengine.com
 127.0.0.1 images-pw.secureserver.net
-# 0.0.0.0 images.secureserver.net #[affects GoDaddy]
 127.0.0.1 highpro1.com
 127.0.0.1 adexchangeprediction.com
 127.0.0.1 static-trackers.adtarget.me
@@ -68947,7 +68519,6 @@
 127.0.0.1 pagead-googlehosted.l.google.com
 127.0.0.1 5362399.fls.doubleclick.net
 127.0.0.1 video-ad-stats.googlesyndication.com
-# 0.0.0.0 redirector.googlevideo.com #[affects video playback]
 127.0.0.1 dp.g.doubleclick.net
 127.0.0.1 service.urchin.com
 127.0.0.1 analytics-api-samples.googlecode.com
@@ -68956,7 +68527,6 @@
 127.0.0.1 2542116.fls.doubleclick.net
 127.0.0.1 4053494.fls.doubleclick.net
 127.0.0.1 4236808.fls.doubleclick.net
-# 0.0.0.0 www.googletagmanager.com #[affects ASUS]
 127.0.0.1 www3.webhostingtalk.com
 127.0.0.1 analytics.inform.com
 127.0.0.1 track.searchiq.co
@@ -69037,11 +68607,8 @@
 127.0.0.1 www3.doubleclick.com
 127.0.0.1 www.doubleclick.com
 127.0.0.1 www.bt.emsecure.net
-# 0.0.0.0  www.youtube-nocookie.com #[affects various videos]
 127.0.0.1 ad.rs.doubleclick.net
 127.0.0.1 affiliate.2mdn.net
-# 0.0.0.0  s0.2mdn.net #[affects video stream]
-# 0.0.0.0  static.2mdn.net #[affects Youtube]
 127.0.0.1 clickserve.us2.dartsearch.net
 127.0.0.1 ad-apac.doubleclick.net
 127.0.0.1 ad.mo.doubleclick.net
@@ -69305,7 +68872,6 @@
 127.0.0.1 searchassistant.iwon.com
 127.0.0.1 www1.iwon.com
 127.0.0.1 image.i1img.com
-# 0.0.0.0  wzus1.reference.com #[affects Dictonary.com]
 127.0.0.1 keisu02.eproof.com
 127.0.0.1 control.adap.tv
 127.0.0.1 ads.shopstyle.com
@@ -69536,7 +69102,6 @@
 127.0.0.1 cad.chosun.com
 127.0.0.1 hitlog2.chosun.com
 127.0.0.1 counter.joins.com
-# 0.0.0.0 www.luminate.com #[affects login]
 127.0.0.1 openx.4shared.com
 127.0.0.1 www.easycounter.com
 127.0.0.1 www.fastusersonline.com
@@ -69693,7 +69258,6 @@
 127.0.0.1 banners.securedataimages.com
 127.0.0.1 e.sexad.net
 127.0.0.1 pod.sexsearch.com
-# 0.0.0.0 api.solvemedia.com #[affects captcha]
 127.0.0.1 pixel.solvemedia.com
 127.0.0.1 demoq.use-trade.com
 127.0.0.1 richmedia.yimg.com
@@ -69725,7 +69289,6 @@
 127.0.0.1 content.ipro.com
 127.0.0.1 cdn-01.yumenetworks.com
 127.0.0.1 img100-321.xvideos.com
-# 0.0.0.0  libs.coremetrics.com #[affects tMobile/EverBank]
 127.0.0.1 e.freewebhostingarea.com
 127.0.0.1 ad-rotator.com
 127.0.0.1 serv.adspeed.com
@@ -69821,7 +69384,6 @@
 127.0.0.1 www.spylog.com
 127.0.0.1 www.cpaempire.com
 127.0.0.1 ekmas.com
-# 0.0.0.0  stat3.cybermonitor.com #[affects podcasts]
 127.0.0.1 www.adpeepshosted.com
 127.0.0.1 ping.hellobar.com
 127.0.0.1 adklip.com
@@ -69834,8 +69396,6 @@
 127.0.0.1 my.trackjs.com
 127.0.0.1 image.atdmt.com
 127.0.0.1 img.atdmt.com
-# 0.0.0.0  switch.atdmt.com #[affects Hotmail signup]
-# 0.0.0.0  view.atdmt.com #[affects Microsoft / Sprint.com]
 127.0.0.1 www.atdmt.com
 127.0.0.1 analytics.newsvine.com
 127.0.0.1 tracking.bannerflow.com
@@ -69869,13 +69429,11 @@
 127.0.0.1 col.mobileads.msn.com
 127.0.0.1 popup.msn.com
 127.0.0.1 analytics.r.msn.com
-# 0.0.0.0  rad.msn.com #[affects MSN Messenger]
 127.0.0.1 rmads.msn.com
 127.0.0.1 rmads.eu.msn.com
 127.0.0.1 analytics.msnbc.com
 127.0.0.1 msn.serving-sys.com
 127.0.0.1 click.atdmt.com
-# 0.0.0.0  clk.atdmt.com #[affects MS downloads]
 127.0.0.1 sact.atdmt.com
 127.0.0.1 beacon.clickequations.net
 127.0.0.1 js.clickequations.net
@@ -70095,7 +69653,6 @@
 127.0.0.1 ads.mediatwo.com
 127.0.0.1 mads.dailymail.co.uk
 127.0.0.1 in-cdn.effectivemeasure.net
-# 0.0.0.0 s.marketwatch.com #[affects marketwatch]
 127.0.0.1 stags.peer39.net
 127.0.0.1 www.zipitfast.com
 127.0.0.1 ads.drugs.com
@@ -70202,7 +69759,6 @@
 127.0.0.1 1und1internetag.d3.sc.omtrdc.net
 127.0.0.1 cafemom.d2.sc.omtrdc.net
 127.0.0.1 centricabritishgas.d3.sc.omtrdc.net
-# 0.0.0.0 citicorpcreditservic.tt.omtrdc.net
 127.0.0.1 comcastresidentialservices.tt.omtrdc.net
 127.0.0.1 comvelgmbh.d1.sc.omtrdc.net
 127.0.0.1 condenast.insight.omtrdc.net
@@ -70225,14 +69781,12 @@
 127.0.0.1 metrics.td.com
 127.0.0.1 tracking.whattoexpect.com
 127.0.0.1 102.112.207.net
-# 0.0.0.0 appleglobal.112.2o7.net #[affects Apple site]
 127.0.0.1 byubroadcast.112.2o7.net
 127.0.0.1 kasperthreatpostprod.112.2o7.net
 127.0.0.1 kaspersky.122.2o7.net
 127.0.0.1 ldsfch.112.2o7.net
 127.0.0.1 myfamilyancestry.112.2o7.net
 127.0.0.1 nautilus.122.2o7.net
-# 0.0.0.0  survey.112.2o7.net #[affect Sprint.com]
 127.0.0.1 tirerackcom.112.2o7.net
 127.0.0.1 stats.esomniture.com
 127.0.0.1 www.omniture.com
@@ -70242,7 +69796,6 @@
 127.0.0.1 ewstv.abc15.com
 127.0.0.1 metrics.accuweather.com
 127.0.0.1 metrics.acehardware.com
-# 0.0.0.0 stats.adobe.com #[affects MacOS updates]
 127.0.0.1 stats.adultswim.com
 127.0.0.1 analytic.ae.com
 127.0.0.1 metric.allrecipes.com
@@ -70251,11 +69804,8 @@
 127.0.0.1 analytics.amakings.com
 127.0.0.1 metrics.amd.com
 127.0.0.1 metrics.americancityandcounty.com
-# 0.0.0.0 metrics.ancestry.co.uk #[affects login]
 127.0.0.1 metric.angieslist.com
 127.0.0.1 metrics.apartmentfinder.com
-# 0.0.0.0 metrics.apple.com #[affects Apple site/MacOS]
-# 0.0.0.0 securemetrics.apple.com #[affects Apple site/MacOS]
 127.0.0.1 metrics.ariba.com
 127.0.0.1 omniture.artinstitutes.edu
 127.0.0.1 stats2.arstechnica.com
@@ -70305,7 +69855,6 @@
 127.0.0.1 webstat.channel4.com
 127.0.0.1 omniture.chip.de
 127.0.0.1 metrics.chron.com
-# 0.0.0.0 metrics1.citibank.com #[affects login]
 127.0.0.1 om.cnet.co.uk
 127.0.0.1 metrics.cleveland.com
 127.0.0.1 metrics.cnn.com
@@ -70313,7 +69862,6 @@
 127.0.0.1 serviceo.comcast.net
 127.0.0.1 metrics.compactappliance.com
 127.0.0.1 stats.concierge.com
-# 0.0.0.0 metrics.consumerreports.org #[affects login]
 127.0.0.1 metrics.corus.ca
 127.0.0.1 metrics.cosmopolitan.co.uk
 127.0.0.1 omn.crackle.com
@@ -70365,7 +69913,6 @@
 127.0.0.1 metrics.gnc.com
 127.0.0.1 stats2.golfdigest.com
 127.0.0.1 metrics.govexec.com
-# 0.0.0.0 w88.go.com #[affects espn.com]
 127.0.0.1 hits.guardian.co.uk
 127.0.0.1 metrics.harley-davidson.com
 127.0.0.1 analytics.hayneedle.com
@@ -70383,7 +69930,6 @@
 127.0.0.1 stats.investors.com
 127.0.0.1 metrics.store.irobot.com
 127.0.0.1 metrics.kbb.com
-# 0.0.0.0 ww9.kohls.com #[affects Chrome]
 127.0.0.1 metrics.lawyers.com
 127.0.0.1 metrics.lehighvalleylive.com
 127.0.0.1 metrics.us.levi.com
@@ -70391,7 +69937,6 @@
 127.0.0.1 metrics.lhj.com
 127.0.0.1 stats.libresse.no
 127.0.0.1 om.lonelyplanet.com
-# 0.0.0.0  omni.macworld.com #[affects Safari]
 127.0.0.1 analytics.mail-corp.com
 127.0.0.1 metric.makemytrip.com
 127.0.0.1 metric.marthastewart.com
@@ -70444,7 +69989,6 @@
 127.0.0.1 omniture.shopstyle.com
 127.0.0.1 metrics.silive.com
 127.0.0.1 b.skinstore.com
-# 0.0.0.0 metrics.skype.com
 127.0.0.1 metrics.slate.com
 127.0.0.1 metrics.speedousa.com
 127.0.0.1 omni.sportingnews.com
@@ -70452,7 +69996,6 @@
 127.0.0.1 metrics.sony.com
 127.0.0.1 omn.sonypictures.com
 127.0.0.1 metrics.southwest.com
-# 0.0.0.0  metrics.sprint.com #[affects login]
 127.0.0.1 metrics.starwoodhotels.com
 127.0.0.1 omniture.stuff.co.nz
 127.0.0.1 metrics.sun.com
@@ -70468,7 +70011,6 @@
 127.0.0.1 metrics.thinkgeek.com
 127.0.0.1 metrics.three.co.uk
 127.0.0.1 metrics.ticketmaster.com
-# 0.0.0.0 metric.timewarnercable.com #[affects billing?]
 127.0.0.1 metrics.tlc.com
 127.0.0.1 metrics.toptenreviews.com
 127.0.0.1 metrics.toyota.com
@@ -70497,7 +70039,6 @@
 127.0.0.1 an.worldbaseballclassic.com
 127.0.0.1 metric.worldcat.org
 127.0.0.1 metrics.worldmarket.com
-# 0.0.0.0 metric.wtop.com #[affects login]
 127.0.0.1 smetrics.yellowbook.com
 127.0.0.1 metric.yellowpages.com
 127.0.0.1 mbox.offermatica.intuit.com
@@ -70717,7 +70258,6 @@
 127.0.0.1 js.bizographics.com
 127.0.0.1 images.ddc.com
 127.0.0.1 cdn.firstlook.com
-# 0.0.0.0  adm.fwmrm.net #[affects nhl.com]
 127.0.0.1 m2.fwmrm.net
 127.0.0.1 cache.gfrevenge.com
 127.0.0.1 cache.izearanks.com
@@ -70886,7 +70426,6 @@
 127.0.0.1 ccc01.opinionlab.com
 127.0.0.1 rate.opinionlab.com
 127.0.0.1 www.opinionlab.com
-# 0.0.0.0  static.chartbeat.com #[affects Healthcare.gov]
 127.0.0.1 csma95349.analytics.edgesuite.net
 127.0.0.1 ads.tarrobads.com
 127.0.0.1 hu.2.cqcounter.com
@@ -71044,7 +70583,6 @@
 127.0.0.1 www.mvav.com
 127.0.0.1 admax.nexage.com
 127.0.0.1 bbads.sx.atl.publicus.com
-# 0.0.0.0 d.xp1.ru4.com #[affects Battlefield]
 127.0.0.1 udm.ia6.scorecardresearch.com
 127.0.0.1 udm.ia7.scorecardresearch.com
 127.0.0.1 sa.scorecardresearch.com
@@ -71242,7 +70780,6 @@
 127.0.0.1 c.chango.com
 127.0.0.1 d.chango.com
 127.0.0.1 dnetshelter3.d.chango.com
-# 0.0.0.0 realtime.services.disqus.com #[affects politicalwire.com]
 127.0.0.1 eclkmpbn.com
 127.0.0.1 eclkmpsa.com
 127.0.0.1 eclkspbn.com
@@ -71311,7 +70848,6 @@
 127.0.0.1 hits.informer.com
 127.0.0.1 my.mobfox.com
 127.0.0.1 banners.mynakedweb.com
-# 0.0.0.0 api.nanigans.com #[affects 2go.com]
 127.0.0.1 www.seekways.com
 127.0.0.1 www.toplistim.com
 127.0.0.1 r.bid4keywords.com
@@ -71761,7 +71297,6 @@
 127.0.0.1 log.aebn.net
 127.0.0.1 www3.bloomingdales.com
 127.0.0.1 cmd.customink.com
-# 0.0.0.0 www.securitymetrics.com #[affects bank login]
 127.0.0.1 mv.treehousei.com
 127.0.0.1 beacon.lijit.com
 127.0.0.1 www.lijit.com
@@ -72516,7 +72051,6 @@
 127.0.0.1 vibrantmedia.com
 127.0.0.1 www.vibrantmedia.com
 127.0.0.1 banners.payserve.com
-# 0.0.0.0 cdn.visiblemeasures.com #[affects Collegehumor.com]
 127.0.0.1 api.adrenalads.com
 127.0.0.1 f.blogads.com
 127.0.0.1 g.blogads.com
@@ -72774,7 +72308,6 @@
 127.0.0.1 adinterax.com
 127.0.0.1 www.adinterax.com
 127.0.0.1 np.lexity.com
-# 0.0.0.0 beap.adss.yahoo.com #[affects Yahoo video]
 127.0.0.1 beap.adx.yahoo.com
 127.0.0.1 ac.ybinst0.ec.yimg.com
 127.0.0.1 ac.ybinst1.ec.yimg.com
@@ -72796,13 +72329,10 @@
 127.0.0.1 ybinst7.ec.yimg.com
 127.0.0.1 ybinst8.ec.yimg.com
 127.0.0.1 ybinst9.ec.yimg.com
-# 0.0.0.0 yastatic.net #[affects Yandex Mail]
 127.0.0.1 an.yandex.ru
 127.0.0.1 advertising.yandex.ru
 127.0.0.1 bs.yandex.ru
 127.0.0.1 bs-meta.yandex.ru
-# 0.0.0.0 clck.yandex.ru
-# 0.0.0.0 grade.market.yandex.ru
 127.0.0.1 informer.yandex.ru
 127.0.0.1 mc.yandex.ru
 127.0.0.1 serw.myroitracking.com
@@ -72854,137 +72384,11 @@
 127.0.0.1 www.zedo.com
 127.0.0.1 rt.udmserve.net
 127.0.0.1 www.stickylogic.com
-# End mvps.org
-# Start someonewhocares.org
-# This hosts file is brought to you by Dan Pollock and can be found at
-# http://someonewhocares.org/hosts/zero/
-# You are free to copy and distribute this file for non-commercial uses,
-# as long the original URL and attribution is included.
-#
-# This hosts file is proudly sponsored by adguard.com.
-#
-# See below for acknowledgements.
-# Please forward any additions, corrections or comments by email to
-# Last updated: Fri, 10 Apr 2026 at 21:26:03 GMT
-# Use this file to prevent your computer from connecting to selected
-# internet hosts. This is an easy and effective way to protect you from
-# many types of spyware, reduces bandwidth use, blocks certain pop-up
-# traps, prevents user tracking by way of "web bugs" embedded in spam,
-# provides partial protection to IE from certain web-based exploits and
-# blocks most advertising you would otherwise be subjected to on the
-# There is a version of this file that uses 127.0.0.1 instead of 0.0.0.0
-# available at http://someonewhocares.org/hosts/.
-# On some machines the zero version may run minutely faster, however it
-# may not be compatible with all systems.
-# This file must be saved as a text file with no extension. (This means
-# that the file name should be exactly as below, without a ".txt" appended.)
-# Let me repeat, the file should be named "hosts" NOT "hosts.txt".
-# For Windows 9x and ME place this file at "C:\Windows\hosts"
-# For NT, Win2K and XP use "C:\windows\system32\drivers\etc\hosts"
-#                       or "C:\winnt\system32\drivers\etc\hosts"
-# For Windows 7 and Vista use "C:\windows\system32\drivers\etc\hosts"
-#			or "%systemroot%\system32\drivers\etc\hosts"
-# For Windows 8 and Windows 10 use "C:\Windows\System32\drivers\etc\hosts"
-# 		You may need to tell Windows Defender to ignore this path
-# 		see: http://support.microsoft.com/kb/2764944
-# You may have to use Notepad and "Run as Administrator"
-#
-# For Linux, Unix, or OS X place this file at "/etc/hosts" or on some
-#    systems at "/private/etc/hosts". You will require root access to do
-#    this. Saving this file to "~/hosts" will allow you to run something
-#    like "sudo cp ~/hosts /etc/hosts".
-# For OS/2 copy the file to "%ETC%\HOSTS" and in the CONFIG.SYS file,
-#    ensure that the line "SET USE_HOSTS_FIRST=1" is included.
-# For BeOS place it at "/boot/beos/etc/hosts"
-# On a Netware system, the location is System\etc\hosts"
-# For Macintosh (pre OS X) place it in the Mac System Folder or Preferences
-#    folder and reboot. (something like HD:System Folder:Preferences:Hosts)
-#    Alternatively you can save it elsewhere on your machine, then go to the
-#    TCP/IP control panel and click on "Select hosts file" to read it in.
-#    ------------------
-#    | As well, note that the format is different on old macs, so
-#    | please visit http://someonewhocares.org/hosts/zero/mac/ for mac format
-# For Android place the file at "/system/etc/hosts". You will need root
-#   access on your device to do this.
-#    ------------------
-# To convert the hosts file to a set of Cisco IOS commands for Cisco routers
-#   use this script by Jesse Baird:
-#   http://jebaird.com/2012/12/21/hosts-to-ip-host-generating-blocked-hosts-from-a-host-file-for-a-cisco-router.html
-# If there is a domain name you would rather never see, simply add a line
-# that reads "0.0.0.0 machine.domain.tld". This will have the effect of
-# redirecting any requests to that host to your own computer. For example
-# this will prevent your browser from downloading banner ads, or sending
-# your information back to a company.
-#<localhost>
-#fe80::1%lo0	localhost
-#</localhost>
-#<shortcut-examples>
-# As well by specifying the ipaddress of a server, you can gain access
-#   to some of your favourite sites with a single letter, instead of
-#   using the whole domain name
-# It is perhaps a better solution to use Favourites/Bookmarks instead.
-#216.34.181.45   s        # slashdot.org
-#74.125.127.105	g        # google.com
-#</shortcut-examples>
-#<hijack-sites>
-# The sites ads234.com and ads345.com -- These sites hijack internet explorer
-# and redirect all requests through their servers. You may need to use spyware
-# removal programs such as SpyBotS&amp;D, AdAware or HijackThis to remove this
-# nasty parasite. It's possible that blocking these sites using a hosts file
-# may not work, in which case you should remove the following lines from this
-# file and try the tools listed above immediately. Don't forget to reboot
-# after a scan.
 127.0.0.1 ads234.com
 127.0.0.1 ads345.com
 127.0.0.1 www.ads234.com
 127.0.0.1 www.ads345.com
-#</hijack-sites>
-#<spyware-sites>
-# Spyware and user tracking
-# By entering domains here, it will prevent certain companies from
-# gathering information on your surfing habits. These servers do not
-# necessarily serve ads, instead some are used by certain products to
-# "phone home". Others use web cookies to gather statistics on surfing
-# habits. Among other uses, this is a common tactic by spammers, to
-# let them know that you have read your mail.
-# Uncomment (remove the #) the lines that you wish to block, as some
-# may provide you with services you like.
-#<maybe-spy>
-#0.0.0.0 auto.search.msn.com  # Microsoft uses this server to redirect
-# mistyped URLs to search engines. They
-# log all such errors.
-#0.0.0.0 sitefinder.verisign.com	# Verisign has joined the game
-#0.0.0.0 sitefinder-idn.verisign.com	# of trying to hijack mistyped
-# URLs to their site.
-# May break iOS Game Center.
-#0.0.0.0 s0.2mdn.net		# This may interfere with some streaming
-# video on sites such as cbc.ca
-#0.0.0.0 ad.doubleclick.net   # This may interefere with www.sears.com
-# and potentially other sites.
 127.0.0.1 media.fastclick.net
-#0.0.0.0 ebay.doubleclick.net		# may interfere with ebay
-#0.0.0.0 google-analytics.com			# breaks some sites
-#0.0.0.0 ssl.google-analytics.com
-#0.0.0.0 www.google-analytics.l.google.com
-#0.0.0.0 stat.livejournal.com		# There are reports that this may mess
-# up CSS on livejournal
-#0.0.0.0 stats.surfaid.ihost.com	# This has been known cause
-# problems with NPR.org
-#0.0.0.0 www.google-analytics.com		# breaks some sites
-#0.0.0.0 ads.imeem.com		# Seems to interfere with the functioning of imeem.com
-#</maybe-spy>
-#0.0.0.0 ci-mpsnare.iovation.com	# See http://www.codingthewheel.com/archives/online-gambling-privacy-iesnare
-#0.0.0.0 ll.a.hulu.com	# Uncomment to block Hulu.
-#0.0.0.0 metrics.ticketmaster.com	# interferes with logging in to ticketmaster.com
-#0.0.0.0 nl.sitestat.com	# may interfere with duo.nl
-#0.0.0.0 pro.hit.gemius.pl	# May interfere with some video sites
-#0.0.0.0 s.youtube.com				# Blocking this will interfere with video watching history and may interfere with Google Podcasts
-#0.0.0.0 services.krxd.net
-#0.0.0.0 stats.channel4.com
-#0.0.0.0 t2.hulu.com		# Uncomment to block Hulu.
-#0.0.0.0 track.hulu.com	# Uncomment to block Hulu.
-#0.0.0.0 webstat.channel4.com
-#0.0.0.0 www.googletagservices.com		#interferes with techrepublic
 127.0.0.1 006.freecounters.co.uk
 127.0.0.1 0stats.com
 127.0.0.1 123counter.mycomputer.com
@@ -73006,8 +72410,6 @@
 127.0.0.1 adelogs.adobe.com
 127.0.0.1 ademails.com
 127.0.0.1 adlog.com.com
-# ads and track users across
-# the com.com family of sites
 127.0.0.1 admin.iovation.com
 127.0.0.1 adpatrof.com
 127.0.0.1 ads.tiscali.it
@@ -73900,9 +73302,6 @@
 127.0.0.1 xxxcounter.com
 127.0.0.1 zc1.campaign-view.com.cn
 127.0.0.1 zc1.maillist-manage.com.cn
-#</spyware-sites>
-#<malware-sites>
-# sites with known trojans, phishing, or other malware
 127.0.0.1 0.nextyourcontent.com
 127.0.0.1 05tz2e9.com
 127.0.0.1 1-bmo-client-login.com
@@ -76336,15 +75735,10 @@
 127.0.0.1 zjgaoergao.com
 127.0.0.1 ztriskl.divisionfair.homes
 127.0.0.1 zzkwg.comfortykive.xyz
-#</malware-sites>
-#<doubleclick-sites>
-#0.0.0.0 pubads.g.doubleclick.net	#interferes with video on cwtv.com
 127.0.0.1 ad.ve.doubleclick.net
 127.0.0.1 doubleclick.de
 127.0.0.1 m.2mdn.net
 127.0.0.1 ukrpts.net
-#</doubleclick-sites>
-#<intellitxt-sites>
 127.0.0.1 gadgets.fosfor.se.intellitxt.com
 127.0.0.1 maccity.it.intellitxt.com
 127.0.0.1 macuser.uk.intellitxt.com
@@ -76356,10 +75750,6 @@
 127.0.0.1 pcgameshardware.de.intellitxt.com
 127.0.0.1 pspcave.uk.intellitxt.com
 127.0.0.1 splashnews.uk.intellitxt.com
-#</intellitxt-sites>
-#<red-sheriff-sites>
-# Red Sheriff and imrworldwide.com  -- server side tracking
-#0.0.0.0 secure-au.imrworldwide.com
 127.0.0.1 fe-au.imrworldwide.com
 127.0.0.1 fe1-au.imrworldwide.com
 127.0.0.1 fe2-au.imrworldwide.com
@@ -76371,9 +75761,6 @@
 127.0.0.1 server-ru.imrworldwide.com
 127.0.0.1 server-ua.imrworldwide.com
 127.0.0.1 www.redsheriff.com
-#</red-sheriff-sites>
-#<cydoor-sites>
-# cydoor -- server side tracking
 127.0.0.1 cydoor.com
 127.0.0.1 j.2004cms.com
 127.0.0.1 jbaventures.cjt1.net
@@ -76438,11 +75825,6 @@
 127.0.0.1 jumcna.cjt1.net
 127.0.0.1 jwebbsense.cjt1.net
 127.0.0.1 www.cydoor.com
-#</cydoor-sites>
-#<2o7-sites>
-# 2o7.net -- server side tracking
-#0.0.0.0 appleglobal.112.2o7.net	#breaks apple.com
-#0.0.0.0 applestoreus.112.2o7.net	#breaks apple.com
 127.0.0.1 actforvictory.112.2o7.net
 127.0.0.1 adbrite.112.2o7.net
 127.0.0.1 americanbaby.112.2o7.net
@@ -76714,9 +76096,6 @@
 127.0.0.1 workopolis.122.2o7.net
 127.0.0.1 youtube.112.2o7.net
 127.0.0.1 yrkeve.112.2o7.net
-#</2o7-sites>
-#<oewabox-sites>
-# oewabox.at -- 'Austrian Webanalysis Society'
 127.0.0.1 1000ps.oewabox.at
 127.0.0.1 afinder.oewabox.at
 127.0.0.1 alphalux.oewabox.at
@@ -76842,9 +76221,6 @@
 127.0.0.1 woche.oewabox.at
 127.0.0.1 wohnnet.oewabox.at
 127.0.0.1 zfm.oewabox.at
-#</oewabox-sites>
-#<pegasus-spyware-sites>
-# Pegasus spyware sites.
 127.0.0.1 24-7clinic.com
 127.0.0.1 365redirect.co
 127.0.0.1 a-redirect.com
@@ -77318,25 +76694,6 @@
 127.0.0.1 youliehow.com
 127.0.0.1 yourbestclothes.com
 127.0.0.1 yummyfoodallover.com
-#</pegasus-spyware-sites>
-#<ad-sites>
-#<maybe-ads>
-#0.0.0.0 adfarm.mediaplex.com		# may interfere with ebay
-#0.0.0.0 ads.msn.com			#This may cause problems with zone.msn.com
-#0.0.0.0 ak.imgfarm.com		# may cause problems with iwon.com
-#0.0.0.0 click.linksynergy.com
-#0.0.0.0 global.msads.net		#This may cause problems with zone.msn.com
-#0.0.0.0 lads.myspace.com		# blocks myspace media/video players
-#0.0.0.0 refer.ccbill.com		#affiliate program, to add it back, remove the #
-#0.0.0.0 rmads.msn.com			#This may cause problems with zone.msn.com
-#0.0.0.0 www.apmebf.com		#qksrv
-#0.0.0.0 www.tkqlhce.com		#qksrv
-#0.0.0.0 ad.ca.doubleclick.net	#intereferes with video on globeandmail.com
-#0.0.0.0 transfer.go.com		#may interfere with Disney websites
-#</maybe-ads>
-# ads
-#0.0.0.0 aax-eu.amazon-adsystem.com 	# may interfere with Amazon ad preferences
-#0.0.0.0 s.amazon-adsystem.com	# may interfere with Amazon ad preferences
 127.0.0.1 0101011.com
 127.0.0.1 0427d7.se
 127.0.0.1 0d79ed.r.axf8.net
@@ -82840,30 +82197,17 @@
 127.0.0.1 zu1.november-lax.com
 127.0.0.1 zulu.r867qq.net
 127.0.0.1 zytpirwai.net
-#</ad-sites>
-# https://securehomes.esat.kuleuven.be/~gacar/persistent/index.html
-#<canvass-fingerprinting-sites>
 127.0.0.1 cya2.net
 127.0.0.1 i.ligatus.com
 127.0.0.1 images.revtrax.com
 127.0.0.1 shorte.st
 127.0.0.1 src.kitcode.net
-#</canvass-fingerprinting-sites>
-#<evercookies-sites>
 127.0.0.1 ar.hao123.com
 127.0.0.1 irs01.net
 127.0.0.1 kiks.yandex.ru
 127.0.0.1 y3.ifengimg.com
-#</evercookies-sites>
-#<yahoo-ad-sites>
-# yahoo banner ads
-# If you have trouble with Yahoo email, you may need to comment out these lines
-#0.0.0.0 us.i1.yimg.com	#Uncomment this to block yahoo images
 127.0.0.1 in.yimg.com
 127.0.0.1 us.a1.yimg.com
-#</yahoo-ad-sites>
-#<hitbox-sites>
-# hitbox.com web bugs
 127.0.0.1 adminec1.hitbox.com
 127.0.0.1 ads.hitbox.com
 127.0.0.1 ai.hitbox.com
@@ -83155,13 +82499,7 @@
 127.0.0.1 www.hitbox.com
 127.0.0.1 yang.hitbox.com
 127.0.0.1 ying.hitbox.com
-#</hitbox-sites>
-#<extreme-dm-sites>
-# www.extreme-dm.com tracking
 127.0.0.1 www.extreme-dm.com
-#</extreme-dm-sites>
-#<realmedia-sites>
-# realmedia.com's Open Ad Stream
 127.0.0.1 oas-central.east.realmedia.com
 127.0.0.1 oas-central.realmedia.com
 127.0.0.1 oas.adservingml.com
@@ -83271,13 +82609,7 @@
 127.0.0.1 oascentral.yellowpages.com
 127.0.0.1 oascentral.zwire.com
 127.0.0.1 oascentralnx.comcast.net
-#</realmedia-sites>
-#<fastclick-sites>
-# fastclick banner ads
 127.0.0.1 fastclick.net
-#</fastclick-sites>
-#<belo-interactive-sites>
-# belo interactive ads
 127.0.0.1 te.about.com
 127.0.0.1 te.advance.net
 127.0.0.1 te.ap.org
@@ -83299,9 +82631,6 @@
 127.0.0.1 te.thestar.com
 127.0.0.1 te.trb.com
 127.0.0.1 te.versiontracker.com
-#</belo-interactive-sites>
-#<popup-traps>
-# popup traps -- sites that bounce you around or won't let you leave
 127.0.0.1 incestland.com
 127.0.0.1 lesview.com
 127.0.0.1 searchforit.com
@@ -83319,10 +82648,6 @@
 127.0.0.1 www.xxxnations.com
 127.0.0.1 www.xxxtoolbar.com
 127.0.0.1 www.yourfuckbook.com
-#</popup-traps>
-#<ecard-scam-sites>
-# malicious e-card -- these sites send out mass quantities of spam
-# and some distribute adware and spyware
 127.0.0.1 123greetings.com
 127.0.0.1 2000greetings.com
 127.0.0.1 celebwelove.com
@@ -83346,13 +82671,6 @@
 127.0.0.1 www.friendgreetings.net
 127.0.0.1 www.laugh-mail.com
 127.0.0.1 www.laugh-mail.net
-#</ecard-scam-sites>
-#<IVW-sites>
-# European network of tracking sites
-#</IVW-sites>
-#<wiki-spam-sites>
-# message board and wiki spam -- these sites are linked in
-# message board spam and are unlikely to be real sites
 127.0.0.1 21jewelry.com
 127.0.0.1 24x7.soliday.org
 127.0.0.1 2site.com
@@ -83837,9 +83155,6 @@
 127.0.0.1 zyrtec.1.p2l.info
 127.0.0.1 zyrtec.3.p2l.info
 127.0.0.1 zyrtec.4.p2l.info
-#</wiki-spam-sites>
-#<Windows10>
-# Windows 10 reporting domains.
 127.0.0.1 adnexus.net
 127.0.0.1 az361816.vo.msecnd.net
 127.0.0.1 az512334.vo.msecnd.net
@@ -83854,9 +83169,6 @@
 127.0.0.1 secure.flashtalking.com
 127.0.0.1 statsfe2.ws.microsoft.com
 127.0.0.1 wes.df.telemetry.microsoft.com
-#</Windows10>
-#<shock-sites>
-# For example, to block unpleasant pages, try:
 127.0.0.1 goatse.cx
 127.0.0.1 www.goatse.cx
 127.0.0.1 oralse.cx
@@ -84041,42 +83353,6 @@
 127.0.0.1 www.zentastic.com
 127.0.0.1 youaresogay.com
 127.0.0.1 zentastic.com
-#</shock-sites>
-# Acknowledgements
-# I'd like to thank the following people for submitting sites, and
-# helping promote the site.
-# Bill Allison, Harj Basi, Lance Russhing, Marshall Drew-Brook,
-#  Leigh Brasington, Scott Terbush, Cary Newfeldt, Kaye, Jeff
-#  Scrivener, Mark Hudson, Matt Bells, T. Kim Nguyen, Lino Demasi,
-#  Marcelo Volmaro, Troy Martin, Donald Kerns, B.Patten-Walsh,
-#  bobeangi, Chris Maniscalco, George Gilbert, Kim Nilsson, zeromus,
-#  Robert Petty, Rob Morrison, Clive Smith, Cecilia Varni, OleKing
-#  Cole, William Jones, Brian Small, Raj Tailor, Richard Heritage,
-#  Alan Harrison, Ordorica, Crimson, Joseph Cianci, sirapacz,
-#  Dvixen, Matthew Craig, Tobias Hessem, Kevin F. Quinn, Thomas
-#  Corthals, Chris McBee, Jaime A. Guerra, Anders Josefson,
-#  Simon Manderson, Spectre Ghost, Darren Tay, Dallas Eschenauer, Cecilia
-#  Varni, Adam P. Cole, George Lefkaditis, grzesiek, Adam Howard, Mike
-#  Bizon, Samuel P. Mallare, Leinweber, Walter Novak, Stephen Genus,
-#  Zube, Johny Provoost, Peter Grafton, Johann Burkard, Magus, Ron Karner,
-#  Fredrik Dahlman, Michele Cybula, Bernard Conlu, Riku B, Twillers,
-#  Shaika-Dzari, Vartkes Goetcherian, Michael McCown, Garth, Richard Nairn,
-#  Exzar Reed, Robert Gauthier, Floyd Wilder, Mark Drissel, Kenny Lyons,
-#  Paul Dunne, Tirath Pannu, Mike Lambert, Dan Kolcun, Daniel Aleksandersen,
-#  Chris Heegard, Miles Golding, Daniel Bisca, Frederic Begou, Charles
-#  Fordyce, Mark Lehrer, Sebastien Nadeau-Jean, Russell Gordon, Alexey
-#  Gopachenko, Stirling Pearson, Alan Segal, Bobin Joseph, Chris Wall, Sean
-#  Flesch, Brent Getz, Jerry Cain, Brian Micek, Lee Hancock, Kay Thiele,
-#  Kwan Ting Chan, Wladimir Labeikovsky, Lino Demasi, Bowie Bailey, Andreas
-#  Marschall, Michael Tompkins, Michael O'Donnell, Jos&eacute; Lucas Teixeira
-#  de Oliveira, M. &Ouml;mer G&ouml;lgeli, and Anthony Gelibert for helping to build
-#  the hosts file.
-# Russell O'Connor for OS/2 information
-# kwadronaut for Windows 7 and Vista information
-# John Mueller and Lawrence H Smith for Mac Pre-OSX information
-# Jesse Baird for the Cisco IOS script
-# End someonewhocares.org
-# Start tiuxo
 127.0.0.1 100234.advision-adnw.jp
 127.0.0.1 100291.adnico.jp
 127.0.0.1 100602.advision-adnw.jp
@@ -85440,8 +84716,6 @@
 127.0.0.1 zemanta.com
 127.0.0.1 zenback.jp
 127.0.0.1 ziyu.net
-# End tiuxo
-# Start UncheckyAds
 127.0.0.1 cdn.appround.biz
 127.0.0.1 cdn.download.sweetpacks.com
 127.0.0.1 cdn.insta.playbryte.com
@@ -85450,16 +84724,6 @@
 127.0.0.1 inno.bisrv.com
 127.0.0.1 installer.betterinstaller.com
 127.0.0.1 nsis.bisrv.com
-# End UncheckyAds
-# Start URLHaus
-################################################################
-# abuse.ch URLhaus Host file                                   #
-# Last updated: 2026-04-12 23:00:17 (UTC)                      #
-#                                                              #
-# Terms Of Use: https://urlhaus.abuse.ch/api/                  #
-# For questions please contact urlhaus [at] abuse.ch           #
-################################################################
-#
 127.0.0.1 0022a601.pphost.net
 127.0.0.1 111101111.ru
 127.0.0.1 123.ywxww.net
@@ -85895,23 +85159,6 @@
 127.0.0.1 zenglobalenerji.com
 127.0.0.1 zhigao5191.com
 127.0.0.1 zycdjz.com
-# Number of entries: 436
-# End URLHaus
-# Start yoyo.org
-# Blocklist for use with hosts files to block ads, trackers, and other nasty things
-#
-# For more information about this list, see: https://pgl.yoyo.org/adservers/
-# ----
-# last updated:   Wed, 07 Jan 2026 11:24:10 GMT
-# entries:        3501
-# format:         hosts (hosts -- in hosts file format)
-# credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
-# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0
-# Patreon:        https://patreon.com/blocklist
-# other formats:  https://pgl.yoyo.org/adservers/formats.php
-# policy:         https://pgl.yoyo.org/adservers/policy.php
-#
-# start date:    Fri, 06 Jun 2003 00:00:00
 127.0.0.1 101com.com
 127.0.0.1 180hits.de
 127.0.0.1 180searchassistant.com
@@ -88166,7 +87413,6 @@
 127.0.0.1 systemssummit.com
 127.0.0.1 t.bawafx.com
 127.0.0.1 t.carta.com
-# 0.0.0.0 t.co
 127.0.0.1 t.eloqua.com
 127.0.0.1 t.email.superdrug.com
 127.0.0.1 t.en25.com
@@ -88539,10 +87785,3 @@
 127.0.0.1 zonewedgeshaft.com
 127.0.0.1 zpu.samsungelectronics.com
 127.0.0.1 zqtk.net
-# End yoyo.org
-# blacklist
-#
-# The contents of this file (containing a listing of additional domains in
-# 'hosts' file format) are appended to the unified hosts file during the
-# update process. For example, uncomment the following line to block
-# 0.0.0.0 example.com

@@ -1,12 +1,23 @@
-#202604150307
-# SmartTV Host filters for Pi hole
-# Collaborators: xxcriticxx, MajkiIT
-# Homepage: https://www.certyficate.it/
-# Contact: errorsfilters@certyficate.it
-# Support: https://github.com/MajkiIT/polish-ads-filter/issues
+#       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
+#      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
+#     | (___   | |__    | |__      | |   |  \| | | |__    | ' /        | |_) | | |      | |  | | | |      | ' /  | |        | |   | (___      | |
+#      \___ \  |  __|   |  __|     | |   | . ` | |  __|   |  <         |  _ <  | |      | |  | | | |      |  <   | |        | |    \___ \     | |
+#      ____) | | |____  | |       _| |_  | |\  | | |____  | . \        | |_) | | |____  | |__| | | |____  | . \  | |____   _| |_   ____) |    | |
+#     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
+#
+#                                            The best blocklist collection: https://blocklist.sefinek.net
+# Title: Polish Smart TV Ads Blocklist
+# Description: N/A
+# Expires: 1 day
+# Count: 245 domains
+# Source: https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/SmartTV_ads.txt
 # License: https://creativecommons.org/licenses/by-nc-sa/4.0/
-# Copyright (C) 2020 Certyficate IT
-# source https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt
+# Release: 0.0.0.0 before each domain
+# Last update: April 15, 2026 at 7:16 PM UTC | 2026-04-15T19:16:49.774Z
+#
+# This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
+# If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
 0.0.0.0 0077777700140002.myhomescreen.tv
 0.0.0.0 cert-test.sandbox.google.com
 0.0.0.0 collect.myhomescreen.tv
