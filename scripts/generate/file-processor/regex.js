@@ -2,7 +2,7 @@ const { CATEGORIES } = require('../../config/data.js');
 const { readFile, writeFile } = require('node:fs/promises');
 const { join } = require('node:path');
 
-const removeWhitelistedDomains = async (category) => {
+const removeWhitelistedDomains = async category => {
 	const filePath = join(__dirname, '..', '..', '..', 'blocklists', 'templates', category.file);
 	const data = await readFile(filePath, 'utf-8');
 	const lines = data.split('\n');
