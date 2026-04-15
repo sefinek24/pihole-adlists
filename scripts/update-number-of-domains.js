@@ -12,7 +12,7 @@ const COUNT_HEADER_RE = /^([#!]\s*)(Domains|Count|Entries|Number of entries|Numb
 const formatCount = count => count.toLocaleString('en-US', { minimumIntegerDigits: 8, useGrouping: true }).replace(/,/g, ' ');
 const replaceCount = (content, domainCount) =>
 	content.replace(COUNT_HEADER_RE, (_, prefix, key, sep, _num, suffix) =>
-		`${prefix}${key}${sep}${domainCount.toLocaleString('en-US')}${/^domains$/i.test(key) ? '' : (suffix ?? '')}`
+		`${prefix}${key}${sep}${domainCount.toLocaleString('en-US')}${(/^domains$/i).test(key) ? '' : (suffix ?? '')}`
 	);
 
 const countDomains = content => {

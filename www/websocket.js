@@ -63,7 +63,11 @@ const broadcastInterval = setInterval(broadcast, BROADCAST_INTERVAL);
 
 const heartbeatInterval = setInterval(() => {
 	for (const ws of wss.clients) {
-		if (!ws.isAlive) { ws.terminate(); continue; }
+		if (!ws.isAlive) {
+			ws.terminate();
+			continue;
+		}
+
 		ws.isAlive = false;
 		ws.ping();
 	}

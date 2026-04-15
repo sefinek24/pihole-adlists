@@ -6,7 +6,7 @@ exports.rateLimit = (req, res) => {
 	res.status(429).render('errors/429.ejs');
 };
 
-exports.internalError = (err, req, res, next) => {
+exports.internalError = (err, req, res, _next) => {
 	if (err) console.error(err);
 	res.status(500).render('errors/500.ejs');
 };
