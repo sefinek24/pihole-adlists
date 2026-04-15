@@ -3,7 +3,7 @@ module.exports = (title, description, count, { modifiedBy, source, license } = {
 		`# Title: ${title || 'Unknown'}`,
 		`# Description: ${description || 'N/A'}`,
 		'# Expires: 1 day',
-		`# Count: ${count != null ? Number(count).toLocaleString('en-US') + ' domains' : 'Unknown'}`,
+		`# Count: ${count != null ? `${Number(count).toLocaleString('en-US')} domains` : 'Unknown'}`,
 		'# Author: Sefinek (https://sefinek.net) <contact@sefinek.net>',
 	];
 
