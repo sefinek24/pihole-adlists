@@ -130,7 +130,7 @@ const ROUTES = [
 	{ url: '/social/facebook.txt', file: 'social/facebook.txt' },
 	{ url: '/social/instagram.txt', file: 'social/instagram.txt' },
 	{ url: '/social/snapchat.txt', file: 'social/snapchat.txt' },
-	{ url: '/social/twitter.txt', file: 'social/twitter.txt' },
+	{ url: '/social/twitter.txt', file: 'social/x.txt' },
 
 	// Apps
 	{ url: '/apps/spotify.txt', file: 'apps/spotify.txt' },
