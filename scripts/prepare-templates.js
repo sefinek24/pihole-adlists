@@ -43,7 +43,11 @@ const processDirectory = async dirPath => {
 				}
 
 				if (line.startsWith('#') || line.startsWith('!')) {
-					stats.invalidLinesRemoved++;
+					if (/^#\s*@\w+:/.test(line)) {
+						processedLines.push(line);
+					} else {
+						stats.invalidLinesRemoved++;
+					}
 					continue;
 				}
 

@@ -11,8 +11,8 @@ module.exports = (title, description, count, { modifiedBy, source, license } = {
 	if (source) lines.push(`# Source: ${source}`);
 
 	lines.push(`# License: ${license || 'MIT'}`);
-	lines.push('# Release: <Release>');
-	lines.push('# Last update: <LastUpdate>');
+	lines.push('# Release: {Release}');
+	lines.push('# Last update: {LastUpdate}');
 
 	return `#       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 #      / ____| |  ____| |  ____| |_   _| | \\ | | |  ____| | |/ /       |  _ \\  | |       / __ \\   / ____| | |/ / | |      |_   _|  / ____| |__   __|
