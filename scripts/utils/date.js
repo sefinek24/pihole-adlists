@@ -10,12 +10,13 @@ const formatTimezoneOffset = date => {
 	return `GMT${sign}${hours}:${minutes}`;
 };
 
-const fullFormatter = new Intl.DateTimeFormat(undefined, {
+const fullFormatter = new Intl.DateTimeFormat('en-US', {
 	year: 'numeric',
 	month: 'long',
 	day: 'numeric',
 	hour: 'numeric',
 	minute: '2-digit',
+	timeZone: 'UTC',
 	timeZoneName: 'short',
 });
 
