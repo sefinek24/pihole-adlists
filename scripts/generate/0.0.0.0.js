@@ -5,32 +5,32 @@ const getDate = require('../utils/date.js');
 const sha256 = require('../utils/sha256.js');
 const txtFilter = require('../utils/txtFilter.js');
 const process = require('../utils/process.js');
+const buildHeader = require('../utils/buildHeader.js');
 
-const convert = async (folderPath = path.join(__dirname, '../../blocklists/templates'), relativePath = '') => {
+const TEMPLATES_DIR = path.join(__dirname, '../../blocklists/templates');
+
+const convert = async (folderPath = TEMPLATES_DIR, relativePath = '') => {
 	const { format, allFiles, txtFiles, generatedPath } = await txtFilter('0.0.0.0', path, fs, relativePath, folderPath);
 
 	await Promise.all(txtFiles.map(async file => {
 		const thisFileName = path.join(folderPath, file.name);
 
-		// Cache
-		const { stop, content: fileContent } = await sha256(thisFileName, format, file);
+		const { stop, content: rawContent } = await sha256(thisFileName, format, file);
 		if (stop) return;
 
+		const domains = rawContent.split('\n').filter(l => l && !l.startsWith('#'));
+		const relPath = path.relative(TEMPLATES_DIR, thisFileName);
+		const header = buildHeader(relPath, domains.length);
+
 		const date = getDate();
-		const replacedFile = fileContent
-			.split('\n')
-			.map(line => {
-				if (!line || line.startsWith('#')) return line;
-				return `0.0.0.0 ${line}`;
-			})
-			.join('\n')
+		const output = [header, ...domains.map(l => `0.0.0.0 ${l}`)].join('\n')
 			.replace('<Release>', '0.0.0.0 before each domain')
 			.replace('<LastUpdate>', `${date.full} | ${date.now}`);
 
 		const fullNewFile = path.join(generatedPath, file.name);
-		await fs.writeFile(fullNewFile, replacedFile);
+		await fs.writeFile(fullNewFile, output);
 
-		await splitFile(fullNewFile, replacedFile, '#');
+		await splitFile(fullNewFile, output, '#');
 	}));
 
 	await process(convert, allFiles, path, relativePath, folderPath);

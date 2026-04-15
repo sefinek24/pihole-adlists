@@ -7,7 +7,7 @@ const emoji = key => ({
 	modifiedLines: '🔧', convertedDomains: '✨', invalidLinesRemoved: '🧹',
 	ipsReplaced: '🔄', domainToLower: '🔡', convertedAdGuard: '🔄',
 	splitMultiDomain: '✂️', normalizedSpacing: '🔃', fixedGlued: '🩹',
-	commentsConverted: '💬', fqdnConverted: '🌐', portRemoved: '🔪',
+	fqdnConverted: '🌐', portRemoved: '🔪',
 }[key] || '');
 
 const isSuspiciousDomain = domain =>
@@ -30,7 +30,7 @@ const processDirectory = async dirPath => {
 			const stats = {
 				modifiedLines: 0, convertedDomains: 0, invalidLinesRemoved: 0, ipsReplaced: 0,
 				domainToLower: 0, convertedAdGuard: 0, splitMultiDomain: 0, normalizedSpacing: 0,
-				fixedGlued: 0, commentsConverted: 0, fqdnConverted: 0, portRemoved: 0,
+				fixedGlued: 0, fqdnConverted: 0, portRemoved: 0,
 			};
 
 			const processedLines = [];
@@ -42,46 +42,8 @@ const processDirectory = async dirPath => {
 					continue;
 				}
 
-				// Keep only header comments (multi-line comments, decorative headers, metadata)
-				// Remove commented domains (e.g., "# example.com" or "! example.com")
-				if (line.startsWith('#')) {
-					// Check if it's a commented domain (# followed by domain-like pattern)
-					const afterHash = line.substring(1).trim();
-					// Skip if it's a URL (contains ://) or path (contains /)
-					const isUrl = afterHash.includes('://') || afterHash.includes('/');
-					// Domain pattern: no spaces, has dot, not starting with =, not a URL
-					const isDomain = afterHash && !afterHash.includes(' ') && afterHash.includes('.') && !afterHash.startsWith('=') && !isUrl;
-					if (isDomain) {
-						// Looks like a commented domain, skip it
-						stats.invalidLinesRemoved++;
-						continue;
-					}
-					// Keep as header/metadata comment
-					processedLines.push(line);
-					continue;
-				}
-
-				// Remove commented AdBlock domains (! example.com)
-				if (line.startsWith('!')) {
-					const afterExclamation = line.substring(1).trim();
-					// Skip URLs completely (don't convert to #)
-					if (afterExclamation.startsWith('http') || afterExclamation.includes('://')) {
-						stats.invalidLinesRemoved++;
-						continue;
-					}
-					const isUrl = afterExclamation.includes('/');
-					const isDomain = afterExclamation && !afterExclamation.includes(' ') && afterExclamation.includes('.') && !isUrl;
-					if (isDomain) {
-						// Looks like a commented domain, skip it
-						stats.invalidLinesRemoved++;
-						continue;
-					}
-					// Convert AdBlock comment to standard comment
-					line = line.replace(/^!+/, '#');
-					if (line === '# Syntax: Adblock Plus Filter List') line = '# Syntax: domain.tld';
-					stats.modifiedLines++;
-					stats.commentsConverted++;
-					processedLines.push(line);
+				if (line.startsWith('#') || line.startsWith('!')) {
+					stats.invalidLinesRemoved++;
 					continue;
 				}
 

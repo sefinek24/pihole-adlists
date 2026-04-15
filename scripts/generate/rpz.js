@@ -5,42 +5,43 @@ const getDate = require('../utils/date.js');
 const sha256 = require('../utils/sha256.js');
 const txtFilter = require('../utils/txtFilter.js');
 const process = require('../utils/process.js');
+const buildHeader = require('../utils/buildHeader.js');
 
-const convert = async (folderPath = path.join(__dirname, '../../blocklists/templates'), relativePath = '') => {
+const TEMPLATES_DIR = path.join(__dirname, '../../blocklists/templates');
+
+const convert = async (folderPath = TEMPLATES_DIR, relativePath = '') => {
 	const { format, allFiles, txtFiles, generatedPath } = await txtFilter('rpz', path, fs, relativePath, folderPath);
 
 	await Promise.all(txtFiles.map(async file => {
 		const thisFileName = path.join(folderPath, file.name);
 
-		// Cache
-		const { stop, content: fileContent } = await sha256(thisFileName, format, file);
+		const { stop, content: rawContent } = await sha256(thisFileName, format, file);
 		if (stop) return;
+
+		const domains = rawContent.split('\n').filter(l => l && !l.startsWith('#'));
+		const relPath = path.relative(TEMPLATES_DIR, thisFileName);
+		const header = buildHeader(relPath, domains.length).replace(/^#/gm, ';');
 
 		const seenDomains = new Set();
 		const outputLines = [];
-
-		fileContent.split('\n').forEach(line => {
-			if (!line || line.startsWith('#')) return;
-
-			const domain = line.startsWith('www.') ? line.slice(4) : line;
-			if (!seenDomains.has(domain)) {
-				seenDomains.add(domain);
-				outputLines.push(`${domain} CNAME .`, `*.${domain} CNAME .`);
+		for (const domain of domains) {
+			const d = domain.startsWith('www.') ? domain.slice(4) : domain;
+			if (!seenDomains.has(d)) {
+				seenDomains.add(d);
+				outputLines.push(`${d} CNAME .`, `*.${d} CNAME .`);
 			}
-		});
+		}
 
 		const date = getDate();
-		const replacedFile = outputLines.join('\n')
-			.replace(/#(?: ?127\.0\.0\.1| ?0\.0\.0\.0) |:: /gm, '; ')
-			.replace(/#/gm, ';')
+		const soaHeader = `$TTL 300\n@ SOA localhost. root.localhost. ${date.serialNumber} 43200 3600 259200 300\n  NS  localhost.\n`;
+		const output = [soaHeader + header, ...outputLines].join('\n')
 			.replace('<Release>', 'RPZ')
 			.replace('<LastUpdate>', `${date.full} | ${date.now}`);
 
 		const fullNewFile = path.join(generatedPath, file.name);
-		const header = `$TTL 300\n@ SOA localhost. root.localhost. ${date.serialNumber} 43200 3600 259200 300\n  NS  localhost.\n`;
-		await fs.writeFile(fullNewFile, header + replacedFile);
+		await fs.writeFile(fullNewFile, output);
 
-		await splitFile(fullNewFile, replacedFile, ';', header);
+		await splitFile(fullNewFile, output, ';', soaHeader);
 	}));
 
 	await process(convert, allFiles, path, relativePath, folderPath);

@@ -44,9 +44,6 @@ jobs:
       - name: Regex check
         run: node scripts/generate/file-processor/regex.js
 
-      - name: Generate header
-        run: node scripts/generate/file-processor/header.js
-
       - name: Prepare templates
         run: node scripts/prepare-templates.js
 

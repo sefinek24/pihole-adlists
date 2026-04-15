@@ -5,32 +5,32 @@ const getDate = require('../utils/date.js');
 const sha256 = require('../utils/sha256.js');
 const txtFilter = require('../utils/txtFilter.js');
 const process = require('../utils/process.js');
+const buildHeader = require('../utils/buildHeader.js');
 
-const convert = async (folderPath = path.join(__dirname, '../../blocklists/templates'), relativePath = '') => {
+const TEMPLATES_DIR = path.join(__dirname, '../../blocklists/templates');
+
+const convert = async (folderPath = TEMPLATES_DIR, relativePath = '') => {
 	const { format, allFiles, txtFiles, generatedPath } = await txtFilter('noip', path, fs, relativePath, folderPath);
 
 	await Promise.all(txtFiles.map(async file => {
 		const thisFileName = path.join(folderPath, file.name);
 
-		// Cache
-		const { stop, content: fileContent } = await sha256(thisFileName, format, file);
+		const { stop, content: rawContent } = await sha256(thisFileName, format, file);
 		if (stop) return;
 
+		const domains = rawContent.split('\n').filter(l => l && !l.startsWith('#'));
+		const relPath = path.relative(TEMPLATES_DIR, thisFileName);
+		const header = buildHeader(relPath, domains.length);
+
 		const date = getDate();
-		const replacedFile = fileContent
-			.replace(
-				/127\.0\.0\.1 localhost\.localdomain|255\.255\.255\.255 broadcasthost|ff0(?:0::0 ip6-mcastprefix|2::(?:2 ip6-allrouter|(?:1 ip6-allnode|3 ip6-allhost))s)|(?:fe80::1%lo0 |(?:(?:127\.0\.0\.|::)1 {2}|::1 (?:ip6-)?))localhost|ff00::0 ip6-localnet|127\.0\.0\.1 local(?:host)?|::1 ip6-loopback|0\.0\.0\.0 0\.0\.0\.0/gi,
-				''
-			)
-			.replace('#=====', '# =====')
-			.replace(/(?:127\.0\.0\.1|0\.0\.0\.0) /gm, '') // grex "0.0.0.0 " "127.0.0.1 "
+		const output = [header, ...domains].join('\n')
 			.replace('<Release>', 'No IP (only domains)')
 			.replace('<LastUpdate>', `${date.full} | ${date.now}`);
 
 		const fullNewFile = path.join(generatedPath, file.name);
-		await fs.writeFile(fullNewFile, replacedFile);
+		await fs.writeFile(fullNewFile, output);
 
-		 await splitFile(fullNewFile, replacedFile, '!');
+		await splitFile(fullNewFile, output, '!');
 	}));
 
 	await process(convert, allFiles, path, relativePath, folderPath);
