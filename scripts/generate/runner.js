@@ -33,7 +33,7 @@ module.exports = ({ format, release, commentChar = '#', ext = '.txt', transform,
 			const { stop, content: rawContent } = await sha256(thisFileName, format);
 			if (stop) return;
 
-			const rawLines = rawContent.split('\n');
+			const rawLines = rawContent.split(/\r?\n/);
 			const fileMeta = {};
 			for (const line of rawLines) {
 				const m = line.match(/^#\s*@(\w+):\s*(.+)/);

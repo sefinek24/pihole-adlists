@@ -2,11 +2,8 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
-const { CATEGORIES } = require('../config/data.js');
 const METADATA = require('../config/metadata.js');
 const generateHeader = require('./generateHeader.js');
-
-const CATEGORIES_MAP = new Map(CATEGORIES.map(c => [c.file, c]));
 
 const FORK_HEADERS = (() => {
 	try {
@@ -31,10 +28,6 @@ const SOURCES = (() => {
 
 module.exports = (relPath, count, fileMeta = {}) => {
 	const rel = relPath.replace(/\\/g, '/');
-
-	// CATEGORIES (auto-generated lists) take highest priority
-	const cat = CATEGORIES_MAP.get(rel);
-	if (cat) return generateHeader(cat.title, cat.description, count, { license: 'CC BY-NC-ND 4.0' });
 
 	// File-level metadata declared via # @key: value lines in the template
 	if (fileMeta.title) {

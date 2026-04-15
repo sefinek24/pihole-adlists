@@ -126,19 +126,12 @@ module.exports = {
 
 	// ── Sites (own lists not stored in lists/) ───────────────────────────────
 	'sites/anime.txt': { title: 'Blocks anime websites', description: 'Blocks anime, manga, and related entertainment websites.', license: 'CC BY-NC-ND 4.0' },
-	'sites/anime2.txt': { title: 'Blocks everything related to anime, manga, or VTubers', description: 'Active, inactive, and parked domains. Blocks websites related to anime, manga, cosplay, vtubers, hentai, ecchi, etc.', license: 'CC BY-NC-ND 4.0' },
-	'sites/esport.txt': { title: 'Blocks most websites related to e-sports, etc.', description: 'Active, inactive, and parked domains. Includes websites related to major e-sports tournaments, platforms for competitive gaming, and organizations such as ESL, FaceIT, The International, and Overwatch League.', license: 'CC BY-NC-ND 4.0' },
 	'sites/gamebanana.txt': { title: 'Block GameBanana.com', description: 'Blocks all GameBanana.com domains, a platform for game mods and custom assets.', license: 'CC BY-NC-ND 4.0' },
 	'sites/lgbtqplus.txt': { title: 'Blocks LGBT websites solely based on their addresses', description: 'Blocks websites identifiable by their LGBTQ+-related domain names.', license: 'CC BY-NC-ND 4.0' },
-	'sites/lgbtqplus2.txt': { title: 'Blocks websites with LGBTQ+ content or related discourse (both supportive and critical)', description: 'Active, inactive, and parked domains. Some of them may also share pornographic content.', license: 'CC BY-NC-ND 4.0' },
-	'sites/main2.txt': { title: 'Blocks everything related to anime, manga, or VTubers', description: 'Active, inactive, and parked domains. Blocks websites related to anime, manga, cosplay, vtubers, hentai, ecchi, etc.', license: 'CC BY-NC-ND 4.0' },
 	'sites/ometv.txt': { title: 'Block OmeTV and its alternatives', description: 'Blocks OmeTV and alternative random video chat platforms.', license: 'CC BY-NC-ND 4.0' },
 	'sites/patreon.txt': { title: 'Block Patreon.com', description: 'Blocks all Patreon.com domains, a membership platform for content creators.', license: 'CC BY-NC-ND 4.0' },
 	'sites/pinterest.txt': { title: 'Block Pinterest.com', description: 'Blocks all Pinterest.com domains, an image-sharing and social media platform.', license: 'CC BY-NC-ND 4.0' },
 	'sites/riotgames.txt': { title: 'Block all Riot Games domains', description: 'This list includes the main Riot Games website, as well as related services such as game launchers and authentication servers.', license: 'CC BY-NC-ND 4.0' },
-	'sites/shopping.txt': { title: 'Blocks e-commerce websites and online shopping platforms (beta)', description: 'Active, inactive, and parked domains. Blocks online shopping websites like Amazon, eBay, AliExpress, Etsy, Wish, and others. The list also includes phishing domains.', license: 'CC BY-NC-ND 4.0' },
-	'sites/social-media.txt': { title: 'Blocks most social media platforms and related websites (beta)', description: 'A mix of active, inactive, and parked domains. The list also includes phishing domains associated with popular social media platforms.', license: 'CC BY-NC-ND 4.0' },
-	'sites/streaming-media.txt': { title: 'Blocks video and audio streaming platforms (beta)', description: 'Active, inactive, and parked domains. Blocks websites for video and audio streaming services such as YouTube, Netflix, Spotify, Disney+, Hulu, and Twitch. The list also includes phishing domains.', license: 'CC BY-NC-ND 4.0' },
 	'sites/youtube-extended.txt': { title: 'Block all YouTube domains and those created by the community', description: 'Blocks YouTube and community-created YouTube-related domains.', license: 'CC BY-NC-ND 4.0' },
 	'sites/youtube.txt': { title: 'Block YouTube.com', description: 'Blocks all YouTube.com domains, preventing access via your DNS server to Google\'s video platform.', license: 'CC BY-NC-ND 4.0' },
 

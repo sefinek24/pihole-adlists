@@ -35,15 +35,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Download lists
-        run: node scripts/generate/file-processor/download.js
-
-      - name: Generate lists
-        run: node scripts/generate/file-processor/generate.js
-
-      - name: Regex check
-        run: node scripts/generate/file-processor/regex.js
-
       - name: Prepare templates
         run: node scripts/prepare-templates.js
 
