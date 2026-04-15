@@ -46,9 +46,9 @@ app.use(updateStats);
 // Routes
 app.use(IndexRouter);
 app.use(FalsePositivesRouter);
+app.use(DeprecatedListsRouter);
 app.use(BlocklistsRouter);
 app.use(StatsRouter);
-app.use(DeprecatedListsRouter);
 
 
 // Error handling

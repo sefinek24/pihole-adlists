@@ -145,13 +145,25 @@ const ROUTES = [
 ];
 
 const ROUTE_MAP = new Map();
+const V1_REDIRECT_MAP = new Map();
+
 for (const { url, file } of ROUTES) {
 	for (const [key, basePath] of Object.entries(BASE_DIRS)) {
 		ROUTE_MAP.set(`/generated/${key}${url}`, path.join(basePath, file));
+		if (url !== `/${file}`) {
+			V1_REDIRECT_MAP.set(`/generated/v1/${key}${url}`, `/generated/v1/${key}/${file}`);
+		}
 	}
 }
 
 const BASE_DIRS_PATTERN = Object.keys(BASE_DIRS).map(k => k.replace(/\./g, '\\.')).join('|');
+
+router.get(new RegExp(`^\\/generated\\/v1\\/(${BASE_DIRS_PATTERN})(\\/.*)?$`), (req, res, next) => {
+	const newUrl = V1_REDIRECT_MAP.get(req.path);
+	if (!newUrl) return next();
+	res.redirect(301, newUrl);
+});
+
 router.get(new RegExp(`^\\/generated\\/(${BASE_DIRS_PATTERN})(\\/.*)?$`), (req, res) => {
 	const fullPath = ROUTE_MAP.get(req.path);
 	if (!fullPath) return res.sendStatus(404);
