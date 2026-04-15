@@ -7,6 +7,33 @@ It is also the place where you can suggest new lists, report bugs or false posit
 The project follows semantic versioning. Thank you for using Sefinek Blocklists!
 
 
+## Version 0.22.0 from 15.04.2026
+1. Removed redundant and outdated blocklist sources:
+   - `BrigsLabs/judol`
+   - `jerryn70/GoodbyeAds`
+   - `blocklistproject/youtube`
+   - `anudeepND/blacklist`
+   - `0Zinc/easylists-for-pihole`
+   - `justdomains/adguarddns-justdomains`
+   - `StevenBlack/fakenews-gambling-porn`
+   - `FadeMind/hosts.extras`
+   - `marktron/fakenews`
+   - `deathbybandaid/piholeparser`
+   - `kboghdady/youTube_ads_4_pi-hole`
+   - `4skinSkywalker/Anti-Porn-HOSTS-File`
+   - `chadmayfield/my-pihole-blocklists`
+2. Merged domains from `pixiv.net` and `booth.pm` into the anime list (`anime.txt`).
+3. Added new lists from `hagezi/dns-blocklists`:
+   - `gambling/hagezi/gambling-onlydomains.fork.txt`
+   - `porn/hagezi/nsfw-onlydomains.fork.txt`
+4. Improved and extended the false positive reporting system ([/false-positives](https://blocklist.sefinek.net/false-positives)) — including a confirmation email for reporters and improved form validation and appearance.
+5. Fixed incorrect canonical comments in `AdGuard.md`, `dnsmasq.md`, and `RPZ.md`.
+6. Updated backend dependencies.
+7. Other minor quality improvements.
+
+> Due to the removal of several blocklist sources, it is recommended to regenerate your collection at [sefinek.net/blocklist-generator](https://sefinek.net/blocklist-generator).
+
+
 ## Version 0.21.0 from 8.04.2026
 1. Generated blocklists have been moved to a dedicated [blocklists](https://github.com/sefinek/Sefinek-Blocklist-Collection/tree/blocklists) orphan branch, keeping the `main` branch history clean and free from automated commits.
 2. Sefinek's curated domain lists have been moved from `blocklists/templates/` to a new `lists/` directory directly on `main`, making them easy to browse and manage.

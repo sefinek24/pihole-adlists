@@ -96,7 +96,7 @@ const connect = () => {
 
 	ws.onerror = err => console.error('WebSocket error:', err);
 
-	ws.onclose = () => {
+	ws.onclose = event => {
 		console.log('WebSocket disconnected');
 
 		if (heartbeatInterval) {
@@ -105,6 +105,8 @@ const connect = () => {
 		}
 
 		if (reconnectTimeout) clearTimeout(reconnectTimeout);
+
+		if (event.code === 4001) return; // Replaced by new connection from the same IP — do not reconnect
 
 		const delay = getReconnectDelay();
 		console.log(`Reconnecting in ${(delay / 1000).toFixed(1)}s...`);

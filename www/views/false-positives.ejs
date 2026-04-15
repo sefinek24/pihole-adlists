@@ -21,14 +21,12 @@
 
         <form class="report-form" id="reportForm" novalidate>
             <div class="report-form__group">
-                <label class="report-form__label" for="domain">Domain <span id="domain-hint" class="report-form__label-hint" aria-live="polite">*</span></label>
-                <input class="report-form__input" type="text" id="domain" name="domain" placeholder="example.com" maxlength="253" required autocomplete="off" spellcheck="false">
+                <label class="report-form__label" for="domains">Domains <span id="domains-hint" class="report-form__label-hint" aria-live="polite">*</span></label>
+                <textarea class="report-form__textarea" id="domains" name="domains" placeholder="example.com&#10;another-domain.com&#10;&#10;or comma-separated: example.com, another-domain.com" rows="4" required autocomplete="off" spellcheck="false"></textarea>
+                <p class="report-form__field-hint">Enter one domain per line or separate with commas. Maximum 10 domains per report.</p>
             </div>
 
-            <div class="report-form__group">
-                <label class="report-form__label" for="reason">Reason <span id="reason-hint" class="report-form__label-hint" aria-live="polite">*</span></label>
-                <textarea class="report-form__textarea" id="reason" name="reason" placeholder="Explain why this domain should not be blocked (screenshots uploaded to Imgur are welcome)..." minlength="10" maxlength="2000" required rows="5"></textarea>
-            </div>
+            <div id="reasons-container"></div>
 
             <div class="report-form__group">
                 <label class="report-form__label" for="email">Your email <span id="email-hint" class="report-form__label-hint report-form__optional" aria-live="polite">(optional, you'll receive a reply)</span></label>
@@ -36,7 +34,7 @@
             </div>
 
             <div class="report-form__footer">
-                <button class="report-form__submit" type="submit" id="checkBtn">Check domain</button>
+                <button class="report-form__submit" type="submit" id="checkBtn" disabled>Send report</button>
             </div>
         </form>
     </section>
@@ -56,7 +54,6 @@
             <div id="fpModalFooter">
                 <button id="fpModalCancel" type="button">Close</button>
                 <button id="fpModalClearClose" type="button" hidden>Clear &amp; close</button>
-                <button id="fpModalConfirm" type="button" hidden>Confirm &amp; send report</button>
             </div>
         </div>
     </div>
@@ -83,7 +80,7 @@
             </div>
         </a>
 
-        <a href="https://github.com/sefinek/Sefinek-Blocklist-Collection/blob/main/whitelists/main.txt" target="_blank" rel="noopener" class="report-card">
+        <a href="https://github.com/sefinek/Sefinek-Blocklist-Collection?tab=readme-ov-file#-contributing" target="_blank" rel="noopener" class="report-card">
             <div class="report-card__icon">
                 <img src="/images/flaticon/programing.png" alt="Programing icon" width="40" height="40" loading="lazy">
             </div>
@@ -95,7 +92,7 @@
     </section>
 </main>
 
-<script src="/js/false-positives.js"></script>
+<script src="/js/false-positives.js" data-env="<%= process.env.NODE_ENV %>"></script>
 
 <%- include('./includes/copyright.ejs') %>
 <%- include('./includes/footer.ejs') %>

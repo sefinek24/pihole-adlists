@@ -15,8 +15,10 @@ const domainValidation = field => field
 const domainQueryValidation = [domainValidation(query('domain'))];
 
 const submitValidation = [
-	domainValidation(body('domain')),
-	body('reason')
+	body('reports')
+		.isArray({ min: 1, max: 10 }).withMessage('Provide between 1 and 10 reports.'),
+	domainValidation(body('reports.*.domain')),
+	body('reports.*.reason')
 		.trim()
 		.notEmpty().withMessage('Reason is required.')
 		.isLength({ min: 10, max: 2000 }).withMessage('Reason must be between 10 and 2000 characters.'),

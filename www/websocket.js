@@ -11,8 +11,12 @@ const wss = new WebSocket.Server({
 
 const MAX_CLIENTS = 100;
 const BROADCAST_INTERVAL = 2000;
+const HEARTBEAT_INTERVAL = 30000;
+const REPLACE_GRACE_MS = 3000;
 let cacheTimestamp = 0, cachedStats = null;
 const CACHE_TTL = 1000;
+const connectedIps = new Map();
+const replacedAt = new Map();
 
 const fetchStats = async () => {
 	const now = Date.now();
@@ -44,18 +48,26 @@ const fetchStats = async () => {
 };
 
 const broadcast = async () => {
+	if (!connectedIps.size) return;
+
 	const stats = await fetchStats();
 	if (!stats) return;
 
-	const uptime = getFullDate(process.uptime());
-	const message = JSON.stringify({ ...cachedStats, uptime });
-
-	wss.clients.forEach(client => {
-		if (client.readyState === WebSocket.OPEN) client.send(message);
-	});
+	const message = JSON.stringify({ ...stats, uptime: getFullDate(process.uptime()) });
+	for (const ws of connectedIps.values()) {
+		if (ws.readyState === WebSocket.OPEN) ws.send(message);
+	}
 };
 
 const broadcastInterval = setInterval(broadcast, BROADCAST_INTERVAL);
+
+const heartbeatInterval = setInterval(() => {
+	for (const ws of wss.clients) {
+		if (!ws.isAlive) { ws.terminate(); continue; }
+		ws.isAlive = false;
+		ws.ping();
+	}
+}, HEARTBEAT_INTERVAL);
 
 wss.on('connection', (ws, req) => {
 	if (wss.clients.size > MAX_CLIENTS) {
@@ -63,16 +75,39 @@ wss.on('connection', (ws, req) => {
 		return;
 	}
 
-	console.log(`WebSocket connected from ${req.headers['x-forwarded-for']}`);
+	const ip = req.headers['x-forwarded-for']?.split(',')[0].trim() || req.socket.remoteAddress || 'unknown';
 
-	fetchStats().then(stats => {
-		if (stats && ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify({ ...stats, uptime: getFullDate(process.uptime()) }));
+	const existing = connectedIps.get(ip);
+	if (existing && existing.readyState === WebSocket.OPEN) {
+		const lastReplaced = replacedAt.get(ip) ?? 0;
+		if (Date.now() - lastReplaced >= REPLACE_GRACE_MS) {
+			replacedAt.set(ip, Date.now());
+			existing.close(4001, 'Replaced by new connection');
+		}
+	}
+	connectedIps.set(ip, ws);
+	ws.isAlive = true;
+	ws.on('pong', () => { ws.isAlive = true; });
+
+	console.log(`WebSocket connected from ${ip}`);
+
+	fetchStats()
+		.then(stats => { if (stats && ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify({ ...stats, uptime: getFullDate(process.uptime()) })); })
+		.catch(err => console.error('Failed to send initial stats:', err));
+
+	ws.on('close', () => {
+		if (connectedIps.get(ip) === ws) {
+			connectedIps.delete(ip);
+			replacedAt.delete(ip);
+		}
+		console.log(`WebSocket disconnected from ${ip}`);
 	});
-
-	ws.on('close', () => console.log('WebSocket disconnected'));
 	ws.on('error', err => console.error('WebSocket error:', err));
 });
 
-wss.on('close', () => clearInterval(broadcastInterval));
+wss.on('close', () => {
+	clearInterval(broadcastInterval);
+	clearInterval(heartbeatInterval);
+});
 
 console.log(`WebSocket server running at ${process.env.WS_ADDRESS}:${process.env.WS_PORT}`);

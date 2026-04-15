@@ -20,10 +20,12 @@ const global = makeLimit(2 * 60 * 1000, 225, 'ratelimit:www:', {
 });
 
 const blocklistCheck = makeLimit(60 * 1000, 20, 'ratelimit:blocklistCheck:', {
+	skip: () => process.env.NODE_ENV === 'development',
 	message: { success: false, status: 429, message: 'Too many lookup requests. Please slow down.' },
 });
 
 const falsePositiveSubmit = makeLimit(15 * 60 * 1000, 5, 'ratelimit:falsePositiveSubmit:', {
+	skip: () => process.env.NODE_ENV === 'development',
 	message: { success: false, status: 429, message: 'Too many reports submitted. Please try again later.' },
 });
 

@@ -197,9 +197,9 @@ const categories = [
     <section class="stats" id="stats" aria-labelledby="stats-heading">
         <h2 class="stats__heading" id="stats-heading">Are you ready for stats? 📝</h2>
         <p class="stats__subtitle">
-            Statistics have been collected since <time class="stats__date" id="stats-since-date" datetime="<%= createdDate.toISOString() %>"></time>. They are updated every few minutes to avoid server overload.
+            Statistics have been collected since <time class="stats__date" id="stats-since-date" datetime="<%= createdDate.toISOString() %>"><%= createdDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></time>. They are updated every few minutes to avoid server overload.
             <br>
-            Want to see detailed metrics? Check out the <a href="/metrics">Metrics</a> page!
+            JavaScript must be enabled in your browser. Want to see detailed metrics? Check out the <a href="/metrics">Metrics</a> page.
         </p>
 
         <div class="stats__grid stats__grid--primary">
