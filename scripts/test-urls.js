@@ -1,5 +1,6 @@
 process.loadEnvFile();
 const fs = require('node:fs/promises');
+const path = require('node:path');
 const axios = require('../www/services/axios.js');
 const { version } = require('../package.json');
 
@@ -13,6 +14,7 @@ const markdownFiles = [
 	'./docs/lists/md/Unbound.md',
 ];
 
+const TEMPLATES_DIR = path.resolve('./blocklists/templates');
 const MAX_RETRIES = 3;
 const RETRY_DELAY_MS = 2000;
 const URL_REGEX = /https:\/\/blocklist\.sefinek\.net\/generated\/v1\/(0\.0\.0\.0|127\.0\.0\.1|adguard|dnsmasq|noip|rpz|unbound)\/(?:[\w-]+\/)+[\w\\.-]+\.\w+/gi;
@@ -81,18 +83,54 @@ const testLinks = async () => {
 	}
 
 	console.log('\n=== Test Summary ===');
-	console.log(`Total links: ${totalLinks}`);
-	console.log(`Successful links: ${successfulLinks}/${totalLinks}`);
-	console.log(`Failed links: ${failedLinks}/${totalLinks}`);
-	console.log(`Failed retries: ${retriesFails}`);
-	console.log(`Invalid files: ${invalidFiles}`);
-	console.log(`Invalid links: ${invalidLinks.length}`);
-	console.log('Invalid links list:', invalidLinks);
+	console.log(`Total:     ${totalLinks}`);
+	console.log(`Success:   ${successfulLinks}/${totalLinks}`);
+	console.log(`Failed:    ${failedLinks}/${totalLinks}`);
+	console.log(`Retries:   ${retriesFails}`);
+	console.log(`Inv. files: ${invalidFiles}`);
+	console.log(`Inv. links: ${invalidLinks.length}`);
+	if (invalidLinks.length > 0) console.warn('Invalid links:', invalidLinks);
+};
+
+const checkTemplateFiles = async () => {
+	console.log('\n=== Checking template files on disk ===');
+
+	const seen = new Set();
+	const missing = [];
+
+	for (const markdownFile of markdownFiles) {
+		let content;
+		try {
+			content = await fs.readFile(markdownFile, 'utf-8');
+		} catch {
+			continue;
+		}
+
+		for (const match of content.matchAll(URL_REGEX)) {
+			const url = match[0];
+			const afterFormat = url.replace(/^https:\/\/blocklist\.sefinek\.net\/generated\/v1\/[^/]+\//, '');
+			const templatePath = afterFormat.replace(/\.conf$/, '.txt');
+
+			if (seen.has(templatePath)) continue;
+			seen.add(templatePath);
+
+			const fullPath = path.join(TEMPLATES_DIR, templatePath);
+			try {
+				await fs.access(fullPath);
+			} catch {
+				console.warn(`✘ MISSING: ${templatePath}`);
+				missing.push(templatePath);
+			}
+		}
+	}
+
+	console.log(`Template files: ${seen.size} checked, ${missing.length} missing`);
 };
 
 (async () => {
 	try {
 		await testLinks();
+		await checkTemplateFiles();
 	} catch (err) {
 		console.error('An error occurred while testing links:', err);
 		process.exit(1);
