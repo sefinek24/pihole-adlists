@@ -8,6 +8,14 @@ const generateHeader = require('../generate/file-processor/scripts/generateHeade
 
 const CATEGORIES_MAP = new Map(CATEGORIES.map(c => [c.file, c]));
 
+const FORK_HEADERS = (() => {
+	try {
+		return JSON.parse(fs.readFileSync(path.join(__dirname, '../../blocklists/cache/fork-headers.json'), 'utf8'));
+	} catch {
+		return {};
+	}
+})();
+
 const SOURCES = (() => {
 	const map = {};
 	try {
@@ -38,12 +46,13 @@ module.exports = (relPath, count, fileMeta = {}) => {
 		);
 	}
 
-	// Fallback: metadata.js (fork files) + source URL from download.sh
+	// Fallback: metadata.js overrides, auto-parsed fork headers, source URL from download.sh
 	const meta = METADATA[rel] || {};
+	const fork = FORK_HEADERS[rel] || {};
 	return generateHeader(
-		meta.title || 'Unknown',
-		meta.description || null,
+		meta.title || fork.title || 'Unknown',
+		meta.description || fork.description || null,
 		count,
-		{ modifiedBy: meta.modifiedBy, source: SOURCES[rel] || null, license: meta.license }
+		{ modifiedBy: meta.modifiedBy, source: SOURCES[rel] || null, license: meta.license || fork.license }
 	);
 };

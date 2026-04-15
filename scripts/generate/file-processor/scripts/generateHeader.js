@@ -4,7 +4,7 @@ module.exports = (title, description, count, { modifiedBy, source, license } = {
 		`# Description: ${description || 'N/A'}`,
 		'# Expires: 1 day',
 		`# Count: ${count != null ? `${Number(count).toLocaleString('en-US')} domains` : 'Unknown'}`,
-		'# Author: Sefinek (https://sefinek.net) <contact@sefinek.net>',
+		...(!source ? ['# Author: Sefinek (https://sefinek.net) <contact@sefinek.net>'] : []),
 	];
 
 	if (modifiedBy) lines.push(`# Modified by: ${modifiedBy}`);

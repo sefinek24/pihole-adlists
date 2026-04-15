@@ -1,7 +1,10 @@
 const { copyFile, mkdir, readdir, readFile, writeFile } = require('node:fs/promises');
-const { join } = require('node:path');
+const { join, relative } = require('node:path');
 const validator = require('validator');
 const local = require('./utils/local.js');
+
+const TEMPLATES_DIR = join(__dirname, '..', 'blocklists', 'templates');
+const FORK_HEADERS_PATH = join(__dirname, '..', 'blocklists', 'cache', 'fork-headers.json');
 
 const emoji = key => ({
 	modifiedLines: '🔧', convertedDomains: '✨', invalidLinesRemoved: '🧹',
@@ -16,7 +19,24 @@ const isSuspiciousDomain = domain =>
 	(domain.match(/\./g) || []).length > 32 ||
 	!(/^[a-z0-9._-]+$/i).test(domain);
 
-const processDirectory = async dirPath => {
+// Parses a single header comment line from a fork file.
+// Returns { key, value } for "# Key: value" lines, or { title } for plain lines.
+const parseForkLine = (line, hasTitleAlready) => {
+	const kv = line.match(/^#\s+([\w][^:\n]{1,40}):\s+(.+)/);
+	if (kv) {
+		const key = kv[1].trim().toLowerCase().replace(/[\s-]+/g, '_');
+		return { key, value: kv[2].trim() };
+	}
+	if (!hasTitleAlready) {
+		const plain = line.replace(/^[#!]\s*/, '').trim();
+		if (plain && plain.length > 3 && !/^\d{8,}/.test(plain)) {
+			return { key: 'title', value: plain };
+		}
+	}
+	return null;
+};
+
+const processDirectory = async (dirPath, forkHeaders) => {
 	try {
 		await mkdir(dirPath, { recursive: true });
 		const allEntries = await readdir(dirPath, { withFileTypes: true });
@@ -26,6 +46,9 @@ const processDirectory = async dirPath => {
 			const filePath = join(dirPath, fileName);
 			const fileContents = await readFile(filePath, 'utf8');
 			const lines = fileContents.split('\n');
+
+			const isFork = fileName.endsWith('.fork.txt');
+			const parsedForkMeta = {};
 
 			const stats = {
 				modifiedLines: 0, convertedDomains: 0, invalidLinesRemoved: 0, ipsReplaced: 0,
@@ -46,6 +69,10 @@ const processDirectory = async dirPath => {
 					if (/^#\s*@\w+:/.test(line)) {
 						processedLines.push(line);
 					} else {
+						if (isFork) {
+							const parsed = parseForkLine(line, 'title' in parsedForkMeta);
+							if (parsed) parsedForkMeta[parsed.key] = parsed.value;
+						}
 						stats.invalidLinesRemoved++;
 					}
 					continue;
@@ -143,6 +170,12 @@ const processDirectory = async dirPath => {
 				processedLines.push(line);
 			}
 
+			// Persist fork metadata if we found anything new
+			if (isFork && Object.keys(parsedForkMeta).length > 0) {
+				const relKey = relative(TEMPLATES_DIR, filePath).replace(/\\/g, '/');
+				forkHeaders[relKey] = { ...forkHeaders[relKey], ...parsedForkMeta };
+			}
+
 			// Summary
 			if (Object.values(stats).some(Boolean)) {
 				await writeFile(filePath, processedLines.join('\n'), 'utf8');
@@ -156,7 +189,7 @@ const processDirectory = async dirPath => {
 
 		const subDirs = allEntries.filter(d => d.isDirectory());
 		for (const sub of subDirs) {
-			await processDirectory(join(dirPath, sub.name));
+			await processDirectory(join(dirPath, sub.name), forkHeaders);
 		}
 	} catch (err) {
 		console.error(`❌ Error processing ${dirPath}:`, err);
@@ -180,9 +213,20 @@ const copyDirectory = async (src, dest) => {
 (async () => {
 	try {
 		const listsDir = join(__dirname, '..', 'lists');
-		const templatesDir = join(__dirname, '..', 'blocklists', 'templates');
-		await copyDirectory(listsDir, templatesDir);
-		await processDirectory(templatesDir);
+
+		// Load existing fork headers to preserve data from previous runs
+		// (headers are stripped after first processing, so we merge rather than overwrite)
+		let forkHeaders = {};
+		try {
+			forkHeaders = JSON.parse(await readFile(FORK_HEADERS_PATH, 'utf8'));
+		} catch { /* first run or cache missing — start fresh */ }
+
+		await copyDirectory(listsDir, TEMPLATES_DIR);
+		await processDirectory(TEMPLATES_DIR, forkHeaders);
+
+		await mkdir(join(__dirname, '..', 'blocklists', 'cache'), { recursive: true });
+		await writeFile(FORK_HEADERS_PATH, JSON.stringify(forkHeaders, null, '\t'), 'utf8');
+		console.log(`\n📋 Fork headers saved for ${Object.keys(forkHeaders).length} files → ${FORK_HEADERS_PATH}`);
 	} catch (err) {
 		console.error('❌ Fatal error:', err);
 	}
