@@ -2,11 +2,13 @@ const router = require('express').Router();
 const path = require('node:path');
 
 const BASE_DIRS = {
-	'0.0.0.0': path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', '0.0.0.0'),
-	'127.0.0.1': path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', '127.0.0.1'),
-	'noip': path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'noip'),
-	'adguard': path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'adguard'),
-	'dnsmasq': path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'dnsmasq'),
+	'0.0.0.0': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', '0.0.0.0') },
+	'127.0.0.1': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', '127.0.0.1') },
+	'noip': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'noip') },
+	'adguard': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'adguard') },
+	'dnsmasq': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'dnsmasq') },
+	'rpz': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'rpz') },
+	'unbound': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'unbound'), ext: '.conf' },
 };
 
 const ROUTES = [
@@ -148,10 +150,11 @@ const ROUTE_MAP = new Map();
 const V1_REDIRECT_MAP = new Map();
 
 for (const { url, file } of ROUTES) {
-	for (const [key, basePath] of Object.entries(BASE_DIRS)) {
-		ROUTE_MAP.set(`/generated/${key}${url}`, path.join(basePath, file));
+	for (const [key, { basePath, ext }] of Object.entries(BASE_DIRS)) {
+		const resolvedFile = ext ? file.replace(/\.txt$/, ext) : file;
+		ROUTE_MAP.set(`/generated/${key}${url}`, path.join(basePath, resolvedFile));
 		if (url !== `/${file}`) {
-			V1_REDIRECT_MAP.set(`/generated/v1/${key}${url}`, `/generated/v1/${key}/${file}`);
+			V1_REDIRECT_MAP.set(`/generated/v1/${key}${url}`, `/generated/v1/${key}/${resolvedFile}`);
 		}
 	}
 }
