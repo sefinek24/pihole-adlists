@@ -1,4 +1,4 @@
-const { CATEGORIES } = require('./scripts/data.js');
+const { CATEGORIES } = require('../../config/data.js');
 const { readFile, writeFile } = require('node:fs/promises');
 const { join } = require('node:path');
 

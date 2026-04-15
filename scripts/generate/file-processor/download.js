@@ -6,7 +6,7 @@ const { join, basename, extname } = require('node:path');
 const { createWriteStream, createReadStream } = require('node:fs');
 const { get } = require('../../../www/services/axios.js');
 const { pipeline } = require('node:stream/promises');
-const { fileUrls } = require('./scripts/data.js');
+const { fileUrls } = require('../../config/data.js');
 
 const TMP_DIR = join(__dirname, '..', '..', '..', 'tmp');
 const MAIN_FILE = join(TMP_DIR, 'main.txt');

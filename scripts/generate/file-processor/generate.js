@@ -4,7 +4,7 @@ const { join } = require('node:path');
 const readline = require('node:readline');
 const cluster = require('node:cluster');
 const numCPUs = require('node:os').availableParallelism();
-const { CATEGORIES, GLOBAL_WHITELIST } = require('./scripts/data.js');
+const { CATEGORIES, GLOBAL_WHITELIST } = require('../../config/data.js');
 
 const TMP_DIR = join(__dirname, '..', '..', '..', 'tmp');
 const MAIN_FILE = join(TMP_DIR, 'main.txt');

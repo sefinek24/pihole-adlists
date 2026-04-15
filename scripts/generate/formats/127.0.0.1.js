@@ -1,4 +1,4 @@
-const createFormat = require('./runner.js');
+const createFormat = require('../runner.js');
 
 const run = createFormat({
 	format: '127.0.0.1',

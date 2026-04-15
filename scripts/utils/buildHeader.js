@@ -2,9 +2,9 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
-const { CATEGORIES } = require('../generate/file-processor/scripts/data.js');
-const METADATA = require('../generate/file-processor/scripts/metadata.js');
-const generateHeader = require('../generate/file-processor/scripts/generateHeader.js');
+const { CATEGORIES } = require('../config/data.js');
+const METADATA = require('../config/metadata.js');
+const generateHeader = require('./generateHeader.js');
 
 const CATEGORIES_MAP = new Map(CATEGORIES.map(c => [c.file, c]));
 

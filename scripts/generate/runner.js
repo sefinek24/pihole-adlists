@@ -63,10 +63,8 @@ module.exports = ({ format, release, commentChar = '#', ext = '.txt', transform,
 		await processDir(convert, allFiles, path, relativePath, folderPath);
 	};
 
-	const run = async () => {
+	return async () => {
 		await convert();
 		console.log('\n');
 	};
-
-	return run;
 };

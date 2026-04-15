@@ -1,5 +1,3 @@
-'use strict';
-
 // Metadata for fork files and own lists NOT stored in lists/.
 // source URLs are intentionally omitted — they are parsed at runtime from bash/download.sh.
 module.exports = {
