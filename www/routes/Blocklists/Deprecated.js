@@ -145,31 +145,29 @@ const ROUTES = [
 	{ url: '/games/valorant.txt', file: 'games/valorant.txt' },
 ];
 
-const ROUTE_MAP = new Map();
-const V1_REDIRECT_MAP = new Map();
+const REDIRECT_MAP = new Map();
 
 for (const { url, file } of ROUTES) {
 	for (const [key, { ext }] of Object.entries(BASE_DIRS)) {
-		const resolvedFile = ext ? file.replace(/\.txt$/, ext) : file;
-		ROUTE_MAP.set(`/generated/${key}${url}`, `/generated/v1/${key}/${resolvedFile}`);
-		if (url !== `/${file}`) {
-			V1_REDIRECT_MAP.set(`/generated/v1/${key}${url}`, `/generated/v1/${key}/${resolvedFile}`);
-		}
+		const resolved = ext ? file.replace(/\.txt$/, ext) : file;
+		const target = `/generated/v1/${key}/${resolved}`;
+		REDIRECT_MAP.set(`/generated/${key}${url}`, target);
+		if (url !== `/${file}`) REDIRECT_MAP.set(`/generated/v1/${key}${url}`, target);
 	}
 }
 
-const BASE_DIRS_PATTERN = Object.keys(BASE_DIRS).map(k => k.replace(/\./g, '\\.')).join('|');
+const FMT = Object.keys(BASE_DIRS).map(k => k.replace(/\./g, '\\.')).join('|');
 
-router.get(new RegExp(`^\\/generated\\/v1\\/(${BASE_DIRS_PATTERN})(\\/.*)?$`), (req, res, next) => {
-	const newUrl = V1_REDIRECT_MAP.get(req.path);
-	if (!newUrl) return next();
-	res.redirect(301, newUrl);
+router.get(new RegExp(`^\\/generated\\/v1\\/(${FMT})(\\/.*)?$`), (req, res, next) => {
+	const url = REDIRECT_MAP.get(req.path);
+	if (!url) return next();
+	res.redirect(301, url);
 });
 
-router.get(new RegExp(`^\\/generated\\/(${BASE_DIRS_PATTERN})(\\/.*)?$`), (req, res) => {
-	const newUrl = ROUTE_MAP.get(req.path);
-	if (!newUrl) return res.sendStatus(404);
-	res.redirect(301, newUrl);
+router.get(new RegExp(`^\\/generated\\/(${FMT})(\\/.*)?$`), (req, res) => {
+	const url = REDIRECT_MAP.get(req.path);
+	if (!url) return res.sendStatus(404);
+	res.redirect(301, url);
 });
 
 module.exports = router;
