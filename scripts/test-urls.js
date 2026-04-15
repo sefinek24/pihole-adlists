@@ -127,10 +127,64 @@ const checkTemplateFiles = async () => {
 	console.log(`Template files: ${seen.size} checked, ${missing.length} missing`);
 };
 
+const checkDuplicates = async () => {
+	console.log('\n=== Checking for duplicate URLs in docs ===');
+
+	let totalDupes = 0;
+
+	for (const markdownFile of markdownFiles) {
+		let content;
+		try {
+			content = await fs.readFile(markdownFile, 'utf-8');
+		} catch {
+			continue;
+		}
+
+		const urls = extractLinks(content);
+		const seen = new Set();
+		const dupes = new Set();
+		for (const url of urls) {
+			if (seen.has(url)) dupes.add(url);
+			seen.add(url);
+		}
+
+		if (dupes.size > 0) {
+			console.warn(`✘ ${path.basename(markdownFile)}: ${dupes.size} duplicate(s)`);
+			for (const url of dupes) console.warn(`  - ${url}`);
+			totalDupes += dupes.size;
+		}
+	}
+
+	console.log(`Duplicate check: ${totalDupes === 0 ? 'none found' : `${totalDupes} found`}`);
+};
+
+const checkDeprecatedRoutes = async () => {
+	console.log('\n=== Checking Deprecated.js file refs ===');
+
+	const content = await fs.readFile('./www/routes/Blocklists/Deprecated.js', 'utf-8');
+	const refs = [...content.matchAll(/file: '([^']+)'/g)].map(m => m[1]);
+	const unique = [...new Set(refs)];
+
+	const missing = [];
+	for (const ref of unique) {
+		const full = path.join(TEMPLATES_DIR, ref);
+		try {
+			await fs.access(full);
+		} catch {
+			console.warn(`✘ MISSING: ${ref}`);
+			missing.push(ref);
+		}
+	}
+
+	console.log(`Deprecated routes: ${unique.length} checked, ${missing.length} missing`);
+};
+
 (async () => {
 	try {
 		await testLinks();
 		await checkTemplateFiles();
+		await checkDuplicates();
+		await checkDeprecatedRoutes();
 	} catch (err) {
 		console.error('An error occurred while testing links:', err);
 		process.exit(1);
