@@ -54,25 +54,25 @@ jobs:
         run: node scripts/lint.js
 
       - name: Generate No IP list
-        run: node scripts/generate/noip.js
+        run: node scripts/generate/formats/noip.js
 
       - name: Generate 0.0.0.0 list
-        run: node scripts/generate/0.0.0.0.js
+        run: node scripts/generate/formats/0.0.0.0.js
 
       - name: Generate 127.0.0.1 list
-        run: node scripts/generate/127.0.0.1.js
+        run: node scripts/generate/formats/127.0.0.1.js
 
       - name: Generate AdGuard list
-        run: node scripts/generate/adguard.js
+        run: node scripts/generate/formats/adguard.js
 
       - name: Generate Dnsmasq list
-        run: node scripts/generate/dnsmasq.js
+        run: node scripts/generate/formats/dnsmasq.js
 
       - name: Generate RPZ list
-        run: node scripts/generate/rpz.js
+        run: node scripts/generate/formats/rpz.js
 
       - name: Generate list for Unbound
-        run: node scripts/generate/unbound.js
+        run: node scripts/generate/formats/unbound.js
 
       - name: Count domains
         run: node scripts/update-number-of-domains.js
