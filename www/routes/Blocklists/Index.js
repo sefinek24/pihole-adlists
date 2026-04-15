@@ -108,8 +108,13 @@ const handleRequest = async (req, res, baseDir, basePath, validExtensions, templ
 	const isAjax = req.headers['x-requested-with'] === 'XMLHttpRequest';
 
 	if (filePath !== baseDir && !filePath.startsWith(baseDir + path.sep)) {
-		if (isAjax) return res.status(403).json({ success: false, error: 'Forbidden' });
+		if (isAjax) return res.status(403).json({ success: false, status: 403, message: 'Forbidden' });
 		return res.status(403).end();
+	}
+
+	if (relative.length > 512) {
+		if (isAjax) return res.status(414).json({ success: false, status: 414, message: 'Path too long' });
+		return res.status(414).end();
 	}
 
 	try {
@@ -138,17 +143,18 @@ const handleRequest = async (req, res, baseDir, basePath, validExtensions, templ
 		if (stats.isDirectory()) {
 			const files = await getCachedFiles(filePath, validExtensions, sortByDate);
 			const currentPath = path.join(basePath, relative).replace(/\\/g, '/');
-			if (isAjax) return res.json({ success: true, files, currentPath });
+			if (isAjax) return res.json({ success: true, status: 200, files, currentPath });
 
 			return res.render(template, { files, currentPath });
 		}
 
 		res.sendFile(filePath);
 	} catch (err) {
-		if (err.code !== 'ENOENT') console.error(err);
-		if (isAjax) return res.status(err.code === 'ENOENT' ? 404 : 500).json({ success: false, error: err.code === 'ENOENT' ? 'Not found' : 'Server error' });
+		if (err.code !== 'ENOENT' && err.code !== 'ENAMETOOLONG') console.error(err);
+		const status = err.code === 'ENOENT' ? 404 : err.code === 'ENAMETOOLONG' ? 414 : 500;
+		if (isAjax) return res.status(status).json({ success: false, status, message: err.code === 'ENOENT' ? 'Not found' : err.code === 'ENAMETOOLONG' ? 'Path too long' : 'Server error' });
 
-		res.status(err.code === 'ENOENT' ? 404 : 500).end();
+		res.status(status).end();
 	}
 };
 

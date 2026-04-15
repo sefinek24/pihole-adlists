@@ -12,20 +12,15 @@ const BASE_DIRS = {
 const ROUTES = [
 	// Ads
 	{ url: '/ads/blocklistproject.ads.txt', file: 'ads/blocklistproject/hosts.fork.txt' },
-	{ url: '/ads/jerryn70.GoodbyeAds.txt', file: 'ads/jerryn70/GoodbyeAds.fork.txt' },
-	{ url: '/ads/DandelionSprout.GameConsoleAdblockList.txt', file: 'ads/DandelionSprout.GameConsoleAdblockList.txt' },
 	{ url: '/ads/yoyo.AdsTrackersEtc.txt', file: 'ads/yoyo/ads-trackers-etc.fork.txt' },
-	{ url: '/forks/0Zinc.easylist.txt', file: 'ads/0Zinc/easylist.fork.txt' },
 	{ url: '/forks/ShadowWhisperer.Ads.txt', file: 'ads/ShadowWhisperer/Ads.fork.txt' },
 	{ url: '/forks/adaway.hosts.txt', file: 'ads/adaway/hosts.fork.txt' },
-	{ url: '/forks/anudeepND.adservers.txt', file: 'ads/anudeepND/adservers.fork.txt' },
-	{ url: '/forks/blocklistproject.youtube.txt', file: 'ads/blocklistproject/youtube.fork.txt' },
 	{ url: '/forks/craiu.mobiletrackers.txt', file: 'ads/craiu/mobiletrackers.fork.txt' },
 	{ url: '/forks/crazy-max.WindowsSpyBlocker.hosts-spy.txt', file: 'ads/crazy-max/spy.fork.txt' },
 	{ url: '/forks/disconnectme.simple_ad.txt', file: 'ads/disconnectme/simple-ad.fork.txt' },
 	{ url: '/forks/firebog.AdguardDNS.txt', file: 'ads/firebog/AdguardDNS.fork.txt' },
 	{ url: '/forks/firebog.Admiral.txt', file: 'ads/firebog/Admiral.fork.txt' },
-	{ url: '/forks/firebog.Easylist.txt', file: 'ads/0Zinc/easylist.fork.txt' },
+	{ url: '/forks/firebog.Easylist.txt', file: 'ads/firebog/Easylist.fork.txt' },
 	{ url: '/forks/firebog.Prigent-Ads.txt', file: 'ads/firebog/Prigent-Ads.fork.txt' },
 
 	// Tracking & telemetry
@@ -106,7 +101,7 @@ const ROUTES = [
 	{ url: '/forks/notracking.hostnames.txt', file: 'extensions/notracking/hostnames.fork.txt' },
 	{ url: '/forks/oisd.big.txt', file: 'extensions/oisd/big.fork.txt' },
 	{ url: '/forks/r-a-y.AdguardApps.txt', file: 'extensions/r-a-y/AdguardApps.fork.txt' },
-	{ url: '/forks/r-a-y.AdguardMobileSpyware.txt', file: 'extensions/r-a-y/AdguardApps.fork.txt' },
+	{ url: '/forks/r-a-y.AdguardMobileSpyware.txt', file: 'extensions/r-a-y/AdguardMobileSpyware.fork.txt' },
 
 	// StevenBlack Hosts
 	{ url: '/forks/StevenBlack.fakenews-gambling-porn.txt', file: 'other/StevenBlack/fakenews-gambling-porn.fork.txt' },
@@ -124,11 +119,11 @@ const ROUTES = [
 	{ url: '/forks/oisd.nsfw.txt', file: 'porn/oisd/nsfw.fork.txt' },
 	{ url: '/forks/Sinfonietta.pornography-hosts.txt', file: 'porn/Sinfonietta/pornography-hosts.fork.txt' },
 
-	// Inne katalogi
+	// Sefinek lists
 	{ url: '/porn.txt', file: 'porn/sefinek.hosts.txt' },
 	{ url: '/gambling.txt', file: 'gambling/sefinek.hosts.txt' },
 	{ url: '/useless-websites.txt', file: 'useless-websites/sefinek.hosts.txt' },
-	{ url: '/cryptocurrency.txt', file: 'cryptocurrency.fork.txt' },
+	{ url: '/cryptocurrency.txt', file: 'crypto/sefinek.hosts.txt' },
 
 	// Sites
 	{ url: '/sites/youtube.txt', file: 'sites/youtube.txt' },
@@ -173,8 +168,8 @@ router.get(new RegExp(`^\\/generated\\/(${BASE_DIRS_PATTERN})(\\/.*)?$`), (req, 
 
 	res.sendFile(fullPath, err => {
 		if (err) {
-			console.error(`Failed to send ${fullPath} for request ${req.originalUrl}`, err);
-			res.sendStatus(500);
+			if (err.code !== 'ENOENT') console.error(`Failed to send ${fullPath} for request ${req.originalUrl}`, err);
+			if (!res.headersSent) res.sendStatus(err.code === 'ENOENT' ? 404 : 500);
 		}
 	});
 });

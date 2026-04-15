@@ -22,7 +22,7 @@ const parseDate = dateStr => {
 // Get all-time statistics
 router.get('/api/v1/stats/alltime', async (req, res) => {
 	try {
-		const stats = await withCache('stats:alltime', ALLTIME_CACHE_TTL, () => RequestStats.findOne({}).lean());
+		const stats = await withCache('cache:stats:alltime', ALLTIME_CACHE_TTL, () => RequestStats.findOne({}).lean());
 		if (!stats) return res.json({ success: true, status: 200, message: 'No data yet.', data: { total: 0, blocklists: 0, categories: {}, responses: {}, serverTime: new Date().toISOString() } });
 
 		res.json({
@@ -78,7 +78,7 @@ router.get('/api/v1/stats/minute', async (req, res) => {
 
 		const maxLimit = daysDiff > 90 ? 10000 : daysDiff > 30 ? 30000 : 50000;
 
-		const cacheKey = `stats:minute:${from}:${to || from}:${parsedInterval}`;
+		const cacheKey = `cache:stats:minute:${from}:${to || from}:${parsedInterval}`;
 		const query = { date: from };
 		if (to && to !== from) query.date = { $gte: from, $lte: to };
 
