@@ -31,14 +31,12 @@ const ROUTES = [
 	{ url: '/forks/neodevpro.neodevhost.txt', file: 'tracking-and-telemetry/neodevpro/host.fork.txt' },
 
 	// AMP Hosts
-	{ url: '/forks/developerdan.amp-hosts-extended.txt', file: 'amp/developerdan/amp-hosts-extended.fork.txt' },
 	{ url: '/forks/ente-dev.google-amp-hosts.txt', file: 'amp/ente-dev/google-amp-hosts.fork.txt' },
 
 	// Malicious
 	{ url: '/forks/AssoEchap.stalkerware-indicators.txt', file: 'malicious/AssoEchap/stalkerware-indicators.fork.txt' },
 	{ url: '/forks/bigdargon.hostsVN.txt', file: 'malicious/bigdargon/hostsVN.fork.txt' },
 	{ url: '/forks/DandelionSprout-AntiMalwareHosts.txt', file: 'malicious/DandelionSprout-AntiMalwareHosts.fork.txt' },
-	{ url: '/forks/digitalside.latestdomains.txt', file: 'malicious/digitalside/latestdomains.fork.txt' },
 	{ url: '/forks/disconnectme.simple_malvertising.txt', file: 'malicious/disconnectme/simple-malvertising.fork.txt' },
 	{ url: '/forks/malware-filter.urlhaus-filter-hosts-online.txt', file: 'malicious/malware-filter/urlhaus-filter-hosts-online.fork.txt' },
 	{ url: '/forks/quidsup.notrack-malware.txt', file: 'malicious/quidsup/notrack-malware.fork.txt' },
@@ -91,20 +89,14 @@ const ROUTES = [
 	{ url: '/forks/firebog.w3kbl.txt', file: 'suspicious/firebog/w3kbl.fork.txt' },
 
 	// Extension
-	{ url: '/forks/cbuijs.adult-domains.txt', file: 'malicious/digitalside/latestdomains.fork.txt' },
-	{ url: '/forks/deathbybandaid.CountryCodesLists-France.txt', file: 'extensions/deathbybandaid/CountryCodesLists-France.fork.txt' },
-	{ url: '/forks/deathbybandaid.ParsedBlacklists-easylist-fr.txt', file: 'extensions/deathbybandaid/ParsedBlacklists-EasyList-Liste-FR.fork.txt' },
-	{ url: '/forks/deathbybandaid.ParsedBlacklists-easylist.txt', file: 'extensions/deathbybandaid/ParsedBlacklists-EasyList.fork.txt' },
 	{ url: '/forks/justdomains.adguarddns.txt', file: 'ads/firebog/AdguardDNS.fork.txt' },
 	{ url: '/forks/MajkiIT.adguard_host.txt', file: 'extensions/MajkiIT/adguard-host.fork.txt' },
 	{ url: '/forks/MajkiIT.easy_privacy_host.txt', file: 'extensions/MajkiIT/easy-privacy-host.fork.txt' },
-	{ url: '/forks/notracking.hostnames.txt', file: 'extensions/notracking/hostnames.fork.txt' },
 	{ url: '/forks/oisd.big.txt', file: 'extensions/oisd/big.fork.txt' },
 	{ url: '/forks/r-a-y.AdguardApps.txt', file: 'extensions/r-a-y/AdguardApps.fork.txt' },
 	{ url: '/forks/r-a-y.AdguardMobileSpyware.txt', file: 'extensions/r-a-y/AdguardMobileSpyware.fork.txt' },
 
 	// StevenBlack Hosts
-	{ url: '/forks/StevenBlack.fakenews-gambling-porn.txt', file: 'other/StevenBlack/fakenews-gambling-porn.fork.txt' },
 	{ url: '/forks/StevenBlack.hosts.txt', file: 'other/StevenBlack/hosts.fork.txt' },
 
 	// Polish Filters
@@ -113,9 +105,7 @@ const ROUTES = [
 	{ url: '/forks/PolishFiltersTeam.KADhosts.txt', file: 'other/polish-blocklists/PolishFiltersTeam/KADhosts.fork.txt' },
 
 	// Porn
-	{ url: '/forks/4skinSkywalker.Anti-Porn.txt', file: 'porn/4skinSkywalker/hosts.fork.txt' },
 	{ url: '/forks/blocklistproject.porn.txt', file: 'porn/blocklistproject/porn.fork.txt' },
-	{ url: '/forks/chadmayfield.pi_blocklist_porn_all.txt', file: 'porn/chadmayfield/pi-blocklist-porn-all.fork.txt' },
 	{ url: '/forks/oisd.nsfw.txt', file: 'porn/oisd/nsfw.fork.txt' },
 	{ url: '/forks/Sinfonietta.pornography-hosts.txt', file: 'porn/Sinfonietta/pornography-hosts.fork.txt' },
 
@@ -129,10 +119,10 @@ const ROUTES = [
 	{ url: '/sites/youtube.txt', file: 'sites/youtube.txt' },
 	{ url: '/sites/youtube-extended.txt', file: 'sites/youtube-extended.txt' },
 	{ url: '/sites/pinterest.txt', file: 'sites/pinterest.txt' },
-	{ url: '/sites/pixiv.txt', file: 'sites/pixiv.txt' },
+	{ url: '/sites/pixiv.txt', file: 'sites/anime.txt' },
 	{ url: '/sites/omegle.txt', file: 'sites/ometv.txt' },
 	{ url: '/sites/gamebanana.txt', file: 'sites/gamebanana.txt' },
-	{ url: '/sites/booth.pm.txt', file: 'sites/booth.pm.txt' },
+	{ url: '/sites/booth.pm.txt', file: 'sites/anime.txt' },
 	{ url: '/sites/patreon.txt', file: 'sites/patreon.txt' },
 
 	// Social Media
