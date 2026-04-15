@@ -1,14 +1,13 @@
 const router = require('express').Router();
-const path = require('node:path');
 
 const BASE_DIRS = {
-	'0.0.0.0': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', '0.0.0.0') },
-	'127.0.0.1': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', '127.0.0.1') },
-	'noip': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'noip') },
-	'adguard': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'adguard') },
-	'dnsmasq': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'dnsmasq') },
-	'rpz': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'rpz') },
-	'unbound': { basePath: path.resolve(__dirname, '..', '..', '..', 'blocklists', 'generated', 'unbound'), ext: '.conf' },
+	'0.0.0.0': {},
+	'127.0.0.1': {},
+	'noip': {},
+	'adguard': {},
+	'dnsmasq': {},
+	'rpz': {},
+	'unbound': { ext: '.conf' },
 };
 
 const ROUTES = [
@@ -150,9 +149,9 @@ const ROUTE_MAP = new Map();
 const V1_REDIRECT_MAP = new Map();
 
 for (const { url, file } of ROUTES) {
-	for (const [key, { basePath, ext }] of Object.entries(BASE_DIRS)) {
+	for (const [key, { ext }] of Object.entries(BASE_DIRS)) {
 		const resolvedFile = ext ? file.replace(/\.txt$/, ext) : file;
-		ROUTE_MAP.set(`/generated/${key}${url}`, path.join(basePath, resolvedFile));
+		ROUTE_MAP.set(`/generated/${key}${url}`, `/generated/v1/${key}/${resolvedFile}`);
 		if (url !== `/${file}`) {
 			V1_REDIRECT_MAP.set(`/generated/v1/${key}${url}`, `/generated/v1/${key}/${resolvedFile}`);
 		}
@@ -168,15 +167,9 @@ router.get(new RegExp(`^\\/generated\\/v1\\/(${BASE_DIRS_PATTERN})(\\/.*)?$`), (
 });
 
 router.get(new RegExp(`^\\/generated\\/(${BASE_DIRS_PATTERN})(\\/.*)?$`), (req, res) => {
-	const fullPath = ROUTE_MAP.get(req.path);
-	if (!fullPath) return res.sendStatus(404);
-
-	res.sendFile(fullPath, err => {
-		if (err) {
-			if (err.code !== 'ENOENT') console.error(`Failed to send ${fullPath} for request ${req.originalUrl}`, err);
-			if (!res.headersSent) res.sendStatus(err.code === 'ENOENT' ? 404 : 500);
-		}
-	});
+	const newUrl = ROUTE_MAP.get(req.path);
+	if (!newUrl) return res.sendStatus(404);
+	res.redirect(301, newUrl);
 });
 
 module.exports = router;
