@@ -6,6 +6,11 @@ We post upcoming changes, technical details about updates, and information about
 It is also the place where you can suggest new lists, report bugs or false positives, and share your feedback about the project.  
 The project follows semantic versioning. Thank you for using Sefinek Blocklists!
 
+## Version 0.22.1 from 16.04.2026
+1. Removed `sites/lgbtqplus2.txt` and other lists that were automatically generated using regexes based on external sources.
+2. Optimized the list generation process.
+3. Cleaned up the code and improved its quality.
+
 
 ## Version 0.22.0 from 15.04.2026
 1. Removed redundant and outdated blocklist sources:
