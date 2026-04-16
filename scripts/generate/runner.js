@@ -2,7 +2,7 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 const splitFile = require('./file-processor/split.js');
 const getDate = require('../utils/date.js');
-const sha256 = require('../utils/sha256.js');
+const sha256 = require('../utils/hashCache.js');
 const txtFilter = require('../utils/txtFilter.js');
 const processDir = require('../utils/process.js');
 const buildHeader = require('../utils/buildHeader.js');
@@ -13,7 +13,7 @@ const TEMPLATES_DIR = path.join(__dirname, '../../blocklists/templates');
  * Creates a format-conversion runner for a given output format.
  *
  * @param {object} opts
- * @param {string}   opts.format         - Format name passed to txtFilter/sha256 (e.g. 'noip', 'adguard').
+ * @param {string}   opts.format         - Format name passed to txtFilter/hashCache (e.g. 'noip', 'adguard').
  * @param {string}   opts.release        - Value substituted for <Release> in the header.
  * @param {string}   [opts.commentChar]  - Comment character used in split-file parts (default: '#').
  * @param {string}   [opts.ext]          - Output file extension (default: '.txt').
@@ -51,7 +51,7 @@ module.exports = ({ format, release, commentChar = '#', ext = '.txt', transform,
 
 			const output = [pre + header, ...domainLines].join('\n')
 				.replace('{Release}', release)
-				.replace('{LastUpdate}', `${date.full} | ${date.now}`);
+				.replace('{LastUpdate}', `${date.full} | ${date.now}`) + '\n';
 
 			const outName = ext !== '.txt' ? file.name.replace('.txt', ext) : file.name;
 			const fullNewFile = path.join(generatedPath, outName);

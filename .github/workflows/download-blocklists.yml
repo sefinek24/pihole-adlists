@@ -79,8 +79,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git -C blocklists config user.name "Sefinek Actions"
-          git -C blocklists config user.email "sefinek.actions@gmail.com"
+          git config --global user.name "Sefinek Actions"
+          git config --global user.email "sefinek.actions@gmail.com"
 
       - name: Commit and push to blocklists branch
         run: |
