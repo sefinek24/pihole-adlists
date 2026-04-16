@@ -97,7 +97,6 @@ https://blocklist.sefinek.net/generated/v1/rpz/scam/sefinek.hosts.txt
 https://blocklist.sefinek.net/generated/v1/rpz/scam/ShadowWhisperer/scam.fork.txt
 https://blocklist.sefinek.net/generated/v1/rpz/sites/gamebanana.txt
 https://blocklist.sefinek.net/generated/v1/rpz/sites/lgbtqplus.txt
-https://blocklist.sefinek.net/generated/v1/rpz/sites/lgbtqplus2.txt
 https://blocklist.sefinek.net/generated/v1/rpz/sites/ometv.txt
 https://blocklist.sefinek.net/generated/v1/rpz/sites/patreon.txt
 https://blocklist.sefinek.net/generated/v1/rpz/sites/riotgames.txt
