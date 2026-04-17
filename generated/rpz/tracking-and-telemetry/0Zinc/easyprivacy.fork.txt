@@ -1,6 +1,26 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026041501 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026041701 43200 3600 259200 300
   NS  localhost.
+;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
+;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
+;     | (___   | |__    | |__      | |   |  \| | | |__    | ' /        | |_) | | |      | |  | | | |      | ' /  | |        | |   | (___      | |
+;      \___ \  |  __|   |  __|     | |   | . ` | |  __|   |  <         |  _ <  | |      | |  | | | |      |  <   | |        | |    \___ \     | |
+;      ____) | | |____  | |       _| |_  | |\  | | |____  | . \        | |_) | | |____  | |__| | | |____  | . \  | |____   _| |_   ____) |    | |
+;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
+;
+;                                            The best blocklist collection: https://blocklist.sefinek.net
+; Title: EasyPrivacy Hosts Blocklist
+; Description: N/A
+; Expires: 1 day
+; Count: 40,319 domains
+; Source: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easyprivacy.txt
+; License: MIT
+; Release: RPZ
+; Last update: April 17, 2026 at 3:26 PM UTC | 2026-04-17T15:26:13.448Z
+;
+; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
+; If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
+; -------------------------------------------------------------------------------------------------------------------------------------------------------
 00px.net CNAME .
 *.00px.net CNAME .
 18wosx.ru CNAME .
@@ -2225,6 +2245,8 @@ harvest.graindata.com CNAME .
 *.harvest.graindata.com CNAME .
 hb.vhsrv.com CNAME .
 *.hb.vhsrv.com CNAME .
+heartbeat-pearl.vercel.app CNAME .
+*.heartbeat-pearl.vercel.app CNAME .
 helix.bitformations.ca CNAME .
 *.helix.bitformations.ca CNAME .
 hello.staticstuff.net CNAME .
@@ -6463,6 +6485,8 @@ rtds.progressive.com CNAME .
 *.rtds.progressive.com CNAME .
 rum.api.intuit.com CNAME .
 *.rum.api.intuit.com CNAME .
+rum.battle.net CNAME .
+*.rum.battle.net CNAME .
 rum.cdnpure.com CNAME .
 *.rum.cdnpure.com CNAME .
 rum.condenastdigital.com CNAME .
