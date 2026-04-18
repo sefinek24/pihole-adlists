@@ -43,7 +43,7 @@ jobs:
           git config --global user.name "Sefinek Actions"
           git config --global user.email "sefinek.actions@gmail.com"
 
-      - name: Cleanup lists/
+      - name: Clean up lists created by Sefinek (lists/)
         run: |
           node scripts/normalize-line-endings.js lists
           node scripts/remove-duplicates.js lists
