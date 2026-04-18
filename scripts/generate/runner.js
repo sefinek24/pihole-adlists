@@ -54,7 +54,7 @@ module.exports = ({ format, release, commentChar = '#', ext = '.txt', transform,
 			const pre = buildPrefix ? buildPrefix(date) : (prefix || '');
 
 			const output = [pre + header, ...domainLines].join('\n')
-				.replace('{Release}', release)
+				.replace('{Format}', release)
 				.replace('{LastUpdate}', `${date.full} | ${date.now}`) + '\n';
 
 			const outName = ext !== '.txt' ? file.name.replace('.txt', ext) : file.name;

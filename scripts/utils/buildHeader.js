@@ -26,8 +26,8 @@ module.exports = (relPath, count, fileMeta = {}) => {
 	const source = sourceUrl || homepageUrl || (isFork ? 'Unknown source (external list)' : null);
 
 	return generateHeader(
-		meta.title || fileMeta.title || 'Unknown',
-		meta.description || fileMeta.description || null,
+		fileMeta.title || meta.title || null,
+		fileMeta.description || meta.description || null,
 		count,
 		{
 			modifiedBy: fileMeta.modifiedBy || meta.modifiedBy,
