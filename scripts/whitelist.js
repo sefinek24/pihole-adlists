@@ -24,21 +24,22 @@ const loadWhitelist = async whitelistPath => {
 const processDirectory = async (dirPath, whitelist, basePath) => {
 	const entries = await readdir(dirPath, { withFileTypes: true });
 
-	for (const entry of entries) {
+	await Promise.all(entries.map(async entry => {
 		const fullPath = join(dirPath, entry.name);
 
 		if (entry.isDirectory()) {
 			await processDirectory(fullPath, whitelist, basePath);
-			continue;
+			return;
 		}
 
-		if (!entry.name.endsWith('.txt')) continue;
+		if (!entry.name.endsWith('.txt')) return;
 
 		const relativePath = relative(basePath, fullPath).replace(/\\/g, '/').replace(/^templates\//, '');
 		const content = await readFile(fullPath, 'utf8');
 		const lines = content.split('\n');
 
-		const seen = new Set();
+		const globalList = whitelist.get('*');
+		const fileList = whitelist.get(relativePath);
 		let domainsRemoved = 0;
 
 		const filtered = lines.filter(originalLine => {
@@ -47,13 +48,7 @@ const processDirectory = async (dirPath, whitelist, basePath) => {
 
 			const domain = line.split('#')[0].trim();
 
-			if (seen.has(domain)) return false;
-			seen.add(domain);
-
-			const global = whitelist.get('*');
-			const fileSpecific = whitelist.get(relativePath);
-
-			if ((global && global.has(domain)) || (fileSpecific && fileSpecific.has(domain))) {
+			if ((globalList && globalList.has(domain)) || (fileList && fileList.has(domain))) {
 				domainsRemoved++;
 				return false;
 			}
@@ -65,7 +60,7 @@ const processDirectory = async (dirPath, whitelist, basePath) => {
 			await writeFile(fullPath, filtered.join('\n'), 'utf8');
 			console.log(`🗑️ ${domainsRemoved} domains removed from ${fullPath}`);
 		}
-	}
+	}));
 };
 
 (async () => {

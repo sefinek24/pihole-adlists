@@ -50,21 +50,24 @@ const countDomains = content => {
 	}
 
 	// Phase 2: propagate counts to each other type
+	const countEntries = [...counts.entries()];
 	for (const type of otherTypes) {
 		const ext = TYPE_EXTENSIONS[type] ?? DEFAULT_EXT;
 		let updated = 0;
 
-		await Promise.all([...counts.entries()].map(async ([relBase, domainCount]) => {
-			const targetFile = join(generatedDir, type, relBase + ext);
-			try {
-				const content = await readFile(targetFile, 'utf8');
-				await writeFile(targetFile, replaceCount(content, domainCount), 'utf8');
-				updated++;
-			} catch (err) {
-				console.error(`  Failed: ${targetFile}: ${err.message}`);
-				process.exitCode = 1;
-			}
-		}));
+		for (let i = 0; i < countEntries.length; i += CONCURRENCY) {
+			await Promise.all(countEntries.slice(i, i + CONCURRENCY).map(async ([relBase, domainCount]) => {
+				const targetFile = join(generatedDir, type, relBase + ext);
+				try {
+					const content = await readFile(targetFile, 'utf8');
+					await writeFile(targetFile, replaceCount(content, domainCount), 'utf8');
+					updated++;
+				} catch (err) {
+					console.error(`  Failed: ${targetFile}: ${err.message}`);
+					process.exitCode = 1;
+				}
+			}));
+		}
 
 		console.log(`${type.padEnd(12)} updated ${updated}/${counts.size} files`);
 	}

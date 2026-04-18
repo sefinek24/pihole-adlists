@@ -36,6 +36,7 @@ module.exports = ({ format, release, commentChar = '#', ext = '.txt', transform,
 			const rawLines = rawContent.split(/\r?\n/);
 			const fileMeta = {};
 			for (const line of rawLines) {
+				if (!line.startsWith('#')) break;
 				const m = line.match(/^#\s*@(\w+):\s*(.+)/);
 				if (m) fileMeta[m[1]] = m[2].trim();
 			}

@@ -1,5 +1,3 @@
-// Metadata for fork files and own lists NOT stored in lists/.
-// source URLs are intentionally omitted — they are parsed at runtime from bash/download.sh.
 module.exports = {
 	// ── Abuse ────────────────────────────────────────────────────────────────
 	'abuse/blocklistproject/hosts.fork.txt': { title: 'Abuse Block List', description: 'Domains involved in abuse' },
@@ -7,7 +5,7 @@ module.exports = {
 
 	// ── Advertising ──────────────────────────────────────────────────────────
 	'ads/DandelionSprout.GameConsoleAdblockList.txt': { title: 'Block game console ads', modifiedBy: 'cochcoder <cochcoderContact@gmail.com>, Sefinek <contact@sefinek.net>', license: 'DandelionSprout/adfilt is licensed under the Dandelicence License' },
-	'ads/MajkiIT/SmartTV-ads.fork.txt': { title: 'Polish Smart TV Ads Blocklist', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/' },
+	'ads/MajkiIT/SmartTV-ads.fork.txt': { title: 'Polish Smart TV Ads Blocklist', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
 	'ads/ShadowWhisperer/Ads.fork.txt': { title: 'ShadowWhisperer Ads Blocklist' },
 	'ads/adaway/hosts.fork.txt': { title: 'AdAway Default Blocklist' },
 	'ads/blocklistproject/hosts.fork.txt': { title: 'Ads Block List', description: 'Ad serving domains' },
@@ -35,7 +33,7 @@ module.exports = {
 	// ── CryptoJacking ────────────────────────────────────────────────────────
 	'crypto/cryptojacking/Snota418/Crypto-streams.fork.txt': { title: 'YouTube Crypto Streams Blocklist' },
 	'crypto/cryptojacking/firebog/Prigent/Crypto.fork.txt': { title: 'Firebog Prigent Crypto Blocklist' },
-	'crypto/cryptojacking/hoshsadiq/adblock-nocoin-list.fork.txt': { title: 'No-Coin Adblock List', license: 'https://mit-license.org/' },
+	'crypto/cryptojacking/hoshsadiq/adblock-nocoin-list.fork.txt': { title: 'No-Coin Adblock List', license: 'https://mit-license.org' },
 
 	// ── Dating services ──────────────────────────────────────────────────────
 	'dating-services/ShadowWhisperer/dating.fork.txt': { title: 'ShadowWhisperer Dating Blocklist' },
@@ -47,22 +45,22 @@ module.exports = {
 	'drugs/blocklistproject/drugs.fork.txt': { title: 'Drugs Block List', description: 'Drug-related domains' },
 
 	// ── Extensions ───────────────────────────────────────────────────────────
-	'extensions/MajkiIT/adguard-host.fork.txt': { title: 'Polish AdGuard Host Filter', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/' },
-	'extensions/MajkiIT/easy-privacy-host.fork.txt': { title: 'Polish Easy Privacy Host Filter', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/' },
+	'extensions/MajkiIT/adguard-host.fork.txt': { title: 'Polish AdGuard Host Filter', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
+	'extensions/MajkiIT/easy-privacy-host.fork.txt': { title: 'Polish Easy Privacy Host Filter', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
 	'extensions/hagezi/pro.fork.txt': { title: 'HaGeZi\'s Pro DNS Blocklist', description: 'Big broom - Cleans the Internet and protects your privacy! Blocks Ads, Affiliate, Tracking, Metrics, Telemetry, Phishing, Malware, Scam, Fake, Cryptojacking and other "Crap".', license: 'https://github.com/hagezi/dns-blocklists/blob/main/LICENSE' },
 	'extensions/oisd/big.fork.txt': { title: 'oisd big', description: 'Block. Don\'t break.', license: 'https://github.com/sjhgvr/oisd/blob/main/LICENSE' },
 	'extensions/r-a-y/AdguardApps.fork.txt': { title: 'AdGuard Apps Blocklist' },
 	'extensions/r-a-y/AdguardMobileSpyware.fork.txt': { title: 'AdGuard Mobile Spyware Blocklist' },
 
 	// ── Fake news ────────────────────────────────────────────────────────────
-	'fakenews/StevenBlack/hosts.fork.txt': { title: 'StevenBlack Fake News Extension' },
+	'fakenews/StevenBlack/hosts.fork.txt': { title: 'StevenBlack Fake News Extension', homepage: 'https://github.com/StevenBlack/hosts' },
 
 	// ── Fraud ────────────────────────────────────────────────────────────────
 	'fraud/blocklistproject/hosts.fork.txt': { title: 'Fraud Block List', description: 'Fraud and scam domains' },
 
 	// ── Gambling ─────────────────────────────────────────────────────────────
 	'gambling/MajkiIT/gambling-hosts.fork.txt': { title: 'Polish Gambling Hosts Filter' },
-	'gambling/StevenBlack/hosts.fork.txt': { title: 'StevenBlack Gambling Extension' },
+	'gambling/StevenBlack/hosts.fork.txt': { title: 'StevenBlack Gambling Extension', homepage: 'https://github.com/StevenBlack/hosts' },
 	'gambling/TrustPositif/gambling-indonesia.fork.txt': { title: 'TrustPositif Gambling Indonesia' },
 	'gambling/blocklistproject/hosts.fork.txt': { title: 'Gambling Block List', description: 'Gambling sites' },
 	'gambling/hagezi/gambling-onlydomains.fork.txt': { title: 'HaGeZi\'s Gambling DNS Blocklist', description: 'Blocks gambling content.', license: 'https://github.com/hagezi/dns-blocklists/blob/main/LICENSE' },
@@ -88,8 +86,8 @@ module.exports = {
 	'malicious/web-attacks.txt': { title: 'Block websites reported by Norton Antivirus as sources of network attacks', description: 'Blocks domains reported by Norton Antivirus as sources of network and web-based attacks.', license: 'CC BY-NC-ND 4.0' },
 
 	// ── Other ────────────────────────────────────────────────────────────────
-	'other/StevenBlack/hosts.fork.txt': { title: 'StevenBlack Unified Hosts', description: 'Unified hosts file with base extensions, combining multiple reputable blocklists.', license: 'CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)' },
-	'other/polish-blocklists/MajkiIT/hostfile.fork.txt': { title: 'Polish Ads Filter Hostfile', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/' },
+	'other/StevenBlack/hosts.fork.txt': { title: 'StevenBlack Unified Hosts', description: 'Unified hosts file with base extensions, combining multiple reputable blocklists.', homepage: 'https://github.com/StevenBlack/hosts', license: 'CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)' },
+	'other/polish-blocklists/MajkiIT/hostfile.fork.txt': { title: 'Polish Ads Filter Hostfile', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
 	'other/polish-blocklists/PolishFiltersTeam/KADhosts.fork.txt': { title: 'KADhosts', description: 'Filters protecting against various scams and frauds, including SMS subscriptions, viruses, and fake online stores. Includes entries from CERT Polska, legalniewsieci.pl, and KNF.', license: 'CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)' },
 	'other/polish-blocklists/cert.pl/domains-hosts.fork.txt': { title: 'CERT Polska Domains Blocklist' },
 	'other/url-shorteners.txt': { title: 'Block various link shorteners', description: 'Blocks popular URL shortener services, which are often used to obscure malicious or unwanted links.', license: 'CC BY-NC-ND 4.0' },
@@ -106,7 +104,7 @@ module.exports = {
 	// ── Porn & Adult ─────────────────────────────────────────────────────────
 	'porn/ShadowWhisperer/adult.fork.txt': { title: 'ShadowWhisperer Adult Blocklist' },
 	'porn/Sinfonietta/pornography-hosts.fork.txt': { title: 'Sinfonietta Pornography Hosts' },
-	'porn/StevenBlack/porn.fork.txt': { title: 'StevenBlack Porn Extension' },
+	'porn/StevenBlack/porn.fork.txt': { title: 'StevenBlack Porn Extension', homepage: 'https://github.com/StevenBlack/hosts' },
 	'porn/blocklistproject/porn.fork.txt': { title: 'Porn Block List', description: 'Adult content domains' },
 	'porn/hagezi/nsfw-onlydomains.fork.txt': { title: 'HaGeZi\'s NSFW DNS Blocklist', description: 'Blocks adult content.', license: 'https://github.com/hagezi/dns-blocklists/blob/main/LICENSE' },
 	'porn/oisd/nsfw.fork.txt': { title: 'oisd nsfw', description: 'Block. Don\'t break.', license: 'https://github.com/sjhgvr/oisd/blob/main/LICENSE' },
@@ -151,7 +149,7 @@ module.exports = {
 
 	// ── Tracking & telemetry ─────────────────────────────────────────────────
 	'tracking-and-telemetry/0Zinc/easyprivacy.fork.txt': { title: 'EasyPrivacy Hosts Blocklist' },
-	'tracking-and-telemetry/MajkiIT/adguard-mobile-host.fork.txt': { title: 'Polish AdGuard Mobile Host Filter', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/' },
+	'tracking-and-telemetry/MajkiIT/adguard-mobile-host.fork.txt': { title: 'Polish AdGuard Mobile Host Filter', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
 	'tracking-and-telemetry/ShadowWhisperer/tracking.fork.txt': { title: 'ShadowWhisperer Tracking Blocklist' },
 	'tracking-and-telemetry/ente-dev/tv.fork.txt': { title: 'Ente.dev TV Tracking Blocklist' },
 	'tracking-and-telemetry/frogeye/firstparty-trackers-hosts.txt': { title: 'First-Party Trackers Hosts', license: 'https://git.frogeye.fr/geoffrey/eulaurarien/src/branch/master/LICENSE' },

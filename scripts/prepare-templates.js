@@ -1,17 +1,17 @@
 const { copyFile, mkdir, readdir, readFile, writeFile } = require('node:fs/promises');
-const { join, relative } = require('node:path');
+const { join } = require('node:path');
 const validator = require('validator');
 const local = require('./utils/local.js');
 
 const TEMPLATES_DIR = join(__dirname, '..', 'blocklists', 'templates');
-const FORK_HEADERS_PATH = join(__dirname, '..', 'blocklists', 'cache', 'fork-headers.json');
 
-const emoji = key => ({
-	modifiedLines: '🔧', convertedDomains: '✨', invalidLinesRemoved: '🧹',
-	ipsReplaced: '🔄', domainToLower: '🔡', convertedAdGuard: '🔄',
-	splitMultiDomain: '✂️', normalizedSpacing: '🔃', fixedGlued: '🩹',
-	fqdnConverted: '🌐', portRemoved: '🔪',
-}[key] || '');
+const EMOJI = {
+	modifiedLines: '🔧', invalidLinesRemoved: '🧹', ipsReplaced: '🔄',
+	domainToLower: '🔡', convertedAdGuard: '🔄', splitMultiDomain: '✂️',
+	fixedGlued: '🩹', portRemoved: '🔪',
+};
+
+const FORK_META_KEYS = ['title', 'description', 'license', 'homepage'];
 
 const isSuspiciousDomain = domain =>
 	typeof domain !== 'string' ||
@@ -36,13 +36,13 @@ const parseForkLine = (line, hasTitleAlready) => {
 	return null;
 };
 
-const processDirectory = async (dirPath, forkHeaders) => {
+const processDirectory = async dirPath => {
 	try {
 		await mkdir(dirPath, { recursive: true });
 		const allEntries = await readdir(dirPath, { withFileTypes: true });
 		const fileNames = allEntries.filter(e => e.isFile() && e.name.endsWith('.txt')).map(e => e.name);
 
-		for (const fileName of fileNames) {
+		await Promise.all(fileNames.map(async fileName => {
 			const filePath = join(dirPath, fileName);
 			const fileContents = await readFile(filePath, 'utf8');
 			const lines = fileContents.split('\n');
@@ -51,9 +51,9 @@ const processDirectory = async (dirPath, forkHeaders) => {
 			const parsedForkMeta = {};
 
 			const stats = {
-				modifiedLines: 0, convertedDomains: 0, invalidLinesRemoved: 0, ipsReplaced: 0,
-				domainToLower: 0, convertedAdGuard: 0, splitMultiDomain: 0, normalizedSpacing: 0,
-				fixedGlued: 0, fqdnConverted: 0, portRemoved: 0,
+				modifiedLines: 0, invalidLinesRemoved: 0, ipsReplaced: 0,
+				domainToLower: 0, convertedAdGuard: 0, splitMultiDomain: 0,
+				fixedGlued: 0, portRemoved: 0,
 			};
 
 			const processedLines = [];
@@ -71,7 +71,7 @@ const processDirectory = async (dirPath, forkHeaders) => {
 					} else {
 						if (isFork) {
 							const parsed = parseForkLine(line, 'title' in parsedForkMeta);
-							if (parsed) parsedForkMeta[parsed.key] = parsed.value;
+							if (parsed && !(parsed.key in parsedForkMeta)) parsedForkMeta[parsed.key] = parsed.value;
 						}
 						stats.invalidLinesRemoved++;
 					}
@@ -170,27 +170,26 @@ const processDirectory = async (dirPath, forkHeaders) => {
 				processedLines.push(line);
 			}
 
-			// Persist fork metadata if we found anything new
-			if (isFork && Object.keys(parsedForkMeta).length > 0) {
-				const relKey = relative(TEMPLATES_DIR, filePath).replace(/\\/g, '/');
-				forkHeaders[relKey] = { ...forkHeaders[relKey], ...parsedForkMeta };
+			// Prepend parsed fork metadata as @-directives so runner.js picks them up via fileMeta
+			if (isFork) {
+				const metaLines = FORK_META_KEYS
+					.filter(k => parsedForkMeta[k])
+					.map(k => `# @${k}: ${parsedForkMeta[k]}`);
+				if (metaLines.length > 0) processedLines.unshift(...metaLines);
 			}
 
-			// Summary
 			if (Object.values(stats).some(Boolean)) {
 				await writeFile(filePath, processedLines.join('\n'), 'utf8');
 
 				console.log('📝', filePath);
 				Object.entries(stats).forEach(([k, v]) => {
-					if (v) console.log(`   ${emoji(k)} ${v} ${k.replace(/([A-Z])/g, ' $1').toLowerCase()}`);
+					if (v) console.log(`   ${EMOJI[k] || ''} ${v} ${k.replace(/([A-Z])/g, ' $1').toLowerCase()}`);
 				});
 			}
-		}
+		}));
 
 		const subDirs = allEntries.filter(d => d.isDirectory());
-		for (const sub of subDirs) {
-			await processDirectory(join(dirPath, sub.name), forkHeaders);
-		}
+		await Promise.all(subDirs.map(sub => processDirectory(join(dirPath, sub.name))));
 	} catch (err) {
 		console.error(`❌ Error processing ${dirPath}:`, err);
 	}
@@ -213,20 +212,8 @@ const copyDirectory = async (src, dest) => {
 (async () => {
 	try {
 		const listsDir = join(__dirname, '..', 'lists');
-
-		// Load existing fork headers to preserve data from previous runs
-		// (headers are stripped after first processing, so we merge rather than overwrite)
-		let forkHeaders = {};
-		try {
-			forkHeaders = JSON.parse(await readFile(FORK_HEADERS_PATH, 'utf8'));
-		} catch { /* first run or cache missing — start fresh */ }
-
 		await copyDirectory(listsDir, TEMPLATES_DIR);
-		await processDirectory(TEMPLATES_DIR, forkHeaders);
-
-		await mkdir(join(__dirname, '..', 'blocklists', 'cache'), { recursive: true });
-		await writeFile(FORK_HEADERS_PATH, JSON.stringify(forkHeaders, null, '\t'), 'utf8');
-		console.log(`\n📋 Fork headers saved for ${Object.keys(forkHeaders).length} files → ${FORK_HEADERS_PATH}`);
+		await processDirectory(TEMPLATES_DIR);
 	} catch (err) {
 		console.error('❌ Fatal error:', err);
 	}

@@ -5,14 +5,6 @@ const path = require('node:path');
 const METADATA = require('../config/metadata.js');
 const generateHeader = require('./generateHeader.js');
 
-const FORK_HEADERS = (() => {
-	try {
-		return JSON.parse(fs.readFileSync(path.join(__dirname, '../../blocklists/cache/fork-headers.json'), 'utf8'));
-	} catch {
-		return {};
-	}
-})();
-
 const SOURCES = (() => {
 	const map = {};
 	try {
@@ -28,24 +20,22 @@ const SOURCES = (() => {
 
 module.exports = (relPath, count, fileMeta = {}) => {
 	const rel = relPath.replace(/\\/g, '/');
-
-	// File-level metadata declared via # @key: value lines in the template
-	if (fileMeta.title) {
-		return generateHeader(
-			fileMeta.title,
-			fileMeta.description || null,
-			count,
-			{ modifiedBy: fileMeta.modifiedBy, source: fileMeta.source, license: fileMeta.license }
-		);
-	}
-
-	// Fallback: metadata.js overrides, auto-parsed fork headers, source URL from download.sh
 	const meta = METADATA[rel] || {};
-	const fork = FORK_HEADERS[rel] || {};
+	const isFork = rel.endsWith('.fork.txt');
+
+	const homepageUrl = fileMeta.homepage || meta.homepage || null;
+	const sourceUrl = SOURCES[rel] || null;
+	const source = sourceUrl || homepageUrl || (isFork ? 'Unknown source (external list)' : null);
+
 	return generateHeader(
-		meta.title || fork.title || 'Unknown',
-		meta.description || fork.description || null,
+		fileMeta.title || meta.title || 'Unknown',
+		fileMeta.description || meta.description || null,
 		count,
-		{ modifiedBy: meta.modifiedBy, source: SOURCES[rel] || null, license: meta.license || fork.license }
+		{
+			modifiedBy: fileMeta.modifiedBy || meta.modifiedBy,
+			source,
+			homepage: sourceUrl && homepageUrl ? homepageUrl : null,
+			license: fileMeta.license || meta.license,
+		}
 	);
 };

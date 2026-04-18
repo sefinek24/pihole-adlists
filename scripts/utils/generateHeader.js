@@ -1,16 +1,16 @@
-module.exports = (title, description, count, { modifiedBy, source, license } = {}) => {
+module.exports = (title, description, count, { modifiedBy, source, homepage, license } = {}) => {
 	const lines = [
 		`# Title: ${title || 'Unknown'}`,
-		`# Description: ${description || 'N/A'}`,
+		...(description ? [`# Description: ${description}`] : []),
 		'# Expires: 1 day',
 		`# Count: ${count != null ? `${Number(count).toLocaleString('en-US')} domains` : 'Unknown'}`,
-		...(!source ? ['# Author: Sefinek (https://sefinek.net) <contact@sefinek.net>'] : []),
+		...(!source ? ['# Author: Sefinek <contact@sefinek.net> (https://sefinek.net)'] : []),
 	];
 
 	if (modifiedBy) lines.push(`# Modified by: ${modifiedBy}`);
-	if (source) lines.push(`# Source: ${source}`);
+	if (source) lines.push(`# Source: ${homepage ? `${source} | ${homepage}` : source}`);
 
-	lines.push(`# License: ${license || 'MIT'}`);
+	lines.push(`# License: ${license || 'Unknown, check the source'}`);
 	lines.push('# Release: {Release}');
 	lines.push('# Last update: {LastUpdate}');
 

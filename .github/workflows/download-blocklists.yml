@@ -26,9 +26,6 @@ jobs:
           ref: blocklists
           path: blocklists
 
-      - name: Download blocklists
-        run: bash bash/download.sh
-
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
@@ -37,6 +34,14 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Sefinek Actions"
+          git config --global user.email "sefinek.actions@gmail.com"
+
+      - name: Download blocklists
+        run: bash bash/download.sh
 
       - name: Prepare templates
         run: node scripts/prepare-templates.js
@@ -77,25 +82,25 @@ jobs:
       - name: Count domains
         run: node scripts/update-number-of-domains.js
 
-      - name: Configure Git
-        run: |
-          git config --global user.name "Sefinek Actions"
-          git config --global user.email "sefinek.actions@gmail.com"
-
       - name: Commit and push to blocklists branch
         run: |
           cd blocklists
 
           git pull origin blocklists
 
-          git add .
+          # Untrack templates/ if previously committed (one-time cleanup, idempotent)
+          git rm -r --cached templates/ 2>/dev/null || true
+          # Persist the ignore rule on the blocklists branch
+          grep -qxF 'templates/' .gitignore 2>/dev/null || echo 'templates/' >> .gitignore
+
+          git add generated/ cache/ .gitignore
 
           if [ -z "$(git status --porcelain)" ]; then
             echo "Canceled. No changes to commit."
             exit 0
           fi
 
-          MODIFIED_FILES=$(git diff --name-only HEAD | grep -v '^cache/')
+          MODIFIED_FILES=$(git diff --name-only HEAD | grep -v '^cache/' | grep -v '^templates/')
           FILE_COUNT=$(echo "$MODIFIED_FILES" | grep -c . || true)
           if [ "$FILE_COUNT" -eq 0 ]; then
             echo "Canceled. Only cache/ changes detected."

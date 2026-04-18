@@ -6,24 +6,20 @@ const processLine = (line, existingDomains) => {
 	if (line.startsWith('# [')) return { shouldKeep: false, reason: 'uselessComment' };
 	if (line.startsWith('##') || line.startsWith('#') || line.startsWith('!')) return { shouldKeep: true };
 
-	const domain = line.trim();
-	if (!domain) return { shouldKeep: true };
-
-	if (existingDomains.has(domain)) return { shouldKeep: false, reason: 'duplicate' };
-	existingDomains.add(domain);
+	if (existingDomains.has(line)) return { shouldKeep: false, reason: 'duplicate' };
+	existingDomains.add(line);
 
 	return { shouldKeep: true };
 };
 
 const processFile = async filePath => {
 	try {
-		let fileContents = await readFile(filePath, 'utf8');
+		const originalContent = await readFile(filePath, 'utf8');
 
 		const existingDomains = new Set();
 		let duplicatesRemoved = 0, emptyLinesRemoved = 0, uselessCommentsRemoved = 0;
 
-		const lines = fileContents.split('\n').map(line => line.trim());
-		const filteredLines = lines.filter(line => {
+		const filteredLines = originalContent.split('\n').map(line => line.trim()).filter(line => {
 			const { shouldKeep, reason } = processLine(line, existingDomains);
 			if (!shouldKeep) {
 				if (reason === 'emptyLine') emptyLinesRemoved++;
@@ -34,8 +30,8 @@ const processFile = async filePath => {
 			return true;
 		});
 
-		fileContents = filteredLines.join('\n');
-		await writeFile(filePath, fileContents, 'utf8');
+		const newContent = filteredLines.join('\n');
+		if (newContent !== originalContent) await writeFile(filePath, newContent, 'utf8');
 
 		if (duplicatesRemoved > 0) {
 			console.log(`✔️ ${duplicatesRemoved} ${duplicatesRemoved === 1 ? 'duplicate' : 'duplicates'} removed from ${filePath}`);

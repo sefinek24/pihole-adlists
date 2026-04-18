@@ -34,5 +34,6 @@ const processDirectory = async dirPath => {
 		await processDirectory(targetDir);
 	} catch (err) {
 		console.error('❌ Unexpected error:', err);
+		process.exitCode = 1;
 	}
 })();

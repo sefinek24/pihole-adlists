@@ -3,20 +3,15 @@ const { resolve, extname } = require('node:path');
 
 const getAllFilesRecursively = async (directoryPath, extensions = ['.txt']) => {
 	const directoryEntries = await readdir(directoryPath, { withFileTypes: true });
-	let files = [];
 
-	for (const entry of directoryEntries) {
+	const results = await Promise.all(directoryEntries.map(async entry => {
 		const entryPath = resolve(directoryPath, entry.name);
+		if (entry.isDirectory()) return getAllFilesRecursively(entryPath, extensions);
+		if (extensions.includes(extname(entryPath))) return [entryPath];
+		return [];
+	}));
 
-		if (entry.isDirectory()) {
-			const nestedFiles = await getAllFilesRecursively(entryPath, extensions);
-			files = files.concat(nestedFiles);
-		} else if (extensions.includes(extname(entryPath))) {
-			files.push(entryPath);
-		}
-	}
-
-	return files;
+	return results.flat();
 };
 
 module.exports = getAllFilesRecursively;

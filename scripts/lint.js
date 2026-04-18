@@ -4,7 +4,7 @@ const getAllFiles = require('./utils/getAllFiles.js');
 
 const WHITESPACE_RE = /\s/u;
 
-const lintFile = async (file, fileContents) => {
+const lintFile = (file, fileContents) => {
 	let hasErr = false;
 	const lines = fileContents.split('\n');
 
@@ -40,7 +40,7 @@ const lintFile = async (file, fileContents) => {
 	await Promise.all(
 		files.map(async file => {
 			const content = await readFile(file, 'utf8');
-			const fileHasErr = await lintFile(file, content);
+			const fileHasErr = lintFile(file, content);
 			if (fileHasErr) hasErr = true;
 		})
 	);

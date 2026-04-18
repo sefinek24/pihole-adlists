@@ -5,7 +5,7 @@ const withCache = async (key, ttl, fetcher) => {
 		const cached = await RedisClient.get(key);
 		if (cached) return JSON.parse(cached);
 	} catch {
-		// ignore
+		// ...
 	}
 
 	const data = await fetcher();

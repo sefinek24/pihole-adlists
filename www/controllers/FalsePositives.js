@@ -1,7 +1,7 @@
 const { validationResult } = require('express-validator');
 const mailer = require('../services/mailer.js');
 const domainSearch = require('../services/domainSearch.js');
-const redis = require('../services/redis.js');
+const RedisClient = require('../services/redis.js');
 
 const FP_TTL = 5 * 24 * 60 * 60; // 5 days in seconds
 const fpKey = domain => `fp:reported:${domain}`;
@@ -40,7 +40,7 @@ exports.submit = async (req, res) => {
 			reports.map(async ({ domain, reason }) => {
 				const [searchResult, alreadyReported] = await Promise.all([
 					domainSearch.searchDomain(domain),
-					redis.exists(fpKey(domain)),
+					RedisClient.exists(fpKey(domain)),
 				]);
 				return { domain, reason, ...searchResult, alreadyReported };
 			})
@@ -89,7 +89,7 @@ exports.submit = async (req, res) => {
 ${domainBlocksHtml}`,
 		});
 
-		Promise.all(reportable.map(r => redis.set(fpKey(r.domain), '1', { EX: FP_TTL })))
+		Promise.all(reportable.map(r => RedisClient.set(fpKey(r.domain), '1', { EX: FP_TTL })))
 			.catch(err => console.error('Failed to set FP dedup keys in Redis:', err.message));
 
 		if (email) {

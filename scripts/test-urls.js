@@ -14,7 +14,7 @@ const markdownFiles = [
 	'./docs/lists/md/Unbound.md',
 ];
 
-const TEMPLATES_DIR = path.resolve('./blocklists/templates');
+const NOIP_DIR = path.resolve('./blocklists/generated/noip');
 const MAX_RETRIES = 3;
 const RETRY_DELAY_MS = 2000;
 const URL_REGEX = /https:\/\/blocklist\.sefinek\.net\/generated\/v1\/(0\.0\.0\.0|127\.0\.0\.1|adguard|dnsmasq|noip|rpz|unbound)\/(?:[\w-]+\/)+[\w\\.-]+\.\w+/gi;
@@ -93,7 +93,7 @@ const testLinks = async () => {
 };
 
 const checkTemplateFiles = async () => {
-	console.log('\n=== Checking template files on disk ===');
+	console.log('\n=== Checking generated noip files on disk ===');
 
 	const seen = new Set();
 	const missing = [];
@@ -109,22 +109,22 @@ const checkTemplateFiles = async () => {
 		for (const match of content.matchAll(URL_REGEX)) {
 			const url = match[0];
 			const afterFormat = url.replace(/^https:\/\/blocklist\.sefinek\.net\/generated\/v1\/[^/]+\//, '');
-			const templatePath = afterFormat.replace(/\.conf$/, '.txt');
+			const noipPath = afterFormat.replace(/\.conf$/, '.txt');
 
-			if (seen.has(templatePath)) continue;
-			seen.add(templatePath);
+			if (seen.has(noipPath)) continue;
+			seen.add(noipPath);
 
-			const fullPath = path.join(TEMPLATES_DIR, templatePath);
+			const fullPath = path.join(NOIP_DIR, noipPath);
 			try {
 				await fs.access(fullPath);
 			} catch {
-				console.warn(`✘ MISSING: ${templatePath}`);
-				missing.push(templatePath);
+				console.warn(`✘ MISSING: ${noipPath}`);
+				missing.push(noipPath);
 			}
 		}
 	}
 
-	console.log(`Template files: ${seen.size} checked, ${missing.length} missing`);
+	console.log(`Generated noip files: ${seen.size} checked, ${missing.length} missing`);
 };
 
 const checkDuplicates = async () => {
@@ -167,7 +167,7 @@ const checkDeprecatedRoutes = async () => {
 
 	const missing = [];
 	for (const ref of unique) {
-		const full = path.join(TEMPLATES_DIR, ref);
+		const full = path.join(NOIP_DIR, ref.replace(/\.conf$/, '.txt'));
 		try {
 			await fs.access(full);
 		} catch {
