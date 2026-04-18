@@ -1,10 +1,9 @@
 module.exports = {
 	// ── Abuse ────────────────────────────────────────────────────────────────
-	'abuse/blocklistproject/hosts.fork.txt': { title: 'Abuse Blocklist', description: 'Domains involved in abuse' },
+	'abuse/blocklistproject/hosts.fork.txt': { title: 'Abuse Blocklist' },
 	'abuse/urlhaus.abuse.ch/hostfile.fork.txt': { title: 'URLhaus Malicious Hosts' },
 
 	// ── Advertising ──────────────────────────────────────────────────────────
-	'ads/DandelionSprout.GameConsoleAdblockList.txt': { title: 'Block all game console ad domains', modifiedBy: 'cochcoder <cochcoderContact@gmail.com>, Sefinek <contact@sefinek.net>', license: 'DandelionSprout/adfilt is licensed under the Dandelicence License' },
 	'ads/MajkiIT/SmartTV-ads.fork.txt': { title: 'Polish Smart TV Ads Blocklist', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
 	'ads/ShadowWhisperer/Ads.fork.txt': { title: 'ShadowWhisperer Ads Blocklist' },
 	'ads/adaway/hosts.fork.txt': { title: 'AdAway Default Blocklist' },
