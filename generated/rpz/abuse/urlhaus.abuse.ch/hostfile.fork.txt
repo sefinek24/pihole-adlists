@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026041818 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026041821 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -11,11 +11,11 @@ $TTL 300
 ;                                            The best blocklist collection: https://blocklist.sefinek.net
 ; Title: URLhaus Malicious Hosts
 ; Expires: 1 day
-; Count: 496 domains
+; Count: 498 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Release: RPZ
-; Last update: April 18, 2026 at 6:15 PM UTC | 2026-04-18T18:15:03.458Z
+; Last update: April 18, 2026 at 9:13 PM UTC | 2026-04-18T21:13:01.451Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
@@ -612,6 +612,8 @@ ok-vsefotki.online CNAME .
 *.ok-vsefotki.online CNAME .
 okhan.net CNAME .
 *.okhan.net CNAME .
+omax.com.pk CNAME .
+*.omax.com.pk CNAME .
 onfiltre.com.tr CNAME .
 *.onfiltre.com.tr CNAME .
 onyxcyberedge.de CNAME .
@@ -656,6 +658,8 @@ pobedastaff.ru CNAME .
 *.pobedastaff.ru CNAME .
 polonyauniversiteleri.com.tr CNAME .
 *.polonyauniversiteleri.com.tr CNAME .
+prodimetal.com CNAME .
+*.prodimetal.com CNAME .
 productionmaza.cfd CNAME .
 *.productionmaza.cfd CNAME .
 productionmaza.cyou CNAME .
