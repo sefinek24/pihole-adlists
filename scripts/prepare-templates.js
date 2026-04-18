@@ -41,7 +41,6 @@ const parseForkLine = (line, hasTitleAlready) => {
 
 const processDirectory = async dirPath => {
 	try {
-		await mkdir(dirPath, { recursive: true });
 		const allEntries = await readdir(dirPath, { withFileTypes: true });
 		const fileNames = allEntries.filter(e => e.isFile() && e.name.endsWith('.txt')).map(e => e.name);
 
@@ -90,7 +89,7 @@ const processDirectory = async dirPath => {
 				// Remove inline comments FIRST: example.com # comment → example.com
 				if (line.includes('#')) {
 					const withoutComment = line.split('#')[0].trim();
-					if (withoutComment && withoutComment !== line.trim()) {
+					if (withoutComment && withoutComment !== line) {
 						line = withoutComment;
 						stats.modifiedLines++;
 					}
