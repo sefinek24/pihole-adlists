@@ -45,7 +45,7 @@ jobs:
 
       - name: Clean up lists/ and commit to main
         run: |
-          node scripts/remove-duplicates.js lists
+          node scripts/pipeline/dedupe.js lists
 
           git add lists/
 

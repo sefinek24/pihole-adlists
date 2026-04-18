@@ -1,6 +1,6 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
-const splitFile = require('./file-processor/split.js');
+const splitFile = require('./split.js');
 const getDate = require('../utils/date.js');
 const sha256 = require('../utils/hashCache.js');
 const txtFilter = require('../utils/txtFilter.js');

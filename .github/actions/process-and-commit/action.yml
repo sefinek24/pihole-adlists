@@ -11,15 +11,15 @@ runs:
   steps:
     - name: Prepare templates
       shell: bash
-      run: node scripts/prepare-templates.js
+      run: node scripts/pipeline/prepare.js
 
     - name: Remove duplicates from templates
       shell: bash
-      run: node scripts/remove-duplicates.js blocklists/templates
+      run: node scripts/pipeline/dedupe.js blocklists/templates
 
     - name: Remove whitelisted domains
       shell: bash
-      run: node scripts/whitelist.js
+      run: node scripts/pipeline/whitelist.js
 
     - name: Lint
       shell: bash
@@ -27,11 +27,11 @@ runs:
 
     - name: Generate all formats
       shell: bash
-      run: node scripts/generate/all.js
+      run: node scripts/generate/index.js
 
     - name: Count domains
       shell: bash
-      run: node scripts/update-number-of-domains.js
+      run: node scripts/update-counts.js
 
     - name: Commit and push to blocklists branch
       shell: bash

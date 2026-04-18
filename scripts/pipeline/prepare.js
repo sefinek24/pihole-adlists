@@ -1,9 +1,9 @@
 const { copyFile, mkdir, readdir, readFile, writeFile } = require('node:fs/promises');
 const { join } = require('node:path');
 const validator = require('validator');
-const local = require('./utils/local.js');
+const local = require('../utils/local.js');
 
-const TEMPLATES_DIR = join(__dirname, '..', 'blocklists', 'templates');
+const TEMPLATES_DIR = join(__dirname, '../..', 'blocklists', 'templates');
 
 const EMOJI = {
 	modifiedLines: '🔧', invalidLinesRemoved: '🧹', ipsReplaced: '🔄',
@@ -213,7 +213,7 @@ const copyDirectory = async (src, dest) => {
 
 (async () => {
 	try {
-		const listsDir = join(__dirname, '..', 'lists');
+		const listsDir = join(__dirname, '../..', 'lists');
 		await copyDirectory(listsDir, TEMPLATES_DIR);
 		await processDirectory(TEMPLATES_DIR);
 	} catch (err) {

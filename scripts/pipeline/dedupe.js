@@ -68,7 +68,7 @@ const processDirectory = async dirPath => {
 
 (async () => {
 	if (!process.argv[2]) {
-		console.error('Usage: node remove-duplicates.js <directory>');
+		console.error('Usage: node scripts/pipeline/dedupe.js <directory>');
 		process.exit(1);
 	}
 

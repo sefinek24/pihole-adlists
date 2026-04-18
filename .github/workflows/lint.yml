@@ -38,7 +38,7 @@ jobs:
         run: npm ci
 
       - name: Prepare templates
-        run: node scripts/prepare-templates.js
+        run: node scripts/pipeline/prepare.js
 
       - name: Lint
         run: node scripts/lint.js
