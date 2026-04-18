@@ -1,5 +1,5 @@
 name: Process and commit blocklists
-description: Copy lists to templates, clean up, generate all formats, update domain counts, and push to the blocklists branch.
+description: Copy lists to templates, clean up, generate all formats, update domain counts, and push templates and generated files to the blocklists branch.
 
 inputs:
   commit_message:
@@ -40,17 +40,14 @@ runs:
 
         git pull origin blocklists
 
-        # Untrack templates/ if previously committed (one-time cleanup, idempotent)
-        git rm -r --cached templates/ 2>/dev/null || true
-
-        git add generated/ cache/
+        git add templates/ generated/ cache/
 
         if [ -z "$(git status --porcelain)" ]; then
           echo "Canceled. No changes to commit."
           exit 0
         fi
 
-        MODIFIED_FILES=$(git diff --name-only HEAD | grep -v '^cache/' | grep -v '^templates/')
+        MODIFIED_FILES=$(git diff --name-only HEAD | grep -v '^cache/')
         FILE_COUNT=$(echo "$MODIFIED_FILES" | grep -c . || true)
         if [ "$FILE_COUNT" -eq 0 ]; then
           echo "Canceled. Only cache/ changes detected."

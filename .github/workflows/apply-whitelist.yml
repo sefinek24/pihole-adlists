@@ -1,0 +1,76 @@
+name: Apply whitelist
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'whitelists/**'
+
+  workflow_dispatch:
+
+concurrency:
+  group: blocklists-push
+  cancel-in-progress: false
+
+jobs:
+  apply-whitelist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          ref: main
+
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          ref: blocklists
+          path: blocklists
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.x
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Sefinek Actions"
+          git config --global user.email "sefinek.actions@gmail.com"
+
+      - name: Apply whitelist to templates
+        run: node scripts/pipeline/whitelist.js
+
+      - name: Generate all formats
+        run: node scripts/generate/index.js
+
+      - name: Update domain counts
+        run: node scripts/update-counts.js
+
+      - name: Commit and push to blocklists branch
+        run: |
+          cd blocklists
+
+          git pull origin blocklists
+
+          git add templates/ generated/ cache/
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Canceled. No changes to commit."
+            exit 0
+          fi
+
+          MODIFIED_FILES=$(git diff --name-only HEAD | grep -v '^cache/')
+          FILE_COUNT=$(echo "$MODIFIED_FILES" | grep -c . || true)
+          if [ "$FILE_COUNT" -eq 0 ]; then
+            echo "Canceled. Only cache/ changes detected."
+            exit 0
+          fi
+
+          git commit -m "Apply whitelist (${{ github.sha }}) [$FILE_COUNT files] - $(date -u '+%Y-%m-%d %H:%M:%S UTC')" -m "$MODIFIED_FILES"
+          git push origin blocklists
