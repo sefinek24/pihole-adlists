@@ -66,7 +66,7 @@ jobs:
       - name: Remove duplicates from templates
         run: node scripts/remove-duplicates.js blocklists/templates
 
-      - name: Remove domains that are on the whitelist
+      - name: Remove whitelisted domains
         run: node scripts/whitelist.js
 
       - name: Normalize line endings in .txt files
