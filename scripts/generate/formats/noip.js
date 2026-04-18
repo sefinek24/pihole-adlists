@@ -4,7 +4,8 @@ const run = createFormat({
 	format: 'noip',
 	release: 'No IP (only domains)',
 	transform: d => d,
+	codeFile: __filename,
 });
 
-void run();
+if (require.main === module) void run();
 module.exports = run;

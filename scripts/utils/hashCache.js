@@ -5,15 +5,38 @@ const { createHash } = require('node:crypto');
 
 const BASE_PATH = path.join(__dirname, '../../blocklists/templates');
 
-const CODE_HASH = (() => {
+const BASE_CODE_HASH = (() => {
 	const h = createHash('sha512');
-	for (const f of [path.join(__dirname, 'buildHeader.js'), path.join(__dirname, 'generateHeader.js')]) {
-		try { h.update(fsSync.readFileSync(f)); } catch { /* file missing in isolated envs */ }
+	for (const f of [
+		path.join(__dirname, 'buildHeader.js'),
+		path.join(__dirname, 'generateHeader.js'),
+		path.join(__dirname, '../generate/runner.js'),
+	]) {
+		try { h.update(fsSync.readFileSync(f)); } catch { /* file missing in isolated test environments */ }
 	}
 	return h.digest('hex').slice(0, 16);
 })();
 
-module.exports = async (thisFileName, type) => {
+const formatHashCache = new Map();
+
+const getCodeHash = formatFile => {
+	if (!formatFile) return BASE_CODE_HASH;
+	if (formatHashCache.has(formatFile)) return formatHashCache.get(formatFile);
+	try {
+		const h = createHash('sha512');
+		h.update(BASE_CODE_HASH);
+		h.update(fsSync.readFileSync(formatFile));
+		const hash = h.digest('hex').slice(0, 16);
+		formatHashCache.set(formatFile, hash);
+		return hash;
+	} catch {
+		return BASE_CODE_HASH;
+	}
+};
+
+module.exports = async (thisFileName, type, formatFile = null) => {
+	const codeHash = getCodeHash(formatFile);
+
 	const relativePath = path.relative(BASE_PATH, path.dirname(thisFileName));
 	const cacheFolder = path.join(__dirname, `../../blocklists/cache/${type}`, relativePath);
 
@@ -23,7 +46,7 @@ module.exports = async (thisFileName, type) => {
 	const hashFromCacheFile = await fs.readFile(cacheFilePath, 'utf8').catch(() => null);
 
 	const buff = await fs.readFile(thisFileName);
-	const hash = `${CODE_HASH}:${createHash('sha512').update(buff).digest('hex')}`;
+	const hash = `${codeHash}:${createHash('sha512').update(buff).digest('hex')}`;
 	if (hash === hashFromCacheFile) {
 		// console.log(`⏭️ ${hash} / ${type}:${path.basename(thisFileName)} / skipped`);
 		return { stop: true };

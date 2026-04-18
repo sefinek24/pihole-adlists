@@ -24,6 +24,17 @@ const countDomains = content => {
 	return count;
 };
 
+const withConcurrency = (limit, items, fn) => {
+	let i = 0;
+	const worker = async () => {
+		while (i < items.length) {
+			const idx = i++;
+			await fn(items[idx]);
+		}
+	};
+	return Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+};
+
 (async () => {
 	const generatedDir = join(__dirname, '..', 'blocklists', 'generated');
 	const canonicalDir = join(generatedDir, CANONICAL_TYPE);
@@ -38,16 +49,14 @@ const countDomains = content => {
 	// Phase 1: count domains from noip, update noip files
 	const counts = new Map();
 
-	for (let i = 0; i < canonicalFiles.length; i += CONCURRENCY) {
-		await Promise.all(canonicalFiles.slice(i, i + CONCURRENCY).map(async file => {
-			const content = await readFile(file, 'utf8');
-			const domainCount = countDomains(content);
-			const relBase = relative(canonicalDir, file).slice(0, -extname(file).length);
-			counts.set(relBase, domainCount);
-			await writeFile(file, replaceCount(content, domainCount), 'utf8');
-			console.log(`${formatCount(domainCount)} domains → ${file}`);
-		}));
-	}
+	await withConcurrency(CONCURRENCY, canonicalFiles, async file => {
+		const content = await readFile(file, 'utf8');
+		const domainCount = countDomains(content);
+		const relBase = relative(canonicalDir, file).slice(0, -extname(file).length);
+		counts.set(relBase, domainCount);
+		await writeFile(file, replaceCount(content, domainCount), 'utf8');
+		console.log(`${formatCount(domainCount)} domains → ${file}`);
+	});
 
 	// Phase 2: propagate counts to each other type
 	const countEntries = [...counts.entries()];
@@ -55,19 +64,17 @@ const countDomains = content => {
 		const ext = TYPE_EXTENSIONS[type] ?? DEFAULT_EXT;
 		let updated = 0;
 
-		for (let i = 0; i < countEntries.length; i += CONCURRENCY) {
-			await Promise.all(countEntries.slice(i, i + CONCURRENCY).map(async ([relBase, domainCount]) => {
-				const targetFile = join(generatedDir, type, relBase + ext);
-				try {
-					const content = await readFile(targetFile, 'utf8');
-					await writeFile(targetFile, replaceCount(content, domainCount), 'utf8');
-					updated++;
-				} catch (err) {
-					console.error(`  Failed: ${targetFile}: ${err.message}`);
-					process.exitCode = 1;
-				}
-			}));
-		}
+		await withConcurrency(CONCURRENCY, countEntries, async ([relBase, domainCount]) => {
+			const targetFile = join(generatedDir, type, relBase + ext);
+			try {
+				const content = await readFile(targetFile, 'utf8');
+				await writeFile(targetFile, replaceCount(content, domainCount), 'utf8');
+				updated++;
+			} catch (err) {
+				console.error(`  Failed: ${targetFile}: ${err.message}`);
+				process.exitCode = 1;
+			}
+		});
 
 		console.log(`${type.padEnd(12)} updated ${updated}/${counts.size} files`);
 	}

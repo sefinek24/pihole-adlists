@@ -6,7 +6,8 @@ const run = createFormat({
 	ext: '.conf',
 	prefix: 'server:\n',
 	transform: d => `local-zone: "${d}." always_nxdomain`,
+	codeFile: __filename,
 });
 
-void run();
+if (require.main === module) void run();
 module.exports = run;

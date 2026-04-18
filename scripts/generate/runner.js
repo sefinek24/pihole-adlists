@@ -22,15 +22,18 @@ const TEMPLATES_DIR = path.join(__dirname, '../../blocklists/templates');
  * @param {Function} [opts.headerTransform] - Post-processes the generated header string.
  * @param {string}   [opts.prefix]       - Static string prepended before the header (e.g. 'server:\n').
  * @param {Function} [opts.buildPrefix]  - Dynamic prefix builder; receives date object, overrides prefix.
+ * @param {string}   [opts.codeFile]     - __filename of the calling format module, mixed into the hash cache key.
  */
-module.exports = ({ format, release, commentChar = '#', ext = '.txt', transform, buildDomains, headerTransform, prefix, buildPrefix }) => {
+module.exports = ({ format, release, commentChar = '#', ext = '.txt', transform, buildDomains, headerTransform, prefix, buildPrefix, codeFile }) => {
+	if (!transform && !buildDomains) throw new Error(`createFormat: "${format}" must define transform or buildDomains`);
+
 	const convert = async (folderPath = TEMPLATES_DIR, relativePath = '') => {
-		const { allFiles, txtFiles, generatedPath } = await txtFilter(format, path, fs, relativePath, folderPath);
+		const { allFiles, txtFiles, generatedPath } = await txtFilter(format, relativePath, folderPath);
 
 		await Promise.all(txtFiles.map(async file => {
 			const thisFileName = path.join(folderPath, file.name);
 
-			const { stop, content: rawContent } = await sha256(thisFileName, format);
+			const { stop, content: rawContent } = await sha256(thisFileName, format, codeFile);
 			if (stop) return;
 
 			const rawLines = rawContent.split(/\r?\n/);
@@ -61,7 +64,7 @@ module.exports = ({ format, release, commentChar = '#', ext = '.txt', transform,
 			await splitFile(fullNewFile, output, commentChar, pre || null);
 		}));
 
-		await processDir(convert, allFiles, path, relativePath, folderPath);
+		await processDir(convert, allFiles, relativePath, folderPath);
 	};
 
 	return async () => {

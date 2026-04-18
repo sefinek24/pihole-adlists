@@ -18,7 +18,8 @@ const run = createFormat({
 		}
 		return out;
 	},
+	codeFile: __filename,
 });
 
-void run();
+if (require.main === module) void run();
 module.exports = run;

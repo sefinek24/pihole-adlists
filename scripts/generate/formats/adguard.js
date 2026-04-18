@@ -6,7 +6,8 @@ const run = createFormat({
 	commentChar: '!',
 	headerTransform: h => h.replace(/^#/gm, '!'),
 	transform: d => `||${d}^`,
+	codeFile: __filename,
 });
 
-void run();
+if (require.main === module) void run();
 module.exports = run;

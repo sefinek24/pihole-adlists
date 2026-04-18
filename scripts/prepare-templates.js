@@ -17,7 +17,7 @@ const isSuspiciousDomain = domain =>
 	typeof domain !== 'string' ||
 	domain.length > 255 ||
 	(domain.match(/\./g) || []).length > 32 ||
-	!(/^[a-z0-9._-]+$/i).test(domain);
+	!(/^[a-z0-9._-]+$/).test(domain);
 
 // Parses a single header comment line from a fork file.
 // Returns { key, value } for "# Key: value" lines, or { title } for plain lines.

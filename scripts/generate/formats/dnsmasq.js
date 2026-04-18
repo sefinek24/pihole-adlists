@@ -4,7 +4,8 @@ const run = createFormat({
 	format: 'dnsmasq',
 	release: 'Dnsmasq',
 	transform: d => `server=/${d}/`,
+	codeFile: __filename,
 });
 
-void run();
+if (require.main === module) void run();
 module.exports = run;

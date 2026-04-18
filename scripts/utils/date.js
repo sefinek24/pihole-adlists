@@ -27,7 +27,7 @@ module.exports = () => {
 		timestamp: now.getTime(),
 		now: now.toISOString(),
 		full: fullFormatter.format(now),
-		serialNumber: `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}01`,
+		serialNumber: `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}${pad(now.getHours())}`,
 		timezone: formatTimezoneOffset(now),
 	};
 };

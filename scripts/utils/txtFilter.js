@@ -1,4 +1,7 @@
-module.exports = async (format, path, fs, relativePath, folderPath) => {
+const fs = require('node:fs/promises');
+const path = require('node:path');
+
+module.exports = async (format, relativePath, folderPath) => {
 	const generatedPath = path.join(__dirname, '../../blocklists/generated', format, relativePath);
 	await fs.mkdir(generatedPath, { recursive: true });
 

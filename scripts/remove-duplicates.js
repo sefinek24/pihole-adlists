@@ -19,16 +19,18 @@ const processFile = async filePath => {
 		const existingDomains = new Set();
 		let duplicatesRemoved = 0, emptyLinesRemoved = 0, uselessCommentsRemoved = 0;
 
-		const filteredLines = originalContent.split('\n').map(line => line.trim()).filter(line => {
+		const filteredLines = [];
+		for (const rawLine of originalContent.split('\n')) {
+			const line = rawLine.trim();
 			const { shouldKeep, reason } = processLine(line, existingDomains);
 			if (!shouldKeep) {
 				if (reason === 'emptyLine') emptyLinesRemoved++;
 				if (reason === 'uselessComment') uselessCommentsRemoved++;
 				if (reason === 'duplicate') duplicatesRemoved++;
-				return false;
+				continue;
 			}
-			return true;
-		});
+			filteredLines.push(line);
+		}
 
 		const newContent = filteredLines.join('\n');
 		if (newContent !== originalContent) await writeFile(filePath, newContent, 'utf8');
