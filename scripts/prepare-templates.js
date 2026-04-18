@@ -28,8 +28,11 @@ const parseForkLine = (line, hasTitleAlready) => {
 		return { key, value: kv[2].trim() };
 	}
 	if (!hasTitleAlready) {
-		const plain = line.replace(/^[#!]\s*/, '').trim();
-		if (plain && plain.length > 3 && !(/^\d{8,}/).test(plain)) {
+		const plain = line.replace(/^[#!]+\s*/, '').trim();
+		if (plain && plain.length > 3 && plain.length < 100 &&
+			!(/^\d{8,}/).test(plain) &&
+			!(/^copyright\b/i).test(plain) &&
+			!(/^https?:\/\//i).test(plain)) {
 			return { key: 'title', value: plain };
 		}
 	}
