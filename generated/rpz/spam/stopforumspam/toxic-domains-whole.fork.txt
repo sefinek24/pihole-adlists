@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026041809 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026041812 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -11,11 +11,11 @@ $TTL 300
 ;                                            The best blocklist collection: https://blocklist.sefinek.net
 ; Title: StopForumSpam Toxic Domains
 ; Expires: 1 day
-; Count: 71,893 domains
+; Count: 71,894 domains
 ; Source: https://www.stopforumspam.com/downloads/toxic_domains_whole.txt
 ; License: Unknown, check the source
 ; Release: RPZ
-; Last update: April 18, 2026 at 9:19 AM UTC | 2026-04-18T09:19:20.176Z
+; Last update: April 18, 2026 at 12:13 PM UTC | 2026-04-18T12:13:30.996Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
@@ -138342,6 +138342,8 @@ wopit.xyz CNAME .
 *.wopit.xyz CNAME .
 wordey.net CNAME .
 *.wordey.net CNAME .
+wordfang.cloud CNAME .
+*.wordfang.cloud CNAME .
 wordmail.xyz CNAME .
 *.wordmail.xyz CNAME .
 wordmr.us CNAME .
