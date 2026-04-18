@@ -90,7 +90,6 @@ module.exports = {
 	'other/polish-blocklists/MajkiIT/hostfile.fork.txt': { title: 'Polish Ads Filter Hostfile', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
 	'other/polish-blocklists/PolishFiltersTeam/KADhosts.fork.txt': { title: 'KADhosts Polish Blocklist', description: 'Filters protecting against various scams and frauds, including SMS subscriptions, viruses, and fake online stores. Includes entries from CERT Polska, legalniewsieci.pl, and KNF.', homepage: 'https://github.com/PolishFiltersTeam/KADhosts', license: 'CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)' },
 	'other/polish-blocklists/cert.pl/domains-hosts.fork.txt': { title: 'CERT Polska Domains Blocklist' },
-	'other/url-shorteners.txt': { title: 'Block various link shorteners', description: 'Blocks popular URL shortener services, which are often used to obscure malicious or unwanted links.', license: 'CC BY-NC-ND 4.0' },
 
 	// ── Phishing ─────────────────────────────────────────────────────────────
 	'phishing/Dogino/Discord-Phishing-URLs-phishing.fork.txt': { title: 'AntiPhishing Discord & Steam', description: 'Blocks known domains used by scammers in Discord and Steam communities.' },
