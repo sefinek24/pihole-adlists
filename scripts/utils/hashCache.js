@@ -1,8 +1,17 @@
 const fs = require('node:fs/promises');
+const fsSync = require('node:fs');
 const path = require('node:path');
 const { createHash } = require('node:crypto');
 
 const BASE_PATH = path.join(__dirname, '../../blocklists/templates');
+
+const CODE_HASH = (() => {
+	const h = createHash('sha512');
+	for (const f of [path.join(__dirname, 'buildHeader.js'), path.join(__dirname, 'generateHeader.js')]) {
+		try { h.update(fsSync.readFileSync(f)); } catch { /* file missing in isolated envs */ }
+	}
+	return h.digest('hex').slice(0, 16);
+})();
 
 module.exports = async (thisFileName, type) => {
 	const relativePath = path.relative(BASE_PATH, path.dirname(thisFileName));
@@ -14,7 +23,7 @@ module.exports = async (thisFileName, type) => {
 	const hashFromCacheFile = await fs.readFile(cacheFilePath, 'utf8').catch(() => null);
 
 	const buff = await fs.readFile(thisFileName);
-	const hash = createHash('sha512').update(buff).digest('hex');
+	const hash = `${CODE_HASH}:${createHash('sha512').update(buff).digest('hex')}`;
 	if (hash === hashFromCacheFile) {
 		// console.log(`⏭️ ${hash} / ${type}:${path.basename(thisFileName)} / skipped`);
 		return { stop: true };
