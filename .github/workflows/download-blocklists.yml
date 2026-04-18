@@ -90,10 +90,8 @@ jobs:
 
           # Untrack templates/ if previously committed (one-time cleanup, idempotent)
           git rm -r --cached templates/ 2>/dev/null || true
-          # Persist the ignore rule on the blocklists branch
-          grep -qxF 'templates/' .gitignore 2>/dev/null || echo 'templates/' >> .gitignore
 
-          git add generated/ cache/ .gitignore
+          git add generated/ cache/
 
           if [ -z "$(git status --porcelain)" ]; then
             echo "Canceled. No changes to commit."
