@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026041701 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026041801 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -12,11 +12,11 @@ $TTL 300
 ; Title: EasyPrivacy Hosts Blocklist
 ; Description: N/A
 ; Expires: 1 day
-; Count: 40,319 domains
+; Count: 40,338 domains
 ; Source: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easyprivacy.txt
 ; License: MIT
 ; Release: RPZ
-; Last update: April 17, 2026 at 3:26 PM UTC | 2026-04-17T15:26:13.448Z
+; Last update: April 18, 2026 at 12:26 AM UTC | 2026-04-18T00:26:06.978Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
@@ -63,6 +63,8 @@ aditude.cloud CNAME .
 *.aditude.cloud CNAME .
 admaxium.com CNAME .
 *.admaxium.com CNAME .
+admediasales.com CNAME .
+*.admediasales.com CNAME .
 admetrics.events CNAME .
 *.admetrics.events CNAME .
 adnext.co CNAME .
@@ -81,6 +83,8 @@ adstk.io CNAME .
 *.adstk.io CNAME .
 adultium.com CNAME .
 *.adultium.com CNAME .
+advertease.store CNAME .
+*.advertease.store CNAME .
 afrdtech.com CNAME .
 *.afrdtech.com CNAME .
 aftership-pixel.com CNAME .
@@ -121,6 +125,8 @@ astarsbuilding.com CNAME .
 *.astarsbuilding.com CNAME .
 atmtd.com CNAME .
 *.atmtd.com CNAME .
+audiencetrk.com CNAME .
+*.audiencetrk.com CNAME .
 australiarevival.com CNAME .
 *.australiarevival.com CNAME .
 avads.net CNAME .
@@ -223,6 +229,8 @@ convead.io CNAME .
 *.convead.io CNAME .
 convertlink.com CNAME .
 *.convertlink.com CNAME .
+coolretargeting.com CNAME .
+*.coolretargeting.com CNAME .
 counter247.live CNAME .
 *.counter247.live CNAME .
 cpx.to CNAME .
@@ -277,6 +285,8 @@ dwin1.com CNAME .
 *.dwin1.com CNAME .
 dwin2.com CNAME .
 *.dwin2.com CNAME .
+e-ads.com CNAME .
+*.e-ads.com CNAME .
 e1e.io CNAME .
 *.e1e.io CNAME .
 eagle-insight.com CNAME .
@@ -549,6 +559,8 @@ log.dance CNAME .
 *.log.dance CNAME .
 logicanalytics.io CNAME .
 *.logicanalytics.io CNAME .
+logstracker.com CNAME .
+*.logstracker.com CNAME .
 logtail.com CNAME .
 *.logtail.com CNAME .
 loopcybersec.com CNAME .
@@ -567,6 +579,8 @@ mapixl.com CNAME .
 *.mapixl.com CNAME .
 markadver.com CNAME .
 *.markadver.com CNAME .
+match2one.net CNAME .
+*.match2one.net CNAME .
 matheranalytics.com CNAME .
 *.matheranalytics.com CNAME .
 mathilde-ads.com CNAME .
@@ -617,8 +631,12 @@ mors22.com CNAME .
 *.mors22.com CNAME .
 motu-teamblue.services CNAME .
 *.motu-teamblue.services CNAME .
+mpstech.space CNAME .
+*.mpstech.space CNAME .
 mrpdata.net CNAME .
 *.mrpdata.net CNAME .
+msfunction.online CNAME .
+*.msfunction.online CNAME .
 mt48.net CNAME .
 *.mt48.net CNAME .
 mxradon.com CNAME .
@@ -705,10 +723,14 @@ progmxs.com CNAME .
 *.progmxs.com CNAME .
 protechts.net CNAME .
 *.protechts.net CNAME .
+purcartz.com CNAME .
+*.purcartz.com CNAME .
 purple-hit.com CNAME .
 *.purple-hit.com CNAME .
 pushvisit.xyz CNAME .
 *.pushvisit.xyz CNAME .
+pxlnow.in CNAME .
+*.pxlnow.in CNAME .
 pxlstat.com CNAME .
 *.pxlstat.com CNAME .
 pzapi-ij.com CNAME .
@@ -743,6 +765,8 @@ rkdms.com CNAME .
 *.rkdms.com CNAME .
 robotflowermobile.com CNAME .
 *.robotflowermobile.com CNAME .
+rt-pixel.com CNAME .
+*.rt-pixel.com CNAME .
 rtactivate.com CNAME .
 *.rtactivate.com CNAME .
 rtgvwr.com CNAME .
@@ -777,6 +801,8 @@ shdid.me CNAME .
 *.shdid.me CNAME .
 shgcdn3.com CNAME .
 *.shgcdn3.com CNAME .
+shop-cart.app CNAME .
+*.shop-cart.app CNAME .
 site24x7rum.eu CNAME .
 *.site24x7rum.eu CNAME .
 sitecounter.site CNAME .
@@ -817,6 +843,8 @@ ssevt.com CNAME .
 *.ssevt.com CNAME .
 stack-sonar.com CNAME .
 *.stack-sonar.com CNAME .
+stalkoda.com CNAME .
+*.stalkoda.com CNAME .
 stat.ovh CNAME .
 *.stat.ovh CNAME .
 statisticplatform.com CNAME .
@@ -863,6 +891,8 @@ track-selectmedia.com CNAME .
 *.track-selectmedia.com CNAME .
 trackclicks.info CNAME .
 *.trackclicks.info CNAME .
+trackier.com CNAME .
+*.trackier.com CNAME .
 tracking24.net CNAME .
 *.tracking24.net CNAME .
 trakle01.online CNAME .
@@ -1655,6 +1685,8 @@ caspionlog.appspot.com CNAME .
 *.caspionlog.appspot.com CNAME .
 castify-trk.playitviral.com CNAME .
 *.castify-trk.playitviral.com CNAME .
+cbso.uk.net CNAME .
+*.cbso.uk.net CNAME .
 cc.swiftype.com CNAME .
 *.cc.swiftype.com CNAME .
 ccexperimentsstatic.oracleoutsourcing.com CNAME .
@@ -1963,6 +1995,8 @@ doppler-config.cbsivideo.com CNAME .
 *.doppler-config.cbsivideo.com CNAME .
 doppler-reporting.cbsivideo.com CNAME .
 *.doppler-reporting.cbsivideo.com CNAME .
+doubleclick.uk.net CNAME .
+*.doubleclick.uk.net CNAME .
 dx.mountain.com CNAME .
 *.dx.mountain.com CNAME .
 dynamic.ziftsolutions.com CNAME .
@@ -2843,6 +2877,8 @@ retargeting.newsmanapp.com CNAME .
 *.retargeting.newsmanapp.com CNAME .
 rg-3tn.pages.dev CNAME .
 *.rg-3tn.pages.dev CNAME .
+rp.mustreadnew.com CNAME .
+*.rp.mustreadnew.com CNAME .
 rs.sinajs.cn CNAME .
 *.rs.sinajs.cn CNAME .
 rt.flix360.com CNAME .
@@ -3767,6 +3803,8 @@ web-vitals-script.leaderint.workers.dev CNAME .
 *.web-vitals-script.leaderint.workers.dev CNAME .
 web1.51.la CNAME .
 *.web1.51.la CNAME .
+webevents.kayzen.io CNAME .
+*.webevents.kayzen.io CNAME .
 websdk.appsflyer.com CNAME .
 *.websdk.appsflyer.com CNAME .
 websdk.appsflyersdk.com CNAME .
