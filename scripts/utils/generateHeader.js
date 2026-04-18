@@ -1,18 +1,18 @@
 module.exports = (title, description, count, { modifiedBy, source, homepage, license } = {}) => {
 	const lines = [
-		`# Tytuł: ${title || 'Nieznany'}`,
-		...(description ? [`# Opis: ${description}`] : []),
+		`# Title: ${title || 'Unknown'}`,
+		...(description ? [`# Description: ${description}`] : []),
 		`# Entries: ${count != null ? `${Number(count).toLocaleString('en-US')} domains` : 'Unknown'}`,
-		...(!source ? ['# Autor: Sefinek <contact@sefinek.net> (https://sefinek.net)'] : []),
+		...(!source ? ['# Author: Sefinek <contact@sefinek.net> (https://sefinek.net)'] : []),
 	];
 
-	if (source) lines.push(`# Źródło: ${homepage ? `${source} | ${homepage}` : source}`);
-	if (modifiedBy) lines.push(`# Zmodyfikowane przez: ${modifiedBy}`);
+	if (source) lines.push(`# Source: ${homepage ? `${source} | ${homepage}` : source}`);
+	if (modifiedBy) lines.push(`# Modified by: ${modifiedBy}`);
 
-	lines.push(`# Licencja: ${license || 'Nieznana, sprawdź źródło'}`);
+	lines.push(`# License: ${license || 'Unknown, check the source'}`);
 	lines.push('# Format: {Format}');
-	lines.push('# Wygasa: 1 dzień');
-	lines.push('# Ostatnia aktualizacja: {LastUpdate}');
+	lines.push('# Expires: 1 day');
+	lines.push('# Last updated: {LastUpdate}');
 
 	return `#       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 #      / ____| |  ____| |  ____| |_   _| | \\ | | |  ____| | |/ /       |  _ \\  | |       / __ \\   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -23,8 +23,8 @@ module.exports = (title, description, count, { modifiedBy, source, homepage, lic
 #
 ${lines.join('\n')}
 #
-# Ten plik jest częścią Sefinek Blocklist Collection, utrzymywanej przez Sefinek.
-# Oficjalna strona: https://blocklist.sefinek.net
-# Zgłoś fałszywe pozytywy: https://blocklist.sefinek.net/false-positives
+# This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
+# Homepage: https://blocklist.sefinek.net
+# Report false positives: https://blocklist.sefinek.net/false-positives
 # -------------------------------------------------------------------------------------------------------------------------------------------------------`;
 };
