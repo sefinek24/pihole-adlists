@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026041801 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026041805 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,14 +9,14 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ;                                            The best blocklist collection: https://blocklist.sefinek.net
-; Title: AntiPhishingDiscordSteam
-; Description: This list blocks known domains used in the VOIP application Discord by scammers. Adding this list to your Pi-Hole blocklist will prevent those domains from loading.
+; Title: AntiPhishing Discord & Steam
+; Description: Blocks known domains used by scammers in Discord and Steam communities.
 ; Expires: 1 day
 ; Count: 37,087 domains
 ; Source: https://raw.githubusercontent.com/Dogino/Discord-Phishing-URLs/main/pihole-phishing-adlist.txt
 ; License: Unknown, check the source
 ; Release: RPZ
-; Last update: April 18, 2026 at 3:59 AM UTC | 2026-04-18T03:59:45.940Z
+; Last update: April 18, 2026 at 5:35 AM UTC | 2026-04-18T05:35:38.807Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives

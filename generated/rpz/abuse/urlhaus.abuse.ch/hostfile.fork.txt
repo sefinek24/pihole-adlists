@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026041801 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026041805 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,13 +9,13 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ;                                            The best blocklist collection: https://blocklist.sefinek.net
-; Title: ###############################################################
+; Title: URLhaus Malicious Hosts
 ; Expires: 1 day
-; Count: 490 domains
+; Count: 493 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Release: RPZ
-; Last update: April 18, 2026 at 3:59 AM UTC | 2026-04-18T03:59:45.004Z
+; Last update: April 18, 2026 at 5:35 AM UTC | 2026-04-18T05:35:34.707Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
@@ -28,6 +28,8 @@ $TTL 300
 *.123.ywxww.net CNAME .
 1717.1000uc.com CNAME .
 *.1717.1000uc.com CNAME .
+176.65.148.173.ptr.pfcloud.network CNAME .
+*.176.65.148.173.ptr.pfcloud.network CNAME .
 248bestmoon.click CNAME .
 *.248bestmoon.click CNAME .
 aaronart.com CNAME .
@@ -138,6 +140,8 @@ bombayonline.in CNAME .
 *.bombayonline.in CNAME .
 book.rollingvideogames.com CNAME .
 *.book.rollingvideogames.com CNAME .
+boydjackson.org CNAME .
+*.boydjackson.org CNAME .
 bracell.latitude.net.br CNAME .
 *.bracell.latitude.net.br CNAME .
 bridgeroad.maverickpreviews.com CNAME .
@@ -146,8 +150,6 @@ brightworks.cz CNAME .
 *.brightworks.cz CNAME .
 brukva.shop CNAME .
 *.brukva.shop CNAME .
-bvaco.com CNAME .
-*.bvaco.com CNAME .
 c.fi3.me CNAME .
 *.c.fi3.me CNAME .
 cad.659t.cn CNAME .
@@ -156,6 +158,8 @@ cat.xiaoshabi.nl CNAME .
 *.cat.xiaoshabi.nl CNAME .
 catbaparadisehotel.com.vn CNAME .
 *.catbaparadisehotel.com.vn CNAME .
+cause-impact.com CNAME .
+*.cause-impact.com CNAME .
 ccleaner.gl CNAME .
 *.ccleaner.gl CNAME .
 cdaonline.com.ar CNAME .
@@ -202,8 +206,6 @@ continentalgroup.net.in CNAME .
 *.continentalgroup.net.in CNAME .
 controliumbt.com CNAME .
 *.controliumbt.com CNAME .
-coorsamexico.mx CNAME .
-*.coorsamexico.mx CNAME .
 coralasargetia.ro CNAME .
 *.coralasargetia.ro CNAME .
 corporacioncrf.com CNAME .
@@ -334,8 +336,6 @@ fakers.co.jp CNAME .
 *.fakers.co.jp CNAME .
 farschid.de CNAME .
 *.farschid.de CNAME .
-femilamom.net CNAME .
-*.femilamom.net CNAME .
 fenbushijujuefuwu.com CNAME .
 *.fenbushijujuefuwu.com CNAME .
 fertas.com.tr CNAME .
@@ -354,6 +354,8 @@ flyingmutts.com CNAME .
 *.flyingmutts.com CNAME .
 friendlydomain.ru CNAME .
 *.friendlydomain.ru CNAME .
+frozi.cc CNAME .
+*.frozi.cc CNAME .
 ftp.ywxww.net CNAME .
 *.ftp.ywxww.net CNAME .
 furystaff.tech CNAME .
@@ -370,6 +372,8 @@ genghis.yzz.me CNAME .
 *.genghis.yzz.me CNAME .
 geo-foundation.vg CNAME .
 *.geo-foundation.vg CNAME .
+gerlimeri.net CNAME .
+*.gerlimeri.net CNAME .
 globalbank.us CNAME .
 *.globalbank.us CNAME .
 globaltechbilling.com CNAME .
@@ -418,8 +422,6 @@ img.ipxxxx.com CNAME .
 *.img.ipxxxx.com CNAME .
 in-oman-liner.com CNAME .
 *.in-oman-liner.com CNAME .
-incredibletadoba.com CNAME .
-*.incredibletadoba.com CNAME .
 indeanapolice.cc CNAME .
 *.indeanapolice.cc CNAME .
 injectroblox.ru CNAME .
@@ -440,8 +442,6 @@ izocab.com CNAME .
 *.izocab.com CNAME .
 izogard.com CNAME .
 *.izogard.com CNAME .
-jawaratekno.com CNAME .
-*.jawaratekno.com CNAME .
 jem-mialwe.com CNAME .
 *.jem-mialwe.com CNAME .
 jem-mialwe.net CNAME .
@@ -546,6 +546,8 @@ mitreart.com CNAME .
 *.mitreart.com CNAME .
 mobshah.com CNAME .
 *.mobshah.com CNAME .
+mockupcorporation.com CNAME .
+*.mockupcorporation.com CNAME .
 mogimall.com CNAME .
 *.mogimall.com CNAME .
 movtime76.shop CNAME .
@@ -600,8 +602,6 @@ okhan.net CNAME .
 *.okhan.net CNAME .
 oknoplastik.sk CNAME .
 *.oknoplastik.sk CNAME .
-omax.com.pk CNAME .
-*.omax.com.pk CNAME .
 onfiltre.com.tr CNAME .
 *.onfiltre.com.tr CNAME .
 onyxcyberedge.de CNAME .
@@ -630,6 +630,8 @@ p3.zbjimg.com CNAME .
 *.p3.zbjimg.com CNAME .
 palharesinformatica.com.br CNAME .
 *.palharesinformatica.com.br CNAME .
+panychurasc0.com CNAME .
+*.panychurasc0.com CNAME .
 pay.aqiu6.com CNAME .
 *.pay.aqiu6.com CNAME .
 pcupd.com CNAME .
@@ -698,6 +700,8 @@ sablayan.seasonshotelmindoro.com CNAME .
 *.sablayan.seasonshotelmindoro.com CNAME .
 sabungkingbet189.com CNAME .
 *.sabungkingbet189.com CNAME .
+satuatlas.com CNAME .
+*.satuatlas.com CNAME .
 save.jnrsmcu.com CNAME .
 *.save.jnrsmcu.com CNAME .
 scainseto.com.br CNAME .
@@ -732,8 +736,6 @@ sk-comtel.com CNAME .
 *.sk-comtel.com CNAME .
 smartermail.host CNAME .
 *.smartermail.host CNAME .
-soft.110route.com CNAME .
-*.soft.110route.com CNAME .
 softcatalog.ru CNAME .
 *.softcatalog.ru CNAME .
 solar-sanat.net CNAME .
@@ -826,6 +828,8 @@ valfanto.com CNAME .
 *.valfanto.com CNAME .
 vault88x.secure-efficient2.su CNAME .
 *.vault88x.secure-efficient2.su CNAME .
+vcc-library.uk CNAME .
+*.vcc-library.uk CNAME .
 versaclean.com.br CNAME .
 *.versaclean.com.br CNAME .
 veryboys.com CNAME .
@@ -904,6 +908,8 @@ longfeng188.com CNAME .
 *.longfeng188.com CNAME .
 medises.co.kr CNAME .
 *.medises.co.kr CNAME .
+mevetlab.cl CNAME .
+*.mevetlab.cl CNAME .
 mixturro.com CNAME .
 *.mixturro.com CNAME .
 mobimpex.ro CNAME .
