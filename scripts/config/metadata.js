@@ -39,7 +39,7 @@ module.exports = {
 	'extensions/MajkiIT/adguard-host.fork.txt': { title: 'Polish AdGuard Host Filter', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
 	'extensions/MajkiIT/easy-privacy-host.fork.txt': { title: 'Polish Easy Privacy Host Filter', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
 	'extensions/hagezi/pro.fork.txt': { title: 'HaGeZi\'s Pro DNS Blocklist', description: 'Big broom - Cleans the Internet and protects your privacy! Blocks Ads, Affiliate, Tracking, Metrics, Telemetry, Phishing, Malware, Scam, Fake, Cryptojacking and other "Crap".', license: 'https://github.com/hagezi/dns-blocklists/blob/main/LICENSE' },
-	'extensions/oisd/big.fork.txt': { title: 'oisd big', description: 'Block. Don\'t break.', license: 'https://github.com/sjhgvr/oisd/blob/main/LICENSE' },
+	'extensions/oisd/big.fork.txt': { title: 'oisd big', description: 'Block. Don\'t break.', homepage: 'https://oisd.nl', license: 'https://github.com/sjhgvr/oisd/blob/main/LICENSE' },
 	'extensions/r-a-y/AdguardApps.fork.txt': { title: 'AdGuard Apps Blocklist' },
 	'extensions/r-a-y/AdguardMobileSpyware.fork.txt': { title: 'AdGuard Mobile Spyware Blocklist' },
 
@@ -92,7 +92,7 @@ module.exports = {
 	'porn/StevenBlack/porn.fork.txt': { title: 'StevenBlack Porn Extension', homepage: 'https://github.com/StevenBlack/hosts' },
 	'porn/blocklistproject/porn.fork.txt': { title: 'Porn Blocklist', description: 'Adult content domains' },
 	'porn/hagezi/nsfw-onlydomains.fork.txt': { title: 'HaGeZi\'s NSFW DNS Blocklist', description: 'Blocks adult content.', license: 'https://github.com/hagezi/dns-blocklists/blob/main/LICENSE' },
-	'porn/oisd/nsfw.fork.txt': { title: 'oisd nsfw', description: 'Block. Don\'t break.', license: 'https://github.com/sjhgvr/oisd/blob/main/LICENSE' },
+	'porn/oisd/nsfw.fork.txt': { title: 'oisd nsfw', description: 'Block. Don\'t break.', homepage: 'https://oisd.nl', license: 'https://github.com/sjhgvr/oisd/blob/main/LICENSE' },
 
 	// ── Ransomware ───────────────────────────────────────────────────────────
 	'ransomware/blocklistproject/ransomware.fork.txt': { title: 'Ransomware Blocklist', description: 'Ransomware C2 and distribution domains' },
