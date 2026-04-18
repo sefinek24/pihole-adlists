@@ -1,4 +1,4 @@
-name: Download and update blocklists
+name: Download and update external blocklists
 
 on:
   schedule: # https://crontab.guru
@@ -40,9 +40,9 @@ jobs:
           git config --global user.name "Sefinek Actions"
           git config --global user.email "sefinek.actions@gmail.com"
 
-      - name: Download blocklists
+      - name: Download external blocklists
         run: bash bash/download.sh
 
       - uses: ./.github/actions/process-and-commit
         with:
-          commit_message: "Main blocklist update every 3h"
+          commit_message: "External blocklist update every 3h"

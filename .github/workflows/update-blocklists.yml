@@ -1,4 +1,4 @@
-name: Update manually added domains
+name: Update own lists
 
 on:
   push:
@@ -43,7 +43,7 @@ jobs:
           git config --global user.name "Sefinek Actions"
           git config --global user.email "sefinek.actions@gmail.com"
 
-      - name: Clean up lists/ and commit to main
+      - name: Deduplicate lists/ and push to main
         run: |
           node scripts/pipeline/dedupe.js lists
 
@@ -53,10 +53,10 @@ jobs:
             echo "No changes in lists/ to commit."
           else
             FILE_COUNT=$(git diff --name-only --cached | grep -c . || true)
-            git commit -m "chore: cleanup lists/ [$FILE_COUNT files] [skip ci]"
+            git commit -m "chore: dedupe lists/ [$FILE_COUNT files] [skip ci]"
             git push origin main
           fi
 
       - uses: ./.github/actions/process-and-commit
         with:
-          commit_message: "Update previously committed blocklists in ${{ github.sha }}"
+          commit_message: "Update own lists (${{ github.sha }})"

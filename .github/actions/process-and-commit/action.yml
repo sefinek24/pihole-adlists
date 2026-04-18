@@ -1,5 +1,5 @@
 name: Process and commit blocklists
-description: Prepare templates, generate all formats, count domains, and commit to blocklists branch.
+description: Copy lists to templates, clean up, generate all formats, update domain counts, and push to the blocklists branch.
 
 inputs:
   commit_message:
@@ -9,19 +9,19 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Prepare templates
+    - name: Copy lists to templates
       shell: bash
       run: node scripts/pipeline/prepare.js
 
-    - name: Remove duplicates from templates
+    - name: Deduplicate templates
       shell: bash
       run: node scripts/pipeline/dedupe.js blocklists/templates
 
-    - name: Remove whitelisted domains
+    - name: Apply whitelist
       shell: bash
       run: node scripts/pipeline/whitelist.js
 
-    - name: Lint
+    - name: Lint domains
       shell: bash
       run: node scripts/lint.js
 
@@ -29,7 +29,7 @@ runs:
       shell: bash
       run: node scripts/generate/index.js
 
-    - name: Count domains
+    - name: Update domain counts
       shell: bash
       run: node scripts/update-counts.js
 
