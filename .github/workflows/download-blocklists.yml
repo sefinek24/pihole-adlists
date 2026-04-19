@@ -43,6 +43,43 @@ jobs:
       - name: Download external blocklists
         run: bash bash/download.sh
 
-      - uses: ./.github/actions/process-and-commit
-        with:
-          commit_message: "External blocklist update every 3h"
+      - name: Copy lists to templates
+        run: node scripts/pipeline/prepare.js
+
+      - name: Deduplicate templates
+        run: node scripts/pipeline/dedupe.js blocklists/templates
+
+      - name: Apply whitelist
+        run: node scripts/pipeline/whitelist.js
+
+      - name: Lint domains
+        run: node scripts/lint.js
+
+      - name: Generate all formats
+        run: node scripts/generate/index.js
+
+      - name: Update domain counts
+        run: node scripts/update-counts.js
+
+      - name: Commit and push to blocklists branch
+        run: |
+          cd blocklists
+
+          git pull origin blocklists
+
+          git add templates/ generated/ cache/
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Canceled. No changes to commit."
+            exit 0
+          fi
+
+          MODIFIED_FILES=$(git diff --name-only HEAD | grep -v '^cache/')
+          FILE_COUNT=$(echo "$MODIFIED_FILES" | grep -c . || true)
+          if [ "$FILE_COUNT" -eq 0 ]; then
+            echo "Canceled. Only cache/ changes detected."
+            exit 0
+          fi
+
+          git commit -m "External blocklist update every 3h [$FILE_COUNT files] - $(date -u '+%Y-%m-%d %H:%M:%S UTC')" -m "$MODIFIED_FILES"
+          git push origin blocklists
