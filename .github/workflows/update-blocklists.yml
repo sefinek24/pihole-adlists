@@ -53,7 +53,7 @@ jobs:
             echo "No changes in lists/ to commit."
           else
             FILE_COUNT=$(git diff --name-only --cached | grep -c . || true)
-            git commit -m "chore: dedupe lists/ [$FILE_COUNT files] [skip ci]"
+            git commit -m "Deduplicate lists/ [$FILE_COUNT files] [skip ci]"
             git push origin main
           fi
 
