@@ -13,7 +13,7 @@
 const createdDate = new Date(db.createdAt);
 const updatedDate = new Date(db.updatedAt);
 const responsesObj = db.responses instanceof Map ? Object.fromEntries(db.responses) : db.responses;
-const responseCodes = responsesObj ? Object.keys(responsesObj).sort() : [];
+const responseCodes = responsesObj ? Object.keys(responsesObj).filter(c => parseInt(c) < 500).sort() : [];
 const categories = [
     { id: 'hosts', label: '0.0.0.0', ariaLabel: 'IP 0.0.0.0 format' },
     { id: 'localhost', label: '127.0.0.1', ariaLabel: 'Localhost format' },

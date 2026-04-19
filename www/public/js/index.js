@@ -50,7 +50,7 @@ const handleWebSocketMessage = event => {
 		}
 
 		if (stats.responses && typeof stats.responses === 'object') {
-			Object.entries(stats.responses).forEach(([code, count]) => updateStats(`response-${code}`, count));
+			Object.entries(stats.responses).filter(([code]) => +code < 500).forEach(([code, count]) => updateStats(`response-${code}`, count));
 		}
 
 		if (uptime) updateStats('uptime', uptime);
