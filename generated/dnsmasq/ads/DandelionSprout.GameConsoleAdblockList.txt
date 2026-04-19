@@ -5,25 +5,32 @@
 #      ____) | | |____  | |       _| |_  | |\  | | |____  | . \        | |_) | | |____  | |__| | | |____  | . \  | |____   _| |_   ____) |    | |
 #     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 #
-#                                            The best blocklist collection: https://blocklist.sefinek.net
-# Title: Block game console ads
-# Description: N/A
-# Expires: 1 day
-# Count: 8 domains
-# Author: Sefinek (https://sefinek.net) <contact@sefinek.net>
+# Title: Block all game console ad domains
+# Entries: 16 domains
+# Author: Sefinek <contact@sefinek.net> (https://sefinek.net)
 # Modified by: cochcoder <cochcoderContact@gmail.com>, Sefinek <contact@sefinek.net>
-# License: DandelionSprout/adfilt is licensed under the Dandelicence License
-# Release: Dnsmasq
-# Last update: April 15, 2026 at 7:17 PM UTC | 2026-04-15T19:17:00.838Z
+# License: Dandelicence (https://github.com/DandelionSprout/adfilt/blob/master/LICENSE.md)
+# Format: Dnsmasq
+# Expires: 1 day
+# Last updated: April 19, 2026 at 12:28 AM UTC | 2026-04-19T00:28:15.331Z
 #
 # This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
-# If you encounter any false positives, please report them at: https://blocklist.sefinek.net/false-positives
+# Homepage: https://blocklist.sefinek.net
+# Report false positives: https://blocklist.sefinek.net/false-positives
 # -------------------------------------------------------------------------------------------------------------------------------------------------------
+server=/adproxy.ndmdhs.com/
 server=/at.atwola.com/
 server=/discovery.olv.nintendo.net/
+server=/mercury.dl.playstation.net/
 server=/npdl.cdn.nintendowifi.net/
+server=/nsx-e.np.dl.playstation.net/
+server=/nsx.np.dl.playstation.net/
 server=/nw-umwatson.events.data.microsoft.com/
 server=/rad.msn.com/
+server=/realtime-receive-lp1.dg.srv.nintendo.net/
+server=/receive-lp1.dg.srv.nintendo.net/
+server=/receive-lp1.er.srv.nintendo.net/
+server=/sprofile-lp1.cdn.nintendo.net/
 server=/telemetry-cii.api.playstation.com/
 server=/telemetry-console.api.playstation.com/
 server=/watson.events.data.microsoft.com/
