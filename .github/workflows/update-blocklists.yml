@@ -56,7 +56,7 @@ jobs:
             echo "No changes in lists/ to commit."
           else
             FILE_COUNT=$(git diff --name-only --cached | grep -c . || true)
-            git commit -m "Deduplicate lists/ [$FILE_COUNT files] [skip ci]"
+            git commit -m "Deduplicate lists/ (${{ github.sha }}) [$FILE_COUNT files] [skip ci] - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
             git push origin main
           fi
 
