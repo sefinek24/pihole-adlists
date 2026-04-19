@@ -57,7 +57,7 @@ jobs:
             git push origin main
           fi
 
-      - name: Copy lists to templates
+      - name: Prepare templates
         run: node scripts/pipeline/prepare.js
 
       - name: Deduplicate templates

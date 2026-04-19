@@ -43,7 +43,7 @@ jobs:
       - name: Download external blocklists
         run: bash bash/download.sh
 
-      - name: Copy lists to templates
+      - name: Prepare templates
         run: node scripts/pipeline/prepare.js
 
       - name: Deduplicate templates
