@@ -63,9 +63,6 @@ module.exports = {
 	'malicious/bigdargon/hostsVN.fork.txt': { title: 'HostsVN Malware Blocklist' },
 	'malicious/blocklistproject/malware.fork.txt': { title: 'Malware Blocklist' },
 	'malicious/disconnectme/simple-malvertising.fork.txt': { title: 'Disconnect.me Simple Malvertising Blocklist' },
-	'malicious/phishing.txt': { title: 'Block phishing websites', description: 'Blocks domains known to host phishing content targeting users.', license: 'CC BY-NC-ND 4.0' },
-	'malicious/reported-by-norton.txt': { title: 'Block websites reported by Norton Antivirus as malicious', description: 'These websites may contain malware, viruses, phishing scams, or other types of harmful content. Remember not to visit these websites.', license: 'CC BY-NC-ND 4.0' },
-	'malicious/web-attacks.txt': { title: 'Block websites reported by Norton Antivirus as sources of network attacks', description: 'Blocks domains reported by Norton Antivirus as sources of network and web-based attacks.', license: 'CC BY-NC-ND 4.0' },
 
 	// ── Other ────────────────────────────────────────────────────────────────
 	'other/StevenBlack/hosts.fork.txt': { title: 'StevenBlack Unified Hosts', description: 'Unified hosts file with base extensions, combining multiple reputable blocklists.', homepage: 'https://github.com/StevenBlack/hosts', license: 'CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)' },
