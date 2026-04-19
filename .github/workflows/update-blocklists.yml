@@ -57,6 +57,9 @@ jobs:
             git push origin main
           fi
 
+      - name: Apply whitelist to templates
+        run: node scripts/pipeline/whitelist.js
+
       - uses: ./.github/actions/process-and-commit
         with:
           commit_message: "Update own lists (${{ github.sha }})"
