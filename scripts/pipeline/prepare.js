@@ -22,7 +22,7 @@ const isSuspiciousDomain = domain =>
 // Parses a single header comment line from a fork file.
 // Returns { key, value } for "# Key: value" lines, or { title } for plain lines.
 const parseForkLine = (line, hasTitleAlready) => {
-	const kv = line.match(/^#\s+(\w[^:\n]{1,40}):\s+(.+)/);
+	const kv = line.match(/^[#!]\s+(\w[^:\n]{1,40}):\s+(.+)/);
 	if (kv) {
 		const key = kv[1].trim().toLowerCase().replace(/[\s-]+/g, '_');
 		return { key, value: kv[2].trim() };

@@ -7,10 +7,10 @@ module.exports = {
 	'ads/MajkiIT/SmartTV-ads.fork.txt': { title: 'Polish Smart TV Ads Blocklist', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
 	'ads/ShadowWhisperer/Ads.fork.txt': { title: 'ShadowWhisperer Ads Blocklist' },
 	'ads/adaway/hosts.fork.txt': { title: 'AdAway Default Blocklist' },
-	'ads/blocklistproject/hosts.fork.txt': { title: 'Ads Blocklist', description: 'Ad serving domains' },
+	'ads/blocklistproject/hosts.fork.txt': { title: 'Ads Blocklist' },
 	'ads/craiu/mobiletrackers.fork.txt': { title: 'Mobile Trackers Blocklist' },
 	'ads/crazy-max/spy.fork.txt': { title: 'WindowsSpyBlocker Spy Hosts' },
-	'ads/disconnectme/simple-ad.fork.txt': { title: 'Disconnect.me Simple Ad Blocklist', license: 'GPLv3' },
+	'ads/disconnectme/simple-ad.fork.txt': { title: 'Disconnect.me Simple Ad Blocklist' },
 	'ads/firebog/AdguardDNS.fork.txt': { title: 'Firebog AdGuard DNS Blocklist' },
 	'ads/firebog/Admiral.fork.txt': { title: 'Firebog Admiral Blocklist' },
 	'ads/firebog/Easylist.fork.txt': { title: 'Firebog Easylist Blocklist' },
@@ -33,13 +33,12 @@ module.exports = {
 	'dead-domains/jarelllama/dead-domains.fork.txt': { title: 'Jarelllama Dead Domains' },
 
 	// ── Drugs ────────────────────────────────────────────────────────────────
-	'drugs/blocklistproject/drugs.fork.txt': { title: 'Drugs Blocklist', description: 'Drug-related domains' },
+	'drugs/blocklistproject/drugs.fork.txt': { title: 'Drugs Blocklist' },
 
 	// ── Extensions ───────────────────────────────────────────────────────────
 	'extensions/MajkiIT/adguard-host.fork.txt': { title: 'Polish AdGuard Host Filter', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
 	'extensions/MajkiIT/easy-privacy-host.fork.txt': { title: 'Polish Easy Privacy Host Filter', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
-	'extensions/hagezi/pro.fork.txt': { title: 'HaGeZi\'s Pro DNS Blocklist', description: 'Big broom - Cleans the Internet and protects your privacy! Blocks Ads, Affiliate, Tracking, Metrics, Telemetry, Phishing, Malware, Scam, Fake, Cryptojacking and other "Crap".', license: 'https://github.com/hagezi/dns-blocklists/blob/main/LICENSE' },
-	'extensions/oisd/big.fork.txt': { title: 'oisd big', description: 'Block. Don\'t break.', homepage: 'https://oisd.nl', license: 'https://github.com/sjhgvr/oisd/blob/main/LICENSE' },
+	'extensions/hagezi/pro.fork.txt': { description: 'Big broom - Cleans the Internet and protects your privacy! Blocks Ads, Affiliate, Tracking, Metrics, Telemetry, Phishing, Malware, Scam, Fake, Cryptojacking and other "Crap".' },
 	'extensions/r-a-y/AdguardApps.fork.txt': { title: 'AdGuard Apps Blocklist' },
 	'extensions/r-a-y/AdguardMobileSpyware.fork.txt': { title: 'AdGuard Mobile Spyware Blocklist' },
 
@@ -47,14 +46,13 @@ module.exports = {
 	'fakenews/StevenBlack/hosts.fork.txt': { title: 'StevenBlack Fake News Extension', homepage: 'https://github.com/StevenBlack/hosts' },
 
 	// ── Fraud ────────────────────────────────────────────────────────────────
-	'fraud/blocklistproject/hosts.fork.txt': { title: 'Fraud Blocklist', description: 'Fraud and scam domains' },
+	'fraud/blocklistproject/hosts.fork.txt': { title: 'Fraud Blocklist' },
 
 	// ── Gambling ─────────────────────────────────────────────────────────────
 	'gambling/MajkiIT/gambling-hosts.fork.txt': { title: 'Polish Gambling Hosts Filter' },
 	'gambling/StevenBlack/hosts.fork.txt': { title: 'StevenBlack Gambling Extension', homepage: 'https://github.com/StevenBlack/hosts' },
 	'gambling/TrustPositif/gambling-indonesia.fork.txt': { title: 'TrustPositif Gambling Indonesia' },
-	'gambling/blocklistproject/hosts.fork.txt': { title: 'Gambling Blocklist', description: 'Gambling sites' },
-	'gambling/hagezi/gambling-onlydomains.fork.txt': { title: 'HaGeZi\'s Gambling DNS Blocklist', description: 'Blocks gambling content.', license: 'https://github.com/hagezi/dns-blocklists/blob/main/LICENSE' },
+	'gambling/blocklistproject/hosts.fork.txt': { title: 'Gambling Blocklist' },
 
 	// ── Malicious ────────────────────────────────────────────────────────────
 	'malicious/AssoEchap/stalkerware-indicators.fork.txt': { title: 'Stalkerware Indicators Blocklist' },
@@ -63,24 +61,22 @@ module.exports = {
 	'malicious/ShadowWhisperer/malware.fork.txt': { title: 'ShadowWhisperer Malware Blocklist' },
 	'malicious/Spam404/main-blacklist.fork.txt': { title: 'Spam404 Main Blacklist' },
 	'malicious/bigdargon/hostsVN.fork.txt': { title: 'HostsVN Malware Blocklist' },
-	'malicious/blocklistproject/malware.fork.txt': { title: 'Malware Blocklist', description: 'Malware distribution domains' },
+	'malicious/blocklistproject/malware.fork.txt': { title: 'Malware Blocklist' },
 	'malicious/disconnectme/simple-malvertising.fork.txt': { title: 'Disconnect.me Simple Malvertising Blocklist', license: 'GPLv3' },
-	'malicious/malware-filter/urlhaus-filter-hosts-online.fork.txt': { title: 'Online Malicious Hosts Blocklist', license: 'https://gitlab.com/malware-filter/urlhaus-filter#license' },
 	'malicious/phishing.txt': { title: 'Block phishing websites', description: 'Blocks domains known to host phishing content targeting users.', license: 'CC BY-NC-ND 4.0' },
-	'malicious/quidsup/notrack-malware.fork.txt': { title: 'NoTrack Malware Blocklist', description: 'Domains classified as malware, phishing or adware', license: 'GNU General Public License v3.0' },
 	'malicious/reported-by-norton.txt': { title: 'Block websites reported by Norton Antivirus as malicious', description: 'These websites may contain malware, viruses, phishing scams, or other types of harmful content. Remember not to visit these websites.', license: 'CC BY-NC-ND 4.0' },
 	'malicious/web-attacks.txt': { title: 'Block websites reported by Norton Antivirus as sources of network attacks', description: 'Blocks domains reported by Norton Antivirus as sources of network and web-based attacks.', license: 'CC BY-NC-ND 4.0' },
 
 	// ── Other ────────────────────────────────────────────────────────────────
 	'other/StevenBlack/hosts.fork.txt': { title: 'StevenBlack Unified Hosts', description: 'Unified hosts file with base extensions, combining multiple reputable blocklists.', homepage: 'https://github.com/StevenBlack/hosts', license: 'CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)' },
 	'other/polish-blocklists/MajkiIT/hostfile.fork.txt': { title: 'Polish Ads Filter Hostfile', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
-	'other/polish-blocklists/PolishFiltersTeam/KADhosts.fork.txt': { title: 'KADhosts Polish Blocklist', description: 'Filters protecting against various scams and frauds, including SMS subscriptions, viruses, and fake online stores. Includes entries from CERT Polska, legalniewsieci.pl, and KNF.', homepage: 'https://github.com/PolishFiltersTeam/KADhosts', license: 'CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)' },
+	'other/polish-blocklists/PolishFiltersTeam/KADhosts.fork.txt': { title: 'KADhosts Polish Blocklist', description: 'Filters protecting against various scams and frauds, including SMS subscriptions, viruses, and fake online stores. Includes entries from CERT Polska, legalniewsieci.pl, and KNF.', homepage: 'https://github.com/PolishFiltersTeam/KADhosts' },
 	'other/polish-blocklists/cert.pl/domains-hosts.fork.txt': { title: 'CERT Polska Domains Blocklist' },
 
 	// ── Phishing ─────────────────────────────────────────────────────────────
 	'phishing/Dogino/Discord-Phishing-URLs-phishing.fork.txt': { title: 'AntiPhishing Discord & Steam', description: 'Blocks known domains used by scammers in Discord and Steam communities.' },
 	'phishing/RPiList/Phishing-Angriffe.fork.txt': { title: 'RPiList Phishing Blocklist' },
-	'phishing/blocklistproject/phishing.fork.txt': { title: 'Phishing Blocklist', description: 'Phishing domains' },
+	'phishing/blocklistproject/phishing.fork.txt': { title: 'Phishing Blocklist' },
 	'phishing/phishing.army/blocklist-extended.fork.txt': { title: 'Phishing Army Extended Blocklist' },
 
 	// ── Piracy ───────────────────────────────────────────────────────────────
@@ -90,9 +86,7 @@ module.exports = {
 	'porn/ShadowWhisperer/adult.fork.txt': { title: 'ShadowWhisperer Adult Blocklist' },
 	'porn/Sinfonietta/pornography-hosts.fork.txt': { title: 'Sinfonietta Pornography Hosts' },
 	'porn/StevenBlack/porn.fork.txt': { title: 'StevenBlack Porn Extension', homepage: 'https://github.com/StevenBlack/hosts' },
-	'porn/blocklistproject/porn.fork.txt': { title: 'Porn Blocklist', description: 'Adult content domains' },
-	'porn/hagezi/nsfw-onlydomains.fork.txt': { title: 'HaGeZi\'s NSFW DNS Blocklist', description: 'Blocks adult content.', license: 'https://github.com/hagezi/dns-blocklists/blob/main/LICENSE' },
-	'porn/oisd/nsfw.fork.txt': { title: 'oisd nsfw', description: 'Block. Don\'t break.', homepage: 'https://oisd.nl', license: 'https://github.com/sjhgvr/oisd/blob/main/LICENSE' },
+	'porn/blocklistproject/porn.fork.txt': { title: 'Porn Blocklist' },
 
 	// ── Ransomware ───────────────────────────────────────────────────────────
 	'ransomware/blocklistproject/ransomware.fork.txt': { title: 'Ransomware Blocklist', description: 'Ransomware C2 and distribution domains' },
@@ -103,9 +97,8 @@ module.exports = {
 	// ── Scam ─────────────────────────────────────────────────────────────────
 	'scam/Dogino/Discord-Phishing-URLs-scam.fork.txt': { title: 'Discord Scam URLs Blocklist' },
 	'scam/ShadowWhisperer/scam.fork.txt': { title: 'ShadowWhisperer Scam Blocklist' },
-	'scam/blocklistproject/scam.fork.txt': { title: 'Scam Blocklist', description: 'Scam domains' },
-	'scam/durablenapkin/scamblocklist.fork.txt': { title: 'Durablenapkin Scam Blocklist', license: 'MIT (https://mit-license.org/)' },
-	'scam/jarelllama/scam.fork.txt': { title: 'Jarelllama\'s Scam Blocklist', description: 'Blocklist for newly created scam, phishing, and other malicious domains automatically retrieved daily.', license: 'https://github.com/jarelllama/Scam-Blocklist/blob/main/LICENSE.md' },
+	'scam/blocklistproject/scam.fork.txt': { title: 'Scam Blocklist' },
+	'scam/durablenapkin/scamblocklist.fork.txt': { title: 'Durablenapkin Scam Blocklist' },
 
 	// ── Spam ─────────────────────────────────────────────────────────────────
 	'spam/RPiList/spam-mails.fork.txt': { title: 'RPiList Spam Mails Blocklist' },
@@ -119,9 +112,8 @@ module.exports = {
 	'tracking-and-telemetry/MajkiIT/adguard-mobile-host.fork.txt': { title: 'Polish AdGuard Mobile Host Filter', license: 'https://creativecommons.org/licenses/by-nc-sa/4.0' },
 	'tracking-and-telemetry/ShadowWhisperer/tracking.fork.txt': { title: 'ShadowWhisperer Tracking Blocklist' },
 	'tracking-and-telemetry/ente-dev/tv.fork.txt': { title: 'Ente.dev TV Tracking Blocklist' },
-	'tracking-and-telemetry/frogeye/firstparty-trackers-hosts.txt': { title: 'First-Party Trackers Hosts', license: 'https://git.frogeye.fr/geoffrey/eulaurarien/src/branch/master/LICENSE' },
+	'tracking-and-telemetry/frogeye/firstparty-trackers-hosts.txt': { title: 'First-Party Trackers Hosts' },
 	'tracking-and-telemetry/neodevpro/host.fork.txt': { title: 'NeoDevPro Host Blocklist' },
-	'tracking-and-telemetry/quidsup/trackers-hosts.fork.txt': { title: 'NoTrack Tracker Blocklist', description: 'Domains classified as tracking or advertising', license: 'GNU General Public License v3.0' },
 
 	// ── Useless websites ─────────────────────────────────────────────────────
 	'useless-websites/jarelllama/parked-domains.fork.txt': { title: 'Jarelllama Parked Domains' },
