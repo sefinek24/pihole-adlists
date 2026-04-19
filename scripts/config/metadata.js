@@ -56,7 +56,7 @@ module.exports = {
 
 	// ── Malicious ────────────────────────────────────────────────────────────
 	'malicious/AssoEchap/stalkerware-indicators.fork.txt': { title: 'Stalkerware Indicators Blocklist' },
-	'malicious/DandelionSprout-AntiMalwareHosts.fork.txt': { title: 'Dandelion Sprout\'s Anti-Malware List', description: 'This list blocks domains and domain patterns used in malware redirection trains and domain parking schemes, with many subcategories for broad protection.' },
+	'malicious/DandelionSprout-AntiMalwareHosts.fork.txt': { title: 'Dandelion Sprout\'s Anti-Malware List' },
 	'malicious/RPiList/Malware.fork.txt': { title: 'RPiList Malware Blocklist' },
 	'malicious/ShadowWhisperer/malware.fork.txt': { title: 'ShadowWhisperer Malware Blocklist' },
 	'malicious/Spam404/main-blacklist.fork.txt': { title: 'Spam404 Main Blacklist' },
@@ -74,13 +74,13 @@ module.exports = {
 	'other/polish-blocklists/cert.pl/domains-hosts.fork.txt': { title: 'CERT Polska Domains Blocklist' },
 
 	// ── Phishing ─────────────────────────────────────────────────────────────
-	'phishing/Dogino/Discord-Phishing-URLs-phishing.fork.txt': { title: 'AntiPhishing Discord & Steam', description: 'Blocks known domains used by scammers in Discord and Steam communities.' },
+	'phishing/Dogino/Discord-Phishing-URLs-phishing.fork.txt': { title: 'AntiPhishing Discord & Steam' },
 	'phishing/RPiList/Phishing-Angriffe.fork.txt': { title: 'RPiList Phishing Blocklist' },
 	'phishing/blocklistproject/phishing.fork.txt': { title: 'Phishing Blocklist' },
 	'phishing/phishing.army/blocklist-extended.fork.txt': { title: 'Phishing Army Extended Blocklist' },
 
 	// ── Piracy ───────────────────────────────────────────────────────────────
-	'piracy/blocklistproject/piracy.fork.txt': { title: 'Piracy Blocklist', description: 'Piracy and illegal streaming domains' },
+	'piracy/blocklistproject/piracy.fork.txt': { title: 'Piracy Blocklist' },
 
 	// ── Porn & Adult ─────────────────────────────────────────────────────────
 	'porn/ShadowWhisperer/adult.fork.txt': { title: 'ShadowWhisperer Adult Blocklist' },
@@ -89,10 +89,10 @@ module.exports = {
 	'porn/blocklistproject/porn.fork.txt': { title: 'Porn Blocklist' },
 
 	// ── Ransomware ───────────────────────────────────────────────────────────
-	'ransomware/blocklistproject/ransomware.fork.txt': { title: 'Ransomware Blocklist', description: 'Ransomware C2 and distribution domains' },
+	'ransomware/blocklistproject/ransomware.fork.txt': { title: 'Ransomware Blocklist' },
 
 	// ── Redirect ─────────────────────────────────────────────────────────────
-	'redirect/blocklistproject/redirect.fork.txt': { title: 'Redirect Blocklist', description: 'URL shorteners and redirect domains' },
+	'redirect/blocklistproject/redirect.fork.txt': { title: 'Redirect Blocklist' },
 
 	// ── Scam ─────────────────────────────────────────────────────────────────
 	'scam/Dogino/Discord-Phishing-URLs-scam.fork.txt': { title: 'Discord Scam URLs Blocklist' },
