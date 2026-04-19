@@ -38,5 +38,5 @@ jobs:
       - name: Prepare templates
         run: node scripts/pipeline/prepare.js
 
-      - name: Lint
+      - name: Lint domains
         run: node scripts/lint.js
