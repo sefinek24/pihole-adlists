@@ -10,6 +10,14 @@ let heartbeatInterval = null, reconnectAttempts = 0, reconnectTimeout = null;
 let ws = null;
 let lastMessageTime = Date.now();
 
+const statusDot = document.querySelector('.ws-status-dot');
+const statusText = document.querySelector('.ws-status-text');
+
+const setStatus = (state, text) => {
+	if (statusDot) statusDot.className = `ws-status-dot ${state}`;
+	if (statusText) statusText.textContent = text;
+};
+
 const elementCache = new Map();
 
 const formatNumber = num => num == null ? '0' : (typeof num === 'number' ? num.toLocaleString('en-US') : String(num));
@@ -69,26 +77,19 @@ const handleWebSocketMessage = event => {
 const getReconnectDelay = () => Math.min(RECONNECT_DELAY * Math.pow(1.5, reconnectAttempts), MAX_RECONNECT_DELAY);
 
 const connect = () => {
-	if (!WS_ADDRESS) {
-		console.error('WebSocket address not configured');
-		return;
-	}
-
-	if (ws?.readyState === WebSocket.OPEN || ws?.readyState === WebSocket.CONNECTING) return;
+	if (!WS_ADDRESS || ws?.readyState === WebSocket.OPEN || ws?.readyState === WebSocket.CONNECTING) return;
 
 	ws = new WebSocket(WS_ADDRESS);
+	setStatus('connecting', 'Establishing WebSocket connection...');
 
 	ws.onopen = () => {
 		reconnectAttempts = 0;
 		lastMessageTime = Date.now();
+		setStatus('connected', 'Live data, updates every 2 seconds.');
 
 		if (heartbeatInterval) clearInterval(heartbeatInterval);
 		heartbeatInterval = setInterval(() => {
-			const timeSinceLastMessage = Date.now() - lastMessageTime;
-			if (timeSinceLastMessage > HEARTBEAT_INTERVAL * 2) {
-				console.log('Connection appears stale, reconnecting...');
-				ws.close();
-			}
+			if (Date.now() - lastMessageTime > HEARTBEAT_INTERVAL * 2) ws.close();
 		}, HEARTBEAT_INTERVAL);
 	};
 
@@ -97,7 +98,7 @@ const connect = () => {
 	ws.onerror = err => console.error('WebSocket error:', err);
 
 	ws.onclose = event => {
-		console.log('WebSocket disconnected');
+		setStatus('disconnected', 'WebSocket disconnected. Data may be outdated.');
 
 		if (heartbeatInterval) {
 			clearInterval(heartbeatInterval);
@@ -105,12 +106,10 @@ const connect = () => {
 		}
 
 		if (reconnectTimeout) clearTimeout(reconnectTimeout);
-
-		if (event.code === 4001) return; // Replaced by new connection from the same IP — do not reconnect
+		if (event.code === 4001) return;
 
 		const delay = getReconnectDelay();
-		console.log(`Reconnecting in ${(delay / 1000).toFixed(1)}s...`);
-
+		setStatus('reconnecting', `Reconnecting in ${(delay / 1000).toFixed(0)}s...`);
 		reconnectTimeout = setTimeout(() => {
 			reconnectAttempts++;
 			connect();
@@ -127,6 +126,12 @@ const initDates = () => {
 const init = () => {
 	initDates();
 	connect();
+
+	window.addEventListener('beforeunload', () => {
+		if (reconnectTimeout) clearTimeout(reconnectTimeout);
+		if (heartbeatInterval) clearInterval(heartbeatInterval);
+		if (ws?.readyState === WebSocket.OPEN) ws.close();
+	}, { once: true });
 };
 
 if (document.readyState === 'loading') {

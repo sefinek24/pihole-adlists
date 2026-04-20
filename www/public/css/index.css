@@ -521,6 +521,30 @@ main {
 	word-break:break-all
 }
 
+.ws-status {
+	align-items:center;
+	display:flex;
+	font-size:1rem;
+	gap:7px;
+	justify-content:center;
+	margin:.6rem 0 1.4rem;
+	opacity:.6
+}
+
+.ws-status-dot {
+	background-color:#555;
+	border-radius:50%;
+	flex-shrink:0;
+	height:7px;
+	transition:background-color .4s;
+	width:7px
+}
+
+.ws-status-dot.connecting { background-color:#4a90b8 }
+.ws-status-dot.connected { background-color:#3a8c4e }
+.ws-status-dot.disconnected { background-color:#666 }
+.ws-status-dot.reconnecting { background-color:#7b52a0 }
+
 .stats-updated {
 	animation:statsUpdateAnimation .5s ease-in-out
 }
