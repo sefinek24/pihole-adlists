@@ -244,7 +244,7 @@ main h1::after {
     font-family:'Cascadia Mono','Calibri',sans-serif;
     font-size:1rem;
     padding:.75rem 1.25rem;
-    transition:all .3s cubic-bezier(0.4,0,0.2,1);
+    transition:background .3s cubic-bezier(0.4,0,0.2,1),border-color .3s cubic-bezier(0.4,0,0.2,1),box-shadow .3s cubic-bezier(0.4,0,0.2,1);
     width:100%
 }
 
@@ -286,7 +286,7 @@ main h1::after {
     padding:.8rem 2rem;
     position:relative;
     text-shadow:0 0 8px #000c;
-    transition:all .3s cubic-bezier(0.4,0,0.2,1)
+    transition:background .3s cubic-bezier(0.4,0,0.2,1),border-color .3s cubic-bezier(0.4,0,0.2,1),box-shadow .3s cubic-bezier(0.4,0,0.2,1),transform .3s cubic-bezier(0.4,0,0.2,1)
 }
 
 .btn-primary::before {
@@ -310,13 +310,12 @@ main h1::after {
 .btn-primary:hover {
     background:linear-gradient(135deg,#00a8fc99 0%,#00a8fccc 100%);
     border-color:#00a8fccc;
-    box-shadow:0 0 12px #0006;
-    transform:translateY(-3px)
+    box-shadow:0 0 12px #0006
 }
 
 .btn-primary:active {
     box-shadow:0 0 12px #0006;
-    transform:translateY(-1px)
+    transform:translateY(2px)
 }
 
 .btn-quick,.btn-interval {
@@ -332,14 +331,13 @@ main h1::after {
     padding:.7rem 1.4rem;
     position:relative;
     text-shadow:0 0 4px #000c;
-    transition:all .3s cubic-bezier(0.4,0,0.2,1)
+    transition:background .3s cubic-bezier(0.4,0,0.2,1),border-color .3s cubic-bezier(0.4,0,0.2,1),box-shadow .3s cubic-bezier(0.4,0,0.2,1)
 }
 
 .btn-quick:hover:not(:disabled):not(.active),.btn-interval:hover:not(:disabled):not(.active) {
     background:#ffffff1a;
     border-color:#00a8fc99;
-    box-shadow:0 0 12px #0006;
-    transform:translateY(-2px)
+    box-shadow:0 0 12px #0006
 }
 
 .btn-quick:disabled,.btn-interval:disabled {
@@ -379,7 +377,7 @@ main h1::after {
     top:0
 }
 
-.interval-controls label {
+.interval-label {
     color:#ffffffd9;
     font-size:1rem;
     font-weight:600;
@@ -424,8 +422,7 @@ main h1::after {
     overflow:hidden;
     padding:1.5rem 2rem;
     position:relative;
-    transition:transform .3s cubic-bezier(0.4,0,0.2,1),box-shadow .3s cubic-bezier(0.4,0,0.2,1),border-color .3s cubic-bezier(0.4,0,0.2,1);
-    will-change:transform
+    transition:box-shadow .3s cubic-bezier(0.4,0,0.2,1),border-color .3s cubic-bezier(0.4,0,0.2,1)
 }
 
 .peak-minute-banner::before {
@@ -494,8 +491,7 @@ main h1::after {
 
 .peak-minute-banner:hover {
     border-color:#dc321499;
-    box-shadow:0 0 12px #0006;
-    transform:translateY(-3px)
+    box-shadow:0 0 12px #0006
 }
 
 .peak-minute-banner:hover::before {
@@ -541,7 +537,7 @@ main h1::after {
     position:relative;
     text-align:center;
     text-shadow:0 0 10px #ff6b3580;
-    transition:all .3s ease;
+    transition:background .3s,border-color .3s,transform .3s;
     word-wrap:break-word;
     z-index:1
 }
@@ -560,15 +556,13 @@ main h1::after {
     box-shadow:0 0 12px #0006;
     padding:1.8rem 1.5rem;
     text-align:center;
-    transition:transform .4s cubic-bezier(0.4,0,0.2,1),box-shadow .4s cubic-bezier(0.4,0,0.2,1),border-color .4s cubic-bezier(0.4,0,0.2,1),background .4s cubic-bezier(0.4,0,0.2,1);
-    will-change:transform
+    transition:background .3s,border-color .3s,box-shadow .3s
 }
 
 .stat-card:hover {
     background:#0000004d;
     border-color:#58a6ff4d;
-    box-shadow:0 0 12px #0006;
-    transform:translateY(-4px)
+    box-shadow:0 0 12px #0006
 }
 
 .stat-card.all-time {
@@ -614,12 +608,7 @@ main h1::after {
     font-weight:700;
     letter-spacing:-1px;
     margin:.8rem 0;
-    text-shadow:0 0 11px #000c;
-    transition:transform .4s
-}
-
-.stat-card:hover p {
-    transform:scale(1.05)
+    text-shadow:0 0 11px #000c
 }
 
 .stat-card .stat-label {
@@ -654,8 +643,7 @@ main h1::after {
     overflow:hidden;
     padding:2rem;
     position:relative;
-    transition:transform .4s cubic-bezier(0.4,0,0.2,1),box-shadow .4s cubic-bezier(0.4,0,0.2,1),border-color .4s cubic-bezier(0.4,0,0.2,1);
-    will-change:transform
+    transition:border-color .3s
 }
 
 .chart-container::before {
@@ -672,8 +660,7 @@ main h1::after {
 
 .chart-container:hover {
     border-color:#00a8fc66;
-    box-shadow:0 0 12px #0006;
-    transform:translateY(-5px) scale(1.01)
+    box-shadow:0 0 12px #0006
 }
 
 .chart-container:hover::before {
