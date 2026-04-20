@@ -9,7 +9,7 @@ const wss = new WebSocket.Server({
 	perMessageDeflate: false,
 });
 
-const MAX_CLIENTS = 100;
+const MAX_CLIENTS = 80;
 const BROADCAST_INTERVAL = 2000;
 const HEARTBEAT_INTERVAL = 30000;
 const REPLACE_GRACE_MS = 3000;
