@@ -4,7 +4,7 @@ const RequestStats = require('./database/models/request-stats.model');
 
 const wss = new WebSocket.Server({
 	port: process.env.WS_PORT,
-	maxPayload: 16 * 1024,
+	maxPayload: 256,
 	clientTracking: true,
 	perMessageDeflate: false,
 });
