@@ -23,7 +23,7 @@ fi
 # Prepare the environment
 mkdir -p "$logs_dir"
 
-# Run git pull and install dependencies
+# Sync the repository with origin (hard reset) and install dependencies
 {
     echo "========================================== $(utc_now) UTC =========================================="
     echo
