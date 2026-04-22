@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026042212 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026042215 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -10,37 +10,23 @@ $TTL 300
 ;
 ; Title: NoTrack Tracker Blocklist
 ; Description: Domains classified as tracking or advertising
-; Entries: 15,598 domains
+; Entries: 15,575 domains
 ; Source: https://gitlab.com/quidsup/notrack-blocklists/-/raw/master/trackers.hosts
 ; License: GNU General Public License v3.0
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: April 22, 2026 at 12:24 PM UTC | 2026-04-22T12:24:54.308Z
+; Last updated: April 22, 2026 at 3:32 PM UTC | 2026-04-22T15:32:00.468Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
 ; Report false positives: https://blocklist.sefinek.net/false-positives
 ; -------------------------------------------------------------------------------------------------------------------------------------------------------
-0i0i0i0.com CNAME .
-*.0i0i0i0.com CNAME .
-0sntp7dnrr.com CNAME .
-*.0sntp7dnrr.com CNAME .
-0x01n2ptpuz3.com CNAME .
-*.0x01n2ptpuz3.com CNAME .
 1010data.com CNAME .
 *.1010data.com CNAME .
-123count.com CNAME .
-*.123count.com CNAME .
-152media.com CNAME .
-*.152media.com CNAME .
 1push.io CNAME .
 *.1push.io CNAME .
 1rx.io CNAME .
 *.1rx.io CNAME .
-1ts19.top CNAME .
-*.1ts19.top CNAME .
-2020mustang.com CNAME .
-*.2020mustang.com CNAME .
 207.net CNAME .
 *.207.net CNAME .
 247-inc.com CNAME .
@@ -49,14 +35,8 @@ $TTL 300
 *.247-inc.net CNAME .
 247.ai CNAME .
 *.247.ai CNAME .
-247realmedia.com CNAME .
-*.247realmedia.com CNAME .
 24support.cc CNAME .
 *.24support.cc CNAME .
-254a.com CNAME .
-*.254a.com CNAME .
-2iiyrxk0.com CNAME .
-*.2iiyrxk0.com CNAME .
 2mdn.net CNAME .
 *.2mdn.net CNAME .
 2o7.net CNAME .
@@ -73,44 +53,26 @@ $TTL 300
 *.4dex.io CNAME .
 4info.com CNAME .
 *.4info.com CNAME .
-4seeresults.com CNAME .
-*.4seeresults.com CNAME .
 4strokemedia.com CNAME .
 *.4strokemedia.com CNAME .
-4wmarketplace.com CNAME .
-*.4wmarketplace.com CNAME .
-4wnetwork.com CNAME .
-*.4wnetwork.com CNAME .
 51.la CNAME .
 *.51.la CNAME .
-5min.com CNAME .
-*.5min.com CNAME .
-65twenty.com CNAME .
-*.65twenty.com CNAME .
 6sc.co CNAME .
 *.6sc.co CNAME .
 6sense.com CNAME .
 *.6sense.com CNAME .
 7eer.net CNAME .
 *.7eer.net CNAME .
-8s32e590un.com CNAME .
-*.8s32e590un.com CNAME .
 a-ads.com CNAME .
 *.a-ads.com CNAME .
 a-mo.net CNAME .
 *.a-mo.net CNAME .
-a.mobify.com CNAME .
-*.a.mobify.com CNAME .
 a1.api.bbc.co.uk CNAME .
 *.a1.api.bbc.co.uk CNAME .
-a1webstats.com CNAME .
-*.a1webstats.com CNAME .
 a3cloud.net CNAME .
 *.a3cloud.net CNAME .
 a8723.com CNAME .
 *.a8723.com CNAME .
-a9.com CNAME .
-*.a9.com CNAME .
 aa-metrics.airrsv.net CNAME .
 *.aa-metrics.airrsv.net CNAME .
 aa-metrics.beauty.hotpepper.jp CNAME .
@@ -121,10 +83,6 @@ aa-metrics.hotpepper.jp CNAME .
 *.aa-metrics.hotpepper.jp CNAME .
 aa-metrics.jalan.net CNAME .
 *.aa-metrics.jalan.net CNAME .
-aamsitecertifier.com CNAME .
-*.aamsitecertifier.com CNAME .
-aanqylta.com CNAME .
-*.aanqylta.com CNAME .
 aarth.net CNAME .
 *.aarth.net CNAME .
 aatkit.com CNAME .
@@ -139,8 +97,6 @@ abmr.net CNAME .
 *.abmr.net CNAME .
 abtasty.com CNAME .
 *.abtasty.com CNAME .
-abtest.mistat.xiaomi.com CNAME .
-*.abtest.mistat.xiaomi.com CNAME .
 ac24horas.com CNAME .
 *.ac24horas.com CNAME .
 acacdn.com CNAME .
@@ -861,8 +817,6 @@ alephd.com CNAME .
 *.alephd.com CNAME .
 alexametrics.com CNAME .
 *.alexametrics.com CNAME .
-allawnos.com CNAME .
-*.allawnos.com CNAME .
 alleviatepracticableaddicted.com CNAME .
 *.alleviatepracticableaddicted.com CNAME .
 allotupwardmalicious.com CNAME .
