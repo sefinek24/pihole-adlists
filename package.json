@@ -22,7 +22,7 @@
     "update": "npm run pull && npm run pull:blocklists && npm ci --omit=dev && pm2 restart blocklist"
   },
   "dependencies": {
-    "axios": "^1.15.1",
+    "axios": "^1.15.2",
     "cron-parser": "^5.5.0",
     "ejs": "^5.0.2",
     "express": "^5.2.1",
