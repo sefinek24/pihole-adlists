@@ -19,6 +19,19 @@ const scanAllKeys = async (pattern) => {
 	return keys;
 };
 
+const fetchChunkData = async chunk => {
+	try {
+		const pipeline = RedisClient.multi();
+		for (const key of chunk) pipeline.hGetAll(key);
+
+		const results = await pipeline.exec();
+		return chunk.map((key, index) => ({ key, data: results[index] }));
+	} catch (err) {
+		console.error(`Error fetching Redis chunk starting with ${chunk[0]}:`, err.message);
+		return [];
+	}
+};
+
 const aggregateRedisToMongo = async () => {
 	try {
 		const allKeys = await scanAllKeys('stats:minute:*');
@@ -32,18 +45,7 @@ const aggregateRedisToMongo = async () => {
 
 		for (let i = 0; i < allKeys.length; i += CHUNK_SIZE) {
 			const chunk = allKeys.slice(i, i + CHUNK_SIZE);
-
-			const results = await Promise.all(
-				chunk.map(async key => {
-					try {
-						const data = await RedisClient.hGetAll(key);
-						return { key, data };
-					} catch (err) {
-						console.error(`Error fetching key ${key}:`, err.message);
-						return null;
-					}
-				})
-			);
+			const results = await fetchChunkData(chunk);
 
 			for (const result of results) {
 				if (!result) continue;
@@ -75,11 +77,11 @@ const aggregateRedisToMongo = async () => {
 					}
 
 					const timestamp = new Date(Date.UTC(
-						parseInt(dateParts[0]),
-						parseInt(dateParts[1]) - 1,
-						parseInt(dateParts[2]),
-						parseInt(hour),
-						parseInt(minute),
+						parseInt(dateParts[0], 10),
+						parseInt(dateParts[1], 10) - 1,
+						parseInt(dateParts[2], 10),
+						parseInt(hour, 10),
+						parseInt(minute, 10),
 						0, 0
 					));
 
