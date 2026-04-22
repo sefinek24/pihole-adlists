@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026041823 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026042204 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: Polish AdGuard Mobile Host Filter
-; Entries: 894 domains
+; Entries: 895 domains
 ; Source: https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/adguard_mobile_host.txt | https://www.certyficate.it/
 ; License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: April 18, 2026 at 11:03 PM UTC | 2026-04-18T23:03:13.526Z
+; Last updated: April 22, 2026 at 4:05 AM UTC | 2026-04-22T04:05:36.987Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -1388,6 +1388,8 @@ preitem.wshareit.com CNAME .
 *.preitem.wshareit.com CNAME .
 presage.io CNAME .
 *.presage.io CNAME .
+prismriotads.com CNAME .
+*.prismriotads.com CNAME .
 prod.adjoe.zone CNAME .
 *.prod.adjoe.zone CNAME .
 prod.cm.publishers.advertising.a2z.com CNAME .

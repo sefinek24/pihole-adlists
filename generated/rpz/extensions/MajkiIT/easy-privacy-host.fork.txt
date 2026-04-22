@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026042004 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026042204 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: Polish Easy Privacy Host Filter
-; Entries: 40,345 domains
+; Entries: 40,348 domains
 ; Source: https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/easy_privacy_host.txt | https://www.certyficate.it/
 ; License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: April 20, 2026 at 4:10 AM UTC | 2026-04-20T04:10:10.465Z
+; Last updated: April 22, 2026 at 4:05 AM UTC | 2026-04-22T04:05:34.930Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -15640,6 +15640,8 @@ btaenrolment.americanexpress.nl CNAME .
 *.btaenrolment.americanexpress.nl CNAME .
 btcfbr.mejshop.jp CNAME .
 *.btcfbr.mejshop.jp CNAME .
+btldr.net CNAME .
+*.btldr.net CNAME .
 btloader.com CNAME .
 *.btloader.com CNAME .
 btmean.cardosystems.com CNAME .
@@ -41398,6 +41400,8 @@ mesure-pro.engie.fr CNAME .
 *.mesure-pro.engie.fr CNAME .
 met.jasperforge.org CNAME .
 *.met.jasperforge.org CNAME .
+met.seriesapi.co CNAME .
+*.met.seriesapi.co CNAME .
 met.sewell.com CNAME .
 *.met.sewell.com CNAME .
 met.vgwort.de CNAME .
@@ -54946,6 +54950,8 @@ smart.boxtone.com CNAME .
 *.smart.boxtone.com CNAME .
 smartcam.adt-worldwide.com CNAME .
 *.smartcam.adt-worldwide.com CNAME .
+smartiwheel.com CNAME .
+*.smartiwheel.com CNAME .
 smartmetrics.co.uk CNAME .
 *.smartmetrics.co.uk CNAME .
 smartworksforme.actonservice.com CNAME .
