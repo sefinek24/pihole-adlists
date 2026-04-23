@@ -27,8 +27,8 @@ const fetchChunkData = async chunk => {
 		const results = await pipeline.exec();
 		return chunk.map((key, index) => ({ key, data: results[index] }));
 	} catch (err) {
-		console.error(`Error fetching Redis chunk starting with ${chunk[0]}:`, err.message);
-		return [];
+		console.error(`Error fetching Redis chunk (${chunk.length} keys, starting with ${chunk[0]}):`, err.message);
+		return chunk.map(key => ({ key, data: null }));
 	}
 };
 
