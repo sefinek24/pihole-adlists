@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026042204 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026042404 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: Polish AdGuard Mobile Host Filter
-; Entries: 895 domains
+; Entries: 900 domains
 ; Source: https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/adguard_mobile_host.txt | https://www.certyficate.it/
 ; License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: April 22, 2026 at 4:05 AM UTC | 2026-04-22T04:05:36.987Z
+; Last updated: April 24, 2026 at 4:08 AM UTC | 2026-04-24T04:08:41.007Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -954,6 +954,8 @@ go.mobstitialtag.com CNAME .
 *.go.mobstitialtag.com CNAME .
 go.vrvm.com CNAME .
 *.go.vrvm.com CNAME .
+goads2023.com CNAME .
+*.goads2023.com CNAME .
 goi08150kh.com CNAME .
 *.goi08150kh.com CNAME .
 googleadservices.com CNAME .
@@ -1180,6 +1182,10 @@ moatads.com.edgekey.net CNAME .
 *.moatads.com.edgekey.net CNAME .
 moba8.net CNAME .
 *.moba8.net CNAME .
+mobads-logs.bcebos.com CNAME .
+*.mobads-logs.bcebos.com CNAME .
+mobads-pre-config.cdn.bcebos.com CNAME .
+*.mobads-pre-config.cdn.bcebos.com CNAME .
 mobads.baidu.com CNAME .
 *.mobads.baidu.com CNAME .
 mobclix.com CNAME .
@@ -1764,6 +1770,8 @@ waiads.com CNAME .
 *.waiads.com CNAME .
 wapstart.ru CNAME .
 *.wapstart.ru CNAME .
+wcp.taobao.com CNAME .
+*.wcp.taobao.com CNAME .
 wdig.vo.llnwd.net CNAME .
 *.wdig.vo.llnwd.net CNAME .
 west.bidtellect.com CNAME .
@@ -1786,6 +1794,8 @@ yandexadexchange.net CNAME .
 *.yandexadexchange.net CNAME .
 yc-ads.s3.amazonaws.com CNAME .
 *.yc-ads.s3.amazonaws.com CNAME .
+yfanads.com CNAME .
+*.yfanads.com CNAME .
 yieldkit.com CNAME .
 *.yieldkit.com CNAME .
 yieldmo.com CNAME .
