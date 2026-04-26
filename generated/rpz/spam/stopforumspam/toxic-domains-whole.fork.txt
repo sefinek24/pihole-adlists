@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026042618 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026042621 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: StopForumSpam Toxic Domains
-; Entries: 72,143 domains
+; Entries: 72,145 domains
 ; Source: https://www.stopforumspam.com/downloads/toxic_domains_whole.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: April 26, 2026 at 6:17 PM UTC | 2026-04-26T18:17:26.912Z
+; Last updated: April 26, 2026 at 9:15 PM UTC | 2026-04-26T21:15:03.208Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -82304,6 +82304,8 @@ makoli.site CNAME .
 *.makoli.site CNAME .
 makoli.space CNAME .
 *.makoli.space CNAME .
+makoli.store CNAME .
+*.makoli.store CNAME .
 makotamarketing.com CNAME .
 *.makotamarketing.com CNAME .
 makprofi.store CNAME .
@@ -83422,6 +83424,8 @@ masdjan.space CNAME .
 *.masdjan.space CNAME .
 masdo88.top CNAME .
 *.masdo88.top CNAME .
+masdwi.site CNAME .
+*.masdwi.site CNAME .
 maseczkapatryka.pl CNAME .
 *.maseczkapatryka.pl CNAME .
 masedon.com CNAME .
