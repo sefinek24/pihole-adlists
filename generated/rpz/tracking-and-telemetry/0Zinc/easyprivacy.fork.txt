@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026042600 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026042800 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: EasyPrivacy Hosts Blocklist
-; Entries: 40,350 domains
+; Entries: 40,353 domains
 ; Source: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easyprivacy.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: April 26, 2026 at 12:29 AM UTC | 2026-04-26T00:29:44.551Z
+; Last updated: April 28, 2026 at 12:33 AM UTC | 2026-04-28T00:33:13.141Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -602,6 +602,8 @@ mdstats.info CNAME .
 *.mdstats.info CNAME .
 measureadv.com CNAME .
 *.measureadv.com CNAME .
+media-analytic.com CNAME .
+*.media-analytic.com CNAME .
 mediamathrdrt.com CNAME .
 *.mediamathrdrt.com CNAME .
 michiganrobotflower.com CNAME .
@@ -1128,6 +1130,8 @@ durchsichtig.xyz CNAME .
 *.durchsichtig.xyz CNAME .
 tracking.wlscripts.net CNAME .
 *.tracking.wlscripts.net CNAME .
+leadsandmore.go2cloud.org CNAME .
+*.leadsandmore.go2cloud.org CNAME .
 naanalle.pl CNAME .
 *.naanalle.pl CNAME .
 1558334541.rsc.cdn77.org CNAME .
@@ -80586,6 +80590,8 @@ yast.rutube.ru CNAME .
 *.yast.rutube.ru CNAME .
 harvester.cms.markiza.sk CNAME .
 *.harvester.cms.markiza.sk CNAME .
+analitika.derp.si CNAME .
+*.analitika.derp.si CNAME .
 go-usertrack-importer.pub.24ur.si CNAME .
 *.go-usertrack-importer.pub.24ur.si CNAME .
 tracker.azet.sk CNAME .
