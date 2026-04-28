@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026042812 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026042815 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: URLhaus Malicious Hosts
-; Entries: 453 domains
+; Entries: 474 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: April 28, 2026 at 12:37 PM UTC | 2026-04-28T12:37:58.025Z
+; Last updated: April 28, 2026 at 3:51 PM UTC | 2026-04-28T15:51:04.813Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -28,6 +28,12 @@ $TTL 300
 *.123.ywxww.net CNAME .
 1717.1000uc.com CNAME .
 *.1717.1000uc.com CNAME .
+1oade4-zone.sunmeadow.garden CNAME .
+*.1oade4-zone.sunmeadow.garden CNAME .
+5un-drive.frosthaven.garden CNAME .
+*.5un-drive.frosthaven.garden CNAME .
+5urv3-layer.stoneflare.garden CNAME .
+*.5urv3-layer.stoneflare.garden CNAME .
 9al62yq7.souf1atwindow.digital CNAME .
 *.9al62yq7.souf1atwindow.digital CNAME .
 aaronart.com CNAME .
@@ -48,8 +54,6 @@ alarmline.com.br CNAME .
 *.alarmline.com.br CNAME .
 alineeleuterio.com.br CNAME .
 *.alineeleuterio.com.br CNAME .
-alkon.rs CNAME .
-*.alkon.rs CNAME .
 allendostmen.com CNAME .
 *.allendostmen.com CNAME .
 allister.ee CNAME .
@@ -76,18 +80,20 @@ artacom.com.br CNAME .
 *.artacom.com.br CNAME .
 asl-company.ru CNAME .
 *.asl-company.ru CNAME .
+asse4-track.frosthaven.garden CNAME .
+*.asse4-track.frosthaven.garden CNAME .
 atasapka.com.tr CNAME .
 *.atasapka.com.tr CNAME .
 audicontadores.com CNAME .
 *.audicontadores.com CNAME .
-audiomeshbase.sonicwavehost.garden CNAME .
-*.audiomeshbase.sonicwavehost.garden CNAME .
 augsburg-auto.com CNAME .
 *.augsburg-auto.com CNAME .
 autobaenasl.com CNAME .
 *.autobaenasl.com CNAME .
 avbackup.acionline.de CNAME .
 *.avbackup.acionline.de CNAME .
+azur3-branch.sunmeadow.garden CNAME .
+*.azur3-branch.sunmeadow.garden CNAME .
 backupso.com CNAME .
 *.backupso.com CNAME .
 baseopenwald.qivorpaknode.garden CNAME .
@@ -116,8 +122,6 @@ bombayonline.in CNAME .
 *.bombayonline.in CNAME .
 book.rollingvideogames.com CNAME .
 *.book.rollingvideogames.com CNAME .
-boydjackson.org CNAME .
-*.boydjackson.org CNAME .
 bracell.latitude.net.br CNAME .
 *.bracell.latitude.net.br CNAME .
 bridgeroad.maverickpreviews.com CNAME .
@@ -126,6 +130,8 @@ brightworks.cz CNAME .
 *.brightworks.cz CNAME .
 broad7-grid.shadowpeak.garden CNAME .
 *.broad7-grid.shadowpeak.garden CNAME .
+brookcano.sunmeadow.garden CNAME .
+*.brookcano.sunmeadow.garden CNAME .
 bvaco.com CNAME .
 *.bvaco.com CNAME .
 c.fi3.me CNAME .
@@ -176,6 +182,8 @@ cn.unionlever.com CNAME .
 *.cn.unionlever.com CNAME .
 co-emas.com CNAME .
 *.co-emas.com CNAME .
+comp-vine.greenbloom.garden CNAME .
+*.comp-vine.greenbloom.garden CNAME .
 compimento.ba CNAME .
 *.compimento.ba CNAME .
 compuserviceonline.com.br CNAME .
@@ -186,6 +194,8 @@ continentalgroup.net.in CNAME .
 *.continentalgroup.net.in CNAME .
 controliumbt.com CNAME .
 *.controliumbt.com CNAME .
+coorsamexico.mx CNAME .
+*.coorsamexico.mx CNAME .
 coralasargetia.ro CNAME .
 *.coralasargetia.ro CNAME .
 corporacioncrf.com CNAME .
@@ -204,6 +214,8 @@ csg-app.com CNAME .
 *.csg-app.com CNAME .
 ct3-24.ru CNAME .
 *.ct3-24.ru CNAME .
+culturebold.rosevale.garden CNAME .
+*.culturebold.rosevale.garden CNAME .
 d.14yaa.com CNAME .
 *.d.14yaa.com CNAME .
 d.wanyouxi7.com CNAME .
@@ -292,8 +304,6 @@ elisans.novayonetim.com CNAME .
 *.elisans.novayonetim.com CNAME .
 embedone.com CNAME .
 *.embedone.com CNAME .
-embermeshnode.pixelstormbase.garden CNAME .
-*.embermeshnode.pixelstormbase.garden CNAME .
 en.taichuan.com CNAME .
 *.en.taichuan.com CNAME .
 energy63.ru CNAME .
@@ -308,6 +318,8 @@ evangroup.ru CNAME .
 *.evangroup.ru CNAME .
 everycarebd.com CNAME .
 *.everycarebd.com CNAME .
+ew559.sunmeadow.garden CNAME .
+*.ew559.sunmeadow.garden CNAME .
 explorer.vg CNAME .
 *.explorer.vg CNAME .
 f4ct0-span.lightforge.garden CNAME .
@@ -328,12 +340,8 @@ file.uhsea.com CNAME .
 *.file.uhsea.com CNAME .
 filerit.com CNAME .
 *.filerit.com CNAME .
-filt3-scope.lightforge.garden CNAME .
-*.filt3-scope.lightforge.garden CNAME .
 first-security-verden.de CNAME .
 *.first-security-verden.de CNAME .
-fiveradio.xyz CNAME .
-*.fiveradio.xyz CNAME .
 flyingmutts.com CNAME .
 *.flyingmutts.com CNAME .
 formpea.lightforge.garden CNAME .
@@ -368,8 +376,6 @@ google-services.cc CNAME .
 *.google-services.cc CNAME .
 grantexx.gr CNAME .
 *.grantexx.gr CNAME .
-gravit4fluxbox.alphafluxnode.garden CNAME .
-*.gravit4fluxbox.alphafluxnode.garden CNAME .
 greenf.alexion.rs CNAME .
 *.greenf.alexion.rs CNAME .
 grupomcperu.com CNAME .
@@ -378,6 +384,8 @@ gutando.com CNAME .
 *.gutando.com CNAME .
 halfmillion-iq.com CNAME .
 *.halfmillion-iq.com CNAME .
+handlerfalc.voidstream.garden CNAME .
+*.handlerfalc.voidstream.garden CNAME .
 happytugsbakery.com CNAME .
 *.happytugsbakery.com CNAME .
 hasalltalent.com CNAME .
@@ -390,6 +398,8 @@ hobobot.net CNAME .
 *.hobobot.net CNAME .
 homecaremovers.com CNAME .
 *.homecaremovers.com CNAME .
+honestlab.voidstream.garden CNAME .
+*.honestlab.voidstream.garden CNAME .
 hostfastland.dexisnetflow.garden CNAME .
 *.hostfastland.dexisnetflow.garden CNAME .
 hotellacastellana.com.uy CNAME .
@@ -402,6 +412,10 @@ i.404.pm CNAME .
 *.i.404.pm CNAME .
 icoffeecloud.com CNAME .
 *.icoffeecloud.com CNAME .
+ie78lu.greenbloom.garden CNAME .
+*.ie78lu.greenbloom.garden CNAME .
+if8drhcl.greenbloom.garden CNAME .
+*.if8drhcl.greenbloom.garden CNAME .
 igra123.com CNAME .
 *.igra123.com CNAME .
 indexsearchfindresult.com CNAME .
@@ -410,6 +424,8 @@ injectroblox.ru CNAME .
 *.injectroblox.ru CNAME .
 inmbau.com CNAME .
 *.inmbau.com CNAME .
+innerflee.rosevale.garden CNAME .
+*.innerflee.rosevale.garden CNAME .
 innlive.in CNAME .
 *.innlive.in CNAME .
 ircftp.net CNAME .
@@ -422,6 +438,8 @@ isometricsindia.co.in CNAME .
 *.isometricsindia.co.in CNAME .
 itssprout.com CNAME .
 *.itssprout.com CNAME .
+ivorystorage.stoneflare.garden CNAME .
+*.ivorystorage.stoneflare.garden CNAME .
 izocab.com CNAME .
 *.izocab.com CNAME .
 izogard.com CNAME .
@@ -440,6 +458,12 @@ kamin-premium.ru CNAME .
 *.kamin-premium.ru CNAME .
 kavacanada.ca CNAME .
 *.kavacanada.ca CNAME .
+kelcrest9ar.sunmeadow.garden CNAME .
+*.kelcrest9ar.sunmeadow.garden CNAME .
+kelcrestet.frosthaven.garden CNAME .
+*.kelcrestet.frosthaven.garden CNAME .
+kellinear1.rosevale.garden CNAME .
+*.kellinear1.rosevale.garden CNAME .
 khoancatbetong89.vn CNAME .
 *.khoancatbetong89.vn CNAME .
 kimyen.net CNAME .
@@ -454,12 +478,12 @@ krisidev.com CNAME .
 *.krisidev.com CNAME .
 kuzina-teatr.ru CNAME .
 *.kuzina-teatr.ru CNAME .
+l4tt1c-index.greenbloom.garden CNAME .
+*.l4tt1c-index.greenbloom.garden CNAME .
 landonirwin.com CNAME .
 *.landonirwin.com CNAME .
 lawfirm.paperbirdtech.com CNAME .
 *.lawfirm.paperbirdtech.com CNAME .
-lead4tasksys.silicongateway.garden CNAME .
-*.lead4tasksys.silicongateway.garden CNAME .
 libss.0x504.com CNAME .
 *.libss.0x504.com CNAME .
 lindenappliances.co.za CNAME .
@@ -494,6 +518,8 @@ marsalek.cy CNAME .
 *.marsalek.cy CNAME .
 meetvideogoogle.com CNAME .
 *.meetvideogoogle.com CNAME .
+meta-v0ca.sunmeadow.garden CNAME .
+*.meta-v0ca.sunmeadow.garden CNAME .
 metabluefire.qivorpaknode.garden CNAME .
 *.metabluefire.qivorpaknode.garden CNAME .
 mgtms.cc CNAME .
@@ -538,6 +564,10 @@ ny.lshdw.cc CNAME .
 *.ny.lshdw.cc CNAME .
 o24o.ru CNAME .
 *.o24o.ru CNAME .
+o6iz.rosevale.garden CNAME .
+*.o6iz.rosevale.garden CNAME .
+ob53rv-mesh.greenbloom.garden CNAME .
+*.ob53rv-mesh.greenbloom.garden CNAME .
 officials.ink CNAME .
 *.officials.ink CNAME .
 ojang.pe.kr CNAME .
@@ -552,8 +582,6 @@ onyxguardify.de CNAME .
 *.onyxguardify.de CNAME .
 onyxphantomlock.de CNAME .
 *.onyxphantomlock.de CNAME .
-orbitmeshpath.quantumpathnet.garden CNAME .
-*.orbitmeshpath.quantumpathnet.garden CNAME .
 owlcity.ru CNAME .
 *.owlcity.ru CNAME .
 p3.zbjimg.com CNAME .
@@ -576,12 +604,12 @@ petitwaldnet.dexisnetflow.garden CNAME .
 *.petitwaldnet.dexisnetflow.garden CNAME .
 pid.fly160.com CNAME .
 *.pid.fly160.com CNAME .
-pitchzoneyview.sonicwavehost.garden CNAME .
-*.pitchzoneyview.sonicwavehost.garden CNAME .
 planetariumobil.ro CNAME .
 *.planetariumobil.ro CNAME .
 pns.org.pk CNAME .
 *.pns.org.pk CNAME .
+po5ter-node.voidstream.garden CNAME .
+*.po5ter-node.voidstream.garden CNAME .
 pobedastaff.ru CNAME .
 *.pobedastaff.ru CNAME .
 pointrougesoft.zexislinkhub.garden CNAME .
@@ -634,6 +662,8 @@ rougesoft9app.dexisnetflow.garden CNAME .
 *.rougesoft9app.dexisnetflow.garden CNAME .
 royalindiancurryclub.com CNAME .
 *.royalindiancurryclub.com CNAME .
+rqhk6he.stoneflare.garden CNAME .
+*.rqhk6he.stoneflare.garden CNAME .
 runvva-route.lightforge.garden CNAME .
 *.runvva-route.lightforge.garden CNAME .
 rxquickpay.com CNAME .
@@ -654,6 +684,8 @@ sec.xiaoshabi.nl CNAME .
 *.sec.xiaoshabi.nl CNAME .
 separadordecc.com CNAME .
 *.separadordecc.com CNAME .
+serlineis.frosthaven.garden CNAME .
+*.serlineis.frosthaven.garden CNAME .
 sg123.net CNAME .
 *.sg123.net CNAME .
 shahamanatme.com CNAME .
@@ -686,8 +718,6 @@ static.topxgun.com CNAME .
 *.static.topxgun.com CNAME .
 static.youdm.cn CNAME .
 *.static.youdm.cn CNAME .
-staticflowsys.quantumpathnet.garden CNAME .
-*.staticflowsys.quantumpathnet.garden CNAME .
 stdown.dinju.com CNAME .
 *.stdown.dinju.com CNAME .
 steam66.cn CNAME .
@@ -698,16 +728,18 @@ stormloader.shadowpeak.garden CNAME .
 *.stormloader.shadowpeak.garden CNAME .
 studiogioeli.it CNAME .
 *.studiogioeli.it CNAME .
-sudan-daily.net CNAME .
-*.sudan-daily.net CNAME .
 support.clz.kr CNAME .
 *.support.clz.kr CNAME .
 sutterpoint.com CNAME .
 *.sutterpoint.com CNAME .
 svirtual.sanviatorperu.edu.pe CNAME .
 *.svirtual.sanviatorperu.edu.pe CNAME .
+swiftbann.voidstream.garden CNAME .
+*.swiftbann.voidstream.garden CNAME .
 sysvert7holz.qivorpaknode.garden CNAME .
 *.sysvert7holz.qivorpaknode.garden CNAME .
+tal-crestis.greenbloom.garden CNAME .
+*.tal-crestis.greenbloom.garden CNAME .
 talentrecruitments.com CNAME .
 *.talentrecruitments.com CNAME .
 tanscarattorneys.co.tz CNAME .
@@ -748,6 +780,8 @@ tpxovsr.lightforge.garden CNAME .
 *.tpxovsr.lightforge.garden CNAME .
 transparenciacanaa.com.br CNAME .
 *.transparenciacanaa.com.br CNAME .
+triggeveri.voidstream.garden CNAME .
+*.triggeveri.voidstream.garden CNAME .
 trtmyanmar.com CNAME .
 *.trtmyanmar.com CNAME .
 ukguk71.ru CNAME .
@@ -770,10 +804,10 @@ vagler.ru CNAME .
 *.vagler.ru CNAME .
 valfanto.com CNAME .
 *.valfanto.com CNAME .
-vastlogicweb.orbitmeshunit.garden CNAME .
-*.vastlogicweb.orbitmeshunit.garden CNAME .
 vcc-library.uk CNAME .
 *.vcc-library.uk CNAME .
+velvetlayout.rosevale.garden CNAME .
+*.velvetlayout.rosevale.garden CNAME .
 versaclean.com.br CNAME .
 *.versaclean.com.br CNAME .
 veryboys.com CNAME .
@@ -794,8 +828,14 @@ vizyonuniversitesi.com.tr CNAME .
 *.vizyonuniversitesi.com.tr CNAME .
 vizyonuniversitesi.web.tr CNAME .
 *.vizyonuniversitesi.web.tr CNAME .
+vormarkor.frosthaven.garden CNAME .
+*.vormarkor.frosthaven.garden CNAME .
 vrajras.com CNAME .
 *.vrajras.com CNAME .
+website.mypetapp.co.za CNAME .
+*.website.mypetapp.co.za CNAME .
+whnmkwvj.frosthaven.garden CNAME .
+*.whnmkwvj.frosthaven.garden CNAME .
 widexenmexico.com.mx CNAME .
 *.widexenmexico.com.mx CNAME .
 windomstatetheater.com CNAME .
@@ -874,8 +914,6 @@ uralmetalloprokat.ru CNAME .
 *.uralmetalloprokat.ru CNAME .
 vuelaviajero.com CNAME .
 *.vuelaviajero.com CNAME .
-website.mypetapp.co.za CNAME .
-*.website.mypetapp.co.za CNAME .
 websitedesigningindia.biz CNAME .
 *.websitedesigningindia.biz CNAME .
 xn--on3b15m2lco2u.com CNAME .
@@ -902,6 +940,8 @@ xuezha.net CNAME .
 *.xuezha.net CNAME .
 youtransfer.net CNAME .
 *.youtransfer.net CNAME .
+yxhe.voidstream.garden CNAME .
+*.yxhe.voidstream.garden CNAME .
 zenglobalenerji.com CNAME .
 *.zenglobalenerji.com CNAME .
 zhigao5191.com CNAME .
