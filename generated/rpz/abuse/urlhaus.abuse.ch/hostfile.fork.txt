@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026042906 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026042909 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: URLhaus Malicious Hosts
-; Entries: 630 domains
+; Entries: 649 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: April 29, 2026 at 6:52 AM UTC | 2026-04-29T06:52:26.433Z
+; Last updated: April 29, 2026 at 9:45 AM UTC | 2026-04-29T09:45:01.962Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -28,6 +28,8 @@ $TTL 300
 *.123.ywxww.net CNAME .
 1717.1000uc.com CNAME .
 *.1717.1000uc.com CNAME .
+1aun0-zone.verd1ya.garden CNAME .
+*.1aun0-zone.verd1ya.garden CNAME .
 1oade4-zone.sunmeadow.garden CNAME .
 *.1oade4-zone.sunmeadow.garden CNAME .
 217.60.241.36.ptr.pfcloud.network CNAME .
@@ -90,8 +92,12 @@ atasapka.com.tr CNAME .
 *.atasapka.com.tr CNAME .
 atlasgridflow.alphafluxnode.garden CNAME .
 *.atlasgridflow.alphafluxnode.garden CNAME .
+atom2logicnet.ferrumgateweb.garden CNAME .
+*.atom2logicnet.ferrumgateweb.garden CNAME .
 atom2logicnet.quantumpathnet.garden CNAME .
 *.atom2logicnet.quantumpathnet.garden CNAME .
+audiomeshbase.astrolinkview.garden CNAME .
+*.audiomeshbase.astrolinkview.garden CNAME .
 audiomeshbase.sonicwavehost.garden CNAME .
 *.audiomeshbase.sonicwavehost.garden CNAME .
 augsburg-auto.com CNAME .
@@ -142,8 +148,6 @@ bold7logicgate.zenithflowgrid.garden CNAME .
 *.bold7logicgate.zenithflowgrid.garden CNAME .
 bombayonline.in CNAME .
 *.bombayonline.in CNAME .
-bone7taskhub.fossilcryptoweb.garden CNAME .
-*.bone7taskhub.fossilcryptoweb.garden CNAME .
 book.rollingvideogames.com CNAME .
 *.book.rollingvideogames.com CNAME .
 boydjackson.org CNAME .
@@ -154,6 +158,8 @@ bridgeroad.maverickpreviews.com CNAME .
 *.bridgeroad.maverickpreviews.com CNAME .
 bright3nodeview.cryptovoxelsync.garden CNAME .
 *.bright3nodeview.cryptovoxelsync.garden CNAME .
+bright3nodeview.kinetichostbit.garden CNAME .
+*.bright3nodeview.kinetichostbit.garden CNAME .
 brightworks.cz CNAME .
 *.brightworks.cz CNAME .
 broad7-grid.shadowpeak.garden CNAME .
@@ -234,14 +240,14 @@ contentmentfairnesspesky.com CNAME .
 *.contentmentfairnesspesky.com CNAME .
 continentalgroup.net.in CNAME .
 *.continentalgroup.net.in CNAME .
-controliumbt.com CNAME .
-*.controliumbt.com CNAME .
 cool2meshbit.cyberpeaklink.garden CNAME .
 *.cool2meshbit.cyberpeaklink.garden CNAME .
 core3darkstar.novismetaweb.garden CNAME .
 *.core3darkstar.novismetaweb.garden CNAME .
 core3gatehost.basaltlogicnode.garden CNAME .
 *.core3gatehost.basaltlogicnode.garden CNAME .
+corehostunit5.ferrumgateweb.garden CNAME .
+*.corehostunit5.ferrumgateweb.garden CNAME .
 corehostunit5.quantumpathnet.garden CNAME .
 *.corehostunit5.quantumpathnet.garden CNAME .
 corepilatesnicaragua.com CNAME .
@@ -282,6 +288,8 @@ deep7siteview.oceanicmeshbit.garden CNAME .
 *.deep7siteview.oceanicmeshbit.garden CNAME .
 deepcloud9base.cryptovoxelsync.garden CNAME .
 *.deepcloud9base.cryptovoxelsync.garden CNAME .
+deepcloud9base.kinetichostbit.garden CNAME .
+*.deepcloud9base.kinetichostbit.garden CNAME .
 deepsurve.leafspring.garden CNAME .
 *.deepsurve.leafspring.garden CNAME .
 delp-heizungsbau.de CNAME .
@@ -336,8 +344,6 @@ download.pdf00.com CNAME .
 *.download.pdf00.com CNAME .
 dowonline.ru CNAME .
 *.dowonline.ru CNAME .
-drevos.ro CNAME .
-*.drevos.ro CNAME .
 drift2logicnet.tundraflowunit.garden CNAME .
 *.drift2logicnet.tundraflowunit.garden CNAME .
 dubaitechnicalservice.ae CNAME .
@@ -350,6 +356,8 @@ dweixin.cn CNAME .
 *.dweixin.cn CNAME .
 easybrand.vn CNAME .
 *.easybrand.vn CNAME .
+echo2pathnode.astrolinkview.garden CNAME .
+*.echo2pathnode.astrolinkview.garden CNAME .
 echo2pathnode.sonicwavehost.garden CNAME .
 *.echo2pathnode.sonicwavehost.garden CNAME .
 echomeshsite.canyonsyncgate.garden CNAME .
@@ -420,6 +428,8 @@ formpea.lightforge.garden CNAME .
 *.formpea.lightforge.garden CNAME .
 freetaskunit.cyberpeaklink.garden CNAME .
 *.freetaskunit.cyberpeaklink.garden CNAME .
+freq6taskunit.astrolinkview.garden CNAME .
+*.freq6taskunit.astrolinkview.garden CNAME .
 freq6taskunit.sonicwavehost.garden CNAME .
 *.freq6taskunit.sonicwavehost.garden CNAME .
 frost9taskunit.pixelstormbase.garden CNAME .
@@ -474,8 +484,6 @@ grantexx.gr CNAME .
 *.grantexx.gr CNAME .
 gravit4fluxbox.alphafluxnode.garden CNAME .
 *.gravit4fluxbox.alphafluxnode.garden CNAME .
-gravitflux2box.titanmeshflow.garden CNAME .
-*.gravitflux2box.titanmeshflow.garden CNAME .
 greenf.alexion.rs CNAME .
 *.greenf.alexion.rs CNAME .
 greyhostunit.marblewavebase.garden CNAME .
@@ -560,8 +568,6 @@ izocab.com CNAME .
 *.izocab.com CNAME .
 izogard.com CNAME .
 *.izogard.com CNAME .
-jawaratekno.com CNAME .
-*.jawaratekno.com CNAME .
 jin.com.my CNAME .
 *.jin.com.my CNAME .
 jlwz.cn CNAME .
@@ -630,6 +636,8 @@ lon-01.dlo4d.com CNAME .
 *.lon-01.dlo4d.com CNAME .
 londonairportstransfer.co.uk CNAME .
 *.londonairportstransfer.co.uk CNAME .
+lumfluxor.verd1ya.garden CNAME .
+*.lumfluxor.verd1ya.garden CNAME .
 lunar2waveunit.alphafluxnode.garden CNAME .
 *.lunar2waveunit.alphafluxnode.garden CNAME .
 m.jkoa.co.kr CNAME .
@@ -682,6 +690,8 @@ n.vs108.com CNAME .
 *.n.vs108.com CNAME .
 ncxps.com CNAME .
 *.ncxps.com CNAME .
+nelees.com CNAME .
+*.nelees.com CNAME .
 neo-payl0.mossgrove.garden CNAME .
 *.neo-payl0.mossgrove.garden CNAME .
 neogateway9sys.cyberpeaklink.garden CNAME .
@@ -734,6 +744,8 @@ opalview4site.quartzprismcloud.garden CNAME .
 *.opalview4site.quartzprismcloud.garden CNAME .
 openmondkalt.mivontechzone.garden CNAME .
 *.openmondkalt.mivontechzone.garden CNAME .
+orbitmeshpath.ferrumgateweb.garden CNAME .
+*.orbitmeshpath.ferrumgateweb.garden CNAME .
 orbitmeshpath.quantumpathnet.garden CNAME .
 *.orbitmeshpath.quantumpathnet.garden CNAME .
 owlcity.ru CNAME .
@@ -762,8 +774,12 @@ peak8zoneview.canyonsyncgate.garden CNAME .
 *.peak8zoneview.canyonsyncgate.garden CNAME .
 petitwaldnet.dexisnetflow.garden CNAME .
 *.petitwaldnet.dexisnetflow.garden CNAME .
+photonstage.verd1ya.garden CNAME .
+*.photonstage.verd1ya.garden CNAME .
 pid.fly160.com CNAME .
 *.pid.fly160.com CNAME .
+pitchzoneyview.astrolinkview.garden CNAME .
+*.pitchzoneyview.astrolinkview.garden CNAME .
 pitchzoneyview.sonicwavehost.garden CNAME .
 *.pitchzoneyview.sonicwavehost.garden CNAME .
 planemeshlogic.cobaltpathsys.garden CNAME .
@@ -806,8 +822,12 @@ proto-hyp3r.mossgrove.garden CNAME .
 *.proto-hyp3r.mossgrove.garden CNAME .
 proxyfastzone.cryptovoxelsync.garden CNAME .
 *.proxyfastzone.cryptovoxelsync.garden CNAME .
+proxyfastzone.kinetichostbit.garden CNAME .
+*.proxyfastzone.kinetichostbit.garden CNAME .
 public.demo.securecloudsandbox.com CNAME .
 *.public.demo.securecloudsandbox.com CNAME .
+pulse8sitebox.ferrumgateweb.garden CNAME .
+*.pulse8sitebox.ferrumgateweb.garden CNAME .
 pulse8sitebox.quantumpathnet.garden CNAME .
 *.pulse8sitebox.quantumpathnet.garden CNAME .
 pure8siteview.marblewavebase.garden CNAME .
@@ -824,6 +844,8 @@ quant9wavegate.quantumpathnet.garden CNAME .
 *.quant9wavegate.quantumpathnet.garden CNAME .
 quor-draet.leafspring.garden CNAME .
 *.quor-draet.leafspring.garden CNAME .
+r1dge2-stream.grove5s.garden CNAME .
+*.r1dge2-stream.grove5s.garden CNAME .
 radiant7path.orbitmeshunit.garden CNAME .
 *.radiant7path.orbitmeshunit.garden CNAME .
 rapid8wavenet.pixelstormbase.garden CNAME .
@@ -910,6 +932,8 @@ shahamanatme.com CNAME .
 *.shahamanatme.com CNAME .
 shieldpurelink.cryptovoxelsync.garden CNAME .
 *.shieldpurelink.cryptovoxelsync.garden CNAME .
+shieldpurelink.kinetichostbit.garden CNAME .
+*.shieldpurelink.kinetichostbit.garden CNAME .
 shinenetview.quartzprismcloud.garden CNAME .
 *.shinenetview.quartzprismcloud.garden CNAME .
 shop.mediasova.ru CNAME .
@@ -922,18 +946,20 @@ sifthostunit.silicapathsys.garden CNAME .
 *.sifthostunit.silicapathsys.garden CNAME .
 signalwestport.cryptovoxelsync.garden CNAME .
 *.signalwestport.cryptovoxelsync.garden CNAME .
+signalwestport.kinetichostbit.garden CNAME .
+*.signalwestport.kinetichostbit.garden CNAME .
 silicon7point.silicongateway.garden CNAME .
 *.silicon7point.silicongateway.garden CNAME .
 silverhost.vg CNAME .
 *.silverhost.vg CNAME .
 sk-comtel.com CNAME .
 *.sk-comtel.com CNAME .
+slowprim.verd1ya.garden CNAME .
+*.slowprim.verd1ya.garden CNAME .
 smartermail.host CNAME .
 *.smartermail.host CNAME .
 smartmesh1sys.orbitmeshunit.garden CNAME .
 *.smartmesh1sys.orbitmeshunit.garden CNAME .
-smartmeshpath.nebulafluxbase.garden CNAME .
-*.smartmeshpath.nebulafluxbase.garden CNAME .
 smoothmeshway.marblewavebase.garden CNAME .
 *.smoothmeshway.marblewavebase.garden CNAME .
 soft.110route.com CNAME .
@@ -950,6 +976,8 @@ solforgeal3.lightforge.garden CNAME .
 *.solforgeal3.lightforge.garden CNAME .
 solidpathlink.basaltlogicnode.garden CNAME .
 *.solidpathlink.basaltlogicnode.garden CNAME .
+sonic4wavehub.astrolinkview.garden CNAME .
+*.sonic4wavehub.astrolinkview.garden CNAME .
 sonic4wavehub.sonicwavehost.garden CNAME .
 *.sonic4wavehub.sonicwavehost.garden CNAME .
 spacemanslot88.games CNAME .
@@ -968,6 +996,8 @@ static.topxgun.com CNAME .
 *.static.topxgun.com CNAME .
 static.youdm.cn CNAME .
 *.static.youdm.cn CNAME .
+staticflowsys.ferrumgateweb.garden CNAME .
+*.staticflowsys.ferrumgateweb.garden CNAME .
 staticflowsys.quantumpathnet.garden CNAME .
 *.staticflowsys.quantumpathnet.garden CNAME .
 stdown.dinju.com CNAME .
@@ -1010,6 +1040,8 @@ sysvert7holz.qivorpaknode.garden CNAME .
 *.sysvert7holz.qivorpaknode.garden CNAME .
 tal-crestis.greenbloom.garden CNAME .
 *.tal-crestis.greenbloom.garden CNAME .
+taldraa.verd1ya.garden CNAME .
+*.taldraa.verd1ya.garden CNAME .
 talentrecruitments.com CNAME .
 *.talentrecruitments.com CNAME .
 tall5logicnet.pylonstaticnet.garden CNAME .
@@ -1024,6 +1056,8 @@ taskironland.dexishostpath.garden CNAME .
 *.taskironland.dexishostpath.garden CNAME .
 taskironland.zexislinkhub.garden CNAME .
 *.taskironland.zexislinkhub.garden CNAME .
+techbud.ro CNAME .
+*.techbud.ro CNAME .
 tecunonline.com CNAME .
 *.tecunonline.com CNAME .
 tehnomag.rs CNAME .
@@ -1048,6 +1082,8 @@ tiacreation.club CNAME .
 *.tiacreation.club CNAME .
 tidemeshnode.oceanicmeshbit.garden CNAME .
 *.tidemeshnode.oceanicmeshbit.garden CNAME .
+tonelogicgate7.astrolinkview.garden CNAME .
+*.tonelogicgate7.astrolinkview.garden CNAME .
 tonelogicgate7.sonicwavehost.garden CNAME .
 *.tonelogicgate7.sonicwavehost.garden CNAME .
 toolshare.com.tr CNAME .
@@ -1062,6 +1098,8 @@ transparenciacanaa.com.br CNAME .
 *.transparenciacanaa.com.br CNAME .
 trendscan8meta.cryptovoxelsync.garden CNAME .
 *.trendscan8meta.cryptovoxelsync.garden CNAME .
+trendscan8meta.kinetichostbit.garden CNAME .
+*.trendscan8meta.kinetichostbit.garden CNAME .
 triggeveri.voidstream.garden CNAME .
 *.triggeveri.voidstream.garden CNAME .
 trtmyanmar.com CNAME .
@@ -1130,8 +1168,6 @@ vizyonuniversitesi.web.tr CNAME .
 *.vizyonuniversitesi.web.tr CNAME .
 vormarkor.frosthaven.garden CNAME .
 *.vormarkor.frosthaven.garden CNAME .
-vrajras.com CNAME .
-*.vrajras.com CNAME .
 wave4zoneyview.oceanicmeshbit.garden CNAME .
 *.wave4zoneyview.oceanicmeshbit.garden CNAME .
 webopenmond.sylosyncbase.garden CNAME .
@@ -1250,6 +1286,8 @@ xuezha.net CNAME .
 *.xuezha.net CNAME .
 youtransfer.net CNAME .
 *.youtransfer.net CNAME .
+yqql69g.grove5s.garden CNAME .
+*.yqql69g.grove5s.garden CNAME .
 yxhe.voidstream.garden CNAME .
 *.yxhe.voidstream.garden CNAME .
 zhigao5191.com CNAME .
