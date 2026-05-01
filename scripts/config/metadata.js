@@ -113,5 +113,5 @@ module.exports = {
 	'tracking-and-telemetry/neodevpro/host.fork.txt': { title: 'NeoDevPro Host Blocklist' },
 
 	// ── Useless websites ─────────────────────────────────────────────────────
-	'useless-websites/jarelllama/parked-domains.fork.txt': { title: 'Jarelllama Parked Domains' },
+	'useless-websites/jarelllama/parked-domains.fork.txt': { title: 'Jarelllama Parked Domains', license: 'https://github.com/jarelllama/Scam-Blocklist/blob/main/LICENSE.md' },
 };
