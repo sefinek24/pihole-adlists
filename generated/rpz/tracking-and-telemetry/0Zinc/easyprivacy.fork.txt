@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026043009 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026050200 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: EasyPrivacy Hosts Blocklist
-; Entries: 40,358 domains
+; Entries: 40,359 domains
 ; Source: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easyprivacy.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: April 30, 2026 at 9:45 AM UTC | 2026-04-30T09:45:14.710Z
+; Last updated: May 2, 2026 at 12:33 AM UTC | 2026-05-02T00:33:30.475Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -6340,6 +6340,8 @@ nr-js.imaios.com CNAME .
 *.nr-js.imaios.com CNAME .
 nr.noelleeming.co.nz CNAME .
 *.nr.noelleeming.co.nz CNAME .
+nvrmd.novaramedia.com CNAME .
+*.nvrmd.novaramedia.com CNAME .
 observe.metarouter.io CNAME .
 *.observe.metarouter.io CNAME .
 ocular.hotukdeals.com CNAME .
