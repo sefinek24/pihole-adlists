@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026050407 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026050409 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: URLhaus Malicious Hosts
-; Entries: 827 domains
+; Entries: 861 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 4, 2026 at 7:04 AM UTC | 2026-05-04T07:04:38.771Z
+; Last updated: May 4, 2026 at 9:48 AM UTC | 2026-05-04T09:48:58.481Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -96,8 +96,6 @@ apex.agocert.lat CNAME .
 *.apex.agocert.lat CNAME .
 apex.digitaltide.surf CNAME .
 *.apex.digitaltide.surf CNAME .
-apex.metadrive.surf CNAME .
-*.apex.metadrive.surf CNAME .
 apex.urbanflowbase.lat CNAME .
 *.apex.urbanflowbase.lat CNAME .
 apex.wintercoldlab.lat CNAME .
@@ -114,6 +112,8 @@ aqua.clogg-opposition.surf CNAME .
 *.aqua.clogg-opposition.surf CNAME .
 ardena.pro CNAME .
 *.ardena.pro CNAME .
+area.solidlink.surf CNAME .
+*.area.solidlink.surf CNAME .
 area.solidstonecore.lat CNAME .
 *.area.solidstonecore.lat CNAME .
 areyouready.co.za CNAME .
@@ -128,8 +128,6 @@ atlas.urbanlogicgrid.lat CNAME .
 *.atlas.urbanlogicgrid.lat CNAME .
 atom.magicgoldlogic.lat CNAME .
 *.atom.magicgoldlogic.lat CNAME .
-atom.nanologic.surf CNAME .
-*.atom.nanologic.surf CNAME .
 atom.purelogic.surf CNAME .
 *.atom.purelogic.surf CNAME .
 atom.vmesscab.lat CNAME .
@@ -156,8 +154,8 @@ bala6-forge.notice-ohlamon.surf CNAME .
 *.bala6-forge.notice-ohlamon.surf CNAME .
 base.anythin8weaned.surf CNAME .
 *.base.anythin8weaned.surf CNAME .
-base.solidcore.surf CNAME .
-*.base.solidcore.surf CNAME .
+base.solidlink.surf CNAME .
+*.base.solidlink.surf CNAME .
 base.solidstonecore.lat CNAME .
 *.base.solidstonecore.lat CNAME .
 base.wintercoldlab.lat CNAME .
@@ -300,6 +298,10 @@ cold.clogg-opposition.surf CNAME .
 *.cold.clogg-opposition.surf CNAME .
 cold.darkwinterlab.lat CNAME .
 *.cold.darkwinterlab.lat CNAME .
+cold.frostpoint.surf CNAME .
+*.cold.frostpoint.surf CNAME .
+cold.oceanblue.surf CNAME .
+*.cold.oceanblue.surf CNAME .
 compuserviceonline.com.br CNAME .
 *.compuserviceonline.com.br CNAME .
 contentmentfairnesspesky.com CNAME .
@@ -518,6 +520,8 @@ fast.clogg-opposition.surf CNAME .
 *.fast.clogg-opposition.surf CNAME .
 fast.magicflowpoint.lat CNAME .
 *.fast.magicflowpoint.lat CNAME .
+fast.powerdrift.surf CNAME .
+*.fast.powerdrift.surf CNAME .
 fd.v2downf.shop CNAME .
 *.fd.v2downf.shop CNAME .
 fe.boldfirestep.lat CNAME .
@@ -536,8 +540,8 @@ fire.anythin8weaned.surf CNAME .
 *.fire.anythin8weaned.surf CNAME .
 fire.boldfirestep.lat CNAME .
 *.fire.boldfirestep.lat CNAME .
-fire.rapidstorm.surf CNAME .
-*.fire.rapidstorm.surf CNAME .
+fire.powerdrift.surf CNAME .
+*.fire.powerdrift.surf CNAME .
 fire.wildfirelake.lat CNAME .
 *.fire.wildfirelake.lat CNAME .
 first-security-verden.de CNAME .
@@ -568,6 +572,10 @@ forestoke.yeldfor.lat CNAME .
 *.forestoke.yeldfor.lat CNAME .
 frost.darkwinterlab.lat CNAME .
 *.frost.darkwinterlab.lat CNAME .
+frost.frostpoint.surf CNAME .
+*.frost.frostpoint.surf CNAME .
+frost.oceanblue.surf CNAME .
+*.frost.oceanblue.surf CNAME .
 frozi.cc CNAME .
 *.frozi.cc CNAME .
 ftp.ywxww.net CNAME .
@@ -628,6 +636,8 @@ gr4nd4-node.family-man.surf CNAME .
 *.gr4nd4-node.family-man.surf CNAME .
 grandtheftauto6.cc CNAME .
 *.grandtheftauto6.cc CNAME .
+grass.solidlink.surf CNAME .
+*.grass.solidlink.surf CNAME .
 great.wintercoldlab.lat CNAME .
 *.great.wintercoldlab.lat CNAME .
 greenf.alexion.rs CNAME .
@@ -654,6 +664,8 @@ handlerric.family-man.surf CNAME .
 *.handlerric.family-man.surf CNAME .
 handlprint.yeldfor.lat CNAME .
 *.handlprint.yeldfor.lat CNAME .
+hard.solidlink.surf CNAME .
+*.hard.solidlink.surf CNAME .
 hard.solidstonecore.lat CNAME .
 *.hard.solidstonecore.lat CNAME .
 hasalltalent.com CNAME .
@@ -662,6 +674,8 @@ high.brightskyway.lat CNAME .
 *.high.brightskyway.lat CNAME .
 high.ipfsway.lat CNAME .
 *.high.ipfsway.lat CNAME .
+high.logicreef.surf CNAME .
+*.high.logicreef.surf CNAME .
 hitman-pro.ru CNAME .
 *.hitman-pro.ru CNAME .
 hitstation.nl CNAME .
@@ -688,8 +702,10 @@ i.404.pm CNAME .
 *.i.404.pm CNAME .
 ice.darkwinterlab.lat CNAME .
 *.ice.darkwinterlab.lat CNAME .
-ice.winterpeak.surf CNAME .
-*.ice.winterpeak.surf CNAME .
+ice.frostpoint.surf CNAME .
+*.ice.frostpoint.surf CNAME .
+ice.oceanblue.surf CNAME .
+*.ice.oceanblue.surf CNAME .
 icoffeecloud.com CNAME .
 *.icoffeecloud.com CNAME .
 igra123.com CNAME .
@@ -708,8 +724,12 @@ inmbau.com CNAME .
 *.inmbau.com CNAME .
 ircftp.net CNAME .
 *.ircftp.net CNAME .
+iron.cryptobase.surf CNAME .
+*.iron.cryptobase.surf CNAME .
 iron.sculpture5traight.surf CNAME .
 *.iron.sculpture5traight.surf CNAME .
+iron.solidlink.surf CNAME .
+*.iron.solidlink.surf CNAME .
 iron.solidstonecore.lat CNAME .
 *.iron.solidstonecore.lat CNAME .
 isiore.com.co CNAME .
@@ -736,6 +756,8 @@ jump.andipfs.lat CNAME .
 *.jump.andipfs.lat CNAME .
 jump.boldfirestep.lat CNAME .
 *.jump.boldfirestep.lat CNAME .
+jump.powerdrift.surf CNAME .
+*.jump.powerdrift.surf CNAME .
 jvtu4ew.notice-ohlamon.surf CNAME .
 *.jvtu4ew.notice-ohlamon.surf CNAME .
 jyothishmathi.in CNAME .
@@ -768,8 +790,12 @@ kick.boldfirestep.lat CNAME .
 *.kick.boldfirestep.lat CNAME .
 kick.brightskycore.lat CNAME .
 *.kick.brightskycore.lat CNAME .
+kick.darktrace.surf CNAME .
+*.kick.darktrace.surf CNAME .
 kick.installer-catip.surf CNAME .
 *.kick.installer-catip.surf CNAME .
+kick.powerdrift.surf CNAME .
+*.kick.powerdrift.surf CNAME .
 kilo.casino-fascin.surf CNAME .
 *.kilo.casino-fascin.surf CNAME .
 kilo.starlightnova.lat CNAME .
@@ -802,10 +828,12 @@ lava.sculpture5traight.surf CNAME .
 *.lava.sculpture5traight.surf CNAME .
 lawfirm.paperbirdtech.com CNAME .
 *.lawfirm.paperbirdtech.com CNAME .
+leaf.brightpath.surf CNAME .
+*.leaf.brightpath.surf CNAME .
 leaf.greenforesthub.lat CNAME .
 *.leaf.greenforesthub.lat CNAME .
-leanmaestro.com CNAME .
-*.leanmaestro.com CNAME .
+leaf.terraview.surf CNAME .
+*.leaf.terraview.surf CNAME .
 leo.longwave5hot.surf CNAME .
 *.leo.longwave5hot.surf CNAME .
 libss.0x504.com CNAME .
@@ -862,8 +890,8 @@ mail.ssadownload.top CNAME .
 *.mail.ssadownload.top CNAME .
 marsalek.cy CNAME .
 *.marsalek.cy CNAME .
-mass.solidcore.surf CNAME .
-*.mass.solidcore.surf CNAME .
+mass.solidlink.surf CNAME .
+*.mass.solidlink.surf CNAME .
 mass.solidstonecore.lat CNAME .
 *.mass.solidstonecore.lat CNAME .
 maxtuberussia.lol CNAME .
@@ -992,8 +1020,6 @@ omni.starlightnova.lat CNAME .
 *.omni.starlightnova.lat CNAME .
 onfiltre.com.tr CNAME .
 *.onfiltre.com.tr CNAME .
-onyxguardify.de CNAME .
-*.onyxguardify.de CNAME .
 onyxphantomlock.de CNAME .
 *.onyxphantomlock.de CNAME .
 orbit.casino-fascin.surf CNAME .
@@ -1020,8 +1046,12 @@ palharesinformatica.com.br CNAME .
 *.palharesinformatica.com.br CNAME .
 panychurasc0.com CNAME .
 *.panychurasc0.com CNAME .
+park.brightpath.surf CNAME .
+*.park.brightpath.surf CNAME .
 park.greenforesthub.lat CNAME .
 *.park.greenforesthub.lat CNAME .
+park.terraview.surf CNAME .
+*.park.terraview.surf CNAME .
 pay.aqiu6.com CNAME .
 *.pay.aqiu6.com CNAME .
 pc7n.chi8nondanyl.surf CNAME .
@@ -1108,6 +1138,8 @@ quormeshex.handker-unicamer.surf CNAME .
 *.quormeshex.handker-unicamer.surf CNAME .
 r3ef-scope.chi8nondanyl.surf CNAME .
 *.r3ef-scope.chi8nondanyl.surf CNAME .
+r3ef9-point.zori6mav.lat CNAME .
+*.r3ef9-point.zori6mav.lat CNAME .
 rai1-cache.notice-ohlamon.surf CNAME .
 *.rai1-cache.notice-ohlamon.surf CNAME .
 ramirex.ro CNAME .
@@ -1150,12 +1182,20 @@ rnqb.yeldfor.lat CNAME .
 *.rnqb.yeldfor.lat CNAME .
 robertrowe.com CNAME .
 *.robertrowe.com CNAME .
+rock.cryptobase.surf CNAME .
+*.rock.cryptobase.surf CNAME .
 rock.sculpture5traight.surf CNAME .
 *.rock.sculpture5traight.surf CNAME .
+rock.solidlink.surf CNAME .
+*.rock.solidlink.surf CNAME .
 rock.solidstonecore.lat CNAME .
 *.rock.solidstonecore.lat CNAME .
+root.brightpath.surf CNAME .
+*.root.brightpath.surf CNAME .
 root.greenforesthub.lat CNAME .
 *.root.greenforesthub.lat CNAME .
+root.terraview.surf CNAME .
+*.root.terraview.surf CNAME .
 royalindiancurryclub.com CNAME .
 *.royalindiancurryclub.com CNAME .
 rq6yosv.breadpotho1e.surf CNAME .
@@ -1166,10 +1206,14 @@ run.andipfs.lat CNAME .
 *.run.andipfs.lat CNAME .
 run.boldfirestep.lat CNAME .
 *.run.boldfirestep.lat CNAME .
+run.powerdrift.surf CNAME .
+*.run.powerdrift.surf CNAME .
 runw2-flow.wentgot.lat CNAME .
 *.runw2-flow.wentgot.lat CNAME .
 rush.andipfs.lat CNAME .
 *.rush.andipfs.lat CNAME .
+rush.powerdrift.surf CNAME .
+*.rush.powerdrift.surf CNAME .
 rxquickpay.com CNAME .
 *.rxquickpay.com CNAME .
 s0un-panel.yeldfor.lat CNAME .
@@ -1336,6 +1380,10 @@ temirtau-adm.ru CNAME .
 *.temirtau-adm.ru CNAME .
 temp.darkwinterlab.lat CNAME .
 *.temp.darkwinterlab.lat CNAME .
+temp.frostpoint.surf CNAME .
+*.temp.frostpoint.surf CNAME .
+temp.oceanblue.surf CNAME .
+*.temp.oceanblue.surf CNAME .
 tengfeidn.cn CNAME .
 *.tengfeidn.cn CNAME .
 test.peperoncinochepassione.it CNAME .
@@ -1380,8 +1428,14 @@ trace.silverwoodhub.lat CNAME .
 *.trace.silverwoodhub.lat CNAME .
 transparenciacanaa.com.br CNAME .
 *.transparenciacanaa.com.br CNAME .
+travelprair.zori6mav.lat CNAME .
+*.travelprair.zori6mav.lat CNAME .
+tree.brightpath.surf CNAME .
+*.tree.brightpath.surf CNAME .
 tree.greenforesthub.lat CNAME .
 *.tree.greenforesthub.lat CNAME .
+tree.terraview.surf CNAME .
+*.tree.terraview.surf CNAME .
 trtmyanmar.com CNAME .
 *.trtmyanmar.com CNAME .
 trustedbas.handker-unicamer.surf CNAME .
@@ -1502,10 +1556,16 @@ widexenmexico.com.mx CNAME .
 *.widexenmexico.com.mx CNAME .
 wild.greenforesthub.lat CNAME .
 *.wild.greenforesthub.lat CNAME .
+wild.terraview.surf CNAME .
+*.wild.terraview.surf CNAME .
 wild.wildfirelake.lat CNAME .
 *.wild.wildfirelake.lat CNAME .
 wildlan.breadpotho1e.surf CNAME .
 *.wildlan.breadpotho1e.surf CNAME .
+wind.frostpoint.surf CNAME .
+*.wind.frostpoint.surf CNAME .
+wind.oceanblue.surf CNAME .
+*.wind.oceanblue.surf CNAME .
 windomstatetheater.com CNAME .
 *.windomstatetheater.com CNAME .
 wing.brightskyway.lat CNAME .
@@ -1514,8 +1574,12 @@ wittenhorst.eu CNAME .
 *.wittenhorst.eu CNAME .
 wood-zone.weplord.lat CNAME .
 *.wood-zone.weplord.lat CNAME .
+wood.brightpath.surf CNAME .
+*.wood.brightpath.surf CNAME .
 wood.greenforesthub.lat CNAME .
 *.wood.greenforesthub.lat CNAME .
+wood.terraview.surf CNAME .
+*.wood.terraview.surf CNAME .
 wq278yz.qantuni.lat CNAME .
 *.wq278yz.qantuni.lat CNAME .
 ardguisser.com CNAME .
@@ -1648,6 +1712,10 @@ zhigao5191.com CNAME .
 *.zhigao5191.com CNAME .
 zone.darkwinterlab.lat CNAME .
 *.zone.darkwinterlab.lat CNAME .
+zone.frostpoint.surf CNAME .
+*.zone.frostpoint.surf CNAME .
+zone.oceanblue.surf CNAME .
+*.zone.oceanblue.surf CNAME .
 zoom.brightskycore.lat CNAME .
 *.zoom.brightskycore.lat CNAME .
 zoom.installer-catip.surf CNAME .
