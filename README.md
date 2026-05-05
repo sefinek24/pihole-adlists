@@ -27,11 +27,14 @@
 </a>
 
 > [!IMPORTANT]  
-> I do not allow commercial use of my lists. Lists that I did not create are distributed in accordance with the licensing terms set by their original authors.  
-> If you wish to use the Sefinek Blocklist Collection for commercial purposes, please contact me via email.
+> Please do not download the lists too frequently (e.g., every few hours).
+> It is recommended to download them no more than once per day.
+> Frequent downloads are unnecessary, as the lists are updated only twice during the night (Polish time).
+> More information can be found [here](https://blocklist.sefinek.net/update-schedule).
 
 > [!IMPORTANT]  
-> Please do not download the lists too frequently (e.g., every few hours). It is recommended to download them no more than once per day. Frequent downloads are unnecessary, as the lists are updated only twice during the night (Polish time). More information can be found [here](https://blocklist.sefinek.net/update-schedule).
+> I do not allow commercial use of my lists. Lists that I did not create are distributed in accordance with the licensing terms set by their original authors.  
+> If you wish to use the Sefinek Blocklist Collection for commercial purposes, please contact me via email.
 
 
 ## ❌ How to Report a False Positive?
