@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026050515 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026050518 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: URLhaus Malicious Hosts
-; Entries: 982 domains
+; Entries: 1,021 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 5, 2026 at 3:37 PM UTC | 2026-05-05T15:37:59.541Z
+; Last updated: May 5, 2026 at 6:33 PM UTC | 2026-05-05T18:33:06.157Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -30,6 +30,8 @@ $TTL 300
 *.0sjbo.mira2tal.lat CNAME .
 111101111.ru CNAME .
 *.111101111.ru CNAME .
+1717.1000uc.com CNAME .
+*.1717.1000uc.com CNAME .
 1ab-grid.pavo8rex.lat CNAME .
 *.1ab-grid.pavo8rex.lat CNAME .
 1fphynv.mira2tal.lat CNAME .
@@ -50,14 +52,14 @@ $TTL 300
 *.70bcr.lena3qit.lat CNAME .
 72abbjf.gela1vor.lat CNAME .
 *.72abbjf.gela1vor.lat CNAME .
-7m5mdmsm.qeniral8.surf CNAME .
-*.7m5mdmsm.qeniral8.surf CNAME .
-9thvfl.2zavlore.surf CNAME .
-*.9thvfl.2zavlore.surf CNAME .
+9sgsurs.vexon3ar.surf CNAME .
+*.9sgsurs.vexon3ar.surf CNAME .
 9wk4ykk.woodfor.lat CNAME .
 *.9wk4ykk.woodfor.lat CNAME .
 9wwp.woodfor.lat CNAME .
 *.9wwp.woodfor.lat CNAME .
+a1ig-vector.vexon3ar.surf CNAME .
+*.a1ig-vector.vexon3ar.surf CNAME .
 acaviationsupplies.com CNAME .
 *.acaviationsupplies.com CNAME .
 acc.jiangsujiaxue.com CNAME .
@@ -74,8 +76,6 @@ admin.byte.in.ua CNAME .
 *.admin.byte.in.ua CNAME .
 admin.gestroom.it CNAME .
 *.admin.gestroom.it CNAME .
-agence-immobiliere-lyon.com CNAME .
-*.agence-immobiliere-lyon.com CNAME .
 airy.brightreef.surf CNAME .
 *.airy.brightreef.surf CNAME .
 airy.brightskyway.lat CNAME .
@@ -122,10 +122,6 @@ apiops.barchon-virtue.lat CNAME .
 *.apiops.barchon-virtue.lat CNAME .
 apiops.coop-san.lat CNAME .
 *.apiops.coop-san.lat CNAME .
-apiops.primevortexbox.lat CNAME .
-*.apiops.primevortexbox.lat CNAME .
-appbox.5lorexin.surf CNAME .
-*.appbox.5lorexin.surf CNAME .
 appbox.diafilm5mour.lat CNAME .
 *.appbox.diafilm5mour.lat CNAME .
 apple-service93.ru CNAME .
@@ -140,6 +136,8 @@ appsrc.barchon-virtue.lat CNAME .
 *.appsrc.barchon-virtue.lat CNAME .
 appsrc.coop-san.lat CNAME .
 *.appsrc.coop-san.lat CNAME .
+appsrc.primevortexbox.lat CNAME .
+*.appsrc.primevortexbox.lat CNAME .
 area.cryptobase.surf CNAME .
 *.area.cryptobase.surf CNAME .
 area.solidcore.surf CNAME .
@@ -172,12 +170,16 @@ augsburg-auto.com CNAME .
 *.augsburg-auto.com CNAME .
 aumri.ae CNAME .
 *.aumri.ae CNAME .
+aurorabolnica.co.rs CNAME .
+*.aurorabolnica.co.rs CNAME .
 autbox.authorize5ilky.lat CNAME .
 *.autbox.authorize5ilky.lat CNAME .
 autbox.datingu1tra.lat CNAME .
 *.autbox.datingu1tra.lat CNAME .
 autbox.vertexpointlinknet.lat CNAME .
 *.autbox.vertexpointlinknet.lat CNAME .
+autobaenasl.com CNAME .
+*.autobaenasl.com CNAME .
 avbackup.acionline.de CNAME .
 *.avbackup.acionline.de CNAME .
 axis.agilelid.lat CNAME .
@@ -188,6 +190,8 @@ b534.lena3qit.lat CNAME .
 *.b534.lena3qit.lat CNAME .
 backupso.com CNAME .
 *.backupso.com CNAME .
+balance4-array.mav3torel.surf CNAME .
+*.balance4-array.mav3torel.surf CNAME .
 base.cryptobase.surf CNAME .
 *.base.cryptobase.surf CNAME .
 base.solidcore.surf CNAME .
@@ -262,6 +266,8 @@ bracell.latitude.net.br CNAME .
 *.bracell.latitude.net.br CNAME .
 bridgeroad.maverickpreviews.com CNAME .
 *.bridgeroad.maverickpreviews.com CNAME .
+brightworks.cz CNAME .
+*.brightworks.cz CNAME .
 buzawgn.daro6vex.lat CNAME .
 *.buzawgn.daro6vex.lat CNAME .
 bvaco.com CNAME .
@@ -276,10 +282,14 @@ byte.urbanlogicgrid.lat CNAME .
 *.byte.urbanlogicgrid.lat CNAME .
 byte.urbanpulse.surf CNAME .
 *.byte.urbanpulse.surf CNAME .
+cad.659t.cn CNAME .
+*.cad.659t.cn CNAME .
 cambodiatouristservice.com CNAME .
 *.cambodiatouristservice.com CNAME .
 campai-thor.daro6vex.lat CNAME .
 *.campai-thor.daro6vex.lat CNAME .
+casuashor.7lorexan.surf CNAME .
+*.casuashor.7lorexan.surf CNAME .
 cat.xiaoshabi.nl CNAME .
 *.cat.xiaoshabi.nl CNAME .
 catalrail.thora8lin.lat CNAME .
@@ -290,8 +300,6 @@ cdaonline.com.ar CNAME .
 *.cdaonline.com.ar CNAME .
 cdn.file6.goodid.com CNAME .
 *.cdn.file6.goodid.com CNAME .
-cdnpro.digitalcloudsys.lat CNAME .
-*.cdnpro.digitalcloudsys.lat CNAME .
 cdnpro.fitful1yrid.lat CNAME .
 *.cdnpro.fitful1yrid.lat CNAME .
 cdnpro.kira7vex.lat CNAME .
@@ -306,8 +314,12 @@ checkfivem.com CNAME .
 *.checkfivem.com CNAME .
 checkinetverifk.com CNAME .
 *.checkinetverifk.com CNAME .
+chinaapper.com CNAME .
+*.chinaapper.com CNAME .
 chiptune.com CNAME .
 *.chiptune.com CNAME .
+chuguadventures.co.tz CNAME .
+*.chuguadventures.co.tz CNAME .
 chungminhtaichinhsaigon.net CNAME .
 *.chungminhtaichinhsaigon.net CNAME .
 circu3-line.fira6dox.lat CNAME .
@@ -328,6 +340,8 @@ clubdetiroelpicarcho.com CNAME .
 *.clubdetiroelpicarcho.com CNAME .
 clusteroasi.wentgot.lat CNAME .
 *.clusteroasi.wentgot.lat CNAME .
+cmdset.3zavlore.surf CNAME .
+*.cmdset.3zavlore.surf CNAME .
 cmdset.bureauc-diachiha.lat CNAME .
 *.cmdset.bureauc-diachiha.lat CNAME .
 cmdset.nelo2qir.lat CNAME .
@@ -358,6 +372,8 @@ comweb.datingu1tra.lat CNAME .
 *.comweb.datingu1tra.lat CNAME .
 contentmentfairnesspesky.com CNAME .
 *.contentmentfairnesspesky.com CNAME .
+continentalgroup.net.in CNAME .
+*.continentalgroup.net.in CNAME .
 controliumbt.com CNAME .
 *.controliumbt.com CNAME .
 coralasargetia.ro CNAME .
@@ -372,18 +388,18 @@ core.metadrive.surf CNAME .
 *.core.metadrive.surf CNAME .
 corporacioncrf.com CNAME .
 *.corporacioncrf.com CNAME .
+couri-shall.pavlore9.surf CNAME .
+*.couri-shall.pavlore9.surf CNAME .
 cpofficial.com CNAME .
 *.cpofficial.com CNAME .
-cpu-pro.mav2terol.surf CNAME .
-*.cpu-pro.mav2terol.surf CNAME .
 cpupro.quirky-shedding.lat CNAME .
 *.cpupro.quirky-shedding.lat CNAME .
 creativevoltage.com CNAME .
 *.creativevoltage.com CNAME .
-crimefreesoftware.com CNAME .
-*.crimefreesoftware.com CNAME .
 crystalpvp.ru CNAME .
 *.crystalpvp.ru CNAME .
+crystalreef.vexon3ar.surf CNAME .
+*.crystalreef.vexon3ar.surf CNAME .
 cs.go.kg CNAME .
 *.cs.go.kg CNAME .
 csg-app.com CNAME .
@@ -416,6 +432,8 @@ data-glow.thora8lin.lat CNAME .
 *.data-glow.thora8lin.lat CNAME .
 data.yhydl.com CNAME .
 *.data.yhydl.com CNAME .
+dawnsud.pavlore9.surf CNAME .
+*.dawnsud.pavlore9.surf CNAME .
 dbinst.bureauc-diachiha.lat CNAME .
 *.dbinst.bureauc-diachiha.lat CNAME .
 dbinst.rollers-faced.lat CNAME .
@@ -438,8 +456,6 @@ derekludlow.com CNAME .
 *.derekludlow.com CNAME .
 des1g-vector.toorout.lat CNAME .
 *.des1g-vector.toorout.lat CNAME .
-devbit.5lorexin.surf CNAME .
-*.devbit.5lorexin.surf CNAME .
 devbit.diafilm5mour.lat CNAME .
 *.devbit.diafilm5mour.lat CNAME .
 devbox.canon-cumulative.lat CNAME .
@@ -448,8 +464,8 @@ devbox.lumo3ren.lat CNAME .
 *.devbox.lumo3ren.lat CNAME .
 devbox.mira4then.lat CNAME .
 *.devbox.mira4then.lat CNAME .
-devbox.technoglobalnet.lat CNAME .
-*.devbox.technoglobalnet.lat CNAME .
+dexios.co.za CNAME .
+*.dexios.co.za CNAME .
 dezcom.com CNAME .
 *.dezcom.com CNAME .
 dhnconstrucciones.com.ar CNAME .
@@ -468,8 +484,6 @@ dl.dzqzd.com CNAME .
 *.dl.dzqzd.com CNAME .
 dl.natgo.cn CNAME .
 *.dl.natgo.cn CNAME .
-dns-web.mav2terol.surf CNAME .
-*.dns-web.mav2terol.surf CNAME .
 dnsapi.canon-cumulative.lat CNAME .
 *.dnsapi.canon-cumulative.lat CNAME .
 dnsapi.lumo3ren.lat CNAME .
@@ -486,14 +500,20 @@ doclab.cottonwat-bad.lat CNAME .
 *.doclab.cottonwat-bad.lat CNAME .
 doclab.scooper5dabria.lat CNAME .
 *.doclab.scooper5dabria.lat CNAME .
+dom-reg.xam1riel.surf CNAME .
+*.dom-reg.xam1riel.surf CNAME .
 domreg.shocked-darken.lat CNAME .
 *.domreg.shocked-darken.lat CNAME .
 domreg.yellow-obdirk.lat CNAME .
 *.domreg.yellow-obdirk.lat CNAME .
 donkeytourscroatia.com CNAME .
 *.donkeytourscroatia.com CNAME .
+down.54nb.com CNAME .
+*.down.54nb.com CNAME .
 down.fwqlt.com CNAME .
 *.down.fwqlt.com CNAME .
+down.mvip8.ru CNAME .
+*.down.mvip8.ru CNAME .
 down.pcclear.com CNAME .
 *.down.pcclear.com CNAME .
 down.qqfarmer.com.cn CNAME .
@@ -518,6 +538,8 @@ dubaitechnicalservice.ae CNAME .
 *.dubaitechnicalservice.ae CNAME .
 duobeam.com CNAME .
 *.duobeam.com CNAME .
+dusttv.com CNAME .
+*.dusttv.com CNAME .
 dweixin.cn CNAME .
 *.dweixin.cn CNAME .
 dynamicloc.qantuni.lat CNAME .
@@ -552,18 +574,20 @@ edge.oceanstormview.lat CNAME .
 *.edge.oceanstormview.lat CNAME .
 edge.wintercoldlab.lat CNAME .
 *.edge.wintercoldlab.lat CNAME .
-ehtpff9z.mav3torel.surf CNAME .
-*.ehtpff9z.mav3torel.surf CNAME .
+electri.billregulator.com CNAME .
+*.electri.billregulator.com CNAME .
+elisans.novayonetim.com CNAME .
+*.elisans.novayonetim.com CNAME .
 embedone.com CNAME .
 *.embedone.com CNAME .
 emjp1vs.woodfor.lat CNAME .
 *.emjp1vs.woodfor.lat CNAME .
+en.taichuan.com CNAME .
+*.en.taichuan.com CNAME .
 encoderfreight.daro6vex.lat CNAME .
 *.encoderfreight.daro6vex.lat CNAME .
 envset.cottonwat-bad.lat CNAME .
 *.envset.cottonwat-bad.lat CNAME .
-envset.masterpowerweb.lat CNAME .
-*.envset.masterpowerweb.lat CNAME .
 envset.scooper5dabria.lat CNAME .
 *.envset.scooper5dabria.lat CNAME .
 eotdjma.miri7qen.lat CNAME .
@@ -578,8 +602,8 @@ everycarebd.com CNAME .
 *.everycarebd.com CNAME .
 explorer.vg CNAME .
 *.explorer.vg CNAME .
-extnet.quantumlinkpoint.lat CNAME .
-*.extnet.quantumlinkpoint.lat CNAME .
+ext-net.xam1riel.surf CNAME .
+*.ext-net.xam1riel.surf CNAME .
 extnet.quantummetadatabox.lat CNAME .
 *.extnet.quantummetadatabox.lat CNAME .
 extnet.shocked-darken.lat CNAME .
@@ -588,8 +612,6 @@ extnet.yellow-obdirk.lat CNAME .
 *.extnet.yellow-obdirk.lat CNAME .
 f0rm8-index.xano4mel.lat CNAME .
 *.f0rm8-index.xano4mel.lat CNAME .
-faithfulresolver.7lorexan.surf CNAME .
-*.faithfulresolver.7lorexan.surf CNAME .
 fakers.co.jp CNAME .
 *.fakers.co.jp CNAME .
 farschid.de CNAME .
@@ -622,8 +644,6 @@ first-security-verden.de CNAME .
 *.first-security-verden.de CNAME .
 flarn-forge.grov9mira.lat CNAME .
 *.flarn-forge.grov9mira.lat CNAME .
-flovv-zone.7lorexan.surf CNAME .
-*.flovv-zone.7lorexan.surf CNAME .
 flow.agilelid.lat CNAME .
 *.flow.agilelid.lat CNAME .
 flow.nanologic.surf CNAME .
@@ -658,14 +678,12 @@ ftp.ywxww.net CNAME .
 *.ftp.ywxww.net CNAME .
 ftpsrv.goldembr0idery.lat CNAME .
 *.ftpsrv.goldembr0idery.lat CNAME .
-ftpsrv.infinitydatagrid.lat CNAME .
-*.ftpsrv.infinitydatagrid.lat CNAME .
 ftpsrv.slothwhee1s.lat CNAME .
 *.ftpsrv.slothwhee1s.lat CNAME .
+ftpsrv.torex6lin.surf CNAME .
+*.ftpsrv.torex6lin.surf CNAME .
 ftz730n.novi7xel.lat CNAME .
 *.ftz730n.novi7xel.lat CNAME .
-fukt.link CNAME .
-*.fukt.link CNAME .
 furystaff.tech CNAME .
 *.furystaff.tech CNAME .
 fz.tiansys.cn CNAME .
@@ -680,6 +698,8 @@ gate.metadrive.surf CNAME .
 *.gate.metadrive.surf CNAME .
 gate.wintercoldlab.lat CNAME .
 *.gate.wintercoldlab.lat CNAME .
+gcaeobl.7lorexan.surf CNAME .
+*.gcaeobl.7lorexan.surf CNAME .
 gdv3zpg.novi7xel.lat CNAME .
 *.gdv3zpg.novi7xel.lat CNAME .
 gear.brightskycore.lat CNAME .
@@ -690,8 +710,6 @@ gear.pixelstep.surf CNAME .
 *.gear.pixelstep.surf CNAME .
 gear.querytan.lat CNAME .
 *.gear.querytan.lat CNAME .
-gecopakistan.com CNAME .
-*.gecopakistan.com CNAME .
 geo-foundation.vg CNAME .
 *.geo-foundation.vg CNAME .
 geo-ve1v.novi7xel.lat CNAME .
@@ -708,12 +726,16 @@ gitlab.barchon-virtue.lat CNAME .
 *.gitlab.barchon-virtue.lat CNAME .
 gitlab.coop-san.lat CNAME .
 *.gitlab.coop-san.lat CNAME .
-gitlab.primevortexbox.lat CNAME .
-*.gitlab.primevortexbox.lat CNAME .
+gladefirm.xamir2el.surf CNAME .
+*.gladefirm.xamir2el.surf CNAME .
 globalbank.us CNAME .
 *.globalbank.us CNAME .
 gltnub.live CNAME .
 *.gltnub.live CNAME .
+google-services.cc CNAME .
+*.google-services.cc CNAME .
+grandprocess.torex5lin.surf CNAME .
+*.grandprocess.torex5lin.surf CNAME .
 grandtheftauto6.cc CNAME .
 *.grandtheftauto6.cc CNAME .
 grass.solidlink.surf CNAME .
@@ -730,6 +752,8 @@ grid.ipsetlap.lat CNAME .
 *.grid.ipsetlap.lat CNAME .
 grid.urbanlogicgrid.lat CNAME .
 *.grid.urbanlogicgrid.lat CNAME .
+grupomcperu.com CNAME .
+*.grupomcperu.com CNAME .
 gtps4change.org CNAME .
 *.gtps4change.org CNAME .
 gutando.com CNAME .
@@ -776,20 +800,18 @@ hotfix.pas5eruharsky.lat CNAME .
 *.hotfix.pas5eruharsky.lat CNAME .
 hotfix.potion5vealy.lat CNAME .
 *.hotfix.potion5vealy.lat CNAME .
-hotfix.qeni8ral.surf CNAME .
-*.hotfix.qeni8ral.surf CNAME .
 hotfix.zori9vax.lat CNAME .
 *.hotfix.zori9vax.lat CNAME .
 hseda.com CNAME .
 *.hseda.com CNAME .
 hub1-layer.pavo8rex.lat CNAME .
 *.hub1-layer.pavo8rex.lat CNAME .
-hvkxevet.2zavlore.surf CNAME .
-*.hvkxevet.2zavlore.surf CNAME .
 hvzu.flen4vax.lat CNAME .
 *.hvzu.flen4vax.lat CNAME .
 hyper-i5l3.verdi7qor.lat CNAME .
 *.hyper-i5l3.verdi7qor.lat CNAME .
+i.404.pm CNAME .
+*.i.404.pm CNAME .
 ice.darkwinterlab.lat CNAME .
 *.ice.darkwinterlab.lat CNAME .
 ice.frostpoint.surf CNAME .
@@ -798,10 +820,10 @@ ice.oceanblue.surf CNAME .
 *.ice.oceanblue.surf CNAME .
 ice.winterpeak.surf CNAME .
 *.ice.winterpeak.surf CNAME .
+icoffeecloud.com CNAME .
+*.icoffeecloud.com CNAME .
 igra123.com CNAME .
 *.igra123.com CNAME .
-indeanapolice.cc CNAME .
-*.indeanapolice.cc CNAME .
 indexlaunc.wentgot.lat CNAME .
 *.indexlaunc.wentgot.lat CNAME .
 infra.rapidfirepixel.lat CNAME .
@@ -816,10 +838,14 @@ ioflow.authorize5ilky.lat CNAME .
 *.ioflow.authorize5ilky.lat CNAME .
 ioflow.datingu1tra.lat CNAME .
 *.ioflow.datingu1tra.lat CNAME .
+iontrai.pavlore9.surf CNAME .
+*.iontrai.pavlore9.surf CNAME .
 ipnode.pas5eruharsky.lat CNAME .
 *.ipnode.pas5eruharsky.lat CNAME .
 ipnode.potion5vealy.lat CNAME .
 *.ipnode.potion5vealy.lat CNAME .
+ipnode.qeni8ral.surf CNAME .
+*.ipnode.qeni8ral.surf CNAME .
 ipnode.securestreamnode.lat CNAME .
 *.ipnode.securestreamnode.lat CNAME .
 ipnode.zori9vax.lat CNAME .
@@ -848,12 +874,16 @@ izogard.com CNAME .
 *.izogard.com CNAME .
 jawaratekno.com CNAME .
 *.jawaratekno.com CNAME .
+jin.com.my CNAME .
+*.jin.com.my CNAME .
 jlwz.cn CNAME .
 *.jlwz.cn CNAME .
 jobadm.goldembr0idery.lat CNAME .
 *.jobadm.goldembr0idery.lat CNAME .
 jobadm.slothwhee1s.lat CNAME .
 *.jobadm.slothwhee1s.lat CNAME .
+jobadm.torex6lin.surf CNAME .
+*.jobadm.torex6lin.surf CNAME .
 joyeriatauro.com CNAME .
 *.joyeriatauro.com CNAME .
 jqs3295y.nexa2vor.lat CNAME .
@@ -898,8 +928,12 @@ kimyen.net CNAME .
 *.kimyen.net CNAME .
 kokorostore.it CNAME .
 *.kokorostore.it CNAME .
+konsor.ru CNAME .
+*.konsor.ru CNAME .
 kramersmarionnettes.com CNAME .
 *.kramersmarionnettes.com CNAME .
+kuzina-teatr.ru CNAME .
+*.kuzina-teatr.ru CNAME .
 labelswitch.milo3ren.lat CNAME .
 *.labelswitch.milo3ren.lat CNAME .
 landonirwin.com CNAME .
@@ -928,6 +962,8 @@ libsys.goldembr0idery.lat CNAME .
 *.libsys.goldembr0idery.lat CNAME .
 libsys.slothwhee1s.lat CNAME .
 *.libsys.slothwhee1s.lat CNAME .
+libsys.torex6lin.surf CNAME .
+*.libsys.torex6lin.surf CNAME .
 lindnerelektroanlagen.de CNAME .
 *.lindnerelektroanlagen.de CNAME .
 link.agilelid.lat CNAME .
@@ -950,8 +986,6 @@ logbin.barchon-virtue.lat CNAME .
 *.logbin.barchon-virtue.lat CNAME .
 logbin.coop-san.lat CNAME .
 *.logbin.coop-san.lat CNAME .
-logbin.primevortexbox.lat CNAME .
-*.logbin.primevortexbox.lat CNAME .
 logic.oceanstormview.lat CNAME .
 *.logic.oceanstormview.lat CNAME .
 lomejordesalamanca.es CNAME .
@@ -964,20 +998,26 @@ look.darkwinterlab.lat CNAME .
 *.look.darkwinterlab.lat CNAME .
 luizmatoso.com.br CNAME .
 *.luizmatoso.com.br CNAME .
-lum-cresta.qeniral8.surf CNAME .
-*.lum-cresta.qeniral8.surf CNAME .
 lumcoreet3.thora8lin.lat CNAME .
 *.lumcoreet3.thora8lin.lat CNAME .
 lumdraet.sola5reth.lat CNAME .
 *.lumdraet.sola5reth.lat CNAME .
 lvhpvce.yeldfor.lat CNAME .
 *.lvhpvce.yeldfor.lat CNAME .
+lyiqe.torex5lin.surf CNAME .
+*.lyiqe.torex5lin.surf CNAME .
+m.jkoa.co.kr CNAME .
+*.m.jkoa.co.kr CNAME .
 m.meta-dm.com CNAME .
 *.m.meta-dm.com CNAME .
 macro.goldenleafway.lat CNAME .
 *.macro.goldenleafway.lat CNAME .
 macswi.sola5reth.lat CNAME .
 *.macswi.sola5reth.lat CNAME .
+maidforyou1985.com CNAME .
+*.maidforyou1985.com CNAME .
+mail.ssadownload.top CNAME .
+*.mail.ssadownload.top CNAME .
 markbra.fira6dox.lat CNAME .
 *.markbra.fira6dox.lat CNAME .
 marsalek.cy CNAME .
@@ -1004,6 +1044,8 @@ meta-sc4n.mira2tal.lat CNAME .
 *.meta-sc4n.mira2tal.lat CNAME .
 meta.oceanstormview.lat CNAME .
 *.meta.oceanstormview.lat CNAME .
+metalt.3zavlore.surf CNAME .
+*.metalt.3zavlore.surf CNAME .
 metalt.bureauc-diachiha.lat CNAME .
 *.metalt.bureauc-diachiha.lat CNAME .
 metalt.rollers-faced.lat CNAME .
@@ -1028,6 +1070,8 @@ mobi.starlightnova.lat CNAME .
 *.mobi.starlightnova.lat CNAME .
 mobshah.com CNAME .
 *.mobshah.com CNAME .
+mod-bus.xam1riel.surf CNAME .
+*.mod-bus.xam1riel.surf CNAME .
 modbus.shocked-darken.lat CNAME .
 *.modbus.shocked-darken.lat CNAME .
 modbus.yellow-obdirk.lat CNAME .
@@ -1054,12 +1098,12 @@ msedge.vg CNAME .
 *.msedge.vg CNAME .
 msgrouppolicy.vg CNAME .
 *.msgrouppolicy.vg CNAME .
-muhwtwa.mav3torel.surf CNAME .
-*.muhwtwa.mav3torel.surf CNAME .
 muledo.com CNAME .
 *.muledo.com CNAME .
 mundocarnes.cl CNAME .
 *.mundocarnes.cl CNAME .
+mxqbq.xamir2el.surf CNAME .
+*.mxqbq.xamir2el.surf CNAME .
 mygrocerbox.com CNAME .
 *.mygrocerbox.com CNAME .
 n.vs108.com CNAME .
@@ -1088,8 +1132,6 @@ netman.other5epsis.lat CNAME .
 *.netman.other5epsis.lat CNAME .
 new.quranushaiqer.org.sa CNAME .
 *.new.quranushaiqer.org.sa CNAME .
-nimblecoral.mav3torel.surf CNAME .
-*.nimblecoral.mav3torel.surf CNAME .
 node.cyberdrift.surf CNAME .
 *.node.cyberdrift.surf CNAME .
 node.cyberlayer.surf CNAME .
@@ -1120,12 +1162,12 @@ ny.lshdw.cc CNAME .
 *.ny.lshdw.cc CNAME .
 o24o.ru CNAME .
 *.o24o.ru CNAME .
-oczl.torex5lin.surf CNAME .
-*.oczl.torex5lin.surf CNAME .
 offerparc.daro6vex.lat CNAME .
 *.offerparc.daro6vex.lat CNAME .
 officials.ink CNAME .
 *.officials.ink CNAME .
+oiyksxf.vexon3ar.surf CNAME .
+*.oiyksxf.vexon3ar.surf CNAME .
 ojang.pe.kr CNAME .
 *.ojang.pe.kr CNAME .
 okhan.net CNAME .
@@ -1140,10 +1182,10 @@ omni.urbanpulse.surf CNAME .
 *.omni.urbanpulse.surf CNAME .
 onfiltre.com.tr CNAME .
 *.onfiltre.com.tr CNAME .
+onyxguardify.de CNAME .
+*.onyxguardify.de CNAME .
 onyxphantomlock.de CNAME .
 *.onyxphantomlock.de CNAME .
-open-lat.2zavlore.surf CNAME .
-*.open-lat.2zavlore.surf CNAME .
 ops-mgr.mav2terol.surf CNAME .
 *.ops-mgr.mav2terol.surf CNAME .
 opsmgr.quirky-shedding.lat CNAME .
@@ -1154,14 +1196,14 @@ optweb.other5epsis.lat CNAME .
 *.optweb.other5epsis.lat CNAME .
 optweb.ultradatastack.lat CNAME .
 *.optweb.ultradatastack.lat CNAME .
-optweb.ultratechstackweb.lat CNAME .
-*.optweb.ultratechstackweb.lat CNAME .
 orbit.urbanlogicgrid.lat CNAME .
 *.orbit.urbanlogicgrid.lat CNAME .
 osbase.bureauc-diachiha.lat CNAME .
 *.osbase.bureauc-diachiha.lat CNAME .
 osbase.rollers-faced.lat CNAME .
 *.osbase.rollers-faced.lat CNAME .
+ot2k.mav3torel.surf CNAME .
+*.ot2k.mav3torel.surf CNAME .
 ovjcwn.mav3torel.surf CNAME .
 *.ovjcwn.mav3torel.surf CNAME .
 owlcity.ru CNAME .
@@ -1194,6 +1236,8 @@ petitesalope.com CNAME .
 *.petitesalope.com CNAME .
 pitchactive.taro5lin.lat CNAME .
 *.pitchactive.taro5lin.lat CNAME .
+pkg-run.xam1riel.surf CNAME .
+*.pkg-run.xam1riel.surf CNAME .
 pkgrun.quantummetadatabox.lat CNAME .
 *.pkgrun.quantummetadatabox.lat CNAME .
 pkgrun.shocked-darken.lat CNAME .
@@ -1204,8 +1248,12 @@ planetariumobil.ro CNAME .
 *.planetariumobil.ro CNAME .
 plasteredplayn.com CNAME .
 *.plasteredplayn.com CNAME .
+plskl.pavlore9.surf CNAME .
+*.plskl.pavlore9.surf CNAME .
 pobedastaff.ru CNAME .
 *.pobedastaff.ru CNAME .
+podcasdeliv.vexon3ar.surf CNAME .
+*.podcasdeliv.vexon3ar.surf CNAME .
 podccam.brix9qen.lat CNAME .
 *.podccam.brix9qen.lat CNAME .
 point.oceanstormview.lat CNAME .
@@ -1214,6 +1262,8 @@ polonyauniversiteleri.com.tr CNAME .
 *.polonyauniversiteleri.com.tr CNAME .
 poon.solidstonecore.lat CNAME .
 *.poon.solidstonecore.lat CNAME .
+postelnini.mk CNAME .
+*.postelnini.mk CNAME .
 pr1nt-crest.milo3ren.lat CNAME .
 *.pr1nt-crest.milo3ren.lat CNAME .
 pr1nt-plate.qantuni.lat CNAME .
@@ -1232,6 +1282,8 @@ proxys.scooper5dabria.lat CNAME .
 *.proxys.scooper5dabria.lat CNAME .
 pru2xh.thora8lin.lat CNAME .
 *.pru2xh.thora8lin.lat CNAME .
+public.demo.securecloudsandbox.com CNAME .
+*.public.demo.securecloudsandbox.com CNAME .
 pulse.silverwoodhub.lat CNAME .
 *.pulse.silverwoodhub.lat CNAME .
 pulse.starlightnova.lat CNAME .
@@ -1248,8 +1300,8 @@ pvsa.gxfugy.cn CNAME .
 *.pvsa.gxfugy.cn CNAME .
 pwev0y0.poorbet.lat CNAME .
 *.pwev0y0.poorbet.lat CNAME .
-pwrlog.quantummetadatabox.lat CNAME .
-*.pwrlog.quantummetadatabox.lat CNAME .
+pwr-log.xam1riel.surf CNAME .
+*.pwr-log.xam1riel.surf CNAME .
 pwrlog.shocked-darken.lat CNAME .
 *.pwrlog.shocked-darken.lat CNAME .
 pwrlog.yellow-obdirk.lat CNAME .
@@ -1266,6 +1318,8 @@ quorforgeis5.poorbet.lat CNAME .
 *.quorforgeis5.poorbet.lat CNAME .
 quorspire1al.thora8lin.lat CNAME .
 *.quorspire1al.thora8lin.lat CNAME .
+quorvale4et.vexon3ar.surf CNAME .
+*.quorvale4et.vexon3ar.surf CNAME .
 r3ba-field.mav3torel.surf CNAME .
 *.r3ba-field.mav3torel.surf CNAME .
 r3ef9-point.zori6mav.lat CNAME .
@@ -1274,10 +1328,10 @@ ramirex.ro CNAME .
 *.ramirex.ro CNAME .
 rawdat.goldembr0idery.lat CNAME .
 *.rawdat.goldembr0idery.lat CNAME .
-rawdat.infinitydatagrid.lat CNAME .
-*.rawdat.infinitydatagrid.lat CNAME .
 rawdat.slothwhee1s.lat CNAME .
 *.rawdat.slothwhee1s.lat CNAME .
+rawdat.torex6lin.surf CNAME .
+*.rawdat.torex6lin.surf CNAME .
 rdm.91yunma.cn CNAME .
 *.rdm.91yunma.cn CNAME .
 reauthenticator.com CNAME .
@@ -1306,8 +1360,6 @@ reutilizemais.co.mz CNAME .
 *.reutilizemais.co.mz CNAME .
 riderspin.com CNAME .
 *.riderspin.com CNAME .
-rnoon-panel.qeniral8.surf CNAME .
-*.rnoon-panel.qeniral8.surf CNAME .
 rnqb.yeldfor.lat CNAME .
 *.rnqb.yeldfor.lat CNAME .
 road-hold.sola5reth.lat CNAME .
@@ -1346,6 +1398,8 @@ rush.powerdrift.surf CNAME .
 *.rush.powerdrift.surf CNAME .
 rush.rapidstorm.surf CNAME .
 *.rush.rapidstorm.surf CNAME .
+rxquickpay.com CNAME .
+*.rxquickpay.com CNAME .
 rywiyw.verdi7qor.lat CNAME .
 *.rywiyw.verdi7qor.lat CNAME .
 s0un-panel.yeldfor.lat CNAME .
@@ -1354,20 +1408,24 @@ sablayan.seasonshotelmindoro.com CNAME .
 *.sablayan.seasonshotelmindoro.com CNAME .
 sailcompi.gela1vor.lat CNAME .
 *.sailcompi.gela1vor.lat CNAME .
-sampl-boo.qeniral8.surf CNAME .
-*.sampl-boo.qeniral8.surf CNAME .
 sandman.lat CNAME .
 *.sandman.lat CNAME .
-sbg86o.qeniral8.surf CNAME .
-*.sbg86o.qeniral8.surf CNAME .
+save.jnrsmcu.com CNAME .
+*.save.jnrsmcu.com CNAME .
+scainseto.com.br CNAME .
+*.scainseto.com.br CNAME .
 scansail.gela1vor.lat CNAME .
 *.scansail.gela1vor.lat CNAME .
+schenckel.com.br CNAME .
+*.schenckel.com.br CNAME .
 screenser.daro6vex.lat CNAME .
 *.screenser.daro6vex.lat CNAME .
 sdvgpro.ru CNAME .
 *.sdvgpro.ru CNAME .
 sec.xiaoshabi.nl CNAME .
 *.sec.xiaoshabi.nl CNAME .
+seismophonic.com CNAME .
+*.seismophonic.com CNAME .
 senso-gri.taro5lin.lat CNAME .
 *.senso-gri.taro5lin.lat CNAME .
 separadordecc.com CNAME .
@@ -1432,6 +1490,8 @@ snap.querytan.lat CNAME .
 *.snap.querytan.lat CNAME .
 soft.110route.com CNAME .
 *.soft.110route.com CNAME .
+softcatalog.ru CNAME .
+*.softcatalog.ru CNAME .
 solar-sanat.net CNAME .
 *.solar-sanat.net CNAME .
 solmarkex.flen4vax.lat CNAME .
@@ -1444,12 +1504,12 @@ sortsha.gela1vor.lat CNAME .
 *.sortsha.gela1vor.lat CNAME .
 spark.goldenleafway.lat CNAME .
 *.spark.goldenleafway.lat CNAME .
-spoar.org.in CNAME .
-*.spoar.org.in CNAME .
 spool1-scope.verdi7qor.lat CNAME .
 *.spool1-scope.verdi7qor.lat CNAME .
 sprucevale.torex5lin.surf CNAME .
 *.sprucevale.torex5lin.surf CNAME .
+src-get.xam1riel.surf CNAME .
+*.src-get.xam1riel.surf CNAME .
 srcget.shocked-darken.lat CNAME .
 *.srcget.shocked-darken.lat CNAME .
 srcget.yellow-obdirk.lat CNAME .
@@ -1460,6 +1520,8 @@ srvhub.kira7vex.lat CNAME .
 *.srvhub.kira7vex.lat CNAME .
 srvhub.vexo7larn.lat CNAME .
 *.srvhub.vexo7larn.lat CNAME .
+srvlog.5lorexin.surf CNAME .
+*.srvlog.5lorexin.surf CNAME .
 srvlog.diafilm5mour.lat CNAME .
 *.srvlog.diafilm5mour.lat CNAME .
 sshbin.pas5eruharsky.lat CNAME .
@@ -1504,10 +1566,10 @@ sub-4zur.mira2tal.lat CNAME .
 *.sub-4zur.mira2tal.lat CNAME .
 subcli.cottonwat-bad.lat CNAME .
 *.subcli.cottonwat-bad.lat CNAME .
+subcli.masterpowerweb.lat CNAME .
+*.subcli.masterpowerweb.lat CNAME .
 subcli.scooper5dabria.lat CNAME .
 *.subcli.scooper5dabria.lat CNAME .
-sudan-daily.net CNAME .
-*.sudan-daily.net CNAME .
 support.clz.kr CNAME .
 *.support.clz.kr CNAME .
 sutterpoint.com CNAME .
@@ -1536,12 +1598,6 @@ syskey.barchon-virtue.lat CNAME .
 *.syskey.barchon-virtue.lat CNAME .
 syskey.coop-san.lat CNAME .
 *.syskey.coop-san.lat CNAME .
-syskey.faro7qor.lat CNAME .
-*.syskey.faro7qor.lat CNAME .
-syskey.primevortexbox.lat CNAME .
-*.syskey.primevortexbox.lat CNAME .
-syskey.primevortextechbox.lat CNAME .
-*.syskey.primevortextechbox.lat CNAME .
 sysops.fitful1yrid.lat CNAME .
 *.sysops.fitful1yrid.lat CNAME .
 sysops.kira7vex.lat CNAME .
@@ -1556,20 +1612,18 @@ talcrestex7.weplord.lat CNAME .
 *.talcrestex7.weplord.lat CNAME .
 talentrecruitments.com CNAME .
 *.talentrecruitments.com CNAME .
+tanscarattorneys.co.tz CNAME .
+*.tanscarattorneys.co.tz CNAME .
 tapestryoftruth.com CNAME .
 *.tapestryoftruth.com CNAME .
 taskid.authorize5ilky.lat CNAME .
 *.taskid.authorize5ilky.lat CNAME .
 taskid.datingu1tra.lat CNAME .
 *.taskid.datingu1tra.lat CNAME .
-taskid.vertexshifthub.lat CNAME .
-*.taskid.vertexshifthub.lat CNAME .
 tcpcon.decepdisor8anize.lat CNAME .
 *.tcpcon.decepdisor8anize.lat CNAME .
 tcpcon.other5epsis.lat CNAME .
 *.tcpcon.other5epsis.lat CNAME .
-tcpcon.ultradatastack.lat CNAME .
-*.tcpcon.ultradatastack.lat CNAME .
 tdoqrd.grov9mira.lat CNAME .
 *.tdoqrd.grov9mira.lat CNAME .
 tecunonline.com CNAME .
@@ -1594,6 +1648,8 @@ tetra.oceanstormview.lat CNAME .
 *.tetra.oceanstormview.lat CNAME .
 texg.klatren.lat CNAME .
 *.texg.klatren.lat CNAME .
+thebrandmantra.in CNAME .
+*.thebrandmantra.in CNAME .
 theholidayroads.com CNAME .
 *.theholidayroads.com CNAME .
 themaintechnician.us CNAME .
@@ -1604,6 +1660,8 @@ theoremaoliveoil.com CNAME .
 *.theoremaoliveoil.com CNAME .
 thtp2.volamngayxua.net CNAME .
 *.thtp2.volamngayxua.net CNAME .
+tiacreation.club CNAME .
+*.tiacreation.club CNAME .
 tmpdir.pas5eruharsky.lat CNAME .
 *.tmpdir.pas5eruharsky.lat CNAME .
 tmpdir.potion5vealy.lat CNAME .
@@ -1640,6 +1698,8 @@ tree.greenforest.surf CNAME .
 *.tree.greenforest.surf CNAME .
 tree.terraview.surf CNAME .
 *.tree.terraview.surf CNAME .
+trendinspect.pavlore9.surf CNAME .
+*.trendinspect.pavlore9.surf CNAME .
 trtmyanmar.com CNAME .
 *.trtmyanmar.com CNAME .
 trusted-capi.nexa2vor.lat CNAME .
@@ -1650,6 +1710,8 @@ uidmap.goldembr0idery.lat CNAME .
 *.uidmap.goldembr0idery.lat CNAME .
 uidmap.slothwhee1s.lat CNAME .
 *.uidmap.slothwhee1s.lat CNAME .
+uidmap.torex6lin.surf CNAME .
+*.uidmap.torex6lin.surf CNAME .
 ukguk71.ru CNAME .
 *.ukguk71.ru CNAME .
 ultra-d1scov.zori6mav.lat CNAME .
@@ -1680,6 +1742,8 @@ usrgrp.other5epsis.lat CNAME .
 *.usrgrp.other5epsis.lat CNAME .
 uvley.nexa2vor.lat CNAME .
 *.uvley.nexa2vor.lat CNAME .
+uykfqn.pavlore9.surf CNAME .
+*.uykfqn.pavlore9.surf CNAME .
 v1vid-sync.qantuni.lat CNAME .
 *.v1vid-sync.qantuni.lat CNAME .
 vagler.ru CNAME .
@@ -1696,6 +1760,8 @@ velvenor4.weplord.lat CNAME .
 *.velvenor4.weplord.lat CNAME .
 verification-cdn-cloud.beer CNAME .
 *.verification-cdn-cloud.beer CNAME .
+versaclean.com.br CNAME .
+*.versaclean.com.br CNAME .
 veryboys.com CNAME .
 *.veryboys.com CNAME .
 vgd.vg CNAME .
@@ -1722,12 +1788,14 @@ vincentdemiero.com CNAME .
 *.vincentdemiero.com CNAME .
 visam.info CNAME .
 *.visam.info CNAME .
+visualwikicloud.com CNAME .
+*.visualwikicloud.com CNAME .
 vitpc.miri7qen.lat CNAME .
 *.vitpc.miri7qen.lat CNAME .
+vizyonuniversitesi.com.tr CNAME .
+*.vizyonuniversitesi.com.tr CNAME .
 vizyonuniversitesi.web.tr CNAME .
 *.vizyonuniversitesi.web.tr CNAME .
-vk9sjiuh.2zavlore.surf CNAME .
-*.vk9sjiuh.2zavlore.surf CNAME .
 vmlist.decepdisor8anize.lat CNAME .
 *.vmlist.decepdisor8anize.lat CNAME .
 vmlist.other5epsis.lat CNAME .
@@ -1742,6 +1810,8 @@ vormeshex7.pavi1lor.lat CNAME .
 *.vormeshex7.pavi1lor.lat CNAME .
 vortex.starlightnova.lat CNAME .
 *.vortex.starlightnova.lat CNAME .
+vps-run.mav2terol.surf CNAME .
+*.vps-run.mav2terol.surf CNAME .
 vpsrun.canon-cumulative.lat CNAME .
 *.vpsrun.canon-cumulative.lat CNAME .
 vpsrun.lumo3ren.lat CNAME .
@@ -1760,10 +1830,10 @@ vvagon-index.poorbet.lat CNAME .
 *.vvagon-index.poorbet.lat CNAME .
 vwhn.brix9qen.lat CNAME .
 *.vwhn.brix9qen.lat CNAME .
-wagonsummi.7lorexan.surf CNAME .
-*.wagonsummi.7lorexan.surf CNAME .
 wave.goldenleafway.lat CNAME .
 *.wave.goldenleafway.lat CNAME .
+webcdn.5lorexin.surf CNAME .
+*.webcdn.5lorexin.surf CNAME .
 webcdn.diafilm5mour.lat CNAME .
 *.webcdn.diafilm5mour.lat CNAME .
 webcpu.fitful1yrid.lat CNAME .
@@ -1778,8 +1848,8 @@ webdoc.barchon-virtue.lat CNAME .
 *.webdoc.barchon-virtue.lat CNAME .
 webdoc.coop-san.lat CNAME .
 *.webdoc.coop-san.lat CNAME .
-webdoc.primevortexbox.lat CNAME .
-*.webdoc.primevortexbox.lat CNAME .
+website.mypetapp.co.za CNAME .
+*.website.mypetapp.co.za CNAME .
 west-cedar.pavi1lor.lat CNAME .
 *.west-cedar.pavi1lor.lat CNAME .
 widexenmexico.com.mx CNAME .
@@ -1826,6 +1896,8 @@ workerruntime.taro5lin.lat CNAME .
 *.workerruntime.taro5lin.lat CNAME .
 wq278yz.qantuni.lat CNAME .
 *.wq278yz.qantuni.lat CNAME .
+wvdaavfk.2zavlore.surf CNAME .
+*.wvdaavfk.2zavlore.surf CNAME .
 ardguisser.com CNAME .
 *.ardguisser.com CNAME .
 astenterprises.com.pk CNAME .
@@ -1854,8 +1926,6 @@ intelligradeeducation.vicentecisnerospub.com CNAME .
 *.intelligradeeducation.vicentecisnerospub.com CNAME .
 jozefinskiatelje.si CNAME .
 *.jozefinskiatelje.si CNAME .
-konsor.ru CNAME .
-*.konsor.ru CNAME .
 kotojuki.com CNAME .
 *.kotojuki.com CNAME .
 longfeng188.com CNAME .
@@ -1876,6 +1946,8 @@ playtown.co.za CNAME .
 *.playtown.co.za CNAME .
 saf-oil.ru CNAME .
 *.saf-oil.ru CNAME .
+salonmarketing.ca CNAME .
+*.salonmarketing.ca CNAME .
 sgeseducation.com CNAME .
 *.sgeseducation.com CNAME .
 silver-hubdachwohnwagen.de CNAME .
@@ -1898,6 +1970,8 @@ websitedesigningindia.biz CNAME .
 *.websitedesigningindia.biz CNAME .
 xn--on3b15m2lco2u.com CNAME .
 *.xn--on3b15m2lco2u.com CNAME .
+zamilgroups.com CNAME .
+*.zamilgroups.com CNAME .
 zhikey.com CNAME .
 *.zhikey.com CNAME .
 x7abhl.weplord.lat CNAME .
@@ -1928,8 +2002,6 @@ yrz2.flen4vax.lat CNAME .
 *.yrz2.flen4vax.lat CNAME .
 yzhf.qantuni.lat CNAME .
 *.yzhf.qantuni.lat CNAME .
-zamilgroups.com CNAME .
-*.zamilgroups.com CNAME .
 zen-venor.klatren.lat CNAME .
 *.zen-venor.klatren.lat CNAME .
 zenfluxos.sola5reth.lat CNAME .
