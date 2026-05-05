@@ -93,7 +93,7 @@
 				<div class="report-form__domain-header">
 					<span class="fp-status-icon fp-status-icon--notfound" aria-hidden="true">✗</span>
 					<span class="fp-domain-name">${e}</span>
-					<span class="fp-domain-info">Not found in any blocklist — cannot be reported</span>
+					<span class="fp-domain-info">Not found in any blocklist</span>
 				</div>
 			</div>`;
 		}
