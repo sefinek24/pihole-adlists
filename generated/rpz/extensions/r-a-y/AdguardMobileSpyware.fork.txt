@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026050104 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026050504 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: AdGuard Mobile Spyware Blocklist
-; Entries: 1,113 domains
+; Entries: 1,117 domains
 ; Source: https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardMobileSpyware.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 1, 2026 at 4:26 AM UTC | 2026-05-01T04:26:53.172Z
+; Last updated: May 5, 2026 at 4:07 AM UTC | 2026-05-05T04:07:22.171Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -28,6 +28,10 @@ eviltracker.net CNAME .
 *.eviltracker.net CNAME .
 trackersimulator.org CNAME .
 *.trackersimulator.org CNAME .
+ads-api.x.com CNAME .
+*.ads-api.x.com CNAME .
+ads-api.twitter.com CNAME .
+*.ads-api.twitter.com CNAME .
 ntracker-collector.naver.com CNAME .
 *.ntracker-collector.naver.com CNAME .
 ace.naver.com CNAME .
@@ -226,6 +230,12 @@ int.vlancaa.fun CNAME .
 *.int.vlancaa.fun CNAME .
 tok.vaicore.xyz CNAME .
 *.tok.vaicore.xyz CNAME .
+log1.pwsdk.com CNAME .
+*.log1.pwsdk.com CNAME .
+log2.pwsdk.com CNAME .
+*.log2.pwsdk.com CNAME .
+cxlog.shinhansec.com CNAME .
+*.cxlog.shinhansec.com CNAME .
 sensors.dito.ph CNAME .
 *.sensors.dito.ph CNAME .
 mon11-misc-lq.fqnovel.com CNAME .
@@ -664,8 +674,6 @@ dlog-config.uu.cc CNAME .
 *.dlog-config.uu.cc CNAME .
 ms-report.uu.cc CNAME .
 *.ms-report.uu.cc CNAME .
-ads-api.x.com CNAME .
-*.ads-api.x.com CNAME .
 log.hiapkdownload.com CNAME .
 *.log.hiapkdownload.com CNAME .
 experiment.pixverse.ai CNAME .
