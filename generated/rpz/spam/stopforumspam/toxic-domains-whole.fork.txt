@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026050606 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026050612 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: StopForumSpam Toxic Domains
-; Entries: 72,439 domains
+; Entries: 72,440 domains
 ; Source: https://www.stopforumspam.com/downloads/toxic_domains_whole.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 6, 2026 at 6:57 AM UTC | 2026-05-06T06:57:46.274Z
+; Last updated: May 6, 2026 at 12:39 PM UTC | 2026-05-06T12:39:52.521Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -131948,6 +131948,8 @@ uniquemailx.com CNAME .
 *.uniquemailx.com CNAME .
 uniquemoz.com CNAME .
 *.uniquemoz.com CNAME .
+uniqueproducts.site CNAME .
+*.uniqueproducts.site CNAME .
 uniquesoftwaresolutionsllc.com CNAME .
 *.uniquesoftwaresolutionsllc.com CNAME .
 uniremail.ru CNAME .
