@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026050400 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026050800 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: EasyPrivacy Hosts Blocklist
-; Entries: 40,361 domains
+; Entries: 40,363 domains
 ; Source: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easyprivacy.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 4, 2026 at 12:33 AM UTC | 2026-05-04T00:33:50.327Z
+; Last updated: May 8, 2026 at 12:35 AM UTC | 2026-05-08T00:35:09.701Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -2006,6 +2006,8 @@ distillery.wistia.com CNAME .
 *.distillery.wistia.com CNAME .
 dl.episerver.net CNAME .
 *.dl.episerver.net CNAME .
+dmg-libs.anm.co.uk CNAME .
+*.dmg-libs.anm.co.uk CNAME .
 doh.cq0.co CNAME .
 *.doh.cq0.co CNAME .
 doppler-beacon.cbsivideo.com CNAME .
@@ -2026,6 +2028,8 @@ e.channelexco.com CNAME .
 *.e.channelexco.com CNAME .
 e.revenue.cat CNAME .
 *.e.revenue.cat CNAME .
+e.usesneakpeek.com CNAME .
+*.e.usesneakpeek.com CNAME .
 e045f561.b-cdn.net CNAME .
 *.e045f561.b-cdn.net CNAME .
 ea.youmaker.com CNAME .
@@ -6460,6 +6464,8 @@ pm.dailykos.com CNAME .
 *.pm.dailykos.com CNAME .
 pm.geniusmonkey.com CNAME .
 *.pm.geniusmonkey.com CNAME .
+pmnbh.dedcool.com CNAME .
+*.pmnbh.dedcool.com CNAME .
 prairiedog.hashnode.com CNAME .
 *.prairiedog.hashnode.com CNAME .
 privacy-api.9gag.com CNAME .
@@ -65712,8 +65718,6 @@ ad.aucview.com CNAME .
 *.ad.aucview.com CNAME .
 ad.autorace.jp CNAME .
 *.ad.autorace.jp CNAME .
-ad.kddi-fs.com CNAME .
-*.ad.kddi-fs.com CNAME .
 ad.ordersuit.info CNAME .
 *.ad.ordersuit.info CNAME .
 ad.takasu.co.jp CNAME .
