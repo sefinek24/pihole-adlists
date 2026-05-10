@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026051000 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026051004 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: URLhaus Malicious Hosts
-; Entries: 1,300 domains
+; Entries: 1,357 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 10, 2026 at 12:35 AM UTC | 2026-05-10T00:35:11.829Z
+; Last updated: May 10, 2026 at 4:25 AM UTC | 2026-05-10T04:25:04.513Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -26,8 +26,6 @@ $TTL 300
 *.03f7.nova7frame.life CNAME .
 111101111.ru CNAME .
 *.111101111.ru CNAME .
-1717.1000uc.com CNAME .
-*.1717.1000uc.com CNAME .
 1vz4le.airport-clar.lat CNAME .
 *.1vz4le.airport-clar.lat CNAME .
 1ws11.rataj-vertky.lat CNAME .
@@ -92,8 +90,6 @@ abc.3bcs.cn CNAME .
 *.abc.3bcs.cn CNAME .
 acaviationsupplies.com CNAME .
 *.acaviationsupplies.com CNAME .
-access.skaparade.com CNAME .
-*.access.skaparade.com CNAME .
 accesstelematics.com CNAME .
 *.accesstelematics.com CNAME .
 acms.saleseos.com CNAME .
@@ -142,6 +138,8 @@ api.linkdataproc.pics CNAME .
 *.api.linkdataproc.pics CNAME .
 api.netinfrahubsys.pics CNAME .
 *.api.netinfrahubsys.pics CNAME .
+api.netlogicstack.co CNAME .
+*.api.netlogicstack.co CNAME .
 api.netnodeset.pics CNAME .
 *.api.netnodeset.pics CNAME .
 api.openapiservicehub.pics CNAME .
@@ -174,6 +172,8 @@ apiopss.scornful-up.lat CNAME .
 *.apiopss.scornful-up.lat CNAME .
 apiopss.vbytetap.lat CNAME .
 *.apiopss.vbytetap.lat CNAME .
+apiopsstat.coderlogicbase.pics CNAME .
+*.apiopsstat.coderlogicbase.pics CNAME .
 apiopsstat.sorix2en.pics CNAME .
 *.apiopsstat.sorix2en.pics CNAME .
 app.appzcvb.com CNAME .
@@ -206,6 +206,8 @@ appsrch.scornful-up.lat CNAME .
 *.appsrch.scornful-up.lat CNAME .
 appsrch.vbytetap.lat CNAME .
 *.appsrch.vbytetap.lat CNAME .
+appsrchcli.coderlogicbase.pics CNAME .
+*.appsrchcli.coderlogicbase.pics CNAME .
 appsrchcli.sorix1ar.pics CNAME .
 *.appsrchcli.sorix1ar.pics CNAME .
 appsrchcli.sorix2en.pics CNAME .
@@ -246,12 +248,16 @@ aut.bitflowapp.pics CNAME .
 *.aut.bitflowapp.pics CNAME .
 aut.clouditapp.pics CNAME .
 *.aut.clouditapp.pics CNAME .
+autbox.globtechnodebase.pics CNAME .
+*.autbox.globtechnodebase.pics CNAME .
 autboxs.pav3mirex.lat CNAME .
 *.autboxs.pav3mirex.lat CNAME .
 autboxs.ratmedia.lat CNAME .
 *.autboxs.ratmedia.lat CNAME .
 autboxs.residency5ilicat.lat CNAME .
 *.autboxs.residency5ilicat.lat CNAME .
+autboxserv.fastnetgatehub.pics CNAME .
+*.autboxserv.fastnetgatehub.pics CNAME .
 autboxserv.pav6mirex.pics CNAME .
 *.autboxserv.pav6mirex.pics CNAME .
 autboxserv.pav8mirel.pics CNAME .
@@ -300,6 +306,8 @@ bit.vpsgateway.pics CNAME .
 *.bit.vpsgateway.pics CNAME .
 bitfox.websyncbox.pics CNAME .
 *.bitfox.websyncbox.pics CNAME .
+bitfoxcore.coderworkflow.pics CNAME .
+*.bitfoxcore.coderworkflow.pics CNAME .
 bitfoxcore.mav2lorix.pics CNAME .
 *.bitfoxcore.mav2lorix.pics CNAME .
 bitfoxcore.mav7voren.pics CNAME .
@@ -308,6 +316,8 @@ bitfoxcore.radio-technic.lat CNAME .
 *.bitfoxcore.radio-technic.lat CNAME .
 bitfoxcore.technodesupply.pics CNAME .
 *.bitfoxcore.technodesupply.pics CNAME .
+bitfoxcoreunit.cloudflowops.co CNAME .
+*.bitfoxcoreunit.cloudflowops.co CNAME .
 bitfoxcoreunit.webdataprocunit.pics CNAME .
 *.bitfoxcoreunit.webdataprocunit.pics CNAME .
 bitfoxs.comforter-panel.lat CNAME .
@@ -318,10 +328,14 @@ bitfoxs.mayservo.lat CNAME .
 *.bitfoxs.mayservo.lat CNAME .
 bitkitmaps.guess-relevation.lat CNAME .
 *.bitkitmaps.guess-relevation.lat CNAME .
+bitkitmaps.openapiservicex.pics CNAME .
+*.bitkitmaps.openapiservicex.pics CNAME .
 bitkitmaps.vexon3ix.pics CNAME .
 *.bitkitmaps.vexon3ix.pics CNAME .
 bitkitmaps.vexon4ar.pics CNAME .
 *.bitkitmaps.vexon4ar.pics CNAME .
+bitkitmapsmgr.infrasettopview.pics CNAME .
+*.bitkitmapsmgr.infrasettopview.pics CNAME .
 bitkits.mel6vator.lat CNAME .
 *.bitkits.mel6vator.lat CNAME .
 bitkits.peat-scoop.lat CNAME .
@@ -334,8 +348,6 @@ blogs.sokun.jp CNAME .
 *.blogs.sokun.jp CNAME .
 bmdcompany.com CNAME .
 *.bmdcompany.com CNAME .
-bnet-api.playm8ru.win CNAME .
-*.bnet-api.playm8ru.win CNAME .
 bnet.playm8ru.win CNAME .
 *.bnet.playm8ru.win CNAME .
 bombayonline.in CNAME .
@@ -372,8 +384,6 @@ c52ih.lomov-stroganal.lat CNAME .
 *.c52ih.lomov-stroganal.lat CNAME .
 cache.flushgot.pics CNAME .
 *.cache.flushgot.pics CNAME .
-cad.659t.cn CNAME .
-*.cad.659t.cn CNAME .
 call.openapiservicehub.pics CNAME .
 *.call.openapiservicehub.pics CNAME .
 cambodiatouristservice.com CNAME .
@@ -386,8 +396,6 @@ carrie-branch.7doreval.lat CNAME .
 *.carrie-branch.7doreval.lat CNAME .
 cat.dashabi.in CNAME .
 *.cat.dashabi.in CNAME .
-cat.xiaojiji.nl CNAME .
-*.cat.xiaojiji.nl CNAME .
 cat.xiaoshabi.nl CNAME .
 *.cat.xiaoshabi.nl CNAME .
 catal0-trail.buckish-nabere.lat CNAME .
@@ -448,12 +456,12 @@ clip3-stream.buckish-nabere.lat CNAME .
 *.clip3-stream.buckish-nabere.lat CNAME .
 clipaid.app CNAME .
 *.clipaid.app CNAME .
+cloud.cloudflowops.co CNAME .
+*.cloud.cloudflowops.co CNAME .
 cloud.cloudproxyserv.pics CNAME .
 *.cloud.cloudproxyserv.pics CNAME .
 cloudstay168.com CNAME .
 *.cloudstay168.com CNAME .
-clubdetiroelpicarcho.com CNAME .
-*.clubdetiroelpicarcho.com CNAME .
 clusterend.3lunavex.life CNAME .
 *.clusterend.3lunavex.life CNAME .
 cmd.linkdataproc.pics CNAME .
@@ -478,6 +486,8 @@ compi-canva.zen-5lora.life CNAME .
 *.compi-canva.zen-5lora.life CNAME .
 compuserviceonline.com.br CNAME .
 *.compuserviceonline.com.br CNAME .
+comweb.globtechnodebase.pics CNAME .
+*.comweb.globtechnodebase.pics CNAME .
 comwebs.pav3mirex.lat CNAME .
 *.comwebs.pav3mirex.lat CNAME .
 comwebs.ratmedia.lat CNAME .
@@ -492,12 +502,16 @@ continentalgroup.net.in CNAME .
 *.continentalgroup.net.in CNAME .
 controliumbt.com CNAME .
 *.controliumbt.com CNAME .
+coralasargetia.ro CNAME .
+*.coralasargetia.ro CNAME .
 core.fielddie.pics CNAME .
 *.core.fielddie.pics CNAME .
 core.infrastructurerun.pics CNAME .
 *.core.infrastructurerun.pics CNAME .
 core.systemlogicops.pics CNAME .
 *.core.systemlogicops.pics CNAME .
+corestack.netlogicstack.co CNAME .
+*.corestack.netlogicstack.co CNAME .
 corporacioncrf.com CNAME .
 *.corporacioncrf.com CNAME .
 covcalm.narrownessoutri8ht.pics CNAME .
@@ -514,6 +528,8 @@ cpu.webcfgbase.pics CNAME .
 *.cpu.webcfgbase.pics CNAME .
 cpu.websyncbox.pics CNAME .
 *.cpu.websyncbox.pics CNAME .
+cpuprocessormgr.cloudflowops.co CNAME .
+*.cpuprocessormgr.cloudflowops.co CNAME .
 cpuprocessormgr.webdataprocunit.pics CNAME .
 *.cpuprocessormgr.webdataprocunit.pics CNAME .
 cpupros.comforter-panel.lat CNAME .
@@ -522,6 +538,8 @@ cpupros.mav1voren.lat CNAME .
 *.cpupros.mav1voren.lat CNAME .
 cpupros.mayservo.lat CNAME .
 *.cpupros.mayservo.lat CNAME .
+cpuprosmgr.coderworkflow.pics CNAME .
+*.cpuprosmgr.coderworkflow.pics CNAME .
 cpuprosmgr.mav2lorix.pics CNAME .
 *.cpuprosmgr.mav2lorix.pics CNAME .
 cpuprosmgr.mav7voren.pics CNAME .
@@ -536,8 +554,12 @@ cqrsjc6.pixel-harbor.life CNAME .
 *.cqrsjc6.pixel-harbor.life CNAME .
 crawlerhidden.qorivault.life CNAME .
 *.crawlerhidden.qorivault.life CNAME .
+creativevoltage.com CNAME .
+*.creativevoltage.com CNAME .
 crestdeliv.qen8vorel.lat CNAME .
 *.crestdeliv.qen8vorel.lat CNAME .
+crimefreesoftware.com CNAME .
+*.crimefreesoftware.com CNAME .
 crystalpvp.ru CNAME .
 *.crystalpvp.ru CNAME .
 cs.go.kg CNAME .
@@ -554,6 +576,8 @@ d.wanyouxi7.com CNAME .
 *.d.wanyouxi7.com CNAME .
 d35ign4-vault.qu2ntitative-tenero.pics CNAME .
 *.d35ign4-vault.qu2ntitative-tenero.pics CNAME .
+damiancollier.com CNAME .
+*.damiancollier.com CNAME .
 data.textits.pics CNAME .
 *.data.textits.pics CNAME .
 data.webdataprocess.pics CNAME .
@@ -588,10 +612,6 @@ dbms.rowlocks.pics CNAME .
 *.dbms.rowlocks.pics CNAME .
 dcrun.co.uk CNAME .
 *.dcrun.co.uk CNAME .
-dcwblida.dz CNAME .
-*.dcwblida.dz CNAME .
-deathmatchuk.com CNAME .
-*.deathmatchuk.com CNAME .
 deepion.narrownessoutri8ht.pics CNAME .
 *.deepion.narrownessoutri8ht.pics CNAME .
 delp-heizungsbau.de CNAME .
@@ -612,10 +632,14 @@ devbits.dreamer5hrew.lat CNAME .
 *.devbits.dreamer5hrew.lat CNAME .
 devbits.netinfrahubsys.pics CNAME .
 *.devbits.netinfrahubsys.pics CNAME .
+devbits.netlogicstack.co CNAME .
+*.devbits.netlogicstack.co CNAME .
 devbitscfg.5toralix.pics CNAME .
 *.devbitscfg.5toralix.pics CNAME .
 devbitscfg.7toravex.pics CNAME .
 *.devbitscfg.7toravex.pics CNAME .
+devbitscfg.devlogicmaster.pics CNAME .
+*.devbitscfg.devlogicmaster.pics CNAME .
 devbitscfg.globalnetviewer.pics CNAME .
 *.devbitscfg.globalnetviewer.pics CNAME .
 dexios.co.za CNAME .
@@ -650,6 +674,10 @@ dnswebs.mav1voren.lat CNAME .
 *.dnswebs.mav1voren.lat CNAME .
 dnswebs.mayservo.lat CNAME .
 *.dnswebs.mayservo.lat CNAME .
+dnswebsrvs.cloudflowops.co CNAME .
+*.dnswebsrvs.cloudflowops.co CNAME .
+dnswebsrvs.coderworkflow.pics CNAME .
+*.dnswebsrvs.coderworkflow.pics CNAME .
 dnswebsrvs.mav2lorix.pics CNAME .
 *.dnswebsrvs.mav2lorix.pics CNAME .
 dnswebsrvs.mav7voren.pics CNAME .
@@ -678,16 +706,22 @@ doclabs.sixbaud.lat CNAME .
 *.doclabs.sixbaud.lat CNAME .
 doclabutil.guess-relevation.lat CNAME .
 *.doclabutil.guess-relevation.lat CNAME .
+doclabutil.openapiservicex.pics CNAME .
+*.doclabutil.openapiservicex.pics CNAME .
 doclabutil.vexon3ix.pics CNAME .
 *.doclabutil.vexon3ix.pics CNAME .
 dom.openapiserv.pics CNAME .
 *.dom.openapiserv.pics CNAME .
+domreg.openapiservicedata.pics CNAME .
+*.domreg.openapiservicedata.pics CNAME .
 domregs.comrade-dec1ine.lat CNAME .
 *.domregs.comrade-dec1ine.lat CNAME .
 domregs.gzipsea.lat CNAME .
 *.domregs.gzipsea.lat CNAME .
 domregs.xamir5ol.lat CNAME .
 *.domregs.xamir5ol.lat CNAME .
+domregutil.systemcoreunit.pics CNAME .
+*.domregutil.systemcoreunit.pics CNAME .
 domregutil.xamir1ol.pics CNAME .
 *.domregutil.xamir1ol.pics CNAME .
 donkeytourscroatia.com CNAME .
@@ -752,6 +786,8 @@ edge.cloudproxyserv.pics CNAME .
 *.edge.cloudproxyserv.pics CNAME .
 efk47wb3.skewedencro2ch.lat CNAME .
 *.efk47wb3.skewedencro2ch.lat CNAME .
+electri.billregulator.com CNAME .
+*.electri.billregulator.com CNAME .
 elisans.novayonetim.com CNAME .
 *.elisans.novayonetim.com CNAME .
 embedone.com CNAME .
@@ -764,10 +800,14 @@ en.taichuan.com CNAME .
 *.en.taichuan.com CNAME .
 env.vpssysnet.pics CNAME .
 *.env.vpssysnet.pics CNAME .
+envset.infrasettopview.pics CNAME .
+*.envset.infrasettopview.pics CNAME .
 envset.vpsgateway.pics CNAME .
 *.envset.vpsgateway.pics CNAME .
 envsetproc.guess-relevation.lat CNAME .
 *.envsetproc.guess-relevation.lat CNAME .
+envsetproc.openapiservicex.pics CNAME .
+*.envsetproc.openapiservicex.pics CNAME .
 envsetproc.vexon4ar.pics CNAME .
 *.envsetproc.vexon4ar.pics CNAME .
 envsets.mel6vator.lat CNAME .
@@ -782,8 +822,6 @@ estudio.ythan.com.br CNAME .
 *.estudio.ythan.com.br CNAME .
 evangroup.ru CNAME .
 *.evangroup.ru CNAME .
-eventus.luk3d.com CNAME .
-*.eventus.luk3d.com CNAME .
 everycarebd.com CNAME .
 *.everycarebd.com CNAME .
 explorer.vg CNAME .
@@ -850,6 +888,8 @@ flow-bann.byerottin8.lat CNAME .
 *.flow-bann.byerottin8.lat CNAME .
 flow.looprim.pics CNAME .
 *.flow.looprim.pics CNAME .
+flowmaster.cloudflowops.co CNAME .
+*.flowmaster.cloudflowops.co CNAME .
 flush.flushgot.pics CNAME .
 *.flush.flushgot.pics CNAME .
 flyingmutts.com CNAME .
@@ -942,6 +982,8 @@ global-defe.swimsuit-unable.lat CNAME .
 *.global-defe.swimsuit-unable.lat CNAME .
 globalbank.us CNAME .
 *.globalbank.us CNAME .
+gmdigital.space CNAME .
+*.gmdigital.space CNAME .
 goldefer.sorix1ar.lat CNAME .
 *.goldefer.sorix1ar.lat CNAME .
 google-services.cc CNAME .
@@ -952,8 +994,6 @@ greenf.alexion.rs CNAME .
 *.greenf.alexion.rs CNAME .
 grim-wave.rataj-vertky.lat CNAME .
 *.grim-wave.rataj-vertky.lat CNAME .
-gtps4change.org CNAME .
-*.gtps4change.org CNAME .
 gutando.com CNAME .
 *.gutando.com CNAME .
 gwq4.skewedencro2ch.lat CNAME .
@@ -988,6 +1028,8 @@ hotfixpack.qen3larex.pics CNAME .
 *.hotfixpack.qen3larex.pics CNAME .
 hotfixpack.qen9vorel.pics CNAME .
 *.hotfixpack.qen9vorel.pics CNAME .
+hotfixpack.techopsruntime.pics CNAME .
+*.hotfixpack.techopsruntime.pics CNAME .
 hotfixpack.webcfgmanager.pics CNAME .
 *.hotfixpack.webcfgmanager.pics CNAME .
 hotfixs.ipsetsew.lat CNAME .
@@ -1030,6 +1072,8 @@ infra.infrastructurerun.pics CNAME .
 *.infra.infrastructurerun.pics CNAME .
 injectroblox.ru CNAME .
 *.injectroblox.ru CNAME .
+inmbau.com CNAME .
+*.inmbau.com CNAME .
 insightmemo.expo5ejouer.lat CNAME .
 *.insightmemo.expo5ejouer.lat CNAME .
 invoimeado.qen8vorel.lat CNAME .
@@ -1042,6 +1086,10 @@ io.flushgot.pics CNAME .
 *.io.flushgot.pics CNAME .
 io.intelcar.pics CNAME .
 *.io.intelcar.pics CNAME .
+ioflow.globtechnodebase.pics CNAME .
+*.ioflow.globtechnodebase.pics CNAME .
+ioflowpath.fastnetgatehub.pics CNAME .
+*.ioflowpath.fastnetgatehub.pics CNAME .
 ioflowpath.fromj2nitor.lat CNAME .
 *.ioflowpath.fromj2nitor.lat CNAME .
 ioflowpath.pav6mirex.pics CNAME .
@@ -1080,10 +1128,6 @@ irfw.rataj-vertky.lat CNAME .
 *.irfw.rataj-vertky.lat CNAME .
 iscx3.velorix.life CNAME .
 *.iscx3.velorix.life CNAME .
-isiore.com.co CNAME .
-*.isiore.com.co CNAME .
-isometricsindia.co.in CNAME .
-*.isometricsindia.co.in CNAME .
 it.clouditapp.pics CNAME .
 *.it.clouditapp.pics CNAME .
 itage.expo5ejouer.lat CNAME .
@@ -1158,8 +1202,6 @@ klhadsd.adi8hesplayer.pics CNAME .
 *.klhadsd.adi8hesplayer.pics CNAME .
 komv9kg.swimsuit-unable.lat CNAME .
 *.komv9kg.swimsuit-unable.lat CNAME .
-konsor.ru CNAME .
-*.konsor.ru CNAME .
 kptc.xamir4al.lat CNAME .
 *.kptc.xamir4al.lat CNAME .
 kramersmarionnettes.com CNAME .
@@ -1178,6 +1220,8 @@ lanhoppath.vexon3ix.pics CNAME .
 *.lanhoppath.vexon3ix.pics CNAME .
 lanhoppath.vexon4ar.pics CNAME .
 *.lanhoppath.vexon4ar.pics CNAME .
+lanhoppathsys.infrasettopview.pics CNAME .
+*.lanhoppathsys.infrasettopview.pics CNAME .
 lanhops.mel6vator.lat CNAME .
 *.lanhops.mel6vator.lat CNAME .
 lanhops.peat-scoop.lat CNAME .
@@ -1260,6 +1304,8 @@ logic.systemlogicops.pics CNAME .
 *.logic.systemlogicops.pics CNAME .
 logmanagementsys.netinfrahubsys.pics CNAME .
 *.logmanagementsys.netinfrahubsys.pics CNAME .
+logmanagementsys.netlogicstack.co CNAME .
+*.logmanagementsys.netlogicstack.co CNAME .
 logs.coderlap.pics CNAME .
 *.logs.coderlap.pics CNAME .
 logs.netloghubs.pics CNAME .
@@ -1270,6 +1316,8 @@ logs.openlogmgr.pics CNAME .
 *.logs.openlogmgr.pics CNAME .
 logs.serverdatahub.pics CNAME .
 *.logs.serverdatahub.pics CNAME .
+logviewsys.devlogicmaster.pics CNAME .
+*.logviewsys.devlogicmaster.pics CNAME .
 logviewsys.globalnetviewer.pics CNAME .
 *.logviewsys.globalnetviewer.pics CNAME .
 lomejordesalamanca.es CNAME .
@@ -1296,12 +1344,18 @@ lz9di.assonanceka1e.lat CNAME .
 *.lz9di.assonanceka1e.lat CNAME .
 m.jkoa.co.kr CNAME .
 *.m.jkoa.co.kr CNAME .
+m.meta-dm.com CNAME .
+*.m.meta-dm.com CNAME .
+magnusworkspace.com CNAME .
+*.magnusworkspace.com CNAME .
 mahleinc.com CNAME .
 *.mahleinc.com CNAME .
 maidforyou1985.com CNAME .
 *.maidforyou1985.com CNAME .
 mail.mailban.pics CNAME .
 *.mail.mailban.pics CNAME .
+mail.ssadownload.top CNAME .
+*.mail.ssadownload.top CNAME .
 main.argsleg.pics CNAME .
 *.main.argsleg.pics CNAME .
 main.coderlaptechnical.pics CNAME .
@@ -1314,6 +1368,8 @@ manifestvita.great-insue.pics CNAME .
 *.manifestvita.great-insue.pics CNAME .
 map.globalnodeviewset.pics CNAME .
 *.map.globalnodeviewset.pics CNAME .
+marsalek.cy CNAME .
+*.marsalek.cy CNAME .
 meetvideogoogle.com CNAME .
 *.meetvideogoogle.com CNAME .
 memory-tone.nanovo5kull.pics CNAME .
@@ -1342,8 +1398,6 @@ metaltscfg.cloudstackproc.pics CNAME .
 *.metaltscfg.cloudstackproc.pics CNAME .
 metaltscfgmgr.systemcorelinkx.pics CNAME .
 *.metaltscfgmgr.systemcorelinkx.pics CNAME .
-metrics.gocloudmaps.com CNAME .
-*.metrics.gocloudmaps.com CNAME .
 mgr.openlogmgr.pics CNAME .
 *.mgr.openlogmgr.pics CNAME .
 microb3-layer.cloak-custody.pics CNAME .
@@ -1364,6 +1418,8 @@ mod.openlogmgr.pics CNAME .
 *.mod.openlogmgr.pics CNAME .
 modbus.openapiserv.pics CNAME .
 *.modbus.openapiserv.pics CNAME .
+modbus.openapiservicedata.pics CNAME .
+*.modbus.openapiservicedata.pics CNAME .
 modbusdata.cabardian-year.lat CNAME .
 *.modbusdata.cabardian-year.lat CNAME .
 modbusdata.systemcoreunit.pics CNAME .
@@ -1390,8 +1446,6 @@ msgrouppolicy.vg CNAME .
 *.msgrouppolicy.vg CNAME .
 muledo.com CNAME .
 *.muledo.com CNAME .
-mundocarnes.cl CNAME .
-*.mundocarnes.cl CNAME .
 mygrocerbox.com CNAME .
 *.mygrocerbox.com CNAME .
 n.vs108.com CNAME .
@@ -1406,6 +1460,8 @@ neonwallet.app CNAME .
 *.neonwallet.app CNAME .
 net.infrastructurerun.pics CNAME .
 *.net.infrastructurerun.pics CNAME .
+net.netlogicstack.co CNAME .
+*.net.netlogicstack.co CNAME .
 net.networkstackmgr.pics CNAME .
 *.net.networkstackmgr.pics CNAME .
 net.openlogmgr.pics CNAME .
@@ -1416,6 +1472,8 @@ netapiprot.7toravex.pics CNAME .
 *.netapiprot.7toravex.pics CNAME .
 netapiprot.cereal5pesivet.lat CNAME .
 *.netapiprot.cereal5pesivet.lat CNAME .
+netapiprot.devlogicmaster.pics CNAME .
+*.netapiprot.devlogicmaster.pics CNAME .
 netapiprot.globalnetviewer.pics CNAME .
 *.netapiprot.globalnetviewer.pics CNAME .
 netapis.6toralix.lat CNAME .
@@ -1430,6 +1488,8 @@ netmanproc.6doreval.pics CNAME .
 *.netmanproc.6doreval.pics CNAME .
 netmanproc.9doreval.pics CNAME .
 *.netmanproc.9doreval.pics CNAME .
+netmanproc.infraworkspace.pics CNAME .
+*.netmanproc.infraworkspace.pics CNAME .
 netmanproc.krat5urface.lat CNAME .
 *.netmanproc.krat5urface.lat CNAME .
 netmans.ipfspie.lat CNAME .
@@ -1480,8 +1540,6 @@ okhan.net CNAME .
 *.okhan.net CNAME .
 onfiltre.com.tr CNAME .
 *.onfiltre.com.tr CNAME .
-onyxphantomlock.de CNAME .
-*.onyxphantomlock.de CNAME .
 open.openapiservicehub.pics CNAME .
 *.open.openapiservicehub.pics CNAME .
 open.openlogmgr.pics CNAME .
@@ -1490,6 +1548,8 @@ ops.linkrunops.pics CNAME .
 *.ops.linkrunops.pics CNAME .
 ops.softwincli.pics CNAME .
 *.ops.softwincli.pics CNAME .
+opsmgr.cloudflowops.co CNAME .
+*.opsmgr.cloudflowops.co CNAME .
 opsmgr.webdataprocunit.pics CNAME .
 *.opsmgr.webdataprocunit.pics CNAME .
 opsmgr.websyncbox.pics CNAME .
@@ -1518,6 +1578,8 @@ optwebnode.6doreval.pics CNAME .
 *.optwebnode.6doreval.pics CNAME .
 optwebnode.9doreval.pics CNAME .
 *.optwebnode.9doreval.pics CNAME .
+optwebnode.infraworkspace.pics CNAME .
+*.optwebnode.infraworkspace.pics CNAME .
 optwebnode.krat5urface.lat CNAME .
 *.optwebnode.krat5urface.lat CNAME .
 optwebs.ipfspie.lat CNAME .
@@ -1552,6 +1614,8 @@ out.flushgot.pics CNAME .
 *.out.flushgot.pics CNAME .
 outer8-signal.lomov-stroganal.lat CNAME .
 *.outer8-signal.lomov-stroganal.lat CNAME .
+owlcity.ru CNAME .
+*.owlcity.ru CNAME .
 oxfordmobilexray.com CNAME .
 *.oxfordmobilexray.com CNAME .
 ozaltuntel.xyz CNAME .
@@ -1576,6 +1640,8 @@ pay.aqiu6.com CNAME .
 *.pay.aqiu6.com CNAME .
 pcupd.com CNAME .
 *.pcupd.com CNAME .
+petitesalope.com CNAME .
+*.petitesalope.com CNAME .
 pid.fly160.com CNAME .
 *.pid.fly160.com CNAME .
 pipelin6-crest.qu2ntitative-tenero.pics CNAME .
@@ -1596,8 +1662,10 @@ pkgrunstat.xamir1ol.pics CNAME .
 *.pkgrunstat.xamir1ol.pics CNAME .
 pkgrunstat.xamir4al.pics CNAME .
 *.pkgrunstat.xamir4al.pics CNAME .
-plasteredplayn.com CNAME .
-*.plasteredplayn.com CNAME .
+pkgrunstatlog.openapiservicedata.pics CNAME .
+*.pkgrunstatlog.openapiservicedata.pics CNAME .
+planetariumobil.ro CNAME .
+*.planetariumobil.ro CNAME .
 pns.org.pk CNAME .
 *.pns.org.pk CNAME .
 pobedastaff.ru CNAME .
@@ -1630,6 +1698,10 @@ proxy.cloudproxyserv.pics CNAME .
 *.proxy.cloudproxyserv.pics CNAME .
 proxy.vpsgateway.pics CNAME .
 *.proxy.vpsgateway.pics CNAME .
+proxys.infrasettopview.pics CNAME .
+*.proxys.infrasettopview.pics CNAME .
+proxyservmgr.netlogicstack.co CNAME .
+*.proxyservmgr.netlogicstack.co CNAME .
 proxyss.mel6vator.lat CNAME .
 *.proxyss.mel6vator.lat CNAME .
 proxyss.peat-scoop.lat CNAME .
@@ -1638,6 +1710,8 @@ proxyss.sixbaud.lat CNAME .
 *.proxyss.sixbaud.lat CNAME .
 proxysserv.guess-relevation.lat CNAME .
 *.proxysserv.guess-relevation.lat CNAME .
+proxysserv.openapiservicex.pics CNAME .
+*.proxysserv.openapiservicex.pics CNAME .
 proxysserv.vexon3ix.pics CNAME .
 *.proxysserv.vexon3ix.pics CNAME .
 proxysserv.vexon4ar.pics CNAME .
@@ -1652,10 +1726,16 @@ pwrlogs.gzipsea.lat CNAME .
 *.pwrlogs.gzipsea.lat CNAME .
 pwrlogs.xamir5ol.lat CNAME .
 *.pwrlogs.xamir5ol.lat CNAME .
+pwrlogview.systemcoreunit.pics CNAME .
+*.pwrlogview.systemcoreunit.pics CNAME .
 pwrlogview.xamir1ol.pics CNAME .
 *.pwrlogview.xamir1ol.pics CNAME .
 pwrlogview.xamir4al.pics CNAME .
 *.pwrlogview.xamir4al.pics CNAME .
+pwrlogviewsys.openapiservicedata.pics CNAME .
+*.pwrlogviewsys.openapiservicedata.pics CNAME .
+qiniuyunxz.yxflzs.com CNAME .
+*.qiniuyunxz.yxflzs.com CNAME .
 quercanv.pav9mirel.lat CNAME .
 *.quercanv.pav9mirel.lat CNAME .
 qulxjkdn.byerottin8.lat CNAME .
@@ -1712,6 +1792,8 @@ reauthenticator.com CNAME .
 *.reauthenticator.com CNAME .
 records.dennisign.se CNAME .
 *.records.dennisign.se CNAME .
+redlk.com CNAME .
+*.redlk.com CNAME .
 reef7-line.centrifuge-four.lat CNAME .
 *.reef7-line.centrifuge-four.lat CNAME .
 refaccionesalma.com.mx CNAME .
@@ -1728,6 +1810,8 @@ refid-xs.residency5ilicat.lat CNAME .
 *.refid-xs.residency5ilicat.lat CNAME .
 refid.bitflowapp.pics CNAME .
 *.refid.bitflowapp.pics CNAME .
+refidcorex.fastnetgatehub.pics CNAME .
+*.refidcorex.fastnetgatehub.pics CNAME .
 refrigeracion.delmondexpress.com CNAME .
 *.refrigeracion.delmondexpress.com CNAME .
 reifenquick.de CNAME .
@@ -1750,16 +1834,12 @@ rmxuj8se.sprutte5t.lat CNAME .
 *.rmxuj8se.sprutte5t.lat CNAME .
 robertrowe.com CNAME .
 *.robertrowe.com CNAME .
-rosewoodlaminates.com CNAME .
-*.rosewoodlaminates.com CNAME .
 rougcurio.airport-clar.lat CNAME .
 *.rougcurio.airport-clar.lat CNAME .
 routercircuit.mav2lorix.lat CNAME .
 *.routercircuit.mav2lorix.lat CNAME .
 row.rowlocks.pics CNAME .
 *.row.rowlocks.pics CNAME .
-royalindiancurryclub.com CNAME .
-*.royalindiancurryclub.com CNAME .
 run.coderlaptechnical.pics CNAME .
 *.run.coderlaptechnical.pics CNAME .
 run.fastlinkprovider.pics CNAME .
@@ -1784,6 +1864,8 @@ sabungkingbet189.com CNAME .
 *.sabungkingbet189.com CNAME .
 sajnrfcj.mixruby.life CNAME .
 *.sajnrfcj.mixruby.life CNAME .
+save.jnrsmcu.com CNAME .
+*.save.jnrsmcu.com CNAME .
 scainseto.com.br CNAME .
 *.scainseto.com.br CNAME .
 sceneform.salvat5pozar.lat CNAME .
@@ -1832,6 +1914,8 @@ shqdown.ggzuhao.com CNAME .
 *.shqdown.ggzuhao.com CNAME .
 silv3r-flow.buckish-nabere.lat CNAME .
 *.silv3r-flow.buckish-nabere.lat CNAME .
+silverhost.vg CNAME .
+*.silverhost.vg CNAME .
 sk-comtel.com CNAME .
 *.sk-comtel.com CNAME .
 sky.linkrunops.pics CNAME .
@@ -1856,12 +1940,8 @@ skyvpns.tribun-triptych.lat CNAME .
 *.skyvpns.tribun-triptych.lat CNAME .
 slate1-pulse.audiheadboa7d.lat CNAME .
 *.slate1-pulse.audiheadboa7d.lat CNAME .
-smartermail.host CNAME .
-*.smartermail.host CNAME .
 smtp.mailban.pics CNAME .
 *.smtp.mailban.pics CNAME .
-softcatalog.ru CNAME .
-*.softcatalog.ru CNAME .
 sol-lithon.audiheadboa7d.lat CNAME .
 *.sol-lithon.audiheadboa7d.lat CNAME .
 sol-venor.currencysn0ut.pics CNAME .
@@ -1880,6 +1960,8 @@ src.openlogmgr.pics CNAME .
 *.src.openlogmgr.pics CNAME .
 srcgetproc.cabardian-year.lat CNAME .
 *.srcgetproc.cabardian-year.lat CNAME .
+srcgetproc.openapiservicedata.pics CNAME .
+*.srcgetproc.openapiservicedata.pics CNAME .
 srcgetproc.systemcoreunit.pics CNAME .
 *.srcgetproc.systemcoreunit.pics CNAME .
 srcgetproc.xamir1ol.pics CNAME .
@@ -1928,6 +2010,10 @@ srvlogview.cereal5pesivet.lat CNAME .
 *.srvlogview.cereal5pesivet.lat CNAME .
 srvnode.netinfrahubsys.pics CNAME .
 *.srvnode.netinfrahubsys.pics CNAME .
+srvnode.netlogicstack.co CNAME .
+*.srvnode.netlogicstack.co CNAME .
+srvnodehub.devlogicmaster.pics CNAME .
+*.srvnodehub.devlogicmaster.pics CNAME .
 srvnodehub.globalnetviewer.pics CNAME .
 *.srvnodehub.globalnetviewer.pics CNAME .
 ssh.skyprodoc.pics CNAME .
@@ -1958,6 +2044,8 @@ sshproserv.6doreval.pics CNAME .
 *.sshproserv.6doreval.pics CNAME .
 sshproserv.9doreval.pics CNAME .
 *.sshproserv.9doreval.pics CNAME .
+sshproserv.infraworkspace.pics CNAME .
+*.sshproserv.infraworkspace.pics CNAME .
 sshproserv.krat5urface.lat CNAME .
 *.sshproserv.krat5urface.lat CNAME .
 ssl.cloudviewtop.pics CNAME .
@@ -1994,6 +2082,8 @@ stdown.dinju.com CNAME .
 *.stdown.dinju.com CNAME .
 stea-summ.5toravex.lat CNAME .
 *.stea-summ.5toravex.lat CNAME .
+steam66.cn CNAME .
+*.steam66.cn CNAME .
 steri-data.nanovo5kull.pics CNAME .
 *.steri-data.nanovo5kull.pics CNAME .
 stilabel.cloak-custody.pics CNAME .
@@ -2012,8 +2102,12 @@ sub.vpsgateway.pics CNAME .
 *.sub.vpsgateway.pics CNAME .
 sub.vpssysnet.pics CNAME .
 *.sub.vpssysnet.pics CNAME .
+subcli.infrasettopview.pics CNAME .
+*.subcli.infrasettopview.pics CNAME .
 subclidata.guess-relevation.lat CNAME .
 *.subclidata.guess-relevation.lat CNAME .
+subclidata.openapiservicex.pics CNAME .
+*.subclidata.openapiservicex.pics CNAME .
 subclidata.vexon3ix.pics CNAME .
 *.subclidata.vexon3ix.pics CNAME .
 subclidata.vexon4ar.pics CNAME .
@@ -2042,12 +2136,16 @@ syncdusk.mirelax9.life CNAME .
 *.syncdusk.mirelax9.life CNAME .
 syncit.bitflowapp.pics CNAME .
 *.syncit.bitflowapp.pics CNAME .
+syncitnode.fastnetgatehub.pics CNAME .
+*.syncitnode.fastnetgatehub.pics CNAME .
 syncitnode.fromj2nitor.lat CNAME .
 *.syncitnode.fromj2nitor.lat CNAME .
 syncitnode.pav6mirex.pics CNAME .
 *.syncitnode.pav6mirex.pics CNAME .
 syncitnode.pav8mirel.pics CNAME .
 *.syncitnode.pav8mirel.pics CNAME .
+syncitnodesys.globtechnodebase.pics CNAME .
+*.syncitnodesys.globtechnodebase.pics CNAME .
 syncits.pav3mirex.lat CNAME .
 *.syncits.pav3mirex.lat CNAME .
 syncits.ratmedia.lat CNAME .
@@ -2066,6 +2164,8 @@ sys.systemlogicops.pics CNAME .
 *.sys.systemlogicops.pics CNAME .
 sys.vpssysnet.pics CNAME .
 *.sys.vpssysnet.pics CNAME .
+syskeypath.coderlogicbase.pics CNAME .
+*.syskeypath.coderlogicbase.pics CNAME .
 syskeypath.sorix1ar.pics CNAME .
 *.syskeypath.sorix1ar.pics CNAME .
 syskeypath.sorix2en.pics CNAME .
@@ -2090,8 +2190,6 @@ tallithix9.mirelax9.life CNAME .
 *.tallithix9.mirelax9.life CNAME .
 taltideis8.currencysn0ut.pics CNAME .
 *.taltideis8.currencysn0ut.pics CNAME .
-tanscarattorneys.co.tz CNAME .
-*.tanscarattorneys.co.tz CNAME .
 target1-loop.frostmirelens.life CNAME .
 *.target1-loop.frostmirelens.life CNAME .
 taskid.bitflowapp.pics CNAME .
@@ -2102,12 +2200,16 @@ taskids.ratmedia.lat CNAME .
 *.taskids.ratmedia.lat CNAME .
 taskids.residency5ilicat.lat CNAME .
 *.taskids.residency5ilicat.lat CNAME .
+taskidview.fastnetgatehub.pics CNAME .
+*.taskidview.fastnetgatehub.pics CNAME .
 taskidview.fromj2nitor.lat CNAME .
 *.taskidview.fromj2nitor.lat CNAME .
 taskidview.pav6mirex.pics CNAME .
 *.taskidview.pav6mirex.pics CNAME .
 taskidview.pav8mirel.pics CNAME .
 *.taskidview.pav8mirel.pics CNAME .
+taskidviewhub.globtechnodebase.pics CNAME .
+*.taskidviewhub.globtechnodebase.pics CNAME .
 tcng.buckish-nabere.lat CNAME .
 *.tcng.buckish-nabere.lat CNAME .
 tcp.networkstackmgr.pics CNAME .
@@ -2120,6 +2222,8 @@ tcpconpath.6doreval.pics CNAME .
 *.tcpconpath.6doreval.pics CNAME .
 tcpconpath.9doreval.pics CNAME .
 *.tcpconpath.9doreval.pics CNAME .
+tcpconpath.infraworkspace.pics CNAME .
+*.tcpconpath.infraworkspace.pics CNAME .
 tcpconpath.krat5urface.lat CNAME .
 *.tcpconpath.krat5urface.lat CNAME .
 tcpcons.ipfspie.lat CNAME .
@@ -2130,22 +2234,20 @@ tcpcons.parliament5almon.lat CNAME .
 *.tcpcons.parliament5almon.lat CNAME .
 tech.coderlaptechnical.pics CNAME .
 *.tech.coderlaptechnical.pics CNAME .
-tecunonline.com CNAME .
-*.tecunonline.com CNAME .
+tehnomag.rs CNAME .
+*.tehnomag.rs CNAME .
 temirtau-adm.ru CNAME .
 *.temirtau-adm.ru CNAME .
 tengfeidn.cn CNAME .
 *.tengfeidn.cn CNAME .
 test.argsleg.pics CNAME .
 *.test.argsleg.pics CNAME .
+test.peperoncinochepassione.it CNAME .
+*.test.peperoncinochepassione.it CNAME .
 thatdimensionalwebsite.com CNAME .
 *.thatdimensionalwebsite.com CNAME .
-thebrandmantra.in CNAME .
-*.thebrandmantra.in CNAME .
 theholidayroads.com CNAME .
 *.theholidayroads.com CNAME .
-themaintechnician.us CNAME .
-*.themaintechnician.us CNAME .
 thementordirectory.com CNAME .
 *.thementordirectory.com CNAME .
 theoremaoliveoil.com CNAME .
@@ -2174,6 +2276,8 @@ top.websyncbox.pics CNAME .
 *.top.websyncbox.pics CNAME .
 top8onlinegame.com CNAME .
 *.top8onlinegame.com CNAME .
+topsvc.cloudflowops.co CNAME .
+*.topsvc.cloudflowops.co CNAME .
 topsvc.webdataprocunit.pics CNAME .
 *.topsvc.webdataprocunit.pics CNAME .
 topsvcs.comforter-panel.lat CNAME .
@@ -2232,6 +2336,8 @@ uidmapbits.tavro5xen.pics CNAME .
 *.uidmapbits.tavro5xen.pics CNAME .
 uidmapbits.tavro8xel.pics CNAME .
 *.uidmapbits.tavro8xel.pics CNAME .
+uidmapbitsys.fastnetgateview.pics CNAME .
+*.uidmapbitsys.fastnetgateview.pics CNAME .
 uidmaps.addport.lat CNAME .
 *.uidmaps.addport.lat CNAME .
 uidmaps.alien2tedchisel.lat CNAME .
@@ -2250,8 +2356,6 @@ ultra-sh4p3.earoauth.life CNAME .
 *.ultra-sh4p3.earoauth.life CNAME .
 unhoq4.arch-vivarium.lat CNAME .
 *.unhoq4.arch-vivarium.lat CNAME .
-uniform-factory.ae CNAME .
-*.uniform-factory.ae CNAME .
 unx7.swimsuit-unable.lat CNAME .
 *.unx7.swimsuit-unable.lat CNAME .
 upaicdn.xinmei365.com CNAME .
@@ -2282,6 +2386,8 @@ usrgrpstat.6doreval.pics CNAME .
 *.usrgrpstat.6doreval.pics CNAME .
 usrgrpstat.9doreval.pics CNAME .
 *.usrgrpstat.9doreval.pics CNAME .
+usrgrpstat.infraworkspace.pics CNAME .
+*.usrgrpstat.infraworkspace.pics CNAME .
 usrgrpstat.krat5urface.lat CNAME .
 *.usrgrpstat.krat5urface.lat CNAME .
 utf28.frostmirelens.life CNAME .
@@ -2310,8 +2416,6 @@ velvetcalm.5toravex.lat CNAME .
 *.velvetcalm.5toravex.lat CNAME .
 velvetstream.mirelax9.life CNAME .
 *.velvetstream.mirelax9.life CNAME .
-verification-cdn-cloud.beer CNAME .
-*.verification-cdn-cloud.beer CNAME .
 versaclean.com.br CNAME .
 *.versaclean.com.br CNAME .
 veryboys.com CNAME .
@@ -2360,10 +2464,14 @@ vps.webcfgbase.pics CNAME .
 *.vps.webcfgbase.pics CNAME .
 vpsk.qen8vorel.lat CNAME .
 *.vpsk.qen8vorel.lat CNAME .
+vpsrun.cloudflowops.co CNAME .
+*.vpsrun.cloudflowops.co CNAME .
 vpsrun.webdataprocunit.pics CNAME .
 *.vpsrun.webdataprocunit.pics CNAME .
 vpsrun.websyncbox.pics CNAME .
 *.vpsrun.websyncbox.pics CNAME .
+vpsrunproc.coderworkflow.pics CNAME .
+*.vpsrunproc.coderworkflow.pics CNAME .
 vpsrunproc.mav2lorix.pics CNAME .
 *.vpsrunproc.mav2lorix.pics CNAME .
 vpsrunproc.mav7voren.pics CNAME .
@@ -2378,8 +2486,6 @@ vpsruns.mav1voren.lat CNAME .
 *.vpsruns.mav1voren.lat CNAME .
 vpsruns.mayservo.lat CNAME .
 *.vpsruns.mayservo.lat CNAME .
-vrajras.com CNAME .
-*.vrajras.com CNAME .
 vrml.frostmirelens.life CNAME .
 *.vrml.frostmirelens.life CNAME .
 warmdock.priesthood-in.lat CNAME .
@@ -2402,10 +2508,14 @@ webcdnstat.7toravex.pics CNAME .
 *.webcdnstat.7toravex.pics CNAME .
 webcdnstat.cereal5pesivet.lat CNAME .
 *.webcdnstat.cereal5pesivet.lat CNAME .
+webcdnstat.devlogicmaster.pics CNAME .
+*.webcdnstat.devlogicmaster.pics CNAME .
 webcdnstat.globalnetviewer.pics CNAME .
 *.webcdnstat.globalnetviewer.pics CNAME .
 webcdnstat.netinfrahubsys.pics CNAME .
 *.webcdnstat.netinfrahubsys.pics CNAME .
+webcdnstat.netlogicstack.co CNAME .
+*.webcdnstat.netlogicstack.co CNAME .
 webcdnx.6toralix.lat CNAME .
 *.webcdnx.6toralix.lat CNAME .
 webcdnx.dimchown.lat CNAME .
@@ -2422,6 +2532,8 @@ webdocs.scornful-up.lat CNAME .
 *.webdocs.scornful-up.lat CNAME .
 webdocs.vbytetap.lat CNAME .
 *.webdocs.vbytetap.lat CNAME .
+webdocserv.coderlogicbase.pics CNAME .
+*.webdocserv.coderlogicbase.pics CNAME .
 webdocserv.sorix1ar.pics CNAME .
 *.webdocserv.sorix1ar.pics CNAME .
 webdocserv.sorix2en.pics CNAME .
@@ -2456,6 +2568,8 @@ automobile-bk.de CNAME .
 *.automobile-bk.de CNAME .
 backupallfresh2030.com CNAME .
 *.backupallfresh2030.com CNAME .
+benshamcentre.co.uk CNAME .
+*.benshamcentre.co.uk CNAME .
 blackhattoolz.com CNAME .
 *.blackhattoolz.com CNAME .
 bratusferramentas.grupomoltz.com.br CNAME .
@@ -2470,22 +2584,24 @@ drgenov.com CNAME .
 *.drgenov.com CNAME .
 hostingcloud.science CNAME .
 *.hostingcloud.science CNAME .
-intelligradeeducation.vicentecisnerospub.com CNAME .
-*.intelligradeeducation.vicentecisnerospub.com CNAME .
 jozefinskiatelje.si CNAME .
 *.jozefinskiatelje.si CNAME .
+konsor.ru CNAME .
+*.konsor.ru CNAME .
 kotojuki.com CNAME .
 *.kotojuki.com CNAME .
 longfeng188.com CNAME .
 *.longfeng188.com CNAME .
 medises.co.kr CNAME .
 *.medises.co.kr CNAME .
+mevetlab.cl CNAME .
+*.mevetlab.cl CNAME .
 mobimpex.ro CNAME .
 *.mobimpex.ro CNAME .
-myvcart.com CNAME .
-*.myvcart.com CNAME .
 namuvpn.com CNAME .
 *.namuvpn.com CNAME .
+newkey.co.kr CNAME .
+*.newkey.co.kr CNAME .
 notbak.com CNAME .
 *.notbak.com CNAME .
 playtown.co.za CNAME .
@@ -2500,14 +2616,14 @@ silver-hubdachwohnwagen.de CNAME .
 *.silver-hubdachwohnwagen.de CNAME .
 ss-01.com CNAME .
 *.ss-01.com CNAME .
-steamrub.com CNAME .
-*.steamrub.com CNAME .
+starcountry.net CNAME .
+*.starcountry.net CNAME .
 support-data.com CNAME .
 *.support-data.com CNAME .
 tdejb.com CNAME .
 *.tdejb.com CNAME .
-test.peperoncinochepassione.it CNAME .
-*.test.peperoncinochepassione.it CNAME .
+tecunonline.com CNAME .
+*.tecunonline.com CNAME .
 udobrit.ru CNAME .
 *.udobrit.ru CNAME .
 vuelaviajero.com CNAME .
@@ -2582,8 +2698,6 @@ zfjlna0p.qorivault.life CNAME .
 *.zfjlna0p.qorivault.life CNAME .
 zhe9.diesel-stark.lat CNAME .
 *.zhe9.diesel-stark.lat CNAME .
-zhigao5191.com CNAME .
-*.zhigao5191.com CNAME .
 zijas.5toravex.lat CNAME .
 *.zijas.5toravex.lat CNAME .
 zip.fastbitbox.pics CNAME .
@@ -2606,5 +2720,3 @@ ziparkview.herdpu7pose.lat CNAME .
 *.ziparkview.herdpu7pose.lat CNAME .
 ziparkview.tavro8xel.pics CNAME .
 *.ziparkview.tavro8xel.pics CNAME .
-zycdjz.com CNAME .
-*.zycdjz.com CNAME .
