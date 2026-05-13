@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026050704 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026051304 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: HostsVN Malware Blocklist
-; Entries: 17,653 domains
+; Entries: 17,684 domains
 ; Source: https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts | https://bigdargon.github.io/hostsVN/
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 7, 2026 at 4:19 AM UTC | 2026-05-07T04:19:08.126Z
+; Last updated: May 13, 2026 at 4:24 AM UTC | 2026-05-13T04:24:01.034Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -13736,20 +13736,64 @@ toblog.ctobsnssdk.com CNAME .
 *.toblog.ctobsnssdk.com CNAME .
 sf16-static.i18n-pglstatp.com CNAME .
 *.sf16-static.i18n-pglstatp.com CNAME .
+log-boot.capcutapi.com CNAME .
+*.log-boot.capcutapi.com CNAME .
 log-sg.capcutapi.com CNAME .
 *.log-sg.capcutapi.com CNAME .
+log-v2-boot.capcutapi.com CNAME .
+*.log-v2-boot.capcutapi.com CNAME .
+log16-normal-sg.capcutapi.com CNAME .
+*.log16-normal-sg.capcutapi.com CNAME .
+log16-normal.capcutapi.com CNAME .
+*.log16-normal.capcutapi.com CNAME .
+log32-normal-sg.capcutapi.com CNAME .
+*.log32-normal-sg.capcutapi.com CNAME .
+log32-normal.capcutapi.com CNAME .
+*.log32-normal.capcutapi.com CNAME .
+mcs-v2-boot.capcutapi.com CNAME .
+*.mcs-v2-boot.capcutapi.com CNAME .
 mcs-va.capcutapi.com CNAME .
 *.mcs-va.capcutapi.com CNAME .
 mon-sg.capcutapi.com CNAME .
 *.mon-sg.capcutapi.com CNAME .
+mon-v2-boot.capcutapi.com CNAME .
+*.mon-v2-boot.capcutapi.com CNAME .
 mon-va.capcutapi.com CNAME .
 *.mon-va.capcutapi.com CNAME .
+mon16-normal-sg.capcutapi.com CNAME .
+*.mon16-normal-sg.capcutapi.com CNAME .
+mon32-normal-sg.capcutapi.com CNAME .
+*.mon32-normal-sg.capcutapi.com CNAME .
+mssdk-boot.capcutapi.com CNAME .
+*.mssdk-boot.capcutapi.com CNAME .
+mssdk-sg.capcutapi.com CNAME .
+*.mssdk-sg.capcutapi.com CNAME .
+mssdk-v2-boot.capcutapi.com CNAME .
+*.mssdk-v2-boot.capcutapi.com CNAME .
+mssdk16-normal-sg.capcutapi.com CNAME .
+*.mssdk16-normal-sg.capcutapi.com CNAME .
+mssdk16-normal.capcutapi.com CNAME .
+*.mssdk16-normal.capcutapi.com CNAME .
+mssdk32-normal-sg.capcutapi.com CNAME .
+*.mssdk32-normal-sg.capcutapi.com CNAME .
+mssdk32-normal.capcutapi.com CNAME .
+*.mssdk32-normal.capcutapi.com CNAME .
+pc-mon-boot.capcutapi.com CNAME .
+*.pc-mon-boot.capcutapi.com CNAME .
+pc-mon-normal-sg.capcutapi.com CNAME .
+*.pc-mon-normal-sg.capcutapi.com CNAME .
+pc-mon-v2-boot.capcutapi.com CNAME .
+*.pc-mon-v2-boot.capcutapi.com CNAME .
 tnc-boot.capcutapi.com CNAME .
 *.tnc-boot.capcutapi.com CNAME .
 tnc-sg.capcutapi.com CNAME .
 *.tnc-sg.capcutapi.com CNAME .
+tnc-v2-boot.capcutapi.com CNAME .
+*.tnc-v2-boot.capcutapi.com CNAME .
 log16-normal-us-ttp.capcutapi.us CNAME .
 *.log16-normal-us-ttp.capcutapi.us CNAME .
+mcs.capcutapi.us CNAME .
+*.mcs.capcutapi.us CNAME .
 mcs16-normal-us-ttp.capcutapi.us CNAME .
 *.mcs16-normal-us-ttp.capcutapi.us CNAME .
 mon.capcutapi.us CNAME .
@@ -13758,6 +13802,10 @@ mon16-normal-us-ttp.capcutapi.us CNAME .
 *.mon16-normal-us-ttp.capcutapi.us CNAME .
 mssdk.capcutapi.us CNAME .
 *.mssdk.capcutapi.us CNAME .
+mssdk16-normal-us-ttp.capcutapi.us CNAME .
+*.mssdk16-normal-us-ttp.capcutapi.us CNAME .
+pc-mon16-normal-us-ttp.capcutapi.us CNAME .
+*.pc-mon16-normal-us-ttp.capcutapi.us CNAME .
 tnc16-normal-us-ttp.capcutapi.us CNAME .
 *.tnc16-normal-us-ttp.capcutapi.us CNAME .
 a.mouseflow.com CNAME .
@@ -27172,6 +27220,8 @@ downstairsnegotiatebarren.com CNAME .
 *.downstairsnegotiatebarren.com CNAME .
 dozubatan.com CNAME .
 *.dozubatan.com CNAME .
+dpjf9a2rbjbvp.cloudfront.net CNAME .
+*.dpjf9a2rbjbvp.cloudfront.net CNAME .
 dpuplet.net CNAME .
 *.dpuplet.net CNAME .
 dq3yxnlzwhcys.cloudfront.net CNAME .
@@ -27212,6 +27262,8 @@ dustyhammer.com CNAME .
 *.dustyhammer.com CNAME .
 dxgo95ahe73e8.cloudfront.net CNAME .
 *.dxgo95ahe73e8.cloudfront.net CNAME .
+dxtnqglxrio.com CNAME .
+*.dxtnqglxrio.com CNAME .
 dynamicadx.com CNAME .
 *.dynamicadx.com CNAME .
 dynspt.com CNAME .
@@ -30600,6 +30652,8 @@ rmvla.rrqwarwrewrlj.top CNAME .
 *.rmvla.rrqwarwrewrlj.top CNAME .
 rndskittytor.com CNAME .
 *.rndskittytor.com CNAME .
+rnofuxgaz.com CNAME .
+*.rnofuxgaz.com CNAME .
 roacheenazak.com CNAME .
 *.roacheenazak.com CNAME .
 roar.com CNAME .
@@ -30790,6 +30844,8 @@ selectivesummer.com CNAME .
 *.selectivesummer.com CNAME .
 selfcampaign.com CNAME .
 *.selfcampaign.com CNAME .
+semi-evergreenincandescetest.com CNAME .
+*.semi-evergreenincandescetest.com CNAME .
 senddroid.com CNAME .
 *.senddroid.com CNAME .
 sensenetworks.com CNAME .
@@ -31248,6 +31304,8 @@ superxxxfree.com CNAME .
 *.superxxxfree.com CNAME .
 suphelper.com CNAME .
 *.suphelper.com CNAME .
+suppressedtrophy.com CNAME .
+*.suppressedtrophy.com CNAME .
 surecheapermoisture.com CNAME .
 *.surecheapermoisture.com CNAME .
 surfmusik-adserver.de CNAME .
@@ -32284,6 +32342,8 @@ wt-eu02.net CNAME .
 *.wt-eu02.net CNAME .
 wtlive.com CNAME .
 *.wtlive.com CNAME .
+wucdrynukof.in CNAME .
+*.wucdrynukof.in CNAME .
 wuzbhjpvsf.com CNAME .
 *.wuzbhjpvsf.com CNAME .
 wvhba6470p.com CNAME .
@@ -32524,6 +32584,8 @@ ztumuvofzbfe.com CNAME .
 *.ztumuvofzbfe.com CNAME .
 zucoagorsout.com CNAME .
 *.zucoagorsout.com CNAME .
+zuieggzsdlo.com CNAME .
+*.zuieggzsdlo.com CNAME .
 zumdivdwug.com CNAME .
 *.zumdivdwug.com CNAME .
 zumobi.com CNAME .
