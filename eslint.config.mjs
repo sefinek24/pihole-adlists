@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import globals from 'globals';
 
 export default [
+	{ ignores: ['node_modules', '**/*.min.js', '**/*bundle*', 'build/**', 'dist/**', 'services/translations/**'] },
 	js.configs.recommended,
 	{
 		languageOptions: {
@@ -20,7 +21,8 @@ export default [
 			'comma-style': 'error',
 			'curly': ['error', 'multi-line', 'consistent'],
 			'dot-location': ['error', 'property'],
-			'handle-callback-err': 'off',
+			'eqeqeq': ['error', 'always', { null: 'ignore' }],
+			'handle-callback-err': 'warn',
 			'indent': ['warn', 'tab'],
 			'keyword-spacing': 'warn',
 			'max-nested-callbacks': ['error', { max: 4 }],
@@ -32,6 +34,7 @@ export default [
 			'no-lonely-if': 'warn',
 			'no-multi-spaces': 'warn',
 			'no-multiple-empty-lines': ['warn', { max: 3, maxEOF: 1, maxBOF: 0 }],
+			'no-return-await': 'warn',
 			'no-shadow': ['error', { allow: ['err', 'resolve', 'reject'] }],
 			'no-trailing-spaces': 'warn',
 			'no-unreachable': 'warn',
@@ -39,6 +42,7 @@ export default [
 			'no-use-before-define': ['error', { functions: false, classes: true }],
 			'no-var': 'error',
 			'object-curly-spacing': ['warn', 'always'],
+			'object-shorthand': 'warn',
 			'prefer-const': 'error',
 			'quotes': ['warn', 'single'],
 			'semi': ['warn', 'always'],
@@ -51,6 +55,5 @@ export default [
 			'wrap-regex': 'warn',
 			'yoda': 'error',
 		},
-		ignores: ['node_modules', '**/*.min.js', '**/*bundle*', 'build/**', 'dist/**', 'services/translations/**'],
 	},
 ];
