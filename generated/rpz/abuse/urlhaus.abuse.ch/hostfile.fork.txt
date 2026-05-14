@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026051418 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026051421 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: URLhaus Malicious Hosts
-; Entries: 497 domains
+; Entries: 491 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 14, 2026 at 6:39 PM UTC | 2026-05-14T18:39:39.453Z
+; Last updated: May 14, 2026 at 9:29 PM UTC | 2026-05-14T21:29:13.783Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -22,8 +22,6 @@ $TTL 300
 ; -------------------------------------------------------------------------------------------------------------------------------------------------------
 0022a601.pphost.net CNAME .
 *.0022a601.pphost.net CNAME .
-123.ywxww.net CNAME .
-*.123.ywxww.net CNAME .
 1717.1000uc.com CNAME .
 *.1717.1000uc.com CNAME .
 4bklvfdi.estradaannivers.digital CNAME .
@@ -36,6 +34,8 @@ $TTL 300
 *.9nl6t4w2.estradaannivers.digital CNAME .
 aakrutitexture.in CNAME .
 *.aakrutitexture.in CNAME .
+acaviationsupplies.com CNAME .
+*.acaviationsupplies.com CNAME .
 acc.jiangsujiaxue.com CNAME .
 *.acc.jiangsujiaxue.com CNAME .
 access.skaparade.com CNAME .
@@ -50,8 +50,12 @@ admin.byte.in.ua CNAME .
 *.admin.byte.in.ua CNAME .
 admin.gestroom.it CNAME .
 *.admin.gestroom.it CNAME .
+advanced-it-infrastructure.courses CNAME .
+*.advanced-it-infrastructure.courses CNAME .
 agence-immobiliere-lyon.com CNAME .
 *.agence-immobiliere-lyon.com CNAME .
+agropole.tg CNAME .
+*.agropole.tg CNAME .
 alarmline.com.br CNAME .
 *.alarmline.com.br CNAME .
 alineeleuterio.com.br CNAME .
@@ -70,8 +74,6 @@ api.ezilax.com CNAME .
 *.api.ezilax.com CNAME .
 app.appzcvb.com CNAME .
 *.app.appzcvb.com CNAME .
-apparelgate.co.uk CNAME .
-*.apparelgate.co.uk CNAME .
 apple-service93.ru CNAME .
 *.apple-service93.ru CNAME .
 ardena.pro CNAME .
@@ -108,8 +110,6 @@ beoauto.alexion.rs CNAME .
 *.beoauto.alexion.rs CNAME .
 blessdayservices.org CNAME .
 *.blessdayservices.org CNAME .
-blit.co.za CNAME .
-*.blit.co.za CNAME .
 blogs.sokun.jp CNAME .
 *.blogs.sokun.jp CNAME .
 bmdcompany.com CNAME .
@@ -140,14 +140,10 @@ byteforge.surf CNAME .
 *.byteforge.surf CNAME .
 c.fi3.me CNAME .
 *.c.fi3.me CNAME .
-c2.mc-live.online CNAME .
-*.c2.mc-live.online CNAME .
 cad.659t.cn CNAME .
 *.cad.659t.cn CNAME .
 cafe-club-oracle-card.wiki CNAME .
 *.cafe-club-oracle-card.wiki CNAME .
-card-oracle-mac-laptop.wiki CNAME .
-*.card-oracle-mac-laptop.wiki CNAME .
 cat.dashabi.in CNAME .
 *.cat.dashabi.in CNAME .
 cat.xiaojiji.nl CNAME .
@@ -182,6 +178,8 @@ cl.ssouy.com CNAME .
 *.cl.ssouy.com CNAME .
 clipaid.app CNAME .
 *.clipaid.app CNAME .
+cloudruntime.courses CNAME .
+*.cloudruntime.courses CNAME .
 clubdetiroelpicarcho.com CNAME .
 *.clubdetiroelpicarcho.com CNAME .
 cluster-module-deployment-standard-map.wiki CNAME .
@@ -192,6 +190,8 @@ co-emas.com CNAME .
 *.co-emas.com CNAME .
 codeframe.wiki CNAME .
 *.codeframe.wiki CNAME .
+coder-logic-vault.courses CNAME .
+*.coder-logic-vault.courses CNAME .
 compuserviceonline.com.br CNAME .
 *.compuserviceonline.com.br CNAME .
 conjur-kremlinshort.wiki CNAME .
@@ -214,6 +214,8 @@ cpofficial.com CNAME .
 *.cpofficial.com CNAME .
 creativevoltage.com CNAME .
 *.creativevoltage.com CNAME .
+crimefreesoftware.com CNAME .
+*.crimefreesoftware.com CNAME .
 cryptogrid.wiki CNAME .
 *.cryptogrid.wiki CNAME .
 crystalpvp.ru CNAME .
@@ -258,8 +260,6 @@ dezcom.com CNAME .
 *.dezcom.com CNAME .
 dhnconstrucciones.com.ar CNAME .
 *.dhnconstrucciones.com.ar CNAME .
-dialkwik.in CNAME .
-*.dialkwik.in CNAME .
 digital-node-cloud-ops-manual.wiki CNAME .
 *.digital-node-cloud-ops-manual.wiki CNAME .
 disk.accord1key.cn CNAME .
@@ -290,8 +290,6 @@ down.pcclear.com CNAME .
 *.down.pcclear.com CNAME .
 down.qqfarmer.com.cn CNAME .
 *.down.qqfarmer.com.cn CNAME .
-download-api-endpoint.com CNAME .
-*.download-api-endpoint.com CNAME .
 download.caihong.com CNAME .
 *.download.caihong.com CNAME .
 download.doumaibiji.cn CNAME .
@@ -328,6 +326,8 @@ eaglefungustourismscreen.wiki CNAME .
 *.eaglefungustourismscreen.wiki CNAME .
 easybrand.vn CNAME .
 *.easybrand.vn CNAME .
+edge-processing-network.courses CNAME .
+*.edge-processing-network.courses CNAME .
 electri.billregulator.com CNAME .
 *.electri.billregulator.com CNAME .
 elisans.novayonetim.com CNAME .
@@ -336,6 +336,8 @@ emaisboletos.com CNAME .
 *.emaisboletos.com CNAME .
 embedone.com CNAME .
 *.embedone.com CNAME .
+en.taichuan.com CNAME .
+*.en.taichuan.com CNAME .
 enterprise-security-log.courses CNAME .
 *.enterprise-security-log.courses CNAME .
 enterprise-solution-buffer-utility-log.wiki CNAME .
@@ -444,6 +446,8 @@ izocab.com CNAME .
 *.izocab.com CNAME .
 izogard.com CNAME .
 *.izogard.com CNAME .
+jawaratekno.com CNAME .
+*.jawaratekno.com CNAME .
 jin.com.my CNAME .
 *.jin.com.my CNAME .
 jlwz.cn CNAME .
@@ -470,22 +474,14 @@ laptoplink.wiki CNAME .
 *.laptoplink.wiki CNAME .
 lawfirm.paperbirdtech.com CNAME .
 *.lawfirm.paperbirdtech.com CNAME .
-layer-obs-usget-tron.wiki CNAME .
-*.layer-obs-usget-tron.wiki CNAME .
 libss.0x504.com CNAME .
 *.libss.0x504.com CNAME .
-lindenappliances.co.za CNAME .
-*.lindenappliances.co.za CNAME .
 lindnerelektroanlagen.de CNAME .
 *.lindnerelektroanlagen.de CNAME .
 linkku.me CNAME .
 *.linkku.me CNAME .
-lmlawcorp.com CNAME .
-*.lmlawcorp.com CNAME .
 local-update.com CNAME .
 *.local-update.com CNAME .
-logic-buffer-skills.courses CNAME .
-*.logic-buffer-skills.courses CNAME .
 logicnode.surf CNAME .
 *.logicnode.surf CNAME .
 lomejordesalamanca.es CNAME .
@@ -510,18 +506,14 @@ maidforyou1985.com CNAME .
 *.maidforyou1985.com CNAME .
 master-system-data-core-wiki.wiki CNAME .
 *.master-system-data-core-wiki.wiki CNAME .
-master-voivo-system-shop-slink.wiki CNAME .
-*.master-voivo-system-shop-slink.wiki CNAME .
-masteringdigital-arch.courses CNAME .
-*.masteringdigital-arch.courses CNAME .
 meetvideogoogle.com CNAME .
 *.meetvideogoogle.com CNAME .
-metrics.gocloudmaps.com CNAME .
-*.metrics.gocloudmaps.com CNAME .
 microkernel-routing-engine.wiki CNAME .
 *.microkernel-routing-engine.wiki CNAME .
 microservice-balancer-node.wiki CNAME .
 *.microservice-balancer-node.wiki CNAME .
+microservicehub.courses CNAME .
+*.microservicehub.courses CNAME .
 mistralkorea.ru CNAME .
 *.mistralkorea.ru CNAME .
 miststarvationsify.wiki CNAME .
@@ -556,8 +548,6 @@ noithaticon.vn CNAME .
 *.noithaticon.vn CNAME .
 ny.lshdw.cc CNAME .
 *.ny.lshdw.cc CNAME .
-o24o.ru CNAME .
-*.o24o.ru CNAME .
 obese-uzousweb-play.wiki CNAME .
 *.obese-uzousweb-play.wiki CNAME .
 observability-stream-hub.wiki CNAME .
@@ -592,6 +582,8 @@ p3.zbjimg.com CNAME .
 *.p3.zbjimg.com CNAME .
 p9015zuh.unp2idvalk.digital CNAME .
 *.p9015zuh.unp2idvalk.digital CNAME .
+packet-routing-lab.courses CNAME .
+*.packet-routing-lab.courses CNAME .
 packetdistributionmesh.wiki CNAME .
 *.packetdistributionmesh.wiki CNAME .
 packetrelay.wiki CNAME .
@@ -630,8 +622,6 @@ prime-object-container-task-archive.wiki CNAME .
 *.prime-object-container-task-archive.wiki CNAME .
 pro-architecture-engineering-vault-info.wiki CNAME .
 *.pro-architecture-engineering-vault-info.wiki CNAME .
-pro-cyber-defense.courses CNAME .
-*.pro-cyber-defense.courses CNAME .
 pt6nyxsf.unseen-zorenka.digital CNAME .
 *.pt6nyxsf.unseen-zorenka.digital CNAME .
 public.demo.securecloudsandbox.com CNAME .
@@ -716,6 +706,8 @@ seismophonic.com CNAME .
 *.seismophonic.com CNAME .
 separadordecc.com CNAME .
 *.separadordecc.com CNAME .
+serverless-mesh-core.courses CNAME .
+*.serverless-mesh-core.courses CNAME .
 serverless-mesh-core.wiki CNAME .
 *.serverless-mesh-core.wiki CNAME .
 sg123.net CNAME .
@@ -732,8 +724,6 @@ sk-comtel.com CNAME .
 *.sk-comtel.com CNAME .
 smartermail.host CNAME .
 *.smartermail.host CNAME .
-smartworkflowmanagement.courses CNAME .
-*.smartworkflowmanagement.courses CNAME .
 smother-portf.file-open.surf CNAME .
 *.smother-portf.file-open.surf CNAME .
 snooze-wontdrama.wiki CNAME .
@@ -748,6 +738,8 @@ solar-sanat.net CNAME .
 *.solar-sanat.net CNAME .
 spgint.com CNAME .
 *.spgint.com CNAME .
+spoar.org.in CNAME .
+*.spoar.org.in CNAME .
 stackforge.wiki CNAME .
 *.stackforge.wiki CNAME .
 static.ilclock.com CNAME .
@@ -778,8 +770,6 @@ svo-baza-poisk.pro CNAME .
 *.svo-baza-poisk.pro CNAME .
 sycoreltd.yzz.me CNAME .
 *.sycoreltd.yzz.me CNAME .
-system-analytics-pro-guide.courses CNAME .
-*.system-analytics-pro-guide.courses CNAME .
 system-stack-node-data-reference.wiki CNAME .
 *.system-stack-node-data-reference.wiki CNAME .
 talentrecruitments.com CNAME .
@@ -818,14 +808,14 @@ theoremaoliveoil.com CNAME .
 *.theoremaoliveoil.com CNAME .
 thtp2.volamngayxua.net CNAME .
 *.thtp2.volamngayxua.net CNAME .
+tiacreation.club CNAME .
+*.tiacreation.club CNAME .
 toolshare.com.tr CNAME .
 *.toolshare.com.tr CNAME .
 top8onlinegame.com CNAME .
 *.top8onlinegame.com CNAME .
 tradedsglobal.com CNAME .
 *.tradedsglobal.com CNAME .
-transalpinafan.ro CNAME .
-*.transalpinafan.ro CNAME .
 transparenciacanaa.com.br CNAME .
 *.transparenciacanaa.com.br CNAME .
 trtmyanmar.com CNAME .
@@ -844,8 +834,6 @@ update.cg100iii.com CNAME .
 *.update.cg100iii.com CNAME .
 update.volam2005pk.com CNAME .
 *.update.volam2005pk.com CNAME .
-updatedserver.shop CNAME .
-*.updatedserver.shop CNAME .
 utl1juep.estradaannivers.digital CNAME .
 *.utl1juep.estradaannivers.digital CNAME .
 vagler.ru CNAME .
@@ -884,14 +872,14 @@ vizyonuniversitesi.web.tr CNAME .
 *.vizyonuniversitesi.web.tr CNAME .
 vrajras.com CNAME .
 *.vrajras.com CNAME .
+wearjora.com CNAME .
+*.wearjora.com CNAME .
 web-logic-stack-dev-notebook.wiki CNAME .
 *.web-logic-stack-dev-notebook.wiki CNAME .
 webcstore.pw CNAME .
 *.webcstore.pw CNAME .
 website.mypetapp.co.za CNAME .
 *.website.mypetapp.co.za CNAME .
-whpayment.ru CNAME .
-*.whpayment.ru CNAME .
 widexenmexico.com.mx CNAME .
 *.widexenmexico.com.mx CNAME .
 windomstatetheater.com CNAME .
