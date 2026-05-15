@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026051509 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026051521 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: StopForumSpam Toxic Domains
-; Entries: 72,673 domains
+; Entries: 72,674 domains
 ; Source: https://www.stopforumspam.com/downloads/toxic_domains_whole.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 15, 2026 at 9:58 AM UTC | 2026-05-15T09:58:10.777Z
+; Last updated: May 15, 2026 at 9:26 PM UTC | 2026-05-15T21:26:34.140Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -111642,6 +111642,8 @@ rolmis.com CNAME .
 *.rolmis.com CNAME .
 rolva.net CNAME .
 *.rolva.net CNAME .
+roma.my.id CNAME .
+*.roma.my.id CNAME .
 romack.ru CNAME .
 *.romack.ru CNAME .
 romaclondalkin.com CNAME .
