@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026051421 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026051707 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: ShadowWhisperer Ads Blocklist
-; Entries: 26,735 domains
+; Entries: 26,737 domains
 ; Source: https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/Lists/Ads
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 14, 2026 at 9:29 PM UTC | 2026-05-14T21:29:14.978Z
+; Last updated: May 17, 2026 at 7:00 AM UTC | 2026-05-17T07:00:18.492Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -12162,6 +12162,8 @@ ads.wellspublishing.com CNAME .
 *.ads.wellspublishing.com CNAME .
 ads.welovetennis.fr CNAME .
 *.ads.welovetennis.fr CNAME .
+ads.wenet.pl CNAME .
+*.ads.wenet.pl CNAME .
 ads.wesped.com CNAME .
 *.ads.wesped.com CNAME .
 ads.wesped.es CNAME .
@@ -43744,6 +43746,8 @@ sdfer.xyz CNAME .
 *.sdfer.xyz CNAME .
 sdk.ffxpub.com CNAME .
 *.sdk.ffxpub.com CNAME .
+sdk-notification-service.cloudbees.io CNAME .
+*.sdk-notification-service.cloudbees.io CNAME .
 sdk.playtem.com CNAME .
 *.sdk.playtem.com CNAME .
 sdk.starbolt.io CNAME .
