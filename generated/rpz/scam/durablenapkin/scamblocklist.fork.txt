@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026051707 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026051804 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: Durablenapkin Scam Blocklist
-; Entries: 2,255 domains
+; Entries: 2,252 domains
 ; Source: https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/hosts.txt
 ; License: MIT (https://mit-license.org/)
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 17, 2026 at 7:00 AM UTC | 2026-05-17T07:00:20.237Z
+; Last updated: May 18, 2026 at 4:32 AM UTC | 2026-05-18T04:32:24.178Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -124,6 +124,8 @@ akulaku.me CNAME .
 *.akulaku.me CNAME .
 store.akulaku.me CNAME .
 *.store.akulaku.me CNAME .
+store.aldi-life.vip CNAME .
+*.store.aldi-life.vip CNAME .
 alindflepkaty14.pages.dev CNAME .
 *.alindflepkaty14.pages.dev CNAME .
 store.alindflepkaty14.pages.dev CNAME .
@@ -150,10 +152,6 @@ store.altwi-zgs.com CNAME .
 *.store.altwi-zgs.com CNAME .
 amorpulse.com CNAME .
 *.amorpulse.com CNAME .
-animeshoppers.com CNAME .
-*.animeshoppers.com CNAME .
-store.animeshoppers.com CNAME .
-*.store.animeshoppers.com CNAME .
 anydebrid.com CNAME .
 *.anydebrid.com CNAME .
 aoptee.com CNAME .
@@ -242,6 +240,8 @@ store.benecharm.com CNAME .
 *.store.benecharm.com CNAME .
 benxi.info CNAME .
 *.benxi.info CNAME .
+store.benxi.info CNAME .
+*.store.benxi.info CNAME .
 bertasxt.com CNAME .
 *.bertasxt.com CNAME .
 store.bertasxt.com CNAME .
@@ -800,6 +800,8 @@ store.filmersi.pl CNAME .
 *.store.filmersi.pl CNAME .
 filmhit.pl CNAME .
 *.filmhit.pl CNAME .
+store.filmhit.pl CNAME .
+*.store.filmhit.pl CNAME .
 filmhunt.pl CNAME .
 *.filmhunt.pl CNAME .
 store.filmhunt.pl CNAME .
@@ -832,6 +834,8 @@ fishingdaily.shop CNAME .
 *.fishingdaily.shop CNAME .
 fitgirl-repacks-site.org CNAME .
 *.fitgirl-repacks-site.org CNAME .
+store.fitgirl-repacks.vip CNAME .
+*.store.fitgirl-repacks.vip CNAME .
 fiusps.com CNAME .
 *.fiusps.com CNAME .
 fixpub.com CNAME .
@@ -1150,6 +1154,10 @@ store.iqcreditcheck.com CNAME .
 *.store.iqcreditcheck.com CNAME .
 italyworldbaseballclassic.com CNAME .
 *.italyworldbaseballclassic.com CNAME .
+itq.cuteclub.org CNAME .
+*.itq.cuteclub.org CNAME .
+store.itq.cuteclub.org CNAME .
+*.store.itq.cuteclub.org CNAME .
 itseasy.com CNAME .
 *.itseasy.com CNAME .
 ivisa.com CNAME .
@@ -1300,16 +1308,10 @@ luckyhomie.com CNAME .
 *.luckyhomie.com CNAME .
 store.luckyhomie.com CNAME .
 *.store.luckyhomie.com CNAME .
-lucysstyle.com CNAME .
-*.lucysstyle.com CNAME .
-store.lucysstyle.com CNAME .
-*.store.lucysstyle.com CNAME .
 luxsgear.com CNAME .
 *.luxsgear.com CNAME .
 store.luxsgear.com CNAME .
 *.store.luxsgear.com CNAME .
-m.coinexeu.vip CNAME .
-*.m.coinexeu.vip CNAME .
 maebl.com CNAME .
 *.maebl.com CNAME .
 store.maebl.com CNAME .
@@ -1320,10 +1322,6 @@ store.mail-cytanet.pages.dev CNAME .
 *.store.mail-cytanet.pages.dev CNAME .
 mail.zalukaj.cc CNAME .
 *.mail.zalukaj.cc CNAME .
-malgorzataschlegel.click CNAME .
-*.malgorzataschlegel.click CNAME .
-store.malgorzataschlegel.click CNAME .
-*.store.malgorzataschlegel.click CNAME .
 mango-desert-09ebb4010.4.azurestaticapps.net CNAME .
 *.mango-desert-09ebb4010.4.azurestaticapps.net CNAME .
 store.mango-desert-09ebb4010.4.azurestaticapps.net CNAME .
@@ -2220,8 +2218,6 @@ store.theeaglebrand.company.site CNAME .
 *.store.theeaglebrand.company.site CNAME .
 themountainwarehouse.com CNAME .
 *.themountainwarehouse.com CNAME .
-store.themountainwarehouse.com CNAME .
-*.store.themountainwarehouse.com CNAME .
 theneurobalancetherapy.org CNAME .
 *.theneurobalancetherapy.org CNAME .
 theonepercentcommunity.com CNAME .
@@ -2302,6 +2298,8 @@ tromselementbygg.no CNAME .
 *.tromselementbygg.no CNAME .
 trusltwcllet.com CNAME .
 *.trusltwcllet.com CNAME .
+store.trusltwcllet.com CNAME .
+*.store.trusltwcllet.com CNAME .
 turtleclient.xyz CNAME .
 *.turtleclient.xyz CNAME .
 store.turtleclient.xyz CNAME .
@@ -2568,6 +2566,10 @@ wadahlapak.top CNAME .
 *.wadahlapak.top CNAME .
 wallpaperflare.com CNAME .
 *.wallpaperflare.com CNAME .
+warriordecor.com CNAME .
+*.warriordecor.com CNAME .
+store.warriordecor.com CNAME .
+*.store.warriordecor.com CNAME .
 watchmark.shop CNAME .
 *.watchmark.shop CNAME .
 store.watchmark.shop CNAME .
