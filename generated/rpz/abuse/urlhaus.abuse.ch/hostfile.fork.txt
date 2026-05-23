@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026052315 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026052318 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: URLhaus Malicious Hosts
-; Entries: 472 domains
+; Entries: 474 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 23, 2026 at 3:27 PM UTC | 2026-05-23T15:27:29.413Z
+; Last updated: May 23, 2026 at 6:23 PM UTC | 2026-05-23T18:23:33.300Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -128,6 +128,8 @@ byte-vault.christmas CNAME .
 *.byte-vault.christmas CNAME .
 c.fi3.me CNAME .
 *.c.fi3.me CNAME .
+c2.mc-live.online CNAME .
+*.c2.mc-live.online CNAME .
 cache-orbit.christmas CNAME .
 *.cache-orbit.christmas CNAME .
 cad.659t.cn CNAME .
@@ -372,8 +374,6 @@ gigs.us.1e.cm CNAME .
 *.gigs.us.1e.cm CNAME .
 globalbank.us CNAME .
 *.globalbank.us CNAME .
-gobiotechpestcontrol.com CNAME .
-*.gobiotechpestcontrol.com CNAME .
 google-services.cc CNAME .
 *.google-services.cc CNAME .
 gotextileltd.com CNAME .
@@ -470,6 +470,8 @@ lfwxgs.com CNAME .
 *.lfwxgs.com CNAME .
 libss.0x504.com CNAME .
 *.libss.0x504.com CNAME .
+lindenappliances.co.za CNAME .
+*.lindenappliances.co.za CNAME .
 lindnerelektroanlagen.de CNAME .
 *.lindnerelektroanlagen.de CNAME .
 linguisticpuzzlesolver.christmas CNAME .
@@ -752,6 +754,8 @@ tapestryoftruth.com CNAME .
 *.tapestryoftruth.com CNAME .
 td5323u3.primordialsoupevolution.digital CNAME .
 *.td5323u3.primordialsoupevolution.digital CNAME .
+tecunonline.com CNAME .
+*.tecunonline.com CNAME .
 tehnomag.rs CNAME .
 *.tehnomag.rs CNAME .
 telemetry-control-hub.christmas CNAME .
@@ -786,8 +790,6 @@ top8onlinegame.com CNAME .
 *.top8onlinegame.com CNAME .
 toptionlab.co.za CNAME .
 *.toptionlab.co.za CNAME .
-traderhype.com CNAME .
-*.traderhype.com CNAME .
 trading-academyexpert.christmas CNAME .
 *.trading-academyexpert.christmas CNAME .
 transparenciacanaa.com.br CNAME .
@@ -812,6 +814,8 @@ vagler.ru CNAME .
 *.vagler.ru CNAME .
 vanta.st CNAME .
 *.vanta.st CNAME .
+vcc-library.uk CNAME .
+*.vcc-library.uk CNAME .
 versaclean.com.br CNAME .
 *.versaclean.com.br CNAME .
 veryboys.com CNAME .
@@ -908,8 +912,6 @@ support-data.com CNAME .
 *.support-data.com CNAME .
 tdejb.com CNAME .
 *.tdejb.com CNAME .
-tecunonline.com CNAME .
-*.tecunonline.com CNAME .
 udobrit.ru CNAME .
 *.udobrit.ru CNAME .
 vuelaviajero.com CNAME .
