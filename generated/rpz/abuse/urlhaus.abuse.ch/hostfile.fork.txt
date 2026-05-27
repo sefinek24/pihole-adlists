@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026052718 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026052721 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: URLhaus Malicious Hosts
-; Entries: 505 domains
+; Entries: 511 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 27, 2026 at 6:50 PM UTC | 2026-05-27T18:50:06.120Z
+; Last updated: May 27, 2026 at 9:38 PM UTC | 2026-05-27T21:38:19.599Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -80,6 +80,8 @@ andjemztech.com CNAME .
 *.andjemztech.com CNAME .
 api.baimless.com CNAME .
 *.api.baimless.com CNAME .
+api.ddenv.site CNAME .
+*.api.ddenv.site CNAME .
 api.ezilax.com CNAME .
 *.api.ezilax.com CNAME .
 app.appzcvb.com CNAME .
@@ -184,16 +186,18 @@ chinaapper.com CNAME .
 *.chinaapper.com CNAME .
 chiptune.com CNAME .
 *.chiptune.com CNAME .
+chuguadventures.co.tz CNAME .
+*.chuguadventures.co.tz CNAME .
 chungminhtaichinhsaigon.net CNAME .
 *.chungminhtaichinhsaigon.net CNAME .
 ci7uxmq7.proxy-harbor.digital CNAME .
 *.ci7uxmq7.proxy-harbor.digital CNAME .
-cl.ssouy.com CNAME .
-*.cl.ssouy.com CNAME .
 clacndjsvulnarbi.beer CNAME .
 *.clacndjsvulnarbi.beer CNAME .
 clubdetiroelpicarcho.com CNAME .
 *.clubdetiroelpicarcho.com CNAME .
+cn.unionlever.com CNAME .
+*.cn.unionlever.com CNAME .
 co-emas.com CNAME .
 *.co-emas.com CNAME .
 compuserviceonline.com.br CNAME .
@@ -246,6 +250,8 @@ dexios.co.za CNAME .
 *.dexios.co.za CNAME .
 dezcom.com CNAME .
 *.dezcom.com CNAME .
+dialkwik.in CNAME .
+*.dialkwik.in CNAME .
 disk.accord1key.cn CNAME .
 *.disk.accord1key.cn CNAME .
 divvanews.com CNAME .
@@ -418,6 +424,8 @@ hitman-pro.ru CNAME .
 *.hitman-pro.ru CNAME .
 hitstation.nl CNAME .
 *.hitstation.nl CNAME .
+hobobot.net CNAME .
+*.hobobot.net CNAME .
 hseda.com CNAME .
 *.hseda.com CNAME .
 htfnjw.jatekotmindenkinek.hu CNAME .
@@ -500,10 +508,6 @@ lawfirm.paperbirdtech.com CNAME .
 *.lawfirm.paperbirdtech.com CNAME .
 ldeml.buborekjatszohaz.hu CNAME .
 *.ldeml.buborekjatszohaz.hu CNAME .
-libss.0x504.com CNAME .
-*.libss.0x504.com CNAME .
-lindenappliances.co.za CNAME .
-*.lindenappliances.co.za CNAME .
 lindnerelektroanlagen.de CNAME .
 *.lindnerelektroanlagen.de CNAME .
 local-update.com CNAME .
@@ -516,8 +520,6 @@ lvavdb.nyitottkeramia.hu CNAME .
 *.lvavdb.nyitottkeramia.hu CNAME .
 m.jkoa.co.kr CNAME .
 *.m.jkoa.co.kr CNAME .
-m.meta-dm.com CNAME .
-*.m.meta-dm.com CNAME .
 m8fpbfz3.container-bridge.digital CNAME .
 *.m8fpbfz3.container-bridge.digital CNAME .
 magnusworkspace.com CNAME .
@@ -526,6 +528,8 @@ mahcr.banhidileadershipacademy.hu CNAME .
 *.mahcr.banhidileadershipacademy.hu CNAME .
 maidforyou1985.com CNAME .
 *.maidforyou1985.com CNAME .
+malqen.life CNAME .
+*.malqen.life CNAME .
 meetvideogoogle.com CNAME .
 *.meetvideogoogle.com CNAME .
 metrics.gocloudmaps.com CNAME .
@@ -570,8 +574,12 @@ new.quranushaiqer.org.sa CNAME .
 *.new.quranushaiqer.org.sa CNAME .
 neypx.bmz.hu CNAME .
 *.neypx.bmz.hu CNAME .
+nitrogateway.digital CNAME .
+*.nitrogateway.digital CNAME .
 noithaticon.vn CNAME .
 *.noithaticon.vn CNAME .
+nova.podril1ak2.online CNAME .
+*.nova.podril1ak2.online CNAME .
 nspbcu.krokodilpince.hu CNAME .
 *.nspbcu.krokodilpince.hu CNAME .
 nusatoyota.co.id CNAME .
@@ -636,6 +644,10 @@ postelnini.mk CNAME .
 *.postelnini.mk CNAME .
 preciosasjoyitas.com.mx CNAME .
 *.preciosasjoyitas.com.mx CNAME .
+protherapycenter.com CNAME .
+*.protherapycenter.com CNAME .
+proveedoradeproyectosysoluciones.com CNAME .
+*.proveedoradeproyectosysoluciones.com CNAME .
 ptnza.bni-ai.com CNAME .
 *.ptnza.bni-ai.com CNAME .
 public.demo.securecloudsandbox.com CNAME .
@@ -670,8 +682,6 @@ refaccionesalma.com.mx CNAME .
 *.refaccionesalma.com.mx CNAME .
 reifenquick.de CNAME .
 *.reifenquick.de CNAME .
-remoto.ddins.click CNAME .
-*.remoto.ddins.click CNAME .
 reutilizemais.co.mz CNAME .
 *.reutilizemais.co.mz CNAME .
 rheddh.com CNAME .
@@ -708,8 +718,6 @@ save.jnrsmcu.com CNAME .
 *.save.jnrsmcu.com CNAME .
 scainseto.com.br CNAME .
 *.scainseto.com.br CNAME .
-schenckel.com.br CNAME .
-*.schenckel.com.br CNAME .
 sdvgpro.ru CNAME .
 *.sdvgpro.ru CNAME .
 sec.dashabi.in CNAME .
@@ -744,8 +752,6 @@ smartermail.host CNAME .
 *.smartermail.host CNAME .
 sneodo.gerecseglamping.com CNAME .
 *.sneodo.gerecseglamping.com CNAME .
-soft.110route.com CNAME .
-*.soft.110route.com CNAME .
 softcatalog.ru CNAME .
 *.softcatalog.ru CNAME .
 solar-sanat.net CNAME .
@@ -758,8 +764,12 @@ stage1-orschellx.com CNAME .
 *.stage1-orschellx.com CNAME .
 static.ilclock.com CNAME .
 *.static.ilclock.com CNAME .
+static.topxgun.com CNAME .
+*.static.topxgun.com CNAME .
 static.youdm.cn CNAME .
 *.static.youdm.cn CNAME .
+stdown.dinju.com CNAME .
+*.stdown.dinju.com CNAME .
 steam66.cn CNAME .
 *.steam66.cn CNAME .
 stg1-swaggrhockey.com CNAME .
@@ -788,6 +798,8 @@ tehnomag.rs CNAME .
 *.tehnomag.rs CNAME .
 temirtau-adm.ru CNAME .
 *.temirtau-adm.ru CNAME .
+tengfeidn.cn CNAME .
+*.tengfeidn.cn CNAME .
 test.peperoncinochepassione.it CNAME .
 *.test.peperoncinochepassione.it CNAME .
 theholidayroads.com CNAME .
@@ -838,6 +850,8 @@ uubbkkxd.network-vector.digital CNAME .
 *.uubbkkxd.network-vector.digital CNAME .
 vagler.ru CNAME .
 *.vagler.ru CNAME .
+vanta.st CNAME .
+*.vanta.st CNAME .
 vcc-library.uk CNAME .
 *.vcc-library.uk CNAME .
 vdbkti.ispilates.hu CNAME .
@@ -898,6 +912,8 @@ automobile-bk.de CNAME .
 *.automobile-bk.de CNAME .
 backupallfresh2030.com CNAME .
 *.backupallfresh2030.com CNAME .
+benshamcentre.co.uk CNAME .
+*.benshamcentre.co.uk CNAME .
 blackhattoolz.com CNAME .
 *.blackhattoolz.com CNAME .
 bratusferramentas.grupomoltz.com.br CNAME .
@@ -922,8 +938,6 @@ longfeng188.com CNAME .
 *.longfeng188.com CNAME .
 medises.co.kr CNAME .
 *.medises.co.kr CNAME .
-mevetlab.cl CNAME .
-*.mevetlab.cl CNAME .
 mobimpex.ro CNAME .
 *.mobimpex.ro CNAME .
 myvcart.com CNAME .
