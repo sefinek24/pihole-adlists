@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026052212 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026052810 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: MVPS Hosts / Yoyo Ads & Trackers
-; Entries: 3,502 domains
+; Entries: 3,504 domains
 ; Source: https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 22, 2026 at 12:50 PM UTC | 2026-05-22T12:50:47.190Z
+; Last updated: May 28, 2026 at 10:30 AM UTC | 2026-05-28T10:30:47.507Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -512,6 +512,8 @@ adk2.com CNAME .
 *.adk2.com CNAME .
 adkora.com CNAME .
 *.adkora.com CNAME .
+adktrack.124.xyz CNAME .
+*.adktrack.124.xyz CNAME .
 adland.ru CNAME .
 *.adland.ru CNAME .
 adlegend.com CNAME .
@@ -6794,6 +6796,8 @@ webcounter.goweb.de CNAME .
 *.webcounter.goweb.de CNAME .
 webgains.com CNAME .
 *.webgains.com CNAME .
+webiqonline.com CNAME .
+*.webiqonline.com CNAME .
 weborama.com CNAME .
 *.weborama.com CNAME .
 weborama.fr CNAME .
