@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026052807 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026052907 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: Durablenapkin Scam Blocklist
-; Entries: 2,267 domains
+; Entries: 2,272 domains
 ; Source: https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/hosts.txt
 ; License: MIT (https://mit-license.org/)
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 28, 2026 at 7:22 AM UTC | 2026-05-28T07:22:21.722Z
+; Last updated: May 29, 2026 at 7:22 AM UTC | 2026-05-29T07:22:10.204Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -58,6 +58,8 @@ store.47n78xprrvp1.top CNAME .
 *.555sq.com.cn CNAME .
 store.555sq.com.cn CNAME .
 *.store.555sq.com.cn CNAME .
+store.5g-update.com CNAME .
+*.store.5g-update.com CNAME .
 5wzgtq8dpk.com CNAME .
 *.5wzgtq8dpk.com CNAME .
 65spy7rgcu.com CNAME .
@@ -122,6 +124,8 @@ aizipai.cn CNAME .
 *.aizipai.cn CNAME .
 aldi-life.vip CNAME .
 *.aldi-life.vip CNAME .
+store.aldi-life.vip CNAME .
+*.store.aldi-life.vip CNAME .
 alindflepkaty14.pages.dev CNAME .
 *.alindflepkaty14.pages.dev CNAME .
 store.alindflepkaty14.pages.dev CNAME .
@@ -148,10 +152,6 @@ store.altwi-zgs.com CNAME .
 *.store.altwi-zgs.com CNAME .
 amorpulse.com CNAME .
 *.amorpulse.com CNAME .
-animeshoppers.com CNAME .
-*.animeshoppers.com CNAME .
-store.animeshoppers.com CNAME .
-*.store.animeshoppers.com CNAME .
 anydebrid.com CNAME .
 *.anydebrid.com CNAME .
 aoptee.com CNAME .
@@ -350,6 +350,8 @@ store.bolejug.us CNAME .
 *.store.bolejug.us CNAME .
 bombardina.pl CNAME .
 *.bombardina.pl CNAME .
+booking.transaction-processing.one CNAME .
+*.booking.transaction-processing.one CNAME .
 botsuanah.com CNAME .
 *.botsuanah.com CNAME .
 boutiqueondemand.com CNAME .
@@ -408,6 +410,8 @@ store.caly-film.cc CNAME .
 *.store.caly-film.cc CNAME .
 campingsurfshop.com CNAME .
 *.campingsurfshop.com CNAME .
+canadapost-service.info CNAME .
+*.canadapost-service.info CNAME .
 candlesbymadison.com CNAME .
 *.candlesbymadison.com CNAME .
 canjaume.com CNAME .
@@ -472,8 +476,6 @@ store.cognatesyringe.com CNAME .
 *.store.cognatesyringe.com CNAME .
 coiincmi.com CNAME .
 *.coiincmi.com CNAME .
-store.coiincmi.com CNAME .
-*.store.coiincmi.com CNAME .
 coinaps.com CNAME .
 *.coinaps.com CNAME .
 store.coinaps.com CNAME .
@@ -492,8 +494,6 @@ containably.com CNAME .
 *.containably.com CNAME .
 coolest3d.com CNAME .
 *.coolest3d.com CNAME .
-store.coolest3d.com CNAME .
-*.store.coolest3d.com CNAME .
 coolestpod.com CNAME .
 *.coolestpod.com CNAME .
 corg.co CNAME .
@@ -530,6 +530,8 @@ store.customizerbox.com CNAME .
 *.store.customizerbox.com CNAME .
 customurink.com CNAME .
 *.customurink.com CNAME .
+cuteclub.org CNAME .
+*.cuteclub.org CNAME .
 cutty.app CNAME .
 *.cutty.app CNAME .
 store.cutty.app CNAME .
@@ -570,6 +572,8 @@ store.debridlink.com CNAME .
 *.store.debridlink.com CNAME .
 decoryourhome.store CNAME .
 *.decoryourhome.store CNAME .
+deergift.com CNAME .
+*.deergift.com CNAME .
 dein-rundfunkbeitrag.de CNAME .
 *.dein-rundfunkbeitrag.de CNAME .
 deluxdoll.com CNAME .
@@ -604,8 +608,6 @@ store.doh-gov.ph CNAME .
 *.store.doh-gov.ph CNAME .
 dohealths.com CNAME .
 *.dohealths.com CNAME .
-dolomiteoutlet.com CNAME .
-*.dolomiteoutlet.com CNAME .
 dolystore.com CNAME .
 *.dolystore.com CNAME .
 dopestore.pl CNAME .
@@ -910,8 +912,6 @@ gearstastic.com CNAME .
 *.gearstastic.com CNAME .
 store.gearstastic.com CNAME .
 *.store.gearstastic.com CNAME .
-gearstastic.net CNAME .
-*.gearstastic.net CNAME .
 gearver.com CNAME .
 *.gearver.com CNAME .
 store.gearver.com CNAME .
@@ -970,6 +970,8 @@ gossvibe.com CNAME .
 *.gossvibe.com CNAME .
 gotoperfection.com CNAME .
 *.gotoperfection.com CNAME .
+govmedcareers.com CNAME .
+*.govmedcareers.com CNAME .
 gsport.com CNAME .
 *.gsport.com CNAME .
 gtlinfrastructurelimited.com CNAME .
@@ -1040,6 +1042,10 @@ store.hyndtren25.pages.dev CNAME .
 *.store.hyndtren25.pages.dev CNAME .
 i-visaindia.com CNAME .
 *.i-visaindia.com CNAME .
+i.fundatingquest.fun CNAME .
+*.i.fundatingquest.fun CNAME .
+store.i.fundatingquest.fun CNAME .
+*.store.i.fundatingquest.fun CNAME .
 iagadvanced.com CNAME .
 *.iagadvanced.com CNAME .
 iaqorwr.com CNAME .
@@ -1320,10 +1326,6 @@ luckyhomie.com CNAME .
 *.luckyhomie.com CNAME .
 store.luckyhomie.com CNAME .
 *.store.luckyhomie.com CNAME .
-lucysstyle.com CNAME .
-*.lucysstyle.com CNAME .
-store.lucysstyle.com CNAME .
-*.store.lucysstyle.com CNAME .
 luxsgear.com CNAME .
 *.luxsgear.com CNAME .
 store.luxsgear.com CNAME .
@@ -1386,8 +1388,6 @@ modmobile24.com CNAME .
 *.modmobile24.com CNAME .
 store.modmobile24.com CNAME .
 *.store.modmobile24.com CNAME .
-monark-store.com CNAME .
-*.monark-store.com CNAME .
 monkstars.com CNAME .
 *.monkstars.com CNAME .
 ms-analytics.mywire.org CNAME .
@@ -1406,6 +1406,8 @@ mujib-store28.blogspot.com CNAME .
 *.mujib-store28.blogspot.com CNAME .
 store.mujib-store28.blogspot.com CNAME .
 *.store.mujib-store28.blogspot.com CNAME .
+muskai.net CNAME .
+*.muskai.net CNAME .
 muskusa.com CNAME .
 *.muskusa.com CNAME .
 store.muskusa.com CNAME .
@@ -1566,10 +1568,6 @@ navi88.com CNAME .
 *.navi88.com CNAME .
 store.navi88.com CNAME .
 *.store.navi88.com CNAME .
-navi89.com CNAME .
-*.navi89.com CNAME .
-store.navi89.com CNAME .
-*.store.navi89.com CNAME .
 navi9.com CNAME .
 *.navi9.com CNAME .
 store.navi9.com CNAME .
@@ -1750,6 +1748,8 @@ store.onlyfanstake.pro CNAME .
 *.store.onlyfanstake.pro CNAME .
 onrunningshop.com CNAME .
 *.onrunningshop.com CNAME .
+store.onrunningshop.com CNAME .
+*.store.onrunningshop.com CNAME .
 ontario-energy.com CNAME .
 *.ontario-energy.com CNAME .
 orderquilt.com CNAME .
@@ -1784,6 +1784,12 @@ paradisevs.com CNAME .
 *.paradisevs.com CNAME .
 path2zillion.com CNAME .
 *.path2zillion.com CNAME .
+store.pay.avito.sber.com-id809712.com CNAME .
+*.store.pay.avito.sber.com-id809712.com CNAME .
+pay.booking.com-id123251.info CNAME .
+*.pay.booking.com-id123251.info CNAME .
+store.pay.www.booking.com-id123251.info CNAME .
+*.store.pay.www.booking.com-id123251.info CNAME .
 peekpok.com CNAME .
 *.peekpok.com CNAME .
 penguinnow.com CNAME .
@@ -1912,6 +1918,8 @@ store.robalmeister.workers.dev CNAME .
 *.store.robalmeister.workers.dev CNAME .
 robinmooreband.com CNAME .
 *.robinmooreband.com CNAME .
+robuxmenu.vip CNAME .
+*.robuxmenu.vip CNAME .
 rockchief.com CNAME .
 *.rockchief.com CNAME .
 rosateeshop.com CNAME .
@@ -1950,6 +1958,10 @@ saveeeee.myshopify.com CNAME .
 *.saveeeee.myshopify.com CNAME .
 store.saveeeee.myshopify.com CNAME .
 *.store.saveeeee.myshopify.com CNAME .
+sberbank.id7629046.one CNAME .
+*.sberbank.id7629046.one CNAME .
+sberbank.www.sberbank.www.booking.com-id123251.info CNAME .
+*.sberbank.www.sberbank.www.booking.com-id123251.info CNAME .
 seagulltee.com CNAME .
 *.seagulltee.com CNAME .
 seans24.com.pl CNAME .
@@ -2000,6 +2012,8 @@ shopraidlight.com CNAME .
 *.shopraidlight.com CNAME .
 shopsyracuseonline.com CNAME .
 *.shopsyracuseonline.com CNAME .
+store.shoptcuhornedonline.com CNAME .
+*.store.shoptcuhornedonline.com CNAME .
 shopyourturn.com CNAME .
 *.shopyourturn.com CNAME .
 showapparels.com CNAME .
@@ -2028,8 +2042,6 @@ store.skincheap.com CNAME .
 *.store.skincheap.com CNAME .
 skinszone.net CNAME .
 *.skinszone.net CNAME .
-skipped.vip CNAME .
-*.skipped.vip CNAME .
 skyfollowerbridge.com CNAME .
 *.skyfollowerbridge.com CNAME .
 sligen.com CNAME .
@@ -2162,6 +2174,8 @@ store.summersale.co CNAME .
 *.store.summersale.co CNAME .
 summersale.online CNAME .
 *.summersale.online CNAME .
+sunpass-etoll-id.kupu.desa.id CNAME .
+*.sunpass-etoll-id.kupu.desa.id CNAME .
 supercutestuff.com CNAME .
 *.supercutestuff.com CNAME .
 store.supercutestuff.com CNAME .
@@ -2222,10 +2236,6 @@ the-north-face.gr CNAME .
 *.the-north-face.gr CNAME .
 store.the-north-face.gr CNAME .
 *.store.the-north-face.gr CNAME .
-thebayonline.shop CNAME .
-*.thebayonline.shop CNAME .
-store.thebayonline.shop CNAME .
-*.store.thebayonline.shop CNAME .
 theeaglebrand.company.site CNAME .
 *.theeaglebrand.company.site CNAME .
 store.theeaglebrand.company.site CNAME .
@@ -2494,6 +2504,8 @@ vider.info.pl CNAME .
 *.vider.info.pl CNAME .
 vider.online CNAME .
 *.vider.online CNAME .
+store.vider.online CNAME .
+*.store.vider.online CNAME .
 vikingstore.co CNAME .
 *.vikingstore.co CNAME .
 store.vikingstore.co CNAME .
@@ -2650,6 +2662,8 @@ yahhhoo.com CNAME .
 *.yahhhoo.com CNAME .
 store.yahhhoo.com CNAME .
 *.store.yahhhoo.com CNAME .
+yandex.avito.avito.avito.avito.sber.com-id02349.info CNAME .
+*.yandex.avito.avito.avito.avito.sber.com-id02349.info CNAME .
 yasir252.com CNAME .
 *.yasir252.com CNAME .
 yeswevibe.com CNAME .
@@ -2664,6 +2678,8 @@ store.ygtube.xyz CNAME .
 *.store.ygtube.xyz CNAME .
 yhdshop.com CNAME .
 *.yhdshop.com CNAME .
+yikesgroto.com CNAME .
+*.yikesgroto.com CNAME .
 yofi-yofi.com CNAME .
 *.yofi-yofi.com CNAME .
 youdebrid.com CNAME .
@@ -2690,6 +2706,8 @@ store.ytvancedpro.com CNAME .
 *.store.ytvancedpro.com CNAME .
 yuaonew.com CNAME .
 *.yuaonew.com CNAME .
+yyderfreap.shop CNAME .
+*.yyderfreap.shop CNAME .
 z-lib.id CNAME .
 *.z-lib.id CNAME .
 z-lib.is CNAME .
