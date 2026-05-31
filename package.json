@@ -1,6 +1,6 @@
 {
   "name": "blocklist.sefinek.net",
-  "version": "0.23.0-rc.9+20260522",
+  "version": "0.23.0-rc.10+20260531",
   "homepage": "https://blocklist.sefinek.net",
   "bugs": {
     "url": "https://github.com/sefinek/Sefinek-Blocklist-Collection/issues"
@@ -24,7 +24,7 @@
   "dependencies": {
     "axios": "^1.16.1",
     "cron-parser": "^5.5.0",
-    "ejs": "^5.0.2",
+    "ejs": "^6.0.1",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
     "express-timeout-handler": "^2.2.2",
@@ -32,12 +32,12 @@
     "helmet": "^8.2.0",
     "lzma-native": "^8.0.6",
     "marked": "^18.0.4",
-    "mongoose": "^9.6.2",
+    "mongoose": "^9.6.3",
     "morgan": "^1.10.1",
-    "nodemailer": "^8.0.7",
+    "nodemailer": "^8.0.10",
     "rate-limit-redis": "^5.0.0",
-    "redis": "^5.12.1",
-    "ws": "^8.20.1"
+    "redis": "^6.0.0",
+    "ws": "^8.21.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
