@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026052900 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026060100 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: EasyPrivacy Hosts Blocklist
-; Entries: 40,370 domains
+; Entries: 40,373 domains
 ; Source: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easyprivacy.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 29, 2026 at 12:43 AM UTC | 2026-05-29T00:43:04.618Z
+; Last updated: June 1, 2026 at 12:43 AM UTC | 2026-06-01T00:43:42.428Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -1148,6 +1148,8 @@ naanalle.pl CNAME .
 *.682a5845.b-cdn.net CNAME .
 9w2zed1szg.execute-api.us-east-1.amazonaws.com CNAME .
 *.9w2zed1szg.execute-api.us-east-1.amazonaws.com CNAME .
+a.cineflix.st CNAME .
+*.a.cineflix.st CNAME .
 a.emea01.idio.episerver.net CNAME .
 *.a.emea01.idio.episerver.net CNAME .
 a.getflowbox.com CNAME .
@@ -6266,6 +6268,8 @@ megatron.igraal.com CNAME .
 *.megatron.igraal.com CNAME .
 metis.truecaller.com CNAME .
 *.metis.truecaller.com CNAME .
+metrics-a.wbx2.com CNAME .
+*.metrics-a.wbx2.com CNAME .
 metrics.audius.co CNAME .
 *.metrics.audius.co CNAME .
 metrics.camsoda.com CNAME .
@@ -6992,6 +6996,8 @@ trx3.famousfix.com CNAME .
 *.trx3.famousfix.com CNAME .
 ts.delfi.lt CNAME .
 *.ts.delfi.lt CNAME .
+tsa.webex.com CNAME .
+*.tsa.webex.com CNAME .
 two.cm.com CNAME .
 *.two.cm.com CNAME .
 u.strike.bz CNAME .
