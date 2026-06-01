@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026052904 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026060104 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: Polish Easy Privacy Host Filter
-; Entries: 40,377 domains
+; Entries: 40,380 domains
 ; Source: https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/easy_privacy_host.txt | https://www.certyficate.it/
 ; License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 29, 2026 at 4:33 AM UTC | 2026-05-29T04:33:02.871Z
+; Last updated: June 1, 2026 at 4:35 AM UTC | 2026-06-01T04:35:17.441Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -434,6 +434,8 @@ a.careangel.com CNAME .
 *.a.careangel.com CNAME .
 a.centrum.cz CNAME .
 *.a.centrum.cz CNAME .
+a.cineflix.st CNAME .
+*.a.cineflix.st CNAME .
 a.deutschehospitality.com CNAME .
 *.a.deutschehospitality.com CNAME .
 a.dev-ajo.caixabank.com CNAME .
@@ -41674,6 +41676,8 @@ metric.yardhouse.com CNAME .
 *.metric.yardhouse.com CNAME .
 metricas.agzero.com.br CNAME .
 *.metricas.agzero.com.br CNAME .
+metrics-a.wbx2.com CNAME .
+*.metrics-a.wbx2.com CNAME .
 metrics-api.librato.com CNAME .
 *.metrics-api.librato.com CNAME .
 metrics-broker.prod.p.tf1.fr CNAME .
@@ -74734,6 +74738,8 @@ ts.tradetracker.net CNAME .
 *.ts.tradetracker.net CNAME .
 tsa.taxslayer.com CNAME .
 *.tsa.taxslayer.com CNAME .
+tsa.webex.com CNAME .
+*.tsa.webex.com CNAME .
 tsbkht.puritan.com CNAME .
 *.tsbkht.puritan.com CNAME .
 tsbmkf.zonnebrillen.com CNAME .
