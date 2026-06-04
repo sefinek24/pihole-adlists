@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026052913 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026060410 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: MVPS Hosts / Yoyo Ads & Trackers
-; Entries: 3,504 domains
+; Entries: 3,506 domains
 ; Source: https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext&useip=0.0.0.0
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: May 29, 2026 at 1:06 PM UTC | 2026-05-29T13:06:42.991Z
+; Last updated: June 4, 2026 at 10:21 AM UTC | 2026-06-04T10:21:41.944Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -4422,6 +4422,8 @@ metanetwork.com CNAME .
 *.metanetwork.com CNAME .
 methodcash.com CNAME .
 *.methodcash.com CNAME .
+metrics-a.wbx2.com CNAME .
+*.metrics-a.wbx2.com CNAME .
 metrics-logger.spot.im CNAME .
 *.metrics-logger.spot.im CNAME .
 metrics.api.drift.com CNAME .
@@ -6568,6 +6570,8 @@ trust.titanhq.com CNAME .
 *.trust.titanhq.com CNAME .
 trustx.org CNAME .
 *.trustx.org CNAME .
+tsa.webex.com CNAME .
+*.tsa.webex.com CNAME .
 tsyndicate.com CNAME .
 *.tsyndicate.com CNAME .
 tsyndicate.net CNAME .
