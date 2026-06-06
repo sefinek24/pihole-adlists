@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026060615 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026060618 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: URLhaus Malicious Hosts
-; Entries: 548 domains
+; Entries: 550 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 6, 2026 at 3:31 PM UTC | 2026-06-06T15:31:28.169Z
+; Last updated: June 6, 2026 at 6:30 PM UTC | 2026-06-06T18:30:12.461Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -386,6 +386,8 @@ ffrpwns.vbetirani.com CNAME .
 *.ffrpwns.vbetirani.com CNAME .
 file.blackint3.com CNAME .
 *.file.blackint3.com CNAME .
+file.uhsea.com CNAME .
+*.file.uhsea.com CNAME .
 filerit.com CNAME .
 *.filerit.com CNAME .
 first-security-verden.de CNAME .
@@ -920,6 +922,8 @@ vincentdemiero.com CNAME .
 *.vincentdemiero.com CNAME .
 visam.info CNAME .
 *.visam.info CNAME .
+vitacocoyougoloco.potassium.st CNAME .
+*.vitacocoyougoloco.potassium.st CNAME .
 vizyonuniversitesi.com.tr CNAME .
 *.vizyonuniversitesi.com.tr CNAME .
 vizyonuniversitesi.web.tr CNAME .
