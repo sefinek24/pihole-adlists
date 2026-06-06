@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026060500 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026060600 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: EasyPrivacy Hosts Blocklist
-; Entries: 40,380 domains
+; Entries: 40,382 domains
 ; Source: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easyprivacy.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 5, 2026 at 12:43 AM UTC | 2026-06-05T00:43:40.309Z
+; Last updated: June 6, 2026 at 12:41 AM UTC | 2026-06-06T00:41:24.602Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -5758,6 +5758,8 @@ clickins.slixa.com CNAME .
 *.clickins.slixa.com CNAME .
 client-log.box.com CNAME .
 *.client-log.box.com CNAME .
+client-logs-a.wbx2.com CNAME .
+*.client-logs-a.wbx2.com CNAME .
 client-metrics.chess.com CNAME .
 *.client-metrics.chess.com CNAME .
 clk-m.joybuy.com CNAME .
@@ -7092,6 +7094,8 @@ wh.ipaddress.com CNAME .
 *.wh.ipaddress.com CNAME .
 wstats.e-wok.tv CNAME .
 *.wstats.e-wok.tv CNAME .
+x.designboom.com CNAME .
+*.x.designboom.com CNAME .
 xmetrics.camsoda.com CNAME .
 *.xmetrics.camsoda.com CNAME .
 yes88kks.infinityscans.net CNAME .
