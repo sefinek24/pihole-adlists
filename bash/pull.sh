@@ -1,8 +1,9 @@
 #!/bin/bash
+set -euo pipefail
 
 # Function: get UTC date or datetime
 utc_now() {
-  if [[ "$1" == "date" ]]; then
+  if [[ "${1:-}" == "date" ]]; then
     date -u +"%Y-%m-%d"
   else
     date -u +"%Y-%m-%d %H:%M:%S"
@@ -23,16 +24,13 @@ fi
 # Prepare the environment
 mkdir -p "$logs_dir"
 
-# Sync the repository with origin (hard reset) and install dependencies
+# Sync the repository with origin (hard reset)
 {
     echo "========================================== $(utc_now) UTC =========================================="
     echo
 
     if cd "$repo_path"; then
-        if git fetch origin && git reset --hard origin/main && \
-           git -C "$repo_path/blocklists" fetch origin '+refs/heads/blocklists:refs/remotes/origin/blocklists' && \
-           git -C "$repo_path/blocklists" reset --hard origin/blocklists; then
-            npm ci --omit=dev
+        if git fetch origin && git reset --hard origin/main && npm run pull:blocklists; then
             echo -e "\n✔️ Success! Finished at: $(utc_now) UTC"
         else
             echo -e "\n❌ Error during Git operations!"
