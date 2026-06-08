@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026060804 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026060810 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: HostsVN Malware Blocklist
-; Entries: 17,870 domains
+; Entries: 17,871 domains
 ; Source: https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts | https://bigdargon.github.io/hostsVN/
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 8, 2026 at 4:34 AM UTC | 2026-06-08T04:34:39.129Z
+; Last updated: June 8, 2026 at 10:38 AM UTC | 2026-06-08T10:38:09.450Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -388,8 +388,6 @@ app-ads-services.com CNAME .
 *.app-ads-services.com CNAME .
 odm.app-ads-services.com CNAME .
 *.odm.app-ads-services.com CNAME .
-app-analytics-services.com CNAME .
-*.app-analytics-services.com CNAME .
 target.microsoft.com CNAME .
 *.target.microsoft.com CNAME .
 oca.telemetry.microsoft.com CNAME .
@@ -33146,6 +33144,10 @@ api2.poperblocker.com CNAME .
 *.api2.poperblocker.com CNAME .
 apolloprogram.io CNAME .
 *.apolloprogram.io CNAME .
+app-analytics-services-att.com CNAME .
+*.app-analytics-services-att.com CNAME .
+app-analytics-services.com CNAME .
+*.app-analytics-services.com CNAME .
 applog.camera360.com CNAME .
 *.applog.camera360.com CNAME .
 appres.camera360.com CNAME .
