@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026060704 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026060804 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: Polish Easy Privacy Host Filter
-; Entries: 40,389 domains
+; Entries: 40,390 domains
 ; Source: https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/easy_privacy_host.txt | https://www.certyficate.it/
 ; License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 7, 2026 at 4:34 AM UTC | 2026-06-07T04:34:28.798Z
+; Last updated: June 8, 2026 at 4:34 AM UTC | 2026-06-08T04:34:37.388Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -53028,6 +53028,8 @@ seao.business.samsung.com CNAME .
 *.seao.business.samsung.com CNAME .
 search.anonymous.ads.brave.com CNAME .
 *.search.anonymous.ads.brave.com CNAME .
+seaskypro.com CNAME .
+*.seaskypro.com CNAME .
 seb.sharpmarketing.eu CNAME .
 *.seb.sharpmarketing.eu CNAME .
 sebotr.rizeclinic.com CNAME .
