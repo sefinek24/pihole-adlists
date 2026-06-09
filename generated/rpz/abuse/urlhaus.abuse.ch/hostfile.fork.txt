@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026060900 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026060904 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: URLhaus Malicious Hosts
-; Entries: 525 domains
+; Entries: 524 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 9, 2026 at 12:38 AM UTC | 2026-06-09T00:38:47.693Z
+; Last updated: June 9, 2026 at 4:28 AM UTC | 2026-06-09T04:28:59.050Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -88,6 +88,8 @@ api.ezilax.com CNAME .
 *.api.ezilax.com CNAME .
 app.appzcvb.com CNAME .
 *.app.appzcvb.com CNAME .
+apparelgate.co.uk CNAME .
+*.apparelgate.co.uk CNAME .
 appdownload.download CNAME .
 *.appdownload.download CNAME .
 apple-service93.ru CNAME .
@@ -166,6 +168,8 @@ catbaparadisehotel.com.vn CNAME .
 *.catbaparadisehotel.com.vn CNAME .
 cdaonline.com.ar CNAME .
 *.cdaonline.com.ar CNAME .
+cdn.file6.goodid.com CNAME .
+*.cdn.file6.goodid.com CNAME .
 cebsrg.jamjahani.football CNAME .
 *.cebsrg.jamjahani.football CNAME .
 celebratingseniors.net CNAME .
@@ -224,8 +228,6 @@ ct3-24.ru CNAME .
 *.ct3-24.ru CNAME .
 d.14yaa.com CNAME .
 *.d.14yaa.com CNAME .
-d.wanyouxi7.com CNAME .
-*.d.wanyouxi7.com CNAME .
 damiancollier.com CNAME .
 *.damiancollier.com CNAME .
 data.yhydl.com CNAME .
@@ -252,6 +254,8 @@ dhnconstrucciones.com.ar CNAME .
 *.dhnconstrucciones.com.ar CNAME .
 dialkwik.in CNAME .
 *.dialkwik.in CNAME .
+digitalonline.cl CNAME .
+*.digitalonline.cl CNAME .
 dihsov.jamjahani.cash CNAME .
 *.dihsov.jamjahani.cash CNAME .
 disk.accord1key.cn CNAME .
@@ -400,6 +404,8 @@ globalbank.us CNAME .
 *.globalbank.us CNAME .
 globaltechnosoft.com CNAME .
 *.globaltechnosoft.com CNAME .
+gobiotechpestcontrol.com CNAME .
+*.gobiotechpestcontrol.com CNAME .
 gqmalnx.ogwil.bet CNAME .
 *.gqmalnx.ogwil.bet CNAME .
 greenf.alexion.rs CNAME .
@@ -460,6 +466,8 @@ ircftp.net CNAME .
 *.ircftp.net CNAME .
 isiore.com.co CNAME .
 *.isiore.com.co CNAME .
+ita-airwaysva.com CNAME .
+*.ita-airwaysva.com CNAME .
 itssprout.com CNAME .
 *.itssprout.com CNAME .
 ivqivx.xenicalby6.com CNAME .
@@ -554,18 +562,12 @@ maplecirrus.com CNAME .
 *.maplecirrus.com CNAME .
 meetvideogoogle.com CNAME .
 *.meetvideogoogle.com CNAME .
-metrics.gocloudmaps.com CNAME .
-*.metrics.gocloudmaps.com CNAME .
 mhjzma3p.betebetwin.com CNAME .
 *.mhjzma3p.betebetwin.com CNAME .
 mitreart.com CNAME .
 *.mitreart.com CNAME .
 mogimall.com CNAME .
 *.mogimall.com CNAME .
-mosselnet.co.za CNAME .
-*.mosselnet.co.za CNAME .
-mothertouch.ac.zw CNAME .
-*.mothertouch.ac.zw CNAME .
 mpozwop.winxbet.co CNAME .
 *.mpozwop.winxbet.co CNAME .
 mqbjnx.jamjahani.app CNAME .
@@ -584,8 +586,6 @@ n.vs108.com CNAME .
 *.n.vs108.com CNAME .
 ncxps.com CNAME .
 *.ncxps.com CNAME .
-neilshairdressers.co.uk CNAME .
-*.neilshairdressers.co.uk CNAME .
 nelees.com CNAME .
 *.nelees.com CNAME .
 new.quranushaiqer.org.sa CNAME .
@@ -608,8 +608,6 @@ nova.ismak.icu CNAME .
 *.nova.ismak.icu CNAME .
 nqbecrh.one1x.bet CNAME .
 *.nqbecrh.one1x.bet CNAME .
-nusatoyota.co.id CNAME .
-*.nusatoyota.co.id CNAME .
 nwdzgly.ninjafruitcubes.bet CNAME .
 *.nwdzgly.ninjafruitcubes.bet CNAME .
 ny.lshdw.cc CNAME .
@@ -624,8 +622,6 @@ ojpqxkm.one1x.bet CNAME .
 *.ojpqxkm.one1x.bet CNAME .
 okhan.net CNAME .
 *.okhan.net CNAME .
-oknoplastik.sk CNAME .
-*.oknoplastik.sk CNAME .
 omxvqrt.penalty.casino CNAME .
 *.omxvqrt.penalty.casino CNAME .
 onfiltre.com.tr CNAME .
@@ -694,8 +690,6 @@ quyycf.parsball.casino CNAME .
 *.quyycf.parsball.casino CNAME .
 ramirex.ro CNAME .
 *.ramirex.ro CNAME .
-ranojpegu.in CNAME .
-*.ranojpegu.in CNAME .
 rbbhubp.kbshavanese.com CNAME .
 *.rbbhubp.kbshavanese.com CNAME .
 rd7o3xct.parsgoal90.com CNAME .
@@ -782,8 +776,14 @@ softcatalog.ru CNAME .
 *.softcatalog.ru CNAME .
 solar-sanat.net CNAME .
 *.solar-sanat.net CNAME .
+soniderosunidos.com CNAME .
+*.soniderosunidos.com CNAME .
 spgint.com CNAME .
 *.spgint.com CNAME .
+spoar.org.in CNAME .
+*.spoar.org.in CNAME .
+static.ilclock.com CNAME .
+*.static.ilclock.com CNAME .
 static.topxgun.com CNAME .
 *.static.topxgun.com CNAME .
 static.youdm.cn CNAME .
@@ -800,16 +800,12 @@ sutterpoint.com CNAME .
 *.sutterpoint.com CNAME .
 svirtual.sanviatorperu.edu.pe CNAME .
 *.svirtual.sanviatorperu.edu.pe CNAME .
-swiftfusion.tech CNAME .
-*.swiftfusion.tech CNAME .
 syheuby.mangobetfarsi.com CNAME .
 *.syheuby.mangobetfarsi.com CNAME .
 szdfpv.jamjahani2026.football CNAME .
 *.szdfpv.jamjahani2026.football CNAME .
 t748i6is.volleyball.vip CNAME .
 *.t748i6is.volleyball.vip CNAME .
-talentrecruitments.com CNAME .
-*.talentrecruitments.com CNAME .
 tanscarattorneys.co.tz CNAME .
 *.tanscarattorneys.co.tz CNAME .
 tapestryoftruth.com CNAME .
@@ -822,8 +818,6 @@ tehnomag.rs CNAME .
 *.tehnomag.rs CNAME .
 temirtau-adm.ru CNAME .
 *.temirtau-adm.ru CNAME .
-tengfeidn.cn CNAME .
-*.tengfeidn.cn CNAME .
 test.peperoncinochepassione.it CNAME .
 *.test.peperoncinochepassione.it CNAME .
 theholidayroads.com CNAME .
@@ -926,6 +920,8 @@ automobile-bk.de CNAME .
 *.automobile-bk.de CNAME .
 backupallfresh2030.com CNAME .
 *.backupallfresh2030.com CNAME .
+benshamcentre.co.uk CNAME .
+*.benshamcentre.co.uk CNAME .
 blackhattoolz.com CNAME .
 *.blackhattoolz.com CNAME .
 bratusferramentas.grupomoltz.com.br CNAME .
