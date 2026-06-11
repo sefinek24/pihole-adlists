@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026061000 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026061100 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: EasyPrivacy Hosts Blocklist
-; Entries: 40,365 domains
+; Entries: 40,368 domains
 ; Source: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easyprivacy.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 10, 2026 at 12:44 AM UTC | 2026-06-10T00:44:58.935Z
+; Last updated: June 11, 2026 at 12:46 AM UTC | 2026-06-11T00:46:50.140Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -170,6 +170,8 @@ bxtag.com CNAME .
 *.bxtag.com CNAME .
 bydst.com CNAME .
 *.bydst.com CNAME .
+c-stat.eu CNAME .
+*.c-stat.eu CNAME .
 cadsuta.net CNAME .
 *.cadsuta.net CNAME .
 cafirebreather.com CNAME .
@@ -3094,6 +3096,8 @@ stats.inergizedigitalmedia.com CNAME .
 *.stats.inergizedigitalmedia.com CNAME .
 stats.itweb.co.za CNAME .
 *.stats.itweb.co.za CNAME .
+stats.jkdesa.com CNAME .
+*.stats.jkdesa.com CNAME .
 stats.kaltura.com CNAME .
 *.stats.kaltura.com CNAME .
 stats.ksearchnet.com CNAME .
@@ -6990,6 +6994,8 @@ ua.indianexpress.com CNAME .
 *.ua.indianexpress.com CNAME .
 ubuyanalytics.ubuy.com CNAME .
 *.ubuyanalytics.ubuy.com CNAME .
+ud.galaxus.ch CNAME .
+*.ud.galaxus.ch CNAME .
 um.contentstudio.io CNAME .
 *.um.contentstudio.io CNAME .
 umami.flixer.su CNAME .
