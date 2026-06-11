@@ -38,7 +38,7 @@ The project follows semantic versioning. Thank you for using Sefinek Blocklists!
 3. Added new lists from `hagezi/dns-blocklists`:
    - `gambling/hagezi/gambling-onlydomains.fork.txt`
    - `porn/hagezi/nsfw-onlydomains.fork.txt`
-4. Improved and extended the false positive reporting system ([/false-positives](https://blocklist.sefinek.net/false-positives)) — including a confirmation email for reporters and improved form validation and appearance.
+4. Improved and extended the false positive reporting system ([/false-positives](https://blocklist.sefinek.net/false-positives)) - including a confirmation email for reporters and improved form validation and appearance.
 5. Fixed incorrect canonical comments in `AdGuard.md`, `dnsmasq.md`, and `RPZ.md`.
 6. Updated backend dependencies.
 7. Other minor quality improvements.
@@ -53,7 +53,7 @@ The project follows semantic versioning. Thank you for using Sefinek Blocklists!
 4. Updated `pull.sh` to sync both `main` and the `blocklists` branch via git worktree.
 5. Minor frontend improvements.
 
-> On April 8, 2026, maintenance work was carried out as part of this update's deployment — the server was unavailable for approximately 30 minutes during that time. Any errors related to downloading lists during that period can be disregarded.
+> On April 8, 2026, maintenance work was carried out as part of this update's deployment - the server was unavailable for approximately 30 minutes during that time. Any errors related to downloading lists during that period can be disregarded.
 
 
 ## Version 0.20.0 from 17.03.2026

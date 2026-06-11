@@ -102,8 +102,8 @@ ${domainBlocksHtml}`,
 <p>Thank you for submitting a false positive report to <a href="https://blocklist.sefinek.net">Sefinek Blocklist Collection</a>. We have received your submission and will review it as soon as possible.</p>
 <b>What happens next?</b><br>
 <p>
-	We will analyze each reported domain (${reportable.length}) to determine whether blocking it is actually justified. If your report turns out to be valid, the ${reportable.length !== 1 ? 'domains will be removed from the blocklist' : 'domain will be removed from the blocklist'}. If we have any doubts, we may reach out to you for additional information — that is exactly why it was worth providing your email address. 😊<br><br>
-	No further action is required on your end. Please be patient — verification may take anywhere from a few hours to a few days depending on the current volume of reports.<br><br>
+	We will analyze each reported domain (${reportable.length}) to determine whether blocking it is actually justified. If your report turns out to be valid, the ${reportable.length !== 1 ? 'domains will be removed from the blocklist' : 'domain will be removed from the blocklist'}. If we have any doubts, we may reach out to you for additional information - that is exactly why it was worth providing your email address. 😊<br><br>
+	No further action is required on your end. Please be patient - verification may take anywhere from a few hours to a few days depending on the current volume of reports.<br><br>
 	Have questions or want to add something? Feel free to reply to this email or join our <a href="https://discord.gg/53DBjTuzgZ">Discord server</a>.
 </p>
 <p><small><b>P.S.</b> Your email address was used solely to send this confirmation. It will not be stored in any database, will not be processed by <a href="https://sefinek.net">sefinek.net</a> in any other way, and will not be used for any other purpose.</small></p>

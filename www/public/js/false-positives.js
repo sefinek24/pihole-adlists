@@ -218,13 +218,13 @@
 			const row = reasonsContainer.querySelector(`.report-form__domain-row[data-domain="${domain}"]`);
 
 			if (row && row.dataset.status === newStatus) {
-				// Status unchanged — preserve DOM node, only fix order if needed
+				// Status unchanged - preserve DOM node, only fix order if needed
 				const current = [...reasonsContainer.children].indexOf(row);
 				if (current !== i) reasonsContainer.insertBefore(row, reasonsContainer.children[i] ?? null);
 				continue;
 			}
 
-			// Status changed or row is new — replace/insert
+			// Status changed or row is new - replace/insert
 			const tmp = document.createElement('div');
 			tmp.innerHTML = buildRowHtml(domain, state);
 			const newRow = tmp.firstElementChild;
@@ -477,42 +477,42 @@
 	if (scriptEl?.dataset.env === 'development') {
 		const pool = [
 			// ads
-			{ domain: 'googletagmanager.com', reason: 'I noticed that googletagmanager.com is on the blocklist but this domain is used by countless legitimate websites to load analytics scripts. It\'s operated by Google and doesn\'t serve malicious content — I think it was added too broadly.' },
+			{ domain: 'googletagmanager.com', reason: 'I noticed that googletagmanager.com is on the blocklist but this domain is used by countless legitimate websites to load analytics scripts. It\'s operated by Google and doesn\'t serve malicious content - I think it was added too broadly.' },
 			{ domain: 'doubleclick.net', reason: 'I run a small blog and rely on Google AdSense to cover hosting costs. Doubleclick.net is the domain that actually delivers the ad creatives. Blocking it kills my only source of income from the site and it\'s not a harmful domain by itself.' },
 			{ domain: 'criteo.com', reason: 'Criteo.com is blocked on my setup and it\'s breaking a webshop I help maintain. It\'s a retargeting platform that loads only with cookie consent. It\'s not malware and I\'d like it reviewed.' },
 			// tracking-and-telemetry
-			{ domain: 'sentry.io', reason: 'Sentry.io is blocked but I use it for error monitoring in my personal projects. It only receives stack traces when something crashes — no user data, no ads. Without it I can\'t debug production issues at all.' },
-			{ domain: 'sentry.medal.tv', reason: 'I use Medal.tv to clip highlights from games I play. After adding this blocklist the app started throwing errors on launch. I traced it back to sentry.medal.tv being blocked — it\'s just their crash reporter, nothing harmful.' },
-			{ domain: 'devlog-upload.mihoyo.com', reason: 'Since I started using this blocklist, Genshin Impact\'s launcher keeps showing upload errors on startup. Turns out devlog-upload.mihoyo.com is blocked — it\'s only used to send anonymous crash reports to HoYoverse, not to spy on players.' },
+			{ domain: 'sentry.io', reason: 'Sentry.io is blocked but I use it for error monitoring in my personal projects. It only receives stack traces when something crashes - no user data, no ads. Without it I can\'t debug production issues at all.' },
+			{ domain: 'sentry.medal.tv', reason: 'I use Medal.tv to clip highlights from games I play. After adding this blocklist the app started throwing errors on launch. I traced it back to sentry.medal.tv being blocked - it\'s just their crash reporter, nothing harmful.' },
+			{ domain: 'devlog-upload.mihoyo.com', reason: 'Since I started using this blocklist, Genshin Impact\'s launcher keeps showing upload errors on startup. Turns out devlog-upload.mihoyo.com is blocked - it\'s only used to send anonymous crash reports to HoYoverse, not to spy on players.' },
 			// crypto
-			{ domain: 'binance.com', reason: 'I use Binance to manage my crypto portfolio and the block is preventing me from accessing the site entirely. Binance is a licensed exchange in multiple countries — it\'s not a scam or phishing domain. Please remove it from the list.' },
+			{ domain: 'binance.com', reason: 'I use Binance to manage my crypto portfolio and the block is preventing me from accessing the site entirely. Binance is a licensed exchange in multiple countries - it\'s not a scam or phishing domain. Please remove it from the list.' },
 			{ domain: 'coinbase.com', reason: 'Coinbase is a publicly traded company on NASDAQ and one of the most regulated crypto platforms in the world. I can\'t access my account with this blocklist active. I really don\'t think it belongs on a list of harmful domains.' },
 			{ domain: 'kraken.com', reason: 'Kraken is a regulated cryptocurrency exchange operating under FinCEN and EU licensing. I\'ve been a customer for years without any issues. Blocking it on the same list as scam sites seems like a mistake.' },
 			// gambling
 			{ domain: 'bet1000.com', reason: 'Bet1000 is a fully licensed sportsbook with an MGA licence. I\'m an adult and I use it for sports betting which is legal where I live. I understand the category exists but a licensed operator shouldn\'t be treated like a malicious site.' },
 			{ domain: 'wintomato.com', reason: 'Wintomato is a licensed casino operating legally in the EU with responsible gambling tools in place. I\'m being blocked from a site I chose to use as an adult. Could you at least separate licensed operators from clearly illegal ones?' },
 			// dating-services
-			{ domain: 'szukamrandki.pl', reason: 'I signed up on szukamrandki.pl — it\'s just a regular Polish dating site, nothing sketchy. It has a cookie consent banner, GDPR notices, and standard registration. I don\'t see why it\'s blocked alongside scam sites.' },
+			{ domain: 'szukamrandki.pl', reason: 'I signed up on szukamrandki.pl - it\'s just a regular Polish dating site, nothing sketchy. It has a cookie consent banner, GDPR notices, and standard registration. I don\'t see why it\'s blocked alongside scam sites.' },
 			{ domain: 'erodate.pl', reason: 'Erodate.pl is a legal adult dating platform registered in Poland. It verifies age at registration and doesn\'t run any malware or phishing. I\'d understand a content-based category but it\'s not a harmful domain in the security sense.' },
 			// piracy
-			{ domain: 'allwarez.cz', reason: 'I tried visiting allwarez.cz out of curiosity and it just redirects to a blank page — there\'s no content there at all. It looks like the site has been dead for years. I think the block entry is outdated at this point.' },
-			{ domain: 'blackpirate.cz', reason: 'Blackpirate.cz appears to be completely inactive — it shows a parked page with no links or content. I\'m not sure when the original site went down but blocking a dead domain seems unnecessary.' },
+			{ domain: 'allwarez.cz', reason: 'I tried visiting allwarez.cz out of curiosity and it just redirects to a blank page - there\'s no content there at all. It looks like the site has been dead for years. I think the block entry is outdated at this point.' },
+			{ domain: 'blackpirate.cz', reason: 'Blackpirate.cz appears to be completely inactive - it shows a parked page with no links or content. I\'m not sure when the original site went down but blocking a dead domain seems unnecessary.' },
 			// suspicious
 			{ domain: 'instaboostlikes.com', reason: 'I\'ve used instaboostlikes.com for legitimate social media consulting and never encountered anything malicious. I suspect it was flagged because of the name rather than actual harmful behaviour. Could you double-check the classification?' },
-			{ domain: 'click-1.pl', reason: 'I keep seeing click-1.pl blocked when I click affiliate links on Polish shopping sites. It\'s just a redirect domain used by e-commerce stores to track referral sales — it\'s not doing anything harmful, just a middleman URL.' },
+			{ domain: 'click-1.pl', reason: 'I keep seeing click-1.pl blocked when I click affiliate links on Polish shopping sites. It\'s just a redirect domain used by e-commerce stores to track referral sales - it\'s not doing anything harmful, just a middleman URL.' },
 			// useless-websites
-			{ domain: 'returnyoutubedislikeapi.com', reason: 'I use the Return YouTube Dislike browser extension and this domain is its API backend. It only returns a number — the dislike count. There\'s no tracking, no ads, nothing harmful. I think "useless" is a bit harsh for a tool millions of people use.' },
+			{ domain: 'returnyoutubedislikeapi.com', reason: 'I use the Return YouTube Dislike browser extension and this domain is its API backend. It only returns a number - the dislike count. There\'s no tracking, no ads, nothing harmful. I think "useless" is a bit harsh for a tool millions of people use.' },
 			{ domain: 'placeit.net', reason: 'Placeit is an Envato-owned design tool used by our marketing team to create mockups and promotional materials. It is a paid SaaS product widely used by legitimate businesses. Blocking it disrupts our creative workflow.' },
 			{ domain: 'weedmaps.com', reason: 'Weedmaps is a legal cannabis dispensary directory operating in US states and Canadian provinces where recreational cannabis is fully legalised. It functions similarly to Google Maps for a regulated industry and does not target EU users.' },
 			// scam (borderline cases)
 			{ domain: 'hardbin.com', reason: 'Hardbin is an encrypted pastebin service using client-side AES encryption. It is used by security researchers and developers to securely share code snippets and configuration files. The encryption means the server never sees the plaintext content.' },
-			// not in blocklist — user mistakenly thinks it's blocked (notfound state test)
+			// not in blocklist - user mistakenly thinks it's blocked (notfound state test)
 			{ domain: 'github.com', reason: 'GitHub is blocked on my network and I can\'t access any repositories. I\'m a developer and losing access to GitHub completely breaks my workflow. Please remove it.' },
-			{ domain: 'stackoverflow.com', reason: 'Stack Overflow is showing as blocked and I genuinely can\'t figure out why. It\'s a programming Q&A site — there\'s nothing harmful about it. I use it every day for work.' },
+			{ domain: 'stackoverflow.com', reason: 'Stack Overflow is showing as blocked and I genuinely can\'t figure out why. It\'s a programming Q&A site - there\'s nothing harmful about it. I use it every day for work.' },
 			{ domain: 'cloudflare.com', reason: 'Cloudflare.com itself seems to be blocked. It\'s a CDN and security provider used by a huge chunk of the internet. I\'m not sure if this is intentional but it\'s breaking a lot of things for me.' },
-			{ domain: 'npmjs.com', reason: 'The npm registry is blocked and I can\'t install any packages. I thought maybe it got caught by a broad rule. It\'s the official JavaScript package registry — definitely not malicious.' },
-			{ domain: 'wikipedia.org', reason: 'I noticed Wikipedia is blocked. I use it regularly for research and reference. It\'s a non-profit encyclopaedia — I can\'t imagine why it would end up on a security blocklist.' },
-			{ domain: 'discord.com', reason: 'Discord is blocked and I\'m cut off from my community servers and friends. It\'s a chat platform used by millions — I honestly have no idea how it ended up on this list.' },
+			{ domain: 'npmjs.com', reason: 'The npm registry is blocked and I can\'t install any packages. I thought maybe it got caught by a broad rule. It\'s the official JavaScript package registry - definitely not malicious.' },
+			{ domain: 'wikipedia.org', reason: 'I noticed Wikipedia is blocked. I use it regularly for research and reference. It\'s a non-profit encyclopaedia - I can\'t imagine why it would end up on a security blocklist.' },
+			{ domain: 'discord.com', reason: 'Discord is blocked and I\'m cut off from my community servers and friends. It\'s a chat platform used by millions - I honestly have no idea how it ended up on this list.' },
 		];
 		const shuffle = arr => arr.slice().sort(() => Math.random() - 0.5);
 		const pick = (arr, n) => shuffle(arr).slice(0, n);

@@ -596,7 +596,7 @@ const updateSummary = aggregated => {
 			peakTimesContainer.innerHTML = aggregated.top3Peaks
 				.map((peak, index) => {
 					const medal = ['🥇', '🥈', '🥉'][index];
-					return `<span class="peak-item">${medal} ${peak.time} — ${peak.count.toLocaleString()} requests</span>`;
+					return `<span class="peak-item">${medal} ${peak.time} - ${peak.count.toLocaleString()} requests</span>`;
 				})
 				.join('');
 		} else {

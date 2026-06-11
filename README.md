@@ -101,7 +101,7 @@ Subsequently, usually within 1 day, the false positive entry will be automatical
 
 
 ## 🤝 Contributing
-Contributions are welcome — if you have suggestions or ideas, open a [Pull request](https://github.com/sefinek/Sefinek-Blocklist-Collection/pulls) with your proposed changes.
+Contributions are welcome - if you have suggestions or ideas, open a [Pull request](https://github.com/sefinek/Sefinek-Blocklist-Collection/pulls) with your proposed changes.
 Your efforts are greatly appreciated and help make this project better for everyone. Thank you!
 
 ### False positive

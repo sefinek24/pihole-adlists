@@ -27,8 +27,8 @@ npm run pull:blocklists             # Sync blocklists worktree branch
 ## Architecture
 
 ### Two-branch model
-- **`main`** — source lists (`lists/`) and processing scripts
-- **`blocklists`** — generated output files, mounted as a git worktree at `blocklists/`
+- **`main`** - source lists (`lists/`) and processing scripts
+- **`blocklists`** - generated output files, mounted as a git worktree at `blocklists/`
 
 ### Data flow
 1. External blocklists downloaded by `bash/download.sh` (via GH Actions every 3h)
@@ -38,17 +38,17 @@ npm run pull:blocklists             # Sync blocklists worktree branch
 5. Generated files committed to `blocklists` branch
 
 ### Web server (`www/`)
-- **`server.js`** — Express app; in production runs as PM2 cluster (workers per CPU)
+- **`server.js`** - Express app; in production runs as PM2 cluster (workers per CPU)
 - **Primary process** handles MongoDB/Redis connections, stats aggregation (Redis → MongoDB every 5 min), and the cron job
 - **Worker processes** handle HTTP requests
-- **`websocket.js`** — Real-time metrics broadcast (max 100 clients, 2s interval)
+- **`websocket.js`** - Real-time metrics broadcast (max 100 clients, 2s interval)
 - Routes: `/`, `/metrics`, `/update-schedule`, `/api/v1/blocklist/check`, `/api/v1/reports/false-positive`, `/docs/`
 - Controllers in `www/controllers/`; file listings cached in-memory for 5 hours
 
 ### Key infrastructure
-- **MongoDB** — request stats, false positive reports
-- **Redis** — short-term stats cache
-- **PM2** — process management with cluster mode in production (`ecosystem.config.js`)
+- **MongoDB** - request stats, false positive reports
+- **Redis** - short-term stats cache
+- **PM2** - process management with cluster mode in production (`ecosystem.config.js`)
 
 ## Code Style
 
