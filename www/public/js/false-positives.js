@@ -131,7 +131,7 @@
 				<textarea class="report-form__textarea report-form__reason-textarea"
 					id="reason-${e}"
 					data-domain="${e}"
-					placeholder="Explain why ${e} should not be blocked (screenshots on Imgur are welcome)..."
+					placeholder="Explain why ${e} should not be blocked (screenshots on Imgur are welcome). Please try to use Polish or English."
 					minlength="10" maxlength="2000" rows="3"></textarea>
 			</div>
 		</div>`;
