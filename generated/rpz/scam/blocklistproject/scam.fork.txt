@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026062200 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026062208 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -10,12 +10,12 @@ $TTL 300
 ;
 ; Title: Scam Blocklist
 ; Description: Scam domains
-; Entries: 1,275 domains
+; Entries: 1,278 domains
 ; Source: https://blocklistproject.github.io/Lists/scam.txt | https://github.com/blocklistproject/Lists
 ; License: MIT
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 22, 2026 at 12:46 AM UTC | 2026-06-22T00:46:18.705Z
+; Last updated: June 22, 2026 at 8:01 AM UTC | 2026-06-22T08:01:54.179Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -651,6 +651,8 @@ gghacks.com CNAME .
 *.gghacks.com CNAME .
 giftbias.com CNAME .
 *.giftbias.com CNAME .
+github.com CNAME .
+*.github.com CNAME .
 gladiadormalas.com.br CNAME .
 *.gladiadormalas.com.br CNAME .
 glanceclock.com CNAME .
@@ -783,6 +785,8 @@ joseph-holland.com CNAME .
 *.joseph-holland.com CNAME .
 justbasicshop.com CNAME .
 *.justbasicshop.com CNAME .
+kazwex.com CNAME .
+*.kazwex.com CNAME .
 keygen.get-cracked.com CNAME .
 *.keygen.get-cracked.com CNAME .
 khoinguyenhanoi.vn CNAME .
@@ -1681,6 +1685,8 @@ silverlanetrading.com CNAME .
 *.silverlanetrading.com CNAME .
 sunsetstore.net CNAME .
 *.sunsetstore.net CNAME .
+trustpilot.com CNAME .
+*.trustpilot.com CNAME .
 xmasbauble.com CNAME .
 *.xmasbauble.com CNAME .
 yeahteesmile.com CNAME .
