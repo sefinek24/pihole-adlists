@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026062219 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026062312 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -10,14 +10,16 @@ $TTL 300
 ;
 ; Title: Porn Blocklist
 ; Description: Adult content domains
-; Entries: 0 domains
+; Entries: 1 domains
 ; Source: https://blocklistproject.github.io/Lists/porn.txt | https://github.com/blocklistproject/Lists
 ; License: MIT
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 22, 2026 at 7:08 PM UTC | 2026-06-22T19:08:46.412Z
+; Last updated: June 23, 2026 at 12:59 PM UTC | 2026-06-23T12:59:03.431Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
 ; Report false positives: https://blocklist.sefinek.net/false-positives
 ; -------------------------------------------------------------------------------------------------------------------------------------------------------
+xiumhua.com CNAME .
+*.xiumhua.com CNAME .
