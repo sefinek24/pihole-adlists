@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026062000 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026062400 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: EasyPrivacy Hosts Blocklist
-; Entries: 40,374 domains
+; Entries: 40,378 domains
 ; Source: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easyprivacy.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 20, 2026 at 12:42 AM UTC | 2026-06-20T00:42:27.104Z
+; Last updated: June 24, 2026 at 12:37 AM UTC | 2026-06-24T00:37:19.808Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -5792,6 +5792,8 @@ collector-px0py5pczn.octopart.com CNAME .
 *.collector-px0py5pczn.octopart.com CNAME .
 collector.cint.com CNAME .
 *.collector.cint.com CNAME .
+collector.feedzop.com CNAME .
+*.collector.feedzop.com CNAME .
 collector.fiverr.com CNAME .
 *.collector.fiverr.com CNAME .
 collector.github.com CNAME .
@@ -5804,12 +5806,16 @@ collector.pi.spectrum.net CNAME .
 *.collector.pi.spectrum.net CNAME .
 collector.quillbot.com CNAME .
 *.collector.quillbot.com CNAME .
+collector.quizzop.com CNAME .
+*.collector.quizzop.com CNAME .
 collector.spankbang.party CNAME .
 *.collector.spankbang.party CNAME .
 collector.taoxh.life CNAME .
 *.collector.taoxh.life CNAME .
 collector.theconversation.com CNAME .
 *.collector.theconversation.com CNAME .
+collector.umogames.com CNAME .
+*.collector.umogames.com CNAME .
 collector.xhaccess.com CNAME .
 *.collector.xhaccess.com CNAME .
 collector.xhamster.com CNAME .
@@ -5864,6 +5870,8 @@ d712.theinformation.com CNAME .
 *.d712.theinformation.com CNAME .
 dabu.askmediagroup.com CNAME .
 *.dabu.askmediagroup.com CNAME .
+dap.hindustantimes.com CNAME .
+*.dap.hindustantimes.com CNAME .
 data.allstate.com CNAME .
 *.data.allstate.com CNAME .
 data.barry-callebaut.com CNAME .
