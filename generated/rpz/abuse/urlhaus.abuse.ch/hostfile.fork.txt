@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026062709 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026062712 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: URLhaus Malicious Hosts
-; Entries: 426 domains
+; Entries: 423 domains
 ; Source: https://urlhaus.abuse.ch/downloads/hostfile
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 27, 2026 at 9:46 AM UTC | 2026-06-27T09:46:44.832Z
+; Last updated: June 27, 2026 at 12:30 PM UTC | 2026-06-27T12:30:19.923Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -58,8 +58,6 @@ $TTL 300
 *.9ergp1lh.yekshart.app CNAME .
 aaronart.com CNAME .
 *.aaronart.com CNAME .
-abdulahad.net CNAME .
-*.abdulahad.net CNAME .
 acc.jiangsujiaxue.com CNAME .
 *.acc.jiangsujiaxue.com CNAME .
 acms.saleseos.com CNAME .
@@ -248,6 +246,8 @@ down.fwqlt.com CNAME .
 *.down.fwqlt.com CNAME .
 down.pcclear.com CNAME .
 *.down.pcclear.com CNAME .
+down.qqfarmer.com.cn CNAME .
+*.down.qqfarmer.com.cn CNAME .
 download.caihong.com CNAME .
 *.download.caihong.com CNAME .
 download.doumaibiji.cn CNAME .
@@ -540,8 +540,6 @@ ravstore.cl CNAME .
 *.ravstore.cl CNAME .
 rdm.91yunma.cn CNAME .
 *.rdm.91yunma.cn CNAME .
-reauthenticator.com CNAME .
-*.reauthenticator.com CNAME .
 records.dennisign.se CNAME .
 *.records.dennisign.se CNAME .
 redlk.com CNAME .
@@ -618,8 +616,6 @@ spasopro.at CNAME .
 *.spasopro.at CNAME .
 spgint.com CNAME .
 *.spgint.com CNAME .
-spoar.org.in CNAME .
-*.spoar.org.in CNAME .
 static.249.223.175.5.nextregister.eu CNAME .
 *.static.249.223.175.5.nextregister.eu CNAME .
 static.ilclock.com CNAME .
@@ -766,8 +762,6 @@ benshamcentre.co.uk CNAME .
 *.benshamcentre.co.uk CNAME .
 blackhattoolz.com CNAME .
 *.blackhattoolz.com CNAME .
-bratusferramentas.grupomoltz.com.br CNAME .
-*.bratusferramentas.grupomoltz.com.br CNAME .
 chenwangqiao.com CNAME .
 *.chenwangqiao.com CNAME .
 controliumbt.com CNAME .
