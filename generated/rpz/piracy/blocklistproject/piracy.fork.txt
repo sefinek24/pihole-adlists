@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026041823 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026062818 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,13 +9,13 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: Piracy Blocklist
-; Description: Piracy and illegal streaming domains
-; Entries: 2,153 domains
+; Description: Piracy and illegal streaming
+; Entries: 2,154 domains
 ; Source: https://blocklistproject.github.io/Lists/piracy.txt | https://github.com/blocklistproject/Lists
 ; License: MIT
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: April 18, 2026 at 11:03 PM UTC | 2026-04-18T23:03:19.231Z
+; Last updated: June 28, 2026 at 6:28 PM UTC | 2026-06-28T18:28:06.795Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -2565,3 +2565,5 @@ zourtube.com CNAME .
 *.zourtube.com CNAME .
 xn--80aejjrnhcji.4files.net CNAME .
 *.xn--80aejjrnhcji.4files.net CNAME .
+nullforums.net CNAME .
+*.nullforums.net CNAME .
