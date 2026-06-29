@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026062721 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026062900 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: EasyPrivacy Hosts Blocklist
-; Entries: 40,392 domains
+; Entries: 40,397 domains
 ; Source: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easyprivacy.txt
 ; License: Unknown, check the source
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 27, 2026 at 9:27 PM UTC | 2026-06-27T21:27:04.181Z
+; Last updated: June 29, 2026 at 12:44 AM UTC | 2026-06-29T00:44:50.766Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -242,6 +242,8 @@ dadalytics.it CNAME .
 *.dadalytics.it CNAME .
 datas3ntinel.com CNAME .
 *.datas3ntinel.com CNAME .
+dclsrv.com CNAME .
+*.dclsrv.com CNAME .
 ddlnk.net CNAME .
 *.ddlnk.net CNAME .
 digi-ping.com CNAME .
@@ -846,6 +848,8 @@ superpointlesshamsters.com CNAME .
 *.superpointlesshamsters.com CNAME .
 sy57d8wi.com CNAME .
 *.sy57d8wi.com CNAME .
+syncingbridge.com CNAME .
+*.syncingbridge.com CNAME .
 t13.io CNAME .
 *.t13.io CNAME .
 takingbackjuly.com CNAME .
@@ -1008,6 +1012,8 @@ sra-px.cdn-fileserver.com CNAME .
 *.sra-px.cdn-fileserver.com CNAME .
 youseasky.com CNAME .
 *.youseasky.com CNAME .
+tracker-shr.ortb.net CNAME .
+*.tracker-shr.ortb.net CNAME .
 adless.io CNAME .
 *.adless.io CNAME .
 adminer.com CNAME .
@@ -1244,6 +1250,8 @@ analytics.api.justeattakeaway.com CNAME .
 *.analytics.api.justeattakeaway.com CNAME .
 analytics.apnewsregistry.com CNAME .
 *.analytics.apnewsregistry.com CNAME .
+analytics.atlas5.co CNAME .
+*.analytics.atlas5.co CNAME .
 analytics.audioeye.com CNAME .
 *.analytics.audioeye.com CNAME .
 analytics.avanser.com.au CNAME .
@@ -4544,6 +4552,8 @@ datacollector-dra.dt.hicloud.com CNAME .
 *.datacollector-dra.dt.hicloud.com CNAME .
 dcbpm.suning.cn CNAME .
 *.dcbpm.suning.cn CNAME .
+dsp-track-global.zmaticoo.com CNAME .
+*.dsp-track-global.zmaticoo.com CNAME .
 dt.xfyun.cn CNAME .
 *.dt.xfyun.cn CNAME .
 dup.baidustatic.com CNAME .
