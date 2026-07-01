@@ -1,5 +1,5 @@
 $TTL 300
-@ SOA localhost. root.localhost. 2026062904 43200 3600 259200 300
+@ SOA localhost. root.localhost. 2026070104 43200 3600 259200 300
   NS  localhost.
 ;       _____   ______   ______   _____   _   _   ______   _  __        ____    _         ____     _____   _  __  _        _____    _____   _______
 ;      / ____| |  ____| |  ____| |_   _| | \ | | |  ____| | |/ /       |  _ \  | |       / __ \   / ____| | |/ / | |      |_   _|  / ____| |__   __|
@@ -9,12 +9,12 @@ $TTL 300
 ;     |_____/  |______| |_|      |_____| |_| \_| |______| |_|\_\       |____/  |______|  \____/   \_____| |_|\_\ |______| |_____| |_____/     |_|
 ;
 ; Title: Polish Easy Privacy Host Filter
-; Entries: 40,404 domains
+; Entries: 40,407 domains
 ; Source: https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-pihole-filters/easy_privacy_host.txt | https://www.certyficate.it/
 ; License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ; Format: RPZ
 ; Expires: 1 day
-; Last updated: June 29, 2026 at 4:35 AM UTC | 2026-06-29T04:35:16.029Z
+; Last updated: July 1, 2026 at 4:35 AM UTC | 2026-07-01T04:35:12.175Z
 ;
 ; This file is part of the Sefinek Blocklist Collection, maintained by Sefinek.
 ; Homepage: https://blocklist.sefinek.net
@@ -10044,6 +10044,8 @@ analyticcdn.wlmediahub.com CNAME .
 *.analyticcdn.wlmediahub.com CNAME .
 analytics-1.cavai.com CNAME .
 *.analytics-1.cavai.com CNAME .
+analytics-api-s.cloudinary.com CNAME .
+*.analytics-api-s.cloudinary.com CNAME .
 analytics-api.gemcommerce.com CNAME .
 *.analytics-api.gemcommerce.com CNAME .
 analytics-api.klickly.com CNAME .
@@ -47262,6 +47264,8 @@ origin-target.humana.com CNAME .
 *.origin-target.humana.com CNAME .
 origin.www.images.2.forms.healthcare.philips.com CNAME .
 *.origin.www.images.2.forms.healthcare.philips.com CNAME .
+orion.bendingspoons.com CNAME .
+*.orion.bendingspoons.com CNAME .
 orionmarketing.actonservice.com CNAME .
 *.orionmarketing.actonservice.com CNAME .
 orlmarketing.nfp.com CNAME .
@@ -62040,6 +62044,8 @@ spark.thelyst.com CNAME .
 *.spark.thelyst.com CNAME .
 spc.personalcreations.com CNAME .
 *.spc.personalcreations.com CNAME .
+spea.eko.com CNAME .
+*.spea.eko.com CNAME .
 spec-sensors.actonservice.com CNAME .
 *.spec-sensors.actonservice.com CNAME .
 specialevent.informaengage.com CNAME .
